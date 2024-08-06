@@ -73,365 +73,365 @@ CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.o: CMakeFiles/monte-car
 CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.o: source/bvh/bvh.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/bvh/bvh.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/bvh/bvh.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/bvh/bvh.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/bvh/bvh.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/bvh/bvh.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/bvh/bvh.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.o: source/camera/camera.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.o: source/camera/film.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/film.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/film.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/film.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/film.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/film.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/film.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.o: source/camera/image.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/image.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/image.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/image.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/image.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/image.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/image.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.o: source/camera/pixel-operators.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/pixel-operators.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/pixel-operators.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/pixel-operators.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/pixel-operators.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/pixel-operators.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/pixel-operators.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.o: source/common/bounding-box.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/bounding-box.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/bounding-box.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/bounding-box.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/bounding-box.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/bounding-box.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/bounding-box.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.o: source/common/coordinate-system.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/coordinate-system.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/coordinate-system.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/coordinate-system.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/coordinate-system.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/coordinate-system.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/coordinate-system.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.o: source/common/format.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/format.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/format.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/format.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/format.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/format.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/format.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.o: source/common/histogram.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/histogram.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/histogram.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/histogram.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/histogram.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/histogram.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/histogram.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.o: source/common/option.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/option.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/option.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/option.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/option.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/option.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/option.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.o: source/common/util.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/util.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/util.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/util.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/util.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/util.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/util.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.o: source/integrator/integrator.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.o: source/integrator/path-tracer/path-tracer.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/path-tracer/path-tracer.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/path-tracer/path-tracer.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/path-tracer/path-tracer.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/path-tracer/path-tracer.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/path-tracer/path-tracer.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/path-tracer/path-tracer.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.o: source/integrator/photon-mapper/photon-mapper.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/photon-mapper.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/photon-mapper.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/photon-mapper.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/photon-mapper.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/photon-mapper.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/photon-mapper.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.o: source/main.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/main.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/main.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/main.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/main.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/main.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/main.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.o: source/material/fresnel.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/fresnel.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/fresnel.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/fresnel.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/fresnel.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/fresnel.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/fresnel.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.o: source/material/ggx.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/ggx.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/ggx.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/ggx.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/ggx.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/ggx.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/ggx.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.o: source/material/material.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/material.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/material.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/material.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/material.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/material.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/material.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.o: source/octree/linear-octree.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/octree/linear-octree.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/octree/linear-octree.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/octree/linear-octree.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/octree/linear-octree.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/octree/linear-octree.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/octree/linear-octree.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.o: source/octree/octree.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/octree/octree.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/octree/octree.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/octree/octree.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/octree/octree.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/octree/octree.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/octree/octree.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.o: source/ray/interaction.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/ray/interaction.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/ray/interaction.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/ray/interaction.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/ray/interaction.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/ray/interaction.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/ray/interaction.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.o: source/ray/ray.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/ray/ray.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/ray/ray.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/ray/ray.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/ray/ray.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/ray/ray.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/ray/ray.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.o: source/scene/scene.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/scene/scene.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/scene/scene.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/scene/scene.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/scene/scene.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/scene/scene.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/scene/scene.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.o: source/surface/quadric.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/quadric.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/quadric.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/quadric.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/quadric.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/quadric.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/quadric.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.o: source/surface/sphere.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/sphere.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/sphere.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/sphere.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/sphere.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/sphere.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/sphere.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.s
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/flags.make
 CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.o: source/surface/triangle.cpp
 CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.o: CMakeFiles/monte-carlo-ray-tracer.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sakakibara/monte-carlo-ray-tracer_approx/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/triangle.cpp
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.o -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.o.d -o CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/triangle.cpp
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/triangle.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.i
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/triangle.cpp > CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.i
 
 CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/triangle.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.s
+	/home/sakakibara/opt/gcc/riscv64-elf/11.1/bin/riscv64-unknown-elf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/triangle.cpp -o CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.s
 
 # Object files for target monte-carlo-ray-tracer
 monte__carlo__ray__tracer_OBJECTS = \

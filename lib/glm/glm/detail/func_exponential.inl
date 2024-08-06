@@ -11,7 +11,7 @@ namespace glm{
 namespace detail
 {
 #	if GLM_HAS_CXX11_STL
-		using std::log2;
+		//using std::log2; // modified
 #	else
 		template<typename genType>
 		genType log2(genType Value)
@@ -91,7 +91,7 @@ namespace detail
 	}
 
 #   if GLM_HAS_CXX11_STL
-    using std::exp2;
+    //using std::exp2; // modified
 #   else
 	//exp2, ln2 = 0.69314718055994530941723212145818f
 	template<typename genType>
