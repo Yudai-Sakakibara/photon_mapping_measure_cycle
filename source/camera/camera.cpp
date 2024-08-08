@@ -126,9 +126,9 @@ void Camera::sampleImage()
     }
 
     std::function<void(Camera*, WorkQueue<Bucket>&)> p = &Camera::printInfoThread;
-    std::thread print_thread(p, this, std::ref(buckets));
+    //std::thread print_thread(p, this, std::ref(buckets)); // modified
 
-    print_thread.join();
+    //print_thread.join(); // modified
 
     for (auto& thread : threads)
     {

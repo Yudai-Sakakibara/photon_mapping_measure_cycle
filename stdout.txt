@@ -1,0 +1,4 @@
+Consolidate compiler generated dependencies of target monte-carlo-ray-tracer
+[  3%] Building CXX object CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.o
+[  7%] Linking CXX executable monte-carlo-ray-tracer
+[100%] Built target monte-carlo-ray-tracer

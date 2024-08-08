@@ -434,6 +434,5 @@ CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.o: \
  /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/../scene/../common/bounding-box.hpp \
  /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/../common/work-queue.hpp \
  /usr/include/c++/11/queue /usr/include/c++/11/bits/stl_queue.h \
- /usr/include/c++/11/mutex /usr/include/c++/11/bits/unique_lock.h \
  /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/../common/option.hpp \
  /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/util.hpp

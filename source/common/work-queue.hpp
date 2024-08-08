@@ -7,14 +7,14 @@ that different threads can un-queue concurrently.
 #pragma once
 
 #include <queue>
-#include <mutex>
+//#include <mutex> // modified
 #include <vector>
 
 template <class T>
 class WorkQueue
 {
 public:
-    WorkQueue(const std::vector<T> items) : m()
+    WorkQueue(const std::vector<T> items) //: m() // modified
     {
         original_size = items.size();
         for (const auto& item : items)
@@ -25,7 +25,7 @@ public:
 
     bool getWork(T& item)
     {
-        std::unique_lock<std::mutex> lock(m);
+        //std::unique_lock<std::mutex> lock(m); // modified
 
         bool empty = queue.empty();
         if (!empty)
@@ -33,29 +33,29 @@ public:
             item = queue.front();
             queue.pop();
         }
-        lock.unlock();
+        //lock.unlock(); // modified
 
         return !empty;
     }
 
     bool empty()
     {
-        std::unique_lock<std::mutex> lock(m);
+        //std::unique_lock<std::mutex> lock(m); // modified
         bool empty = queue.empty();
-        lock.unlock();
+        //lock.unlock(); // modified
         return empty;
     }
 
     double progress()
     {
-        std::unique_lock<std::mutex> lock(m);
+        //std::unique_lock<std::mutex> lock(m); // modified
         double p = static_cast<double>(original_size - queue.size()) * 100.0 / original_size;
-        lock.unlock();
+        //lock.unlock(); // modified
         return p;
     }
 
 private:
     size_t original_size;
     std::queue<T> queue;
-    mutable std::mutex m;
+    //mutable std::mutex m; // modified
 };

@@ -147,7 +147,7 @@ PhotonMapper::PhotonMapper(const nlohmann::json& j) : Integrator(j)
         std::string info = "\rPhotons emitted in " + duration + ". Constructing octrees";
         std::cout << info;
         begin = std::chrono::high_resolution_clock::now();
-            
+
         print_thread = std::make_unique<std::thread>([&done_constructing_octrees, info]()
         {
             std::string dots("");

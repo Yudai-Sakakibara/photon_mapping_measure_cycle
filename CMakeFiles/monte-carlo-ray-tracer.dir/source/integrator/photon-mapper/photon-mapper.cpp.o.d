@@ -459,7 +459,6 @@ CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-map
  /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/../../sampling/../common/unrolled-loop.hpp \
  /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/../../common/util.hpp \
  /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/../../common/work-queue.hpp \
- /usr/include/c++/11/mutex /usr/include/c++/11/bits/unique_lock.h \
  /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/../../common/format.hpp \
  /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/../../material/material.hpp \
  /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/../../surface/surface.hpp \
