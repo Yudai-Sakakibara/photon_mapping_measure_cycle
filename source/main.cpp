@@ -1,6 +1,7 @@
 #include <filesystem>
 #include <iostream>
 #include <fstream>
+//#include <unistd.h> // added
 
 #include "camera/camera.hpp"
 
@@ -55,7 +56,19 @@ int main(int argc, char* argv[])
         return -1;
     }
 
+    /** asm volatile ("li a7, 0x10001\n\t" 
+        "ecall" 
+        :
+        :
+        : "a7"); **/
+
     camera->capture();
+
+    /** asm volatile ("li a7, 0x10001\n\t" 
+        "ecall" 
+        :
+        :
+        : "a7"); **/
 
     return 0;
 }

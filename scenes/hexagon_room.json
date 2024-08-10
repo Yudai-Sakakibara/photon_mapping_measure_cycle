@@ -3,7 +3,7 @@
   "ior": 1.75,
 
   "photon_map": {
-    "emissions": 1e6,
+    "emissions": 1e4,
     "caustic_factor": 10.0,
     "k_nearest_photons": 50,
     "max_photons_per_octree_leaf": 200,

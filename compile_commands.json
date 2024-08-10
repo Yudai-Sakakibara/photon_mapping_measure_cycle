@@ -1,0 +1,132 @@
+[
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/bvh/bvh.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/bvh/bvh.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/bvh/bvh.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/film.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/film.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/film.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/image.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/image.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/image.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/pixel-operators.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/pixel-operators.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/pixel-operators.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/bounding-box.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/bounding-box.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/common/bounding-box.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/coordinate-system.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/common/coordinate-system.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/format.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/common/format.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/histogram.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/histogram.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/common/histogram.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/option.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/option.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/common/option.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/common/util.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/common/util.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/common/util.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/path-tracer/path-tracer.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/path-tracer/path-tracer.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/path-tracer/path-tracer.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/photon-mapper.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/photon-mapper.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/main.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/main.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/material/fresnel.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/fresnel.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/material/fresnel.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/material/ggx.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/ggx.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/material/ggx.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/material/material.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/material/material.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/octree/linear-octree.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/octree/linear-octree.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/octree/octree.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/octree/octree.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/interaction.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/ray/interaction.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/ray/interaction.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/ray/ray.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/ray/ray.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/ray/ray.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/scene/scene.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/scene/scene.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/scene/scene.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/quadric.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/quadric.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/quadric.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/sphere.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/sphere.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/sphere.cpp"
+},
+{
+  "directory": "/home/sakakibara/monte-carlo-ray-tracer_approx",
+  "command": "/home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++  -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -v -O3 -std=gnu++20 -o CMakeFiles/monte-carlo-ray-tracer.dir/source/surface/triangle.cpp.o -c /home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/triangle.cpp",
+  "file": "/home/sakakibara/monte-carlo-ray-tracer_approx/source/surface/triangle.cpp"
+}
+]

@@ -1,24 +1,8 @@
-In file included from /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.hpp:10,
-                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.cpp:1:
-/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann/nlohmann/json.hpp: In static member function ‘static CharType nlohmann::detail::binary_writer<BasicJsonType, CharType>::to_char_type(uint8_t)’:
-/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann/nlohmann/json.hpp:12484:28: warning: ‘template<class _Tp> struct std::is_pod’ is deprecated: use is_standard_layout && is_trivial instead [-Wdeprecated-declarations]
-12484 |         static_assert(std::is_pod<CharType>::value, "CharType must be POD");
-      |                            ^~~~~~
-In file included from /usr/include/c++/11/ratio:39,
-                 from /usr/include/c++/11/chrono:39,
-                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.hpp:3,
-                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.cpp:1:
-/usr/include/c++/11/type_traits:733:5: note: declared here
-  733 |     is_pod
-      |     ^~~~~~
-In file included from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/detail/type_half.hpp:16,
-                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/detail/func_packing.inl:5,
-                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/packing.hpp:173,
-                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/glm.hpp:132,
-                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/film.hpp:7,
-                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.hpp:13,
-                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.cpp:1:
-/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/detail/type_half.inl: In function ‘float glm::detail::overflow()’:
-/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/detail/type_half.inl:9:27: warning: compound assignment with ‘volatile’-qualified left operand is deprecated [-Wvolatile]
-    9 |                         f *= f; // this will overflow before the for loop terminates
-      |                         ~~^~~~
+/home/sakakibara/opt/gcc/riscv64-elf/11.1_approx/lib/gcc/riscv64-unknown-elf/11.1.0/../../../../riscv64-unknown-elf/bin/ld: /home/sakakibara/opt/gcc/riscv64-elf/11.1_approx/lib/gcc/riscv64-unknown-elf/11.1.0/../../../../riscv64-unknown-elf/lib/libstdc++.a(fs_ops.o): in function `.L0 ':
+fs_ops.cc:(.text._ZNSt10filesystem12current_pathB5cxx11ERSt10error_code+0x3c): undefined reference to `pathconf'
+/home/sakakibara/opt/gcc/riscv64-elf/11.1_approx/lib/gcc/riscv64-unknown-elf/11.1.0/../../../../riscv64-unknown-elf/bin/ld: /home/sakakibara/opt/gcc/riscv64-elf/11.1_approx/lib/gcc/riscv64-unknown-elf/11.1.0/../../../../riscv64-unknown-elf/lib/libstdc++.a(fs_ops.o): in function `.L430':
+fs_ops.cc:(.text._ZNSt10filesystem12current_pathB5cxx11ERSt10error_code+0xb4): undefined reference to `getcwd'
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/monte-carlo-ray-tracer.dir/build.make:500: monte-carlo-ray-tracer] Error 1
+make[1]: *** [CMakeFiles/Makefile2:86: CMakeFiles/monte-carlo-ray-tracer.dir/all] Error 2
+make: *** [Makefile:94: all] Error 2

@@ -12,8 +12,11 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif()
 
-set(CMAKE_CXX_COMPILER /home/sakakibara/opt/gcc/riscv64-elf/11.1_approx/bin/riscv64-unknown-elf-g++) # added
-set(CMAKE_CXX_FLAGS "-pthread") # added
+#set(CMAKE_CXX_COMPILER /home/sakakibara/opt/gcc/riscv64-elf/11.1_approx/bin/riscv64-unknown-elf-g++) # added
+set(CMAKE_CXX_COMPILER /home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++)
+set(CMAKE_CXX_FLAGS "-Wl,-gc-sections") # added
+set(CMAKE_CXX_FLAGS "-v") # added
+set(CMAKE_VERBOSE_MAKEFILE 1) # added
 
 include(CheckCXXCompilerFlag)
 
