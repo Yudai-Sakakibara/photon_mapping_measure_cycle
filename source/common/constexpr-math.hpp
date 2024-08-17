@@ -1,6 +1,6 @@
 #pragma once
 
-#include <glm/matrix.hpp>
+#include "../../lib/glm/glm/matrix.hpp"
 #include <bit>
 
 template <class T>

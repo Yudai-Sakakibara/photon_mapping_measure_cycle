@@ -4,9 +4,9 @@
 #include <vector>
 #include <functional>
 
-#include <glm/glm.hpp>
+#include "../../lib/glm/glm/glm.hpp"
 
-#include <nlohmann/json.hpp>
+#include "../../lib/nlohmann/nlohmann/json.hpp"
 
 class Film
 {

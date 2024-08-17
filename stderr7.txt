@@ -1,0 +1,63 @@
+Using built-in specs.
+COLLECT_GCC=/home/sakakibara/my/bin/riscv64-unknown-linux-gnu-g++
+Target: riscv64-unknown-linux-gnu
+Configured with: /home/sakakibara/sim-env-mtl-approx/riscv-compiler/tmp/riscv-gnu-toolchain/riscv-gcc/configure --target=riscv64-unknown-linux-gnu --prefix=/home/sakakibara/my --with-sysroot=/home/sakakibara/my/sysroot --with-system-zlib --enable-shared --enable-tls --enable-languages=c,c++,fortran --disable-libmudflap --disable-libssp --disable-libquadmath --disable-libsanitizer --disable-nls --disable-bootstrap --src=.././riscv-gcc --enable-multilib --with-abi=lp64d --with-arch=rv64g --with-tune=rocket 'CFLAGS_FOR_TARGET=-O2   -mcmodel=medlow' 'CXXFLAGS_FOR_TARGET=-O2   -mcmodel=medlow'
+Thread model: posix
+Supported LTO compression algorithms: zlib
+gcc version 11.1.0 (GCC) 
+COLLECT_GCC_OPTIONS='-I' '/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm' '-I' '/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann' '-v' '-O3' '-std=gnu++20' '-MD' '-MT' 'CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.o' '-MF' 'CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.o.d' '-o' 'CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.o' '-c' '-shared-libgcc' '-mtune=rocket' '-march=rv64imafd' '-mabi=lp64d' '-march=rv64imafd' '-dumpdir' 'CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/'
+ /home/sakakibara/my/libexec/gcc/riscv64-unknown-linux-gnu/11.1.0/cc1plus -quiet -v -I /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I /home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann -MD CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.d -MF CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.o.d -MT CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.o -D_GNU_SOURCE /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.cpp -quiet -dumpdir CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/ -dumpbase integrator.cpp.cpp -dumpbase-ext .cpp -mtune=rocket -march=rv64imafd -mabi=lp64d -march=rv64imafd -O3 -std=gnu++20 -version -o /tmp/ccw8tUgm.s
+GNU C++20 (GCC) version 11.1.0 (riscv64-unknown-linux-gnu)
+	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/home/sakakibara/my/sysroot/usr/local/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm
+ /home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann
+ /home/sakakibara/my/lib/gcc/riscv64-unknown-linux-gnu/11.1.0/../../../../riscv64-unknown-linux-gnu/include/c++/11.1.0
+ /home/sakakibara/my/lib/gcc/riscv64-unknown-linux-gnu/11.1.0/../../../../riscv64-unknown-linux-gnu/include/c++/11.1.0/riscv64-unknown-linux-gnu
+ /home/sakakibara/my/lib/gcc/riscv64-unknown-linux-gnu/11.1.0/../../../../riscv64-unknown-linux-gnu/include/c++/11.1.0/backward
+ /home/sakakibara/my/lib/gcc/riscv64-unknown-linux-gnu/11.1.0/include
+ /home/sakakibara/my/lib/gcc/riscv64-unknown-linux-gnu/11.1.0/include-fixed
+ /home/sakakibara/my/lib/gcc/riscv64-unknown-linux-gnu/11.1.0/../../../../riscv64-unknown-linux-gnu/include
+ /home/sakakibara/my/sysroot/usr/include
+End of search list.
+GNU C++20 (GCC) version 11.1.0 (riscv64-unknown-linux-gnu)
+	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: c8599ab0d90c99efcacfd11bdb330656
+In file included from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.hpp:3,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.cpp:1:
+/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann/nlohmann/json.hpp: In static member function 'static CharType nlohmann::detail::binary_writer<BasicJsonType, CharType>::to_char_type(uint8_t)':
+/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann/nlohmann/json.hpp:12484:28: warning: 'template<class _Tp> struct std::is_pod' is deprecated: use is_standard_layout && is_trivial instead [-Wdeprecated-declarations]
+12484 |         static_assert(std::is_pod<CharType>::value, "CharType must be POD");
+      |                            ^~~~~~
+In file included from /home/sakakibara/my/riscv64-unknown-linux-gnu/include/c++/11.1.0/bits/move.h:57,
+                 from /home/sakakibara/my/riscv64-unknown-linux-gnu/include/c++/11.1.0/bits/stl_pair.h:59,
+                 from /home/sakakibara/my/riscv64-unknown-linux-gnu/include/c++/11.1.0/utility:70,
+                 from /home/sakakibara/my/riscv64-unknown-linux-gnu/include/c++/11.1.0/algorithm:60,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann/nlohmann/json.hpp:37,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.hpp:3,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.cpp:1:
+/home/sakakibara/my/riscv64-unknown-linux-gnu/include/c++/11.1.0/type_traits:700:5: note: declared here
+  700 |     is_pod
+      |     ^~~~~~
+In file included from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/../gtx/../detail/type_half.hpp:16,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/../gtx/../detail/func_packing.inl:5,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/../gtx/../packing.hpp:173,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/../gtx/../glm.hpp:132,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/../gtx/quaternion.hpp:17,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/norm.hpp:19,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.cpp:6:
+/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/../gtx/../detail/type_half.inl: In function 'float glm::detail::overflow()':
+/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/../gtx/../detail/type_half.inl:9:27: warning: compound assignment with 'volatile'-qualified left operand is deprecated [-Wvolatile]
+    9 |                         f *= f; // this will overflow before the for loop terminates
+      |                         ~~^~~~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.cpp: In constructor 'Integrator::Integrator(const json&)':
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.cpp:22:31: error: 'std::thread' has not been declared
+   22 |     size_t max_threads = std::thread::hardware_concurrency();
+      |                               ^~~~~~
+make[2]: *** [CMakeFiles/monte-carlo-ray-tracer.dir/build.make:233: CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/integrator.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:86: CMakeFiles/monte-carlo-ray-tracer.dir/all] Error 2
+make: *** [Makefile:94: all] Error 2

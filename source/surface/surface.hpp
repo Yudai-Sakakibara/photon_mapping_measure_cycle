@@ -1,8 +1,8 @@
 #pragma once
 
-#include <glm/vec3.hpp>
-#include <glm/mat4x4.hpp>
-#include <nlohmann/json.hpp>
+#include "../../lib/glm/glm/vec3.hpp"
+#include "../../lib/glm/glm/mat4x4.hpp"
+#include "../../lib/nlohmann/nlohmann/json.hpp"
 
 #include "../ray/ray.hpp"
 #include "../ray/intersection.hpp"

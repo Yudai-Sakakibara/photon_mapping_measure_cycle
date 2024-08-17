@@ -145,6 +145,7 @@ void Camera::sampleImage()
     }
 }
 
+int cnt = 0;
 void Camera::sampleImageThread(WorkQueue<Bucket>& buckets)
 {
     Bucket bucket;
@@ -155,6 +156,10 @@ void Camera::sampleImageThread(WorkQueue<Bucket>& buckets)
             for (size_t x = bucket.min.x; x < bucket.max.x; x++)
             {
                 samplePixel(x, y);
+                cnt++;
+                if(cnt % 1000 == 0 || cnt < 100){
+                    std::cout << cnt << "th pixel" << std::endl;
+                } 
             }
         }
     }

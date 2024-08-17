@@ -2,7 +2,7 @@
 
 #include <algorithm>
 
-#include <glm/gtx/norm.hpp>
+#include "../../lib/glm/glm/gtx/norm.hpp"
 
 #include "../common/constexpr-math.hpp"
 #include "../common/util.hpp"

@@ -5,17 +5,21 @@ project(monte-carlo-ray-tracer)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-set(THREADS_PREFER_PTHREAD_FLAG ON)
-find_package(Threads REQUIRED)
+# set(THREADS_PREFER_PTHREAD_FLAG ON) # modified
+# find_package(Threads REQUIRED) # modified
 
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif()
 
 #set(CMAKE_CXX_COMPILER /home/sakakibara/opt/gcc/riscv64-elf/11.1_approx/bin/riscv64-unknown-elf-g++) # added
-set(CMAKE_CXX_COMPILER /home/sakakibara/opt/gcc/riscv64-linux/11.1_approx/bin/riscv64-unknown-linux-gnu-g++)
+#set(CMAKE_CXX_COMPILER /home/sakakibara/opt/gcc/riscv64-linux/11.1/bin/riscv64-unknown-linux-gnu-g++)
+#set(CMAKE_CXX_COMPILER /home/sakakibara/opt2/gcc/riscv64-linux/11.1/bin/riscv64-unknown-linux-gnu-g++)
+#set(CMAKE_CXX_COMPILER /home/sakakibara/my/bin/riscv64-unknown-linux-gnu-g++)
+set(CMAKE_CXX_COMPILER /home/sakakibara/riscv_compiler3/bin/riscv64-unknown-linux-gnu-run)
 set(CMAKE_CXX_FLAGS "-Wl,-gc-sections") # added
 set(CMAKE_CXX_FLAGS "-v") # added
+set(CMAKE_CXX_FLAGS "-static") # added
 set(CMAKE_VERBOSE_MAKEFILE 1) # added
 
 include(CheckCXXCompilerFlag)
@@ -44,4 +48,4 @@ endforeach()
 
 add_executable(${PROJECT_NAME} ${_source_list})
 
-target_link_libraries(${PROJECT_NAME} Threads::Threads)
+# target_link_libraries(${PROJECT_NAME} Threads::Threads) # modified

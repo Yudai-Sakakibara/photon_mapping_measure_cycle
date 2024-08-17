@@ -1,0 +1,167 @@
+docker run -ti --rm -v /home/sakakibara/monte-carlo-ray-tracer_approx:/work -v /home/sakakibara/monte-carlo-ray-tracer_approx:/project_root -e USER_ID=1000 -e GROUP_ID=1000 shioyadan-sim-env-riscv-compiler:latest riscv64-unknown-elf-g++  -O2 -static -std=c++20 -I/project_root/lib/glm -I/project_root/lib/nlohmann -I/project_root/source source/main.cpp
+(UID:1000,GID:1000): riscv64-unknown-elf-g++ -O2 -static -std=c++20 -I/project_root/lib/glm -I/project_root/lib/nlohmann -I/project_root/source source/main.cpp
+usermod: no changes
+In file included from [01m[Ksource/camera/camera.hpp:10[m[K,
+                 from [01m[Ksource/main.cpp:7[m[K:
+[01m[Ksource/camera/../../lib/nlohmann/nlohmann/json.hpp:[m[K In static member function '[01m[Kstatic CharType nlohmann::detail::binary_writer<BasicJsonType, CharType>::to_char_type(uint8_t)[m[K':
+[01m[Ksource/camera/../../lib/nlohmann/nlohmann/json.hpp:12484:28:[m[K [01;35m[Kwarning: [m[K'[01m[Ktemplate<class _Tp> struct std::is_pod[m[K' is deprecated: use is_standard_layout && is_trivial instead [[01;35m[K-Wdeprecated-declarations[m[K]
+12484 |         static_assert(std::[01;35m[Kis_pod[m[K<CharType>::value, "CharType must be POD");
+      |                            [01;35m[K^~~~~~[m[K
+In file included from [01m[K/usr/local/gcc/riscv64-elf/11.1_approx/riscv64-unknown-elf/include/c++/11.1.0/bits/move.h:57[m[K,
+                 from [01m[K/usr/local/gcc/riscv64-elf/11.1_approx/riscv64-unknown-elf/include/c++/11.1.0/bits/nested_exception.h:40[m[K,
+                 from [01m[K/usr/local/gcc/riscv64-elf/11.1_approx/riscv64-unknown-elf/include/c++/11.1.0/exception:148[m[K,
+                 from [01m[K/usr/local/gcc/riscv64-elf/11.1_approx/riscv64-unknown-elf/include/c++/11.1.0/stdexcept:38[m[K,
+                 from [01m[K/usr/local/gcc/riscv64-elf/11.1_approx/riscv64-unknown-elf/include/c++/11.1.0/system_error:41[m[K,
+                 from [01m[K/usr/local/gcc/riscv64-elf/11.1_approx/riscv64-unknown-elf/include/c++/11.1.0/bits/fs_fwd.h:35[m[K,
+                 from [01m[K/usr/local/gcc/riscv64-elf/11.1_approx/riscv64-unknown-elf/include/c++/11.1.0/filesystem:44[m[K,
+                 from [01m[Ksource/main.cpp:1[m[K:
+[01m[K/usr/local/gcc/riscv64-elf/11.1_approx/riscv64-unknown-elf/include/c++/11.1.0/type_traits:700:5:[m[K [01;36m[Knote: [m[Kdeclared here
+  700 |     [01;36m[Kis_pod[m[K
+      |     [01;36m[K^~~~~~[m[K
+In file included from [01m[Ksource/camera/../../lib/glm/glm/detail/type_half.hpp:16[m[K,
+                 from [01m[Ksource/camera/../../lib/glm/glm/detail/func_packing.inl:5[m[K,
+                 from [01m[Ksource/camera/../../lib/glm/glm/packing.hpp:173[m[K,
+                 from [01m[Ksource/camera/../../lib/glm/glm/glm.hpp:132[m[K,
+                 from [01m[Ksource/camera/film.hpp:7[m[K,
+                 from [01m[Ksource/camera/camera.hpp:13[m[K,
+                 from [01m[Ksource/main.cpp:7[m[K:
+[01m[Ksource/camera/../../lib/glm/glm/detail/type_half.inl:[m[K In function '[01m[Kfloat glm::detail::overflow()[m[K':
+[01m[Ksource/camera/../../lib/glm/glm/detail/type_half.inl:9:27:[m[K [01;35m[Kwarning: [m[Kcompound assignment with '[01m[Kvolatile[m[K'-qualified left operand is deprecated [[01;35m[K-Wvolatile[m[K]
+    9 |                         [01;35m[Kf *= f[m[K; // this will overflow before the for loop terminates
+      |                         [01;35m[K~~^~~~[m[K
+In file included from [01m[Ksource/integrator/photon-mapper/photon-mapper.cpp:21[m[K,
+                 from [01m[Ksource/main.cpp:19[m[K:
+[01m[Ksource/integrator/photon-mapper/../../octree/octree.cpp:[m[K At global scope:
+[01m[Ksource/integrator/photon-mapper/../../octree/octree.cpp:23:1:[m[K [01;31m[Kerror: [m[Kredefinition of '[01m[KOctree<Data>::Octree(const dvec3&, const dvec3&, size_t)[m[K'
+   23 | [01;31m[KOctree<Data>[m[K::Octree(const glm::dvec3& origin, const glm::dvec3& half_size, size_t max_node_data)
+      | [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/main.cpp:17[m[K:
+[01m[Ksource/octree/octree.cpp:23:1:[m[K [01;36m[Knote: [m[K'[01m[KOctree<Data>::Octree(const dvec3&, const dvec3&, size_t)[m[K' previously declared here
+   23 | [01;36m[KOctree<Data>[m[K::Octree(const glm::dvec3& origin, const glm::dvec3& half_size, size_t max_node_data)
+      | [01;36m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/integrator/photon-mapper/photon-mapper.cpp:21[m[K,
+                 from [01m[Ksource/main.cpp:19[m[K:
+[01m[Ksource/integrator/photon-mapper/../../octree/octree.cpp:27:1:[m[K [01;31m[Kerror: [m[Kredefinition of '[01m[KOctree<Data>::Octree(const BoundingBox&, size_t)[m[K'
+   27 | [01;31m[KOctree<Data>[m[K::Octree(const BoundingBox& bb, size_t max_node_data)
+      | [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/main.cpp:17[m[K:
+[01m[Ksource/octree/octree.cpp:27:1:[m[K [01;36m[Knote: [m[K'[01m[KOctree<Data>::Octree(const BoundingBox&, size_t)[m[K' previously declared here
+   27 | [01;36m[KOctree<Data>[m[K::Octree(const BoundingBox& bb, size_t max_node_data)
+      | [01;36m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/integrator/photon-mapper/photon-mapper.cpp:21[m[K,
+                 from [01m[Ksource/main.cpp:19[m[K:
+[01m[Ksource/integrator/photon-mapper/../../octree/octree.cpp:31:1:[m[K [01;31m[Kerror: [m[Kredefinition of '[01m[KOctree<Data>::Octree()[m[K'
+   31 | [01;31m[KOctree<Data>[m[K::Octree()
+      | [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/main.cpp:17[m[K:
+[01m[Ksource/octree/octree.cpp:31:1:[m[K [01;36m[Knote: [m[K'[01m[KOctree<Data>::Octree()[m[K' previously declared here
+   31 | [01;36m[KOctree<Data>[m[K::Octree()
+      | [01;36m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/integrator/photon-mapper/photon-mapper.cpp:21[m[K,
+                 from [01m[Ksource/main.cpp:19[m[K:
+[01m[Ksource/integrator/photon-mapper/../../octree/octree.cpp:35:6:[m[K [01;31m[Kerror: [m[Kredefinition of '[01m[Kvoid Octree<Data>::insert(const Data&)[m[K'
+   35 | void [01;31m[KOctree<Data>[m[K::insert(const Data& data)
+      |      [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/main.cpp:17[m[K:
+[01m[Ksource/octree/octree.cpp:35:6:[m[K [01;36m[Knote: [m[K'[01m[Kvoid Octree<Data>::insert(const Data&)[m[K' previously declared here
+   35 | void [01;36m[KOctree<Data>[m[K::insert(const Data& data)
+      |      [01;36m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/integrator/photon-mapper/photon-mapper.cpp:21[m[K,
+                 from [01m[Ksource/main.cpp:19[m[K:
+[01m[Ksource/integrator/photon-mapper/../../octree/octree.cpp:72:6:[m[K [01;31m[Kerror: [m[Kredefinition of '[01m[Kvoid Octree<Data>::insertInOctant(const Data&)[m[K'
+   72 | void [01;31m[KOctree<Data>[m[K::insertInOctant(const Data& data)
+      |      [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/main.cpp:17[m[K:
+[01m[Ksource/octree/octree.cpp:72:6:[m[K [01;36m[Knote: [m[K'[01m[Kvoid Octree<Data>::insertInOctant(const Data&)[m[K' previously declared here
+   72 | void [01;36m[KOctree<Data>[m[K::insertInOctant(const Data& data)
+      |      [01;36m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/integrator/photon-mapper/photon-mapper.cpp:22[m[K,
+                 from [01m[Ksource/main.cpp:19[m[K:
+[01m[Ksource/integrator/photon-mapper/../../octree/linear-octree.cpp:11:1:[m[K [01;31m[Kerror: [m[Kredefinition of '[01m[KLinearOctree<Data>::LinearOctree(Octree<Data>&)[m[K'
+   11 | [01;31m[KLinearOctree<Data>[m[K::LinearOctree(Octree<Data> &octree_root)
+      | [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/main.cpp:18[m[K:
+[01m[Ksource/octree/linear-octree.cpp:11:1:[m[K [01;36m[Knote: [m[K'[01m[KLinearOctree<Data>::LinearOctree(Octree<Data>&)[m[K' previously declared here
+   11 | [01;36m[KLinearOctree<Data>[m[K::LinearOctree(Octree<Data> &octree_root)
+      | [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/integrator/photon-mapper/photon-mapper.cpp:22[m[K,
+                 from [01m[Ksource/main.cpp:19[m[K:
+[01m[Ksource/integrator/photon-mapper/../../octree/linear-octree.cpp:25:6:[m[K [01;31m[Kerror: [m[Kredefinition of '[01m[Kvoid LinearOctree<Data>::knnSearch(const dvec3&, size_t, PriorityQueue<SearchResult<Data> >&) const[m[K'
+   25 | void [01;31m[KLinearOctree<Data>[m[K::knnSearch(const glm::dvec3& p, size_t k, PriorityQueue<SearchResult<Data>>& result) const
+      |      [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/main.cpp:18[m[K:
+[01m[Ksource/octree/linear-octree.cpp:25:6:[m[K [01;36m[Knote: [m[K'[01m[Kvoid LinearOctree<Data>::knnSearch(const dvec3&, size_t, PriorityQueue<SearchResult<Data> >&) const[m[K' previously declared here
+   25 | void [01;36m[KLinearOctree<Data>[m[K::knnSearch(const glm::dvec3& p, size_t k, PriorityQueue<SearchResult<Data>>& result) const
+      |      [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/integrator/photon-mapper/photon-mapper.cpp:22[m[K,
+                 from [01m[Ksource/main.cpp:19[m[K:
+[01m[Ksource/integrator/photon-mapper/../../octree/linear-octree.cpp:120:33:[m[K [01;31m[Kerror: [m[Kredefinition of '[01m[Kstd::vector<SearchResult<Data> > LinearOctree<Data>::radiusSearch(const dvec3&, double) const[m[K'
+  120 | std::vector<SearchResult<Data>> [01;31m[KLinearOctree<Data>[m[K::radiusSearch(const glm::dvec3& p, double radius) const
+      |                                 [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/main.cpp:18[m[K:
+[01m[Ksource/octree/linear-octree.cpp:120:33:[m[K [01;36m[Knote: [m[K'[01m[Kstd::vector<SearchResult<Data> > LinearOctree<Data>::radiusSearch(const dvec3&, double) const[m[K' previously declared here
+  120 | std::vector<SearchResult<Data>> [01;36m[KLinearOctree<Data>[m[K::radiusSearch(const glm::dvec3& p, double radius) const
+      |                                 [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/integrator/photon-mapper/photon-mapper.cpp:22[m[K,
+                 from [01m[Ksource/main.cpp:19[m[K:
+[01m[Ksource/integrator/photon-mapper/../../octree/linear-octree.cpp:185:6:[m[K [01;31m[Kerror: [m[Kredefinition of '[01m[Kvoid LinearOctree<Data>::octreeSize(const Octree<Data>&, size_t&, size_t&) const[m[K'
+  185 | void [01;31m[KLinearOctree<Data>[m[K::octreeSize(const Octree<Data> &octree_root, size_t &size, size_t &data_size) const
+      |      [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/main.cpp:18[m[K:
+[01m[Ksource/octree/linear-octree.cpp:185:6:[m[K [01;36m[Knote: [m[K'[01m[Kvoid LinearOctree<Data>::octreeSize(const Octree<Data>&, size_t&, size_t&) const[m[K' previously declared here
+  185 | void [01;36m[KLinearOctree<Data>[m[K::octreeSize(const Octree<Data> &octree_root, size_t &size, size_t &data_size) const
+      |      [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/integrator/photon-mapper/photon-mapper.cpp:22[m[K,
+                 from [01m[Ksource/main.cpp:19[m[K:
+[01m[Ksource/integrator/photon-mapper/../../octree/linear-octree.cpp:202:13:[m[K [01;31m[Kerror: [m[Kredefinition of '[01m[KBoundingBox LinearOctree<Data>::compact(Octree<Data>*, uint32_t&, uint64_t&, uint64_t&, bool)[m[K'
+  202 | BoundingBox [01;31m[KLinearOctree<Data>[m[K::compact(Octree<Data>* node, uint32_t& df_idx, uint64_t& data_idx, uint64_t& contained_data, bool last)
+      |             [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/main.cpp:18[m[K:
+[01m[Ksource/octree/linear-octree.cpp:202:13:[m[K [01;36m[Knote: [m[K'[01m[KBoundingBox LinearOctree<Data>::compact(Octree<Data>*, uint32_t&, uint64_t&, uint64_t&, bool)[m[K' previously declared here
+  202 | BoundingBox [01;36m[KLinearOctree<Data>[m[K::compact(Octree<Data>* node, uint32_t& df_idx, uint64_t& data_idx, uint64_t& contained_data, bool last)
+      |             [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/bvh/bvh.cpp:7[m[K,
+                 from [01m[Ksource/main.cpp:36[m[K:
+[01m[Ksource/bvh/../octree/octree.cpp:23:1:[m[K [01;31m[Kerror: [m[Kredefinition of '[01m[KOctree<Data>::Octree(const dvec3&, const dvec3&, size_t)[m[K'
+   23 | [01;31m[KOctree<Data>[m[K::Octree(const glm::dvec3& origin, const glm::dvec3& half_size, size_t max_node_data)
+      | [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/main.cpp:17[m[K:
+[01m[Ksource/octree/octree.cpp:23:1:[m[K [01;36m[Knote: [m[K'[01m[KOctree<Data>::Octree(const dvec3&, const dvec3&, size_t)[m[K' previously declared here
+   23 | [01;36m[KOctree<Data>[m[K::Octree(const glm::dvec3& origin, const glm::dvec3& half_size, size_t max_node_data)
+      | [01;36m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/bvh/bvh.cpp:7[m[K,
+                 from [01m[Ksource/main.cpp:36[m[K:
+[01m[Ksource/bvh/../octree/octree.cpp:27:1:[m[K [01;31m[Kerror: [m[Kredefinition of '[01m[KOctree<Data>::Octree(const BoundingBox&, size_t)[m[K'
+   27 | [01;31m[KOctree<Data>[m[K::Octree(const BoundingBox& bb, size_t max_node_data)
+      | [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/main.cpp:17[m[K:
+[01m[Ksource/octree/octree.cpp:27:1:[m[K [01;36m[Knote: [m[K'[01m[KOctree<Data>::Octree(const BoundingBox&, size_t)[m[K' previously declared here
+   27 | [01;36m[KOctree<Data>[m[K::Octree(const BoundingBox& bb, size_t max_node_data)
+      | [01;36m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/bvh/bvh.cpp:7[m[K,
+                 from [01m[Ksource/main.cpp:36[m[K:
+[01m[Ksource/bvh/../octree/octree.cpp:31:1:[m[K [01;31m[Kerror: [m[Kredefinition of '[01m[KOctree<Data>::Octree()[m[K'
+   31 | [01;31m[KOctree<Data>[m[K::Octree()
+      | [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/main.cpp:17[m[K:
+[01m[Ksource/octree/octree.cpp:31:1:[m[K [01;36m[Knote: [m[K'[01m[KOctree<Data>::Octree()[m[K' previously declared here
+   31 | [01;36m[KOctree<Data>[m[K::Octree()
+      | [01;36m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/bvh/bvh.cpp:7[m[K,
+                 from [01m[Ksource/main.cpp:36[m[K:
+[01m[Ksource/bvh/../octree/octree.cpp:35:6:[m[K [01;31m[Kerror: [m[Kredefinition of '[01m[Kvoid Octree<Data>::insert(const Data&)[m[K'
+   35 | void [01;31m[KOctree<Data>[m[K::insert(const Data& data)
+      |      [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/main.cpp:17[m[K:
+[01m[Ksource/octree/octree.cpp:35:6:[m[K [01;36m[Knote: [m[K'[01m[Kvoid Octree<Data>::insert(const Data&)[m[K' previously declared here
+   35 | void [01;36m[KOctree<Data>[m[K::insert(const Data& data)
+      |      [01;36m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/bvh/bvh.cpp:7[m[K,
+                 from [01m[Ksource/main.cpp:36[m[K:
+[01m[Ksource/bvh/../octree/octree.cpp:72:6:[m[K [01;31m[Kerror: [m[Kredefinition of '[01m[Kvoid Octree<Data>::insertInOctant(const Data&)[m[K'
+   72 | void [01;31m[KOctree<Data>[m[K::insertInOctant(const Data& data)
+      |      [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[Ksource/main.cpp:17[m[K:
+[01m[Ksource/octree/octree.cpp:72:6:[m[K [01;36m[Knote: [m[K'[01m[Kvoid Octree<Data>::insertInOctant(const Data&)[m[K' previously declared here
+   72 | void [01;36m[KOctree<Data>[m[K::insertInOctant(const Data& data)
+      |      [01;36m[K^~~~~~~~~~~~[m[K

@@ -1,5 +1,6 @@
 #include <filesystem>
 #include <iostream>
+#include <stdio.h>
 #include <fstream>
 //#include <unistd.h> // added
 
@@ -8,9 +9,42 @@
 #include "common/option.hpp"
 #include "common/util.hpp"
 
+#include "ray/interaction.cpp"
+#include "ray/ray.cpp"
+#include "surface/quadric.cpp"
+#include "surface/sphere.cpp"
+#include "surface/triangle.cpp"
+#include "integrator/photon-mapper/photon-mapper.cpp"
+#include "integrator/path-tracer/path-tracer.cpp"
+#include "integrator/integrator.cpp"
+#include "material/material.cpp"
+#include "material/fresnel.cpp"
+#include "material/ggx.cpp"
+#include "scene/scene.cpp"
+#include "common/util.cpp"
+#include "common/coordinate-system.cpp"
+#include "common/bounding-box.cpp"
+#include "common/format.cpp"
+#include "common/option.cpp"
+#include "common/histogram.cpp"
+#include "camera/film.cpp"
+#include "camera/camera.cpp"
+#include "camera/pixel-operators.cpp"
+#include "camera/image.cpp"
+#include "bvh/bvh.cpp"
+
+int fib(int n)
+{
+    if (n == 1 || n == 2) {
+        return 1;
+    } else {
+        return fib(n-1) + fib(n-2);
+    }
+}
+
 int main(int argc, char* argv[])
 {
-    if (argc > 1)
+    /** if (argc > 1)
     {
         std::string command_path;
         for (int i = 1; i < argc; i++)
@@ -36,9 +70,14 @@ int main(int argc, char* argv[])
     {
         std::cout << "No scenes found." << std::endl;
         return -1;
-    }
+    } 
 
-    Option scene_option = getOption(options);
+    Option scene_option = getOption(options); **/
+    struct Option scene_option("/home/sakakibara/m-c-r-t/scenes/hexagon_room.json", "Eye: (-2 0 0), Focal length: 23mm (35mm)", 0, true);
+    /** scene_option.path = "./scenes/hexagon_room.json";
+    scene_option.camera = "Eye: (-2 0 0), Focal length: 23mm (35mm)";
+    scene_option.camera_idx = 0;
+    scene_option.photon_map = true; **/
 
     std::ifstream scene_file(scene_option.path);
     nlohmann::json j;
@@ -56,19 +95,32 @@ int main(int argc, char* argv[])
         return -1;
     }
 
-    /** asm volatile ("li a7, 0x10001\n\t" 
+    asm volatile ("li a7, 0x10001\n\t" 
         "ecall" 
         :
         :
-        : "a7"); **/
+        : "a7");
 
     camera->capture();
 
-    /** asm volatile ("li a7, 0x10001\n\t" 
+    asm volatile("ap.begincyclecount");
+    for (int i = 0; i < 10; ++i) {
+        asm goto (
+            "ap.bltcycle %l[ENDING]" 
+            :
+            :
+            :
+            : ENDING);
+        printf("%d\n", fib(i));
+    }
+ENDING:
+    printf("finished.\n");
+
+    asm volatile ("li a7, 0x10001\n\t" 
         "ecall" 
         :
         :
-        : "a7"); **/
+        : "a7");
 
     return 0;
 }

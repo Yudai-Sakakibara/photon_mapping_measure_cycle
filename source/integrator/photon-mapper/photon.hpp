@@ -1,6 +1,6 @@
 #pragma once
 
-#include <glm/glm.hpp>
+#include "../../../lib/glm/glm/glm.hpp"
 
 struct alignas(32) Photon
 {

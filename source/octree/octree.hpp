@@ -4,7 +4,7 @@
 #include <memory>
 #include <queue>
 
-#include <glm/vec3.hpp>
+#include "../../lib/glm/glm/vec3.hpp"
 
 #include "../common/bounding-box.hpp"
 #include "../common/constexpr-math.hpp"

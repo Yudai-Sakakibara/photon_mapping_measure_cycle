@@ -1,8 +1,8 @@
 #pragma once
 
-#include <glm/vec2.hpp>
-#include <glm/vec3.hpp>
-#include <nlohmann/json.hpp>
+#include "../../lib/glm/glm/vec2.hpp"
+#include "../../lib/glm/glm/vec3.hpp"
+#include "../../lib/nlohmann/nlohmann/json.hpp"
 
 struct ComplexIOR;
 

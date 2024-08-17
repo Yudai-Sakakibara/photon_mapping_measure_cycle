@@ -4,11 +4,13 @@
 #include <chrono>
 #include <iostream>
 
-#include "../octree/octree.cpp"
 #include "../common/format.hpp"
 #include "../surface/surface.hpp"
 #include "../common/util.hpp"
 #include "../common/priority-queue.hpp"
+
+//#include "../octree/octree.cpp"
+//#include "../octree/linear-octree.cpp"
 
 BVH::BVH(const BoundingBox &BB, 
          const std::vector<std::shared_ptr<Surface::Base>> &surfaces, 

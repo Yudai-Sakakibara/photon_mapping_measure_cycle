@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include <glm/vec2.hpp>
+#include "../../lib/glm/glm/vec2.hpp"
 
 namespace Surface { class Base; }
 

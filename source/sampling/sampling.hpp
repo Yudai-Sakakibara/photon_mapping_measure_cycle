@@ -3,8 +3,8 @@
 #include <random>
 #include <vector>
 
-#include <glm/vec3.hpp>
-#include <glm/vec2.hpp>
+#include "../../lib/glm/glm/vec3.hpp"
+#include "../../lib/glm/glm/vec2.hpp"
 
 #include "../common/constants.hpp"
 

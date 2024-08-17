@@ -1,7 +1,7 @@
 #include "octree.hpp"
 
-#include <glm/glm.hpp>
-#include <glm/gtx/norm.hpp>
+#include "../../lib/glm/glm/glm.hpp"
+#include "../../lib/glm/glm/gtx/norm.hpp"
 
 #include "../common/constexpr-math.hpp"
 #include "../common/constants.hpp"

@@ -1,6 +1,6 @@
 #include "surface.hpp"
 
-#include <glm/gtx/transform.hpp>
+#include "../../lib/glm/glm/gtx/transform.hpp"
 
 #include "../common/constants.hpp"
 

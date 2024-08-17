@@ -1,6 +1,6 @@
 #pragma once
 
-#include <nlohmann/json.hpp>
+#include "../../lib/nlohmann/nlohmann/json.hpp"
 
 #include "../scene/scene.hpp"
 

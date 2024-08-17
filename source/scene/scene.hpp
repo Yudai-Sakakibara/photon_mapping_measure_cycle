@@ -4,7 +4,7 @@
 #include <memory>
 #include <filesystem>
 
-#include <nlohmann/json.hpp>
+#include "../../lib/nlohmann/nlohmann/json.hpp"
 
 #include "../ray/ray.hpp"
 #include "../ray/intersection.hpp"

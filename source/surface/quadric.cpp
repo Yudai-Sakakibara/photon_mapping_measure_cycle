@@ -1,6 +1,6 @@
 #include "surface.hpp"
 
-#include <glm/gtc/type_ptr.hpp>
+#include "../../lib/glm/glm/gtc/type_ptr.hpp"
 
 #include "../common/util.hpp"
 #include "../common/constexpr-math.hpp"

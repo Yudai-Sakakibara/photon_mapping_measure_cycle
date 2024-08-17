@@ -4,10 +4,10 @@
 #include <deque>
 #include <atomic>
 
-#include <glm/vec3.hpp>
-#include <glm/vec2.hpp>
+#include "../../lib/glm/glm/vec3.hpp"
+#include "../../lib/glm/glm/vec2.hpp"
 
-#include <nlohmann/json.hpp>
+#include "../../lib/nlohmann/nlohmann/json.hpp"
 
 #include "image.hpp"
 #include "film.hpp"

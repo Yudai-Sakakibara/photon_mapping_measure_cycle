@@ -1,7 +1,7 @@
 #pragma once
 
-#include <glm/vec3.hpp>
-#include <glm/mat3x3.hpp>
+#include "../../lib/glm/glm/vec3.hpp"
+#include "../../lib/glm/glm/mat3x3.hpp"
 
 struct CoordinateSystem
 {
