@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <iomanip>
-#include <thread>
+//#include <thread> // modified
 #include <atomic>
 
 #include <glm/gtx/component_wise.hpp>
@@ -80,17 +80,18 @@ PhotonMapper::PhotonMapper(const nlohmann::json& j) : Integrator(j)
     std::shuffle(work_vec.begin(), work_vec.end(), Random::engine);
     WorkQueue<EmissionWork> work_queue(work_vec);
 
-    std::vector<std::unique_ptr<std::thread>> threads(Integrator::num_threads);
+    //std::vector<std::unique_ptr<std::thread>> threads(Integrator::num_threads); // deleted
+    std::vector<int> threads(1); // added
 
     caustic_vecs.resize(threads.size());
     global_vecs.resize(threads.size());
 
     for (size_t thread = 0; thread < threads.size(); thread++)
     {
-        threads[thread] = std::make_unique<std::thread>
+        /** threads[thread] = std::make_unique<std::thread>
         (
             [this, &work_queue, thread]()
-            {
+            { **/
                 EmissionWork work;
                 while (work_queue.getWork(work))
                 {
@@ -98,6 +99,7 @@ PhotonMapper::PhotonMapper(const nlohmann::json& j) : Integrator(j)
                     Sampler::initiate(static_cast<uint32_t>(work.light_index));
                     for (size_t i = 0; i < work.num_emissions; i++)
                     {
+                        
                         Sampler::setIndex(static_cast<uint32_t>(work.emissions_offset + i));
 
                         auto u = Sampler::get<Dim::PM_LIGHT, 4>();
@@ -110,58 +112,60 @@ PhotonMapper::PhotonMapper(const nlohmann::json& j) : Integrator(j)
                         emitPhoton(Ray(pos, dir, scene.ior), work.photon_flux, thread);
                     }
                 }
-            }
-        );
+            /** }
+        ); **/
     }
 
     auto begin = std::chrono::high_resolution_clock::now();
-    std::unique_ptr<std::thread> print_thread;
+    // std::unique_ptr<std::thread> print_thread; // modified
     if constexpr(print)
     {
         std::cout << std::endl << std::string(28, '-') << "| PHOTON MAPPING PASS |" << std::string(28, '-') 
                   << std::endl << std::endl << "Total number of photon emissions from light sources: " 
                   << Format::largeNumber(photon_emissions) << std::endl << std::endl;
 
-        print_thread = std::make_unique<std::thread>([&work_queue]()
-        {
+        /** print_thread = std::make_unique<std::thread>([&work_queue]()
+        { **/
             while (!work_queue.empty())
             {
+
                 double progress = work_queue.progress();
                 std::cout << std::string("\rPhotons emitted: " + Format::progress(progress));
-                std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+                //std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // modified
             }
-        });
-        print_thread->join();
+        // });
+        // print_thread->join(); // modified
     }
 
-    for (auto& thread : threads)
+    /** for (auto& thread : threads)
     {
         thread->join();
-    }
+    } **/
 
     std::atomic<bool> done_constructing_octrees = false;
     auto end = std::chrono::high_resolution_clock::now();
     std::string duration = Format::timeDuration(std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count());
-    if constexpr(print)
+    /**if constexpr(print)
     {
         std::string info = "\rPhotons emitted in " + duration + ". Constructing octrees";
         std::cout << info;
         begin = std::chrono::high_resolution_clock::now();
-            
+
         print_thread = std::make_unique<std::thread>([&done_constructing_octrees, info]()
         {
             std::string dots("");
             int i = 0;
             while (!done_constructing_octrees)
             {
+
                 std::cout << "\r" + std::string(60, ' ') + info + dots;
                 dots += ".";
                 if (i != 0 && i % 3 == 0) dots = ".";
                 i++;
-                std::this_thread::sleep_for(std::chrono::milliseconds(800));
+                //std::this_thread::sleep_for(std::chrono::milliseconds(800)); // modified
             }
         });
-    }
+    }**/
 
     size_t num_global_photons = 0;
     size_t num_caustic_photons = 0;
@@ -195,6 +199,7 @@ PhotonMapper::PhotonMapper(const nlohmann::json& j) : Integrator(j)
 
     for (size_t thread = 0; thread < threads.size(); thread++)
     {
+
         num_global_photons += global_vecs[thread].size();
         insertAndPop(global_vecs[thread], global_map_t);
 
@@ -210,7 +215,7 @@ PhotonMapper::PhotonMapper(const nlohmann::json& j) : Integrator(j)
 
     if constexpr(print)
     {
-        print_thread->join();
+        // print_thread->join(); // modified
         end = std::chrono::high_resolution_clock::now();
         std::string duration2 = Format::timeDuration(std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count());
         std::cout << "\rPhotons emitted in " + duration + ". Octrees constructed in " + duration2 + "." << std::endl << std::endl

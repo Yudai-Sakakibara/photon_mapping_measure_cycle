@@ -1,6 +1,6 @@
 #include "camera.hpp"
 
-#include <thread>
+//#include <thread> // modified
 #include <algorithm>
 #include <functional>
 #include <iostream>
@@ -117,23 +117,24 @@ void Camera::sampleImage()
     WorkQueue<Bucket> buckets(buckets_vec);
     buckets_vec.clear();
 
-    std::function<void(Camera*, WorkQueue<Bucket>&)> f = &Camera::sampleImageThread;
+    /** std::function<void(Camera*, WorkQueue<Bucket>&)> f = &Camera::sampleImageThread;
 
     std::vector<std::unique_ptr<std::thread>> threads(integrator->num_threads);
     for (auto& thread : threads)
     {
         thread = std::make_unique<std::thread>(f, this, std::ref(buckets));
-    }
+    } **/
+    Camera::sampleImageThread(std::ref(buckets));
 
     std::function<void(Camera*, WorkQueue<Bucket>&)> p = &Camera::printInfoThread;
-    std::thread print_thread(p, this, std::ref(buckets));
+    //std::thread print_thread(p, this, std::ref(buckets)); // modified
 
-    print_thread.join();
+    //print_thread.join(); // modified
 
-    for (auto& thread : threads)
+    /** for (auto& thread : threads)
     {
         thread->join();
-    }
+    } **/
 
     for (int y = 0; y < image.height; y++)
     {
@@ -144,6 +145,7 @@ void Camera::sampleImage()
     }
 }
 
+int cnt = 0; // added
 void Camera::sampleImageThread(WorkQueue<Bucket>& buckets)
 {
     Bucket bucket;
@@ -154,6 +156,10 @@ void Camera::sampleImageThread(WorkQueue<Bucket>& buckets)
             for (size_t x = bucket.min.x; x < bucket.max.x; x++)
             {
                 samplePixel(x, y);
+                cnt++;
+                if(cnt % 100 == 0 || cnt < 100){
+                    std::cout << cnt << " pixels finished." << std::endl;
+                } // added
             }
         }
     }
@@ -221,6 +227,6 @@ void Camera::printInfoThread(WorkQueue<Bucket>& buckets)
             last_update = now;
             last_num_sampled_pixels = num_sampled_pixels;
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        //std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // modified
     }
 }
