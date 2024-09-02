@@ -436,13 +436,6 @@ CMakeFiles/monte-carlo-ray-tracer.dir/source/camera/camera.cpp.o: \
  /usr/include/c++/11/queue /usr/include/c++/11/bits/stl_queue.h \
  /usr/include/c++/11/mutex /usr/include/c++/11/bits/unique_lock.h \
  /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/../common/option.hpp \
- /usr/include/c++/11/thread /usr/include/c++/11/stop_token \
- /usr/include/c++/11/bits/std_thread.h /usr/include/c++/11/semaphore \
- /usr/include/c++/11/bits/semaphore_base.h \
- /usr/include/c++/11/bits/atomic_timed_wait.h \
- /usr/include/c++/11/bits/this_thread_sleep.h \
- /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/semaphore.h \
- /usr/include/x86_64-linux-gnu/bits/semaphore.h \
  /usr/include/c++/11/iostream \
  /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/../integrator/path-tracer/path-tracer.hpp \
  /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/../integrator/path-tracer/../integrator.hpp \

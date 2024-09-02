@@ -438,14 +438,7 @@ CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-map
  /usr/include/c++/11/bits/stl_queue.h \
  /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/../../octree/../common/constexpr-math.hpp \
  /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/../../octree/../common/priority-queue.hpp \
- /usr/include/c++/11/iostream /usr/include/c++/11/thread \
- /usr/include/c++/11/stop_token /usr/include/c++/11/atomic \
- /usr/include/c++/11/bits/std_thread.h /usr/include/c++/11/semaphore \
- /usr/include/c++/11/bits/semaphore_base.h \
- /usr/include/c++/11/bits/atomic_timed_wait.h \
- /usr/include/c++/11/bits/this_thread_sleep.h \
- /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/semaphore.h \
- /usr/include/x86_64-linux-gnu/bits/semaphore.h \
+ /usr/include/c++/11/iostream /usr/include/c++/11/atomic \
  /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/component_wise.hpp \
  /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/../detail/setup.hpp \
  /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/component_wise.inl \

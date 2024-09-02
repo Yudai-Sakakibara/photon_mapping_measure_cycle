@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm -I/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann
 
-CXX_FLAGS = -O3 -std=gnu++20
+CXX_FLAGS = -static -O3 -std=gnu++20
 
