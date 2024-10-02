@@ -55,19 +55,19 @@ int main(int argc, char* argv[])
         return -1;
     }
 
-    asm volatile ("li a7, 0x10001\n\t" 
+    /** asm volatile ("li a7, 0x10001\n\t" 
         "ecall" 
         :
         :
-        : "a7");
+        : "a7"); **/
 
     camera->capture();
 
-    asm volatile ("li a7, 0x10001\n\t" 
+    /** asm volatile ("li a7, 0x10001\n\t" 
         "ecall" 
         :
         :
-        : "a7");
+        : "a7"); **/ 
 
     return 0;
 }

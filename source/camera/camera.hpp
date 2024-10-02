@@ -38,7 +38,7 @@ public:
 
     void lookAt(const glm::dvec3& p);
 
-    size_t sqrtspp;
+    size_t spp; // modified
 
     glm::dvec3 eye;
     glm::dvec3 forward, left, up;
