@@ -1,0 +1,7 @@
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp: In function ‘void print_tree(node*)’:
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:134:9: error: ‘print_node_status’ was not declared in this scope
+  134 |         print_node_status(node);
+      |         ^~~~~~~~~~~~~~~~~
+make[2]: *** [CMakeFiles/monte-carlo-ray-tracer.dir/build.make:272: CMakeFiles/monte-carlo-ray-tracer.dir/source/kdtree/random_recoder.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/monte-carlo-ray-tracer.dir/all] Error 2
+make: *** [Makefile:91: all] Error 2

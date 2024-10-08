@@ -465,6 +465,30 @@ source/integrator/photon-mapper/photon-mapper.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/monte-carlo-ray-tracer.dir/build.make CMakeFiles/monte-carlo-ray-tracer.dir/source/integrator/photon-mapper/photon-mapper.cpp.s
 .PHONY : source/integrator/photon-mapper/photon-mapper.cpp.s
 
+source/kdtree/random_recoder.o: source/kdtree/random_recoder.cpp.o
+.PHONY : source/kdtree/random_recoder.o
+
+# target to build an object file
+source/kdtree/random_recoder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/monte-carlo-ray-tracer.dir/build.make CMakeFiles/monte-carlo-ray-tracer.dir/source/kdtree/random_recoder.cpp.o
+.PHONY : source/kdtree/random_recoder.cpp.o
+
+source/kdtree/random_recoder.i: source/kdtree/random_recoder.cpp.i
+.PHONY : source/kdtree/random_recoder.i
+
+# target to preprocess a source file
+source/kdtree/random_recoder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/monte-carlo-ray-tracer.dir/build.make CMakeFiles/monte-carlo-ray-tracer.dir/source/kdtree/random_recoder.cpp.i
+.PHONY : source/kdtree/random_recoder.cpp.i
+
+source/kdtree/random_recoder.s: source/kdtree/random_recoder.cpp.s
+.PHONY : source/kdtree/random_recoder.s
+
+# target to generate assembly for a file
+source/kdtree/random_recoder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/monte-carlo-ray-tracer.dir/build.make CMakeFiles/monte-carlo-ray-tracer.dir/source/kdtree/random_recoder.cpp.s
+.PHONY : source/kdtree/random_recoder.cpp.s
+
 source/main.o: source/main.cpp.o
 .PHONY : source/main.o
 
@@ -804,6 +828,9 @@ help:
 	@echo "... source/integrator/photon-mapper/photon-mapper.o"
 	@echo "... source/integrator/photon-mapper/photon-mapper.i"
 	@echo "... source/integrator/photon-mapper/photon-mapper.s"
+	@echo "... source/kdtree/random_recoder.o"
+	@echo "... source/kdtree/random_recoder.i"
+	@echo "... source/kdtree/random_recoder.s"
 	@echo "... source/main.o"
 	@echo "... source/main.i"
 	@echo "... source/main.s"

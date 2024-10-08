@@ -7,6 +7,8 @@
 #include "common/option.hpp"
 #include "common/util.hpp"
 
+#include "kdtree/random_recoder.hpp" // added
+
 int main(int argc, char* argv[])
 {
     if (argc > 1)
@@ -67,7 +69,10 @@ int main(int argc, char* argv[])
         "ecall" 
         :
         :
-        : "a7"); **/ 
+        : "a7"); **/
+    
+    struct node* root = init_kdtree(samples); // added
+    print_tree(root); // added
 
     return 0;
 }

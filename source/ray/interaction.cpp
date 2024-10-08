@@ -9,6 +9,8 @@
 #include "../surface/surface.hpp"
 #include "../common/constexpr-math.hpp"
 
+#include "../kdtree/random_recoder.hpp" // added
+
 Interaction::Interaction(const Intersection &isect, const Ray &ray, double external_ior) :
     t(isect.t), ray(ray), out(-ray.direction), n1(ray.medium_ior),
     material(isect.surface->material), surface(isect.surface),
@@ -166,6 +168,8 @@ void Interaction::selectType()
     else
     {
         double p = Sampler::get<Dim::INTERACTION>()[0];
+        random_recoder.push_back(p); // added
+        random_kind += "C"; // added
 
         if (R > p)
         {

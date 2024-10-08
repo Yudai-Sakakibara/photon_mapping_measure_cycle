@@ -1,0 +1,137 @@
+In file included from /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.hpp:10,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.cpp:1:
+/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann/nlohmann/json.hpp: In static member function ‘static CharType nlohmann::detail::binary_writer<BasicJsonType, CharType>::to_char_type(uint8_t)’:
+/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann/nlohmann/json.hpp:12484:28: warning: ‘template<class _Tp> struct std::is_pod’ is deprecated: use is_standard_layout && is_trivial instead [-Wdeprecated-declarations]
+12484 |         static_assert(std::is_pod<CharType>::value, "CharType must be POD");
+      |                            ^~~~~~
+In file included from /usr/include/c++/11/ratio:39,
+                 from /usr/include/c++/11/chrono:39,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.hpp:3,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.cpp:1:
+/usr/include/c++/11/type_traits:733:5: note: declared here
+  733 |     is_pod
+      |     ^~~~~~
+In file included from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/detail/type_half.hpp:16,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/detail/func_packing.inl:5,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/packing.hpp:173,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/glm.hpp:132,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/film.hpp:7,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.hpp:13,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/camera/camera.cpp:1:
+/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/detail/type_half.inl: In function ‘float glm::detail::overflow()’:
+/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/detail/type_half.inl:9:27: warning: compound assignment with ‘volatile’-qualified left operand is deprecated [-Wvolatile]
+    9 |                         f *= f; // this will overflow before the for loop terminates
+      |                         ~~^~~~
+In file included from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.hpp:3,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.cpp:1:
+/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann/nlohmann/json.hpp: In static member function ‘static CharType nlohmann::detail::binary_writer<BasicJsonType, CharType>::to_char_type(uint8_t)’:
+/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann/nlohmann/json.hpp:12484:28: warning: ‘template<class _Tp> struct std::is_pod’ is deprecated: use is_standard_layout && is_trivial instead [-Wdeprecated-declarations]
+12484 |         static_assert(std::is_pod<CharType>::value, "CharType must be POD");
+      |                            ^~~~~~
+In file included from /usr/include/c++/11/bits/move.h:57,
+                 from /usr/include/c++/11/bits/stl_pair.h:59,
+                 from /usr/include/c++/11/utility:70,
+                 from /usr/include/c++/11/algorithm:60,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann/nlohmann/json.hpp:37,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.hpp:3,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.cpp:1:
+/usr/include/c++/11/type_traits:733:5: note: declared here
+  733 |     is_pod
+      |     ^~~~~~
+In file included from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/../gtx/../detail/type_half.hpp:16,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/../gtx/../detail/func_packing.inl:5,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/../gtx/../packing.hpp:173,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/../gtx/../glm.hpp:132,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/../gtx/quaternion.hpp:17,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/norm.hpp:19,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/integrator.cpp:6:
+/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/../gtx/../detail/type_half.inl: In function ‘float glm::detail::overflow()’:
+/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/../gtx/../detail/type_half.inl:9:27: warning: compound assignment with ‘volatile’-qualified left operand is deprecated [-Wvolatile]
+    9 |                         f *= f; // this will overflow before the for loop terminates
+      |                         ~~^~~~
+In file included from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/path-tracer/path-tracer.hpp:3,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/path-tracer/path-tracer.cpp:1:
+/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann/nlohmann/json.hpp: In static member function ‘static CharType nlohmann::detail::binary_writer<BasicJsonType, CharType>::to_char_type(uint8_t)’:
+/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann/nlohmann/json.hpp:12484:28: warning: ‘template<class _Tp> struct std::is_pod’ is deprecated: use is_standard_layout && is_trivial instead [-Wdeprecated-declarations]
+12484 |         static_assert(std::is_pod<CharType>::value, "CharType must be POD");
+      |                            ^~~~~~
+In file included from /usr/include/c++/11/bits/move.h:57,
+                 from /usr/include/c++/11/bits/stl_pair.h:59,
+                 from /usr/include/c++/11/utility:70,
+                 from /usr/include/c++/11/algorithm:60,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann/nlohmann/json.hpp:37,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/path-tracer/path-tracer.hpp:3,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/path-tracer/path-tracer.cpp:1:
+/usr/include/c++/11/type_traits:733:5: note: declared here
+  733 |     is_pod
+      |     ^~~~~~
+In file included from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/photon-mapper.hpp:6,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/photon-mapper.cpp:1:
+/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann/nlohmann/json.hpp: In static member function ‘static CharType nlohmann::detail::binary_writer<BasicJsonType, CharType>::to_char_type(uint8_t)’:
+/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann/nlohmann/json.hpp:12484:28: warning: ‘template<class _Tp> struct std::is_pod’ is deprecated: use is_standard_layout && is_trivial instead [-Wdeprecated-declarations]
+12484 |         static_assert(std::is_pod<CharType>::value, "CharType must be POD");
+      |                            ^~~~~~
+In file included from /usr/include/c++/11/bits/move.h:57,
+                 from /usr/include/c++/11/bits/stl_pair.h:59,
+                 from /usr/include/c++/11/bits/stl_algobase.h:64,
+                 from /usr/include/c++/11/vector:60,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/photon-mapper.hpp:3,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/photon-mapper.cpp:1:
+/usr/include/c++/11/type_traits:733:5: note: declared here
+  733 |     is_pod
+      |     ^~~~~~
+In file included from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/detail/type_half.hpp:16,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/detail/func_packing.inl:5,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/packing.hpp:173,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/glm.hpp:132,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/photon.hpp:3,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/photon-mapper.hpp:8,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/integrator/photon-mapper/photon-mapper.cpp:1:
+/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/detail/type_half.inl: In function ‘float glm::detail::overflow()’:
+/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/detail/type_half.inl:9:27: warning: compound assignment with ‘volatile’-qualified left operand is deprecated [-Wvolatile]
+    9 |                         f *= f; // this will overflow before the for loop terminates
+      |                         ~~^~~~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp: In function ‘void print_tree(node*)’:
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:128:10: error: ‘queue’ is not a member of ‘std’
+  128 |     std::queue<struct kdtree*> que;
+      |          ^~~~~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:4:1: note: ‘std::queue’ is defined in header ‘<queue>’; did you forget to ‘#include <queue>’?
+    3 | #include "random_recoder.hpp"
+  +++ |+#include <queue>
+    4 | 
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:128:16: error: expected primary-expression before ‘struct’
+  128 |     std::queue<struct kdtree*> que;
+      |                ^~~~~~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:129:5: error: ‘que’ was not declared in this scope
+  129 |     que.push(root);
+      |     ^~~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:133:9: error: ‘print_node_status’ was not declared in this scope
+  133 |         print_node_status(node);
+      |         ^~~~~~~~~~~~~~~~~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:134:16: error: invalid use of incomplete type ‘struct print_tree(node*)::kdtree’
+  134 |         if(node->leftChild != NULL) que.push(node->leftChild);
+      |                ^~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:131:16: note: forward declaration of ‘struct print_tree(node*)::kdtree’
+  131 |         struct kdtree* node = que.front();
+      |                ^~~~~~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:134:50: error: invalid use of incomplete type ‘struct print_tree(node*)::kdtree’
+  134 |         if(node->leftChild != NULL) que.push(node->leftChild);
+      |                                                  ^~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:131:16: note: forward declaration of ‘struct print_tree(node*)::kdtree’
+  131 |         struct kdtree* node = que.front();
+      |                ^~~~~~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:135:16: error: invalid use of incomplete type ‘struct print_tree(node*)::kdtree’
+  135 |         if(node->rightChild != NULL) que.push(node->rightChild);
+      |                ^~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:131:16: note: forward declaration of ‘struct print_tree(node*)::kdtree’
+  131 |         struct kdtree* node = que.front();
+      |                ^~~~~~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:135:51: error: invalid use of incomplete type ‘struct print_tree(node*)::kdtree’
+  135 |         if(node->rightChild != NULL) que.push(node->rightChild);
+      |                                                   ^~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:131:16: note: forward declaration of ‘struct print_tree(node*)::kdtree’
+  131 |         struct kdtree* node = que.front();
+      |                ^~~~~~
+make[2]: *** [CMakeFiles/monte-carlo-ray-tracer.dir/build.make:272: CMakeFiles/monte-carlo-ray-tracer.dir/source/kdtree/random_recoder.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/monte-carlo-ray-tracer.dir/all] Error 2
+make: *** [Makefile:91: all] Error 2

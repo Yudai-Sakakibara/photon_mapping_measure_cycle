@@ -1,0 +1,48 @@
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp: In function ‘void print_tree(node*)’:
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:130:13: error: no matching function for call to ‘std::queue<print_tree(node*)::kdtree*>::push(node*&)’
+  130 |     que.push(root);
+      |     ~~~~~~~~^~~~~~
+In file included from /usr/include/c++/11/queue:64,
+                 from /home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:3:
+/usr/include/c++/11/bits/stl_queue.h:265:7: note: candidate: ‘void std::queue<_Tp, _Sequence>::push(const value_type&) [with _Tp = print_tree(node*)::kdtree*; _Sequence = std::deque<print_tree(node*)::kdtree*, std::allocator<print_tree(node*)::kdtree*> >; std::queue<_Tp, _Sequence>::value_type = print_tree(node*)::kdtree*]’
+  265 |       push(const value_type& __x)
+      |       ^~~~
+/usr/include/c++/11/bits/stl_queue.h:265:30: note:   no known conversion for argument 1 from ‘node*’ to ‘print_tree(node*)::kdtree* const&’
+  265 |       push(const value_type& __x)
+      |            ~~~~~~~~~~~~~~~~~~^~~
+/usr/include/c++/11/bits/stl_queue.h:270:7: note: candidate: ‘void std::queue<_Tp, _Sequence>::push(std::queue<_Tp, _Sequence>::value_type&&) [with _Tp = print_tree(node*)::kdtree*; _Sequence = std::deque<print_tree(node*)::kdtree*, std::allocator<print_tree(node*)::kdtree*> >; std::queue<_Tp, _Sequence>::value_type = print_tree(node*)::kdtree*]’
+  270 |       push(value_type&& __x)
+      |       ^~~~
+/usr/include/c++/11/bits/stl_queue.h:270:25: note:   no known conversion for argument 1 from ‘node*’ to ‘print_tree(node*)::kdtree*&&’
+  270 |       push(value_type&& __x)
+      |            ~~~~~~~~~~~~~^~~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:134:9: error: ‘print_node_status’ was not declared in this scope
+  134 |         print_node_status(node);
+      |         ^~~~~~~~~~~~~~~~~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:135:16: error: invalid use of incomplete type ‘struct print_tree(node*)::kdtree’
+  135 |         if(node->leftChild != NULL) que.push(node->leftChild);
+      |                ^~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:129:23: note: forward declaration of ‘struct print_tree(node*)::kdtree’
+  129 |     std::queue<struct kdtree*> que;
+      |                       ^~~~~~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:135:50: error: invalid use of incomplete type ‘struct print_tree(node*)::kdtree’
+  135 |         if(node->leftChild != NULL) que.push(node->leftChild);
+      |                                                  ^~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:129:23: note: forward declaration of ‘struct print_tree(node*)::kdtree’
+  129 |     std::queue<struct kdtree*> que;
+      |                       ^~~~~~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:136:16: error: invalid use of incomplete type ‘struct print_tree(node*)::kdtree’
+  136 |         if(node->rightChild != NULL) que.push(node->rightChild);
+      |                ^~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:129:23: note: forward declaration of ‘struct print_tree(node*)::kdtree’
+  129 |     std::queue<struct kdtree*> que;
+      |                       ^~~~~~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:136:51: error: invalid use of incomplete type ‘struct print_tree(node*)::kdtree’
+  136 |         if(node->rightChild != NULL) que.push(node->rightChild);
+      |                                                   ^~
+/home/sakakibara/monte-carlo-ray-tracer_approx/source/kdtree/random_recoder.cpp:129:23: note: forward declaration of ‘struct print_tree(node*)::kdtree’
+  129 |     std::queue<struct kdtree*> que;
+      |                       ^~~~~~
+make[2]: *** [CMakeFiles/monte-carlo-ray-tracer.dir/build.make:272: CMakeFiles/monte-carlo-ray-tracer.dir/source/kdtree/random_recoder.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/monte-carlo-ray-tracer.dir/all] Error 2
+make: *** [Makefile:91: all] Error 2

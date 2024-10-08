@@ -16,6 +16,8 @@
 #include "../common/format.hpp"
 #include "../common/constants.hpp"
 
+#include "../kdtree/random_recoder.hpp" // added
+
 Camera::Camera(const nlohmann::json &j, const Option &option)
 {
     if (option.photon_map)
@@ -91,7 +93,23 @@ void Camera::samplePixel(size_t x, size_t y)
             glm::dvec3 start = eye + left * aperture_sample.x + up * aperture_sample.y;
             ray = Ray(start, glm::normalize(focus_point - start), integrator->scene.ior);
         }
-        film.deposit(px, integrator->sampleRay(ray));
+        if(469 <= x && x <= 476 && 417 <= y && y <= 424){
+        //print_status = true;
+        random_recoder.clear(); // added
+        random_kind = "";
+        glm::dvec3 v = integrator->sampleRay(ray);
+        std::cout << v[0] << " " << v[1] << " " << v[2] << " ";
+        film.deposit(px, v);
+        print_random_recoder(); // added
+        double Y = 0.299 * v[0] + 0.587 * v[1] + 0.114 * v[2];
+        Y = std::max(0.25 / 256, Y); // avoid Y becoming zero
+        struct sample sample_tmp = reshape(Y, random_recoder);
+        samples.push_back(sample_tmp);
+        }
+        else{
+            //print_status = false;
+            film.deposit(px, integrator->sampleRay(ray));
+        }
     }
     num_sampled_pixels++;
 }
