@@ -31,3 +31,4 @@ std::pair<std::vector<double>, double> warped_sample_pdf(struct node* root);
 void print_node(struct node* ptr);
 void print_tree(struct node* root);
 struct sample reshape(double value, std::vector<double> params);
+void memory_free(struct node* root);

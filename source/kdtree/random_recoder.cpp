@@ -41,6 +41,8 @@ struct node* make_kdtree(std::vector<sample> samples, int depth, double ranges[d
 
     // leaf node is not divided
     if(length == 1){
+        res->leftChild = NULL;
+        res->rightChild = NULL;
         return res;
     }
 
@@ -151,3 +153,16 @@ struct sample reshape(double value, std::vector<double> params){
     return res;
 }
 
+void memory_free(struct node* root){
+    std::queue<struct node*> que; // not visited
+    std::vector<struct node*> node_ptrs; // visited
+    que.push(root);
+    while(!que.empty()){
+        struct node* node = que.front();
+        if(node->leftChild != NULL) que.push(node->leftChild);
+        if(node->rightChild != NULL) que.push(node->rightChild);
+        que.pop();
+        node_ptrs.push_back(node);
+    }
+    for(auto ptr: node_ptrs) free(ptr);
+}

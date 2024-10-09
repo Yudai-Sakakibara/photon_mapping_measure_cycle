@@ -73,6 +73,7 @@ int main(int argc, char* argv[])
     
     struct node* root = init_kdtree(samples); // added
     print_tree(root); // added
+    memory_free(root); // added
 
     return 0;
 }

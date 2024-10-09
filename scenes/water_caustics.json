@@ -9,8 +9,8 @@
       "eye": [ 0, 1, -6.83879 ],
       "look_at": [ 0, 1, 0 ],
       "image":  { "width": 1000, "height": 1000, "exposure_compensation": -1.0, "gain_compensation": -0.5, "tonemapper": "Hable" },
-      "spp": 32,
-      "savename": "water_caustics032"
+      "spp": 8,
+      "savename": "water_caustics008"
     }
   ],
 
