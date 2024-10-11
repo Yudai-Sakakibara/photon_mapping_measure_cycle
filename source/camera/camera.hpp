@@ -76,3 +76,5 @@ private:
     const size_t num_times = 32;
     std::deque<double> times;
 };
+
+extern std::vector<struct sample> samples; // added

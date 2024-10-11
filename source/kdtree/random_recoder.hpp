@@ -23,6 +23,7 @@ extern std::string random_kind;
 extern bool use_IS;
 extern int crid; // current random index
 extern double warped_samples[dims];
+extern std::vector<struct sample> samples; // added
 
 void print_random_recoder();
 bool comp_only_val(std::pair<double, sample> p1, std::pair<double, sample> p2);

@@ -4,10 +4,12 @@
 #include "random_recoder.hpp"
 
 std::vector<double> random_recoder;
+std::vector<struct sample> samples; // added
 std::string random_kind;
 bool use_IS;
 int crid; // current random index
 double warped_samples[dims];
+const int maxdepth = 6;
 
 void print_random_recoder(){
     int l = random_recoder.size();
@@ -41,8 +43,8 @@ struct node* make_kdtree(std::vector<sample> samples, int depth, double ranges[d
         res->pdf[i] = pdf[i];
     }
 
-    // leaf node is not divided
-    if(length == 1){
+    // not divided (leaf node / max depth / value 0)
+    if(length == 1 || depth == maxdepth || (res->value) == 0.0){
         res->leftChild = NULL;
         res->rightChild = NULL;
         return res;
@@ -87,7 +89,7 @@ struct node* make_kdtree(std::vector<sample> samples, int depth, double ranges[d
     right_ranges[axis][0] = (ranges[axis][0] + ranges[axis][1]) / 2.0;
     double right_pdf[dims];
     for(int i = 0; i < dims; ++i) right_pdf[i] = pdf[i];
-    right_pdf[axis] = pdf[axis] * 2.0 * (1.0 - left_prob);
+    right_pdf[axis] = pdf[axis] * 2.0 * (1.0 - left_sum / (res->value));
     res->rightChild = make_kdtree(right_samples, depth + 1, right_ranges, right_pdf);
 
     // finished

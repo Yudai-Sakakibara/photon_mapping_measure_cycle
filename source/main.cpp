@@ -65,7 +65,15 @@ int main(int argc, char* argv[])
         : "a7"); **/
 
     //camera->capture();
-    camera->samplePixel(473, 418);
+    for(int x = 469; x < 477; ++x){
+        for(int y = 414; y < 422; ++y){
+            camera->samplePixel(x, y);
+        }
+    }
+    struct node* root; // added
+    root = init_kdtree(samples);
+    print_tree(root);
+    memory_free(root);
 
     /** asm volatile ("li a7, 0x10001\n\t" 
         "ecall" 
