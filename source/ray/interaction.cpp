@@ -168,6 +168,10 @@ void Interaction::selectType()
     else
     {
         double p = Sampler::get<Dim::INTERACTION>()[0];
+        if(use_IS && crid < dims){
+            p = warped_samples[crid];
+            crid++;
+        }
         random_recoder.push_back(p); // added
         random_kind += "C"; // added
 

@@ -49,6 +49,7 @@ public:
     bool thin_lens;
 
     std::string savename;
+    void samplePixel(size_t x, size_t y);
 
 private:
     struct Bucket
@@ -60,7 +61,7 @@ private:
         glm::ivec2 max;
     };
 
-    void samplePixel(size_t x, size_t y);
+    //void samplePixel(size_t x, size_t y);
     void sampleImageThread(WorkQueue<Bucket>& buckets);
 
     void printInfoThread(WorkQueue<Bucket>& buckets);

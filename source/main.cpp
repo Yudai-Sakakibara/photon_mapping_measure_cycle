@@ -8,6 +8,7 @@
 #include "common/util.hpp"
 
 #include "kdtree/random_recoder.hpp" // added
+#include "sampling/sampler.hpp" // added
 
 int main(int argc, char* argv[])
 {
@@ -63,17 +64,14 @@ int main(int argc, char* argv[])
         :
         : "a7"); **/
 
-    camera->capture();
+    //camera->capture();
+    camera->samplePixel(473, 418);
 
     /** asm volatile ("li a7, 0x10001\n\t" 
         "ecall" 
         :
         :
         : "a7"); **/
-    
-    struct node* root = init_kdtree(samples); // added
-    print_tree(root); // added
-    memory_free(root); // added
 
     return 0;
 }

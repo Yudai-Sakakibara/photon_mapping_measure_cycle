@@ -26,7 +26,7 @@ struct Sampler
             res[i] = scramble(Sobol::bitReversedSample<DIM>(shuffled_index), hashCombine(seed, hash(DIM))) * 0x1p-32;
         });
         return res;
-    }
+    } // same random numbers if index, START_DIM, NUM_DIMS are same.
 
     // Called with e.g. linear pixel index before sampling pixel
     static void initiate(uint32_t start_seed)

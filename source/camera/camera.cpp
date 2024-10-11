@@ -18,6 +18,10 @@
 
 #include "../kdtree/random_recoder.hpp" // added
 
+const int sbrt = 128; // samples between reconstructing tree
+const double IS_prob = 0.5; // probability of applying Importance Sampling
+bool vrf_pixel;
+
 Camera::Camera(const nlohmann::json &j, const Option &option)
 {
     if (option.photon_map)
@@ -64,8 +68,34 @@ Camera::Camera(const nlohmann::json &j, const Option &option)
     thin_lens = aperture_radius > 0.0 && focus_distance > 0.0;
 }
 
+glm::dvec3 importance_sampling(Ray ray, auto integrator, struct node* root){
+    use_IS = true;
+    crid = 0;
+    std::pair<std::vector<double>, double*> p = warped_sample_pdf(root);
+    for(int i = 0; i < dims; ++i) warped_samples[i] = p.first[i];
+    glm::dvec3 v = integrator->sampleRay(ray);
+    double pdf_prod = 1.0;
+    for(int i = 0; i < crid; ++i) pdf_prod *= p.second[i];
+    if(vrf_pixel){
+        std::cout << "IS " << pdf_prod << " ";
+    }
+    return v / pdf_prod;
+}
+
+glm::dvec3 normal_sampling(Ray ray, auto integrator){
+    use_IS = false;
+    glm::dvec3 v = integrator->sampleRay(ray);
+    if(vrf_pixel){
+        std::cout << "NS 1.0 ";
+    }
+    return v;
+}
+
 void Camera::samplePixel(size_t x, size_t y)
 {
+    std::vector<struct sample> samples; // added
+    struct node* root; // added
+    vrf_pixel = (x == 473 && y == 418);
     double pixel_size = sensor_width / image.width;
 
     glm::dvec2 half_dim = glm::dvec2(image.width, image.height) * 0.5;
@@ -93,25 +123,40 @@ void Camera::samplePixel(size_t x, size_t y)
             glm::dvec3 start = eye + left * aperture_sample.x + up * aperture_sample.y;
             ray = Ray(start, glm::normalize(focus_point - start), integrator->scene.ior);
         }
-        if(469 <= x && x <= 476 && 417 <= y && y <= 424){
-        //print_status = true;
-        random_recoder.clear(); // added
+
+        // sampling and recording result
+        random_recoder.clear();
         random_kind = "";
-        glm::dvec3 v = integrator->sampleRay(ray);
-        std::cout << v[0] << " " << v[1] << " " << v[2] << " ";
-        film.deposit(px, v);
-        print_random_recoder(); // added
-        double Y = 0.299 * v[0] + 0.587 * v[1] + 0.114 * v[2];
-        Y = std::max(0.25 / 256, Y); // avoid Y becoming zero
-        struct sample sample_tmp = reshape(Y, random_recoder);
-        samples.push_back(sample_tmp);
+        glm::dvec3 v;
+        if(vrf_pixel){
+            if(i >= sbrt && rand01() < IS_prob){
+                v = importance_sampling(ray, integrator, root);
+            }
+            else{
+                v = normal_sampling(ray, integrator);
+            }
         }
         else{
-            //print_status = false;
-            film.deposit(px, integrator->sampleRay(ray));
+            v = normal_sampling(ray, integrator);
+        }
+        film.deposit(px, v);
+
+        // constructing sample list and tree
+        double Y = 0.299 * v[0] + 0.587 * v[1] + 0.114 * v[2];
+        Y = std::max(0.25 / 256, Y); // avoid Y becoming zero
+        if(vrf_pixel){
+            std::cout << Y << " ";
+            print_random_recoder();
+        }
+        struct sample sample_tmp = reshape(Y, random_recoder);
+        samples.push_back(sample_tmp);
+        if(i % sbrt == sbrt - 1){
+            root = init_kdtree(samples);
         }
     }
     num_sampled_pixels++;
+    samples.clear();
+    memory_free(root);
 }
 
 void Camera::sampleImage()

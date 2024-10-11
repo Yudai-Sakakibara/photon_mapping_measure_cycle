@@ -59,6 +59,14 @@ Ray::Ray(const Interaction &ia) :
         {
             diffuse_depth++;
             auto u = Sampler::get<Dim::BSDF, 2>();
+            if(use_IS && crid < dims){
+                u[0] = warped_samples[crid];
+                crid++;
+            }
+            if(use_IS && crid < dims){
+                u[1] = warped_samples[crid];
+                crid++;
+            }
             random_recoder.push_back(u[0]); // added
             random_recoder.push_back(u[1]); // added
             random_kind += "E"; // added
