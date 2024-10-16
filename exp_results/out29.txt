@@ -1,0 +1,169 @@
+Scene directory:
+/home/sakakibara/monte-carlo-ray-tracer_approx/scenes
+
+ ____________________________________________________________________________________
+| Option       | File                 | Camera                                       | 
+|______________|______________________|______________________________________________|
+| 0            | baroque_table        | Eye: (0 -1 2), Focal length: 60mm (35mm)     | 
+|______________|______________________|______________________________________________|
+| 1            | quadric              | Eye: (-0 1 -2), Focal length: 75mm (35mm)    | 
+|______________|______________________|______________________________________________|
+| 2            | oren_nayar_test      | Eye: (-80 40 80), Focal length: 317mm (35mm) | 
+|______________|______________________|______________________________________________|
+| 3            | hexagon_room         | Eye: (-2 0 0), Focal length: 23mm (35mm)     | 
+|______________|______________________|______________________________________________|
+| 4            | hexagon_room         | Eye: (-1 0 0), Focal length: 24mm (35mm)     | 
+|______________|______________________|______________________________________________|
+| 5            | spaceship            | Eye: (-3 1 4), Focal length: 50mm (35mm)     | 
+|______________|______________________|______________________________________________|
+| 6            | stanford_dragon      | Eye: (-12 -0 2), Focal length: 41mm (35mm)   | 
+|______________|______________________|______________________________________________|
+| 7            | pipes                | Eye: (9 8 -10), Focal length: 330mm (35mm)   | 
+|______________|______________________|______________________________________________|
+| 8            | lego_bulldozer       | Eye: (1 0 0), Focal length: 56mm (35mm)      | 
+|______________|______________________|______________________________________________|
+| 9            | ggx_test             | Eye: (-80 40 80), Focal length: 317mm (35mm) | 
+|______________|______________________|______________________________________________|
+| 10           | metal_bunnies        | Eye: (-0 2 10), Focal length: 50mm (35mm)    | 
+|______________|______________________|______________________________________________|
+| 11           | shell                | Eye: (0 0 0), Focal length: 46mm (35mm)      | 
+|______________|______________________|______________________________________________|
+| 12           | metals               | Eye: (0 75 255), Focal length: 550mm (35mm)  | 
+|______________|______________________|______________________________________________|
+| 13           | ior_test             | Eye: (0 0 -4), Focal length: 50mm (35mm)     | 
+|______________|______________________|______________________________________________|
+| 14           | hexagon_room_diffuse | Eye: (-3 0 0), Focal length: 36mm (35mm)     | 
+|______________|______________________|______________________________________________|
+| 15           | coffe_maker          | Eye: (-0 0 1), Focal length: 79mm (35mm)     | 
+|______________|______________________|______________________________________________|
+| 16           | water_caustics       | Eye: (0 1 -7), Focal length: 102mm (35mm)    | 
+|______________|______________________|______________________________________________|
+| 17           | veach_mis            | Eye: (28 4 0), Focal length: 55mm (35mm)     | 
+|______________|______________________|______________________________________________|
+
+Select option: 
+Use photon mapping? (y/n) 
+Number of primitives: 391 555
+
+Building BVH from octree.
+
+BVH constructed in 00:00:00. Branching factor of tree: 4.38929
+
+Threads used for rendering: 16
+
+----------------------------| PHOTON MAPPING PASS |----------------------------
+
+Total number of photon emissions from light sources: 10 000 000
+
+Photons emitted in 00:00:00. Octrees constructed in 00:00:06.
+
+Photon maps and numbers of stored photons: 
+
+   Global photons: 715 804
+  Caustic photons: 11 542 990
+
+----------------------------| MAIN RENDERING PASS |----------------------------
+
+Samples per pixel: 16
+
+10752 pixels finished.
+20224 pixels finished.
+30720 pixels finished.
+40960 pixels finished.
+50432 pixels finished.
+60672 pixels finished.
+70720 pixels finished.
+80192 pixels finished.
+90432 pixels finished.
+100928 pixels finished.
+110144 pixels finished.
+120384 pixels finished.
+130624 pixels finished.
+140864 pixels finished.
+150336 pixels finished.
+160320 pixels finished.
+170560 pixels finished.
+180800 pixels finished.
+190016 pixels finished.
+200512 pixels finished.
+210752 pixels finished.
+220224 pixels finished.
+230464 pixels finished.
+240704 pixels finished.
+250944 pixels finished.
+260160 pixels finished.
+270912 pixels finished.
+280128 pixels finished.
+290368 pixels finished.
+300352 pixels finished.
+310080 pixels finished.
+320320 pixels finished.
+330048 pixels finished.
+340288 pixels finished.
+350528 pixels finished.
+360256 pixels finished.
+371008 pixels finished.
+380224 pixels finished.
+390464 pixels finished.
+400704 pixels finished.
+410432 pixels finished.
+420672 pixels finished.
+430912 pixels finished.
+440128 pixels finished.
+450368 pixels finished.
+460096 pixels finished.
+470336 pixels finished.
+480576 pixels finished.
+490816 pixels finished.
+500032 pixels finished.
+510272 pixels finished.
+520512 pixels finished.
+531008 pixels finished.
+540480 pixels finished.
+550720 pixels finished.
+560192 pixels finished.
+570688 pixels finished.
+580160 pixels finished.
+590912 pixels finished.
+600128 pixels finished.
+610368 pixels finished.
+620864 pixels finished.
+630336 pixels finished.
+640576 pixels finished.
+650048 pixels finished.
+660800 pixels finished.
+670272 pixels finished.
+680512 pixels finished.
+690752 pixels finished.
+700992 pixels finished.
+710464 pixels finished.
+720704 pixels finished.
+730944 pixels finished.
+740416 pixels finished.
+750656 pixels finished.
+760128 pixels finished.
+770368 pixels finished.
+780608 pixels finished.
+790848 pixels finished.
+800064 pixels finished.
+810304 pixels finished.
+820544 pixels finished.
+830016 pixels finished.
+840256 pixels finished.
+850496 pixels finished.
+860736 pixels finished.
+870464 pixels finished.
+880448 pixels finished.
+890688 pixels finished.
+900928 pixels finished.
+910144 pixels finished.
+920384 pixels finished.
+930624 pixels finished.
+940864 pixels finished.
+950336 pixels finished.
+960832 pixels finished.
+970048 pixels finished.
+980288 pixels finished.
+990528 pixels finished.
+1000000 pixels finished.
+                                                                                                    Render Completed: 2024-10-11 15:36, Elapsed Time: 00:11:02

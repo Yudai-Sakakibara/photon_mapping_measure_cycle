@@ -49,7 +49,7 @@ public:
     bool thin_lens;
 
     std::string savename;
-    void samplePixel(size_t x, size_t y);
+    void samplePixel(size_t x, size_t y, int i);
 
 private:
     struct Bucket

@@ -17,7 +17,8 @@ void print_random_recoder(){
     for(int i = 0; i < l; ++i){
         std::cout << random_recoder[i] << " ";
     }
-    std::cout << random_kind << std::endl;
+    //std::cout << random_kind << std::endl;
+    std::cout << std::endl;
 }
 
 bool comp_only_val(std::pair<double, sample> p1, std::pair<double, sample> p2){
@@ -165,6 +166,7 @@ struct sample reshape(double value, std::vector<double> params){
 }
 
 void memory_free(struct node* root){
+    if(root == NULL) return;
     std::queue<struct node*> que; // not visited
     std::vector<struct node*> node_ptrs; // visited
     que.push(root);

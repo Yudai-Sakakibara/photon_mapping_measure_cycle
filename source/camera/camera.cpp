@@ -18,9 +18,10 @@
 
 #include "../kdtree/random_recoder.hpp" // added
 
-const int sbrt = 1024; // samples between reconstructing tree
-const double IS_prob = 0.0; // probability of applying Importance Sampling
-bool vrf_pixel;
+const double IS_prob = 1.0; // probability of applying Importance Sampling
+bool full_size;
+struct node* root; // added
+bool print_result;
 
 Camera::Camera(const nlohmann::json &j, const Option &option)
 {
@@ -76,90 +77,70 @@ std::pair<glm::dvec3, double> importance_sampling(Ray ray, auto integrator, stru
     glm::dvec3 v = integrator->sampleRay(ray);
     double pdf_prod = 1.0;
     for(int i = 0; i < crid; ++i) pdf_prod *= p.second[i];
-    if(vrf_pixel){
-        std::cout << "IS " << pdf_prod << " ";
-    }
     return std::make_pair(v, pdf_prod);
 }
 
 glm::dvec3 normal_sampling(Ray ray, auto integrator){
     use_IS = false;
     glm::dvec3 v = integrator->sampleRay(ray);
-    if(vrf_pixel){
-        std::cout << "NS 1.0 ";
-    }
     return v;
 }
 
-void Camera::samplePixel(size_t x, size_t y)
+void Camera::samplePixel(size_t x, size_t y, int i)
 {
-    struct node* root; // added
-    vrf_pixel = (469 <= x && x < 477 && 414 <= y && y < 422);
+    print_result = false;
     double pixel_size = sensor_width / image.width;
 
     glm::dvec2 half_dim = glm::dvec2(image.width, image.height) * 0.5;
 
     Sampler::initiate(static_cast<uint32_t>(y * image.width + x));
 
-    for(int i = 0; i < spp; i++)
+    Sampler::setIndex(i);
+
+    auto u = Sampler::get<Dim::PIXEL, 2>();
+    glm::dvec2 px(x + u[0], y + u[1]);
+    glm::dvec2 local = pixel_size * (half_dim - px);
+    glm::dvec3 direction = glm::normalize(forward * focal_length + left * local.x + up * local.y);
+
+    // Pinhole camera ray
+    Ray ray(eye, direction, integrator->scene.ior);
+
+    if (thin_lens)
     {
-        Sampler::setIndex(i);
-
-        auto u = Sampler::get<Dim::PIXEL, 2>();
-        glm::dvec2 px(x + u[0], y + u[1]);
-        glm::dvec2 local = pixel_size * (half_dim - px);
-        glm::dvec3 direction = glm::normalize(forward * focal_length + left * local.x + up * local.y);
-
-        // Pinhole camera ray
-        Ray ray(eye, direction, integrator->scene.ior);
-
-        if (thin_lens)
-        {
-            // Thin lens camera ray for depth of field
-            auto u = Sampler::get<Dim::LENS, 2>();
-            glm::dvec2 aperture_sample = Sampling::uniformDisk(u[0], u[1]) * aperture_radius;
-            glm::dvec3 focus_point = ray(focus_distance / glm::dot(ray.direction, forward));
-            glm::dvec3 start = eye + left * aperture_sample.x + up * aperture_sample.y;
-            ray = Ray(start, glm::normalize(focus_point - start), integrator->scene.ior);
-        }
-
-        // sampling and recording result
-        random_recoder.clear();
-        random_kind = "";
-        glm::dvec3 v;
-        if(vrf_pixel){
-            if(i >= sbrt && rand01() < IS_prob){
-                std::pair<glm::dvec3, double> p = importance_sampling(ray, integrator, root);
-                v = p.first;
-                double pdf_prod = p.second;
-                film.deposit(px, v / pdf_prod);
-            }
-            else{
-                v = normal_sampling(ray, integrator);
-                film.deposit(px, v);
-            }
-        }
-        else{
-            v = normal_sampling(ray, integrator);
-            film.deposit(px, v);
-        }
-
-        // constructing sample list and tree
-        double Y = 0.299 * v[0] + 0.587 * v[1] + 0.114 * v[2];
-        if(vrf_pixel){
-            std::cout << Y << " ";
-            print_random_recoder();
-        }
-        struct sample sample_tmp = reshape(Y, random_recoder);
-        samples.push_back(sample_tmp);
-        if(i % sbrt == sbrt - 1){
-            root = init_kdtree(samples);
-        }
+        // Thin lens camera ray for depth of field
+        auto u = Sampler::get<Dim::LENS, 2>();
+        glm::dvec2 aperture_sample = Sampling::uniformDisk(u[0], u[1]) * aperture_radius;
+        glm::dvec3 focus_point = ray(focus_distance / glm::dot(ray.direction, forward));
+        glm::dvec3 start = eye + left * aperture_sample.x + up * aperture_sample.y;
+        ray = Ray(start, glm::normalize(focus_point - start), integrator->scene.ior);
     }
-    num_sampled_pixels++;
-    //samples.clear();
-    //print_tree(root);
-    //memory_free(root);
+
+    // sampling and recording result
+    random_recoder.clear();
+    random_kind = "";
+    glm::dvec3 v;
+    if(root != NULL && rand01() < IS_prob){
+        std::pair<glm::dvec3, double> p = importance_sampling(ray, integrator, root);
+        v = p.first;
+        double pdf_prod = p.second;
+        film.deposit(px, v / pdf_prod);
+        if(print_result) std::cout << "IS " << pdf_prod << " ";
+    }
+    else{
+        v = normal_sampling(ray, integrator);
+        film.deposit(px, v);
+        if(print_result) std::cout << "NS 1.0 ";
+    }
+
+    // constructing sample list and tree
+    double Y = 0.299 * v[0] + 0.587 * v[1] + 0.114 * v[2];
+    Y = std::min(Y, 1.0); // limiting over concentration
+    if(print_result){
+        std::cout << Y << " ";
+        print_random_recoder();
+    }
+    struct sample sample_tmp = reshape(Y, random_recoder);
+    samples.push_back(sample_tmp);
 }
 
 void Camera::sampleImage()
@@ -193,25 +174,38 @@ void Camera::sampleImage()
 }
 
 int cnt = 0; // added
+int pre_cnt = 0;
 void Camera::sampleImageThread(WorkQueue<Bucket>& buckets)
 {
     Bucket bucket;
+
     while (buckets.getWork(bucket))
     {
-        for (size_t y = bucket.min.y; y < bucket.max.y; y++)
-        {
-            for (size_t x = bucket.min.x; x < bucket.max.x; x++)
+        //std::cout << bucket.min.x << " <= x < " << bucket.max.x << ", " << bucket.min.y << " <= y < " << bucket.max.y << std::endl;
+        full_size = (bucket.max.x - bucket.min.x == bucket_size) && (bucket.max.y - bucket.min.y == bucket_size);
+        root = NULL;
+        for(int i = 0; i < spp; i++){
+            for (size_t y = bucket.min.y; y < bucket.max.y; y++)
             {
-                samplePixel(x, y);
-                cnt++;
-                bool cond1 = ((cnt % 100 == 0) && (cnt < 1000));
-                bool cond2 = ((cnt % 1000 == 0) && (cnt < 10000));
-                bool cond3 = (cnt % 10000 == 0);
-                if(cond1 || cond2 || cond3){
-                    std::cout << cnt << " pixels finished." << std::endl;
-                } // added
+                for (size_t x = bucket.min.x; x < bucket.max.x; x++)
+                {
+                    samplePixel(x, y, i);
+                }
             }
+            //memory_free(root);
+            if(i % 2 == 1){
+                memory_free(root);
+                root = init_kdtree(samples);
+            }
+            if(print_result) print_tree(root);
         }
+        samples.clear();
+        cnt += ((bucket.max.x - bucket.min.x) * (bucket.max.y - bucket.min.y));
+        int progress = (cnt / 10000) * 10000;
+        if(pre_cnt < progress){
+            std::cout << cnt << " pixels finished." << std::endl;
+        }
+        pre_cnt = cnt; // added
     }
 }
 
