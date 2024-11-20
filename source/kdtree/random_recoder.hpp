@@ -8,7 +8,7 @@ struct sample{
     double value;
 };
 
-const int dims = 3;
+const int dims = 2;
 struct node{
     double value;
     int depth;
@@ -16,6 +16,7 @@ struct node{
     double pdf[dims];
     struct node* leftChild;
     struct node* rightChild;
+    int n_samples;
 };
 
 extern std::vector<double> random_recoder;

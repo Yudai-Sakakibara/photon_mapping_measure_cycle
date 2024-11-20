@@ -18,7 +18,7 @@
 
 #include "../kdtree/random_recoder.hpp" // added
 
-const double IS_prob = 1.0; // probability of applying Importance Sampling
+double IS_prob; // probability of applying Importance Sampling
 bool full_size;
 struct node* root; // added
 bool print_result;
@@ -46,6 +46,7 @@ Camera::Camera(const nlohmann::json &j, const Option &option)
     focal_length = c.at("focal_length").get<double>() / 1000.0;
     sensor_width = c.at("sensor_width").get<double>() / 1000.0;
     spp = c.at("spp"); // modified
+    IS_prob = c.at("IS_rate"); // modified
     savename = c.at("savename");
     aperture_radius = (focal_length / getOptional(c, "f_stop", -1.0)) / 2.0;
     focus_distance = getOptional(c, "focus_distance", -1.0);
@@ -88,6 +89,7 @@ glm::dvec3 normal_sampling(Ray ray, auto integrator){
 
 void Camera::samplePixel(size_t x, size_t y, int i)
 {
+    //print_result = (384 <= x) && (x < 416) && (416 <= y) && (y < 448);
     print_result = false;
     double pixel_size = sensor_width / image.width;
 
@@ -119,12 +121,14 @@ void Camera::samplePixel(size_t x, size_t y, int i)
     random_recoder.clear();
     random_kind = "";
     glm::dvec3 v;
-    if(root != NULL && rand01() < IS_prob){
-        std::pair<glm::dvec3, double> p = importance_sampling(ray, integrator, root);
-        v = p.first;
-        double pdf_prod = p.second;
-        film.deposit(px, v / pdf_prod);
-        if(print_result) std::cout << "IS " << pdf_prod << " ";
+    if(i >= 16){
+        if(rand01() < IS_prob){
+            std::pair<glm::dvec3, double> p = importance_sampling(ray, integrator, root);
+            v = p.first;
+            double pdf_prod = p.second;
+            film.deposit(px, v / pdf_prod);
+            if(print_result) std::cout << "IS " << pdf_prod << " ";
+        }
     }
     else{
         v = normal_sampling(ray, integrator);
@@ -139,8 +143,10 @@ void Camera::samplePixel(size_t x, size_t y, int i)
         std::cout << Y << " ";
         print_random_recoder();
     }
-    struct sample sample_tmp = reshape(Y, random_recoder);
-    samples.push_back(sample_tmp);
+    if(!use_IS){
+        struct sample sample_tmp = reshape(Y, random_recoder);
+        samples.push_back(sample_tmp);
+    }
 }
 
 void Camera::sampleImage()
@@ -192,12 +198,9 @@ void Camera::sampleImageThread(WorkQueue<Bucket>& buckets)
                     samplePixel(x, y, i);
                 }
             }
-            //memory_free(root);
-            if(i % 2 == 1){
-                memory_free(root);
-                root = init_kdtree(samples);
-            }
-            if(print_result) print_tree(root);
+            memory_free(root);
+            root = init_kdtree(samples);
+            if(print_result && i == spp - 1) print_tree(root);
         }
         samples.clear();
         cnt += ((bucket.max.x - bucket.min.x) * (bucket.max.y - bucket.min.y));

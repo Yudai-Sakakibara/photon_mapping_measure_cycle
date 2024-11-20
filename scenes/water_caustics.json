@@ -9,8 +9,9 @@
       "eye": [ 0, 1, -6.83879 ],
       "look_at": [ 0, 1, 0 ],
       "image":  { "width": 1000, "height": 1000, "exposure_compensation": -1.0, "gain_compensation": -0.5, "tonemapper": "Hable" },
-      "spp": 8,
-      "savename": "wc_008_1.0_dv"
+      "spp": 32,
+      "IS_rate": 1.0,
+      "savename": "wc_032_1.0_1x1"
     }
   ],
 
@@ -19,7 +20,7 @@
     "caustic_factor": 10.0,
     "k_nearest_photons": 50,
     "max_photons_per_octree_leaf": 200,
-    "direct_visualization": true
+    "direct_visualization": false
   },
 
   "bvh": {

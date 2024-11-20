@@ -7,7 +7,7 @@
     "caustic_factor": 10.0,
     "k_nearest_photons": 50,
     "max_photons_per_octree_leaf": 200,
-    "direct_visualization": true
+    "direct_visualization": false
   },
 
   "cameras": [
@@ -21,8 +21,9 @@
         "height": 720,
         "exposure_compensation": -0.25
       },
-      "spp": 5,
-      "savename": "c1b_005_dirvis_2"
+      "spp": 32,
+      "IS_rate": 1.0,
+      "savename": "c1b_032_1.0_1x1"
     },
     {
       "focal_length": 24,

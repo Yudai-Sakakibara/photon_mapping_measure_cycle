@@ -65,7 +65,6 @@ int main(int argc, char* argv[])
         : "a7"); **/
 
     camera->capture();
-    //camera->samplePixel(x, y);
 
     /** asm volatile ("li a7, 0x10001\n\t" 
         "ecall" 

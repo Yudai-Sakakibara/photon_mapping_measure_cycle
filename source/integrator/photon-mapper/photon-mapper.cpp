@@ -20,6 +20,8 @@
 #include "../../octree/octree.cpp"
 #include "../../octree/linear-octree.cpp"
 
+#include "../../kdtree/random_recoder.hpp" // added
+
 PhotonMapper::PhotonMapper(const nlohmann::json& j) : Integrator(j)
 {
     constexpr bool print = true;
@@ -256,32 +258,38 @@ glm::dvec3 PhotonMapper::sampleRay(Ray ray)
         {
             if (!ray.dirac_delta && ray.depth != 0)
             {
+                random_kind += "x"; // added
                 return radiance;
             }
             if (!interaction.sampleBSDF(bsdf_absIdotN, ls.bsdf_pdf, ray))
             {
+                random_kind += "y"; // added
                 return radiance;
             }
+            random_kind += "z"; // added
             throughput *= bsdf_absIdotN / ls.bsdf_pdf;
         }
         else
         {
-            radiance += estimateCausticRadiance(interaction) * throughput;
+            radiance += estimateCausticRadiance(interaction) * throughput; // caustics
 
             if (!direct_visualization && (ray.dirac_delta || ray.depth == 0))
             {
                 // Delay global evaluation
-                radiance += Integrator::sampleDirect(interaction, ls) * throughput;
+                radiance += Integrator::sampleDirect(interaction, ls) * throughput; // direct illumination
                 if (!interaction.sampleBSDF(bsdf_absIdotN, ls.bsdf_pdf, ray))
                 {
+                    random_kind += "u"; // added
                     return radiance;
                 }
+                random_kind += "v"; // added
                 throughput *= bsdf_absIdotN / ls.bsdf_pdf;
             }
             else
             {
                 // Global evaluation
-                return radiance + estimateGlobalRadiance(interaction) * throughput;
+                random_kind += "w"; // added
+                return radiance + estimateGlobalRadiance(interaction) * throughput; // indirect illumination
             }
         }
 

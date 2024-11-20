@@ -66,7 +66,7 @@ private:
 
     void printInfoThread(WorkQueue<Bucket>& buckets);
 
-    const size_t bucket_size = 32;
+    const size_t bucket_size = 1; // modified
 
     std::shared_ptr<Integrator> integrator;
 

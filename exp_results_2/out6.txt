@@ -1,0 +1,95 @@
+Scene directory:
+/home/sakakibara/monte-carlo-ray-tracer_approx/scenes
+
+ ____________________________________________________________________________________
+| Option       | File                 | Camera                                       | 
+|______________|______________________|______________________________________________|
+| 0            | baroque_table        | Eye: (0 -1 2), Focal length: 60mm (35mm)     | 
+|______________|______________________|______________________________________________|
+| 1            | quadric              | Eye: (-0 1 -2), Focal length: 75mm (35mm)    | 
+|______________|______________________|______________________________________________|
+| 2            | oren_nayar_test      | Eye: (-80 40 80), Focal length: 317mm (35mm) | 
+|______________|______________________|______________________________________________|
+| 3            | hexagon_room         | Eye: (-2 0 0), Focal length: 23mm (35mm)     | 
+|______________|______________________|______________________________________________|
+| 4            | hexagon_room         | Eye: (-1 0 0), Focal length: 24mm (35mm)     | 
+|______________|______________________|______________________________________________|
+| 5            | spaceship            | Eye: (-3 1 4), Focal length: 50mm (35mm)     | 
+|______________|______________________|______________________________________________|
+| 6            | stanford_dragon      | Eye: (-12 -0 2), Focal length: 41mm (35mm)   | 
+|______________|______________________|______________________________________________|
+| 7            | pipes                | Eye: (9 8 -10), Focal length: 330mm (35mm)   | 
+|______________|______________________|______________________________________________|
+| 8            | lego_bulldozer       | Eye: (1 0 0), Focal length: 56mm (35mm)      | 
+|______________|______________________|______________________________________________|
+| 9            | ggx_test             | Eye: (-80 40 80), Focal length: 317mm (35mm) | 
+|______________|______________________|______________________________________________|
+| 10           | metal_bunnies        | Eye: (-0 2 10), Focal length: 50mm (35mm)    | 
+|______________|______________________|______________________________________________|
+| 11           | shell                | Eye: (0 0 0), Focal length: 46mm (35mm)      | 
+|______________|______________________|______________________________________________|
+| 12           | metals               | Eye: (0 75 255), Focal length: 550mm (35mm)  | 
+|______________|______________________|______________________________________________|
+| 13           | ior_test             | Eye: (0 0 -4), Focal length: 50mm (35mm)     | 
+|______________|______________________|______________________________________________|
+| 14           | hexagon_room_diffuse | Eye: (-3 0 0), Focal length: 36mm (35mm)     | 
+|______________|______________________|______________________________________________|
+| 15           | coffe_maker          | Eye: (-0 0 1), Focal length: 79mm (35mm)     | 
+|______________|______________________|______________________________________________|
+| 16           | water_caustics       | Eye: (0 1 -7), Focal length: 102mm (35mm)    | 
+|______________|______________________|______________________________________________|
+| 17           | veach_mis            | Eye: (28 4 0), Focal length: 55mm (35mm)     | 
+|______________|______________________|______________________________________________|
+
+Select option: 
+Use photon mapping? (y/n) 
+Number of primitives: 43
+
+Building BVH from octree.
+
+BVH constructed in 00:00:00. Branching factor of tree: 5
+
+Threads used for rendering: 16
+
+----------------------------| PHOTON MAPPING PASS |----------------------------
+
+Total number of photon emissions from light sources: 10 000 000
+
+Photons emitted in 00:00:00. Octrees constructed in 00:00:25.
+
+Photon maps and numbers of stored photons: 
+
+   Global photons: 34 401 493
+  Caustic photons: 0
+
+----------------------------| MAIN RENDERING PASS |----------------------------
+
+Samples per pixel: 16
+
+10240 pixels finished.
+20480 pixels finished.
+30720 pixels finished.
+40960 pixels finished.
+50176 pixels finished.
+60416 pixels finished.
+70656 pixels finished.
+80896 pixels finished.
+90112 pixels finished.
+100352 pixels finished.
+110592 pixels finished.
+120832 pixels finished.
+130048 pixels finished.
+140288 pixels finished.
+150528 pixels finished.
+160768 pixels finished.
+171008 pixels finished.
+180224 pixels finished.
+190464 pixels finished.
+200704 pixels finished.
+210944 pixels finished.
+220160 pixels finished.
+230400 pixels finished.
+240640 pixels finished.
+250880 pixels finished.
+260096 pixels finished.
+                                                                                                    Render Completed: 2024-10-21 12:43, Elapsed Time: 00:02:14
