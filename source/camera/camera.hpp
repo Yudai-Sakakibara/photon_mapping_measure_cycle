@@ -38,7 +38,8 @@ public:
 
     void lookAt(const glm::dvec3& p);
 
-    size_t spp; // modified
+    size_t spp1; // modified
+    size_t spp2; // modified
 
     glm::dvec3 eye;
     glm::dvec3 forward, left, up;
@@ -49,7 +50,6 @@ public:
     bool thin_lens;
 
     std::string savename;
-    void samplePixel(size_t x, size_t y, int i);
 
 private:
     struct Bucket
@@ -61,12 +61,12 @@ private:
         glm::ivec2 max;
     };
 
-    //void samplePixel(size_t x, size_t y);
+    void samplePixel(size_t x, size_t y, int i);
     void sampleImageThread(WorkQueue<Bucket>& buckets);
 
     void printInfoThread(WorkQueue<Bucket>& buckets);
 
-    const size_t bucket_size = 1; // modified
+    const size_t bucket_size = 2000; // include all pixels
 
     std::shared_ptr<Integrator> integrator;
 

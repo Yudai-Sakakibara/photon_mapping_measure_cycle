@@ -21,9 +21,11 @@
         "height": 720,
         "exposure_compensation": -0.25
       },
-      "spp": 32,
-      "IS_rate": 1.0,
-      "savename": "c1b_032_1.0_1x1"
+      "spp1": 16,
+      "spp2": 16,
+      "approx_prob": 0.5,
+      "edge_threshold": 128,
+      "savename": "c1b_16_16_0.5_128_5"
     },
     {
       "focal_length": 24,

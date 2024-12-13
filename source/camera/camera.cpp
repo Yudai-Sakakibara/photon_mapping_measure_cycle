@@ -16,12 +16,10 @@
 #include "../common/format.hpp"
 #include "../common/constants.hpp"
 
-#include "../kdtree/random_recoder.hpp" // added
+#include "../edge_detection/edge_detection.hpp" // added
 
-double IS_prob; // probability of applying Importance Sampling
-bool full_size;
-struct node* root; // added
-bool print_result;
+int spp1, spp2; // n_samples of before & after edge detection
+double edge_threshold, approx_prob, p_in, p_edge, p_corner;
 
 Camera::Camera(const nlohmann::json &j, const Option &option)
 {
@@ -45,8 +43,14 @@ Camera::Camera(const nlohmann::json &j, const Option &option)
     eye = c.at("eye");
     focal_length = c.at("focal_length").get<double>() / 1000.0;
     sensor_width = c.at("sensor_width").get<double>() / 1000.0;
-    spp = c.at("spp"); // modified
-    IS_prob = c.at("IS_rate"); // modified
+    spp1 = c.at("spp1"); // modified
+    spp2 = c.at("spp1"); // modified
+    edge_threshold = c.at("edge_threshold"); // added
+    edge_threshold /= 255.0;
+    approx_prob = c.at("approx_prob"); // added
+    p_in = approx_prob / 0.937659539163708;
+    p_edge = approx_prob / 1.04884155190883;
+    p_corner = approx_prob / 1.26801483607357;
     savename = c.at("savename");
     aperture_radius = (focal_length / getOptional(c, "f_stop", -1.0)) / 2.0;
     focus_distance = getOptional(c, "focus_distance", -1.0);
@@ -70,27 +74,10 @@ Camera::Camera(const nlohmann::json &j, const Option &option)
     thin_lens = aperture_radius > 0.0 && focus_distance > 0.0;
 }
 
-std::pair<glm::dvec3, double> importance_sampling(Ray ray, auto integrator, struct node* root){
-    use_IS = true;
-    crid = 0;
-    std::pair<std::vector<double>, double*> p = warped_sample_pdf(root);
-    for(int i = 0; i < dims; ++i) warped_samples[i] = p.first[i];
-    glm::dvec3 v = integrator->sampleRay(ray);
-    double pdf_prod = 1.0;
-    for(int i = 0; i < crid; ++i) pdf_prod *= p.second[i];
-    return std::make_pair(v, pdf_prod);
-}
-
-glm::dvec3 normal_sampling(Ray ray, auto integrator){
-    use_IS = false;
-    glm::dvec3 v = integrator->sampleRay(ray);
-    return v;
-}
-
+int cnt_regular = 0;
+int cnt_approx = 0;
 void Camera::samplePixel(size_t x, size_t y, int i)
 {
-    //print_result = (384 <= x) && (x < 416) && (416 <= y) && (y < 448);
-    print_result = false;
     double pixel_size = sensor_width / image.width;
 
     glm::dvec2 half_dim = glm::dvec2(image.width, image.height) * 0.5;
@@ -116,36 +103,29 @@ void Camera::samplePixel(size_t x, size_t y, int i)
         glm::dvec3 start = eye + left * aperture_sample.x + up * aperture_sample.y;
         ray = Ray(start, glm::normalize(focus_point - start), integrator->scene.ior);
     }
+    bool cond = false;
+    if((i >= spp1) && (is_edge[(y / 8) * (image.width / 8) + (x / 8)] == 0)){
+        int pixel_type = 0;
+        if((x % 8 == 0) || (x % 8 == 7)) pixel_type++;
+        if((y % 8 == 0) || (y % 8 == 7)) pixel_type++;
 
-    // sampling and recording result
-    random_recoder.clear();
-    random_kind = "";
-    glm::dvec3 v;
-    if(i >= 16){
-        if(rand01() < IS_prob){
-            std::pair<glm::dvec3, double> p = importance_sampling(ray, integrator, root);
-            v = p.first;
-            double pdf_prod = p.second;
-            film.deposit(px, v / pdf_prod);
-            if(print_result) std::cout << "IS " << pdf_prod << " ";
+        if(pixel_type == 0){
+            cond = (rand01() < p_in);
+        }
+        else if(pixel_type == 1){
+            cond = (rand01() < p_edge);
+        }
+        else{
+            cond = (rand01() < p_corner);
         }
     }
+    if(cond){
+        film.deposit(px, average_8x8[(y / 8) * (image.width / 8) + (x / 8)]);
+        cnt_approx++;
+    }
     else{
-        v = normal_sampling(ray, integrator);
-        film.deposit(px, v);
-        if(print_result) std::cout << "NS 1.0 ";
-    }
-
-    // constructing sample list and tree
-    double Y = 0.299 * v[0] + 0.587 * v[1] + 0.114 * v[2];
-    Y = std::min(Y, 1.0); // limiting over concentration
-    if(print_result){
-        std::cout << Y << " ";
-        print_random_recoder();
-    }
-    if(!use_IS){
-        struct sample sample_tmp = reshape(Y, random_recoder);
-        samples.push_back(sample_tmp);
+        film.deposit(px, integrator->sampleRay(ray));
+        cnt_regular++;
     }
 }
 
@@ -179,18 +159,15 @@ void Camera::sampleImage()
     }
 }
 
-int cnt = 0; // added
-int pre_cnt = 0;
 void Camera::sampleImageThread(WorkQueue<Bucket>& buckets)
 {
     Bucket bucket;
 
     while (buckets.getWork(bucket))
     {
-        //std::cout << bucket.min.x << " <= x < " << bucket.max.x << ", " << bucket.min.y << " <= y < " << bucket.max.y << std::endl;
-        full_size = (bucket.max.x - bucket.min.x == bucket_size) && (bucket.max.y - bucket.min.y == bucket_size);
-        root = NULL;
-        for(int i = 0; i < spp; i++){
+        std::cout << bucket.min.x << " <= x < " << bucket.max.x << ", " << bucket.min.y << " <= y < " << bucket.max.y << std::endl;
+        
+        for(int i = 0; i < spp1 + spp2; i++){
             for (size_t y = bucket.min.y; y < bucket.max.y; y++)
             {
                 for (size_t x = bucket.min.x; x < bucket.max.x; x++)
@@ -198,17 +175,12 @@ void Camera::sampleImageThread(WorkQueue<Bucket>& buckets)
                     samplePixel(x, y, i);
                 }
             }
-            memory_free(root);
-            root = init_kdtree(samples);
-            if(print_result && i == spp - 1) print_tree(root);
+            std::cout << i + 1 << " th sampling finished." << std::endl;
+            if(i == spp1 - 1){
+                edge_detection(edge_threshold, &image, &film);
+                calc_average_8x8(&image, &film);
+            }
         }
-        samples.clear();
-        cnt += ((bucket.max.x - bucket.min.x) * (bucket.max.y - bucket.min.y));
-        int progress = (cnt / 10000) * 10000;
-        if(pre_cnt < progress){
-            std::cout << cnt << " pixels finished." << std::endl;
-        }
-        pre_cnt = cnt; // added
     }
 }
 
@@ -223,7 +195,7 @@ void Camera::lookAt(const glm::dvec3& p)
 void Camera::capture()
 {
     std::cout << std::endl << std::string(28, '-') << "| MAIN RENDERING PASS |" << std::string(28, '-') << std::endl;
-    std::cout << std::endl << "Samples per pixel: " << spp << std::endl << std::endl;
+    std::cout << std::endl << "Samples per pixel: " << spp1 << " + " << spp2 << std::endl << std::endl;
     auto before = std::chrono::system_clock::now();
     sampleImage();
     saveImage();
@@ -231,4 +203,6 @@ void Camera::capture()
     std::cout << "\r" + std::string(100, ' ') + "\r";
     std::cout << "Render Completed: " << Format::date(now);
     std::cout << ", Elapsed Time: " << Format::timeDuration(std::chrono::duration_cast<std::chrono::milliseconds>(now - before).count()) << std::endl;
+    std::cout << "Regular routine: " << cnt_regular << "  Approx routine: " << cnt_approx << std::endl;
+    std::cout << std::endl << std::endl;
 }

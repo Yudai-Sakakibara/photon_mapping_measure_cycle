@@ -9,9 +9,11 @@
       "eye": [ 0, 1, -6.83879 ],
       "look_at": [ 0, 1, 0 ],
       "image":  { "width": 1000, "height": 1000, "exposure_compensation": -1.0, "gain_compensation": -0.5, "tonemapper": "Hable" },
-      "spp": 32,
-      "IS_rate": 1.0,
-      "savename": "wc_032_1.0_1x1"
+      "spp1": 16,
+      "spp2": 16,
+      "approx_prob": 0.5,
+      "edge_threshold": 224,
+      "savename": "wc_16_16_0.5_224_7"
     }
   ],
 

@@ -7,9 +7,6 @@
 #include "common/option.hpp"
 #include "common/util.hpp"
 
-#include "kdtree/random_recoder.hpp" // added
-#include "sampling/sampler.hpp" // added
-
 int main(int argc, char* argv[])
 {
     if (argc > 1)

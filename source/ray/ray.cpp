@@ -7,7 +7,7 @@
 #include "../material/material.hpp"
 #include "interaction.hpp"
 
-#include "../kdtree/random_recoder.hpp" // added
+//#include "../kdtree/random_recoder.hpp" // added
 
 Ray::Ray(const glm::dvec3& start, const glm::dvec3& end)
     : start(start), direction(glm::normalize(end - start)), inv_direction(1.0 / direction), medium_ior(1.0) { }
@@ -59,7 +59,7 @@ Ray::Ray(const Interaction &ia) :
         {
             diffuse_depth++;
             auto u = Sampler::get<Dim::BSDF, 2>();
-            if(use_IS && crid < dims){
+            /**if(use_IS && crid < dims){
                 u[0] = warped_samples[crid];
                 crid++;
             }
@@ -69,7 +69,7 @@ Ray::Ray(const Interaction &ia) :
             }
             random_recoder.push_back(u[0]); // added
             random_recoder.push_back(u[1]); // added
-            random_kind += "E"; // added
+            random_kind += "E"; // added**/
             direction = ia.shading_cs.from(Sampling::cosWeightedHemi(u[0], u[1]));
             medium_ior = ia.n1;
             start += ia.normal * C::EPSILON;
