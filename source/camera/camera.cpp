@@ -48,9 +48,12 @@ Camera::Camera(const nlohmann::json &j, const Option &option)
     edge_threshold = c.at("edge_threshold"); // added
     edge_threshold /= 255.0;
     approx_prob = c.at("approx_prob"); // added
-    p_in = approx_prob / 0.937659539163708;
+    /** p_in = approx_prob / 0.937659539163708;
     p_edge = approx_prob / 1.04884155190883;
-    p_corner = approx_prob / 1.26801483607357;
+    p_corner = approx_prob / 1.26801483607357; **/
+    p_in = approx_prob;
+    p_edge = approx_prob;
+    p_corner = approx_prob;
     savename = c.at("savename");
     aperture_radius = (focal_length / getOptional(c, "f_stop", -1.0)) / 2.0;
     focus_distance = getOptional(c, "focus_distance", -1.0);
@@ -104,7 +107,7 @@ void Camera::samplePixel(size_t x, size_t y, int i)
         ray = Ray(start, glm::normalize(focus_point - start), integrator->scene.ior);
     }
     bool cond = false;
-    if((i >= spp1) && (is_edge[(y / 8) * (image.width / 8) + (x / 8)] == 0)){
+    if((i >= spp1) && (is_edge[(y / 16) * (image.width / 16) + (x / 16)] == 0)){
         int pixel_type = 0;
         if((x % 8 == 0) || (x % 8 == 7)) pixel_type++;
         if((y % 8 == 0) || (y % 8 == 7)) pixel_type++;
@@ -120,7 +123,7 @@ void Camera::samplePixel(size_t x, size_t y, int i)
         }
     }
     if(cond){
-        film.deposit(px, average_8x8[(y / 8) * (image.width / 8) + (x / 8)]);
+        film.deposit(px, average_8x8[(y / 16) * (image.width / 16) + (x / 16)]);
         cnt_approx++;
     }
     else{

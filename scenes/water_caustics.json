@@ -11,9 +11,9 @@
       "image":  { "width": 1000, "height": 1000, "exposure_compensation": -1.0, "gain_compensation": -0.5, "tonemapper": "Hable" },
       "spp1": 16,
       "spp2": 16,
-      "approx_prob": 0.5,
-      "edge_threshold": 224,
-      "savename": "wc_16_16_0.5_224_7"
+      "approx_prob": 1.0,
+      "edge_threshold": 64,
+      "savename": "wc_16_16_1.0_64_4x"
     }
   ],
 
