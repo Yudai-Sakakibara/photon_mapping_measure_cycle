@@ -19,7 +19,7 @@
 #include "../edge_detection/edge_detection.hpp" // added
 
 int spp1, spp2; // n_samples of before & after edge detection
-double edge_threshold, approx_prob, p_in, p_edge, p_corner;
+double edge_threshold, approx_prob;
 
 Camera::Camera(const nlohmann::json &j, const Option &option)
 {
@@ -44,16 +44,10 @@ Camera::Camera(const nlohmann::json &j, const Option &option)
     focal_length = c.at("focal_length").get<double>() / 1000.0;
     sensor_width = c.at("sensor_width").get<double>() / 1000.0;
     spp1 = c.at("spp1"); // modified
-    spp2 = c.at("spp1"); // modified
+    spp2 = c.at("spp2"); // modified
     edge_threshold = c.at("edge_threshold"); // added
     edge_threshold /= 255.0;
     approx_prob = c.at("approx_prob"); // added
-    /** p_in = approx_prob / 0.937659539163708;
-    p_edge = approx_prob / 1.04884155190883;
-    p_corner = approx_prob / 1.26801483607357; **/
-    p_in = approx_prob;
-    p_edge = approx_prob;
-    p_corner = approx_prob;
     savename = c.at("savename");
     aperture_radius = (focal_length / getOptional(c, "f_stop", -1.0)) / 2.0;
     focus_distance = getOptional(c, "focus_distance", -1.0);
