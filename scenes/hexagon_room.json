@@ -17,15 +17,15 @@
       "eye": [ -2, 0, 0 ],
       "look_at": [ 13, -0.55, 0 ],
       "image" : { 
-        "width": 960,
-        "height": 720,
+        "width": 128,
+        "height": 96,
         "exposure_compensation": -0.25
       },
-      "spp1": 16,
-      "spp2": 16,
+      "spp1": 4,
+      "spp2": 0,
       "approx_prob": 0.5,
-      "edge_threshold": 256,
-      "savename": "c1b_16_16_0.5_256_4y"
+      "edge_threshold": 128,
+      "savename": "c1b_128x96_4"
     },
     {
       "focal_length": 24,

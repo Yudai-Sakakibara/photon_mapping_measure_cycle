@@ -61,12 +61,8 @@ private:
         glm::ivec2 max;
     };
 
-    void samplePixel(size_t x, size_t y, int i);
-    void sampleImageThread(WorkQueue<Bucket>& buckets);
-
-    void printInfoThread(WorkQueue<Bucket>& buckets);
-
-    const size_t bucket_size = 2000; // include all pixels
+    void init_for_approx();
+    void samplePixel(size_t x, size_t y, bool after_calc_ave);
 
     std::shared_ptr<Integrator> integrator;
 

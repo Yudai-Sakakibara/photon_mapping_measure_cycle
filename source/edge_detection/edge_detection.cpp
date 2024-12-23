@@ -1,11 +1,21 @@
 #include "../camera/camera.hpp"
 #include "../camera/film.hpp"
+#include "edge_detection.hpp" // added
 #include <assert.h>
 #include <iostream>
 #include <stdlib.h>
 
-std::vector<int> is_edge;
-std::vector<glm::dvec3> average_8x8;
+std::vector<bool> no_edge;
+std::vector<glm::dvec3> average_window;
+const int window_size = 8;
+int wows, hows;
+
+glm::dvec3 clamped(glm::dvec3 v){
+    v[0] = std::min(v[0], 1.0);
+    v[1] = std::min(v[1], 1.0);
+    v[2] = std::min(v[2], 1.0);
+    return v;
+}
 
 void edge_detection(double edge_threshold, Image* image_ptr, Film* film_ptr){
     // make gray scale pic
@@ -17,6 +27,7 @@ void edge_detection(double edge_threshold, Image* image_ptr, Film* film_ptr){
     for(size_t x = 0; x < width; ++x){
         for(size_t y = 0; y < height; ++y){
             glm::dvec3 v = (*film_ptr).scan(x, y);
+            v = clamped(v);
             image_gray[y * width + x] = 0.299 * v[0] + 0.587 * v[1] + 0.114 * v[2];
         }
     }
@@ -42,14 +53,10 @@ void edge_detection(double edge_threshold, Image* image_ptr, Film* film_ptr){
     }
 
     // edge judgement
-    //is_edge.assign(width * height, true);
-    int wo16 = width / 16; // width over eight
-    int ho16 = height / 16; // height over eight
-    is_edge.assign(wo16 * ho16, 0);
     for(size_t x = 0; x < width; ++x){
         for(size_t y = 0; y < height; ++y){
             if(x == 0 || x == width - 1 || y == 0 || y == height - 1){
-                is_edge[(y / 16) * wo16 + (x / 16)]++;
+                no_edge[(y / window_size) * wows + (x / window_size)] = false;
             }
             else{
                 double diff = 9.0 * image_gray_filtered[(y + 0) * width + (x + 0)];
@@ -58,7 +65,7 @@ void edge_detection(double edge_threshold, Image* image_ptr, Film* film_ptr){
                     int dy = k / 3 - 1;
                     diff -= image_gray_filtered[(y + dy) * width + (x + dx)];
                 }
-                if(diff >= edge_threshold) is_edge[(y / 16) * wo16 + (x / 16)]++;
+                if(diff >= edge_threshold) no_edge[(y / window_size) * wows + (x / window_size)] = false;
             }
         }
     }
@@ -67,29 +74,16 @@ void edge_detection(double edge_threshold, Image* image_ptr, Film* film_ptr){
     free(image_gray); free(image_gray_filtered);
 }
 
-void calc_average_8x8(Image* image_ptr, Film* film_ptr){
-    assert((*image_ptr).width % 16 == 0); assert((*image_ptr).height % 16 == 0);
-    int wo16 = (*image_ptr).width / 16; // width over eight
-    int ho16 = (*image_ptr).height / 16; // height over eight
-    average_8x8.clear();
-    average_8x8.assign(wo16 * ho16, glm::dvec3(0.0));
-    for(size_t x = 0; x < wo16; ++x){
-        for(size_t y = 0; y < ho16; ++y){
-            double r_list[256], g_list[256], b_list[256];
-            for(int i = 0; i < 16; ++i){
-                for(int j = 0; j < 16; ++j){
-                    glm::dvec3 tmp = (*film_ptr).scan(x * 16 + i, y * 16 + j);
-                    r_list[j * 16 + i] = std::min(tmp[0], 1.0);
-                    g_list[j * 16 + i] = std::min(tmp[1], 1.0);
-                    b_list[j * 16 + i] = std::min(tmp[2], 1.0);
+void calc_average_window(Image* image_ptr, Film* film_ptr){
+    for(size_t x = 0; x < wows; ++x){
+        for(size_t y = 0; y < hows; ++y){
+            for(int i = 0; i < window_size; ++i){
+                for(int j = 0; j < window_size; ++j){
+                    glm::dvec3 tmp = (*film_ptr).scan(x * window_size + i, y * window_size + j);
+                    average_window[y * wows + x] += clamped(tmp);
                 }
             }
-            std::sort(r_list, r_list + 256);
-            std::sort(g_list, g_list + 256);
-            std::sort(b_list, b_list + 256);
-            average_8x8[y * wo16 + x][0] = (r_list[127] + r_list[128]) / 2.0;
-            average_8x8[y * wo16 + x][1] = (g_list[127] + g_list[128]) / 2.0;
-            average_8x8[y * wo16 + x][2] = (b_list[127] + b_list[128]) / 2.0;
+            average_window[y * wows + x] /= (window_size * window_size);
         }
     }
 }
