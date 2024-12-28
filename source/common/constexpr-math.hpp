@@ -9,14 +9,14 @@ constexpr T pow2(T x)
     return x * x;
 }
 
-template <class T>
+/** template <class T>
 constexpr size_t nextPowerOfTwo(T i)
 {
     // Equivalent to 2^ceil(log2(i))
     return i == 0 ? 0 : 1ull << (sizeof(T) * 8 - std::countl_zero(i - 1));
-}
+} **/
 
-/** template <class T>
+template <class T>
 constexpr size_t nextPowerOfTwo(T i)
 {
     if(i == 0){
@@ -29,16 +29,11 @@ constexpr size_t nextPowerOfTwo(T i)
         }
         return res;
     }
-} **/
+}
 
 constexpr double determinant(const glm::dmat3 &M)
 {
-    return
-    {
-        M[0][0] * (M[1][1] * M[2][2] - M[2][1] * M[1][2]) -
-        M[1][0] * (M[0][1] * M[2][2] - M[2][1] * M[0][2]) +
-        M[2][0] * (M[0][1] * M[1][2] - M[1][1] * M[0][2])
-    };
+    return M[0][0] * (M[1][1] * M[2][2] - M[2][1] * M[1][2]) - M[1][0] * (M[0][1] * M[2][2] - M[2][1] * M[0][2]) + M[2][0] * (M[0][1] * M[1][2] - M[1][1] * M[0][2]);
 }
 
 constexpr glm::dmat3 inverse(const glm::dmat3 &M)

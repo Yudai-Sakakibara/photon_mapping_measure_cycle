@@ -1,6 +1,6 @@
 #pragma once
 
-#include <chrono>
+// #include <chrono>
 #include <deque>
 #include <atomic>
 #include <filesystem>
@@ -14,7 +14,7 @@
 #include "film.hpp"
 
 #include "../scene/scene.hpp"
-#include "../common/work-queue.hpp"
+// #include "../common/work-queue.hpp"
 #include "../common/option.hpp"
 
 class Integrator;
@@ -53,14 +53,14 @@ public:
     std::string savename;
 
 private:
-    struct Bucket
+    /** struct Bucket
     {
         Bucket() : min(0), max(0) { }
         Bucket(const glm::ivec2& min, const glm::ivec2& max) : min(min), max(max) { }
 
         glm::ivec2 min;
         glm::ivec2 max;
-    };
+    }; **/
 
     void init_for_approx();
     void samplePixel(size_t x, size_t y, int mode);
@@ -69,9 +69,7 @@ private:
 
     std::atomic_size_t num_sampled_pixels = 0;
     size_t last_num_sampled_pixels = 0;
-    std::chrono::time_point<std::chrono::steady_clock> last_update = std::chrono::steady_clock::now();
+    // std::chrono::time_point<std::chrono::steady_clock> last_update = std::chrono::steady_clock::now();
     const size_t num_times = 32;
     std::deque<double> times;
 };
-
-extern std::vector<struct sample> samples; // added

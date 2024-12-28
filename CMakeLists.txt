@@ -6,7 +6,7 @@ project(monte-carlo-ray-tracer)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 #set(CMAKE_CXX_COMPILER /usr/local/bin/clang) # clang-10.0.0, linux-gnu
 set(CMAKE_CXX_COMPILER /home/sakakibara/opt/bin/clang++) # clang-10.0.0, elf
-set(CMAKE_CXX_FLAGS "-static -c -emit-llvm -std=c++2a -std=gnu++2a") # added
+set(CMAKE_CXX_FLAGS "-static -c -emit-llvm -std=c++17 -std=gnu++17") # added
 
 #set(THREADS_PREFER_PTHREAD_FLAG ON) # modified
 #find_package(Threads REQUIRED) # modified

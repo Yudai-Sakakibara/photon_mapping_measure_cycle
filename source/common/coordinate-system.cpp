@@ -6,7 +6,7 @@
 // https://graphics.pixar.com/library/OrthonormalB/paper.pdf
 glm::dmat3 orthonormalBasis(const glm::dvec3& N)
 {
-    double sign = std::copysign(1.0, N.z);
+    double sign = copysign(1.0, N.z);
     double a = -1.0 / (sign + N.z);
     double b = N.x * N.y * a;
     return

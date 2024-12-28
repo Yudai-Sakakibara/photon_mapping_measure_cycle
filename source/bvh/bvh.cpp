@@ -1,11 +1,11 @@
 #include "bvh.hpp"
 
 #include <queue>
-#include <chrono>
+// #include <chrono>
 #include <cstdio>
 
 #include "../octree/octree.cpp"
-#include "../common/format.hpp"
+// #include "../common/format.hpp"
 #include "../surface/surface.hpp"
 #include "../common/util.hpp"
 #include "../common/priority-queue.hpp"

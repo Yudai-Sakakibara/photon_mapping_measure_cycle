@@ -39,9 +39,9 @@ namespace glm
 	}
 
 	// round
-#	if GLM_HAS_CXX11_STL
+/** #	if GLM_HAS_CXX11_STL
 		using ::std::round;
-#	else
+#	else **/
 		template<typename genType>
 		GLM_FUNC_QUALIFIER genType round(genType x)
 		{
@@ -49,12 +49,12 @@ namespace glm
 
 			return x < static_cast<genType>(0) ? static_cast<genType>(int(x - static_cast<genType>(0.5))) : static_cast<genType>(int(x + static_cast<genType>(0.5)));
 		}
-#	endif
+// #	endif
 
 	// trunc
-#	if GLM_HAS_CXX11_STL
+/** #	if GLM_HAS_CXX11_STL
 		using ::std::trunc;
-#	else
+#	else **/
 		template<typename genType>
 		GLM_FUNC_QUALIFIER genType trunc(genType x)
 		{
@@ -62,7 +62,7 @@ namespace glm
 
 			return x < static_cast<genType>(0) ? -std::floor(-x) : std::floor(x);
 		}
-#	endif
+// #	endif
 
 }//namespace glm
 
@@ -739,15 +739,15 @@ namespace detail
 		return reinterpret_cast<vec<L, float, Q>&>(const_cast<vec<L, uint, Q>&>(v));
 	}
 
-#	if GLM_HAS_CXX11_STL
+/** #	if GLM_HAS_CXX11_STL
 		using std::fma;
-#	else
+#	else **/
 		template<typename genType>
 		GLM_FUNC_QUALIFIER genType fma(genType const& a, genType const& b, genType const& c)
 		{
 			return a * b + c;
 		}
-#	endif
+// #	endif
 
 	template<typename genType>
 	GLM_FUNC_QUALIFIER genType frexp(genType x, int& exp)

@@ -10,7 +10,6 @@ int main(int argc, char* argv[])
     int a = 0;
     int b = 0;
     std::filesystem::path p;
-    using std::log2;
     asm volatile ("li a7, 0x10001\n\t" 
         "ecall" 
         :

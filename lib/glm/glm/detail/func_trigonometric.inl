@@ -130,9 +130,9 @@ namespace glm
 	}
 
 	// asinh
-#	if GLM_HAS_CXX11_STL
+/** #	if GLM_HAS_CXX11_STL
 		using std::asinh;
-#	else
+#	else **/
 		template<typename genType>
 		GLM_FUNC_QUALIFIER genType asinh(genType x)
 		{
@@ -140,7 +140,7 @@ namespace glm
 
 			return (x < static_cast<genType>(0) ? static_cast<genType>(-1) : (x > static_cast<genType>(0) ? static_cast<genType>(1) : static_cast<genType>(0))) * log(std::abs(x) + sqrt(static_cast<genType>(1) + x * x));
 		}
-#	endif
+// #	endif
 
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER vec<L, T, Q> asinh(vec<L, T, Q> const& v)
@@ -149,9 +149,9 @@ namespace glm
 	}
 
 	// acosh
-#	if GLM_HAS_CXX11_STL
+/** #	if GLM_HAS_CXX11_STL
 		using std::acosh;
-#	else
+#	else **/
 		template<typename genType>
 		GLM_FUNC_QUALIFIER genType acosh(genType x)
 		{
@@ -161,7 +161,7 @@ namespace glm
 				return static_cast<genType>(0);
 			return log(x + sqrt(x * x - static_cast<genType>(1)));
 		}
-#	endif
+// #	endif
 
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER vec<L, T, Q> acosh(vec<L, T, Q> const& v)
@@ -170,9 +170,9 @@ namespace glm
 	}
 
 	// atanh
-#	if GLM_HAS_CXX11_STL
+/** #	if GLM_HAS_CXX11_STL
 		using std::atanh;
-#	else
+#	else **/
 		template<typename genType>
 		GLM_FUNC_QUALIFIER genType atanh(genType x)
 		{
@@ -182,7 +182,7 @@ namespace glm
 				return 0;
 			return static_cast<genType>(0.5) * log((static_cast<genType>(1) + x) / (static_cast<genType>(1) - x));
 		}
-#	endif
+// #	endif
 
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER vec<L, T, Q> atanh(vec<L, T, Q> const& v)

@@ -1,9 +1,12 @@
 #include <stdio.h>
+#include <filesystem>
 
 int main(int argc, char* argv[])
 {
         int app = 0;
         int dummy = 1;
+        std::filesystem::path p = std::filesystem::current_path();
+        std::printf("%s\n", p.c_str());
 
         asm volatile ("li a7, 0x10001\n\t" 
         "ecall" 
@@ -12,7 +15,7 @@ int main(int argc, char* argv[])
         : "a7"); 
 
         for (int i = 0; i < 100; ++i) {
-                #pragma approx branch
+                //#pragma approx branch
                 if(1){
                         printf("regular routine\n");
                 }

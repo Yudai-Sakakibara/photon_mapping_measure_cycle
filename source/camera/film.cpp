@@ -29,7 +29,7 @@ Film::Film(size_t width, size_t height, const nlohmann::json& j)
     };
 
     if (filter_type == "mitchell-netravali")
-        set(Filter::MitchellNetravali<>, 2.0);
+        set(Filter::MitchellNetravali_default, 2.0);
     else if (filter_type == "catmull-rom")
         set(Filter::CatmullRom, 2.0);
     else if (filter_type == "b-spline")
@@ -98,10 +98,10 @@ double Film::filter(double x) const
 
 void Film::Splat::update(const glm::dvec3& v, double weight)
 {
-    rgb_sum[0] += v[0] * weight;
-    rgb_sum[1] += v[1] * weight;
-    rgb_sum[2] += v[2] * weight;
-    weight_sum += weight;
+    rgb_sum[0] = rgb_sum[0] + (v[0] * weight);
+    rgb_sum[1] = rgb_sum[1] + (v[1] * weight);
+    rgb_sum[2] = rgb_sum[2] + (v[2] * weight);
+    weight_sum = weight_sum + weight;
 }
 
 glm::dvec3 Film::Splat::get() const
