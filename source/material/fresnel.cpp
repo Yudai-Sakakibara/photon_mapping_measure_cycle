@@ -1,7 +1,7 @@
 #include "fresnel.hpp"
 
 #include <fstream>
-#include <iostream>
+#include <cstdio>
 
 #include <glm/glm.hpp>
 
@@ -96,7 +96,7 @@ void from_json(const nlohmann::json &j, ComplexIOR &c)
         }
         else
         {
-            std::cout << std::endl << ior_path.string() << " not found.\n";
+            std::printf("\n%s not found.\n", ior_path.string().c_str());
         }
     }
 }

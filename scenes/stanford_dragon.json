@@ -8,10 +8,13 @@
       "sensor_width": 35,
       "eye": [ -12, -0.05, 2 ],
       "look_at": [ 8, -2, -0.4 ],
-      "image":  { "width": 960, "height": 540, "exposure_compensation": -2.0, "gain_compensation": 0.0, "tonemapper": "ACES" },
+      "image":  { "width": 480, "height": 280, "exposure_compensation": -2.0, "gain_compensation": 0.0, "tonemapper": "ACES" },
       "focus_distance": 17,
       "f_stop": 1.8,
-      "sqrtspp": 4,
+      "spp1": 16,
+      "spp2": 0,
+      "approx_prob": 0.5,
+      "edge_threshold": 64,
       "savename": "stanford_dragon_frosted"
     }
   ],

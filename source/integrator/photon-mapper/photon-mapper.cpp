@@ -1,6 +1,6 @@
 #include "photon-mapper.hpp"
 
-#include <iostream>
+#include <cstdio>
 #include <iomanip>
 #include <atomic>
 
@@ -106,15 +106,7 @@ PhotonMapper::PhotonMapper(const nlohmann::json& j) : Integrator(j)
     auto begin = std::chrono::high_resolution_clock::now();
     if constexpr(print)
     {
-        std::cout << std::endl << std::string(28, '-') << "| PHOTON MAPPING PASS |" << std::string(28, '-') 
-                  << std::endl << std::endl << "Total number of photon emissions from light sources: " 
-                  << Format::largeNumber(photon_emissions) << std::endl << std::endl;
-
-        while (!work_queue.empty())
-        {
-            double progress = work_queue.progress();
-            std::cout << std::string("\rPhotons emitted: " + Format::progress(progress));
-        }
+        std::printf("\n----------------------------| PHOTON MAPPING PASS |---------------------\n\nTotal number of photon emissions from light sources: %ld\n\n", photon_emissions);
     }
 
     std::atomic<bool> done_constructing_octrees = false;
@@ -165,14 +157,7 @@ PhotonMapper::PhotonMapper(const nlohmann::json& j) : Integrator(j)
 
     if constexpr(print)
     {
-        end = std::chrono::high_resolution_clock::now();
-        std::string duration2 = Format::timeDuration(std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count());
-        std::cout << "\rPhotons emitted in " + duration + ". Octrees constructed in " + duration2 + "." << std::endl << std::endl
-                  << "Photon maps and numbers of stored photons: " << std::endl << std::endl;
-
-        std::cout << std::right
-                  << std::setw(19) << "Global photons: "  << Format::largeNumber(num_global_photons)  << std::endl
-                  << std::setw(19) << "Caustic photons: " << Format::largeNumber(num_caustic_photons) << std::endl;
+        std::printf("Photon maps and numbers of stored photons: \n\n   Global photons: %ld\n  Caustic photons: %ld\n", num_global_photons, num_caustic_photons);
     }
 }
 

@@ -9,7 +9,10 @@
       "eye": [ 0, 75, 255 ],
       "look_at": [ 0, 1, 0 ],
       "image": { "width": 1280, "height": 240, "tonemapper": "ACES" },
-      "sqrtspp": 32,
+      "spp1": 32,
+      "spp2": 0,
+      "approx_prob": 0.5,
+      "edge_threshold": 64,
       "savename": "metals"
     }
   ],

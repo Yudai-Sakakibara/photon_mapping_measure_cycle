@@ -2,7 +2,7 @@
 
 #include <algorithm>
 #include <functional>
-#include <iostream>
+#include <cstdio>
 #include <iomanip>
 #include <sstream>
 
@@ -73,16 +73,26 @@ Camera::Camera(const nlohmann::json &j, const Option &option)
 
 int cnt_regular = 0;
 int cnt_approx = 0;
-void Camera::samplePixel(size_t x, size_t y, bool after_calc_ave)
+int cnt_all = 0;
+void Camera::samplePixel(size_t x, size_t y, int mode)
 {
     double pixel_size = sensor_width / image.width;
     glm::dvec2 half_dim = glm::dvec2(image.width, image.height) * 0.5;
 
     Sampler::initiate(static_cast<uint32_t>(y * image.width + x));
 
-    int spp = after_calc_ave ? spp2 : spp1;
+    int i_start, i_goal;
+    if(mode == 0){
+        i_start = 0; i_goal = spp1;
+    }
+    else if(mode == 1){
+        i_start = spp1; i_goal = spp1 + spp2 - 1;
+    }
+    else{
+        i_start = spp1 + spp2 - 1; i_goal = spp1 + spp2;
+    }
 
-    for(int i = 0; i < spp; i++)
+    for(int i = i_start; i < i_goal; i++)
     {
         Sampler::setIndex(i);
 
@@ -105,24 +115,27 @@ void Camera::samplePixel(size_t x, size_t y, bool after_calc_ave)
         }
         film.deposit(px, integrator->sampleRay(ray));
 
-        bool can_approx = after_calc_ave & no_edge[(y / window_size) * wows + (x / window_size)];
+        bool can_approx = (mode > 0) & no_edge[(y / window_size) * wows + (x / window_size)];
         if(can_approx){
             #pragma approx branch
             if(1){
                 film.deposit(px, integrator->sampleRay(ray));
                 cnt_regular++;
+                cnt_all++;
             }
             else{
                 film.deposit(px, average_window[(y / window_size) * wows + (x / window_size)]);
                 cnt_approx++;
+                cnt_all++;
             }
         }
         else{
             film.deposit(px, integrator->sampleRay(ray));
             cnt_regular++;
+            cnt_all++;
         }
-        if((cnt_approx + cnt_regular) % 100 == 0){
-            std::cout << cnt_approx + cnt_regular << " samples finished" << std::endl;
+        if(cnt_all % 20000 == 0){
+            std::printf("%d samples finished\n", cnt_all);
         }
     }
 }
@@ -137,27 +150,53 @@ void Camera::init_for_approx(){
 
 void Camera::sampleImage()
 {
+    // step.1
     init_for_approx();
-
     for (size_t y = 0; y < image.height; y++)
     {
         for (size_t x = 0; x < image.width; x++)
         {
-            samplePixel(x, y, false);
+            samplePixel(x, y, 0);
         }
     }
 
+    // step2
     edge_detection(edge_threshold, &image, &film);
     calc_average_window(&image, &film);
 
+    // step3
     for (size_t y = 0; y < image.height; y++)
     {
         for (size_t x = 0; x < image.width; x++)
         {
-            samplePixel(x, y, true);
+            samplePixel(x, y, 1);
         }
     }
 
+    /** asm volatile ("li a7, 0x10001\n\t" 
+        "ecall" 
+        :
+        :
+        : "a7"); **/
+
+    // step4
+    for (size_t y = 0; y < image.height; y++)
+    {
+        for (size_t x = 0; x < image.width; x++)
+        {
+            samplePixel(x, y, 2);
+        }
+    }
+
+    std::printf("Regular routine: %d  Approx routine: %d\n", cnt_regular, cnt_approx);
+
+    /** asm volatile ("li a7, 0x10001\n\t" 
+        "ecall" 
+        :
+        :
+        : "a7"); **/
+
+    // step5
     for (int y = 0; y < image.height; y++)
     {
         for (int x = 0; x < image.width; x++)
@@ -177,15 +216,11 @@ void Camera::lookAt(const glm::dvec3& p)
 
 void Camera::capture()
 {
-    std::cout << std::endl << std::string(28, '-') << "| MAIN RENDERING PASS |" << std::string(28, '-') << std::endl;
-    std::cout << std::endl << "Samples per pixel: " << spp1 << " + " << spp2 << std::endl << std::endl;
-    //auto before = std::chrono::system_clock::now();
+    std::printf("\n");
+    std::printf("----------------------------| MAIN RENDERING PASS |----------------------------\n");
+    std::printf("\n");
+    std::printf("Samples per pixel: %d + %d\n\n", spp1, spp2);
     sampleImage();
     saveImage();
-    /** auto now = std::chrono::system_clock::now();
-    std::cout << "\r" + std::string(100, ' ') + "\r";
-    std::cout << "Render Completed: " << Format::date(now);
-    std::cout << ", Elapsed Time: " << Format::timeDuration(std::chrono::duration_cast<std::chrono::milliseconds>(now - before).count()) << std::endl; **/
-    std::cout << "Regular routine: " << cnt_regular << "  Approx routine: " << cnt_approx << std::endl;
-    std::cout << std::endl << std::endl;
+    std::printf("Regular routine: %d  Approx routine: %d\n\n", cnt_regular, cnt_approx);
 }

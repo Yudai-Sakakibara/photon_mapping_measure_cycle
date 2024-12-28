@@ -12,7 +12,10 @@
         "width": 512,
         "height": 512
       },
-      "sqrtspp": 8,
+      "spp1": 32,
+      "spp2": 0,
+      "approx_prob": 0.5,
+      "edge_threshold": 64,
       "savename": "ior_test"
     }
   ],

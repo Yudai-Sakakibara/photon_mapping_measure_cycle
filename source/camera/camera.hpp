@@ -3,6 +3,7 @@
 #include <chrono>
 #include <deque>
 #include <atomic>
+#include <filesystem>
 
 #include <glm/vec3.hpp>
 #include <glm/vec2.hpp>
@@ -62,7 +63,7 @@ private:
     };
 
     void init_for_approx();
-    void samplePixel(size_t x, size_t y, bool after_calc_ave);
+    void samplePixel(size_t x, size_t y, int mode);
 
     std::shared_ptr<Integrator> integrator;
 

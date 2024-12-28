@@ -1,5 +1,5 @@
 #include <filesystem>
-#include <iostream>
+#include <cstdio>
 #include <fstream>
 
 #include "camera/camera.hpp"
@@ -18,8 +18,8 @@ int main(int argc, char* argv[])
         }
         Scene::path = std::filesystem::current_path() / command_path;
     }
-    Scene::path.string() = "/home/sakakibara/monte-carlo-ray-tracer_approx/scenes";
-    std::cout << "Scene directory:" << std::endl << Scene::path.string() << std::endl << std::endl;
+    std::printf("Scene directory:\n");
+    std::printf("%s\n", Scene::path.string().c_str());
 
     std::vector<Option> options;
     try
@@ -28,13 +28,13 @@ int main(int argc, char* argv[])
     }
     catch (const std::exception& ex)
     {
-        std::cout << ex.what() << std::endl;
+        std::printf("%s\n", ex.what());
         return -1;
     }
 
     if (options.empty())
     {
-        std::cout << "No scenes found." << std::endl;
+        std::printf("No scenes found.\n");
         return -1;
     }
 
@@ -45,8 +45,6 @@ int main(int argc, char* argv[])
     scene_file >> j;
     scene_file.close();
 
-    std::cout << "file loading ended" << std::endl;
-
     std::unique_ptr<Camera> camera;
     try
     {
@@ -54,25 +52,23 @@ int main(int argc, char* argv[])
     }
     catch (const std::exception& ex)
     {
-        std::cout << ex.what() << std::endl;
+        std::printf("%s\n", ex.what());
         return -1;
     }
 
-    std::cout << "rendering start" << std::endl;
-
-    asm volatile ("li a7, 0x10001\n\t" 
+    /** asm volatile ("li a7, 0x10001\n\t" 
         "ecall" 
         :
         :
-        : "a7");
+        : "a7"); **/
 
     camera->capture();
 
-    asm volatile ("li a7, 0x10001\n\t" 
+    /** asm volatile ("li a7, 0x10001\n\t" 
         "ecall" 
         :
         :
-        : "a7");
+        : "a7"); **/
 
     return 0;
 }

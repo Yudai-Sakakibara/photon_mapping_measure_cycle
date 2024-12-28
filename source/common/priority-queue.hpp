@@ -11,7 +11,7 @@
 template<class T>
 class PriorityQueue
 {
-    typedef std::vector<T>::size_type uint_t;
+    typedef typename std::vector<T>::size_type uint_t;
 
 public:
     PriorityQueue(uint_t reserved = 64) { H.reserve(reserved); }
@@ -84,8 +84,8 @@ public:
         do { shiftDown(T(H[index]), index); } while (index--);
     }
 
-    std::vector<T>::const_iterator const begin() { return H.begin(); }
-    std::vector<T>::const_iterator const end() { return H.end(); }
+    typename std::vector<T>::const_iterator const begin() { return H.begin(); }
+    typename std::vector<T>::const_iterator const end() { return H.end(); }
 
     const T& top() const { return H.front(); }
     bool empty() const { return H.empty(); }
@@ -133,7 +133,7 @@ private:
 template<class T>
 class PriorityQueue1
 {
-    typedef std::vector<T>::size_type uint_t;
+    typedef typename std::vector<T>::size_type uint_t;
 public:
     PriorityQueue1(uint_t reserved = 64) { H.reserve(reserved); }
 
@@ -155,8 +155,8 @@ public:
         H.pop_back();
     }
 
-    std::vector<T>::const_iterator const begin() { return H.begin(); }
-    std::vector<T>::const_iterator const end() { return H.end(); }
+    typename std::vector<T>::const_iterator const begin() { return H.begin(); }
+    typename std::vector<T>::const_iterator const end() { return H.end(); }
 
     const T& top() const { return H.front(); }
     bool empty() const { return H.empty(); }

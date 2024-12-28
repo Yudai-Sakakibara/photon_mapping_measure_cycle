@@ -13,7 +13,7 @@
 
 #include <fstream>
 #include <sstream>
-#include <iostream>
+#include <cstdio>
 
 Scene::Scene(const nlohmann::json& j)
 {
@@ -138,7 +138,7 @@ Scene::Scene(const nlohmann::json& j)
 
     computeBoundingBox();
 
-    std::cout << "\nNumber of primitives: " << Format::largeNumber(surfaces.size()) << std::endl;
+    std::printf("\nNumber of primitives: %ld\n", surfaces.size());
 
     if (j.find("bvh") != j.end())
     {
@@ -244,7 +244,7 @@ void Scene::parseOBJ(const std::filesystem::path &path,
 {
     if (!std::filesystem::exists(path))
     {
-        std::cout << std::endl << path.string() << " not found.\n";
+        std::printf("\n%s not found.\n", path.string().c_str());
         return;
     }
 

@@ -1,0 +1,90 @@
+{
+  "num_render_threads": -1,
+  "ior": 1.0,
+
+  "cameras": [
+    {
+      "focal_length": 102.25,
+      "sensor_width": 35,
+      "eye": [ 0, 1, -6.83879 ],
+      "look_at": [ 0, 1, 0 ],
+      "image":  { "width": 320, "height": 320, "exposure_compensation": -1.0, "gain_compensation": -0.5, "tonemapper": "Hable" },
+      "spp1": 16,
+      "spp2": 0,
+      "approx_prob": 0.5,
+      "edge_threshold": 64,
+      "savename": "diamond8"
+    }
+  ],
+
+  "photon_map": {
+    "emissions": 1e6,
+    "caustic_factor": 10.0,
+    "k_nearest_photons": 50,
+    "max_photons_per_octree_leaf": 200,
+    "direct_visualization": false
+  },
+
+  "bvh": {
+    "type": "octree"
+  },
+
+  "materials": {
+    "default": {
+      "reflectance": 0.8
+    },
+    "leftwall": {
+      "reflectance": "#a2bf82"
+    },
+    "rightwall": {
+      "reflectance": "#8caabf"
+    },
+    "diamond": {
+      "transparency": 1.0,
+      "ior": "data/spectral-distributions/Taylor.csv"
+    },
+    "light": {
+      "reflectance": 1,
+      "emittance": { "illuminant": "F9", "scale": 25 }
+    }
+  },
+
+  "surfaces": [
+    {
+      "type": "object",
+      "material": "leftwall",
+      "file": "data/water_caustics/leftwall.obj"
+    },
+    {
+      "type": "object",
+      "material": "rightwall",
+      "file": "data/water_caustics/rightwall.obj"
+    },
+    {
+      "type": "object",
+      "file": "data/water_caustics/backwall.obj"
+    },
+    {
+      "type": "object",
+      "file": "data/water_caustics/ceiling.obj"
+    },
+    {
+      "type": "object",
+      "file": "data/water_caustics/floor.obj"
+    },
+    {
+      "type": "object",
+      "material": "light",
+      "file": "data/water_caustics/light.obj"
+    },
+    {
+      "type": "object",
+      "file": "data/diamond.obj",
+      "smooth": true,
+      "material": "diamond",
+      "position": [-0.55,1.0,-0.1],
+      "rotation": [0.0, 180.0, 0.0],
+      "scale": 0.5
+    }
+  ]
+}

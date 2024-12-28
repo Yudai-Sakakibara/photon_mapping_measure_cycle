@@ -16,6 +16,21 @@ constexpr size_t nextPowerOfTwo(T i)
     return i == 0 ? 0 : 1ull << (sizeof(T) * 8 - std::countl_zero(i - 1));
 }
 
+/** template <class T>
+constexpr size_t nextPowerOfTwo(T i)
+{
+    if(i == 0){
+        return 0;
+    }
+    else{
+        size_t res = 1;
+        while(res < i){
+            res <<= 1;
+        }
+        return res;
+    }
+} **/
+
 constexpr double determinant(const glm::dmat3 &M)
 {
     return

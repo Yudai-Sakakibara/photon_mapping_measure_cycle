@@ -2,7 +2,7 @@
 
 #include <fstream>
 #include <sstream>
-#include <iostream>
+#include <cstdio>
 
 #include <glm/vec3.hpp>
 #include <nlohmann/json.hpp>
@@ -57,22 +57,22 @@ Option getOption(std::vector<Option>& options)
     max_fil++;
     max_cam++;
 
-    std::cout << " " << std::string(max_opt + max_fil + max_cam + 5, '_') << std::endl;
+    std::printf(" %s\n", std::string(max_opt + max_fil + max_cam + 5, '_').c_str());
 
     auto printLine = [](std::vector<std::pair<std::string, size_t>> line) {
-        std::cout << "| ";
+        std::printf("| ");
         for (const auto& l : line)
         {
-            std::cout << std::left << std::setw(l.second) << l.first;
-            std::cout << "| ";
+            std::printf("%s%s", l.first.c_str(), std::string(l.second - l.first.size(), ' ').c_str());
+            std::printf("| ");
         }
-        std::cout << std::endl;
+        std::printf("\n");
     };
 
     printLine({ { "Option", max_opt }, { "File", max_fil }, { "Camera", max_cam } });
 
     std::string sep("|" + std::string(max_opt + 1, '_') + '|' + std::string(max_fil + 1, '_') + '|' + std::string(max_cam + 1, '_') + '|');
-    std::cout << sep << std::endl;
+    std::printf("%s\n", sep.c_str());
 
     for (int i = 0; i < options.size(); i++)
     {
@@ -80,15 +80,16 @@ Option getOption(std::vector<Option>& options)
         file.erase(file.find("."), file.length());
 
         printLine({ {std::to_string(i), max_opt},{file, max_fil},{options[i].camera, max_cam} });
-        std::cout << sep << std::endl;
+        std::printf("%s\n", sep.c_str());
     }
 
     int option;
-    std::cout << std::endl << "Select option: ";
-    while (std::cin >> option)
+    std::printf("\nSelect option: ");
+    while (1)
     {
+        std::scanf("%d", &option);
         if (option < 0 || option >= options.size())
-            std::cout << "Invalid option, try again: ";
+            std::printf("Invalid option, try again: ");
         else
             break;
     }
@@ -96,11 +97,11 @@ Option getOption(std::vector<Option>& options)
     if (options[option].photon_map)
     {
         char a;
-        std::cout << "\nUse photon mapping? (y/n) ";
-        while (std::cin >> a)
+        std::printf("\nUse photon mapping? (y/n) ");
+        while (std::scanf("%*c%c", &a))
         {
             if (a == 'y' || a == 'Y' || a == 'n' || a == 'N') break;
-            std::cout << "Answer with the letters y or n: ";
+            std::printf("Answer with the letters y or n: ");
         }
         if (a == 'n' || a == 'N')
         {

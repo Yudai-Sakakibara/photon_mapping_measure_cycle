@@ -2,7 +2,6 @@
 #include "../camera/film.hpp"
 #include "edge_detection.hpp" // added
 #include <assert.h>
-#include <iostream>
 #include <stdlib.h>
 
 std::vector<bool> no_edge;

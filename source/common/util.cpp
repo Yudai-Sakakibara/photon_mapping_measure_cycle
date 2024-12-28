@@ -1,5 +1,5 @@
 #include <fstream>
-#include <iostream>
+#include <cstdio>
 
 #include <glm/gtx/transform.hpp>
 
@@ -35,10 +35,9 @@ glm::dvec3 Transform::transformNormal(const glm::dvec3& n) const
 
 void waitForInput()
 {
-    std::cout << std::endl << "Press enter to exit." << std::flush;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    char c;
-    while (std::cin.get(c) && c != '\n') {}
+    std::printf("\nPress enter to exit.\n");
+    std::string for_ignore;
+    (void)std::scanf("%s", for_ignore.c_str());
 }
 
 void Log(const std::string& message)

@@ -2,7 +2,7 @@
 
 #include <queue>
 #include <chrono>
-#include <iostream>
+#include <cstdio>
 
 #include "../octree/octree.cpp"
 #include "../common/format.hpp"
@@ -19,28 +19,26 @@ BVH::BVH(const BoundingBox &BB,
     std::shared_ptr<BuildNode> root = std::make_shared<BuildNode>();
     root->BB = BB;
 
-    auto begin = std::chrono::high_resolution_clock::now();
-
     std::string type = getOptional<std::string>(j, "type", "OCTREE");
     std::transform(type.begin(), type.end(), type.begin(), toupper);
 
     if (type == "QUATERNARY_SAH")
     {
         bins_per_axis = getOptional(j, "bins_per_axis", 8);
-        std::cout << "\nBuilding quaternary BVH using SAH.\n\n";
+        std::printf("\nBuilding quaternary BVH using SAH.\n\n");
         root->surfaces = surfaces;
         recursiveBuildQuaternarySAH(root);
     }
     else if (type == "BINARY_SAH")
     {
         bins_per_axis = getOptional(j, "bins_per_axis", 16);
-        std::cout << "\nBuilding binary BVH using SAH.\n\n";
+        std::printf("\nBuilding binary BVH using SAH.\n\n");
         root->surfaces = surfaces;
         recursiveBuildBinarySAH(root);
     }
     else // OCTREE
     {
-        std::cout << "\nBuilding BVH from octree.\n\n";
+        std::printf("\nBuilding BVH from octree.\n\n");
 
         double half_max = glm::compMax(root->BB.dimensions()) / 2.0;
         BoundingBox cube_BB(root->BB.centroid() - half_max, root->BB.centroid() + half_max);
@@ -70,11 +68,7 @@ BVH::BVH(const BoundingBox &BB,
     uint32_t surface_idx = 0;
     compact(root, 0, surface_idx);
 
-    auto end = std::chrono::high_resolution_clock::now();
-    size_t msec_duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count();
-
-    std::cout << "BVH constructed in " + Format::timeDuration(msec_duration)
-              << ". Branching factor of tree: " << (num_nodes - 1) / num_branchings << std::endl;
+    std::printf("Branching factor of tree: %lf\n", (num_nodes - 1) / num_branchings);
 }
 
 Intersection BVH::intersect(const Ray& ray) const
