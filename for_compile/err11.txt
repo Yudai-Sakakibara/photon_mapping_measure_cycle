@@ -1,0 +1,2 @@
+riscv64-unknown-elf-gcc: fatal error: Cannot find suitable multilib set for '-march=rv64imafd_zicsr'/'-mabi=lp64d'
+compilation terminated.
