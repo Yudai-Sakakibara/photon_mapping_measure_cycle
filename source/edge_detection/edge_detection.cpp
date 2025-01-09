@@ -1,13 +1,13 @@
-#include "../camera/camera.hpp"
-#include "../camera/film.hpp"
 #include "edge_detection.hpp" // added
-#include <assert.h>
-#include <stdlib.h>
+#include <vector>
+#include <glm/vec3.hpp>
+#include <algorithm>
+#include <cstdlib>
 
 std::vector<bool> no_edge;
+std::vector<glm::dvec3> fig;
 std::vector<glm::dvec3> average_window;
-const int window_size = 8;
-int wows, hows;
+size_t width, height;
 
 glm::dvec3 clamped(glm::dvec3 v){
     v[0] = std::min(v[0], 1.0);
@@ -16,17 +16,13 @@ glm::dvec3 clamped(glm::dvec3 v){
     return v;
 }
 
-void edge_detection(double edge_threshold, Image* image_ptr, Film* film_ptr){
+void edge_detection(double edge_threshold){
     // make gray scale pic
-    int width = (*image_ptr).width;
-    int height = (*image_ptr).height;
-    
-    double* image_gray = (double*)malloc(width * height * sizeof(double));
-    double* image_gray_filtered = (double*)malloc(width * height * sizeof(double));
+    std::vector<double> image_gray(width * height);
+    std::vector<double> image_gray_filtered(width * height);
     for(size_t x = 0; x < width; ++x){
         for(size_t y = 0; y < height; ++y){
-            glm::dvec3 v = (*film_ptr).scan(x, y);
-            v = clamped(v);
+            glm::dvec3 v = clamped(fig[y * width + x]);
             image_gray[y * width + x] = 0.299 * v[0] + 0.587 * v[1] + 0.114 * v[2];
         }
     }
@@ -55,7 +51,7 @@ void edge_detection(double edge_threshold, Image* image_ptr, Film* film_ptr){
     for(size_t x = 0; x < width; ++x){
         for(size_t y = 0; y < height; ++y){
             if(x == 0 || x == width - 1 || y == 0 || y == height - 1){
-                no_edge[(y / window_size) * wows + (x / window_size)] = false;
+                no_edge[y * width + x] = false;
             }
             else{
                 double diff = 9.0 * image_gray_filtered[(y + 0) * width + (x + 0)];
@@ -64,27 +60,35 @@ void edge_detection(double edge_threshold, Image* image_ptr, Film* film_ptr){
                     int dy = k / 3 - 1;
                     diff -= image_gray_filtered[(y + dy) * width + (x + dx)];
                 }
-                if(diff >= edge_threshold) no_edge[(y / window_size) * wows + (x / window_size)] = false;
+                if(std::abs(diff) >= edge_threshold) no_edge[y * width + x] = false;
             }
         }
     }
 
     // clean up
-    free(image_gray); free(image_gray_filtered);
+    image_gray.clear();
+    image_gray_filtered.clear();
 }
 
-void calc_average_window(Image* image_ptr, Film* film_ptr){
-    for(size_t x = 0; x < wows; ++x){
-        for(size_t y = 0; y < hows; ++y){
-            for(int i = 0; i < window_size; ++i){
-                for(int j = 0; j < window_size; ++j){
-                    glm::dvec3 tmp = (*film_ptr).scan(x * window_size + i, y * window_size + j);
-                    average_window[y * wows + x] += clamped(tmp);
-                }
+void calc_average_window(){
+    for(size_t x = 0; x < width; ++x){
+        for(size_t y = 0; y < height; ++y){
+            if(x == 0 || x == width - 1 || y == 0 || y == height - 1){
+                continue;
             }
-            average_window[y * wows + x] /= (window_size * window_size);
+            else{
+                for(int k = 0; k < 9; ++k){
+                    int dx = k % 3 - 1;
+                    int dy = k / 3 - 1;
+                    if(k != 4) average_window[y * width + x] += clamped(fig[(y + dy) * width + (x + dx)]);
+                }
+                average_window[y * width + x] /= 8.0;
+            }
         }
     }
+
+    // clean up
+    fig.clear();
 }
 
 double rand01(){

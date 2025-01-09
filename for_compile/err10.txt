@@ -1,1 +1,0 @@
-riscv64-unknown-elf-gcc: error: '-march=rv64': first ISA subset must be 'e', 'i' or 'g'

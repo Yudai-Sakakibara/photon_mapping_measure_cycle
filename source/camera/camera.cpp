@@ -113,9 +113,8 @@ void Camera::samplePixel(size_t x, size_t y, int mode)
             glm::dvec3 start = eye + left * aperture_sample.x + up * aperture_sample.y;
             ray = Ray(start, glm::normalize(focus_point - start), integrator->scene.ior);
         }
-        film.deposit(px, integrator->sampleRay(ray));
 
-        bool can_approx = (mode > 0) & no_edge[(y / window_size) * wows + (x / window_size)];
+        bool can_approx = (mode > 0) & no_edge[y * image.width + x];
         if(can_approx){
             #pragma approx branch
             if(1){
@@ -124,7 +123,7 @@ void Camera::samplePixel(size_t x, size_t y, int mode)
                 cnt_all++;
             }
             else{
-                film.deposit(px, average_window[(y / window_size) * wows + (x / window_size)]);
+                film.deposit(px, average_window[y * image.width + x]);
                 cnt_approx++;
                 cnt_all++;
             }
@@ -134,24 +133,27 @@ void Camera::samplePixel(size_t x, size_t y, int mode)
             cnt_regular++;
             cnt_all++;
         }
-        if(cnt_all % 20000 == 0){
+        if(cnt_all % 100 == 0){
             std::printf("%d samples finished\n", cnt_all);
         }
     }
 }
 
 void Camera::init_for_approx(){
-    assert(image.width % window_size == 0); assert(image.height % window_size == 0);
-    wows = image.width / window_size; // width over window size
-    hows = image.height / window_size; // height over window size
-    no_edge.assign(wows * hows, true);
-    average_window.assign(wows * hows, glm::dvec3(0.0));
+    width = image.width; height = image.height;
+    no_edge.assign(width * height, true);
+    fig.assign(width * height, glm::dvec3(0.0));
+    for (size_t y = 0; y < height; y++) {
+        for (size_t x = 0; x < width; x++) {
+            fig[y * width + x] = film.scan(x, y);
+        }
+    }
+    average_window.assign(width * height, glm::dvec3(0.0));
 }
 
 void Camera::sampleImage()
 {
     // step.1
-    init_for_approx();
     for (size_t y = 0; y < image.height; y++)
     {
         for (size_t x = 0; x < image.width; x++)
@@ -161,8 +163,9 @@ void Camera::sampleImage()
     }
 
     // step2
-    edge_detection(edge_threshold, &image, &film);
-    calc_average_window(&image, &film);
+    init_for_approx();
+    edge_detection(edge_threshold);
+    calc_average_window();
 
     // step3
     for (size_t y = 0; y < image.height; y++)

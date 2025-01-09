@@ -8,12 +8,12 @@
       "sensor_width": 35,
       "eye": [ 0, 1, -6.83879 ],
       "look_at": [ 0, 1, 0 ],
-      "image":  { "width": 128, "height": 128, "exposure_compensation": -1.0, "gain_compensation": -0.5, "tonemapper": "Hable" },
-      "spp1": 16,
-      "spp2": 0,
+      "image":  { "width": 1000, "height": 1000, "exposure_compensation": -1.0, "gain_compensation": -0.5, "tonemapper": "Hable" },
+      "spp1": 4,
+      "spp2": 4,
       "approx_prob": 0.5,
-      "edge_threshold": 64,
-      "savename": "wc_128x128"
+      "edge_threshold": 0,
+      "savename": "wc_approx9y"
     }
   ],
 

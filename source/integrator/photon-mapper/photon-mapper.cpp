@@ -2,7 +2,6 @@
 
 #include <cstdio>
 #include <iomanip>
-#include <atomic>
 
 #include <glm/gtx/component_wise.hpp>
 
@@ -109,7 +108,7 @@ PhotonMapper::PhotonMapper(const nlohmann::json& j) : Integrator(j)
         std::printf("\n----------------------------| PHOTON MAPPING PASS |---------------------\n\nTotal number of photon emissions from light sources: %ld\n\n", photon_emissions);
     }
 
-    std::atomic<bool> done_constructing_octrees = false;
+    bool done_constructing_octrees = false;
     auto end = std::chrono::high_resolution_clock::now();
     std::string duration = Format::timeDuration(std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count());
 

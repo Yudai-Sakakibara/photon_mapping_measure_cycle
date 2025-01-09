@@ -106,8 +106,8 @@ void Film::Splat::update(const glm::dvec3& v, double weight)
 
 glm::dvec3 Film::Splat::get() const
 {
-    glm::dvec3 res(rgb_sum[0].load(), rgb_sum[1].load(), rgb_sum[2].load());
-    double w = weight_sum.load();
+    glm::dvec3 res(rgb_sum[0], rgb_sum[1], rgb_sum[2]);
+    double w = weight_sum;
     if (w == 0.0) return glm::dvec3(0.0);
     return glm::max(res / w, 0.0);
 }

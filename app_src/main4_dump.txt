@@ -1,0 +1,110 @@
+
+main.o:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000000000 <_Z15regular_routinei>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00113c23          	sd	ra,24(sp)
+   8:	00813823          	sd	s0,16(sp)
+   c:	02010413          	addi	s0,sp,32
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	fec42583          	lw	a1,-20(s0)
+  18:	00000537          	lui	a0,0x0
+  1c:	00050513          	mv	a0,a0
+  20:	0015859b          	addiw	a1,a1,1
+  24:	00000097          	auipc	ra,0x0
+  28:	000080e7          	jalr	ra # 24 <_Z15regular_routinei+0x24>
+  2c:	01013403          	ld	s0,16(sp)
+  30:	01813083          	ld	ra,24(sp)
+  34:	02010113          	addi	sp,sp,32
+  38:	00008067          	ret
+
+000000000000003c <_Z14approx_routinei>:
+  3c:	fe010113          	addi	sp,sp,-32
+  40:	00113c23          	sd	ra,24(sp)
+  44:	00813823          	sd	s0,16(sp)
+  48:	02010413          	addi	s0,sp,32
+  4c:	fea42623          	sw	a0,-20(s0)
+  50:	fec42583          	lw	a1,-20(s0)
+  54:	00000537          	lui	a0,0x0
+  58:	00050513          	mv	a0,a0
+  5c:	0015859b          	addiw	a1,a1,1
+  60:	00000097          	auipc	ra,0x0
+  64:	000080e7          	jalr	ra # 60 <_Z14approx_routinei+0x24>
+  68:	01013403          	ld	s0,16(sp)
+  6c:	01813083          	ld	ra,24(sp)
+  70:	02010113          	addi	sp,sp,32
+  74:	00008067          	ret
+
+0000000000000078 <main>:
+  78:	fd010113          	addi	sp,sp,-48
+  7c:	02113423          	sd	ra,40(sp)
+  80:	02813023          	sd	s0,32(sp)
+  84:	03010413          	addi	s0,sp,48
+  88:	fe042623          	sw	zero,-20(s0)
+  8c:	3ff00513          	li	a0,1023
+  90:	03451513          	slli	a0,a0,0x34
+  94:	fea43023          	sd	a0,-32(s0)
+  98:	000108b7          	lui	a7,0x10
+  9c:	0018889b          	addiw	a7,a7,1 # 10001 <.LBB2_7+0xfed9>
+  a0:	00000073          	ecall
+  a4:	fc042e23          	sw	zero,-36(s0)
+  a8:	0040006f          	j	ac <.LBB2_1>
+
+00000000000000ac <.LBB2_1>:
+  ac:	fdc42503          	lw	a0,-36(s0)
+  b0:	06300593          	li	a1,99
+  b4:	06a5ca63          	blt	a1,a0,128 <.LBB2_7>
+  b8:	0040006f          	j	bc <.LBB2_2>
+
+00000000000000bc <.LBB2_2>:
+  bc:	0000300b          	.word	0x0000300b
+  c0:	0040006f          	j	c4 <.LBB2_3>
+
+00000000000000c4 <.LBB2_3>:
+  c4:	fe043007          	fld	ft0,-32(s0)
+  c8:	00000537          	lui	a0,0x0
+  cc:	00050513          	mv	a0,a0
+  d0:	00053087          	fld	ft1,0(a0) # 0 <_Z15regular_routinei>
+  d4:	12107053          	fmul.d	ft0,ft0,ft1
+  d8:	fe043027          	fsd	ft0,-32(s0)
+  dc:	fdc42503          	lw	a0,-36(s0)
+  e0:	00000097          	auipc	ra,0x0
+  e4:	000080e7          	jalr	ra # e0 <.LBB2_3+0x1c>
+  e8:	02c0006f          	j	114 <.LBB2_5>
+  ec:	fe043007          	fld	ft0,-32(s0)
+  f0:	00000537          	lui	a0,0x0
+  f4:	00050513          	mv	a0,a0
+  f8:	00053087          	fld	ft1,0(a0) # 0 <_Z15regular_routinei>
+  fc:	1a107053          	fdiv.d	ft0,ft0,ft1
+ 100:	fe043027          	fsd	ft0,-32(s0)
+ 104:	fdc42503          	lw	a0,-36(s0)
+ 108:	00000097          	auipc	ra,0x0
+ 10c:	000080e7          	jalr	ra # 108 <.LBB2_3+0x44>
+ 110:	0040006f          	j	114 <.LBB2_5>
+
+0000000000000114 <.LBB2_5>:
+ 114:	0040006f          	j	118 <.LBB2_6>
+
+0000000000000118 <.LBB2_6>:
+ 118:	fdc42503          	lw	a0,-36(s0)
+ 11c:	00150513          	addi	a0,a0,1
+ 120:	fca42e23          	sw	a0,-36(s0)
+ 124:	f89ff06f          	j	ac <.LBB2_1>
+
+0000000000000128 <.LBB2_7>:
+ 128:	fe043583          	ld	a1,-32(s0)
+ 12c:	00000537          	lui	a0,0x0
+ 130:	00050513          	mv	a0,a0
+ 134:	00000097          	auipc	ra,0x0
+ 138:	000080e7          	jalr	ra # 134 <.LBB2_7+0xc>
+ 13c:	000108b7          	lui	a7,0x10
+ 140:	0018889b          	addiw	a7,a7,1 # 10001 <.LBB2_7+0xfed9>
+ 144:	00000073          	ecall
+ 148:	00000513          	li	a0,0
+ 14c:	02013403          	ld	s0,32(sp)
+ 150:	02813083          	ld	ra,40(sp)
+ 154:	03010113          	addi	sp,sp,48
+ 158:	00008067          	ret

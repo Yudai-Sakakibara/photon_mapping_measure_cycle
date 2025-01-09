@@ -1,6 +1,5 @@
 #pragma once
 
-#include <atomic>
 #include <vector>
 #include <functional>
 
@@ -33,8 +32,8 @@ private:
         glm::dvec3 get() const;
 
     private:
-        std::atomic<double> rgb_sum[3];
-        std::atomic<double> weight_sum;
+        double rgb_sum[3];
+        double weight_sum;
     };
 
     std::vector<Splat> blob;

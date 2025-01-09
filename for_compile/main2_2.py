@@ -1,5 +1,4 @@
 import subprocess
-import os
 
 def compile_first_half(s):
     print(s)
@@ -17,23 +16,23 @@ def compile_first_half(s):
                 "-static", "-c", "-emit-llvm", "-std=c++2a", "-std=gnu++17", s]
     command2 = ["mv", filename_nocpp + ".bc", file_location]
     command3 = ["/home/sakakibara/opt/bin/opt", "-load", "/home/sakakibara/opt/lib/LLVMApprox.so", "-approx", file_location + filename_nocpp + ".bc"]
-    command4 = ["/home/sakakibara/opt/bin/llc", file_location + filename_nocpp + "_tmp.bc", "-march=riscv64", "-mattr=+m,+f,+d"]
+    command4 = ["/home/sakakibara/opt/bin/llc", file_location + filename_nocpp + "_tmp.bc", "-march=riscv64", "-mattr=+m,+a,+f,+d"]
     command5 = ["rm", file_location + filename_nocpp + ".bc"]
     command6 = ["rm", file_location + filename_nocpp + "_tmp.bc"]
-    command7 = ["/home/sakakibara/opt7/bin/riscv64-unknown-linux-gnu-gcc", "-c", file_location + filename_nocpp + "_tmp.s", "-o", file_location + filename_nocpp + ".o", "-march=rv64imafd", "-mabi=lp64d"]
-    subprocess.run(commandx, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    subprocess.run(commandy, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    subprocess.run(command1, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    subprocess.run(command2, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    subprocess.run(command3, stdout=open(file_location + filename_nocpp + "_tmp.bc",'w'), stderr=subprocess.STDOUT)
-    subprocess.run(command4, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    subprocess.run(command5, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    subprocess.run(command6, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    command7 = ["/home/sakakibara/opt7/bin/riscv64-unknown-elf-g++", "-c", file_location + filename_nocpp + "_tmp.s", "-o", file_location + filename_nocpp + ".o", "-march=rv64imafd", "-mabi=lp64d"]
+    subprocess.run(commandx, stdout=subprocess.PIPE, stderr=open("err_2_2_x.txt",'w'))
+    subprocess.run(commandy, stdout=subprocess.PIPE, stderr=open("err_2_2_y.txt",'w'))
+    subprocess.run(command1, stdout=subprocess.PIPE, stderr=open("err_2_2_1.txt",'w'))
+    subprocess.run(command2, stdout=subprocess.PIPE, stderr=open("err_2_2_2.txt",'w'))
+    subprocess.run(command3, stdout=open(file_location + filename_nocpp + "_tmp.bc",'w'), stderr=open("err_2_2_3.txt",'w'))
+    subprocess.run(command4, stdout=subprocess.PIPE, stderr=open("err_2_2_4.txt",'w'))
+    subprocess.run(command5, stdout=subprocess.PIPE, stderr=open("err_2_2_5.txt",'w'))
+    subprocess.run(command6, stdout=subprocess.PIPE, stderr=open("err_2_2_6.txt",'w'))
     if s != "../source/camera/camera.cpp":
-        subprocess.run(command7, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        subprocess.run(command7, stdout=subprocess.PIPE, stderr=open("err_2_2_7.txt",'w'))
 
 command = ["find", "../source", "-name", "*.cpp"]
-res = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+res = subprocess.run(command, stdout=subprocess.PIPE, stderr=open("err_2_2.txt",'w'))
 s = res.stdout.decode()
 source_list = s.split('\n')
 for source_name in source_list:

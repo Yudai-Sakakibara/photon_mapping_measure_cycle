@@ -2,11 +2,12 @@ cmake_minimum_required(VERSION 3.10)
 
 project(monte-carlo-ray-tracer)
 
-#set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+#set(CMAKE_CXX_COMPILER /usr/bin/g++) # clang-10.0.0, linux-gnu
 #set(CMAKE_CXX_COMPILER /usr/local/bin/clang) # clang-10.0.0, linux-gnu
-set(CMAKE_CXX_COMPILER /home/sakakibara/opt/bin/clang++) # clang-10.0.0, elf
-set(CMAKE_CXX_FLAGS "-static -c -emit-llvm -std=c++17 -std=gnu++17") # added
+#set(CMAKE_CXX_COMPILER /home/sakakibara/opt/bin/clang++) # clang-10.0.0, elf
+#set(CMAKE_CXX_FLAGS "-static -c -emit-llvm -std=c++17 -std=gnu++17 -S") # added
 
 #set(THREADS_PREFER_PTHREAD_FLAG ON) # modified
 #find_package(Threads REQUIRED) # modified
@@ -29,9 +30,9 @@ endif()
 
 include_directories(${PROJECT_SOURCE_DIR}/lib/glm/)
 include_directories(${PROJECT_SOURCE_DIR}/lib/nlohmann/)
-include_directories(/home/sakakibara/opt/gcc/riscv64-elf/11.1/riscv64-unknown-elf/include/)
-include_directories(/home/sakakibara/opt/gcc/riscv64-elf/11.1/riscv64-unknown-elf/include/c++/11.1.0/)
-include_directories(/home/sakakibara/opt/gcc/riscv64-elf/11.1/riscv64-unknown-elf/include/c++/11.1.0/riscv64-unknown-elf/)
+#include_directories(/home/sakakibara/opt/gcc/riscv64-elf/11.1/riscv64-unknown-elf/include/)
+#include_directories(/home/sakakibara/opt/gcc/riscv64-elf/11.1/riscv64-unknown-elf/include/c++/11.1.0/)
+#include_directories(/home/sakakibara/opt/gcc/riscv64-elf/11.1/riscv64-unknown-elf/include/c++/11.1.0/riscv64-unknown-elf/)
 
 file(GLOB_RECURSE _source_list ${PROJECT_SOURCE_DIR}/source/*.cpp ${PROJECT_SOURCE_DIR}/source/*.hpp ${PROJECT_SOURCE_DIR}/scenes/*.json)
 
