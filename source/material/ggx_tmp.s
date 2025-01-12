@@ -282,7 +282,9 @@ _ZN3GGX6LambdaERKN3glm3vecILi3EdLNS0_9qualifierE0EEERKNS1_ILi2EdLS2_0EEE: # @_ZN
 	addi	a0, a0, %lo(.LCPI5_0)
 	fld	ft1, 0(a0)
 	fadd.d	ft0, ft0, ft1
-	fsqrt.d	ft0, ft0
+	fmv.x.d	a0, ft0
+	call	sqrt
+	fmv.d.x	ft0, a0
 	lui	a0, %hi(.LCPI5_1)
 	addi	a0, a0, %lo(.LCPI5_1)
 	fld	ft1, 0(a0)
@@ -573,9 +575,9 @@ _ZN3GGX12transmissionERKN3glm3vecILi3EdLNS0_9qualifierE0EEES5_ddRKNS1_ILi2EdLS2_
 	mv	a1, s1
 	call	_ZN3glm3dotILi3EdLNS_9qualifierE0EEET0_RKNS_3vecIXT_ES2_XT1_EEES6_
 	sd	a0, -168(s0)
-	fld	ft0, -168(s0)
-	fsqrt.d	ft0, ft0
-	fmv.x.d	a1, ft0
+	ld	a0, -168(s0)
+	call	sqrt
+	mv	a1, a0
 	mv	a0, s1
 	call	_ZN3glm3vecILi3EdLNS_9qualifierE0EEdVIdEERS2_T_
 	fld	ft0, -64(s0)
@@ -919,9 +921,9 @@ _ZN3GGX17visibleMicrofacetEddRKN3glm3vecILi3EdLNS0_9qualifierE0EEERKNS1_ILi2EdLS
 	mv	a1, s2
 	mv	a2, s5
 	call	_ZN3glm5crossIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_
-	fld	ft0, -80(s0)
-	fsqrt.d	ft0, ft0
-	fsd	ft0, -240(s0)
+	ld	a0, -80(s0)
+	call	sqrt
+	sd	a0, -240(s0)
 	fld	ft0, -88(s0)
 	lui	a0, %hi(.LCPI15_1)
 	addi	a0, a0, %lo(.LCPI15_1)
@@ -957,14 +959,16 @@ _ZN3GGX17visibleMicrofacetEddRKN3glm3vecILi3EdLNS0_9qualifierE0EEERKNS1_ILi2EdLS
 	fsd	ft0, -272(s0)
 	fld	ft0, -272(s0)
 	fsub.d	ft0, ft2, ft0
-	fsd	ft0, -472(s0)
+	fsd	ft0, -456(s0)
 	ld	a0, -256(s0)
 	call	_Z4pow2IdET_S0_
 	fmv.d.x	ft0, a0
 	fld	ft1, -448(s0)
 	fsub.d	ft0, ft1, ft0
-	fsqrt.d	ft0, ft0
-	fld	ft1, -472(s0)
+	fmv.x.d	a0, ft0
+	call	sqrt
+	fmv.d.x	ft0, a0
+	fld	ft1, -456(s0)
 	fmul.d	ft0, ft1, ft0
 	fld	ft1, -272(s0)
 	fld	ft2, -264(s0)
@@ -1002,9 +1006,9 @@ _ZN3GGX17visibleMicrofacetEddRKN3glm3vecILi3EdLNS0_9qualifierE0EEERKNS1_ILi2EdLS
 	addi	a0, s0, -400
 	addi	a1, s0, -408
 	call	_ZSt3maxIdERKT_S2_S2_
-	fld	ft0, 0(a0)
-	fsqrt.d	ft0, ft0
-	fmv.x.d	a1, ft0
+	ld	a0, 0(a0)
+	call	sqrt
+	mv	a1, a0
 	addi	s1, s0, -392
 	mv	a0, s1
 	mv	a2, s2
@@ -1018,19 +1022,19 @@ _ZN3GGX17visibleMicrofacetEddRKN3glm3vecILi3EdLNS0_9qualifierE0EEERKNS1_ILi2EdLS
 	fld	ft0, 0(a0)
 	fld	ft1, -296(s0)
 	fmul.d	ft0, ft0, ft1
-	fsd	ft0, -456(s0)
+	fsd	ft0, -464(s0)
 	fld	ft0, 8(a0)
 	fld	ft1, -288(s0)
 	fmul.d	ft0, ft0, ft1
-	fsd	ft0, -464(s0)
+	fsd	ft0, -472(s0)
 	sd	zero, -440(s0)
 	addi	a1, s2, 16
 	addi	a0, s0, -440
 	call	_ZSt3maxIdERKT_S2_S2_
 	ld	a3, 0(a0)
-	fld	ft0, -456(s0)
-	fmv.x.d	a1, ft0
 	fld	ft0, -464(s0)
+	fmv.x.d	a1, ft0
+	fld	ft0, -472(s0)
 	fmv.x.d	a2, ft0
 	addi	s1, s0, -432
 	mv	a0, s1
@@ -1109,8 +1113,9 @@ _ZN3glm11inversesqrtIdEET_S1_:          # @_ZN3glm11inversesqrtIdEET_S1_
 	addi	s0, sp, 32
 	fmv.d.x	ft0, a0
 	sd	a0, -24(s0)
-	fld	ft0, -24(s0)
-	fsqrt.d	ft0, ft0
+	ld	a0, -24(s0)
+	call	sqrt
+	fmv.d.x	ft0, a0
 	lui	a0, %hi(.LCPI17_0)
 	addi	a0, a0, %lo(.LCPI17_0)
 	fld	ft1, 0(a0)

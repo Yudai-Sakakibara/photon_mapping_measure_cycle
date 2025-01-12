@@ -57,9 +57,9 @@ void from_json(const nlohmann::json &j, ComplexIOR &c)
     }
     else if (j.type() == nlohmann::json::value_t::string)
     {
-        auto ior_path = Scene::path / j.get<std::string>();
+        auto ior_path = Scene::path + "/" + j.get<std::string>();
 
-        if (std::filesystem::exists(ior_path))
+        if (1)
         {
             Spectral::Distribution<double> real, imaginary;
             char type = 'n';
@@ -96,7 +96,7 @@ void from_json(const nlohmann::json &j, ComplexIOR &c)
         }
         else
         {
-            std::printf("\n%s not found.\n", ior_path.string().c_str());
+            std::printf("\n%s not found.\n", ior_path.c_str());
         }
     }
 }

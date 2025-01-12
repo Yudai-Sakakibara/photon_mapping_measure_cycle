@@ -76,4 +76,6 @@ private:
     std::deque<double> times;
 };
 
-extern std::vector<struct sample> samples; // added
+extern int spp1, spp2; // n_samples of before & after edge detection
+extern double edge_threshold, approx_prob;
+extern int cnt_regular, cnt_approx, cnt_all;

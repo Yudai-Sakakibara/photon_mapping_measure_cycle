@@ -2,7 +2,6 @@
 
 #include <vector>
 #include <memory>
-#include <filesystem>
 
 #include <nlohmann/json.hpp>
 
@@ -39,14 +38,14 @@ public:
 
     double ior;
 
-    static std::filesystem::path path;
+    static std::string path;
 
 private:
     BoundingBox BB_;
 
     void computeBoundingBox();
 
-    void parseOBJ(const std::filesystem::path &path,
+    void parseOBJ(const std::string &path,
                   std::vector<glm::dvec3> &vertices,
                   std::vector<glm::dvec3> &normals,
                   std::vector<std::vector<size_t>> &triangles_v,

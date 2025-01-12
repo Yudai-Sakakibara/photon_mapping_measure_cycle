@@ -71,9 +71,13 @@ Camera::Camera(const nlohmann::json &j, const Option &option)
     thin_lens = aperture_radius > 0.0 && focus_distance > 0.0;
 }
 
-int cnt_regular = 0;
-int cnt_approx = 0;
-int cnt_all = 0;
+int cnt_regular, cnt_approx, cnt_all;
+void reset_cnt(){
+    cnt_regular = 0;
+    cnt_approx = 0;
+    cnt_all = 0;
+}
+
 void Camera::samplePixel(size_t x, size_t y, int mode)
 {
     double pixel_size = sensor_width / image.width;
@@ -114,17 +118,17 @@ void Camera::samplePixel(size_t x, size_t y, int mode)
             ray = Ray(start, glm::normalize(focus_point - start), integrator->scene.ior);
         }
 
-        bool can_approx = (mode > 0) & no_edge[y * image.width + x];
+        bool can_approx = (mode == 2) & no_edge[y * image.width + x];
         if(can_approx){
-            #pragma approx branch
+            //#pragma approx branch
             if(1){
-                film.deposit(px, integrator->sampleRay(ray));
                 cnt_regular++;
+                film.deposit(px, integrator->sampleRay(ray));
                 cnt_all++;
             }
             else{
-                film.deposit(px, average_window[y * image.width + x]);
                 cnt_approx++;
+                film.deposit(px, average_window[y * image.width + x]);
                 cnt_all++;
             }
         }
@@ -153,6 +157,9 @@ void Camera::init_for_approx(){
 
 void Camera::sampleImage()
 {
+    //step.0
+    reset_cnt();
+
     // step.1
     for (size_t y = 0; y < image.height; y++)
     {

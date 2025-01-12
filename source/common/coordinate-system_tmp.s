@@ -505,24 +505,58 @@ _ZNK16CoordinateSystem6normalEv:        # @_ZNK16CoordinateSystem6normalEv
 	.p2align	2
 	.type	_ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi,@function
 _ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi: # @_ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi
+	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	sw	a1, -28(s0)
-	ld	a0, -24(s0)
-	lw	a1, -28(s0)
-	addi	a2, zero, 24
-	mul	a1, a1, a2
-	add	a0, a0, a1
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
+	addi	sp, sp, -48
+	.cfi_def_cfa_offset 48
+	sd	ra, 40(sp)
+	sd	s0, 32(sp)
+	sd	s1, 24(sp)
+	sd	s2, 16(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	.cfi_offset s2, -32
+	addi	s0, sp, 48
+	.cfi_def_cfa s0, 0
+	sd	a0, -40(s0)
+	sw	a1, -44(s0)
+	ld	s2, -40(s0)
+	lw	s1, -44(s0)
+	call	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv
+	bge	s1, a0, .LBB9_2
+	j	.LBB9_1
+.LBB9_1:                                # %cond.true
+	j	.LBB9_3
+.LBB9_2:                                # %cond.false
+	lui	a0, %hi(.L.str)
+	addi	a0, a0, %lo(.L.str)
+	lui	a1, %hi(.L__PRETTY_FUNCTION__._ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi)
+	addi	a2, a1, %lo(.L__PRETTY_FUNCTION__._ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi)
+	lui	a1, %hi(.L.str.1)
+	addi	a3, a1, %lo(.L.str.1)
+	addi	a1, zero, 250
+	call	__assert_func
+.LBB9_3:                                # %cond.end
+	lw	a0, -44(s0)
+	addi	a1, zero, 24
+	mul	a0, a0, a1
+	add	a0, s2, a0
+	ld	s2, 16(sp)
+	ld	s1, 24(sp)
+	ld	s0, 32(sp)
+	.cfi_def_cfa sp, 48
+	ld	ra, 40(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	.cfi_restore s2
+	addi	sp, sp, 48
+	.cfi_def_cfa_offset 0
 	ret
 .Lfunc_end9:
 	.size	_ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi, .Lfunc_end9-_ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi
+	.cfi_endproc
                                         # -- End function
 	.text
 	.globl	_ZN16CoordinateSystem4fromERKN3glm3vecILi3EdLNS0_9qualifierE0EEES5_ # -- Begin function _ZN16CoordinateSystem4fromERKN3glm3vecILi3EdLNS0_9qualifierE0EEES5_
@@ -571,55 +605,129 @@ _ZN16CoordinateSystem4fromERKN3glm3vecILi3EdLNS0_9qualifierE0EEES5_: # @_ZN16Coo
 	.size	_ZN16CoordinateSystem4fromERKN3glm3vecILi3EdLNS0_9qualifierE0EEES5_, .Lfunc_end10-_ZN16CoordinateSystem4fromERKN3glm3vecILi3EdLNS0_9qualifierE0EEES5_
 	.cfi_endproc
                                         # -- End function
+	.section	.text._ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv,"axG",@progbits,_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv,comdat
+	.weak	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv # -- Begin function _ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv
+	.p2align	2
+	.type	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv,@function
+_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv: # @_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv
+# %bb.0:                                # %entry
+	addi	sp, sp, -16
+	sd	ra, 8(sp)
+	sd	s0, 0(sp)
+	addi	s0, sp, 16
+	addi	a0, zero, 3
+	ld	s0, 0(sp)
+	ld	ra, 8(sp)
+	addi	sp, sp, 16
+	ret
+.Lfunc_end11:
+	.size	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv, .Lfunc_end11-_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv
+                                        # -- End function
 	.section	.text._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi,"axG",@progbits,_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi,comdat
 	.weak	_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi # -- Begin function _ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi
 	.p2align	2
 	.type	_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi,@function
 _ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi: # @_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi
+	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	addi	s0, sp, 48
-	sd	a0, -32(s0)
-	sw	a1, -36(s0)
-	ld	a0, -32(s0)
-	lwu	a1, -36(s0)
-	beqz	a1, .LBB11_4
-	j	.LBB11_1
-.LBB11_1:                               # %entry
-	slli	a2, a1, 32
-	srli	a2, a2, 32
-	addi	a3, zero, 1
-	beq	a2, a3, .LBB11_5
-	j	.LBB11_2
-.LBB11_2:                               # %entry
-	slli	a1, a1, 32
+	addi	sp, sp, -64
+	.cfi_def_cfa_offset 64
+	sd	ra, 56(sp)
+	sd	s0, 48(sp)
+	sd	s1, 40(sp)
+	sd	s2, 32(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	.cfi_offset s2, -32
+	addi	s0, sp, 64
+	.cfi_def_cfa s0, 0
+	sd	a0, -48(s0)
+	sw	a1, -52(s0)
+	ld	s2, -48(s0)
+	lw	a0, -52(s0)
+	bltz	a0, .LBB12_3
+	j	.LBB12_1
+.LBB12_1:                               # %land.lhs.true
+	lw	s1, -52(s0)
+	call	_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv
+	bge	s1, a0, .LBB12_3
+	j	.LBB12_2
+.LBB12_2:                               # %cond.true
+	j	.LBB12_4
+.LBB12_3:                               # %cond.false
+	lui	a0, %hi(.L.str.2)
+	addi	a0, a0, %lo(.L.str.2)
+	lui	a1, %hi(.L__PRETTY_FUNCTION__._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi)
+	addi	a2, a1, %lo(.L__PRETTY_FUNCTION__._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi)
+	lui	a1, %hi(.L.str.3)
+	addi	a3, a1, %lo(.L.str.3)
+	addi	a1, zero, 186
+	call	__assert_func
+.LBB12_4:                               # %cond.end
+	lwu	a0, -52(s0)
+	beqz	a0, .LBB12_8
+	j	.LBB12_5
+.LBB12_5:                               # %cond.end
+	slli	a1, a0, 32
 	srli	a1, a1, 32
-	addi	a2, zero, 2
-	beq	a1, a2, .LBB11_6
-	j	.LBB11_3
-.LBB11_3:                               # %sw.default
-	j	.LBB11_4
-.LBB11_4:                               # %sw.bb
-	sd	a0, -24(s0)
-	j	.LBB11_7
-.LBB11_5:                               # %sw.bb2
-	addi	a0, a0, 8
-	sd	a0, -24(s0)
-	j	.LBB11_7
-.LBB11_6:                               # %sw.bb3
-	addi	a0, a0, 16
-	sd	a0, -24(s0)
-	j	.LBB11_7
-.LBB11_7:                               # %return
-	ld	a0, -24(s0)
-	ld	s0, 32(sp)
-	ld	ra, 40(sp)
-	addi	sp, sp, 48
+	addi	a2, zero, 1
+	beq	a1, a2, .LBB12_9
+	j	.LBB12_6
+.LBB12_6:                               # %cond.end
+	slli	a0, a0, 32
+	srli	a0, a0, 32
+	addi	a1, zero, 2
+	beq	a0, a1, .LBB12_10
+	j	.LBB12_7
+.LBB12_7:                               # %sw.default
+	j	.LBB12_8
+.LBB12_8:                               # %sw.bb
+	sd	s2, -40(s0)
+	j	.LBB12_11
+.LBB12_9:                               # %sw.bb3
+	addi	a0, s2, 8
+	sd	a0, -40(s0)
+	j	.LBB12_11
+.LBB12_10:                              # %sw.bb4
+	addi	a0, s2, 16
+	sd	a0, -40(s0)
+	j	.LBB12_11
+.LBB12_11:                              # %return
+	ld	a0, -40(s0)
+	ld	s2, 32(sp)
+	ld	s1, 40(sp)
+	ld	s0, 48(sp)
+	.cfi_def_cfa sp, 64
+	ld	ra, 56(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	.cfi_restore s2
+	addi	sp, sp, 64
+	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end11:
-	.size	_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi, .Lfunc_end11-_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi
+.Lfunc_end12:
+	.size	_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi, .Lfunc_end12-_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv,"axG",@progbits,_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv,comdat
+	.weak	_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv # -- Begin function _ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv
+	.p2align	2
+	.type	_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv,@function
+_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv: # @_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv
+# %bb.0:                                # %entry
+	addi	sp, sp, -16
+	sd	ra, 8(sp)
+	sd	s0, 0(sp)
+	addi	s0, sp, 16
+	addi	a0, zero, 3
+	ld	s0, 0(sp)
+	ld	ra, 8(sp)
+	addi	sp, sp, 16
+	ret
+.Lfunc_end13:
+	.size	_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv, .Lfunc_end13-_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv
                                         # -- End function
 	.section	.text._ZN3glm6detail17compute_transposeILi3ELi3EdLNS_9qualifierE0ELb0EE4callERKNS_3matILi3ELi3EdLS2_0EEE,"axG",@progbits,_ZN3glm6detail17compute_transposeILi3ELi3EdLNS_9qualifierE0ELb0EE4callERKNS_3matILi3ELi3EdLS2_0EEE,comdat
 	.weak	_ZN3glm6detail17compute_transposeILi3ELi3EdLNS_9qualifierE0ELb0EE4callERKNS_3matILi3ELi3EdLS2_0EEE # -- Begin function _ZN3glm6detail17compute_transposeILi3ELi3EdLNS_9qualifierE0ELb0EE4callERKNS_3matILi3ELi3EdLS2_0EEE
@@ -777,8 +885,8 @@ _ZN3glm6detail17compute_transposeILi3ELi3EdLNS_9qualifierE0ELb0EE4callERKNS_3mat
 	addi	sp, sp, 112
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end12:
-	.size	_ZN3glm6detail17compute_transposeILi3ELi3EdLNS_9qualifierE0ELb0EE4callERKNS_3matILi3ELi3EdLS2_0EEE, .Lfunc_end12-_ZN3glm6detail17compute_transposeILi3ELi3EdLNS_9qualifierE0ELb0EE4callERKNS_3matILi3ELi3EdLS2_0EEE
+.Lfunc_end14:
+	.size	_ZN3glm6detail17compute_transposeILi3ELi3EdLNS_9qualifierE0ELb0EE4callERKNS_3matILi3ELi3EdLS2_0EEE, .Lfunc_end14-_ZN3glm6detail17compute_transposeILi3ELi3EdLNS_9qualifierE0ELb0EE4callERKNS_3matILi3ELi3EdLS2_0EEE
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi,"axG",@progbits,_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi,comdat
@@ -786,75 +894,188 @@ _ZN3glm6detail17compute_transposeILi3ELi3EdLNS_9qualifierE0ELb0EE4callERKNS_3mat
 	.p2align	2
 	.type	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi,@function
 _ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi: # @_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi
+	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	sw	a1, -28(s0)
-	ld	a0, -24(s0)
-	lw	a1, -28(s0)
-	addi	a2, zero, 24
-	mul	a1, a1, a2
-	add	a0, a0, a1
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
+	addi	sp, sp, -48
+	.cfi_def_cfa_offset 48
+	sd	ra, 40(sp)
+	sd	s0, 32(sp)
+	sd	s1, 24(sp)
+	sd	s2, 16(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	.cfi_offset s2, -32
+	addi	s0, sp, 48
+	.cfi_def_cfa s0, 0
+	sd	a0, -40(s0)
+	sw	a1, -44(s0)
+	ld	s2, -40(s0)
+	lw	s1, -44(s0)
+	call	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv
+	bge	s1, a0, .LBB15_2
+	j	.LBB15_1
+.LBB15_1:                               # %cond.true
+	j	.LBB15_3
+.LBB15_2:                               # %cond.false
+	lui	a0, %hi(.L.str)
+	addi	a0, a0, %lo(.L.str)
+	lui	a1, %hi(.L__PRETTY_FUNCTION__._ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi)
+	addi	a2, a1, %lo(.L__PRETTY_FUNCTION__._ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi)
+	lui	a1, %hi(.L.str.1)
+	addi	a3, a1, %lo(.L.str.1)
+	addi	a1, zero, 243
+	call	__assert_func
+.LBB15_3:                               # %cond.end
+	lw	a0, -44(s0)
+	addi	a1, zero, 24
+	mul	a0, a0, a1
+	add	a0, s2, a0
+	ld	s2, 16(sp)
+	ld	s1, 24(sp)
+	ld	s0, 32(sp)
+	.cfi_def_cfa sp, 48
+	ld	ra, 40(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	.cfi_restore s2
+	addi	sp, sp, 48
+	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end13:
-	.size	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi, .Lfunc_end13-_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi
+.Lfunc_end15:
+	.size	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi, .Lfunc_end15-_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi
+	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi,"axG",@progbits,_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi,comdat
 	.weak	_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi # -- Begin function _ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
 	.p2align	2
 	.type	_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi,@function
 _ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi: # @_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
+	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	addi	s0, sp, 48
-	sd	a0, -32(s0)
-	sw	a1, -36(s0)
-	ld	a0, -32(s0)
-	lwu	a1, -36(s0)
-	beqz	a1, .LBB14_4
-	j	.LBB14_1
-.LBB14_1:                               # %entry
-	slli	a2, a1, 32
-	srli	a2, a2, 32
-	addi	a3, zero, 1
-	beq	a2, a3, .LBB14_5
-	j	.LBB14_2
-.LBB14_2:                               # %entry
-	slli	a1, a1, 32
+	addi	sp, sp, -64
+	.cfi_def_cfa_offset 64
+	sd	ra, 56(sp)
+	sd	s0, 48(sp)
+	sd	s1, 40(sp)
+	sd	s2, 32(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	.cfi_offset s2, -32
+	addi	s0, sp, 64
+	.cfi_def_cfa s0, 0
+	sd	a0, -48(s0)
+	sw	a1, -52(s0)
+	ld	s2, -48(s0)
+	lw	a0, -52(s0)
+	bltz	a0, .LBB16_3
+	j	.LBB16_1
+.LBB16_1:                               # %land.lhs.true
+	lw	s1, -52(s0)
+	call	_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv
+	bge	s1, a0, .LBB16_3
+	j	.LBB16_2
+.LBB16_2:                               # %cond.true
+	j	.LBB16_4
+.LBB16_3:                               # %cond.false
+	lui	a0, %hi(.L.str.2)
+	addi	a0, a0, %lo(.L.str.2)
+	lui	a1, %hi(.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi)
+	addi	a2, a1, %lo(.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi)
+	lui	a1, %hi(.L.str.3)
+	addi	a3, a1, %lo(.L.str.3)
+	addi	a1, zero, 170
+	call	__assert_func
+.LBB16_4:                               # %cond.end
+	lwu	a0, -52(s0)
+	beqz	a0, .LBB16_8
+	j	.LBB16_5
+.LBB16_5:                               # %cond.end
+	slli	a1, a0, 32
 	srli	a1, a1, 32
-	addi	a2, zero, 2
-	beq	a1, a2, .LBB14_6
-	j	.LBB14_3
-.LBB14_3:                               # %sw.default
-	j	.LBB14_4
-.LBB14_4:                               # %sw.bb
-	sd	a0, -24(s0)
-	j	.LBB14_7
-.LBB14_5:                               # %sw.bb2
-	addi	a0, a0, 8
-	sd	a0, -24(s0)
-	j	.LBB14_7
-.LBB14_6:                               # %sw.bb3
-	addi	a0, a0, 16
-	sd	a0, -24(s0)
-	j	.LBB14_7
-.LBB14_7:                               # %return
-	ld	a0, -24(s0)
-	ld	s0, 32(sp)
-	ld	ra, 40(sp)
-	addi	sp, sp, 48
+	addi	a2, zero, 1
+	beq	a1, a2, .LBB16_9
+	j	.LBB16_6
+.LBB16_6:                               # %cond.end
+	slli	a0, a0, 32
+	srli	a0, a0, 32
+	addi	a1, zero, 2
+	beq	a0, a1, .LBB16_10
+	j	.LBB16_7
+.LBB16_7:                               # %sw.default
+	j	.LBB16_8
+.LBB16_8:                               # %sw.bb
+	sd	s2, -40(s0)
+	j	.LBB16_11
+.LBB16_9:                               # %sw.bb3
+	addi	a0, s2, 8
+	sd	a0, -40(s0)
+	j	.LBB16_11
+.LBB16_10:                              # %sw.bb4
+	addi	a0, s2, 16
+	sd	a0, -40(s0)
+	j	.LBB16_11
+.LBB16_11:                              # %return
+	ld	a0, -40(s0)
+	ld	s2, 32(sp)
+	ld	s1, 40(sp)
+	ld	s0, 48(sp)
+	.cfi_def_cfa sp, 64
+	ld	ra, 56(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	.cfi_restore s2
+	addi	sp, sp, 64
+	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end14:
-	.size	_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi, .Lfunc_end14-_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
+.Lfunc_end16:
+	.size	_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi, .Lfunc_end16-_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
+	.cfi_endproc
                                         # -- End function
+	.type	.L.str,@object          # @.str
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.L.str:
+	.asciz	"/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/./ext/../detail/type_mat3x3.inl"
+	.size	.L.str, 91
+
+	.type	.L__PRETTY_FUNCTION__._ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi,@object # @__PRETTY_FUNCTION__._ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi
+.L__PRETTY_FUNCTION__._ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi:
+	.asciz	"const typename mat<3, 3, T, Q>::col_type &glm::mat<3, 3, double, glm::packed_highp>::operator[](typename mat<3, 3, T, Q>::length_type) const [C = 3, R = 3, T = double, Q = glm::packed_highp]"
+	.size	.L__PRETTY_FUNCTION__._ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi, 191
+
+	.type	.L.str.1,@object        # @.str.1
+.L.str.1:
+	.asciz	"i < this->length()"
+	.size	.L.str.1, 19
+
+	.type	.L.str.2,@object        # @.str.2
+.L.str.2:
+	.asciz	"/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/./ext/../detail/type_vec3.inl"
+	.size	.L.str.2, 89
+
+	.type	.L__PRETTY_FUNCTION__._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi,@object # @__PRETTY_FUNCTION__._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi
+.L__PRETTY_FUNCTION__._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi:
+	.asciz	"const T &glm::vec<3, double, glm::packed_highp>::operator[](typename vec<3, T, Q>::length_type) const [L = 3, T = double, Q = glm::packed_highp]"
+	.size	.L__PRETTY_FUNCTION__._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi, 145
+
+	.type	.L.str.3,@object        # @.str.3
+.L.str.3:
+	.asciz	"i >= 0 && i < this->length()"
+	.size	.L.str.3, 29
+
+	.type	.L__PRETTY_FUNCTION__._ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi,@object # @__PRETTY_FUNCTION__._ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi
+.L__PRETTY_FUNCTION__._ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi:
+	.asciz	"typename mat<3, 3, T, Q>::col_type &glm::mat<3, 3, double, glm::packed_highp>::operator[](typename mat<3, 3, T, Q>::length_type) [C = 3, R = 3, T = double, Q = glm::packed_highp]"
+	.size	.L__PRETTY_FUNCTION__._ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi, 179
+
+	.type	.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi,@object # @__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
+.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi:
+	.asciz	"T &glm::vec<3, double, glm::packed_highp>::operator[](typename vec<3, T, Q>::length_type) [L = 3, T = double, Q = glm::packed_highp]"
+	.size	.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi, 133
+
 
 	.globl	_ZN16CoordinateSystemC1ERKN3glm3vecILi3EdLNS0_9qualifierE0EEE
 	.type	_ZN16CoordinateSystemC1ERKN3glm3vecILi3EdLNS0_9qualifierE0EEE,@function

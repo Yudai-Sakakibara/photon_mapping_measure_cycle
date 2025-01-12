@@ -3,21 +3,28 @@
 #include <fstream>
 #include <sstream>
 #include <cstdio>
+#include <iostream>
+#include <limits>
 
 #include <glm/vec3.hpp>
 #include <nlohmann/json.hpp>
 
 #include "util.hpp"
 
-std::vector<Option> availible(std::filesystem::path path)
-{
-    std::vector<Option> options;
-    for (const auto& file : std::filesystem::directory_iterator(path))
-    {
-        if (!file.path().has_extension() || file.path().extension() != ".json")
-            continue;
+std::vector<std::string> json_list;
+void make_json_list(){
+    json_list.push_back("/home/sakakibara/monte-carlo-ray-tracer_approx/scenes/hexagon_room.json");
+    json_list.push_back("/home/sakakibara/monte-carlo-ray-tracer_approx/scenes/water_caustics.json");
+    json_list.push_back("/home/sakakibara/monte-carlo-ray-tracer_approx/scenes/diamond.json");
+}
 
-        std::ifstream scene_file(file.path());
+std::vector<Option> availible(std::string path)
+{
+    make_json_list();
+    std::vector<Option> options;
+    for (const auto& file_path : json_list)
+    {
+        std::ifstream scene_file(file_path);
         nlohmann::json j;
         scene_file >> j;
 
@@ -30,9 +37,10 @@ std::vector<Option> availible(std::filesystem::path path)
             double f = c.at("focal_length");
             double s = c.at("sensor_width");
             std::stringstream ss;
-            ss << "Eye: " << std::fixed << std::setprecision(0) << "(" << eye.x << " " << eye.y << " " << eye.z << "), ";
+            int eye_x = eye.x; int eye_y = eye.y; int eye_z = eye.z;
+            ss << "Eye: " << std::fixed << "(" << eye_x << " " << eye_y << " " << eye_z << "), ";
             ss << "Focal length: " << int(f) << "mm (" << int(s) << "mm)";
-            options.emplace_back(file.path(), ss.str(), i, photon_map);
+            options.emplace_back(file_path, ss.str(), i, photon_map);
             i++;
         }
         scene_file.close();
@@ -45,7 +53,7 @@ Option getOption(std::vector<Option>& options)
     size_t max_opt = 13, max_fil = 0, max_cam = 0;
     for (const auto& o : options)
     {
-        std::string file = o.path.filename().string();
+        std::string file = o.path;
         file.erase(file.find("."), file.length());
 
         if (file.size() > max_fil)
@@ -76,7 +84,7 @@ Option getOption(std::vector<Option>& options)
 
     for (int i = 0; i < options.size(); i++)
     {
-        std::string file = options[i].path.filename().string();
+        std::string file = options[i].path;
         file.erase(file.find("."), file.length());
 
         printLine({ {std::to_string(i), max_opt},{file, max_fil},{options[i].camera, max_cam} });

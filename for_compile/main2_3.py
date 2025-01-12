@@ -13,7 +13,7 @@ def compile_first_half(s):
                 "-I", "/home/sakakibara/opt/gcc/riscv64-elf/11.1/riscv64-unknown-elf/include/c++/11.1.0/riscv64-unknown-elf/", 
                 "-I", "/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm", 
                 "-I", "/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann", 
-                "-static", "-c", "-emit-llvm", "-std=c++2a", "-std=gnu++17", "-DNDEBUG", "-fno-math-errno", "-fno-use-cxa-atexit", s]
+                "-static", "-c", "-emit-llvm", "-std=c++2a", "-std=gnu++17", "-DNDEBUG", "-fno-math-errno", "-fno-use-cxa-atexit", "-march=rv64imafd", "-mabi=lp64d", s]
     command2 = ["mv", filename_nocpp + ".bc", file_location]
     command3 = ["/home/sakakibara/opt/bin/opt", "-load", "/home/sakakibara/opt/lib/LLVMApprox.so", "-approx", file_location + filename_nocpp + ".bc"]
     command4 = ["/home/sakakibara/opt/bin/llc", file_location + filename_nocpp + "_tmp.bc", "-march=riscv64", "-mattr=+m,+a,+f,+d"]

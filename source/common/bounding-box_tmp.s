@@ -322,12 +322,18 @@ _ZN3glm3minILi3EdLNS_9qualifierE0EEENS_3vecIXT_ET0_XT1_EEERKS4_S6_: # @_ZN3glm3m
 	.p2align	2
 	.type	_ZN3glm7compMinILi3EdLNS_9qualifierE0EEET0_RKNS_3vecIXT_ES2_XT1_EEE,@function
 _ZN3glm7compMinILi3EdLNS_9qualifierE0EEET0_RKNS_3vecIXT_ES2_XT1_EEE: # @_ZN3glm7compMinILi3EdLNS_9qualifierE0EEET0_RKNS_3vecIXT_ES2_XT1_EEE
+	.cfi_startproc
 # %bb.0:                                # %entry
 	addi	sp, sp, -48
+	.cfi_def_cfa_offset 48
 	sd	ra, 40(sp)
 	sd	s0, 32(sp)
 	sd	s1, 24(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
 	addi	s0, sp, 48
+	.cfi_def_cfa s0, 0
 	sd	a0, -32(s0)
 	ld	a0, -32(s0)
 	mv	a1, zero
@@ -366,11 +372,17 @@ _ZN3glm7compMinILi3EdLNS_9qualifierE0EEET0_RKNS_3vecIXT_ES2_XT1_EEE: # @_ZN3glm7
 	ld	a0, -40(s0)
 	ld	s1, 24(sp)
 	ld	s0, 32(sp)
+	.cfi_def_cfa sp, 48
 	ld	ra, 40(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
 	addi	sp, sp, 48
+	.cfi_def_cfa_offset 0
 	ret
 .Lfunc_end6:
 	.size	_ZN3glm7compMinILi3EdLNS_9qualifierE0EEET0_RKNS_3vecIXT_ES2_XT1_EEE, .Lfunc_end6-_ZN3glm7compMinILi3EdLNS_9qualifierE0EEET0_RKNS_3vecIXT_ES2_XT1_EEE
+	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm3maxILi3EdLNS_9qualifierE0EEENS_3vecIXT_ET0_XT1_EEERKS4_S6_,"axG",@progbits,_ZN3glm3maxILi3EdLNS_9qualifierE0EEENS_3vecIXT_ET0_XT1_EEERKS4_S6_,comdat
 	.weak	_ZN3glm3maxILi3EdLNS_9qualifierE0EEENS_3vecIXT_ET0_XT1_EEERKS4_S6_ # -- Begin function _ZN3glm3maxILi3EdLNS_9qualifierE0EEENS_3vecIXT_ET0_XT1_EEERKS4_S6_
@@ -1077,100 +1089,176 @@ _ZN11BoundingBox5mergeERKS_:            # @_ZN11BoundingBox5mergeERKS_
 	.p2align	2
 	.type	_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi,@function
 _ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi: # @_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
+	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	addi	s0, sp, 48
-	sd	a0, -32(s0)
-	sw	a1, -36(s0)
-	ld	a0, -32(s0)
-	lwu	a1, -36(s0)
-	beqz	a1, .LBB20_4
+	addi	sp, sp, -64
+	.cfi_def_cfa_offset 64
+	sd	ra, 56(sp)
+	sd	s0, 48(sp)
+	sd	s1, 40(sp)
+	sd	s2, 32(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	.cfi_offset s2, -32
+	addi	s0, sp, 64
+	.cfi_def_cfa s0, 0
+	sd	a0, -48(s0)
+	sw	a1, -52(s0)
+	ld	s2, -48(s0)
+	lw	a0, -52(s0)
+	bltz	a0, .LBB20_3
 	j	.LBB20_1
-.LBB20_1:                               # %entry
-	slli	a2, a1, 32
-	srli	a2, a2, 32
-	addi	a3, zero, 1
-	beq	a2, a3, .LBB20_5
+.LBB20_1:                               # %land.lhs.true
+	lw	s1, -52(s0)
+	call	_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv
+	bge	s1, a0, .LBB20_3
 	j	.LBB20_2
-.LBB20_2:                               # %entry
-	slli	a1, a1, 32
-	srli	a1, a1, 32
-	addi	a2, zero, 2
-	beq	a1, a2, .LBB20_6
-	j	.LBB20_3
-.LBB20_3:                               # %sw.default
+.LBB20_2:                               # %cond.true
 	j	.LBB20_4
-.LBB20_4:                               # %sw.bb
-	sd	a0, -24(s0)
+.LBB20_3:                               # %cond.false
+	lui	a0, %hi(.L.str)
+	addi	a0, a0, %lo(.L.str)
+	lui	a1, %hi(.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi)
+	addi	a2, a1, %lo(.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi)
+	lui	a1, %hi(.L.str.1)
+	addi	a3, a1, %lo(.L.str.1)
+	addi	a1, zero, 170
+	call	__assert_func
+.LBB20_4:                               # %cond.end
+	lwu	a0, -52(s0)
+	beqz	a0, .LBB20_8
+	j	.LBB20_5
+.LBB20_5:                               # %cond.end
+	slli	a1, a0, 32
+	srli	a1, a1, 32
+	addi	a2, zero, 1
+	beq	a1, a2, .LBB20_9
+	j	.LBB20_6
+.LBB20_6:                               # %cond.end
+	slli	a0, a0, 32
+	srli	a0, a0, 32
+	addi	a1, zero, 2
+	beq	a0, a1, .LBB20_10
 	j	.LBB20_7
-.LBB20_5:                               # %sw.bb2
-	addi	a0, a0, 8
-	sd	a0, -24(s0)
-	j	.LBB20_7
-.LBB20_6:                               # %sw.bb3
-	addi	a0, a0, 16
-	sd	a0, -24(s0)
-	j	.LBB20_7
-.LBB20_7:                               # %return
-	ld	a0, -24(s0)
-	ld	s0, 32(sp)
-	ld	ra, 40(sp)
-	addi	sp, sp, 48
+.LBB20_7:                               # %sw.default
+	j	.LBB20_8
+.LBB20_8:                               # %sw.bb
+	sd	s2, -40(s0)
+	j	.LBB20_11
+.LBB20_9:                               # %sw.bb3
+	addi	a0, s2, 8
+	sd	a0, -40(s0)
+	j	.LBB20_11
+.LBB20_10:                              # %sw.bb4
+	addi	a0, s2, 16
+	sd	a0, -40(s0)
+	j	.LBB20_11
+.LBB20_11:                              # %return
+	ld	a0, -40(s0)
+	ld	s2, 32(sp)
+	ld	s1, 40(sp)
+	ld	s0, 48(sp)
+	.cfi_def_cfa sp, 64
+	ld	ra, 56(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	.cfi_restore s2
+	addi	sp, sp, 64
+	.cfi_def_cfa_offset 0
 	ret
 .Lfunc_end20:
 	.size	_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi, .Lfunc_end20-_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
+	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi,"axG",@progbits,_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi,comdat
 	.weak	_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi # -- Begin function _ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi
 	.p2align	2
 	.type	_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi,@function
 _ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi: # @_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi
+	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	addi	s0, sp, 48
-	sd	a0, -32(s0)
-	sw	a1, -36(s0)
-	ld	a0, -32(s0)
-	lwu	a1, -36(s0)
-	beqz	a1, .LBB21_4
+	addi	sp, sp, -64
+	.cfi_def_cfa_offset 64
+	sd	ra, 56(sp)
+	sd	s0, 48(sp)
+	sd	s1, 40(sp)
+	sd	s2, 32(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	.cfi_offset s2, -32
+	addi	s0, sp, 64
+	.cfi_def_cfa s0, 0
+	sd	a0, -48(s0)
+	sw	a1, -52(s0)
+	ld	s2, -48(s0)
+	lw	a0, -52(s0)
+	bltz	a0, .LBB21_3
 	j	.LBB21_1
-.LBB21_1:                               # %entry
-	slli	a2, a1, 32
-	srli	a2, a2, 32
-	addi	a3, zero, 1
-	beq	a2, a3, .LBB21_5
+.LBB21_1:                               # %land.lhs.true
+	lw	s1, -52(s0)
+	call	_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv
+	bge	s1, a0, .LBB21_3
 	j	.LBB21_2
-.LBB21_2:                               # %entry
-	slli	a1, a1, 32
-	srli	a1, a1, 32
-	addi	a2, zero, 2
-	beq	a1, a2, .LBB21_6
-	j	.LBB21_3
-.LBB21_3:                               # %sw.default
+.LBB21_2:                               # %cond.true
 	j	.LBB21_4
-.LBB21_4:                               # %sw.bb
-	sd	a0, -24(s0)
+.LBB21_3:                               # %cond.false
+	lui	a0, %hi(.L.str)
+	addi	a0, a0, %lo(.L.str)
+	lui	a1, %hi(.L__PRETTY_FUNCTION__._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi)
+	addi	a2, a1, %lo(.L__PRETTY_FUNCTION__._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi)
+	lui	a1, %hi(.L.str.1)
+	addi	a3, a1, %lo(.L.str.1)
+	addi	a1, zero, 186
+	call	__assert_func
+.LBB21_4:                               # %cond.end
+	lwu	a0, -52(s0)
+	beqz	a0, .LBB21_8
+	j	.LBB21_5
+.LBB21_5:                               # %cond.end
+	slli	a1, a0, 32
+	srli	a1, a1, 32
+	addi	a2, zero, 1
+	beq	a1, a2, .LBB21_9
+	j	.LBB21_6
+.LBB21_6:                               # %cond.end
+	slli	a0, a0, 32
+	srli	a0, a0, 32
+	addi	a1, zero, 2
+	beq	a0, a1, .LBB21_10
 	j	.LBB21_7
-.LBB21_5:                               # %sw.bb2
-	addi	a0, a0, 8
-	sd	a0, -24(s0)
-	j	.LBB21_7
-.LBB21_6:                               # %sw.bb3
-	addi	a0, a0, 16
-	sd	a0, -24(s0)
-	j	.LBB21_7
-.LBB21_7:                               # %return
-	ld	a0, -24(s0)
-	ld	s0, 32(sp)
-	ld	ra, 40(sp)
-	addi	sp, sp, 48
+.LBB21_7:                               # %sw.default
+	j	.LBB21_8
+.LBB21_8:                               # %sw.bb
+	sd	s2, -40(s0)
+	j	.LBB21_11
+.LBB21_9:                               # %sw.bb3
+	addi	a0, s2, 8
+	sd	a0, -40(s0)
+	j	.LBB21_11
+.LBB21_10:                              # %sw.bb4
+	addi	a0, s2, 16
+	sd	a0, -40(s0)
+	j	.LBB21_11
+.LBB21_11:                              # %return
+	ld	a0, -40(s0)
+	ld	s2, 32(sp)
+	ld	s1, 40(sp)
+	ld	s0, 48(sp)
+	.cfi_def_cfa sp, 64
+	ld	ra, 56(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	.cfi_restore s2
+	addi	sp, sp, 64
+	.cfi_def_cfa_offset 0
 	ret
 .Lfunc_end21:
 	.size	_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi, .Lfunc_end21-_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi
+	.cfi_endproc
                                         # -- End function
 	.text
 	.globl	_ZN11BoundingBox5mergeERKN3glm3vecILi3EdLNS0_9qualifierE0EEE # -- Begin function _ZN11BoundingBox5mergeERKN3glm3vecILi3EdLNS0_9qualifierE0EEE
@@ -1579,6 +1667,27 @@ _ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_
 	.size	_ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_, .Lfunc_end30-_ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_
 	.cfi_endproc
                                         # -- End function
+	.type	.L.str,@object          # @.str
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.L.str:
+	.asciz	"/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/./ext/../detail/type_vec3.inl"
+	.size	.L.str, 89
+
+	.type	.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi,@object # @__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
+.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi:
+	.asciz	"T &glm::vec<3, double, glm::packed_highp>::operator[](typename vec<3, T, Q>::length_type) [L = 3, T = double, Q = glm::packed_highp]"
+	.size	.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi, 133
+
+	.type	.L.str.1,@object        # @.str.1
+.L.str.1:
+	.asciz	"i >= 0 && i < this->length()"
+	.size	.L.str.1, 29
+
+	.type	.L__PRETTY_FUNCTION__._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi,@object # @__PRETTY_FUNCTION__._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi
+.L__PRETTY_FUNCTION__._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi:
+	.asciz	"const T &glm::vec<3, double, glm::packed_highp>::operator[](typename vec<3, T, Q>::length_type) const [L = 3, T = double, Q = glm::packed_highp]"
+	.size	.L__PRETTY_FUNCTION__._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi, 145
+
 
 	.ident	"clang version 10.0.0 (git@geopelia.mtl.t.u-tokyo.ac.jp:tomida/approximatellvm.git e85b13db4532b11e8486c143a2fd6295890b6b31)"
 	.section	".note.GNU-stack","",@progbits

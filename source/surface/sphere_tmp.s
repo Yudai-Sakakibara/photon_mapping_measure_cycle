@@ -505,10 +505,10 @@ _Z4pow2IdET_S0_:                        # @_Z4pow2IdET_S0_
 	.type	_Z14solveQuadraticdddRdS_,@function
 _Z14solveQuadraticdddRdS_:              # @_Z14solveQuadraticdddRdS_
 # %bb.0:                                # %entry
-	addi	sp, sp, -80
-	sd	ra, 72(sp)
-	sd	s0, 64(sp)
-	addi	s0, sp, 80
+	addi	sp, sp, -96
+	sd	ra, 88(sp)
+	sd	s0, 80(sp)
+	addi	s0, sp, 96
 	fmv.d.x	ft0, a2
 	fmv.d.x	ft0, a1
 	fmv.d.x	ft0, a0
@@ -548,25 +548,31 @@ _Z14solveQuadraticdddRdS_:              # @_Z14solveQuadraticdddRdS_
 	sb	zero, -17(s0)
 	j	.LBB9_12
 .LBB9_3:                                # %if.end
-	fld	ft0, -40(s0)
+	fld	ft1, -40(s0)
 	lui	a0, %hi(.LCPI9_0)
 	addi	a0, a0, %lo(.LCPI9_0)
-	fld	ft1, 0(a0)
-	flt.d	a0, ft0, ft1
+	fld	ft0, 0(a0)
+	fsd	ft1, -88(s0)
+	flt.d	a0, ft1, ft0
 	xori	a0, a0, 1
 	bnez	a0, .LBB9_5
 	j	.LBB9_4
 .LBB9_4:                                # %cond.true
-	fld	ft1, -72(s0)
-	fsqrt.d	ft1, ft1
-	fneg.d	ft1, ft1
+	ld	a0, -72(s0)
+	call	sqrt
+	addi	a1, zero, -1
+	slli	a1, a1, 63
+	xor	a0, a0, a1
+	fmv.d.x	ft0, a0
 	j	.LBB9_6
 .LBB9_5:                                # %cond.false
-	fld	ft1, -72(s0)
-	fsqrt.d	ft1, ft1
+	ld	a0, -72(s0)
+	call	sqrt
+	fmv.d.x	ft0, a0
 	j	.LBB9_6
 .LBB9_6:                                # %cond.end
-	fadd.d	ft0, ft0, ft1
+	fld	ft1, -88(s0)
+	fadd.d	ft0, ft1, ft0
 	lui	a0, %hi(.LCPI9_2)
 	addi	a0, a0, %lo(.LCPI9_2)
 	fld	ft1, 0(a0)
@@ -590,16 +596,16 @@ _Z14solveQuadraticdddRdS_:              # @_Z14solveQuadraticdddRdS_
 	xori	a0, a0, 1
 	bnez	a0, .LBB9_8
 	j	.LBB9_7
-.LBB9_7:                                # %if.then10
+.LBB9_7:                                # %if.then11
 	ld	a0, -56(s0)
 	ld	a1, -64(s0)
 	call	_ZSt4swapIdENSt9enable_ifIXsr6__and_ISt6__not_ISt15__is_tuple_likeIT_EESt21is_move_constructibleIS3_ESt18is_move_assignableIS3_EEE5valueEvE4typeERS3_SC_
 	j	.LBB9_8
-.LBB9_8:                                # %if.end11
+.LBB9_8:                                # %if.end12
 	addi	a0, zero, 1
 	sb	a0, -17(s0)
 	j	.LBB9_12
-.LBB9_9:                                # %if.end12
+.LBB9_9:                                # %if.end13
 	fld	ft0, -40(s0)
 	lui	a0, %hi(.LCPI9_0)
 	addi	a0, a0, %lo(.LCPI9_0)
@@ -607,7 +613,7 @@ _Z14solveQuadraticdddRdS_:              # @_Z14solveQuadraticdddRdS_
 	feq.d	a0, ft0, ft1
 	bnez	a0, .LBB9_11
 	j	.LBB9_10
-.LBB9_10:                               # %if.then14
+.LBB9_10:                               # %if.then15
 	fld	ft0, -48(s0)
 	fneg.d	ft0, ft0
 	fld	ft1, -40(s0)
@@ -619,14 +625,14 @@ _Z14solveQuadraticdddRdS_:              # @_Z14solveQuadraticdddRdS_
 	addi	a0, zero, 1
 	sb	a0, -17(s0)
 	j	.LBB9_12
-.LBB9_11:                               # %if.end17
+.LBB9_11:                               # %if.end18
 	sb	zero, -17(s0)
 	j	.LBB9_12
 .LBB9_12:                               # %return
 	lbu	a0, -17(s0)
-	ld	s0, 64(sp)
-	ld	ra, 72(sp)
-	addi	sp, sp, 80
+	ld	s0, 80(sp)
+	ld	ra, 88(sp)
+	addi	sp, sp, 96
 	ret
 .Lfunc_end9:
 	.size	_Z14solveQuadraticdddRdS_, .Lfunc_end9-_Z14solveQuadraticdddRdS_
@@ -814,66 +820,68 @@ _ZNK7Surface6SphereclEdd:               # @_ZNK7Surface6SphereclEdd
 	.cfi_offset s5, -56
 	addi	s0, sp, 192
 	.cfi_def_cfa s0, 0
-	mv	s3, a0
+	mv	s2, a0
 	fmv.d.x	ft0, a3
 	fmv.d.x	ft0, a2
-	sd	s3, -64(s0)
+	sd	s2, -64(s0)
 	sd	a1, -72(s0)
 	sd	a2, -80(s0)
 	sd	a3, -88(s0)
-	ld	s4, -72(s0)
+	ld	s1, -72(s0)
 	fld	ft0, -80(s0)
 	fadd.d	ft0, ft0, ft0
 	lui	a0, %hi(.LCPI14_0)
 	addi	a0, a0, %lo(.LCPI14_0)
 	fld	ft1, 0(a0)
-	fsd	ft1, -176(s0)
+	fsd	ft1, -184(s0)
 	fsub.d	ft0, ft1, ft0
 	fsd	ft0, -96(s0)
 	ld	a0, -96(s0)
 	call	_Z4pow2IdET_S0_
 	fmv.d.x	ft0, a0
-	fld	ft1, -176(s0)
+	fld	ft1, -184(s0)
 	fsub.d	ft0, ft1, ft0
-	fsqrt.d	ft0, ft0
-	fsd	ft0, -104(s0)
+	fmv.x.d	a0, ft0
+	call	sqrt
+	sd	a0, -104(s0)
 	fld	ft0, -88(s0)
 	lui	a0, %hi(.LCPI14_1)
 	addi	a0, a0, %lo(.LCPI14_1)
 	fld	ft1, 0(a0)
 	fmul.d	ft0, ft0, ft1
 	fsd	ft0, -112(s0)
-	addi	s2, s4, 80
+	addi	s3, s1, 80
 	fld	ft0, -104(s0)
-	fsd	ft0, -168(s0)
-	ld	s1, -112(s0)
-	mv	a0, s1
+	fsd	ft0, -176(s0)
+	ld	a0, -112(s0)
+	ld	s4, 104(s1)
 	call	cos
 	fmv.d.x	ft0, a0
-	fld	ft1, -168(s0)
+	fld	ft1, -176(s0)
 	fmul.d	ft0, ft1, ft0
-	fsd	ft0, -184(s0)
-	mv	a0, s1
+	fsd	ft0, -168(s0)
+	fld	ft0, -104(s0)
+	fsd	ft0, -192(s0)
+	ld	a0, -112(s0)
 	call	sin
 	fmv.d.x	ft0, a0
-	fld	ft1, -168(s0)
+	fld	ft1, -192(s0)
 	fmul.d	ft0, ft1, ft0
-	fld	ft1, -184(s0)
+	fld	ft1, -168(s0)
 	fmv.x.d	a1, ft1
 	fmv.x.d	a2, ft0
 	ld	a3, -96(s0)
-	ld	s1, 104(s4)
-	addi	s4, s0, -160
-	mv	a0, s4
-	call	_ZN3glm3vecILi3EdLNS_9qualifierE0EEC2Eddd
-	addi	s5, s0, -136
+	addi	s5, s0, -160
 	mv	a0, s5
-	mv	a1, s1
-	mv	a2, s4
-	call	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEES3_RKS4_
-	mv	a0, s3
-	mv	a1, s2
+	call	_ZN3glm3vecILi3EdLNS_9qualifierE0EEC2Eddd
+	addi	s1, s0, -136
+	mv	a0, s1
+	mv	a1, s4
 	mv	a2, s5
+	call	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEES3_RKS4_
+	mv	a0, s2
+	mv	a1, s3
+	mv	a2, s1
 	call	_ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_
 	ld	s5, 136(sp)
 	ld	s4, 144(sp)

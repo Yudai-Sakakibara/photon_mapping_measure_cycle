@@ -125,102 +125,98 @@ _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_tra
 	.cfi_personality 155, DW.ref.__gxx_personality_v0
 	.cfi_lsda 27, .Lexception0
 # %bb.0:                                # %entry
-	addi	sp, sp, -272
-	.cfi_def_cfa_offset 272
-	sd	ra, 264(sp)
-	sd	s0, 256(sp)
-	sd	s1, 248(sp)
-	sd	s2, 240(sp)
-	sd	s3, 232(sp)
+	addi	sp, sp, -288
+	.cfi_def_cfa_offset 288
+	sd	ra, 280(sp)
+	sd	s0, 272(sp)
+	sd	s1, 264(sp)
+	sd	s2, 256(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
 	.cfi_offset s1, -24
 	.cfi_offset s2, -32
-	.cfi_offset s3, -40
-	addi	s0, sp, 272
+	addi	s0, sp, 288
 	.cfi_def_cfa s0, 0
-	sd	a0, -48(s0)
-	sd	a1, -56(s0)
-	ld	s1, -48(s0)
+	sd	a0, -64(s0)
+	sd	a1, -72(s0)
+	ld	s1, -64(s0)
 	mv	a0, s1
 	call	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE8is_arrayEv
 	beqz	a0, .LBB2_20
 	j	.LBB2_1
 .LBB2_1:                                # %if.then
 	ld	a0, 8(s1)
-	ld	a1, -56(s0)
+	ld	a1, -72(s0)
 .Ltmp11:
 	call	_ZNSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE2atEm
 .Ltmp12:
 	j	.LBB2_2
 .LBB2_2:                                # %invoke.cont
-	ld	s3, 232(sp)
-	ld	s2, 240(sp)
-	ld	s1, 248(sp)
-	ld	s0, 256(sp)
-	.cfi_def_cfa sp, 272
-	ld	ra, 264(sp)
+	ld	s2, 256(sp)
+	ld	s1, 264(sp)
+	ld	s0, 272(sp)
+	.cfi_def_cfa sp, 288
+	ld	ra, 280(sp)
 	.cfi_restore ra
 	.cfi_restore s0
 	.cfi_restore s1
 	.cfi_restore s2
-	.cfi_restore s3
-	addi	sp, sp, 272
+	addi	sp, sp, 288
 	.cfi_def_cfa_offset 0
 	ret
 .LBB2_3:                                # %lpad
 .Ltmp13:
-	sd	a0, -64(s0)
-	sw	a1, -68(s0)
+	sd	a0, -80(s0)
+	sw	a1, -84(s0)
 	j	.LBB2_4
 .LBB2_4:                                # %catch.dispatch
-	lw	a0, -68(s0)
+	lw	a0, -84(s0)
 	addi	a1, zero, 1
 	bne	a0, a1, .LBB2_31
 	j	.LBB2_5
 .LBB2_5:                                # %catch
-	ld	a0, -64(s0)
+	ld	a0, -80(s0)
 	call	__cxa_begin_catch
-	sd	a0, -80(s0)
+	sd	a0, -96(s0)
 	addi	a0, zero, 32
 	call	__cxa_allocate_exception
 	mv	s1, a0
 	addi	a0, zero, 1
-	sb	a0, -177(s0)
-	ld	a1, -56(s0)
+	sb	a0, -193(s0)
+	ld	a1, -72(s0)
 .Ltmp14:
-	addi	a0, s0, -176
+	addi	a0, s0, -192
 	call	_ZNSt7__cxx119to_stringEm
 .Ltmp15:
 	j	.LBB2_6
 .LBB2_6:                                # %invoke.cont7
 .Ltmp17:
-	lui	a0, %hi(.L.str.5)
-	addi	a1, a0, %lo(.L.str.5)
-	addi	a0, s0, -144
-	addi	a2, s0, -176
+	lui	a0, %hi(.L.str.7)
+	addi	a1, a0, %lo(.L.str.7)
+	addi	a0, s0, -160
+	addi	a2, s0, -192
 	call	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_
 .Ltmp18:
 	j	.LBB2_7
 .LBB2_7:                                # %invoke.cont9
 .Ltmp20:
-	lui	a0, %hi(.L.str.6)
-	addi	a2, a0, %lo(.L.str.6)
-	addi	a0, s0, -112
-	addi	a1, s0, -144
+	lui	a0, %hi(.L.str.8)
+	addi	a2, a0, %lo(.L.str.8)
+	addi	a0, s0, -128
+	addi	a1, s0, -160
 	call	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_PKS5_
 .Ltmp21:
 	j	.LBB2_8
 .LBB2_8:                                # %invoke.cont11
 .Ltmp23:
-	addi	a2, s0, -112
+	addi	a2, s0, -128
 	mv	a0, s1
 	addi	a1, zero, 401
 	call	_ZN8nlohmann6detail12out_of_range6createEiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
 .Ltmp24:
 	j	.LBB2_9
 .LBB2_9:                                # %invoke.cont13
-	sb	zero, -177(s0)
+	sb	zero, -193(s0)
 .Ltmp25:
 	lui	a0, %hi(_ZTIN8nlohmann6detail12out_of_rangeE)
 	addi	a1, a0, %lo(_ZTIN8nlohmann6detail12out_of_rangeE)
@@ -232,36 +228,36 @@ _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_tra
 	j	.LBB2_33
 .LBB2_10:                               # %lpad6
 .Ltmp16:
-	sd	a0, -64(s0)
-	sw	a1, -68(s0)
+	sd	a0, -80(s0)
+	sw	a1, -84(s0)
 	j	.LBB2_16
 .LBB2_11:                               # %lpad8
 .Ltmp19:
-	sd	a0, -64(s0)
-	sw	a1, -68(s0)
+	sd	a0, -80(s0)
+	sw	a1, -84(s0)
 	j	.LBB2_15
 .LBB2_12:                               # %lpad10
 .Ltmp22:
-	sd	a0, -64(s0)
-	sw	a1, -68(s0)
+	sd	a0, -80(s0)
+	sw	a1, -84(s0)
 	j	.LBB2_14
 .LBB2_13:                               # %lpad12
 .Ltmp27:
-	sd	a0, -64(s0)
-	sw	a1, -68(s0)
-	addi	a0, s0, -112
+	sd	a0, -80(s0)
+	sw	a1, -84(s0)
+	addi	a0, s0, -128
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
 	j	.LBB2_14
 .LBB2_14:                               # %ehcleanup
-	addi	a0, s0, -144
+	addi	a0, s0, -160
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
 	j	.LBB2_15
 .LBB2_15:                               # %ehcleanup14
-	addi	a0, s0, -176
+	addi	a0, s0, -192
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
 	j	.LBB2_16
 .LBB2_16:                               # %ehcleanup15
-	lbu	a0, -177(s0)
+	lbu	a0, -193(s0)
 	beqz	a0, .LBB2_18
 	j	.LBB2_17
 .LBB2_17:                               # %cleanup.action
@@ -280,39 +276,38 @@ _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_tra
 	call	__cxa_allocate_exception
 	mv	s2, a0
 	addi	a0, zero, 1
-	sb	a0, -257(s0)
+	sb	a0, -273(s0)
 	mv	a0, s1
 	call	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE9type_nameEv
-	mv	s1, a0
-	addi	s3, s0, -256
-	mv	a0, s3
-	call	_ZNSaIcEC1Ev
+	mv	a1, a0
+	addi	a2, s0, -272
+	sd	a2, -56(s0)
+	ld	a0, -56(s0)
+	sd	a0, -48(s0)
 .Ltmp0:
-	addi	a0, s0, -248
-	mv	a1, s1
-	mv	a2, s3
+	addi	a0, s0, -264
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_
 .Ltmp1:
 	j	.LBB2_21
 .LBB2_21:                               # %invoke.cont24
 .Ltmp3:
-	lui	a0, %hi(.L.str.7)
-	addi	a1, a0, %lo(.L.str.7)
-	addi	a0, s0, -216
-	addi	a2, s0, -248
+	lui	a0, %hi(.L.str.9)
+	addi	a1, a0, %lo(.L.str.9)
+	addi	a0, s0, -232
+	addi	a2, s0, -264
 	call	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_
 .Ltmp4:
 	j	.LBB2_22
 .LBB2_22:                               # %invoke.cont26
 .Ltmp6:
-	addi	a2, s0, -216
+	addi	a2, s0, -232
 	mv	a0, s2
 	addi	a1, zero, 304
 	call	_ZN8nlohmann6detail10type_error6createEiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
 .Ltmp7:
 	j	.LBB2_23
 .LBB2_23:                               # %invoke.cont28
-	sb	zero, -257(s0)
+	sb	zero, -273(s0)
 .Ltmp8:
 	lui	a0, %hi(_ZTIN8nlohmann6detail10type_errorE)
 	addi	a1, a0, %lo(_ZTIN8nlohmann6detail10type_errorE)
@@ -324,29 +319,31 @@ _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_tra
 	j	.LBB2_33
 .LBB2_24:                               # %lpad23
 .Ltmp2:
-	sd	a0, -64(s0)
-	sw	a1, -68(s0)
+	sd	a0, -80(s0)
+	sw	a1, -84(s0)
 	j	.LBB2_28
 .LBB2_25:                               # %lpad25
 .Ltmp5:
-	sd	a0, -64(s0)
-	sw	a1, -68(s0)
+	sd	a0, -80(s0)
+	sw	a1, -84(s0)
 	j	.LBB2_27
 .LBB2_26:                               # %lpad27
 .Ltmp10:
-	sd	a0, -64(s0)
-	sw	a1, -68(s0)
-	addi	a0, s0, -216
+	sd	a0, -80(s0)
+	sw	a1, -84(s0)
+	addi	a0, s0, -232
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
 	j	.LBB2_27
 .LBB2_27:                               # %ehcleanup31
-	addi	a0, s0, -248
+	addi	a0, s0, -264
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
 	j	.LBB2_28
 .LBB2_28:                               # %ehcleanup32
-	addi	a0, s0, -256
-	call	_ZNSaIcED1Ev
-	lbu	a0, -257(s0)
+	addi	a0, s0, -272
+	sd	a0, -40(s0)
+	ld	a0, -40(s0)
+	call	_ZNSt15__new_allocatorIcED2Ev
+	lbu	a0, -273(s0)
 	beqz	a0, .LBB2_30
 	j	.LBB2_29
 .LBB2_29:                               # %cleanup.action35
@@ -356,7 +353,7 @@ _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_tra
 .LBB2_30:                               # %cleanup.done36
 	j	.LBB2_31
 .LBB2_31:                               # %eh.resume
-	ld	a0, -64(s0)
+	ld	a0, -80(s0)
 	call	_Unwind_Resume
 .LBB2_32:                               # %terminate.lpad
 .Ltmp30:
@@ -481,50 +478,88 @@ _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_tra
 	.p2align	2
 	.type	_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi,@function
 _ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi: # @_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
+	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	addi	s0, sp, 48
-	sd	a0, -32(s0)
-	sw	a1, -36(s0)
-	ld	a0, -32(s0)
-	lwu	a1, -36(s0)
-	beqz	a1, .LBB4_4
+	addi	sp, sp, -64
+	.cfi_def_cfa_offset 64
+	sd	ra, 56(sp)
+	sd	s0, 48(sp)
+	sd	s1, 40(sp)
+	sd	s2, 32(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	.cfi_offset s2, -32
+	addi	s0, sp, 64
+	.cfi_def_cfa s0, 0
+	sd	a0, -48(s0)
+	sw	a1, -52(s0)
+	ld	s2, -48(s0)
+	lw	a0, -52(s0)
+	bltz	a0, .LBB4_3
 	j	.LBB4_1
-.LBB4_1:                                # %entry
-	slli	a2, a1, 32
-	srli	a2, a2, 32
-	addi	a3, zero, 1
-	beq	a2, a3, .LBB4_5
+.LBB4_1:                                # %land.lhs.true
+	lw	s1, -52(s0)
+	call	_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv
+	bge	s1, a0, .LBB4_3
 	j	.LBB4_2
-.LBB4_2:                                # %entry
-	slli	a1, a1, 32
-	srli	a1, a1, 32
-	addi	a2, zero, 2
-	beq	a1, a2, .LBB4_6
-	j	.LBB4_3
-.LBB4_3:                                # %sw.default
+.LBB4_2:                                # %cond.true
 	j	.LBB4_4
-.LBB4_4:                                # %sw.bb
-	sd	a0, -24(s0)
+.LBB4_3:                                # %cond.false
+	lui	a0, %hi(.L.str.5)
+	addi	a0, a0, %lo(.L.str.5)
+	lui	a1, %hi(.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi)
+	addi	a2, a1, %lo(.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi)
+	lui	a1, %hi(.L.str.6)
+	addi	a3, a1, %lo(.L.str.6)
+	addi	a1, zero, 170
+	call	__assert_func
+.LBB4_4:                                # %cond.end
+	lwu	a0, -52(s0)
+	beqz	a0, .LBB4_8
+	j	.LBB4_5
+.LBB4_5:                                # %cond.end
+	slli	a1, a0, 32
+	srli	a1, a1, 32
+	addi	a2, zero, 1
+	beq	a1, a2, .LBB4_9
+	j	.LBB4_6
+.LBB4_6:                                # %cond.end
+	slli	a0, a0, 32
+	srli	a0, a0, 32
+	addi	a1, zero, 2
+	beq	a0, a1, .LBB4_10
 	j	.LBB4_7
-.LBB4_5:                                # %sw.bb2
-	addi	a0, a0, 8
-	sd	a0, -24(s0)
-	j	.LBB4_7
-.LBB4_6:                                # %sw.bb3
-	addi	a0, a0, 16
-	sd	a0, -24(s0)
-	j	.LBB4_7
-.LBB4_7:                                # %return
-	ld	a0, -24(s0)
-	ld	s0, 32(sp)
-	ld	ra, 40(sp)
-	addi	sp, sp, 48
+.LBB4_7:                                # %sw.default
+	j	.LBB4_8
+.LBB4_8:                                # %sw.bb
+	sd	s2, -40(s0)
+	j	.LBB4_11
+.LBB4_9:                                # %sw.bb3
+	addi	a0, s2, 8
+	sd	a0, -40(s0)
+	j	.LBB4_11
+.LBB4_10:                               # %sw.bb4
+	addi	a0, s2, 16
+	sd	a0, -40(s0)
+	j	.LBB4_11
+.LBB4_11:                               # %return
+	ld	a0, -40(s0)
+	ld	s2, 32(sp)
+	ld	s1, 40(sp)
+	ld	s0, 48(sp)
+	.cfi_def_cfa sp, 64
+	ld	ra, 56(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	.cfi_restore s2
+	addi	sp, sp, 64
+	.cfi_def_cfa_offset 0
 	ret
 .Lfunc_end4:
 	.size	_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi, .Lfunc_end4-_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
+	.cfi_endproc
                                         # -- End function
 	.section	.sdata,"aw",@progbits
 	.p2align	3               # -- Begin function _ZN9TransformC2ERKN3glm3vecILi3EdLNS0_9qualifierE0EEES5_S5_
@@ -1964,14 +1999,14 @@ _Z3LogRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE: # @_Z3LogRKNSt7__c
 	sd	a0, -576(s0)
 	addi	a0, s0, -568
 	addi	a1, s0, -576
-	call	_ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcEERKNS0_IT_NS_11__enable_ifIXsr3std10__are_sameISC_SB_EE7__valueES8_E6__typeEEE
+	call	_ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcvEERKNS0_IT_S8_EE
 	addi	s1, s0, -544
 	mv	a0, s1
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE3endEv
 	sd	a0, -616(s0)
 	addi	a0, s0, -608
 	addi	a1, s0, -616
-	call	_ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcEERKNS0_IT_NS_11__enable_ifIXsr3std10__are_sameISC_SB_EE7__valueES8_E6__typeEEE
+	call	_ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcvEERKNS0_IT_S8_EE
 	ld	a1, -568(s0)
 	ld	a2, -608(s0)
 .Ltmp40:
@@ -2148,11 +2183,11 @@ _ZSt6removeIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char
 	.size	_ZSt6removeIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEcET_SA_SA_RKT0_, .Lfunc_end20-_ZSt6removeIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEcET_SA_SA_RKT0_
 	.cfi_endproc
                                         # -- End function
-	.section	.text._ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcEERKNS0_IT_NS_11__enable_ifIXsr3std10__are_sameISC_SB_EE7__valueES8_E6__typeEEE,"axG",@progbits,_ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcEERKNS0_IT_NS_11__enable_ifIXsr3std10__are_sameISC_SB_EE7__valueES8_E6__typeEEE,comdat
-	.weak	_ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcEERKNS0_IT_NS_11__enable_ifIXsr3std10__are_sameISC_SB_EE7__valueES8_E6__typeEEE # -- Begin function _ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcEERKNS0_IT_NS_11__enable_ifIXsr3std10__are_sameISC_SB_EE7__valueES8_E6__typeEEE
+	.section	.text._ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcvEERKNS0_IT_S8_EE,"axG",@progbits,_ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcvEERKNS0_IT_S8_EE,comdat
+	.weak	_ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcvEERKNS0_IT_S8_EE # -- Begin function _ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcvEERKNS0_IT_S8_EE
 	.p2align	2
-	.type	_ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcEERKNS0_IT_NS_11__enable_ifIXsr3std10__are_sameISC_SB_EE7__valueES8_E6__typeEEE,@function
-_ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcEERKNS0_IT_NS_11__enable_ifIXsr3std10__are_sameISC_SB_EE7__valueES8_E6__typeEEE: # @_ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcEERKNS0_IT_NS_11__enable_ifIXsr3std10__are_sameISC_SB_EE7__valueES8_E6__typeEEE
+	.type	_ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcvEERKNS0_IT_S8_EE,@function
+_ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcvEERKNS0_IT_S8_EE: # @_ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcvEERKNS0_IT_S8_EE
 # %bb.0:                                # %entry
 	addi	sp, sp, -48
 	sd	ra, 40(sp)
@@ -2172,7 +2207,25 @@ _ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIc
 	addi	sp, sp, 48
 	ret
 .Lfunc_end21:
-	.size	_ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcEERKNS0_IT_NS_11__enable_ifIXsr3std10__are_sameISC_SB_EE7__valueES8_E6__typeEEE, .Lfunc_end21-_ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcEERKNS0_IT_NS_11__enable_ifIXsr3std10__are_sameISC_SB_EE7__valueES8_E6__typeEEE
+	.size	_ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcvEERKNS0_IT_S8_EE, .Lfunc_end21-_ZN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2IPcvEERKNS0_IT_S8_EE
+                                        # -- End function
+	.section	.text._ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv,"axG",@progbits,_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv,comdat
+	.weak	_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv # -- Begin function _ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv
+	.p2align	2
+	.type	_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv,@function
+_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv: # @_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv
+# %bb.0:                                # %entry
+	addi	sp, sp, -16
+	sd	ra, 8(sp)
+	sd	s0, 0(sp)
+	addi	s0, sp, 16
+	addi	a0, zero, 3
+	ld	s0, 0(sp)
+	ld	ra, 8(sp)
+	addi	sp, sp, 16
+	ret
+.Lfunc_end22:
+	.size	_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv, .Lfunc_end22-_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv
                                         # -- End function
 	.section	.text._ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IdiiiEET_T0_T1_T2_,"axG",@progbits,_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IdiiiEET_T0_T1_T2_,comdat
 	.weak	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IdiiiEET_T0_T1_T2_ # -- Begin function _ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IdiiiEET_T0_T1_T2_
@@ -2206,8 +2259,8 @@ _ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IdiiiEET_T0_T1_T2_: # @_ZN3glm3vecILi4EdLNS
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end22:
-	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IdiiiEET_T0_T1_T2_, .Lfunc_end22-_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IdiiiEET_T0_T1_T2_
+.Lfunc_end23:
+	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IdiiiEET_T0_T1_T2_, .Lfunc_end23-_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IdiiiEET_T0_T1_T2_
                                         # -- End function
 	.section	.text._ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IidiiEET_T0_T1_T2_,"axG",@progbits,_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IidiiEET_T0_T1_T2_,comdat
 	.weak	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IidiiEET_T0_T1_T2_ # -- Begin function _ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IidiiEET_T0_T1_T2_
@@ -2241,8 +2294,8 @@ _ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IidiiEET_T0_T1_T2_: # @_ZN3glm3vecILi4EdLNS
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end23:
-	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IidiiEET_T0_T1_T2_, .Lfunc_end23-_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IidiiEET_T0_T1_T2_
+.Lfunc_end24:
+	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IidiiEET_T0_T1_T2_, .Lfunc_end24-_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IidiiEET_T0_T1_T2_
                                         # -- End function
 	.section	.text._ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IiidiEET_T0_T1_T2_,"axG",@progbits,_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IiidiEET_T0_T1_T2_,comdat
 	.weak	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IiidiEET_T0_T1_T2_ # -- Begin function _ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IiidiEET_T0_T1_T2_
@@ -2276,8 +2329,8 @@ _ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IiidiEET_T0_T1_T2_: # @_ZN3glm3vecILi4EdLNS
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end24:
-	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IiidiEET_T0_T1_T2_, .Lfunc_end24-_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IiidiEET_T0_T1_T2_
+.Lfunc_end25:
+	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IiidiEET_T0_T1_T2_, .Lfunc_end25-_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IiidiEET_T0_T1_T2_
                                         # -- End function
 	.section	.text._ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IiiidEET_T0_T1_T2_,"axG",@progbits,_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IiiidEET_T0_T1_T2_,comdat
 	.weak	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IiiidEET_T0_T1_T2_ # -- Begin function _ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IiiidEET_T0_T1_T2_
@@ -2311,8 +2364,8 @@ _ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IiiidEET_T0_T1_T2_: # @_ZN3glm3vecILi4EdLNS
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end25:
-	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IiiidEET_T0_T1_T2_, .Lfunc_end25-_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IiiidEET_T0_T1_T2_
+.Lfunc_end26:
+	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IiiidEET_T0_T1_T2_, .Lfunc_end26-_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2IiiidEET_T0_T1_T2_
                                         # -- End function
 	.section	.text._ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE8is_arrayEv,"axG",@progbits,_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE8is_arrayEv,comdat
 	.weak	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE8is_arrayEv # -- Begin function _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE8is_arrayEv
@@ -2333,8 +2386,8 @@ _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_tra
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end26:
-	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE8is_arrayEv, .Lfunc_end26-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE8is_arrayEv
+.Lfunc_end27:
+	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE8is_arrayEv, .Lfunc_end27-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE8is_arrayEv
                                         # -- End function
 	.section	.text._ZNSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE2atEm,"axG",@progbits,_ZNSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE2atEm,comdat
 	.weak	_ZNSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE2atEm # -- Begin function _ZNSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE2atEm
@@ -2372,8 +2425,8 @@ _ZNSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end27:
-	.size	_ZNSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE2atEm, .Lfunc_end27-_ZNSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE2atEm
+.Lfunc_end28:
+	.size	_ZNSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE2atEm, .Lfunc_end28-_ZNSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE2atEm
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN8nlohmann6detail12out_of_range6createEiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE,"axG",@progbits,_ZN8nlohmann6detail12out_of_range6createEiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE,comdat
@@ -2386,122 +2439,126 @@ _ZN8nlohmann6detail12out_of_range6createEiRKNSt7__cxx1112basic_stringIcSt11char_
 	.cfi_personality 155, DW.ref.__gxx_personality_v0
 	.cfi_lsda 27, .Lexception3
 # %bb.0:                                # %entry
-	addi	sp, sp, -176
-	.cfi_def_cfa_offset 176
-	sd	ra, 168(sp)
-	sd	s0, 160(sp)
-	sd	s1, 152(sp)
-	sd	s2, 144(sp)
+	addi	sp, sp, -208
+	.cfi_def_cfa_offset 208
+	sd	ra, 200(sp)
+	sd	s0, 192(sp)
+	sd	s1, 184(sp)
+	sd	s2, 176(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
 	.cfi_offset s1, -24
 	.cfi_offset s2, -32
-	addi	s0, sp, 176
+	addi	s0, sp, 208
 	.cfi_def_cfa s0, 0
-	mv	s2, a0
-	sd	s2, -40(s0)
-	sw	a1, -44(s0)
-	sd	a2, -56(s0)
-	addi	s1, s0, -160
-	mv	a0, s1
-	call	_ZNSaIcEC1Ev
+	mv	s1, a0
+	sd	s1, -72(s0)
+	sw	a1, -76(s0)
+	sd	a2, -88(s0)
+	addi	a2, s0, -192
+	sd	a2, -64(s0)
+	ld	a0, -64(s0)
+	sd	a0, -56(s0)
 .Ltmp56:
-	lui	a0, %hi(.L.str.9)
-	addi	a1, a0, %lo(.L.str.9)
-	addi	a0, s0, -152
-	mv	a2, s1
+	lui	a0, %hi(.L.str.11)
+	addi	a1, a0, %lo(.L.str.11)
+	addi	a0, s0, -184
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_
 .Ltmp57:
-	j	.LBB28_1
-.LBB28_1:                               # %invoke.cont
-	lw	a2, -44(s0)
+	j	.LBB29_1
+.LBB29_1:                               # %invoke.cont
+	lw	a2, -76(s0)
 .Ltmp59:
-	addi	a0, s0, -120
-	addi	a1, s0, -152
+	addi	a0, s0, -152
+	addi	a1, s0, -184
 	call	_ZN8nlohmann6detail9exception4nameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi
 .Ltmp60:
-	j	.LBB28_2
-.LBB28_2:                               # %invoke.cont4
-	ld	a2, -56(s0)
+	j	.LBB29_2
+.LBB29_2:                               # %invoke.cont4
+	ld	a2, -88(s0)
 .Ltmp62:
-	addi	a0, s0, -88
-	addi	a1, s0, -120
+	addi	a0, s0, -120
+	addi	a1, s0, -152
 	call	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_RKS8_
 .Ltmp63:
-	j	.LBB28_3
-.LBB28_3:                               # %invoke.cont6
-	addi	a0, s0, -120
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	j	.LBB29_3
+.LBB29_3:                               # %invoke.cont6
 	addi	a0, s0, -152
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	addi	a0, s0, -160
-	call	_ZNSaIcED1Ev
-	lw	s1, -44(s0)
-	addi	a0, s0, -88
+	addi	a0, s0, -184
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	addi	a0, s0, -192
+	sd	a0, -40(s0)
+	ld	a0, -40(s0)
+	call	_ZNSt15__new_allocatorIcED2Ev
+	lw	s2, -76(s0)
+	addi	a0, s0, -120
 	call	_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
 	mv	a2, a0
 .Ltmp65:
-	mv	a0, s2
-	mv	a1, s1
+	mv	a0, s1
+	mv	a1, s2
 	call	_ZN8nlohmann6detail12out_of_rangeC2EiPKc
 .Ltmp66:
-	j	.LBB28_4
-.LBB28_4:                               # %invoke.cont9
-	addi	a0, s0, -88
+	j	.LBB29_4
+.LBB29_4:                               # %invoke.cont9
+	addi	a0, s0, -120
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	ld	s2, 144(sp)
-	ld	s1, 152(sp)
-	ld	s0, 160(sp)
-	.cfi_def_cfa sp, 176
-	ld	ra, 168(sp)
+	ld	s2, 176(sp)
+	ld	s1, 184(sp)
+	ld	s0, 192(sp)
+	.cfi_def_cfa sp, 208
+	ld	ra, 200(sp)
 	.cfi_restore ra
 	.cfi_restore s0
 	.cfi_restore s1
 	.cfi_restore s2
-	addi	sp, sp, 176
+	addi	sp, sp, 208
 	.cfi_def_cfa_offset 0
 	ret
-.LBB28_5:                               # %lpad
+.LBB29_5:                               # %lpad
 .Ltmp58:
-	sd	a0, -168(s0)
-	sw	a1, -172(s0)
-	j	.LBB28_9
-.LBB28_6:                               # %lpad3
+	sd	a0, -200(s0)
+	sw	a1, -204(s0)
+	j	.LBB29_9
+.LBB29_6:                               # %lpad3
 .Ltmp61:
-	sd	a0, -168(s0)
-	sw	a1, -172(s0)
-	j	.LBB28_8
-.LBB28_7:                               # %lpad5
+	sd	a0, -200(s0)
+	sw	a1, -204(s0)
+	j	.LBB29_8
+.LBB29_7:                               # %lpad5
 .Ltmp64:
-	sd	a0, -168(s0)
-	sw	a1, -172(s0)
-	addi	a0, s0, -120
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	j	.LBB28_8
-.LBB28_8:                               # %ehcleanup
+	sd	a0, -200(s0)
+	sw	a1, -204(s0)
 	addi	a0, s0, -152
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	j	.LBB28_9
-.LBB28_9:                               # %ehcleanup7
-	addi	a0, s0, -160
-	call	_ZNSaIcED1Ev
-	j	.LBB28_11
-.LBB28_10:                              # %lpad8
-.Ltmp67:
-	sd	a0, -168(s0)
-	sw	a1, -172(s0)
-	addi	a0, s0, -88
+	j	.LBB29_8
+.LBB29_8:                               # %ehcleanup
+	addi	a0, s0, -184
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	j	.LBB28_11
-.LBB28_11:                              # %eh.resume
-	ld	a0, -168(s0)
+	j	.LBB29_9
+.LBB29_9:                               # %ehcleanup7
+	addi	a0, s0, -192
+	sd	a0, -48(s0)
+	ld	a0, -48(s0)
+	call	_ZNSt15__new_allocatorIcED2Ev
+	j	.LBB29_11
+.LBB29_10:                              # %lpad8
+.Ltmp67:
+	sd	a0, -200(s0)
+	sw	a1, -204(s0)
+	addi	a0, s0, -120
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	j	.LBB29_11
+.LBB29_11:                              # %eh.resume
+	ld	a0, -200(s0)
 	call	_Unwind_Resume
-.Lfunc_end28:
-	.size	_ZN8nlohmann6detail12out_of_range6createEiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE, .Lfunc_end28-_ZN8nlohmann6detail12out_of_range6createEiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+.Lfunc_end29:
+	.size	_ZN8nlohmann6detail12out_of_range6createEiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE, .Lfunc_end29-_ZN8nlohmann6detail12out_of_range6createEiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table28:
+GCC_except_table29:
 .Lexception3:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	255                     # @TType Encoding = omit
@@ -2525,7 +2582,7 @@ GCC_except_table28:
 	.word	.Ltmp67-.Lfunc_begin3   #     jumps to .Ltmp67
 	.byte	0                       #   On action: cleanup
 	.word	.Ltmp66-.Lfunc_begin3   # >> Call Site 5 <<
-	.word	.Lfunc_end28-.Ltmp66    #   Call between .Ltmp66 and .Lfunc_end28
+	.word	.Lfunc_end29-.Ltmp66    #   Call between .Ltmp66 and .Lfunc_end29
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
 .Lcst_end3:
@@ -2569,8 +2626,8 @@ _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_PKS5_: #
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end29:
-	.size	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_PKS5_, .Lfunc_end29-_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_PKS5_
+.Lfunc_end30:
+	.size	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_PKS5_, .Lfunc_end30-_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_PKS5_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_,"axG",@progbits,_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_,comdat
@@ -2612,8 +2669,8 @@ _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_: #
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end30:
-	.size	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_, .Lfunc_end30-_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_
+.Lfunc_end31:
+	.size	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_, .Lfunc_end31-_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt7__cxx119to_stringEm,"axG",@progbits,_ZNSt7__cxx119to_stringEm,comdat
@@ -2631,78 +2688,48 @@ _ZNSt7__cxx119to_stringEm:              # @_ZNSt7__cxx119to_stringEm
 	sd	ra, 72(sp)
 	sd	s0, 64(sp)
 	sd	s1, 56(sp)
-	sd	s2, 48(sp)
-	sd	s3, 40(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
 	.cfi_offset s1, -24
-	.cfi_offset s2, -32
-	.cfi_offset s3, -40
 	addi	s0, sp, 80
 	.cfi_def_cfa s0, 0
-	mv	s3, a0
-	sd	s3, -48(s0)
-	sd	a1, -56(s0)
-	sb	zero, -57(s0)
-	ld	a0, -56(s0)
+	mv	s1, a0
+	sd	s1, -32(s0)
+	sd	a1, -40(s0)
+	ld	a0, -40(s0)
 	addi	a1, zero, 10
 	call	_ZNSt8__detail14__to_chars_lenImEEjT_i
-	slli	a0, a0, 32
-	srli	s1, a0, 32
-	addi	s2, s0, -64
-	mv	a0, s2
-	call	_ZNSaIcEC1Ev
-.Ltmp68:
-	mv	a0, s3
-	mv	a1, s1
-	mv	a2, zero
-	mv	a3, s2
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEmcRKS3_
-.Ltmp69:
-	j	.LBB31_1
-.LBB31_1:                               # %invoke.cont
-	addi	a0, s0, -64
-	call	_ZNSaIcED1Ev
-.Ltmp71:
-	mv	a0, s3
-	mv	a1, zero
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm
-	mv	s2, a0
-.Ltmp72:
-	j	.LBB31_2
-.LBB31_2:                               # %invoke.cont2
-	mv	a0, s3
-	call	_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv
+	sw	a0, -44(s0)
+	sb	zero, -45(s0)
+	mv	a0, s1
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev
+	lwu	a1, -44(s0)
+	ld	a0, -40(s0)
+	sd	a0, -56(s0)
 	ld	a2, -56(s0)
-	sext.w	a1, a0
-	mv	a0, s2
-	call	_ZNSt8__detail18__to_chars_10_implImEEvPcjT_
+.Ltmp68:
+	mv	a0, s1
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_
+.Ltmp69:
+	j	.LBB32_1
+.LBB32_1:                               # %invoke.cont
 	addi	a0, zero, 1
-	sb	a0, -57(s0)
-	lbu	a0, -57(s0)
-	bnez	a0, .LBB31_6
-	j	.LBB31_5
-.LBB31_3:                               # %lpad
+	sb	a0, -45(s0)
+	lbu	a0, -45(s0)
+	bnez	a0, .LBB32_4
+	j	.LBB32_3
+.LBB32_2:                               # %lpad
 .Ltmp70:
-	sd	a0, -72(s0)
-	sw	a1, -76(s0)
-	addi	a0, s0, -64
-	call	_ZNSaIcED1Ev
-	j	.LBB31_7
-.LBB31_4:                               # %lpad1
-.Ltmp73:
-	sd	a0, -72(s0)
-	sw	a1, -76(s0)
-	mv	a0, s3
+	sd	a0, -64(s0)
+	sw	a1, -68(s0)
+	mv	a0, s1
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	j	.LBB31_7
-.LBB31_5:                               # %nrvo.unused
-	mv	a0, s3
+	j	.LBB32_5
+.LBB32_3:                               # %nrvo.unused
+	mv	a0, s1
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	j	.LBB31_6
-.LBB31_6:                               # %nrvo.skipdtor
-	ld	s3, 40(sp)
-	ld	s2, 48(sp)
+	j	.LBB32_4
+.LBB32_4:                               # %nrvo.skipdtor
 	ld	s1, 56(sp)
 	ld	s0, 64(sp)
 	.cfi_def_cfa sp, 80
@@ -2710,20 +2737,18 @@ _ZNSt7__cxx119to_stringEm:              # @_ZNSt7__cxx119to_stringEm
 	.cfi_restore ra
 	.cfi_restore s0
 	.cfi_restore s1
-	.cfi_restore s2
-	.cfi_restore s3
 	addi	sp, sp, 80
 	.cfi_def_cfa_offset 0
 	ret
-.LBB31_7:                               # %eh.resume
-	ld	a0, -72(s0)
+.LBB32_5:                               # %eh.resume
+	ld	a0, -64(s0)
 	call	_Unwind_Resume
-.Lfunc_end31:
-	.size	_ZNSt7__cxx119to_stringEm, .Lfunc_end31-_ZNSt7__cxx119to_stringEm
+.Lfunc_end32:
+	.size	_ZNSt7__cxx119to_stringEm, .Lfunc_end32-_ZNSt7__cxx119to_stringEm
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table31:
+GCC_except_table32:
 .Lexception4:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	255                     # @TType Encoding = omit
@@ -2734,12 +2759,8 @@ GCC_except_table31:
 	.word	.Ltmp69-.Ltmp68         #   Call between .Ltmp68 and .Ltmp69
 	.word	.Ltmp70-.Lfunc_begin4   #     jumps to .Ltmp70
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp71-.Lfunc_begin4   # >> Call Site 2 <<
-	.word	.Ltmp72-.Ltmp71         #   Call between .Ltmp71 and .Ltmp72
-	.word	.Ltmp73-.Lfunc_begin4   #     jumps to .Ltmp73
-	.byte	0                       #   On action: cleanup
-	.word	.Ltmp72-.Lfunc_begin4   # >> Call Site 3 <<
-	.word	.Lfunc_end31-.Ltmp72    #   Call between .Ltmp72 and .Lfunc_end31
+	.word	.Ltmp69-.Lfunc_begin4   # >> Call Site 2 <<
+	.word	.Lfunc_end32-.Ltmp69    #   Call between .Ltmp69 and .Lfunc_end32
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
 .Lcst_end4:
@@ -2762,8 +2783,8 @@ _ZN8nlohmann6detail12out_of_rangeD2Ev:  # @_ZN8nlohmann6detail12out_of_rangeD2Ev
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end32:
-	.size	_ZN8nlohmann6detail12out_of_rangeD2Ev, .Lfunc_end32-_ZN8nlohmann6detail12out_of_rangeD2Ev
+.Lfunc_end33:
+	.size	_ZN8nlohmann6detail12out_of_rangeD2Ev, .Lfunc_end33-_ZN8nlohmann6detail12out_of_rangeD2Ev
                                         # -- End function
 	.section	.text.__clang_call_terminate,"axG",@progbits,__clang_call_terminate,comdat
 	.hidden	__clang_call_terminate  # -- Begin function __clang_call_terminate
@@ -2776,8 +2797,8 @@ __clang_call_terminate:                 # @__clang_call_terminate
 	sd	ra, 8(sp)
 	call	__cxa_begin_catch
 	call	_ZSt9terminatev
-.Lfunc_end33:
-	.size	__clang_call_terminate, .Lfunc_end33-__clang_call_terminate
+.Lfunc_end34:
+	.size	__clang_call_terminate, .Lfunc_end34-__clang_call_terminate
                                         # -- End function
 	.section	.text._ZN8nlohmann6detail10type_error6createEiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE,"axG",@progbits,_ZN8nlohmann6detail10type_error6createEiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE,comdat
 	.weak	_ZN8nlohmann6detail10type_error6createEiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE # -- Begin function _ZN8nlohmann6detail10type_error6createEiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
@@ -2789,146 +2810,150 @@ _ZN8nlohmann6detail10type_error6createEiRKNSt7__cxx1112basic_stringIcSt11char_tr
 	.cfi_personality 155, DW.ref.__gxx_personality_v0
 	.cfi_lsda 27, .Lexception5
 # %bb.0:                                # %entry
-	addi	sp, sp, -176
-	.cfi_def_cfa_offset 176
-	sd	ra, 168(sp)
-	sd	s0, 160(sp)
-	sd	s1, 152(sp)
-	sd	s2, 144(sp)
+	addi	sp, sp, -208
+	.cfi_def_cfa_offset 208
+	sd	ra, 200(sp)
+	sd	s0, 192(sp)
+	sd	s1, 184(sp)
+	sd	s2, 176(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
 	.cfi_offset s1, -24
 	.cfi_offset s2, -32
-	addi	s0, sp, 176
+	addi	s0, sp, 208
 	.cfi_def_cfa s0, 0
-	mv	s2, a0
-	sd	s2, -40(s0)
-	sw	a1, -44(s0)
-	sd	a2, -56(s0)
-	addi	s1, s0, -160
-	mv	a0, s1
-	call	_ZNSaIcEC1Ev
-.Ltmp74:
-	lui	a0, %hi(.L.str.12)
-	addi	a1, a0, %lo(.L.str.12)
-	addi	a0, s0, -152
-	mv	a2, s1
+	mv	s1, a0
+	sd	s1, -72(s0)
+	sw	a1, -76(s0)
+	sd	a2, -88(s0)
+	addi	a2, s0, -192
+	sd	a2, -64(s0)
+	ld	a0, -64(s0)
+	sd	a0, -56(s0)
+.Ltmp71:
+	lui	a0, %hi(.L.str.14)
+	addi	a1, a0, %lo(.L.str.14)
+	addi	a0, s0, -184
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_
+.Ltmp72:
+	j	.LBB35_1
+.LBB35_1:                               # %invoke.cont
+	lw	a2, -76(s0)
+.Ltmp74:
+	addi	a0, s0, -152
+	addi	a1, s0, -184
+	call	_ZN8nlohmann6detail9exception4nameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi
 .Ltmp75:
-	j	.LBB34_1
-.LBB34_1:                               # %invoke.cont
-	lw	a2, -44(s0)
+	j	.LBB35_2
+.LBB35_2:                               # %invoke.cont4
+	ld	a2, -88(s0)
 .Ltmp77:
 	addi	a0, s0, -120
 	addi	a1, s0, -152
-	call	_ZN8nlohmann6detail9exception4nameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi
-.Ltmp78:
-	j	.LBB34_2
-.LBB34_2:                               # %invoke.cont4
-	ld	a2, -56(s0)
-.Ltmp80:
-	addi	a0, s0, -88
-	addi	a1, s0, -120
 	call	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_RKS8_
-.Ltmp81:
-	j	.LBB34_3
-.LBB34_3:                               # %invoke.cont6
-	addi	a0, s0, -120
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+.Ltmp78:
+	j	.LBB35_3
+.LBB35_3:                               # %invoke.cont6
 	addi	a0, s0, -152
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	addi	a0, s0, -160
-	call	_ZNSaIcED1Ev
-	lw	s1, -44(s0)
-	addi	a0, s0, -88
+	addi	a0, s0, -184
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	addi	a0, s0, -192
+	sd	a0, -40(s0)
+	ld	a0, -40(s0)
+	call	_ZNSt15__new_allocatorIcED2Ev
+	lw	s2, -76(s0)
+	addi	a0, s0, -120
 	call	_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
 	mv	a2, a0
-.Ltmp83:
-	mv	a0, s2
-	mv	a1, s1
+.Ltmp80:
+	mv	a0, s1
+	mv	a1, s2
 	call	_ZN8nlohmann6detail10type_errorC2EiPKc
-.Ltmp84:
-	j	.LBB34_4
-.LBB34_4:                               # %invoke.cont9
-	addi	a0, s0, -88
+.Ltmp81:
+	j	.LBB35_4
+.LBB35_4:                               # %invoke.cont9
+	addi	a0, s0, -120
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	ld	s2, 144(sp)
-	ld	s1, 152(sp)
-	ld	s0, 160(sp)
-	.cfi_def_cfa sp, 176
-	ld	ra, 168(sp)
+	ld	s2, 176(sp)
+	ld	s1, 184(sp)
+	ld	s0, 192(sp)
+	.cfi_def_cfa sp, 208
+	ld	ra, 200(sp)
 	.cfi_restore ra
 	.cfi_restore s0
 	.cfi_restore s1
 	.cfi_restore s2
-	addi	sp, sp, 176
+	addi	sp, sp, 208
 	.cfi_def_cfa_offset 0
 	ret
-.LBB34_5:                               # %lpad
+.LBB35_5:                               # %lpad
+.Ltmp73:
+	sd	a0, -200(s0)
+	sw	a1, -204(s0)
+	j	.LBB35_9
+.LBB35_6:                               # %lpad3
 .Ltmp76:
-	sd	a0, -168(s0)
-	sw	a1, -172(s0)
-	j	.LBB34_9
-.LBB34_6:                               # %lpad3
+	sd	a0, -200(s0)
+	sw	a1, -204(s0)
+	j	.LBB35_8
+.LBB35_7:                               # %lpad5
 .Ltmp79:
-	sd	a0, -168(s0)
-	sw	a1, -172(s0)
-	j	.LBB34_8
-.LBB34_7:                               # %lpad5
-.Ltmp82:
-	sd	a0, -168(s0)
-	sw	a1, -172(s0)
-	addi	a0, s0, -120
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	j	.LBB34_8
-.LBB34_8:                               # %ehcleanup
+	sd	a0, -200(s0)
+	sw	a1, -204(s0)
 	addi	a0, s0, -152
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	j	.LBB34_9
-.LBB34_9:                               # %ehcleanup7
-	addi	a0, s0, -160
-	call	_ZNSaIcED1Ev
-	j	.LBB34_11
-.LBB34_10:                              # %lpad8
-.Ltmp85:
-	sd	a0, -168(s0)
-	sw	a1, -172(s0)
-	addi	a0, s0, -88
+	j	.LBB35_8
+.LBB35_8:                               # %ehcleanup
+	addi	a0, s0, -184
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	j	.LBB34_11
-.LBB34_11:                              # %eh.resume
-	ld	a0, -168(s0)
+	j	.LBB35_9
+.LBB35_9:                               # %ehcleanup7
+	addi	a0, s0, -192
+	sd	a0, -48(s0)
+	ld	a0, -48(s0)
+	call	_ZNSt15__new_allocatorIcED2Ev
+	j	.LBB35_11
+.LBB35_10:                              # %lpad8
+.Ltmp82:
+	sd	a0, -200(s0)
+	sw	a1, -204(s0)
+	addi	a0, s0, -120
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	j	.LBB35_11
+.LBB35_11:                              # %eh.resume
+	ld	a0, -200(s0)
 	call	_Unwind_Resume
-.Lfunc_end34:
-	.size	_ZN8nlohmann6detail10type_error6createEiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE, .Lfunc_end34-_ZN8nlohmann6detail10type_error6createEiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+.Lfunc_end35:
+	.size	_ZN8nlohmann6detail10type_error6createEiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE, .Lfunc_end35-_ZN8nlohmann6detail10type_error6createEiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table34:
+GCC_except_table35:
 .Lexception5:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	255                     # @TType Encoding = omit
 	.byte	3                       # Call site Encoding = udata4
 	.uleb128 .Lcst_end5-.Lcst_begin5
 .Lcst_begin5:
-	.word	.Ltmp74-.Lfunc_begin5   # >> Call Site 1 <<
+	.word	.Ltmp71-.Lfunc_begin5   # >> Call Site 1 <<
+	.word	.Ltmp72-.Ltmp71         #   Call between .Ltmp71 and .Ltmp72
+	.word	.Ltmp73-.Lfunc_begin5   #     jumps to .Ltmp73
+	.byte	0                       #   On action: cleanup
+	.word	.Ltmp74-.Lfunc_begin5   # >> Call Site 2 <<
 	.word	.Ltmp75-.Ltmp74         #   Call between .Ltmp74 and .Ltmp75
 	.word	.Ltmp76-.Lfunc_begin5   #     jumps to .Ltmp76
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp77-.Lfunc_begin5   # >> Call Site 2 <<
+	.word	.Ltmp77-.Lfunc_begin5   # >> Call Site 3 <<
 	.word	.Ltmp78-.Ltmp77         #   Call between .Ltmp77 and .Ltmp78
 	.word	.Ltmp79-.Lfunc_begin5   #     jumps to .Ltmp79
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp80-.Lfunc_begin5   # >> Call Site 3 <<
+	.word	.Ltmp80-.Lfunc_begin5   # >> Call Site 4 <<
 	.word	.Ltmp81-.Ltmp80         #   Call between .Ltmp80 and .Ltmp81
 	.word	.Ltmp82-.Lfunc_begin5   #     jumps to .Ltmp82
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp83-.Lfunc_begin5   # >> Call Site 4 <<
-	.word	.Ltmp84-.Ltmp83         #   Call between .Ltmp83 and .Ltmp84
-	.word	.Ltmp85-.Lfunc_begin5   #     jumps to .Ltmp85
-	.byte	0                       #   On action: cleanup
-	.word	.Ltmp84-.Lfunc_begin5   # >> Call Site 5 <<
-	.word	.Lfunc_end34-.Ltmp84    #   Call between .Ltmp84 and .Lfunc_end34
+	.word	.Ltmp81-.Lfunc_begin5   # >> Call Site 5 <<
+	.word	.Lfunc_end35-.Ltmp81    #   Call between .Ltmp81 and .Lfunc_end35
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
 .Lcst_end5:
@@ -2947,76 +2972,76 @@ _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_tra
 	sd	a0, -32(s0)
 	ld	a0, -32(s0)
 	lbu	a0, 0(a0)
-	beqz	a0, .LBB35_6
-	j	.LBB35_1
-.LBB35_1:                               # %entry
+	beqz	a0, .LBB36_6
+	j	.LBB36_1
+.LBB36_1:                               # %entry
 	andi	a1, a0, 255
 	addi	a2, zero, 1
-	beq	a1, a2, .LBB35_7
-	j	.LBB35_2
-.LBB35_2:                               # %entry
+	beq	a1, a2, .LBB36_7
+	j	.LBB36_2
+.LBB36_2:                               # %entry
 	andi	a1, a0, 255
 	addi	a2, zero, 2
-	beq	a1, a2, .LBB35_8
-	j	.LBB35_3
-.LBB35_3:                               # %entry
+	beq	a1, a2, .LBB36_8
+	j	.LBB36_3
+.LBB36_3:                               # %entry
 	andi	a1, a0, 255
 	addi	a2, zero, 3
-	beq	a1, a2, .LBB35_9
-	j	.LBB35_4
-.LBB35_4:                               # %entry
+	beq	a1, a2, .LBB36_9
+	j	.LBB36_4
+.LBB36_4:                               # %entry
 	andi	a1, a0, 255
 	addi	a2, zero, 4
-	beq	a1, a2, .LBB35_10
-	j	.LBB35_5
-.LBB35_5:                               # %entry
+	beq	a1, a2, .LBB36_10
+	j	.LBB36_5
+.LBB36_5:                               # %entry
 	andi	a0, a0, 255
 	addi	a1, zero, 8
-	beq	a0, a1, .LBB35_11
-	j	.LBB35_12
-.LBB35_6:                               # %sw.bb
-	lui	a0, %hi(.L.str.13)
-	addi	a0, a0, %lo(.L.str.13)
-	sd	a0, -24(s0)
-	j	.LBB35_13
-.LBB35_7:                               # %sw.bb2
-	lui	a0, %hi(.L.str.14)
-	addi	a0, a0, %lo(.L.str.14)
-	sd	a0, -24(s0)
-	j	.LBB35_13
-.LBB35_8:                               # %sw.bb3
+	beq	a0, a1, .LBB36_11
+	j	.LBB36_12
+.LBB36_6:                               # %sw.bb
 	lui	a0, %hi(.L.str.15)
 	addi	a0, a0, %lo(.L.str.15)
 	sd	a0, -24(s0)
-	j	.LBB35_13
-.LBB35_9:                               # %sw.bb4
+	j	.LBB36_13
+.LBB36_7:                               # %sw.bb2
 	lui	a0, %hi(.L.str.16)
 	addi	a0, a0, %lo(.L.str.16)
 	sd	a0, -24(s0)
-	j	.LBB35_13
-.LBB35_10:                              # %sw.bb5
+	j	.LBB36_13
+.LBB36_8:                               # %sw.bb3
 	lui	a0, %hi(.L.str.17)
 	addi	a0, a0, %lo(.L.str.17)
 	sd	a0, -24(s0)
-	j	.LBB35_13
-.LBB35_11:                              # %sw.bb6
+	j	.LBB36_13
+.LBB36_9:                               # %sw.bb4
 	lui	a0, %hi(.L.str.18)
 	addi	a0, a0, %lo(.L.str.18)
 	sd	a0, -24(s0)
-	j	.LBB35_13
-.LBB35_12:                              # %sw.default
+	j	.LBB36_13
+.LBB36_10:                              # %sw.bb5
 	lui	a0, %hi(.L.str.19)
 	addi	a0, a0, %lo(.L.str.19)
 	sd	a0, -24(s0)
-	j	.LBB35_13
-.LBB35_13:                              # %return
+	j	.LBB36_13
+.LBB36_11:                              # %sw.bb6
+	lui	a0, %hi(.L.str.20)
+	addi	a0, a0, %lo(.L.str.20)
+	sd	a0, -24(s0)
+	j	.LBB36_13
+.LBB36_12:                              # %sw.default
+	lui	a0, %hi(.L.str.21)
+	addi	a0, a0, %lo(.L.str.21)
+	sd	a0, -24(s0)
+	j	.LBB36_13
+.LBB36_13:                              # %return
 	ld	a0, -24(s0)
 	ld	s0, 16(sp)
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end35:
-	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE9type_nameEv, .Lfunc_end35-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE9type_nameEv
+.Lfunc_end36:
+	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE9type_nameEv, .Lfunc_end36-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE9type_nameEv
                                         # -- End function
 	.section	.text._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_,"axG",@progbits,_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_,comdat
 	.weak	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_ # -- Begin function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_
@@ -3028,85 +3053,85 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_: # @_ZNSt7
 	.cfi_personality 155, DW.ref.__gxx_personality_v0
 	.cfi_lsda 27, .Lexception6
 # %bb.0:                                # %entry
-	addi	sp, sp, -80
-	.cfi_def_cfa_offset 80
-	sd	ra, 72(sp)
-	sd	s0, 64(sp)
-	sd	s1, 56(sp)
-	sd	s2, 48(sp)
-	sd	s3, 40(sp)
+	addi	sp, sp, -96
+	.cfi_def_cfa_offset 96
+	sd	ra, 88(sp)
+	sd	s0, 80(sp)
+	sd	s1, 72(sp)
+	sd	s2, 64(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
 	.cfi_offset s1, -24
 	.cfi_offset s2, -32
-	.cfi_offset s3, -40
-	addi	s0, sp, 80
+	addi	s0, sp, 96
 	.cfi_def_cfa s0, 0
-	sd	a0, -48(s0)
-	sd	a1, -56(s0)
-	sd	a2, -64(s0)
-	ld	s1, -48(s0)
+	sd	a0, -40(s0)
+	sd	a1, -48(s0)
+	sd	a2, -56(s0)
+	ld	s1, -40(s0)
 	mv	a0, s1
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
 	mv	a1, a0
-	ld	a2, -64(s0)
+	ld	a2, -56(s0)
 	mv	a0, s1
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
-	ld	s2, -56(s0)
-	beqz	s2, .LBB36_3
-	j	.LBB36_1
-.LBB36_1:                               # %cond.true
-	ld	s3, -56(s0)
-.Ltmp86:
-	mv	a0, s3
-	call	_ZNSt11char_traitsIcE6lengthEPKc
+	ld	a0, -48(s0)
+	bnez	a0, .LBB37_4
+	j	.LBB37_1
+.LBB37_1:                               # %if.then
 .Ltmp87:
-	j	.LBB36_2
-.LBB36_2:                               # %invoke.cont
-	add	a2, s3, a0
-	j	.LBB36_4
-.LBB36_3:                               # %cond.false
-	ld	a0, -56(s0)
-	addi	a2, a0, -1
-	j	.LBB36_4
-.LBB36_4:                               # %cond.end
+	lui	a0, %hi(.L.str.22)
+	addi	a0, a0, %lo(.L.str.22)
+	call	_ZSt19__throw_logic_errorPKc
 .Ltmp88:
-	mv	a0, s1
-	mv	a1, s2
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_
+	j	.LBB37_2
+.LBB37_2:                               # %invoke.cont
+.LBB37_3:                               # %lpad
 .Ltmp89:
-	j	.LBB36_5
-.LBB36_5:                               # %invoke.cont4
-	ld	s3, 40(sp)
-	ld	s2, 48(sp)
-	ld	s1, 56(sp)
-	ld	s0, 64(sp)
-	.cfi_def_cfa sp, 80
-	ld	ra, 72(sp)
+	sd	a0, -64(s0)
+	sw	a1, -68(s0)
+	mv	a0, s1
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev
+	j	.LBB37_7
+.LBB37_4:                               # %if.end
+	ld	s2, -48(s0)
+.Ltmp83:
+	mv	a0, s2
+	call	_ZNSt11char_traitsIcE6lengthEPKc
+.Ltmp84:
+	j	.LBB37_5
+.LBB37_5:                               # %invoke.cont2
+	add	a0, s2, a0
+	sd	a0, -80(s0)
+	ld	a1, -48(s0)
+	ld	a2, -80(s0)
+.Ltmp85:
+	mv	a0, s1
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag
+.Ltmp86:
+	j	.LBB37_6
+.LBB37_6:                               # %invoke.cont4
+	ld	s2, 64(sp)
+	ld	s1, 72(sp)
+	ld	s0, 80(sp)
+	.cfi_def_cfa sp, 96
+	ld	ra, 88(sp)
 	.cfi_restore ra
 	.cfi_restore s0
 	.cfi_restore s1
 	.cfi_restore s2
-	.cfi_restore s3
-	addi	sp, sp, 80
+	addi	sp, sp, 96
 	.cfi_def_cfa_offset 0
 	ret
-.LBB36_6:                               # %lpad
-.Ltmp90:
-	sd	a0, -72(s0)
-	sw	a1, -76(s0)
-	mv	a0, s1
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev
-	j	.LBB36_7
-.LBB36_7:                               # %eh.resume
-	ld	a0, -72(s0)
+.LBB37_7:                               # %eh.resume
+	ld	a0, -64(s0)
 	call	_Unwind_Resume
-.Lfunc_end36:
-	.size	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_, .Lfunc_end36-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_
+.Lfunc_end37:
+	.size	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_, .Lfunc_end37-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table36:
+GCC_except_table37:
 .Lexception6:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	255                     # @TType Encoding = omit
@@ -3114,15 +3139,15 @@ GCC_except_table36:
 	.uleb128 .Lcst_end6-.Lcst_begin6
 .Lcst_begin6:
 	.word	.Lfunc_begin6-.Lfunc_begin6 # >> Call Site 1 <<
-	.word	.Ltmp86-.Lfunc_begin6   #   Call between .Lfunc_begin6 and .Ltmp86
+	.word	.Ltmp87-.Lfunc_begin6   #   Call between .Lfunc_begin6 and .Ltmp87
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp86-.Lfunc_begin6   # >> Call Site 2 <<
-	.word	.Ltmp89-.Ltmp86         #   Call between .Ltmp86 and .Ltmp89
-	.word	.Ltmp90-.Lfunc_begin6   #     jumps to .Ltmp90
+	.word	.Ltmp87-.Lfunc_begin6   # >> Call Site 2 <<
+	.word	.Ltmp86-.Ltmp87         #   Call between .Ltmp87 and .Ltmp86
+	.word	.Ltmp89-.Lfunc_begin6   #     jumps to .Ltmp89
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp89-.Lfunc_begin6   # >> Call Site 3 <<
-	.word	.Lfunc_end36-.Ltmp89    #   Call between .Ltmp89 and .Lfunc_end36
+	.word	.Ltmp86-.Lfunc_begin6   # >> Call Site 3 <<
+	.word	.Lfunc_end37-.Ltmp86    #   Call between .Ltmp86 and .Lfunc_end37
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
 .Lcst_end6:
@@ -3145,8 +3170,8 @@ _ZN8nlohmann6detail10type_errorD2Ev:    # @_ZN8nlohmann6detail10type_errorD2Ev
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end37:
-	.size	_ZN8nlohmann6detail10type_errorD2Ev, .Lfunc_end37-_ZN8nlohmann6detail10type_errorD2Ev
+.Lfunc_end38:
+	.size	_ZN8nlohmann6detail10type_errorD2Ev, .Lfunc_end38-_ZN8nlohmann6detail10type_errorD2Ev
                                         # -- End function
 	.section	.text._ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE14_M_range_checkEm,"axG",@progbits,_ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE14_M_range_checkEm,comdat
 	.weak	_ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE14_M_range_checkEm # -- Begin function _ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE14_M_range_checkEm
@@ -3173,18 +3198,18 @@ _ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char
 	ld	s2, -48(s0)
 	mv	a0, s1
 	call	_ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE4sizeEv
-	bltu	s2, a0, .LBB38_2
-	j	.LBB38_1
-.LBB38_1:                               # %if.then
+	bltu	s2, a0, .LBB39_2
+	j	.LBB39_1
+.LBB39_1:                               # %if.then
 	ld	s2, -48(s0)
 	mv	a0, s1
 	call	_ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE4sizeEv
 	mv	a2, a0
-	lui	a0, %hi(.L.str.8)
-	addi	a0, a0, %lo(.L.str.8)
+	lui	a0, %hi(.L.str.10)
+	addi	a0, a0, %lo(.L.str.10)
 	mv	a1, s2
 	call	_ZSt24__throw_out_of_range_fmtPKcz
-.LBB38_2:                               # %if.end
+.LBB39_2:                               # %if.end
 	ld	s2, 16(sp)
 	ld	s1, 24(sp)
 	ld	s0, 32(sp)
@@ -3197,8 +3222,8 @@ _ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end38:
-	.size	_ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE14_M_range_checkEm, .Lfunc_end38-_ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE14_M_range_checkEm
+.Lfunc_end39:
+	.size	_ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE14_M_range_checkEm, .Lfunc_end39-_ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE14_M_range_checkEm
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EEixEm,"axG",@progbits,_ZNSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EEixEm,comdat
@@ -3222,8 +3247,8 @@ _ZNSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end39:
-	.size	_ZNSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EEixEm, .Lfunc_end39-_ZNSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EEixEm
+.Lfunc_end40:
+	.size	_ZNSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EEixEm, .Lfunc_end40-_ZNSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EEixEm
                                         # -- End function
 	.section	.text._ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE4sizeEv,"axG",@progbits,_ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE4sizeEv,comdat
 	.weak	_ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE4sizeEv # -- Begin function _ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE4sizeEv
@@ -3245,8 +3270,8 @@ _ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end40:
-	.size	_ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE4sizeEv, .Lfunc_end40-_ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE4sizeEv
+.Lfunc_end41:
+	.size	_ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE4sizeEv, .Lfunc_end41-_ZNKSt6vectorIN8nlohmann10basic_jsonISt3mapS_NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEESaISA_EE4sizeEv
                                         # -- End function
 	.section	.text._ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_RKS8_,"axG",@progbits,_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_RKS8_,comdat
 	.weak	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_RKS8_ # -- Begin function _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_RKS8_
@@ -3286,8 +3311,8 @@ _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_RKS8_: #
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end41:
-	.size	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_RKS8_, .Lfunc_end41-_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_RKS8_
+.Lfunc_end42:
+	.size	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_RKS8_, .Lfunc_end42-_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_RKS8_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN8nlohmann6detail9exception4nameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi,"axG",@progbits,_ZN8nlohmann6detail9exception4nameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi,comdat
@@ -3317,44 +3342,41 @@ _ZN8nlohmann6detail9exception4nameERKNSt7__cxx1112basic_stringIcSt11char_traitsI
 	sd	a1, -48(s0)
 	sw	a2, -52(s0)
 	ld	a2, -48(s0)
-	lui	a0, %hi(.L.str.10)
-	addi	a1, a0, %lo(.L.str.10)
+	lui	a0, %hi(.L.str.12)
+	addi	a1, a0, %lo(.L.str.12)
 	addi	s1, s0, -152
 	mv	a0, s1
 	call	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_
-.Ltmp91:
-	lui	a0, %hi(.L.str.11)
-	addi	a2, a0, %lo(.L.str.11)
+.Ltmp90:
+	lui	a0, %hi(.L.str.13)
+	addi	a2, a0, %lo(.L.str.13)
 	addi	a0, s0, -120
 	mv	a1, s1
 	call	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_PKS5_
-.Ltmp92:
-	j	.LBB42_1
-.LBB42_1:                               # %invoke.cont
+.Ltmp91:
+	j	.LBB43_1
+.LBB43_1:                               # %invoke.cont
 	lw	a1, -52(s0)
-.Ltmp94:
-	addi	a0, s0, -200
+	addi	s1, s0, -200
+	mv	a0, s1
 	call	_ZNSt7__cxx119to_stringEi
-.Ltmp95:
-	j	.LBB42_2
-.LBB42_2:                               # %invoke.cont5
-.Ltmp97:
+.Ltmp93:
 	addi	a0, s0, -88
 	addi	a1, s0, -120
-	addi	a2, s0, -200
+	mv	a2, s1
 	call	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_S9_
-.Ltmp98:
-	j	.LBB42_3
-.LBB42_3:                               # %invoke.cont7
-.Ltmp100:
+.Ltmp94:
+	j	.LBB43_2
+.LBB43_2:                               # %invoke.cont5
+.Ltmp96:
 	lui	a0, %hi(.L.str.4)
 	addi	a2, a0, %lo(.L.str.4)
 	addi	a1, s0, -88
 	mv	a0, s2
 	call	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_PKS5_
-.Ltmp101:
-	j	.LBB42_4
-.LBB42_4:                               # %invoke.cont9
+.Ltmp97:
+	j	.LBB43_3
+.LBB43_3:                               # %invoke.cont7
 	addi	a0, s0, -88
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
 	addi	a0, s0, -200
@@ -3375,49 +3397,42 @@ _ZN8nlohmann6detail9exception4nameERKNSt7__cxx1112basic_stringIcSt11char_traitsI
 	addi	sp, sp, 208
 	.cfi_def_cfa_offset 0
 	ret
-.LBB42_5:                               # %lpad
-.Ltmp93:
+.LBB43_4:                               # %lpad
+.Ltmp92:
 	sd	a0, -160(s0)
 	sw	a1, -164(s0)
-	j	.LBB42_11
-.LBB42_6:                               # %lpad4
-.Ltmp96:
+	j	.LBB43_8
+.LBB43_5:                               # %lpad4
+.Ltmp95:
 	sd	a0, -160(s0)
 	sw	a1, -164(s0)
-	j	.LBB42_10
-.LBB42_7:                               # %lpad6
-.Ltmp99:
-	sd	a0, -160(s0)
-	sw	a1, -164(s0)
-	j	.LBB42_9
-.LBB42_8:                               # %lpad8
-.Ltmp102:
+	j	.LBB43_7
+.LBB43_6:                               # %lpad6
+.Ltmp98:
 	sd	a0, -160(s0)
 	sw	a1, -164(s0)
 	addi	a0, s0, -88
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	j	.LBB42_9
-.LBB42_9:                               # %ehcleanup
+	j	.LBB43_7
+.LBB43_7:                               # %ehcleanup
 	addi	a0, s0, -200
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	j	.LBB42_10
-.LBB42_10:                              # %ehcleanup10
 	addi	a0, s0, -120
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	j	.LBB42_11
-.LBB42_11:                              # %ehcleanup11
+	j	.LBB43_8
+.LBB43_8:                               # %ehcleanup9
 	addi	a0, s0, -152
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	j	.LBB42_12
-.LBB42_12:                              # %eh.resume
+	j	.LBB43_9
+.LBB43_9:                               # %eh.resume
 	ld	a0, -160(s0)
 	call	_Unwind_Resume
-.Lfunc_end42:
-	.size	_ZN8nlohmann6detail9exception4nameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi, .Lfunc_end42-_ZN8nlohmann6detail9exception4nameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi
+.Lfunc_end43:
+	.size	_ZN8nlohmann6detail9exception4nameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi, .Lfunc_end43-_ZN8nlohmann6detail9exception4nameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table42:
+GCC_except_table43:
 .Lexception7:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	255                     # @TType Encoding = omit
@@ -3425,27 +3440,23 @@ GCC_except_table42:
 	.uleb128 .Lcst_end7-.Lcst_begin7
 .Lcst_begin7:
 	.word	.Lfunc_begin7-.Lfunc_begin7 # >> Call Site 1 <<
-	.word	.Ltmp91-.Lfunc_begin7   #   Call between .Lfunc_begin7 and .Ltmp91
+	.word	.Ltmp90-.Lfunc_begin7   #   Call between .Lfunc_begin7 and .Ltmp90
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp91-.Lfunc_begin7   # >> Call Site 2 <<
-	.word	.Ltmp92-.Ltmp91         #   Call between .Ltmp91 and .Ltmp92
-	.word	.Ltmp93-.Lfunc_begin7   #     jumps to .Ltmp93
+	.word	.Ltmp90-.Lfunc_begin7   # >> Call Site 2 <<
+	.word	.Ltmp91-.Ltmp90         #   Call between .Ltmp90 and .Ltmp91
+	.word	.Ltmp92-.Lfunc_begin7   #     jumps to .Ltmp92
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp94-.Lfunc_begin7   # >> Call Site 3 <<
-	.word	.Ltmp95-.Ltmp94         #   Call between .Ltmp94 and .Ltmp95
-	.word	.Ltmp96-.Lfunc_begin7   #     jumps to .Ltmp96
+	.word	.Ltmp93-.Lfunc_begin7   # >> Call Site 3 <<
+	.word	.Ltmp94-.Ltmp93         #   Call between .Ltmp93 and .Ltmp94
+	.word	.Ltmp95-.Lfunc_begin7   #     jumps to .Ltmp95
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp97-.Lfunc_begin7   # >> Call Site 4 <<
-	.word	.Ltmp98-.Ltmp97         #   Call between .Ltmp97 and .Ltmp98
-	.word	.Ltmp99-.Lfunc_begin7   #     jumps to .Ltmp99
+	.word	.Ltmp96-.Lfunc_begin7   # >> Call Site 4 <<
+	.word	.Ltmp97-.Ltmp96         #   Call between .Ltmp96 and .Ltmp97
+	.word	.Ltmp98-.Lfunc_begin7   #     jumps to .Ltmp98
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp100-.Lfunc_begin7  # >> Call Site 5 <<
-	.word	.Ltmp101-.Ltmp100       #   Call between .Ltmp100 and .Ltmp101
-	.word	.Ltmp102-.Lfunc_begin7  #     jumps to .Ltmp102
-	.byte	0                       #   On action: cleanup
-	.word	.Ltmp101-.Lfunc_begin7  # >> Call Site 6 <<
-	.word	.Lfunc_end42-.Ltmp101   #   Call between .Ltmp101 and .Lfunc_end42
+	.word	.Ltmp97-.Lfunc_begin7   # >> Call Site 5 <<
+	.word	.Lfunc_end43-.Ltmp97    #   Call between .Ltmp97 and .Lfunc_end43
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
 .Lcst_end7:
@@ -3490,8 +3501,8 @@ _ZN8nlohmann6detail12out_of_rangeC2EiPKc: # @_ZN8nlohmann6detail12out_of_rangeC2
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end43:
-	.size	_ZN8nlohmann6detail12out_of_rangeC2EiPKc, .Lfunc_end43-_ZN8nlohmann6detail12out_of_rangeC2EiPKc
+.Lfunc_end44:
+	.size	_ZN8nlohmann6detail12out_of_rangeC2EiPKc, .Lfunc_end44-_ZN8nlohmann6detail12out_of_rangeC2EiPKc
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt4moveIRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEONSt16remove_referenceIT_E4typeEOS8_,"axG",@progbits,_ZSt4moveIRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEONSt16remove_referenceIT_E4typeEOS8_,comdat
@@ -3510,8 +3521,8 @@ _ZSt4moveIRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEONSt16remove_ref
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end44:
-	.size	_ZSt4moveIRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEONSt16remove_referenceIT_E4typeEOS8_, .Lfunc_end44-_ZSt4moveIRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEONSt16remove_referenceIT_E4typeEOS8_
+.Lfunc_end45:
+	.size	_ZSt4moveIRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEONSt16remove_referenceIT_E4typeEOS8_, .Lfunc_end45-_ZSt4moveIRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEONSt16remove_referenceIT_E4typeEOS8_
                                         # -- End function
 	.section	.text._ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_S9_,"axG",@progbits,_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_S9_,comdat
 	.weak	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_S9_ # -- Begin function _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_S9_
@@ -3541,9 +3552,9 @@ _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_S9_: # @
 	sb	a0, -57(s0)
 	lbu	a0, -57(s0)
 	andi	a0, a0, 1
-	beqz	a0, .LBB45_5
-	j	.LBB45_1
-.LBB45_1:                               # %if.then
+	beqz	a0, .LBB46_5
+	j	.LBB46_1
+.LBB46_1:                               # %if.then
 	ld	a0, -48(s0)
 	call	_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv
 	mv	s1, a0
@@ -3554,15 +3565,15 @@ _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_S9_: # @
 	ld	s1, -72(s0)
 	ld	a0, -48(s0)
 	call	_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE8capacityEv
-	bgeu	a0, s1, .LBB45_4
-	j	.LBB45_2
-.LBB45_2:                               # %land.lhs.true
+	bgeu	a0, s1, .LBB46_4
+	j	.LBB46_2
+.LBB46_2:                               # %land.lhs.true
 	ld	s1, -72(s0)
 	ld	a0, -56(s0)
 	call	_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE8capacityEv
-	bltu	a0, s1, .LBB45_4
-	j	.LBB45_3
-.LBB45_3:                               # %if.then5
+	bltu	a0, s1, .LBB46_4
+	j	.LBB46_3
+.LBB46_3:                               # %if.then5
 	ld	a0, -56(s0)
 	ld	a2, -48(s0)
 	mv	a1, zero
@@ -3571,10 +3582,10 @@ _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_S9_: # @
 	mv	a1, a0
 	mv	a0, s2
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EOS4_
-	j	.LBB45_6
-.LBB45_4:                               # %if.end
-	j	.LBB45_5
-.LBB45_5:                               # %if.end8
+	j	.LBB46_6
+.LBB46_4:                               # %if.end
+	j	.LBB46_5
+.LBB46_5:                               # %if.end8
 	ld	a0, -48(s0)
 	ld	a1, -56(s0)
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE6appendERKS4_
@@ -3582,8 +3593,8 @@ _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_S9_: # @
 	mv	a1, a0
 	mv	a0, s2
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EOS4_
-	j	.LBB45_6
-.LBB45_6:                               # %return
+	j	.LBB46_6
+.LBB46_6:                               # %return
 	ld	s2, 48(sp)
 	ld	s1, 56(sp)
 	ld	s0, 64(sp)
@@ -3596,8 +3607,8 @@ _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_S9_: # @
 	addi	sp, sp, 80
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end45:
-	.size	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_S9_, .Lfunc_end45-_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_S9_
+.Lfunc_end46:
+	.size	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_S9_, .Lfunc_end46-_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_S9_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_,"axG",@progbits,_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_,comdat
@@ -3610,135 +3621,109 @@ _ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_: 
 	.cfi_personality 155, DW.ref.__gxx_personality_v0
 	.cfi_lsda 27, .Lexception8
 # %bb.0:                                # %entry
-	addi	sp, sp, -96
-	.cfi_def_cfa_offset 96
-	sd	ra, 88(sp)
-	sd	s0, 80(sp)
-	sd	s1, 72(sp)
-	sd	s2, 64(sp)
+	addi	sp, sp, -128
+	.cfi_def_cfa_offset 128
+	sd	ra, 120(sp)
+	sd	s0, 112(sp)
+	sd	s1, 104(sp)
+	sd	s2, 96(sp)
+	sd	s3, 88(sp)
+	sd	s4, 80(sp)
+	sd	s5, 72(sp)
+	sd	s6, 64(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
 	.cfi_offset s1, -24
 	.cfi_offset s2, -32
-	addi	s0, sp, 96
+	.cfi_offset s3, -40
+	.cfi_offset s4, -48
+	.cfi_offset s5, -56
+	.cfi_offset s6, -64
+	addi	s0, sp, 128
 	.cfi_def_cfa s0, 0
 	mv	s2, a0
-	sd	s2, -40(s0)
-	sd	a1, -48(s0)
-	sd	a2, -56(s0)
-	ld	a0, -48(s0)
+	sd	s2, -88(s0)
+	sd	a1, -96(s0)
+	sd	a2, -104(s0)
+	ld	s1, -96(s0)
+	mv	a0, s1
 	call	_ZNSt11char_traitsIcE6lengthEPKc
-	sd	a0, -64(s0)
-	sb	zero, -65(s0)
-	ld	a1, -56(s0)
-	addi	s1, s0, -80
-	mv	a0, s1
-	call	_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13get_allocatorEv
-.Ltmp103:
-	addi	a0, s0, -72
-	mv	a1, s1
-	call	_ZN9__gnu_cxx14__alloc_traitsISaIcEcE17_S_select_on_copyERKS1_
-.Ltmp104:
-	j	.LBB46_1
-.LBB46_1:                               # %invoke.cont
-	addi	s1, s0, -72
-	mv	a0, s2
-	mv	a1, s1
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1ERKS3_
-	mv	a0, s1
-	call	_ZNSaIcED1Ev
-	addi	a0, s0, -80
-	call	_ZNSaIcED1Ev
-	ld	s1, -64(s0)
-	ld	a0, -56(s0)
+	mv	s3, a0
+	ld	a0, -104(s0)
+	call	_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5c_strEv
+	mv	s4, a0
+	ld	a0, -104(s0)
 	call	_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv
-	add	a1, s1, a0
-.Ltmp106:
+	mv	s5, a0
+	ld	a1, -104(s0)
+	addi	s6, s0, -112
+	mv	a0, s6
+	call	_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13get_allocatorEv
+.Ltmp99:
 	mv	a0, s2
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7reserveEm
-.Ltmp107:
-	j	.LBB46_2
-.LBB46_2:                               # %invoke.cont4
-	ld	a1, -48(s0)
-	ld	a2, -64(s0)
-.Ltmp108:
-	mv	a0, s2
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE6appendEPKcm
-.Ltmp109:
-	j	.LBB46_3
-.LBB46_3:                               # %invoke.cont5
-	ld	a1, -56(s0)
-.Ltmp110:
-	mv	a0, s2
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE6appendERKS4_
-.Ltmp111:
-	j	.LBB46_4
-.LBB46_4:                               # %invoke.cont7
-	addi	a0, zero, 1
-	sb	a0, -65(s0)
-	lbu	a0, -65(s0)
-	bnez	a0, .LBB46_8
-	j	.LBB46_7
-.LBB46_5:                               # %lpad
-.Ltmp105:
-	sd	a0, -88(s0)
-	sw	a1, -92(s0)
-	addi	a0, s0, -80
-	call	_ZNSaIcED1Ev
-	j	.LBB46_9
-.LBB46_6:                               # %lpad3
-.Ltmp112:
-	sd	a0, -88(s0)
-	sw	a1, -92(s0)
-	mv	a0, s2
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	j	.LBB46_9
-.LBB46_7:                               # %nrvo.unused
-	mv	a0, s2
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	j	.LBB46_8
-.LBB46_8:                               # %nrvo.skipdtor
-	ld	s2, 64(sp)
-	ld	s1, 72(sp)
-	ld	s0, 80(sp)
-	.cfi_def_cfa sp, 96
-	ld	ra, 88(sp)
+	mv	a1, s1
+	mv	a2, s3
+	mv	a3, s4
+	mv	a4, s5
+	mv	a5, s6
+	call	_ZSt12__str_concatINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_PKNS6_10value_typeENS6_9size_typeES9_SA_RKNS6_14allocator_typeE
+.Ltmp100:
+	j	.LBB47_1
+.LBB47_1:                               # %invoke.cont
+	addi	a0, s0, -112
+	sd	a0, -80(s0)
+	ld	a0, -80(s0)
+	call	_ZNSt15__new_allocatorIcED2Ev
+	ld	s6, 64(sp)
+	ld	s5, 72(sp)
+	ld	s4, 80(sp)
+	ld	s3, 88(sp)
+	ld	s2, 96(sp)
+	ld	s1, 104(sp)
+	ld	s0, 112(sp)
+	.cfi_def_cfa sp, 128
+	ld	ra, 120(sp)
 	.cfi_restore ra
 	.cfi_restore s0
 	.cfi_restore s1
 	.cfi_restore s2
-	addi	sp, sp, 96
+	.cfi_restore s3
+	.cfi_restore s4
+	.cfi_restore s5
+	.cfi_restore s6
+	addi	sp, sp, 128
 	.cfi_def_cfa_offset 0
 	ret
-.LBB46_9:                               # %eh.resume
-	ld	a0, -88(s0)
+.LBB47_2:                               # %lpad
+.Ltmp101:
+	sd	a0, -120(s0)
+	sw	a1, -124(s0)
+	addi	a0, s0, -112
+	sd	a0, -72(s0)
+	ld	a0, -72(s0)
+	call	_ZNSt15__new_allocatorIcED2Ev
+	j	.LBB47_3
+.LBB47_3:                               # %eh.resume
+	ld	a0, -120(s0)
 	call	_Unwind_Resume
-.Lfunc_end46:
-	.size	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_, .Lfunc_end46-_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_
+.Lfunc_end47:
+	.size	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_, .Lfunc_end47-_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table46:
+GCC_except_table47:
 .Lexception8:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	255                     # @TType Encoding = omit
 	.byte	3                       # Call site Encoding = udata4
 	.uleb128 .Lcst_end8-.Lcst_begin8
 .Lcst_begin8:
-	.word	.Lfunc_begin8-.Lfunc_begin8 # >> Call Site 1 <<
-	.word	.Ltmp103-.Lfunc_begin8  #   Call between .Lfunc_begin8 and .Ltmp103
-	.word	0                       #     has no landing pad
+	.word	.Ltmp99-.Lfunc_begin8   # >> Call Site 1 <<
+	.word	.Ltmp100-.Ltmp99        #   Call between .Ltmp99 and .Ltmp100
+	.word	.Ltmp101-.Lfunc_begin8  #     jumps to .Ltmp101
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp103-.Lfunc_begin8  # >> Call Site 2 <<
-	.word	.Ltmp104-.Ltmp103       #   Call between .Ltmp103 and .Ltmp104
-	.word	.Ltmp105-.Lfunc_begin8  #     jumps to .Ltmp105
-	.byte	0                       #   On action: cleanup
-	.word	.Ltmp106-.Lfunc_begin8  # >> Call Site 3 <<
-	.word	.Ltmp111-.Ltmp106       #   Call between .Ltmp106 and .Ltmp111
-	.word	.Ltmp112-.Lfunc_begin8  #     jumps to .Ltmp112
-	.byte	0                       #   On action: cleanup
-	.word	.Ltmp111-.Lfunc_begin8  # >> Call Site 4 <<
-	.word	.Lfunc_end46-.Ltmp111   #   Call between .Ltmp111 and .Lfunc_end46
+	.word	.Ltmp100-.Lfunc_begin8  # >> Call Site 2 <<
+	.word	.Lfunc_end47-.Ltmp100   #   Call between .Ltmp100 and .Lfunc_end47
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
 .Lcst_end8:
@@ -3759,96 +3744,77 @@ _ZNSt7__cxx119to_stringEi:              # @_ZNSt7__cxx119to_stringEi
 	sd	ra, 88(sp)
 	sd	s0, 80(sp)
 	sd	s1, 72(sp)
-	sd	s2, 64(sp)
-	sd	s3, 56(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
 	.cfi_offset s1, -24
-	.cfi_offset s2, -32
-	.cfi_offset s3, -40
 	addi	s0, sp, 96
 	.cfi_def_cfa s0, 0
-	mv	s2, a0
-	sd	s2, -48(s0)
-	sw	a1, -52(s0)
-	lwu	a0, -52(s0)
+	mv	s1, a0
+	sd	s1, -32(s0)
+	sw	a1, -36(s0)
+	lwu	a0, -36(s0)
 	srli	a0, a0, 31
-	sb	a0, -53(s0)
-	lbu	a0, -53(s0)
+	sb	a0, -37(s0)
+	lbu	a0, -37(s0)
 	andi	a0, a0, 1
-	beqz	a0, .LBB47_2
-	j	.LBB47_1
-.LBB47_1:                               # %cond.true
-	lw	a0, -52(s0)
+	beqz	a0, .LBB48_2
+	j	.LBB48_1
+.LBB48_1:                               # %cond.true
+	lw	a0, -36(s0)
 	negw	a0, a0
-	j	.LBB47_3
-.LBB47_2:                               # %cond.false
-	lwu	a0, -52(s0)
-	j	.LBB47_3
-.LBB47_3:                               # %cond.end
-	sw	a0, -60(s0)
-	lw	a0, -60(s0)
+	j	.LBB48_3
+.LBB48_2:                               # %cond.false
+	lwu	a0, -36(s0)
+	j	.LBB48_3
+.LBB48_3:                               # %cond.end
+	sw	a0, -44(s0)
+	lw	a0, -44(s0)
 	addi	a1, zero, 10
 	call	_ZNSt8__detail14__to_chars_lenIjEEjT_i
-	sw	a0, -64(s0)
-	sb	zero, -65(s0)
-	lbu	a0, -53(s0)
+	sw	a0, -48(s0)
+	sb	zero, -49(s0)
+	mv	a0, s1
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev
+	lbu	a0, -37(s0)
+	lw	a1, -48(s0)
 	andi	a0, a0, 1
-	lw	a1, -64(s0)
-	add	a0, a0, a1
-	slli	a0, a0, 32
-	srli	s1, a0, 32
-	addi	s3, s0, -72
-	mv	a0, s3
-	call	_ZNSaIcEC1Ev
-.Ltmp113:
-	mv	a0, s2
-	mv	a1, s1
-	addi	a2, zero, 45
-	mv	a3, s3
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEmcRKS3_
-.Ltmp114:
-	j	.LBB47_4
-.LBB47_4:                               # %invoke.cont
-	addi	a0, s0, -72
-	call	_ZNSaIcED1Ev
-	lbu	a0, -53(s0)
-	andi	a1, a0, 1
-.Ltmp116:
-	mv	a0, s2
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm
-.Ltmp117:
-	j	.LBB47_5
-.LBB47_5:                               # %invoke.cont7
-	lw	a1, -64(s0)
-	lw	a2, -60(s0)
-	call	_ZNSt8__detail18__to_chars_10_implIjEEvPcjT_
+	add	a1, a0, a1
+	slli	a1, a1, 32
+	srli	a1, a1, 32
+	sb	a0, -64(s0)
+	lw	a0, -48(s0)
+	sw	a0, -60(s0)
+	lw	a0, -44(s0)
+	sw	a0, -56(s0)
+	lw	a0, -56(s0)
+	sw	a0, -72(s0)
+	ld	a0, -64(s0)
+	sd	a0, -80(s0)
+	ld	a3, -72(s0)
+	ld	a2, -80(s0)
+.Ltmp102:
+	mv	a0, s1
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_
+.Ltmp103:
+	j	.LBB48_4
+.LBB48_4:                               # %invoke.cont
 	addi	a0, zero, 1
-	sb	a0, -65(s0)
-	lbu	a0, -65(s0)
-	bnez	a0, .LBB47_9
-	j	.LBB47_8
-.LBB47_6:                               # %lpad
-.Ltmp115:
-	sd	a0, -80(s0)
-	sw	a1, -84(s0)
-	addi	a0, s0, -72
-	call	_ZNSaIcED1Ev
-	j	.LBB47_10
-.LBB47_7:                               # %lpad6
-.Ltmp118:
-	sd	a0, -80(s0)
-	sw	a1, -84(s0)
-	mv	a0, s2
+	sb	a0, -49(s0)
+	lbu	a0, -49(s0)
+	bnez	a0, .LBB48_7
+	j	.LBB48_6
+.LBB48_5:                               # %lpad
+.Ltmp104:
+	sd	a0, -88(s0)
+	sw	a1, -92(s0)
+	mv	a0, s1
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	j	.LBB47_10
-.LBB47_8:                               # %nrvo.unused
-	mv	a0, s2
+	j	.LBB48_8
+.LBB48_6:                               # %nrvo.unused
+	mv	a0, s1
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	j	.LBB47_9
-.LBB47_9:                               # %nrvo.skipdtor
-	ld	s3, 56(sp)
-	ld	s2, 64(sp)
+	j	.LBB48_7
+.LBB48_7:                               # %nrvo.skipdtor
 	ld	s1, 72(sp)
 	ld	s0, 80(sp)
 	.cfi_def_cfa sp, 96
@@ -3856,39 +3822,168 @@ _ZNSt7__cxx119to_stringEi:              # @_ZNSt7__cxx119to_stringEi
 	.cfi_restore ra
 	.cfi_restore s0
 	.cfi_restore s1
-	.cfi_restore s2
-	.cfi_restore s3
 	addi	sp, sp, 96
 	.cfi_def_cfa_offset 0
 	ret
-.LBB47_10:                              # %eh.resume
-	ld	a0, -80(s0)
-	call	_Unwind_Resume
-.Lfunc_end47:
-	.size	_ZNSt7__cxx119to_stringEi, .Lfunc_end47-_ZNSt7__cxx119to_stringEi
+.LBB48_8:                               # %terminate.handler
+	ld	a0, -88(s0)
+	call	__clang_call_terminate
+.Lfunc_end48:
+	.size	_ZNSt7__cxx119to_stringEi, .Lfunc_end48-_ZNSt7__cxx119to_stringEi
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table47:
+GCC_except_table48:
 .Lexception9:
 	.byte	255                     # @LPStart Encoding = omit
-	.byte	255                     # @TType Encoding = omit
+	.byte	155                     # @TType Encoding = indirect pcrel sdata4
+	.uleb128 .Lttbase1-.Lttbaseref1
+.Lttbaseref1:
 	.byte	3                       # Call site Encoding = udata4
 	.uleb128 .Lcst_end9-.Lcst_begin9
 .Lcst_begin9:
-	.word	.Ltmp113-.Lfunc_begin9  # >> Call Site 1 <<
-	.word	.Ltmp114-.Ltmp113       #   Call between .Ltmp113 and .Ltmp114
-	.word	.Ltmp115-.Lfunc_begin9  #     jumps to .Ltmp115
+	.word	.Ltmp102-.Lfunc_begin9  # >> Call Site 1 <<
+	.word	.Ltmp103-.Ltmp102       #   Call between .Ltmp102 and .Ltmp103
+	.word	.Ltmp104-.Lfunc_begin9  #     jumps to .Ltmp104
+	.byte	1                       #   On action: 1
+.Lcst_end9:
+	.byte	1                       # >> Action Record 1 <<
+                                        #   Catch TypeInfo 1
+	.byte	0                       #   No further actions
+	.p2align	2
+                                        # >> Catch TypeInfos <<
+	.word	0                       # TypeInfo 1
+.Lttbase1:
+	.p2align	2
+                                        # -- End function
+	.section	.text._ZSt12__str_concatINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_PKNS6_10value_typeENS6_9size_typeES9_SA_RKNS6_14allocator_typeE,"axG",@progbits,_ZSt12__str_concatINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_PKNS6_10value_typeENS6_9size_typeES9_SA_RKNS6_14allocator_typeE,comdat
+	.weak	_ZSt12__str_concatINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_PKNS6_10value_typeENS6_9size_typeES9_SA_RKNS6_14allocator_typeE # -- Begin function _ZSt12__str_concatINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_PKNS6_10value_typeENS6_9size_typeES9_SA_RKNS6_14allocator_typeE
+	.p2align	2
+	.type	_ZSt12__str_concatINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_PKNS6_10value_typeENS6_9size_typeES9_SA_RKNS6_14allocator_typeE,@function
+_ZSt12__str_concatINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_PKNS6_10value_typeENS6_9size_typeES9_SA_RKNS6_14allocator_typeE: # @_ZSt12__str_concatINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_PKNS6_10value_typeENS6_9size_typeES9_SA_RKNS6_14allocator_typeE
+.Lfunc_begin10:
+	.cfi_startproc
+	.cfi_personality 155, DW.ref.__gxx_personality_v0
+	.cfi_lsda 27, .Lexception10
+# %bb.0:                                # %entry
+	addi	sp, sp, -176
+	.cfi_def_cfa_offset 176
+	sd	ra, 168(sp)
+	sd	s0, 160(sp)
+	sd	s1, 152(sp)
+	sd	s2, 144(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	.cfi_offset s2, -32
+	addi	s0, sp, 176
+	.cfi_def_cfa s0, 0
+	mv	s2, a0
+	sd	s2, -112(s0)
+	sd	a1, -120(s0)
+	sd	a2, -128(s0)
+	sd	a3, -136(s0)
+	sd	a4, -144(s0)
+	sd	a5, -152(s0)
+	sb	zero, -153(s0)
+	ld	a0, -152(s0)
+	addi	s1, s0, -160
+	sd	s1, -96(s0)
+	sd	a0, -104(s0)
+	ld	a0, -104(s0)
+	sd	s1, -80(s0)
+	sd	a0, -88(s0)
+	ld	a0, -88(s0)
+	sd	s1, -64(s0)
+	sd	a0, -72(s0)
+	ld	a0, -64(s0)
+	ld	a1, -72(s0)
+	sd	a0, -48(s0)
+	sd	a1, -56(s0)
+	mv	a0, s2
+	mv	a1, s1
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1ERKS3_
+	sd	s1, -40(s0)
+	ld	a0, -40(s0)
+	call	_ZNSt15__new_allocatorIcED2Ev
+	ld	a0, -128(s0)
+	ld	a1, -144(s0)
+	add	a1, a0, a1
+.Ltmp105:
+	mv	a0, s2
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7reserveEm
+.Ltmp106:
+	j	.LBB49_1
+.LBB49_1:                               # %invoke.cont
+	ld	a1, -120(s0)
+	ld	a2, -128(s0)
+.Ltmp107:
+	mv	a0, s2
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE6appendEPKcm
+.Ltmp108:
+	j	.LBB49_2
+.LBB49_2:                               # %invoke.cont1
+	ld	a1, -136(s0)
+	ld	a2, -144(s0)
+.Ltmp109:
+	mv	a0, s2
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE6appendEPKcm
+.Ltmp110:
+	j	.LBB49_3
+.LBB49_3:                               # %invoke.cont2
+	addi	a0, zero, 1
+	sb	a0, -153(s0)
+	lbu	a0, -153(s0)
+	bnez	a0, .LBB49_6
+	j	.LBB49_5
+.LBB49_4:                               # %lpad
+.Ltmp111:
+	sd	a0, -168(s0)
+	sw	a1, -172(s0)
+	mv	a0, s2
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	j	.LBB49_7
+.LBB49_5:                               # %nrvo.unused
+	mv	a0, s2
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	j	.LBB49_6
+.LBB49_6:                               # %nrvo.skipdtor
+	ld	s2, 144(sp)
+	ld	s1, 152(sp)
+	ld	s0, 160(sp)
+	.cfi_def_cfa sp, 176
+	ld	ra, 168(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	.cfi_restore s2
+	addi	sp, sp, 176
+	.cfi_def_cfa_offset 0
+	ret
+.LBB49_7:                               # %eh.resume
+	ld	a0, -168(s0)
+	call	_Unwind_Resume
+.Lfunc_end49:
+	.size	_ZSt12__str_concatINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_PKNS6_10value_typeENS6_9size_typeES9_SA_RKNS6_14allocator_typeE, .Lfunc_end49-_ZSt12__str_concatINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_PKNS6_10value_typeENS6_9size_typeES9_SA_RKNS6_14allocator_typeE
+	.cfi_endproc
+	.section	.gcc_except_table,"a",@progbits
+	.p2align	2
+GCC_except_table49:
+.Lexception10:
+	.byte	255                     # @LPStart Encoding = omit
+	.byte	255                     # @TType Encoding = omit
+	.byte	3                       # Call site Encoding = udata4
+	.uleb128 .Lcst_end10-.Lcst_begin10
+.Lcst_begin10:
+	.word	.Ltmp105-.Lfunc_begin10 # >> Call Site 1 <<
+	.word	.Ltmp110-.Ltmp105       #   Call between .Ltmp105 and .Ltmp110
+	.word	.Ltmp111-.Lfunc_begin10 #     jumps to .Ltmp111
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp116-.Lfunc_begin9  # >> Call Site 2 <<
-	.word	.Ltmp117-.Ltmp116       #   Call between .Ltmp116 and .Ltmp117
-	.word	.Ltmp118-.Lfunc_begin9  #     jumps to .Ltmp118
-	.byte	0                       #   On action: cleanup
-	.word	.Ltmp117-.Lfunc_begin9  # >> Call Site 3 <<
-	.word	.Lfunc_end47-.Ltmp117   #   Call between .Ltmp117 and .Lfunc_end47
+	.word	.Ltmp110-.Lfunc_begin10 # >> Call Site 2 <<
+	.word	.Lfunc_end49-.Ltmp110   #   Call between .Ltmp110 and .Lfunc_end49
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
-.Lcst_end9:
+.Lcst_end10:
 	.p2align	2
                                         # -- End function
 	.section	.text._ZNSt11char_traitsIcE6lengthEPKc,"axG",@progbits,_ZNSt11char_traitsIcE6lengthEPKc,comdat
@@ -3896,170 +3991,20 @@ GCC_except_table47:
 	.p2align	2
 	.type	_ZNSt11char_traitsIcE6lengthEPKc,@function
 _ZNSt11char_traitsIcE6lengthEPKc:       # @_ZNSt11char_traitsIcE6lengthEPKc
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -48
-	.cfi_def_cfa_offset 48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	.cfi_offset ra, -8
-	.cfi_offset s0, -16
-	addi	s0, sp, 48
-	.cfi_def_cfa s0, 0
-	sd	a0, -40(s0)
-	ld	a0, -40(s0)
-	sd	a0, -24(s0)
-	addi	a0, zero, 1
-	bnez	a0, .LBB48_2
-	j	.LBB48_1
-.LBB48_1:                               # %if.then
-	ld	a0, -40(s0)
-	call	_ZN9__gnu_cxx11char_traitsIcE6lengthEPKc
-	sd	a0, -32(s0)
-	j	.LBB48_3
-.LBB48_2:                               # %if.end
-	ld	a0, -40(s0)
-	call	strlen
-	sd	a0, -32(s0)
-	j	.LBB48_3
-.LBB48_3:                               # %return
-	ld	a0, -32(s0)
-	ld	s0, 32(sp)
-	.cfi_def_cfa sp, 48
-	ld	ra, 40(sp)
-	.cfi_restore ra
-	.cfi_restore s0
-	addi	sp, sp, 48
-	.cfi_def_cfa_offset 0
-	ret
-.Lfunc_end48:
-	.size	_ZNSt11char_traitsIcE6lengthEPKc, .Lfunc_end48-_ZNSt11char_traitsIcE6lengthEPKc
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZN9__gnu_cxx14__alloc_traitsISaIcEcE17_S_select_on_copyERKS1_,"axG",@progbits,_ZN9__gnu_cxx14__alloc_traitsISaIcEcE17_S_select_on_copyERKS1_,comdat
-	.weak	_ZN9__gnu_cxx14__alloc_traitsISaIcEcE17_S_select_on_copyERKS1_ # -- Begin function _ZN9__gnu_cxx14__alloc_traitsISaIcEcE17_S_select_on_copyERKS1_
-	.p2align	2
-	.type	_ZN9__gnu_cxx14__alloc_traitsISaIcEcE17_S_select_on_copyERKS1_,@function
-_ZN9__gnu_cxx14__alloc_traitsISaIcEcE17_S_select_on_copyERKS1_: # @_ZN9__gnu_cxx14__alloc_traitsISaIcEcE17_S_select_on_copyERKS1_
-	.cfi_startproc
 # %bb.0:                                # %entry
 	addi	sp, sp, -32
-	.cfi_def_cfa_offset 32
 	sd	ra, 24(sp)
 	sd	s0, 16(sp)
-	.cfi_offset ra, -8
-	.cfi_offset s0, -16
 	addi	s0, sp, 32
-	.cfi_def_cfa s0, 0
 	sd	a0, -24(s0)
-	sd	a1, -32(s0)
-	ld	a1, -32(s0)
-	call	_ZNSt16allocator_traitsISaIcEE37select_on_container_copy_constructionERKS0_
-	ld	s0, 16(sp)
-	.cfi_def_cfa sp, 32
-	ld	ra, 24(sp)
-	.cfi_restore ra
-	.cfi_restore s0
-	addi	sp, sp, 32
-	.cfi_def_cfa_offset 0
-	ret
-.Lfunc_end49:
-	.size	_ZN9__gnu_cxx14__alloc_traitsISaIcEcE17_S_select_on_copyERKS1_, .Lfunc_end49-_ZN9__gnu_cxx14__alloc_traitsISaIcEcE17_S_select_on_copyERKS1_
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZN9__gnu_cxx11char_traitsIcE6lengthEPKc,"axG",@progbits,_ZN9__gnu_cxx11char_traitsIcE6lengthEPKc,comdat
-	.weak	_ZN9__gnu_cxx11char_traitsIcE6lengthEPKc # -- Begin function _ZN9__gnu_cxx11char_traitsIcE6lengthEPKc
-	.p2align	2
-	.type	_ZN9__gnu_cxx11char_traitsIcE6lengthEPKc,@function
-_ZN9__gnu_cxx11char_traitsIcE6lengthEPKc: # @_ZN9__gnu_cxx11char_traitsIcE6lengthEPKc
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -48
-	.cfi_def_cfa_offset 48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	.cfi_offset ra, -8
-	.cfi_offset s0, -16
-	addi	s0, sp, 48
-	.cfi_def_cfa s0, 0
-	sd	a0, -24(s0)
-	sd	zero, -32(s0)
-	j	.LBB50_1
-.LBB50_1:                               # %while.cond
-                                        # =>This Inner Loop Header: Depth=1
 	ld	a0, -24(s0)
-	ld	a1, -32(s0)
-	add	a0, a0, a1
-	sb	zero, -33(s0)
-	addi	a1, s0, -33
-	call	_ZN9__gnu_cxx11char_traitsIcE2eqERKcS3_
-	bnez	a0, .LBB50_3
-	j	.LBB50_2
-.LBB50_2:                               # %while.body
-                                        #   in Loop: Header=BB50_1 Depth=1
-	ld	a0, -32(s0)
-	addi	a0, a0, 1
-	sd	a0, -32(s0)
-	j	.LBB50_1
-.LBB50_3:                               # %while.end
-	ld	a0, -32(s0)
-	ld	s0, 32(sp)
-	.cfi_def_cfa sp, 48
-	ld	ra, 40(sp)
-	.cfi_restore ra
-	.cfi_restore s0
-	addi	sp, sp, 48
-	.cfi_def_cfa_offset 0
+	call	strlen
+	ld	s0, 16(sp)
+	ld	ra, 24(sp)
+	addi	sp, sp, 32
 	ret
 .Lfunc_end50:
-	.size	_ZN9__gnu_cxx11char_traitsIcE6lengthEPKc, .Lfunc_end50-_ZN9__gnu_cxx11char_traitsIcE6lengthEPKc
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZN9__gnu_cxx11char_traitsIcE2eqERKcS3_,"axG",@progbits,_ZN9__gnu_cxx11char_traitsIcE2eqERKcS3_,comdat
-	.weak	_ZN9__gnu_cxx11char_traitsIcE2eqERKcS3_ # -- Begin function _ZN9__gnu_cxx11char_traitsIcE2eqERKcS3_
-	.p2align	2
-	.type	_ZN9__gnu_cxx11char_traitsIcE2eqERKcS3_,@function
-_ZN9__gnu_cxx11char_traitsIcE2eqERKcS3_: # @_ZN9__gnu_cxx11char_traitsIcE2eqERKcS3_
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	sd	a1, -32(s0)
-	ld	a0, -24(s0)
-	lbu	a0, 0(a0)
-	ld	a1, -32(s0)
-	lbu	a1, 0(a1)
-	xor	a0, a0, a1
-	seqz	a0, a0
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
-	ret
-.Lfunc_end51:
-	.size	_ZN9__gnu_cxx11char_traitsIcE2eqERKcS3_, .Lfunc_end51-_ZN9__gnu_cxx11char_traitsIcE2eqERKcS3_
-                                        # -- End function
-	.section	.text._ZNSt16allocator_traitsISaIcEE37select_on_container_copy_constructionERKS0_,"axG",@progbits,_ZNSt16allocator_traitsISaIcEE37select_on_container_copy_constructionERKS0_,comdat
-	.weak	_ZNSt16allocator_traitsISaIcEE37select_on_container_copy_constructionERKS0_ # -- Begin function _ZNSt16allocator_traitsISaIcEE37select_on_container_copy_constructionERKS0_
-	.p2align	2
-	.type	_ZNSt16allocator_traitsISaIcEE37select_on_container_copy_constructionERKS0_,@function
-_ZNSt16allocator_traitsISaIcEE37select_on_container_copy_constructionERKS0_: # @_ZNSt16allocator_traitsISaIcEE37select_on_container_copy_constructionERKS0_
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	sd	a1, -32(s0)
-	ld	a1, -32(s0)
-	call	_ZNSaIcEC1ERKS_
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
-	ret
-.Lfunc_end52:
-	.size	_ZNSt16allocator_traitsISaIcEE37select_on_container_copy_constructionERKS0_, .Lfunc_end52-_ZNSt16allocator_traitsISaIcEE37select_on_container_copy_constructionERKS0_
+	.size	_ZNSt11char_traitsIcE6lengthEPKc, .Lfunc_end50-_ZNSt11char_traitsIcE6lengthEPKc
                                         # -- End function
 	.section	.text._ZNSt8__detail14__to_chars_lenIjEEjT_i,"axG",@progbits,_ZNSt8__detail14__to_chars_lenIjEEjT_i,comdat
 	.weak	_ZNSt8__detail14__to_chars_lenIjEEjT_i # -- Begin function _ZNSt8__detail14__to_chars_lenIjEEjT_i
@@ -4088,52 +4033,52 @@ _ZNSt8__detail14__to_chars_lenIjEEjT_i: # @_ZNSt8__detail14__to_chars_lenIjEEjT_
 	slli	a0, a0, 32
 	srli	a0, a0, 32
 	sd	a0, -48(s0)
-	j	.LBB53_1
-.LBB53_1:                               # %for.cond
+	j	.LBB51_1
+.LBB51_1:                               # %for.cond
                                         # =>This Inner Loop Header: Depth=1
 	lw	a0, -24(s0)
 	lw	a1, -28(s0)
-	bgeu	a0, a1, .LBB53_3
-	j	.LBB53_2
-.LBB53_2:                               # %if.then
+	bgeu	a0, a1, .LBB51_3
+	j	.LBB51_2
+.LBB51_2:                               # %if.then
 	lw	a0, -32(s0)
 	sw	a0, -20(s0)
-	j	.LBB53_10
-.LBB53_3:                               # %if.end
-                                        #   in Loop: Header=BB53_1 Depth=1
+	j	.LBB51_10
+.LBB51_3:                               # %if.end
+                                        #   in Loop: Header=BB51_1 Depth=1
 	lw	a0, -24(s0)
 	lw	a1, -36(s0)
-	bgeu	a0, a1, .LBB53_5
-	j	.LBB53_4
-.LBB53_4:                               # %if.then4
+	bgeu	a0, a1, .LBB51_5
+	j	.LBB51_4
+.LBB51_4:                               # %if.then4
 	lw	a0, -32(s0)
 	addi	a0, a0, 1
 	sw	a0, -20(s0)
-	j	.LBB53_10
-.LBB53_5:                               # %if.end5
-                                        #   in Loop: Header=BB53_1 Depth=1
+	j	.LBB51_10
+.LBB51_5:                               # %if.end5
+                                        #   in Loop: Header=BB51_1 Depth=1
 	lw	a0, -24(s0)
 	lw	a1, -40(s0)
-	bgeu	a0, a1, .LBB53_7
-	j	.LBB53_6
-.LBB53_6:                               # %if.then7
+	bgeu	a0, a1, .LBB51_7
+	j	.LBB51_6
+.LBB51_6:                               # %if.then7
 	lw	a0, -32(s0)
 	addi	a0, a0, 2
 	sw	a0, -20(s0)
-	j	.LBB53_10
-.LBB53_7:                               # %if.end9
-                                        #   in Loop: Header=BB53_1 Depth=1
+	j	.LBB51_10
+.LBB51_7:                               # %if.end9
+                                        #   in Loop: Header=BB51_1 Depth=1
 	lwu	a0, -24(s0)
 	ld	a1, -48(s0)
-	bgeu	a0, a1, .LBB53_9
-	j	.LBB53_8
-.LBB53_8:                               # %if.then12
+	bgeu	a0, a1, .LBB51_9
+	j	.LBB51_8
+.LBB51_8:                               # %if.then12
 	lw	a0, -32(s0)
 	addi	a0, a0, 3
 	sw	a0, -20(s0)
-	j	.LBB53_10
-.LBB53_9:                               # %if.end14
-                                        #   in Loop: Header=BB53_1 Depth=1
+	j	.LBB51_10
+.LBB51_9:                               # %if.end14
+                                        #   in Loop: Header=BB51_1 Depth=1
 	ld	a0, -48(s0)
 	lwu	a1, -24(s0)
 	divu	a0, a1, a0
@@ -4141,100 +4086,235 @@ _ZNSt8__detail14__to_chars_lenIjEEjT_i: # @_ZNSt8__detail14__to_chars_lenIjEEjT_
 	lw	a0, -32(s0)
 	addi	a0, a0, 4
 	sw	a0, -32(s0)
-	j	.LBB53_1
-.LBB53_10:                              # %return
+	j	.LBB51_1
+.LBB51_10:                              # %return
 	lw	a0, -20(s0)
 	ld	s0, 32(sp)
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end53:
-	.size	_ZNSt8__detail14__to_chars_lenIjEEjT_i, .Lfunc_end53-_ZNSt8__detail14__to_chars_lenIjEEjT_i
+.Lfunc_end51:
+	.size	_ZNSt8__detail14__to_chars_lenIjEEjT_i, .Lfunc_end51-_ZNSt8__detail14__to_chars_lenIjEEjT_i
                                         # -- End function
-	.section	.text._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEmcRKS3_,"axG",@progbits,_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEmcRKS3_,comdat
-	.weak	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEmcRKS3_ # -- Begin function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEmcRKS3_
+	.section	.text._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_,"axG",@progbits,_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_,comdat
+	.weak	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_ # -- Begin function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_
 	.p2align	2
-	.type	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEmcRKS3_,@function
-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEmcRKS3_: # @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEmcRKS3_
-.Lfunc_begin10:
+	.type	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_,@function
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_: # @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_
+.Lfunc_begin11:
 	.cfi_startproc
 	.cfi_personality 155, DW.ref.__gxx_personality_v0
-	.cfi_lsda 27, .Lexception10
+	.cfi_lsda 27, .Lexception11
 # %bb.0:                                # %entry
-	addi	sp, sp, -80
-	.cfi_def_cfa_offset 80
-	sd	ra, 72(sp)
-	sd	s0, 64(sp)
-	sd	s1, 56(sp)
+	addi	sp, sp, -128
+	.cfi_def_cfa_offset 128
+	sd	ra, 120(sp)
+	sd	s0, 112(sp)
+	sd	s1, 104(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
 	.cfi_offset s1, -24
-	addi	s0, sp, 80
+	addi	s0, sp, 128
 	.cfi_def_cfa s0, 0
-	sd	a0, -32(s0)
-	sd	a1, -40(s0)
-	sb	a2, -41(s0)
-	sd	a3, -56(s0)
-	ld	s1, -32(s0)
-	mv	a0, s1
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv
-	mv	a1, a0
+	sd	a3, -48(s0)
+	sd	a2, -56(s0)
+	lw	a2, -48(s0)
+	sw	a2, -32(s0)
 	ld	a2, -56(s0)
+	sd	a2, -40(s0)
+	sd	a0, -64(s0)
+	sd	a1, -72(s0)
+	ld	s1, -64(s0)
+	ld	a1, -72(s0)
 	mv	a0, s1
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC1EPcRKS3_
-	ld	a1, -40(s0)
-	lbu	a2, -41(s0)
-.Ltmp119:
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7reserveEm
 	mv	a0, s1
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructEmc
-.Ltmp120:
-	j	.LBB54_1
-.LBB54_1:                               # %invoke.cont
-	ld	s1, 56(sp)
-	ld	s0, 64(sp)
-	.cfi_def_cfa sp, 80
-	ld	ra, 72(sp)
+	call	_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
+	sd	a0, -80(s0)
+	sd	s1, -96(s0)
+	sd	zero, -88(s0)
+	addi	a0, s0, -40
+	call	_ZSt4moveIRZNSt7__cxx119to_stringEiEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_
+	ld	a1, -80(s0)
+	ld	a2, -72(s0)
+.Ltmp112:
+	call	_ZZNSt7__cxx119to_stringEiENKUlPcmE_clES0_m
+.Ltmp113:
+	j	.LBB52_1
+.LBB52_1:                               # %invoke.cont
+	sd	a0, -104(s0)
+	ld	a0, -104(s0)
+	sd	a0, -88(s0)
+	ld	a0, -88(s0)
+	ld	a1, -72(s0)
+	bgeu	a1, a0, .LBB52_4
+	j	.LBB52_2
+.LBB52_2:                               # %if.then
+.LBB52_3:                               # %lpad
+.Ltmp114:
+	sd	a0, -112(s0)
+	sw	a1, -116(s0)
+	addi	a0, s0, -96
+	call	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_EN11_TerminatorD2Ev
+	j	.LBB52_5
+.LBB52_4:                               # %if.end
+	addi	a0, s0, -96
+	call	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_EN11_TerminatorD2Ev
+	ld	s1, 104(sp)
+	ld	s0, 112(sp)
+	.cfi_def_cfa sp, 128
+	ld	ra, 120(sp)
 	.cfi_restore ra
 	.cfi_restore s0
 	.cfi_restore s1
-	addi	sp, sp, 80
+	addi	sp, sp, 128
 	.cfi_def_cfa_offset 0
 	ret
-.LBB54_2:                               # %lpad
-.Ltmp121:
-	sd	a0, -64(s0)
-	sw	a1, -68(s0)
-	mv	a0, s1
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev
-	j	.LBB54_3
-.LBB54_3:                               # %eh.resume
-	ld	a0, -64(s0)
+.LBB52_5:                               # %eh.resume
+	ld	a0, -112(s0)
 	call	_Unwind_Resume
-.Lfunc_end54:
-	.size	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEmcRKS3_, .Lfunc_end54-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEmcRKS3_
+.Lfunc_end52:
+	.size	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_, .Lfunc_end52-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table54:
-.Lexception10:
+GCC_except_table52:
+.Lexception11:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	255                     # @TType Encoding = omit
 	.byte	3                       # Call site Encoding = udata4
-	.uleb128 .Lcst_end10-.Lcst_begin10
-.Lcst_begin10:
-	.word	.Lfunc_begin10-.Lfunc_begin10 # >> Call Site 1 <<
-	.word	.Ltmp119-.Lfunc_begin10 #   Call between .Lfunc_begin10 and .Ltmp119
+	.uleb128 .Lcst_end11-.Lcst_begin11
+.Lcst_begin11:
+	.word	.Lfunc_begin11-.Lfunc_begin11 # >> Call Site 1 <<
+	.word	.Ltmp112-.Lfunc_begin11 #   Call between .Lfunc_begin11 and .Ltmp112
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp119-.Lfunc_begin10 # >> Call Site 2 <<
-	.word	.Ltmp120-.Ltmp119       #   Call between .Ltmp119 and .Ltmp120
-	.word	.Ltmp121-.Lfunc_begin10 #     jumps to .Ltmp121
+	.word	.Ltmp112-.Lfunc_begin11 # >> Call Site 2 <<
+	.word	.Ltmp113-.Ltmp112       #   Call between .Ltmp112 and .Ltmp113
+	.word	.Ltmp114-.Lfunc_begin11 #     jumps to .Ltmp114
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp120-.Lfunc_begin10 # >> Call Site 3 <<
-	.word	.Lfunc_end54-.Ltmp120   #   Call between .Ltmp120 and .Lfunc_end54
+	.word	.Ltmp113-.Lfunc_begin11 # >> Call Site 3 <<
+	.word	.Lfunc_end52-.Ltmp113   #   Call between .Ltmp113 and .Lfunc_end52
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
-.Lcst_end10:
+.Lcst_end11:
+	.p2align	2
+                                        # -- End function
+	.section	.text._ZSt4moveIRZNSt7__cxx119to_stringEiEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_,"axG",@progbits,_ZSt4moveIRZNSt7__cxx119to_stringEiEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_,comdat
+	.weak	_ZSt4moveIRZNSt7__cxx119to_stringEiEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_ # -- Begin function _ZSt4moveIRZNSt7__cxx119to_stringEiEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_
+	.p2align	2
+	.type	_ZSt4moveIRZNSt7__cxx119to_stringEiEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_,@function
+_ZSt4moveIRZNSt7__cxx119to_stringEiEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_: # @_ZSt4moveIRZNSt7__cxx119to_stringEiEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_
+# %bb.0:                                # %entry
+	addi	sp, sp, -32
+	sd	ra, 24(sp)
+	sd	s0, 16(sp)
+	addi	s0, sp, 32
+	sd	a0, -24(s0)
+	ld	a0, -24(s0)
+	ld	s0, 16(sp)
+	ld	ra, 24(sp)
+	addi	sp, sp, 32
+	ret
+.Lfunc_end53:
+	.size	_ZSt4moveIRZNSt7__cxx119to_stringEiEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_, .Lfunc_end53-_ZSt4moveIRZNSt7__cxx119to_stringEiEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_
+                                        # -- End function
+	.section	.text._ZZNSt7__cxx119to_stringEiENKUlPcmE_clES0_m,"axG",@progbits,_ZZNSt7__cxx119to_stringEiENKUlPcmE_clES0_m,comdat
+	.weak	_ZZNSt7__cxx119to_stringEiENKUlPcmE_clES0_m # -- Begin function _ZZNSt7__cxx119to_stringEiENKUlPcmE_clES0_m
+	.p2align	2
+	.type	_ZZNSt7__cxx119to_stringEiENKUlPcmE_clES0_m,@function
+_ZZNSt7__cxx119to_stringEiENKUlPcmE_clES0_m: # @_ZZNSt7__cxx119to_stringEiENKUlPcmE_clES0_m
+# %bb.0:                                # %entry
+	addi	sp, sp, -48
+	sd	ra, 40(sp)
+	sd	s0, 32(sp)
+	addi	s0, sp, 48
+	sd	a0, -24(s0)
+	sd	a1, -32(s0)
+	sd	a2, -40(s0)
+	ld	a2, -24(s0)
+	ld	a0, -32(s0)
+	addi	a1, zero, 45
+	sb	a1, 0(a0)
+	ld	a0, -32(s0)
+	lbu	a1, 0(a2)
+	andi	a1, a1, 1
+	add	a0, a0, a1
+	lw	a1, 4(a2)
+	lw	a2, 8(a2)
+	call	_ZNSt8__detail18__to_chars_10_implIjEEvPcjT_
+	ld	a0, -40(s0)
+	ld	s0, 32(sp)
+	ld	ra, 40(sp)
+	addi	sp, sp, 48
+	ret
+.Lfunc_end54:
+	.size	_ZZNSt7__cxx119to_stringEiENKUlPcmE_clES0_m, .Lfunc_end54-_ZZNSt7__cxx119to_stringEiENKUlPcmE_clES0_m
+                                        # -- End function
+	.section	.text._ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_EN11_TerminatorD2Ev,"axG",@progbits,_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_EN11_TerminatorD2Ev,comdat
+	.weak	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_EN11_TerminatorD2Ev # -- Begin function _ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_EN11_TerminatorD2Ev
+	.p2align	2
+	.type	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_EN11_TerminatorD2Ev,@function
+_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_EN11_TerminatorD2Ev: # @_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_EN11_TerminatorD2Ev
+.Lfunc_begin12:
+	.cfi_startproc
+	.cfi_personality 155, DW.ref.__gxx_personality_v0
+	.cfi_lsda 27, .Lexception12
+# %bb.0:                                # %entry
+	addi	sp, sp, -32
+	.cfi_def_cfa_offset 32
+	sd	ra, 24(sp)
+	sd	s0, 16(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	addi	s0, sp, 32
+	.cfi_def_cfa s0, 0
+	sd	a0, -24(s0)
+	ld	a1, -24(s0)
+	ld	a0, 0(a1)
+	ld	a1, 8(a1)
+.Ltmp115:
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
+.Ltmp116:
+	j	.LBB55_1
+.LBB55_1:                               # %invoke.cont
+	ld	s0, 16(sp)
+	.cfi_def_cfa sp, 32
+	ld	ra, 24(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	addi	sp, sp, 32
+	.cfi_def_cfa_offset 0
+	ret
+.LBB55_2:                               # %terminate.lpad
+.Ltmp117:
+	call	__clang_call_terminate
+.Lfunc_end55:
+	.size	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_EN11_TerminatorD2Ev, .Lfunc_end55-_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEiEUlPcmE_EEvmT_EN11_TerminatorD2Ev
+	.cfi_endproc
+	.section	.gcc_except_table,"a",@progbits
+	.p2align	2
+GCC_except_table55:
+.Lexception12:
+	.byte	255                     # @LPStart Encoding = omit
+	.byte	155                     # @TType Encoding = indirect pcrel sdata4
+	.uleb128 .Lttbase2-.Lttbaseref2
+.Lttbaseref2:
+	.byte	3                       # Call site Encoding = udata4
+	.uleb128 .Lcst_end12-.Lcst_begin12
+.Lcst_begin12:
+	.word	.Ltmp115-.Lfunc_begin12 # >> Call Site 1 <<
+	.word	.Ltmp116-.Ltmp115       #   Call between .Ltmp115 and .Ltmp116
+	.word	.Ltmp117-.Lfunc_begin12 #     jumps to .Ltmp117
+	.byte	1                       #   On action: 1
+.Lcst_end12:
+	.byte	1                       # >> Action Record 1 <<
+                                        #   Catch TypeInfo 1
+	.byte	0                       #   No further actions
+	.p2align	2
+                                        # >> Catch TypeInfos <<
+	.word	0                       # TypeInfo 1
+.Lttbase2:
 	.p2align	2
                                         # -- End function
 	.section	.text._ZNSt8__detail18__to_chars_10_implIjEEvPcjT_,"axG",@progbits,_ZNSt8__detail18__to_chars_10_implIjEEvPcjT_,comdat
@@ -4243,25 +4323,30 @@ GCC_except_table54:
 	.type	_ZNSt8__detail18__to_chars_10_implIjEEvPcjT_,@function
 _ZNSt8__detail18__to_chars_10_implIjEEvPcjT_: # @_ZNSt8__detail18__to_chars_10_implIjEEvPcjT_
 # %bb.0:                                # %entry
-	addi	sp, sp, -48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	addi	s0, sp, 48
+	addi	sp, sp, -256
+	sd	ra, 248(sp)
+	sd	s0, 240(sp)
+	addi	s0, sp, 256
 	sd	a0, -24(s0)
 	sw	a1, -28(s0)
 	sw	a2, -32(s0)
+	lui	a0, %hi(.L__const._ZNSt8__detail18__to_chars_10_implIjEEvPcjT_.__digits)
+	addi	a1, a0, %lo(.L__const._ZNSt8__detail18__to_chars_10_implIjEEvPcjT_.__digits)
+	addi	a0, s0, -233
+	addi	a2, zero, 201
+	call	memcpy
 	lw	a0, -28(s0)
 	addi	a0, a0, -1
-	sw	a0, -36(s0)
-	j	.LBB55_1
-.LBB55_1:                               # %while.cond
+	sw	a0, -240(s0)
+	j	.LBB56_1
+.LBB56_1:                               # %while.cond
                                         # =>This Inner Loop Header: Depth=1
 	lw	a0, -32(s0)
 	addi	a1, zero, 100
-	bltu	a0, a1, .LBB55_3
-	j	.LBB55_2
-.LBB55_2:                               # %while.body
-                                        #   in Loop: Header=BB55_1 Depth=1
+	bltu	a0, a1, .LBB56_3
+	j	.LBB56_2
+.LBB56_2:                               # %while.body
+                                        #   in Loop: Header=BB56_1 Depth=1
 	lwu	a0, -32(s0)
 	srli	a1, a0, 2
 	lui	a2, 1311
@@ -4278,106 +4363,84 @@ _ZNSt8__detail18__to_chars_10_implIjEEvPcjT_: # @_ZNSt8__detail18__to_chars_10_i
 	mul	a1, a1, a3
 	sub	a0, a0, a1
 	slli	a0, a0, 1
-	sw	a0, -40(s0)
+	sw	a0, -244(s0)
 	lwu	a0, -32(s0)
 	srli	a0, a0, 2
 	mulhu	a0, a0, a2
 	srli	a0, a0, 2
 	sw	a0, -32(s0)
-	lw	a0, -40(s0)
+	lw	a0, -244(s0)
 	addi	a0, a0, 1
 	slli	a0, a0, 32
 	srli	a0, a0, 32
-	lui	a1, %hi(_ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits)
-	addi	a1, a1, %lo(_ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits)
-	add	a0, a0, a1
+	addi	a1, s0, -233
+	add	a0, a1, a0
 	lb	a0, 0(a0)
 	ld	a2, -24(s0)
-	lwu	a3, -36(s0)
+	lwu	a3, -240(s0)
 	add	a2, a2, a3
 	sb	a0, 0(a2)
-	lwu	a0, -40(s0)
-	add	a0, a0, a1
+	lwu	a0, -244(s0)
+	add	a0, a1, a0
 	lb	a0, 0(a0)
 	ld	a1, -24(s0)
-	lw	a2, -36(s0)
+	lw	a2, -240(s0)
 	addi	a2, a2, -1
 	slli	a2, a2, 32
 	srli	a2, a2, 32
 	add	a1, a1, a2
 	sb	a0, 0(a1)
-	lw	a0, -36(s0)
+	lw	a0, -240(s0)
 	addi	a0, a0, -2
-	sw	a0, -36(s0)
-	j	.LBB55_1
-.LBB55_3:                               # %while.end
+	sw	a0, -240(s0)
+	j	.LBB56_1
+.LBB56_3:                               # %while.end
 	lw	a0, -32(s0)
 	addi	a1, zero, 10
-	bltu	a0, a1, .LBB55_5
-	j	.LBB55_4
-.LBB55_4:                               # %if.then
+	bltu	a0, a1, .LBB56_5
+	j	.LBB56_4
+.LBB56_4:                               # %if.then
 	lw	a0, -32(s0)
 	slli	a0, a0, 1
-	sw	a0, -44(s0)
-	lw	a0, -44(s0)
+	sw	a0, -248(s0)
+	lw	a0, -248(s0)
 	addi	a0, a0, 1
 	slli	a0, a0, 32
 	srli	a0, a0, 32
-	lui	a1, %hi(_ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits)
-	addi	a1, a1, %lo(_ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits)
-	add	a0, a0, a1
+	addi	a1, s0, -233
+	add	a0, a1, a0
 	lb	a0, 0(a0)
 	ld	a2, -24(s0)
 	sb	a0, 1(a2)
-	lwu	a0, -44(s0)
-	add	a0, a0, a1
+	lwu	a0, -248(s0)
+	add	a0, a1, a0
 	lb	a0, 0(a0)
 	ld	a1, -24(s0)
 	sb	a0, 0(a1)
-	j	.LBB55_6
-.LBB55_5:                               # %if.else
+	j	.LBB56_6
+.LBB56_5:                               # %if.else
 	lb	a0, -32(s0)
 	addi	a0, a0, 48
 	ld	a1, -24(s0)
 	sb	a0, 0(a1)
-	j	.LBB55_6
-.LBB55_6:                               # %if.end
-	ld	s0, 32(sp)
-	ld	ra, 40(sp)
-	addi	sp, sp, 48
-	ret
-.Lfunc_end55:
-	.size	_ZNSt8__detail18__to_chars_10_implIjEEvPcjT_, .Lfunc_end55-_ZNSt8__detail18__to_chars_10_implIjEEvPcjT_
-                                        # -- End function
-	.section	.text._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev,"axG",@progbits,_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev,comdat
-	.weak	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev # -- Begin function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev
-	.p2align	2
-	.type	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev,@function
-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev: # @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	ld	a0, -24(s0)
-	call	_ZNSaIcED2Ev
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
+	j	.LBB56_6
+.LBB56_6:                               # %if.end
+	ld	s0, 240(sp)
+	ld	ra, 248(sp)
+	addi	sp, sp, 256
 	ret
 .Lfunc_end56:
-	.size	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev, .Lfunc_end56-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev
+	.size	_ZNSt8__detail18__to_chars_10_implIjEEvPcjT_, .Lfunc_end56-_ZNSt8__detail18__to_chars_10_implIjEEvPcjT_
                                         # -- End function
 	.section	.text._ZN8nlohmann6detail9exceptionC2EiPKc,"axG",@progbits,_ZN8nlohmann6detail9exceptionC2EiPKc,comdat
 	.weak	_ZN8nlohmann6detail9exceptionC2EiPKc # -- Begin function _ZN8nlohmann6detail9exceptionC2EiPKc
 	.p2align	2
 	.type	_ZN8nlohmann6detail9exceptionC2EiPKc,@function
 _ZN8nlohmann6detail9exceptionC2EiPKc:   # @_ZN8nlohmann6detail9exceptionC2EiPKc
-.Lfunc_begin11:
+.Lfunc_begin13:
 	.cfi_startproc
 	.cfi_personality 155, DW.ref.__gxx_personality_v0
-	.cfi_lsda 27, .Lexception11
+	.cfi_lsda 27, .Lexception13
 # %bb.0:                                # %entry
 	addi	sp, sp, -64
 	.cfi_def_cfa_offset 64
@@ -4403,9 +4466,9 @@ _ZN8nlohmann6detail9exceptionC2EiPKc:   # @_ZN8nlohmann6detail9exceptionC2EiPKc
 	sw	a0, 8(s1)
 	addi	a0, s1, 16
 	ld	a1, -48(s0)
-.Ltmp122:
+.Ltmp118:
 	call	_ZNSt13runtime_errorC1EPKc
-.Ltmp123:
+.Ltmp119:
 	j	.LBB57_1
 .LBB57_1:                               # %invoke.cont
 	ld	s1, 40(sp)
@@ -4419,7 +4482,7 @@ _ZN8nlohmann6detail9exceptionC2EiPKc:   # @_ZN8nlohmann6detail9exceptionC2EiPKc
 	.cfi_def_cfa_offset 0
 	ret
 .LBB57_2:                               # %lpad
-.Ltmp124:
+.Ltmp120:
 	sd	a0, -56(s0)
 	sw	a1, -60(s0)
 	mv	a0, s1
@@ -4434,21 +4497,21 @@ _ZN8nlohmann6detail9exceptionC2EiPKc:   # @_ZN8nlohmann6detail9exceptionC2EiPKc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
 GCC_except_table57:
-.Lexception11:
+.Lexception13:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	255                     # @TType Encoding = omit
 	.byte	3                       # Call site Encoding = udata4
-	.uleb128 .Lcst_end11-.Lcst_begin11
-.Lcst_begin11:
-	.word	.Ltmp122-.Lfunc_begin11 # >> Call Site 1 <<
-	.word	.Ltmp123-.Ltmp122       #   Call between .Ltmp122 and .Ltmp123
-	.word	.Ltmp124-.Lfunc_begin11 #     jumps to .Ltmp124
+	.uleb128 .Lcst_end13-.Lcst_begin13
+.Lcst_begin13:
+	.word	.Ltmp118-.Lfunc_begin13 # >> Call Site 1 <<
+	.word	.Ltmp119-.Ltmp118       #   Call between .Ltmp118 and .Ltmp119
+	.word	.Ltmp120-.Lfunc_begin13 #     jumps to .Ltmp120
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp123-.Lfunc_begin11 # >> Call Site 2 <<
-	.word	.Lfunc_end57-.Ltmp123   #   Call between .Ltmp123 and .Lfunc_end57
+	.word	.Ltmp119-.Lfunc_begin13 # >> Call Site 2 <<
+	.word	.Lfunc_end57-.Ltmp119   #   Call between .Ltmp119 and .Lfunc_end57
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
-.Lcst_end11:
+.Lcst_end13:
 	.p2align	2
                                         # -- End function
 	.section	.text._ZN8nlohmann6detail12out_of_rangeD0Ev,"axG",@progbits,_ZN8nlohmann6detail12out_of_rangeD0Ev,comdat
@@ -4664,31 +4727,246 @@ _ZNSt8__detail14__to_chars_lenImEEjT_i: # @_ZNSt8__detail14__to_chars_lenImEEjT_
 .Lfunc_end63:
 	.size	_ZNSt8__detail14__to_chars_lenImEEjT_i, .Lfunc_end63-_ZNSt8__detail14__to_chars_lenImEEjT_i
                                         # -- End function
+	.section	.text._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_,"axG",@progbits,_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_,comdat
+	.weak	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_ # -- Begin function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_
+	.p2align	2
+	.type	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_,@function
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_: # @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_
+.Lfunc_begin14:
+	.cfi_startproc
+	.cfi_personality 155, DW.ref.__gxx_personality_v0
+	.cfi_lsda 27, .Lexception14
+# %bb.0:                                # %entry
+	addi	sp, sp, -96
+	.cfi_def_cfa_offset 96
+	sd	ra, 88(sp)
+	sd	s0, 80(sp)
+	sd	s1, 72(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	addi	s0, sp, 96
+	.cfi_def_cfa s0, 0
+	sd	a2, -32(s0)
+	sd	a0, -40(s0)
+	sd	a1, -48(s0)
+	ld	s1, -40(s0)
+	ld	a1, -48(s0)
+	mv	a0, s1
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7reserveEm
+	mv	a0, s1
+	call	_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
+	sd	a0, -56(s0)
+	sd	s1, -72(s0)
+	sd	zero, -64(s0)
+	addi	a0, s0, -32
+	call	_ZSt4moveIRZNSt7__cxx119to_stringEmEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_
+	ld	a1, -56(s0)
+	ld	a2, -48(s0)
+.Ltmp121:
+	call	_ZZNSt7__cxx119to_stringEmENKUlPcmE_clES0_m
+.Ltmp122:
+	j	.LBB64_1
+.LBB64_1:                               # %invoke.cont
+	sd	a0, -80(s0)
+	ld	a0, -80(s0)
+	sd	a0, -64(s0)
+	ld	a0, -64(s0)
+	ld	a1, -48(s0)
+	bgeu	a1, a0, .LBB64_4
+	j	.LBB64_2
+.LBB64_2:                               # %if.then
+.LBB64_3:                               # %lpad
+.Ltmp123:
+	sd	a0, -88(s0)
+	sw	a1, -92(s0)
+	addi	a0, s0, -72
+	call	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_EN11_TerminatorD2Ev
+	j	.LBB64_5
+.LBB64_4:                               # %if.end
+	addi	a0, s0, -72
+	call	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_EN11_TerminatorD2Ev
+	ld	s1, 72(sp)
+	ld	s0, 80(sp)
+	.cfi_def_cfa sp, 96
+	ld	ra, 88(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	addi	sp, sp, 96
+	.cfi_def_cfa_offset 0
+	ret
+.LBB64_5:                               # %eh.resume
+	ld	a0, -88(s0)
+	call	_Unwind_Resume
+.Lfunc_end64:
+	.size	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_, .Lfunc_end64-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_
+	.cfi_endproc
+	.section	.gcc_except_table,"a",@progbits
+	.p2align	2
+GCC_except_table64:
+.Lexception14:
+	.byte	255                     # @LPStart Encoding = omit
+	.byte	255                     # @TType Encoding = omit
+	.byte	3                       # Call site Encoding = udata4
+	.uleb128 .Lcst_end14-.Lcst_begin14
+.Lcst_begin14:
+	.word	.Lfunc_begin14-.Lfunc_begin14 # >> Call Site 1 <<
+	.word	.Ltmp121-.Lfunc_begin14 #   Call between .Lfunc_begin14 and .Ltmp121
+	.word	0                       #     has no landing pad
+	.byte	0                       #   On action: cleanup
+	.word	.Ltmp121-.Lfunc_begin14 # >> Call Site 2 <<
+	.word	.Ltmp122-.Ltmp121       #   Call between .Ltmp121 and .Ltmp122
+	.word	.Ltmp123-.Lfunc_begin14 #     jumps to .Ltmp123
+	.byte	0                       #   On action: cleanup
+	.word	.Ltmp122-.Lfunc_begin14 # >> Call Site 3 <<
+	.word	.Lfunc_end64-.Ltmp122   #   Call between .Ltmp122 and .Lfunc_end64
+	.word	0                       #     has no landing pad
+	.byte	0                       #   On action: cleanup
+.Lcst_end14:
+	.p2align	2
+                                        # -- End function
+	.section	.text._ZSt4moveIRZNSt7__cxx119to_stringEmEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_,"axG",@progbits,_ZSt4moveIRZNSt7__cxx119to_stringEmEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_,comdat
+	.weak	_ZSt4moveIRZNSt7__cxx119to_stringEmEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_ # -- Begin function _ZSt4moveIRZNSt7__cxx119to_stringEmEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_
+	.p2align	2
+	.type	_ZSt4moveIRZNSt7__cxx119to_stringEmEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_,@function
+_ZSt4moveIRZNSt7__cxx119to_stringEmEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_: # @_ZSt4moveIRZNSt7__cxx119to_stringEmEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_
+# %bb.0:                                # %entry
+	addi	sp, sp, -32
+	sd	ra, 24(sp)
+	sd	s0, 16(sp)
+	addi	s0, sp, 32
+	sd	a0, -24(s0)
+	ld	a0, -24(s0)
+	ld	s0, 16(sp)
+	ld	ra, 24(sp)
+	addi	sp, sp, 32
+	ret
+.Lfunc_end65:
+	.size	_ZSt4moveIRZNSt7__cxx119to_stringEmEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_, .Lfunc_end65-_ZSt4moveIRZNSt7__cxx119to_stringEmEUlPcmE_EONSt16remove_referenceIT_E4typeEOS5_
+                                        # -- End function
+	.section	.text._ZZNSt7__cxx119to_stringEmENKUlPcmE_clES0_m,"axG",@progbits,_ZZNSt7__cxx119to_stringEmENKUlPcmE_clES0_m,comdat
+	.weak	_ZZNSt7__cxx119to_stringEmENKUlPcmE_clES0_m # -- Begin function _ZZNSt7__cxx119to_stringEmENKUlPcmE_clES0_m
+	.p2align	2
+	.type	_ZZNSt7__cxx119to_stringEmENKUlPcmE_clES0_m,@function
+_ZZNSt7__cxx119to_stringEmENKUlPcmE_clES0_m: # @_ZZNSt7__cxx119to_stringEmENKUlPcmE_clES0_m
+# %bb.0:                                # %entry
+	addi	sp, sp, -48
+	sd	ra, 40(sp)
+	sd	s0, 32(sp)
+	addi	s0, sp, 48
+	sd	a0, -24(s0)
+	sd	a1, -32(s0)
+	sd	a2, -40(s0)
+	ld	a2, -24(s0)
+	ld	a0, -32(s0)
+	lw	a1, -40(s0)
+	ld	a2, 0(a2)
+	call	_ZNSt8__detail18__to_chars_10_implImEEvPcjT_
+	ld	a0, -40(s0)
+	ld	s0, 32(sp)
+	ld	ra, 40(sp)
+	addi	sp, sp, 48
+	ret
+.Lfunc_end66:
+	.size	_ZZNSt7__cxx119to_stringEmENKUlPcmE_clES0_m, .Lfunc_end66-_ZZNSt7__cxx119to_stringEmENKUlPcmE_clES0_m
+                                        # -- End function
+	.section	.text._ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_EN11_TerminatorD2Ev,"axG",@progbits,_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_EN11_TerminatorD2Ev,comdat
+	.weak	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_EN11_TerminatorD2Ev # -- Begin function _ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_EN11_TerminatorD2Ev
+	.p2align	2
+	.type	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_EN11_TerminatorD2Ev,@function
+_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_EN11_TerminatorD2Ev: # @_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_EN11_TerminatorD2Ev
+.Lfunc_begin15:
+	.cfi_startproc
+	.cfi_personality 155, DW.ref.__gxx_personality_v0
+	.cfi_lsda 27, .Lexception15
+# %bb.0:                                # %entry
+	addi	sp, sp, -32
+	.cfi_def_cfa_offset 32
+	sd	ra, 24(sp)
+	sd	s0, 16(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	addi	s0, sp, 32
+	.cfi_def_cfa s0, 0
+	sd	a0, -24(s0)
+	ld	a1, -24(s0)
+	ld	a0, 0(a1)
+	ld	a1, 8(a1)
+.Ltmp124:
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
+.Ltmp125:
+	j	.LBB67_1
+.LBB67_1:                               # %invoke.cont
+	ld	s0, 16(sp)
+	.cfi_def_cfa sp, 32
+	ld	ra, 24(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	addi	sp, sp, 32
+	.cfi_def_cfa_offset 0
+	ret
+.LBB67_2:                               # %terminate.lpad
+.Ltmp126:
+	call	__clang_call_terminate
+.Lfunc_end67:
+	.size	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_EN11_TerminatorD2Ev, .Lfunc_end67-_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE22__resize_and_overwriteIZNS_9to_stringEmEUlPcmE_EEvmT_EN11_TerminatorD2Ev
+	.cfi_endproc
+	.section	.gcc_except_table,"a",@progbits
+	.p2align	2
+GCC_except_table67:
+.Lexception15:
+	.byte	255                     # @LPStart Encoding = omit
+	.byte	155                     # @TType Encoding = indirect pcrel sdata4
+	.uleb128 .Lttbase3-.Lttbaseref3
+.Lttbaseref3:
+	.byte	3                       # Call site Encoding = udata4
+	.uleb128 .Lcst_end15-.Lcst_begin15
+.Lcst_begin15:
+	.word	.Ltmp124-.Lfunc_begin15 # >> Call Site 1 <<
+	.word	.Ltmp125-.Ltmp124       #   Call between .Ltmp124 and .Ltmp125
+	.word	.Ltmp126-.Lfunc_begin15 #     jumps to .Ltmp126
+	.byte	1                       #   On action: 1
+.Lcst_end15:
+	.byte	1                       # >> Action Record 1 <<
+                                        #   Catch TypeInfo 1
+	.byte	0                       #   No further actions
+	.p2align	2
+                                        # >> Catch TypeInfos <<
+	.word	0                       # TypeInfo 1
+.Lttbase3:
+	.p2align	2
+                                        # -- End function
 	.section	.text._ZNSt8__detail18__to_chars_10_implImEEvPcjT_,"axG",@progbits,_ZNSt8__detail18__to_chars_10_implImEEvPcjT_,comdat
 	.weak	_ZNSt8__detail18__to_chars_10_implImEEvPcjT_ # -- Begin function _ZNSt8__detail18__to_chars_10_implImEEvPcjT_
 	.p2align	2
 	.type	_ZNSt8__detail18__to_chars_10_implImEEvPcjT_,@function
 _ZNSt8__detail18__to_chars_10_implImEEvPcjT_: # @_ZNSt8__detail18__to_chars_10_implImEEvPcjT_
 # %bb.0:                                # %entry
-	addi	sp, sp, -64
-	sd	ra, 56(sp)
-	sd	s0, 48(sp)
-	addi	s0, sp, 64
+	addi	sp, sp, -272
+	sd	ra, 264(sp)
+	sd	s0, 256(sp)
+	addi	s0, sp, 272
 	sd	a0, -24(s0)
 	sw	a1, -28(s0)
 	sd	a2, -40(s0)
+	lui	a0, %hi(.L__const._ZNSt8__detail18__to_chars_10_implImEEvPcjT_.__digits)
+	addi	a1, a0, %lo(.L__const._ZNSt8__detail18__to_chars_10_implImEEvPcjT_.__digits)
+	addi	a0, s0, -241
+	addi	a2, zero, 201
+	call	memcpy
 	lw	a0, -28(s0)
 	addi	a0, a0, -1
-	sw	a0, -44(s0)
-	j	.LBB64_1
-.LBB64_1:                               # %while.cond
+	sw	a0, -248(s0)
+	j	.LBB68_1
+.LBB68_1:                               # %while.cond
                                         # =>This Inner Loop Header: Depth=1
 	ld	a0, -40(s0)
 	addi	a1, zero, 100
-	bltu	a0, a1, .LBB64_3
-	j	.LBB64_2
-.LBB64_2:                               # %while.body
-                                        #   in Loop: Header=BB64_1 Depth=1
+	bltu	a0, a1, .LBB68_3
+	j	.LBB68_2
+.LBB68_2:                               # %while.body
+                                        #   in Loop: Header=BB68_1 Depth=1
 	ld	a0, -40(s0)
 	srli	a1, a0, 2
 	lui	a2, 1311
@@ -4705,70 +4983,68 @@ _ZNSt8__detail18__to_chars_10_implImEEvPcjT_: # @_ZNSt8__detail18__to_chars_10_i
 	mul	a1, a1, a3
 	sub	a0, a0, a1
 	slli	a0, a0, 1
-	sd	a0, -56(s0)
+	sd	a0, -256(s0)
 	ld	a0, -40(s0)
 	srli	a0, a0, 2
 	mulhu	a0, a0, a2
 	srli	a0, a0, 2
 	sd	a0, -40(s0)
-	ld	a0, -56(s0)
-	lui	a1, %hi(_ZZNSt8__detail18__to_chars_10_implImEEvPcjT_E8__digits)
-	addi	a1, a1, %lo(_ZZNSt8__detail18__to_chars_10_implImEEvPcjT_E8__digits)
-	add	a0, a1, a0
+	ld	a0, -256(s0)
+	addi	a1, s0, -241
+	add	a0, a0, a1
 	lb	a0, 1(a0)
 	ld	a2, -24(s0)
-	lwu	a3, -44(s0)
+	lwu	a3, -248(s0)
 	add	a2, a2, a3
 	sb	a0, 0(a2)
-	ld	a0, -56(s0)
-	add	a0, a0, a1
+	ld	a0, -256(s0)
+	add	a0, a1, a0
 	lb	a0, 0(a0)
 	ld	a1, -24(s0)
-	lw	a2, -44(s0)
+	lw	a2, -248(s0)
 	addi	a2, a2, -1
 	slli	a2, a2, 32
 	srli	a2, a2, 32
 	add	a1, a1, a2
 	sb	a0, 0(a1)
-	lw	a0, -44(s0)
+	lw	a0, -248(s0)
 	addi	a0, a0, -2
-	sw	a0, -44(s0)
-	j	.LBB64_1
-.LBB64_3:                               # %while.end
+	sw	a0, -248(s0)
+	j	.LBB68_1
+.LBB68_3:                               # %while.end
 	ld	a0, -40(s0)
 	addi	a1, zero, 10
-	bltu	a0, a1, .LBB64_5
-	j	.LBB64_4
-.LBB64_4:                               # %if.then
+	bltu	a0, a1, .LBB68_5
+	j	.LBB68_4
+.LBB68_4:                               # %if.then
 	ld	a0, -40(s0)
 	slli	a0, a0, 1
-	sd	a0, -64(s0)
-	ld	a0, -64(s0)
-	lui	a1, %hi(_ZZNSt8__detail18__to_chars_10_implImEEvPcjT_E8__digits)
-	addi	a1, a1, %lo(_ZZNSt8__detail18__to_chars_10_implImEEvPcjT_E8__digits)
-	add	a0, a1, a0
+	sd	a0, -264(s0)
+	ld	a0, -264(s0)
+	addi	a1, s0, -241
+	add	a0, a0, a1
 	lb	a0, 1(a0)
 	ld	a2, -24(s0)
 	sb	a0, 1(a2)
-	ld	a0, -64(s0)
-	add	a0, a0, a1
+	ld	a0, -264(s0)
+	add	a0, a1, a0
 	lb	a0, 0(a0)
 	ld	a1, -24(s0)
 	sb	a0, 0(a1)
-	j	.LBB64_6
-.LBB64_5:                               # %if.else
+	j	.LBB68_6
+.LBB68_5:                               # %if.else
 	ld	a0, -40(s0)
 	addi	a0, a0, 48
 	ld	a1, -24(s0)
 	sb	a0, 0(a1)
-	j	.LBB64_6
-.LBB64_6:                               # %if.end
-	ld	s0, 48(sp)
-	ld	ra, 56(sp)
-	addi	sp, sp, 64
+	j	.LBB68_6
+.LBB68_6:                               # %if.end
+	ld	s0, 256(sp)
+	ld	ra, 264(sp)
+	addi	sp, sp, 272
 	ret
-.Lfunc_end64:
-	.size	_ZNSt8__detail18__to_chars_10_implImEEvPcjT_, .Lfunc_end64-_ZNSt8__detail18__to_chars_10_implImEEvPcjT_
+.Lfunc_end68:
+	.size	_ZNSt8__detail18__to_chars_10_implImEEvPcjT_, .Lfunc_end68-_ZNSt8__detail18__to_chars_10_implImEEvPcjT_
                                         # -- End function
 	.section	.text._ZN8nlohmann6detail10type_errorC2EiPKc,"axG",@progbits,_ZN8nlohmann6detail10type_errorC2EiPKc,comdat
 	.weak	_ZN8nlohmann6detail10type_errorC2EiPKc # -- Begin function _ZN8nlohmann6detail10type_errorC2EiPKc
@@ -4809,8 +5085,8 @@ _ZN8nlohmann6detail10type_errorC2EiPKc: # @_ZN8nlohmann6detail10type_errorC2EiPK
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end65:
-	.size	_ZN8nlohmann6detail10type_errorC2EiPKc, .Lfunc_end65-_ZN8nlohmann6detail10type_errorC2EiPKc
+.Lfunc_end69:
+	.size	_ZN8nlohmann6detail10type_errorC2EiPKc, .Lfunc_end69-_ZN8nlohmann6detail10type_errorC2EiPKc
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN8nlohmann6detail10type_errorD0Ev,"axG",@progbits,_ZN8nlohmann6detail10type_errorD0Ev,comdat
@@ -4835,334 +5111,256 @@ _ZN8nlohmann6detail10type_errorD0Ev:    # @_ZN8nlohmann6detail10type_errorD0Ev
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end66:
-	.size	_ZN8nlohmann6detail10type_errorD0Ev, .Lfunc_end66-_ZN8nlohmann6detail10type_errorD0Ev
-                                        # -- End function
-	.section	.text._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_,"axG",@progbits,_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_,comdat
-	.weak	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_ # -- Begin function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_
-	.p2align	2
-	.type	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_,@function
-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_: # @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -48
-	.cfi_def_cfa_offset 48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	.cfi_offset ra, -8
-	.cfi_offset s0, -16
-	addi	s0, sp, 48
-	.cfi_def_cfa s0, 0
-	sd	a0, -24(s0)
-	sd	a1, -32(s0)
-	sd	a2, -40(s0)
-	ld	a0, -24(s0)
-	ld	a1, -32(s0)
-	ld	a2, -40(s0)
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_construct_auxIPKcEEvT_S8_St12__false_type
-	ld	s0, 32(sp)
-	.cfi_def_cfa sp, 48
-	ld	ra, 40(sp)
-	.cfi_restore ra
-	.cfi_restore s0
-	addi	sp, sp, 48
-	.cfi_def_cfa_offset 0
-	ret
-.Lfunc_end67:
-	.size	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_, .Lfunc_end67-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_construct_auxIPKcEEvT_S8_St12__false_type,"axG",@progbits,_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_construct_auxIPKcEEvT_S8_St12__false_type,comdat
-	.weak	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_construct_auxIPKcEEvT_S8_St12__false_type # -- Begin function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_construct_auxIPKcEEvT_S8_St12__false_type
-	.p2align	2
-	.type	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_construct_auxIPKcEEvT_S8_St12__false_type,@function
-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_construct_auxIPKcEEvT_S8_St12__false_type: # @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_construct_auxIPKcEEvT_S8_St12__false_type
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -64
-	.cfi_def_cfa_offset 64
-	sd	ra, 56(sp)
-	sd	s0, 48(sp)
-	.cfi_offset ra, -8
-	.cfi_offset s0, -16
-	addi	s0, sp, 64
-	.cfi_def_cfa s0, 0
-	sd	a0, -32(s0)
-	sd	a1, -40(s0)
-	sd	a2, -48(s0)
-	ld	a0, -32(s0)
-	ld	a1, -40(s0)
-	ld	a2, -48(s0)
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag
-	ld	s0, 48(sp)
-	.cfi_def_cfa sp, 64
-	ld	ra, 56(sp)
-	.cfi_restore ra
-	.cfi_restore s0
-	addi	sp, sp, 64
-	.cfi_def_cfa_offset 0
-	ret
-.Lfunc_end68:
-	.size	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_construct_auxIPKcEEvT_S8_St12__false_type, .Lfunc_end68-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_construct_auxIPKcEEvT_S8_St12__false_type
-	.cfi_endproc
+.Lfunc_end70:
+	.size	_ZN8nlohmann6detail10type_errorD0Ev, .Lfunc_end70-_ZN8nlohmann6detail10type_errorD0Ev
                                         # -- End function
 	.section	.text._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag,"axG",@progbits,_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag,comdat
 	.weak	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag # -- Begin function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag
 	.p2align	2
 	.type	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag,@function
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag: # @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag
-.Lfunc_begin12:
+.Lfunc_begin16:
 	.cfi_startproc
 	.cfi_personality 155, DW.ref.__gxx_personality_v0
-	.cfi_lsda 27, .Lexception12
+	.cfi_lsda 27, .Lexception16
 # %bb.0:                                # %entry
-	addi	sp, sp, -80
-	.cfi_def_cfa_offset 80
-	sd	ra, 72(sp)
-	sd	s0, 64(sp)
-	sd	s1, 56(sp)
+	addi	sp, sp, -160
+	.cfi_def_cfa_offset 160
+	sd	ra, 152(sp)
+	sd	s0, 144(sp)
+	sd	s1, 136(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
 	.cfi_offset s1, -24
-	addi	s0, sp, 80
+	addi	s0, sp, 160
 	.cfi_def_cfa s0, 0
+	sd	a0, -104(s0)
+	sd	a1, -112(s0)
+	sd	a2, -120(s0)
+	ld	s1, -104(s0)
+	ld	a0, -112(s0)
+	ld	a1, -120(s0)
+	sd	a0, -64(s0)
+	sd	a1, -72(s0)
+	ld	a0, -64(s0)
+	ld	a1, -72(s0)
+	addi	a2, s0, -64
+	sd	a2, -56(s0)
 	sd	a0, -40(s0)
 	sd	a1, -48(s0)
-	sd	a2, -56(s0)
-	ld	s1, -40(s0)
 	ld	a0, -48(s0)
-	call	_ZN9__gnu_cxx17__is_null_pointerIKcEEbPT_
-	beqz	a0, .LBB69_3
-	j	.LBB69_1
-.LBB69_1:                               # %land.lhs.true
-	ld	a0, -48(s0)
-	ld	a1, -56(s0)
-	beq	a0, a1, .LBB69_3
-	j	.LBB69_2
-.LBB69_2:                               # %if.then
-	lui	a0, %hi(.L.str.20)
-	addi	a0, a0, %lo(.L.str.20)
-	call	_ZSt19__throw_logic_errorPKc
-.LBB69_3:                               # %if.end
-	ld	a0, -48(s0)
-	ld	a1, -56(s0)
-	call	_ZSt8distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_
-	sd	a0, -64(s0)
-	ld	a0, -64(s0)
+	ld	a1, -40(s0)
+	sub	a0, a0, a1
+	sd	a0, -128(s0)
+	ld	a0, -128(s0)
 	addi	a1, zero, 16
-	bltu	a0, a1, .LBB69_5
-	j	.LBB69_4
-.LBB69_4:                               # %if.then4
-	addi	a1, s0, -64
+	bltu	a0, a1, .LBB71_2
+	j	.LBB71_1
+.LBB71_1:                               # %if.then
+	addi	a1, s0, -128
 	mv	a0, s1
 	mv	a2, zero
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm
 	mv	a1, a0
 	mv	a0, s1
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEPc
-	ld	a1, -64(s0)
+	ld	a1, -128(s0)
 	mv	a0, s1
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE11_M_capacityEm
-	j	.LBB69_5
-.LBB69_5:                               # %if.end6
-.Ltmp125:
+	j	.LBB71_3
+.LBB71_2:                               # %if.else
+	sd	s1, -32(s0)
+	j	.LBB71_3
+.LBB71_3:                               # %if.end
+	addi	a0, s0, -136
+	mv	a1, s1
+	call	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardC2EPS4_
+.Ltmp127:
 	mv	a0, s1
 	call	_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv
-.Ltmp126:
-	j	.LBB69_6
-.LBB69_6:                               # %invoke.cont
-	ld	a1, -48(s0)
-	ld	a2, -56(s0)
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
-	j	.LBB69_12
-.LBB69_7:                               # %lpad
-.Ltmp127:
-	sd	a0, -72(s0)
-	sw	a1, -76(s0)
-	j	.LBB69_8
-.LBB69_8:                               # %catch
-	ld	a0, -72(s0)
-	call	__cxa_begin_catch
 .Ltmp128:
-	mv	a0, s1
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv
+	j	.LBB71_4
+.LBB71_4:                               # %invoke.cont
+	ld	a1, -112(s0)
+	ld	a2, -120(s0)
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_S_copy_charsEPcPKcS7_
+	sd	zero, -136(s0)
+	ld	a1, -128(s0)
 .Ltmp129:
-	j	.LBB69_9
-.LBB69_9:                               # %invoke.cont9
-.Ltmp130:
-	call	__cxa_rethrow
-.Ltmp131:
-	j	.LBB69_15
-.LBB69_10:                              # %lpad8
-.Ltmp132:
-	sd	a0, -72(s0)
-	sw	a1, -76(s0)
-.Ltmp133:
-	call	__cxa_end_catch
-.Ltmp134:
-	j	.LBB69_11
-.LBB69_11:                              # %invoke.cont10
-	j	.LBB69_13
-.LBB69_12:                              # %try.cont
-	ld	a1, -64(s0)
 	mv	a0, s1
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_set_lengthEm
-	ld	s1, 56(sp)
-	ld	s0, 64(sp)
-	.cfi_def_cfa sp, 80
-	ld	ra, 72(sp)
+.Ltmp130:
+	j	.LBB71_5
+.LBB71_5:                               # %invoke.cont4
+	addi	a0, s0, -136
+	call	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardD2Ev
+	ld	s1, 136(sp)
+	ld	s0, 144(sp)
+	.cfi_def_cfa sp, 160
+	ld	ra, 152(sp)
 	.cfi_restore ra
 	.cfi_restore s0
 	.cfi_restore s1
-	addi	sp, sp, 80
+	addi	sp, sp, 160
 	.cfi_def_cfa_offset 0
 	ret
-.LBB69_13:                              # %eh.resume
-	ld	a0, -72(s0)
+.LBB71_6:                               # %lpad
+.Ltmp131:
+	sd	a0, -144(s0)
+	sw	a1, -148(s0)
+	addi	a0, s0, -136
+	call	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardD2Ev
+	j	.LBB71_7
+.LBB71_7:                               # %eh.resume
+	ld	a0, -144(s0)
 	call	_Unwind_Resume
-.LBB69_14:                              # %terminate.lpad
-.Ltmp135:
-	call	__clang_call_terminate
-.LBB69_15:                              # %unreachable
-.Lfunc_end69:
-	.size	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag, .Lfunc_end69-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag
+.Lfunc_end71:
+	.size	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag, .Lfunc_end71-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table69:
-.Lexception12:
+GCC_except_table71:
+.Lexception16:
+	.byte	255                     # @LPStart Encoding = omit
+	.byte	255                     # @TType Encoding = omit
+	.byte	3                       # Call site Encoding = udata4
+	.uleb128 .Lcst_end16-.Lcst_begin16
+.Lcst_begin16:
+	.word	.Lfunc_begin16-.Lfunc_begin16 # >> Call Site 1 <<
+	.word	.Ltmp127-.Lfunc_begin16 #   Call between .Lfunc_begin16 and .Ltmp127
+	.word	0                       #     has no landing pad
+	.byte	0                       #   On action: cleanup
+	.word	.Ltmp127-.Lfunc_begin16 # >> Call Site 2 <<
+	.word	.Ltmp130-.Ltmp127       #   Call between .Ltmp127 and .Ltmp130
+	.word	.Ltmp131-.Lfunc_begin16 #     jumps to .Ltmp131
+	.byte	0                       #   On action: cleanup
+	.word	.Ltmp130-.Lfunc_begin16 # >> Call Site 3 <<
+	.word	.Lfunc_end71-.Ltmp130   #   Call between .Ltmp130 and .Lfunc_end71
+	.word	0                       #     has no landing pad
+	.byte	0                       #   On action: cleanup
+.Lcst_end16:
+	.p2align	2
+                                        # -- End function
+	.section	.text._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev,"axG",@progbits,_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev,comdat
+	.weak	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev # -- Begin function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev
+	.p2align	2
+	.type	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev,@function
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev: # @_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev
+# %bb.0:                                # %entry
+	addi	sp, sp, -32
+	sd	ra, 24(sp)
+	sd	s0, 16(sp)
+	addi	s0, sp, 32
+	sd	a0, -32(s0)
+	ld	a0, -32(s0)
+	sd	a0, -24(s0)
+	ld	a0, -24(s0)
+	call	_ZNSt15__new_allocatorIcED2Ev
+	ld	s0, 16(sp)
+	ld	ra, 24(sp)
+	addi	sp, sp, 32
+	ret
+.Lfunc_end72:
+	.size	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev, .Lfunc_end72-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderD2Ev
+                                        # -- End function
+	.section	.text._ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardC2EPS4_,"axG",@progbits,_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardC2EPS4_,comdat
+	.weak	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardC2EPS4_ # -- Begin function _ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardC2EPS4_
+	.p2align	2
+	.type	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardC2EPS4_,@function
+_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardC2EPS4_: # @_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardC2EPS4_
+# %bb.0:                                # %entry
+	addi	sp, sp, -32
+	sd	ra, 24(sp)
+	sd	s0, 16(sp)
+	addi	s0, sp, 32
+	sd	a0, -24(s0)
+	sd	a1, -32(s0)
+	ld	a0, -24(s0)
+	ld	a1, -32(s0)
+	sd	a1, 0(a0)
+	ld	s0, 16(sp)
+	ld	ra, 24(sp)
+	addi	sp, sp, 32
+	ret
+.Lfunc_end73:
+	.size	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardC2EPS4_, .Lfunc_end73-_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardC2EPS4_
+                                        # -- End function
+	.section	.text._ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardD2Ev,"axG",@progbits,_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardD2Ev,comdat
+	.weak	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardD2Ev # -- Begin function _ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardD2Ev
+	.p2align	2
+	.type	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardD2Ev,@function
+_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardD2Ev: # @_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardD2Ev
+.Lfunc_begin17:
+	.cfi_startproc
+	.cfi_personality 155, DW.ref.__gxx_personality_v0
+	.cfi_lsda 27, .Lexception17
+# %bb.0:                                # %entry
+	addi	sp, sp, -32
+	.cfi_def_cfa_offset 32
+	sd	ra, 24(sp)
+	sd	s0, 16(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	addi	s0, sp, 32
+	.cfi_def_cfa s0, 0
+	sd	a0, -24(s0)
+	ld	a0, -24(s0)
+	ld	a1, 0(a0)
+	beqz	a1, .LBB74_3
+	j	.LBB74_1
+.LBB74_1:                               # %if.then
+	ld	a0, 0(a0)
+.Ltmp132:
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv
+.Ltmp133:
+	j	.LBB74_2
+.LBB74_2:                               # %invoke.cont
+	j	.LBB74_3
+.LBB74_3:                               # %if.end
+	ld	s0, 16(sp)
+	.cfi_def_cfa sp, 32
+	ld	ra, 24(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	addi	sp, sp, 32
+	.cfi_def_cfa_offset 0
+	ret
+.LBB74_4:                               # %terminate.lpad
+.Ltmp134:
+	call	__clang_call_terminate
+.Lfunc_end74:
+	.size	_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardD2Ev, .Lfunc_end74-_ZZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tagEN6_GuardD2Ev
+	.cfi_endproc
+	.section	.gcc_except_table,"a",@progbits
+	.p2align	2
+GCC_except_table74:
+.Lexception17:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	155                     # @TType Encoding = indirect pcrel sdata4
-	.uleb128 .Lttbase1-.Lttbaseref1
-.Lttbaseref1:
+	.uleb128 .Lttbase4-.Lttbaseref4
+.Lttbaseref4:
 	.byte	3                       # Call site Encoding = udata4
-	.uleb128 .Lcst_end12-.Lcst_begin12
-.Lcst_begin12:
-	.word	.Lfunc_begin12-.Lfunc_begin12 # >> Call Site 1 <<
-	.word	.Ltmp125-.Lfunc_begin12 #   Call between .Lfunc_begin12 and .Ltmp125
-	.word	0                       #     has no landing pad
-	.byte	0                       #   On action: cleanup
-	.word	.Ltmp125-.Lfunc_begin12 # >> Call Site 2 <<
-	.word	.Ltmp126-.Ltmp125       #   Call between .Ltmp125 and .Ltmp126
-	.word	.Ltmp127-.Lfunc_begin12 #     jumps to .Ltmp127
+	.uleb128 .Lcst_end17-.Lcst_begin17
+.Lcst_begin17:
+	.word	.Ltmp132-.Lfunc_begin17 # >> Call Site 1 <<
+	.word	.Ltmp133-.Ltmp132       #   Call between .Ltmp132 and .Ltmp133
+	.word	.Ltmp134-.Lfunc_begin17 #     jumps to .Ltmp134
 	.byte	1                       #   On action: 1
-	.word	.Ltmp126-.Lfunc_begin12 # >> Call Site 3 <<
-	.word	.Ltmp128-.Ltmp126       #   Call between .Ltmp126 and .Ltmp128
-	.word	0                       #     has no landing pad
-	.byte	0                       #   On action: cleanup
-	.word	.Ltmp128-.Lfunc_begin12 # >> Call Site 4 <<
-	.word	.Ltmp131-.Ltmp128       #   Call between .Ltmp128 and .Ltmp131
-	.word	.Ltmp132-.Lfunc_begin12 #     jumps to .Ltmp132
-	.byte	0                       #   On action: cleanup
-	.word	.Ltmp133-.Lfunc_begin12 # >> Call Site 5 <<
-	.word	.Ltmp134-.Ltmp133       #   Call between .Ltmp133 and .Ltmp134
-	.word	.Ltmp135-.Lfunc_begin12 #     jumps to .Ltmp135
-	.byte	1                       #   On action: 1
-	.word	.Ltmp134-.Lfunc_begin12 # >> Call Site 6 <<
-	.word	.Lfunc_end69-.Ltmp134   #   Call between .Ltmp134 and .Lfunc_end69
-	.word	0                       #     has no landing pad
-	.byte	0                       #   On action: cleanup
-.Lcst_end12:
+.Lcst_end17:
 	.byte	1                       # >> Action Record 1 <<
                                         #   Catch TypeInfo 1
 	.byte	0                       #   No further actions
 	.p2align	2
                                         # >> Catch TypeInfos <<
 	.word	0                       # TypeInfo 1
-.Lttbase1:
+.Lttbase4:
 	.p2align	2
                                         # -- End function
-	.section	.text._ZN9__gnu_cxx17__is_null_pointerIKcEEbPT_,"axG",@progbits,_ZN9__gnu_cxx17__is_null_pointerIKcEEbPT_,comdat
-	.weak	_ZN9__gnu_cxx17__is_null_pointerIKcEEbPT_ # -- Begin function _ZN9__gnu_cxx17__is_null_pointerIKcEEbPT_
+	.section	.text._ZNSt15__new_allocatorIcED2Ev,"axG",@progbits,_ZNSt15__new_allocatorIcED2Ev,comdat
+	.weak	_ZNSt15__new_allocatorIcED2Ev # -- Begin function _ZNSt15__new_allocatorIcED2Ev
 	.p2align	2
-	.type	_ZN9__gnu_cxx17__is_null_pointerIKcEEbPT_,@function
-_ZN9__gnu_cxx17__is_null_pointerIKcEEbPT_: # @_ZN9__gnu_cxx17__is_null_pointerIKcEEbPT_
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	ld	a0, -24(s0)
-	seqz	a0, a0
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
-	ret
-.Lfunc_end70:
-	.size	_ZN9__gnu_cxx17__is_null_pointerIKcEEbPT_, .Lfunc_end70-_ZN9__gnu_cxx17__is_null_pointerIKcEEbPT_
-                                        # -- End function
-	.section	.text._ZSt8distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_,"axG",@progbits,_ZSt8distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_,comdat
-	.weak	_ZSt8distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_ # -- Begin function _ZSt8distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_
-	.p2align	2
-	.type	_ZSt8distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_,@function
-_ZSt8distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_: # @_ZSt8distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -64
-	.cfi_def_cfa_offset 64
-	sd	ra, 56(sp)
-	sd	s0, 48(sp)
-	sd	s1, 40(sp)
-	sd	s2, 32(sp)
-	.cfi_offset ra, -8
-	.cfi_offset s0, -16
-	.cfi_offset s1, -24
-	.cfi_offset s2, -32
-	addi	s0, sp, 64
-	.cfi_def_cfa s0, 0
-	sd	a0, -40(s0)
-	sd	a1, -48(s0)
-	ld	s1, -40(s0)
-	ld	s2, -48(s0)
-	addi	a0, s0, -40
-	call	_ZSt19__iterator_categoryIPKcENSt15iterator_traitsIT_E17iterator_categoryERKS3_
-	mv	a0, s1
-	mv	a1, s2
-	call	_ZSt10__distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag
-	ld	s2, 32(sp)
-	ld	s1, 40(sp)
-	ld	s0, 48(sp)
-	.cfi_def_cfa sp, 64
-	ld	ra, 56(sp)
-	.cfi_restore ra
-	.cfi_restore s0
-	.cfi_restore s1
-	.cfi_restore s2
-	addi	sp, sp, 64
-	.cfi_def_cfa_offset 0
-	ret
-.Lfunc_end71:
-	.size	_ZSt8distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_, .Lfunc_end71-_ZSt8distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZSt10__distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag,"axG",@progbits,_ZSt10__distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag,comdat
-	.weak	_ZSt10__distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag # -- Begin function _ZSt10__distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag
-	.p2align	2
-	.type	_ZSt10__distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag,@function
-_ZSt10__distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag: # @_ZSt10__distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag
-# %bb.0:                                # %entry
-	addi	sp, sp, -48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	addi	s0, sp, 48
-	sd	a0, -32(s0)
-	sd	a1, -40(s0)
-	ld	a0, -40(s0)
-	ld	a1, -32(s0)
-	sub	a0, a0, a1
-	ld	s0, 32(sp)
-	ld	ra, 40(sp)
-	addi	sp, sp, 48
-	ret
-.Lfunc_end72:
-	.size	_ZSt10__distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag, .Lfunc_end72-_ZSt10__distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag
-                                        # -- End function
-	.section	.text._ZSt19__iterator_categoryIPKcENSt15iterator_traitsIT_E17iterator_categoryERKS3_,"axG",@progbits,_ZSt19__iterator_categoryIPKcENSt15iterator_traitsIT_E17iterator_categoryERKS3_,comdat
-	.weak	_ZSt19__iterator_categoryIPKcENSt15iterator_traitsIT_E17iterator_categoryERKS3_ # -- Begin function _ZSt19__iterator_categoryIPKcENSt15iterator_traitsIT_E17iterator_categoryERKS3_
-	.p2align	2
-	.type	_ZSt19__iterator_categoryIPKcENSt15iterator_traitsIT_E17iterator_categoryERKS3_,@function
-_ZSt19__iterator_categoryIPKcENSt15iterator_traitsIT_E17iterator_categoryERKS3_: # @_ZSt19__iterator_categoryIPKcENSt15iterator_traitsIT_E17iterator_categoryERKS3_
+	.type	_ZNSt15__new_allocatorIcED2Ev,@function
+_ZNSt15__new_allocatorIcED2Ev:          # @_ZNSt15__new_allocatorIcED2Ev
 # %bb.0:                                # %entry
 	addi	sp, sp, -32
 	sd	ra, 24(sp)
@@ -5173,8 +5371,8 @@ _ZSt19__iterator_categoryIPKcENSt15iterator_traitsIT_E17iterator_categoryERKS3_:
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end73:
-	.size	_ZSt19__iterator_categoryIPKcENSt15iterator_traitsIT_E17iterator_categoryERKS3_, .Lfunc_end73-_ZSt19__iterator_categoryIPKcENSt15iterator_traitsIT_E17iterator_categoryERKS3_
+.Lfunc_end75:
+	.size	_ZNSt15__new_allocatorIcED2Ev, .Lfunc_end75-_ZNSt15__new_allocatorIcED2Ev
                                         # -- End function
 	.section	.text._ZN8nlohmann14adl_serializerIdvE9from_jsonIRKNS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaS0_EEdEEDTcmclL_ZNS_12_GLOBAL__N_19from_jsonEEclsr3stdE7forwardIT_Efp_Efp0_Ecvv_EEOSG_RT0_,"axG",@progbits,_ZN8nlohmann14adl_serializerIdvE9from_jsonIRKNS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaS0_EEdEEDTcmclL_ZNS_12_GLOBAL__N_19from_jsonEEclsr3stdE7forwardIT_Efp_Efp0_Ecvv_EEOSG_RT0_,comdat
 	.weak	_ZN8nlohmann14adl_serializerIdvE9from_jsonIRKNS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaS0_EEdEEDTcmclL_ZNS_12_GLOBAL__N_19from_jsonEEclsr3stdE7forwardIT_Efp_Efp0_Ecvv_EEOSG_RT0_ # -- Begin function _ZN8nlohmann14adl_serializerIdvE9from_jsonIRKNS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaS0_EEdEEDTcmclL_ZNS_12_GLOBAL__N_19from_jsonEEclsr3stdE7forwardIT_Efp_Efp0_Ecvv_EEOSG_RT0_
@@ -5208,8 +5406,8 @@ _ZN8nlohmann14adl_serializerIdvE9from_jsonIRKNS_10basic_jsonISt3mapSt6vectorNSt7
 	addi	sp, sp, 32
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end74:
-	.size	_ZN8nlohmann14adl_serializerIdvE9from_jsonIRKNS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaS0_EEdEEDTcmclL_ZNS_12_GLOBAL__N_19from_jsonEEclsr3stdE7forwardIT_Efp_Efp0_Ecvv_EEOSG_RT0_, .Lfunc_end74-_ZN8nlohmann14adl_serializerIdvE9from_jsonIRKNS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaS0_EEdEEDTcmclL_ZNS_12_GLOBAL__N_19from_jsonEEclsr3stdE7forwardIT_Efp_Efp0_Ecvv_EEOSG_RT0_
+.Lfunc_end76:
+	.size	_ZN8nlohmann14adl_serializerIdvE9from_jsonIRKNS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaS0_EEdEEDTcmclL_ZNS_12_GLOBAL__N_19from_jsonEEclsr3stdE7forwardIT_Efp_Efp0_Ecvv_EEOSG_RT0_, .Lfunc_end76-_ZN8nlohmann14adl_serializerIdvE9from_jsonIRKNS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaS0_EEdEEDTcmclL_ZNS_12_GLOBAL__N_19from_jsonEEclsr3stdE7forwardIT_Efp_Efp0_Ecvv_EEOSG_RT0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNK8nlohmann6detail12from_json_fnclINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEdEEDTcmcl9from_jsonfp_fp0_Ecvv_EERKT_RT0_,"axG",@progbits,_ZNK8nlohmann6detail12from_json_fnclINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEdEEDTcmcl9from_jsonfp_fp0_Ecvv_EERKT_RT0_,comdat
@@ -5241,8 +5439,8 @@ _ZNK8nlohmann6detail12from_json_fnclINS_10basic_jsonISt3mapSt6vectorNSt7__cxx111
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end75:
-	.size	_ZNK8nlohmann6detail12from_json_fnclINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEdEEDTcmcl9from_jsonfp_fp0_Ecvv_EERKT_RT0_, .Lfunc_end75-_ZNK8nlohmann6detail12from_json_fnclINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEdEEDTcmcl9from_jsonfp_fp0_Ecvv_EERKT_RT0_
+.Lfunc_end77:
+	.size	_ZNK8nlohmann6detail12from_json_fnclINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEdEEDTcmcl9from_jsonfp_fp0_Ecvv_EERKT_RT0_, .Lfunc_end77-_ZNK8nlohmann6detail12from_json_fnclINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEdEEDTcmcl9from_jsonfp_fp0_Ecvv_EERKT_RT0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt7forwardIRKN8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEEEOT_RNSt16remove_referenceISE_E4typeE,"axG",@progbits,_ZSt7forwardIRKN8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEEEOT_RNSt16remove_referenceISE_E4typeE,comdat
@@ -5261,8 +5459,8 @@ _ZSt7forwardIRKN8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIc
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end76:
-	.size	_ZSt7forwardIRKN8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEEEOT_RNSt16remove_referenceISE_E4typeE, .Lfunc_end76-_ZSt7forwardIRKN8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEEEOT_RNSt16remove_referenceISE_E4typeE
+.Lfunc_end78:
+	.size	_ZSt7forwardIRKN8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEEEOT_RNSt16remove_referenceISE_E4typeE, .Lfunc_end78-_ZSt7forwardIRKN8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS0_14adl_serializerEEEEOT_RNSt16remove_referenceISE_E4typeE
                                         # -- End function
 	.section	.text._ZN8nlohmann6detail9from_jsonINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEEEvRKT_RNSD_14number_float_tE,"axG",@progbits,_ZN8nlohmann6detail9from_jsonINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEEEvRKT_RNSD_14number_float_tE,comdat
 	.weak	_ZN8nlohmann6detail9from_jsonINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEEEvRKT_RNSD_14number_float_tE # -- Begin function _ZN8nlohmann6detail9from_jsonINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEEEvRKT_RNSD_14number_float_tE
@@ -5292,8 +5490,8 @@ _ZN8nlohmann6detail9from_jsonINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_
 	addi	sp, sp, 32
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end77:
-	.size	_ZN8nlohmann6detail9from_jsonINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEEEvRKT_RNSD_14number_float_tE, .Lfunc_end77-_ZN8nlohmann6detail9from_jsonINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEEEvRKT_RNSD_14number_float_tE
+.Lfunc_end79:
+	.size	_ZN8nlohmann6detail9from_jsonINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEEEvRKT_RNSD_14number_float_tE, .Lfunc_end79-_ZN8nlohmann6detail9from_jsonINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEEEvRKT_RNSD_14number_float_tE
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN8nlohmann6detail20get_arithmetic_valueINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEdLi0EEEvRKT_RT0_,"axG",@progbits,_ZN8nlohmann6detail20get_arithmetic_valueINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEdLi0EEEvRKT_RT0_,comdat
@@ -5301,197 +5499,190 @@ _ZN8nlohmann6detail9from_jsonINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_
 	.p2align	2
 	.type	_ZN8nlohmann6detail20get_arithmetic_valueINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEdLi0EEEvRKT_RT0_,@function
 _ZN8nlohmann6detail20get_arithmetic_valueINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEdLi0EEEvRKT_RT0_: # @_ZN8nlohmann6detail20get_arithmetic_valueINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEdLi0EEEvRKT_RT0_
-.Lfunc_begin13:
+.Lfunc_begin18:
 	.cfi_startproc
 	.cfi_personality 155, DW.ref.__gxx_personality_v0
-	.cfi_lsda 27, .Lexception13
+	.cfi_lsda 27, .Lexception18
 # %bb.0:                                # %entry
-	addi	sp, sp, -144
-	.cfi_def_cfa_offset 144
-	sd	ra, 136(sp)
-	sd	s0, 128(sp)
-	sd	s1, 120(sp)
-	sd	s2, 112(sp)
-	sd	s3, 104(sp)
+	addi	sp, sp, -160
+	.cfi_def_cfa_offset 160
+	sd	ra, 152(sp)
+	sd	s0, 144(sp)
+	sd	s1, 136(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
 	.cfi_offset s1, -24
-	.cfi_offset s2, -32
-	.cfi_offset s3, -40
-	addi	s0, sp, 144
+	addi	s0, sp, 160
 	.cfi_def_cfa s0, 0
-	sd	a0, -48(s0)
-	sd	a1, -56(s0)
-	ld	a0, -48(s0)
+	sd	a0, -56(s0)
+	sd	a1, -64(s0)
+	ld	a0, -56(s0)
 	call	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEcvNS_6detail7value_tEEv
 	addi	a1, zero, 5
-	beq	a0, a1, .LBB78_4
-	j	.LBB78_1
-.LBB78_1:                               # %entry
+	beq	a0, a1, .LBB80_4
+	j	.LBB80_1
+.LBB80_1:                               # %entry
 	andi	a1, a0, 255
 	addi	a2, zero, 6
-	beq	a1, a2, .LBB78_3
-	j	.LBB78_2
-.LBB78_2:                               # %entry
+	beq	a1, a2, .LBB80_3
+	j	.LBB80_2
+.LBB80_2:                               # %entry
 	andi	a0, a0, 255
 	addi	a1, zero, 7
-	beq	a0, a1, .LBB78_5
-	j	.LBB78_6
-.LBB78_3:                               # %sw.bb
-	ld	a0, -48(s0)
+	beq	a0, a1, .LBB80_5
+	j	.LBB80_6
+.LBB80_3:                               # %sw.bb
+	ld	a0, -56(s0)
 	call	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKmLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv
 	ld	a0, 0(a0)
 	fcvt.d.lu	ft0, a0
-	ld	a0, -56(s0)
+	ld	a0, -64(s0)
 	fsd	ft0, 0(a0)
-	j	.LBB78_17
-.LBB78_4:                               # %sw.bb2
-	ld	a0, -48(s0)
+	j	.LBB80_17
+.LBB80_4:                               # %sw.bb2
+	ld	a0, -56(s0)
 	call	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKlLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv
 	ld	a0, 0(a0)
 	fcvt.d.l	ft0, a0
-	ld	a0, -56(s0)
+	ld	a0, -64(s0)
 	fsd	ft0, 0(a0)
-	j	.LBB78_17
-.LBB78_5:                               # %sw.bb5
-	ld	a0, -48(s0)
+	j	.LBB80_17
+.LBB80_5:                               # %sw.bb5
+	ld	a0, -56(s0)
 	call	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKdLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv
 	fld	ft0, 0(a0)
-	ld	a0, -56(s0)
+	ld	a0, -64(s0)
 	fsd	ft0, 0(a0)
-	j	.LBB78_17
-.LBB78_6:                               # %sw.default
+	j	.LBB80_17
+.LBB80_6:                               # %sw.default
 	addi	a0, zero, 32
 	call	__cxa_allocate_exception
-	mv	s2, a0
-	addi	a0, zero, 1
-	sb	a0, -141(s0)
-	ld	a0, -48(s0)
-	call	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE9type_nameEv
 	mv	s1, a0
-	addi	s3, s0, -128
-	mv	a0, s3
-	call	_ZNSaIcEC1Ev
-.Ltmp136:
-	addi	a0, s0, -120
-	mv	a1, s1
-	mv	a2, s3
+	addi	a0, zero, 1
+	sb	a0, -149(s0)
+	ld	a0, -56(s0)
+	call	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE9type_nameEv
+	mv	a1, a0
+	addi	a2, s0, -136
+	sd	a2, -48(s0)
+	ld	a0, -48(s0)
+	sd	a0, -40(s0)
+.Ltmp135:
+	addi	a0, s0, -128
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_
-.Ltmp137:
-	j	.LBB78_7
-.LBB78_7:                               # %invoke.cont
-.Ltmp139:
-	lui	a0, %hi(.L.str.21)
-	addi	a1, a0, %lo(.L.str.21)
-	addi	a0, s0, -88
-	addi	a2, s0, -120
+.Ltmp136:
+	j	.LBB80_7
+.LBB80_7:                               # %invoke.cont
+.Ltmp138:
+	lui	a0, %hi(.L.str.23)
+	addi	a1, a0, %lo(.L.str.23)
+	addi	a0, s0, -96
+	addi	a2, s0, -128
 	call	_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_
-.Ltmp140:
-	j	.LBB78_8
-.LBB78_8:                               # %invoke.cont11
-.Ltmp142:
-	addi	a2, s0, -88
-	mv	a0, s2
+.Ltmp139:
+	j	.LBB80_8
+.LBB80_8:                               # %invoke.cont11
+.Ltmp141:
+	addi	a2, s0, -96
+	mv	a0, s1
 	addi	a1, zero, 302
 	call	_ZN8nlohmann6detail10type_error6createEiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+.Ltmp142:
+	j	.LBB80_9
+.LBB80_9:                               # %invoke.cont13
+	sb	zero, -149(s0)
 .Ltmp143:
-	j	.LBB78_9
-.LBB78_9:                               # %invoke.cont13
-	sb	zero, -141(s0)
-.Ltmp144:
 	lui	a0, %hi(_ZTIN8nlohmann6detail10type_errorE)
 	addi	a1, a0, %lo(_ZTIN8nlohmann6detail10type_errorE)
 	lui	a0, %hi(_ZN8nlohmann6detail10type_errorD2Ev)
 	addi	a2, a0, %lo(_ZN8nlohmann6detail10type_errorD2Ev)
-	mv	a0, s2
+	mv	a0, s1
 	call	__cxa_throw
+.Ltmp144:
+	j	.LBB80_19
+.LBB80_10:                              # %lpad
+.Ltmp137:
+	sd	a0, -144(s0)
+	sw	a1, -148(s0)
+	j	.LBB80_14
+.LBB80_11:                              # %lpad10
+.Ltmp140:
+	sd	a0, -144(s0)
+	sw	a1, -148(s0)
+	j	.LBB80_13
+.LBB80_12:                              # %lpad12
 .Ltmp145:
-	j	.LBB78_19
-.LBB78_10:                              # %lpad
-.Ltmp138:
-	sd	a0, -136(s0)
-	sw	a1, -140(s0)
-	j	.LBB78_14
-.LBB78_11:                              # %lpad10
-.Ltmp141:
-	sd	a0, -136(s0)
-	sw	a1, -140(s0)
-	j	.LBB78_13
-.LBB78_12:                              # %lpad12
-.Ltmp146:
-	sd	a0, -136(s0)
-	sw	a1, -140(s0)
-	addi	a0, s0, -88
+	sd	a0, -144(s0)
+	sw	a1, -148(s0)
+	addi	a0, s0, -96
 	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	j	.LBB78_13
-.LBB78_13:                              # %ehcleanup
-	addi	a0, s0, -120
-	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
-	j	.LBB78_14
-.LBB78_14:                              # %ehcleanup14
+	j	.LBB80_13
+.LBB80_13:                              # %ehcleanup
 	addi	a0, s0, -128
-	call	_ZNSaIcED1Ev
-	lbu	a0, -141(s0)
-	beqz	a0, .LBB78_16
-	j	.LBB78_15
-.LBB78_15:                              # %cleanup.action
-	mv	a0, s2
+	call	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+	j	.LBB80_14
+.LBB80_14:                              # %ehcleanup14
+	addi	a0, s0, -136
+	sd	a0, -32(s0)
+	ld	a0, -32(s0)
+	call	_ZNSt15__new_allocatorIcED2Ev
+	lbu	a0, -149(s0)
+	beqz	a0, .LBB80_16
+	j	.LBB80_15
+.LBB80_15:                              # %cleanup.action
+	mv	a0, s1
 	call	__cxa_free_exception
-	j	.LBB78_16
-.LBB78_16:                              # %cleanup.done
-	j	.LBB78_18
-.LBB78_17:                              # %sw.epilog
-	ld	s3, 104(sp)
-	ld	s2, 112(sp)
-	ld	s1, 120(sp)
-	ld	s0, 128(sp)
-	.cfi_def_cfa sp, 144
-	ld	ra, 136(sp)
+	j	.LBB80_16
+.LBB80_16:                              # %cleanup.done
+	j	.LBB80_18
+.LBB80_17:                              # %sw.epilog
+	ld	s1, 136(sp)
+	ld	s0, 144(sp)
+	.cfi_def_cfa sp, 160
+	ld	ra, 152(sp)
 	.cfi_restore ra
 	.cfi_restore s0
 	.cfi_restore s1
-	.cfi_restore s2
-	.cfi_restore s3
-	addi	sp, sp, 144
+	addi	sp, sp, 160
 	.cfi_def_cfa_offset 0
 	ret
-.LBB78_18:                              # %eh.resume
-	ld	a0, -136(s0)
+.LBB80_18:                              # %eh.resume
+	ld	a0, -144(s0)
 	call	_Unwind_Resume
-.LBB78_19:                              # %unreachable
-.Lfunc_end78:
-	.size	_ZN8nlohmann6detail20get_arithmetic_valueINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEdLi0EEEvRKT_RT0_, .Lfunc_end78-_ZN8nlohmann6detail20get_arithmetic_valueINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEdLi0EEEvRKT_RT0_
+.LBB80_19:                              # %unreachable
+.Lfunc_end80:
+	.size	_ZN8nlohmann6detail20get_arithmetic_valueINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEdLi0EEEvRKT_RT0_, .Lfunc_end80-_ZN8nlohmann6detail20get_arithmetic_valueINS_10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEEdLi0EEEvRKT_RT0_
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table78:
-.Lexception13:
+GCC_except_table80:
+.Lexception18:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	255                     # @TType Encoding = omit
 	.byte	3                       # Call site Encoding = udata4
-	.uleb128 .Lcst_end13-.Lcst_begin13
-.Lcst_begin13:
-	.word	.Lfunc_begin13-.Lfunc_begin13 # >> Call Site 1 <<
-	.word	.Ltmp136-.Lfunc_begin13 #   Call between .Lfunc_begin13 and .Ltmp136
+	.uleb128 .Lcst_end18-.Lcst_begin18
+.Lcst_begin18:
+	.word	.Lfunc_begin18-.Lfunc_begin18 # >> Call Site 1 <<
+	.word	.Ltmp135-.Lfunc_begin18 #   Call between .Lfunc_begin18 and .Ltmp135
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp136-.Lfunc_begin13 # >> Call Site 2 <<
-	.word	.Ltmp137-.Ltmp136       #   Call between .Ltmp136 and .Ltmp137
-	.word	.Ltmp138-.Lfunc_begin13 #     jumps to .Ltmp138
+	.word	.Ltmp135-.Lfunc_begin18 # >> Call Site 2 <<
+	.word	.Ltmp136-.Ltmp135       #   Call between .Ltmp135 and .Ltmp136
+	.word	.Ltmp137-.Lfunc_begin18 #     jumps to .Ltmp137
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp139-.Lfunc_begin13 # >> Call Site 3 <<
-	.word	.Ltmp140-.Ltmp139       #   Call between .Ltmp139 and .Ltmp140
-	.word	.Ltmp141-.Lfunc_begin13 #     jumps to .Ltmp141
+	.word	.Ltmp138-.Lfunc_begin18 # >> Call Site 3 <<
+	.word	.Ltmp139-.Ltmp138       #   Call between .Ltmp138 and .Ltmp139
+	.word	.Ltmp140-.Lfunc_begin18 #     jumps to .Ltmp140
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp142-.Lfunc_begin13 # >> Call Site 4 <<
-	.word	.Ltmp145-.Ltmp142       #   Call between .Ltmp142 and .Ltmp145
-	.word	.Ltmp146-.Lfunc_begin13 #     jumps to .Ltmp146
+	.word	.Ltmp141-.Lfunc_begin18 # >> Call Site 4 <<
+	.word	.Ltmp144-.Ltmp141       #   Call between .Ltmp141 and .Ltmp144
+	.word	.Ltmp145-.Lfunc_begin18 #     jumps to .Ltmp145
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp145-.Lfunc_begin13 # >> Call Site 5 <<
-	.word	.Lfunc_end78-.Ltmp145   #   Call between .Ltmp145 and .Lfunc_end78
+	.word	.Ltmp144-.Lfunc_begin18 # >> Call Site 5 <<
+	.word	.Lfunc_end80-.Ltmp144   #   Call between .Ltmp144 and .Lfunc_end80
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
-.Lcst_end13:
+.Lcst_end18:
 	.p2align	2
                                         # -- End function
 	.section	.text._ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEcvNS_6detail7value_tEEv,"axG",@progbits,_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEcvNS_6detail7value_tEEv,comdat
@@ -5511,8 +5702,8 @@ _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_tra
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end79:
-	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEcvNS_6detail7value_tEEv, .Lfunc_end79-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEcvNS_6detail7value_tEEv
+.Lfunc_end81:
+	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEcvNS_6detail7value_tEEv, .Lfunc_end81-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEEcvNS_6detail7value_tEEv
                                         # -- End function
 	.section	.text._ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKmLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv,"axG",@progbits,_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKmLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv,comdat
 	.weak	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKmLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv # -- Begin function _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKmLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv
@@ -5532,8 +5723,8 @@ _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_tra
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end80:
-	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKmLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv, .Lfunc_end80-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKmLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv
+.Lfunc_end82:
+	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKmLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv, .Lfunc_end82-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKmLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv
                                         # -- End function
 	.section	.text._ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKlLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv,"axG",@progbits,_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKlLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv,comdat
 	.weak	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKlLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv # -- Begin function _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKlLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv
@@ -5553,8 +5744,8 @@ _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_tra
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end81:
-	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKlLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv, .Lfunc_end81-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKlLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv
+.Lfunc_end83:
+	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKlLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv, .Lfunc_end83-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKlLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv
                                         # -- End function
 	.section	.text._ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKdLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv,"axG",@progbits,_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKdLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv,comdat
 	.weak	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKdLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv # -- Begin function _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKdLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv
@@ -5574,8 +5765,8 @@ _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_tra
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end82:
-	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKdLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv, .Lfunc_end82-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKdLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv
+.Lfunc_end84:
+	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKdLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv, .Lfunc_end84-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE7get_ptrIPKdLi0EEEDTcldtclL_ZSt7declvalIRKSA_EDTcl9__declvalIT_ELi0EEEvEE12get_impl_ptrclsr3stdE7declvalISH_EEEEv
                                         # -- End function
 	.section	.text._ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKm,"axG",@progbits,_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKm,comdat
 	.weak	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKm # -- Begin function _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKm
@@ -5593,22 +5784,22 @@ _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_tra
 	ld	s1, -32(s0)
 	mv	a0, s1
 	call	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE18is_number_unsignedEv
-	beqz	a0, .LBB83_2
-	j	.LBB83_1
-.LBB83_1:                               # %cond.true
+	beqz	a0, .LBB85_2
+	j	.LBB85_1
+.LBB85_1:                               # %cond.true
 	addi	a0, s1, 8
-	j	.LBB83_3
-.LBB83_2:                               # %cond.false
+	j	.LBB85_3
+.LBB85_2:                               # %cond.false
 	mv	a0, zero
-	j	.LBB83_3
-.LBB83_3:                               # %cond.end
+	j	.LBB85_3
+.LBB85_3:                               # %cond.end
 	ld	s1, 24(sp)
 	ld	s0, 32(sp)
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end83:
-	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKm, .Lfunc_end83-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKm
+.Lfunc_end85:
+	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKm, .Lfunc_end85-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKm
                                         # -- End function
 	.section	.text._ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE18is_number_unsignedEv,"axG",@progbits,_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE18is_number_unsignedEv,comdat
 	.weak	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE18is_number_unsignedEv # -- Begin function _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE18is_number_unsignedEv
@@ -5629,8 +5820,8 @@ _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_tra
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end84:
-	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE18is_number_unsignedEv, .Lfunc_end84-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE18is_number_unsignedEv
+.Lfunc_end86:
+	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE18is_number_unsignedEv, .Lfunc_end86-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE18is_number_unsignedEv
                                         # -- End function
 	.section	.text._ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKl,"axG",@progbits,_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKl,comdat
 	.weak	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKl # -- Begin function _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKl
@@ -5648,22 +5839,22 @@ _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_tra
 	ld	s1, -32(s0)
 	mv	a0, s1
 	call	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE17is_number_integerEv
-	beqz	a0, .LBB85_2
-	j	.LBB85_1
-.LBB85_1:                               # %cond.true
+	beqz	a0, .LBB87_2
+	j	.LBB87_1
+.LBB87_1:                               # %cond.true
 	addi	a0, s1, 8
-	j	.LBB85_3
-.LBB85_2:                               # %cond.false
+	j	.LBB87_3
+.LBB87_2:                               # %cond.false
 	mv	a0, zero
-	j	.LBB85_3
-.LBB85_3:                               # %cond.end
+	j	.LBB87_3
+.LBB87_3:                               # %cond.end
 	ld	s1, 24(sp)
 	ld	s0, 32(sp)
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end85:
-	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKl, .Lfunc_end85-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKl
+.Lfunc_end87:
+	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKl, .Lfunc_end87-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKl
                                         # -- End function
 	.section	.text._ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE17is_number_integerEv,"axG",@progbits,_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE17is_number_integerEv,comdat
 	.weak	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE17is_number_integerEv # -- Begin function _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE17is_number_integerEv
@@ -5680,21 +5871,21 @@ _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_tra
 	lbu	a2, 0(a1)
 	addi	a0, zero, 1
 	addi	a3, zero, 5
-	beq	a2, a3, .LBB86_2
-	j	.LBB86_1
-.LBB86_1:                               # %lor.rhs
+	beq	a2, a3, .LBB88_2
+	j	.LBB88_1
+.LBB88_1:                               # %lor.rhs
 	lbu	a0, 0(a1)
 	xori	a0, a0, 6
 	seqz	a0, a0
-	j	.LBB86_2
-.LBB86_2:                               # %lor.end
+	j	.LBB88_2
+.LBB88_2:                               # %lor.end
 	andi	a0, a0, 1
 	ld	s0, 16(sp)
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end86:
-	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE17is_number_integerEv, .Lfunc_end86-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE17is_number_integerEv
+.Lfunc_end88:
+	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE17is_number_integerEv, .Lfunc_end88-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE17is_number_integerEv
                                         # -- End function
 	.section	.text._ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKd,"axG",@progbits,_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKd,comdat
 	.weak	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKd # -- Begin function _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKd
@@ -5712,22 +5903,22 @@ _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_tra
 	ld	s1, -32(s0)
 	mv	a0, s1
 	call	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE15is_number_floatEv
-	beqz	a0, .LBB87_2
-	j	.LBB87_1
-.LBB87_1:                               # %cond.true
+	beqz	a0, .LBB89_2
+	j	.LBB89_1
+.LBB89_1:                               # %cond.true
 	addi	a0, s1, 8
-	j	.LBB87_3
-.LBB87_2:                               # %cond.false
+	j	.LBB89_3
+.LBB89_2:                               # %cond.false
 	mv	a0, zero
-	j	.LBB87_3
-.LBB87_3:                               # %cond.end
+	j	.LBB89_3
+.LBB89_3:                               # %cond.end
 	ld	s1, 24(sp)
 	ld	s0, 32(sp)
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end87:
-	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKd, .Lfunc_end87-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKd
+.Lfunc_end89:
+	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKd, .Lfunc_end89-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE12get_impl_ptrEPKd
                                         # -- End function
 	.section	.text._ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE15is_number_floatEv,"axG",@progbits,_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE15is_number_floatEv,comdat
 	.weak	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE15is_number_floatEv # -- Begin function _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE15is_number_floatEv
@@ -5748,12 +5939,12 @@ _ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_tra
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end88:
-	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE15is_number_floatEv, .Lfunc_end88-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE15is_number_floatEv
+.Lfunc_end90:
+	.size	_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE15is_number_floatEv, .Lfunc_end90-_ZNK8nlohmann10basic_jsonISt3mapSt6vectorNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEblmdSaNS_14adl_serializerEE15is_number_floatEv
                                         # -- End function
 	.section	.sdata,"aw",@progbits
 	.p2align	3               # -- Begin function _ZN3glm6rotateIdLNS_9qualifierE0EEENS_3matILi4ELi4ET_XT0_EEERKS4_S3_RKNS_3vecILi3ES3_XT0_EEE
-.LCPI89_0:
+.LCPI91_0:
 	.quad	4607182418800017408     # double 1
 	.section	.text._ZN3glm6rotateIdLNS_9qualifierE0EEENS_3matILi4ELi4ET_XT0_EEERKS4_S3_RKNS_3vecILi3ES3_XT0_EEE,"axG",@progbits,_ZN3glm6rotateIdLNS_9qualifierE0EEENS_3matILi4ELi4ET_XT0_EEERKS4_S3_RKNS_3vecILi3ES3_XT0_EEE,comdat
 	.weak	_ZN3glm6rotateIdLNS_9qualifierE0EEENS_3matILi4ELi4ET_XT0_EEERKS4_S3_RKNS_3vecILi3ES3_XT0_EEE
@@ -5801,8 +5992,8 @@ _ZN3glm6rotateIdLNS_9qualifierE0EEENS_3matILi4ELi4ET_XT0_EEERKS4_S3_RKNS_3vecILi
 	mv	a0, s1
 	call	_ZN3glm9normalizeILi3EdLNS_9qualifierE0EEENS_3vecIXT_ET0_XT1_EEERKS4_
 	fld	ft0, -120(s0)
-	lui	a0, %hi(.LCPI89_0)
-	addi	a0, a0, %lo(.LCPI89_0)
+	lui	a0, %hi(.LCPI91_0)
+	addi	a0, a0, %lo(.LCPI91_0)
 	fld	ft1, 0(a0)
 	fsub.d	ft0, ft1, ft0
 	fmv.x.d	a1, ft0
@@ -6281,8 +6472,8 @@ _ZN3glm6rotateIdLNS_9qualifierE0EEENS_3matILi4ELi4ET_XT0_EEERKS4_S3_RKNS_3vecILi
 	addi	sp, sp, 1056
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end89:
-	.size	_ZN3glm6rotateIdLNS_9qualifierE0EEENS_3matILi4ELi4ET_XT0_EEERKS4_S3_RKNS_3vecILi3ES3_XT0_EEE, .Lfunc_end89-_ZN3glm6rotateIdLNS_9qualifierE0EEENS_3matILi4ELi4ET_XT0_EEERKS4_S3_RKNS_3vecILi3ES3_XT0_EEE
+.Lfunc_end91:
+	.size	_ZN3glm6rotateIdLNS_9qualifierE0EEENS_3matILi4ELi4ET_XT0_EEERKS4_S3_RKNS_3vecILi3ES3_XT0_EEE, .Lfunc_end91-_ZN3glm6rotateIdLNS_9qualifierE0EEENS_3matILi4ELi4ET_XT0_EEERKS4_S3_RKNS_3vecILi3ES3_XT0_EEE
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEES3_RKS4_,"axG",@progbits,_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEES3_RKS4_,comdat
@@ -6324,8 +6515,8 @@ _ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEES3_RKS4_: # @_ZN3glmmlIdLNS_9
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end90:
-	.size	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEES3_RKS4_, .Lfunc_end90-_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEES3_RKS4_
+.Lfunc_end92:
+	.size	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEES3_RKS4_, .Lfunc_end92-_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEES3_RKS4_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi,"axG",@progbits,_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi,comdat
@@ -6333,83 +6524,155 @@ _ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEES3_RKS4_: # @_ZN3glmmlIdLNS_9
 	.p2align	2
 	.type	_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi,@function
 _ZN3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi: # @_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi
+	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	sw	a1, -28(s0)
-	ld	a0, -24(s0)
-	lw	a1, -28(s0)
-	slli	a1, a1, 5
-	add	a0, a0, a1
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
+	addi	sp, sp, -48
+	.cfi_def_cfa_offset 48
+	sd	ra, 40(sp)
+	sd	s0, 32(sp)
+	sd	s1, 24(sp)
+	sd	s2, 16(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	.cfi_offset s2, -32
+	addi	s0, sp, 48
+	.cfi_def_cfa s0, 0
+	sd	a0, -40(s0)
+	sw	a1, -44(s0)
+	ld	s2, -40(s0)
+	lw	s1, -44(s0)
+	call	_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv
+	bge	s1, a0, .LBB93_2
+	j	.LBB93_1
+.LBB93_1:                               # %cond.true
+	j	.LBB93_3
+.LBB93_2:                               # %cond.false
+	lui	a0, %hi(.L.str.24)
+	addi	a0, a0, %lo(.L.str.24)
+	lui	a1, %hi(.L__PRETTY_FUNCTION__._ZN3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi)
+	addi	a2, a1, %lo(.L__PRETTY_FUNCTION__._ZN3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi)
+	lui	a1, %hi(.L.str.25)
+	addi	a3, a1, %lo(.L.str.25)
+	addi	a1, zero, 291
+	call	__assert_func
+.LBB93_3:                               # %cond.end
+	lw	a0, -44(s0)
+	slli	a0, a0, 5
+	add	a0, s2, a0
+	ld	s2, 16(sp)
+	ld	s1, 24(sp)
+	ld	s0, 32(sp)
+	.cfi_def_cfa sp, 48
+	ld	ra, 40(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	.cfi_restore s2
+	addi	sp, sp, 48
+	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end91:
-	.size	_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi, .Lfunc_end91-_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi
+.Lfunc_end93:
+	.size	_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi, .Lfunc_end93-_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi
+	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm3vecILi4EdLNS_9qualifierE0EEixEi,"axG",@progbits,_ZN3glm3vecILi4EdLNS_9qualifierE0EEixEi,comdat
 	.weak	_ZN3glm3vecILi4EdLNS_9qualifierE0EEixEi # -- Begin function _ZN3glm3vecILi4EdLNS_9qualifierE0EEixEi
 	.p2align	2
 	.type	_ZN3glm3vecILi4EdLNS_9qualifierE0EEixEi,@function
 _ZN3glm3vecILi4EdLNS_9qualifierE0EEixEi: # @_ZN3glm3vecILi4EdLNS_9qualifierE0EEixEi
+	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	addi	s0, sp, 48
-	sd	a0, -32(s0)
-	sw	a1, -36(s0)
-	ld	a0, -32(s0)
-	lwu	a1, -36(s0)
-	beqz	a1, .LBB92_5
-	j	.LBB92_1
-.LBB92_1:                               # %entry
-	slli	a2, a1, 32
-	srli	a2, a2, 32
-	addi	a3, zero, 1
-	beq	a2, a3, .LBB92_6
-	j	.LBB92_2
-.LBB92_2:                               # %entry
-	slli	a2, a1, 32
-	srli	a2, a2, 32
-	addi	a3, zero, 2
-	beq	a2, a3, .LBB92_7
-	j	.LBB92_3
-.LBB92_3:                               # %entry
-	slli	a1, a1, 32
+	addi	sp, sp, -64
+	.cfi_def_cfa_offset 64
+	sd	ra, 56(sp)
+	sd	s0, 48(sp)
+	sd	s1, 40(sp)
+	sd	s2, 32(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	.cfi_offset s2, -32
+	addi	s0, sp, 64
+	.cfi_def_cfa s0, 0
+	sd	a0, -48(s0)
+	sw	a1, -52(s0)
+	ld	s2, -48(s0)
+	lw	a0, -52(s0)
+	bltz	a0, .LBB94_3
+	j	.LBB94_1
+.LBB94_1:                               # %land.lhs.true
+	lw	s1, -52(s0)
+	call	_ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv
+	bge	s1, a0, .LBB94_3
+	j	.LBB94_2
+.LBB94_2:                               # %cond.true
+	j	.LBB94_4
+.LBB94_3:                               # %cond.false
+	lui	a0, %hi(.L.str.26)
+	addi	a0, a0, %lo(.L.str.26)
+	lui	a1, %hi(.L__PRETTY_FUNCTION__._ZN3glm3vecILi4EdLNS_9qualifierE0EEixEi)
+	addi	a2, a1, %lo(.L__PRETTY_FUNCTION__._ZN3glm3vecILi4EdLNS_9qualifierE0EEixEi)
+	lui	a1, %hi(.L.str.6)
+	addi	a3, a1, %lo(.L.str.6)
+	addi	a1, zero, 479
+	call	__assert_func
+.LBB94_4:                               # %cond.end
+	lwu	a0, -52(s0)
+	beqz	a0, .LBB94_9
+	j	.LBB94_5
+.LBB94_5:                               # %cond.end
+	slli	a1, a0, 32
 	srli	a1, a1, 32
-	addi	a2, zero, 3
-	beq	a1, a2, .LBB92_8
-	j	.LBB92_4
-.LBB92_4:                               # %sw.default
-	j	.LBB92_5
-.LBB92_5:                               # %sw.bb
-	sd	a0, -24(s0)
-	j	.LBB92_9
-.LBB92_6:                               # %sw.bb2
-	addi	a0, a0, 8
-	sd	a0, -24(s0)
-	j	.LBB92_9
-.LBB92_7:                               # %sw.bb3
-	addi	a0, a0, 16
-	sd	a0, -24(s0)
-	j	.LBB92_9
-.LBB92_8:                               # %sw.bb4
-	addi	a0, a0, 24
-	sd	a0, -24(s0)
-	j	.LBB92_9
-.LBB92_9:                               # %return
-	ld	a0, -24(s0)
-	ld	s0, 32(sp)
-	ld	ra, 40(sp)
-	addi	sp, sp, 48
+	addi	a2, zero, 1
+	beq	a1, a2, .LBB94_10
+	j	.LBB94_6
+.LBB94_6:                               # %cond.end
+	slli	a1, a0, 32
+	srli	a1, a1, 32
+	addi	a2, zero, 2
+	beq	a1, a2, .LBB94_11
+	j	.LBB94_7
+.LBB94_7:                               # %cond.end
+	slli	a0, a0, 32
+	srli	a0, a0, 32
+	addi	a1, zero, 3
+	beq	a0, a1, .LBB94_12
+	j	.LBB94_8
+.LBB94_8:                               # %sw.default
+	j	.LBB94_9
+.LBB94_9:                               # %sw.bb
+	sd	s2, -40(s0)
+	j	.LBB94_13
+.LBB94_10:                              # %sw.bb3
+	addi	a0, s2, 8
+	sd	a0, -40(s0)
+	j	.LBB94_13
+.LBB94_11:                              # %sw.bb4
+	addi	a0, s2, 16
+	sd	a0, -40(s0)
+	j	.LBB94_13
+.LBB94_12:                              # %sw.bb5
+	addi	a0, s2, 24
+	sd	a0, -40(s0)
+	j	.LBB94_13
+.LBB94_13:                              # %return
+	ld	a0, -40(s0)
+	ld	s2, 32(sp)
+	ld	s1, 40(sp)
+	ld	s0, 48(sp)
+	.cfi_def_cfa sp, 64
+	ld	ra, 56(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	.cfi_restore s2
+	addi	sp, sp, 64
+	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end92:
-	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEixEi, .Lfunc_end92-_ZN3glm3vecILi4EdLNS_9qualifierE0EEixEi
+.Lfunc_end94:
+	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEixEi, .Lfunc_end94-_ZN3glm3vecILi4EdLNS_9qualifierE0EEixEi
+	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_,"axG",@progbits,_ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_,comdat
 	.weak	_ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_ # -- Begin function _ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_
@@ -6462,8 +6725,8 @@ _ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_: # @_ZN3glmplIdLNS_9
 	addi	sp, sp, 80
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end93:
-	.size	_ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_, .Lfunc_end93-_ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_
+.Lfunc_end95:
+	.size	_ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_, .Lfunc_end95-_ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_RKS3_,"axG",@progbits,_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_RKS3_,comdat
@@ -6518,8 +6781,8 @@ _ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_RKS3_: # @_ZN3glmmlIdLNS
 	addi	sp, sp, 80
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end94:
-	.size	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_RKS3_, .Lfunc_end94-_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_RKS3_
+.Lfunc_end96:
+	.size	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_RKS3_, .Lfunc_end96-_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_RKS3_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi,"axG",@progbits,_ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi,comdat
@@ -6527,23 +6790,93 @@ _ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_RKS3_: # @_ZN3glmmlIdLNS
 	.p2align	2
 	.type	_ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi,@function
 _ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi: # @_ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi
+	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	sw	a1, -28(s0)
-	ld	a0, -24(s0)
-	lw	a1, -28(s0)
-	slli	a1, a1, 5
-	add	a0, a0, a1
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
+	addi	sp, sp, -48
+	.cfi_def_cfa_offset 48
+	sd	ra, 40(sp)
+	sd	s0, 32(sp)
+	sd	s1, 24(sp)
+	sd	s2, 16(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	.cfi_offset s2, -32
+	addi	s0, sp, 48
+	.cfi_def_cfa s0, 0
+	sd	a0, -40(s0)
+	sw	a1, -44(s0)
+	ld	s2, -40(s0)
+	lw	s1, -44(s0)
+	call	_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv
+	bge	s1, a0, .LBB97_2
+	j	.LBB97_1
+.LBB97_1:                               # %cond.true
+	j	.LBB97_3
+.LBB97_2:                               # %cond.false
+	lui	a0, %hi(.L.str.24)
+	addi	a0, a0, %lo(.L.str.24)
+	lui	a1, %hi(.L__PRETTY_FUNCTION__._ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi)
+	addi	a2, a1, %lo(.L__PRETTY_FUNCTION__._ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi)
+	lui	a1, %hi(.L.str.25)
+	addi	a3, a1, %lo(.L.str.25)
+	addi	a1, zero, 298
+	call	__assert_func
+.LBB97_3:                               # %cond.end
+	lw	a0, -44(s0)
+	slli	a0, a0, 5
+	add	a0, s2, a0
+	ld	s2, 16(sp)
+	ld	s1, 24(sp)
+	ld	s0, 32(sp)
+	.cfi_def_cfa sp, 48
+	ld	ra, 40(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	.cfi_restore s2
+	addi	sp, sp, 48
+	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end95:
-	.size	_ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi, .Lfunc_end95-_ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi
+.Lfunc_end97:
+	.size	_ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi, .Lfunc_end97-_ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv,"axG",@progbits,_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv,comdat
+	.weak	_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv # -- Begin function _ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv
+	.p2align	2
+	.type	_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv,@function
+_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv: # @_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv
+# %bb.0:                                # %entry
+	addi	sp, sp, -16
+	sd	ra, 8(sp)
+	sd	s0, 0(sp)
+	addi	s0, sp, 16
+	addi	a0, zero, 4
+	ld	s0, 0(sp)
+	ld	ra, 8(sp)
+	addi	sp, sp, 16
+	ret
+.Lfunc_end98:
+	.size	_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv, .Lfunc_end98-_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv
+                                        # -- End function
+	.section	.text._ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv,"axG",@progbits,_ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv,comdat
+	.weak	_ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv # -- Begin function _ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv
+	.p2align	2
+	.type	_ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv,@function
+_ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv: # @_ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv
+# %bb.0:                                # %entry
+	addi	sp, sp, -16
+	sd	ra, 8(sp)
+	sd	s0, 0(sp)
+	addi	s0, sp, 16
+	addi	a0, zero, 4
+	ld	s0, 0(sp)
+	ld	ra, 8(sp)
+	addi	sp, sp, 16
+	ret
+.Lfunc_end99:
+	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv, .Lfunc_end99-_ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv
                                         # -- End function
 	.section	.text._ZN3glm3vecILi4EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi4ET_LS1_0EEE,"axG",@progbits,_ZN3glm3vecILi4EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi4ET_LS1_0EEE,comdat
 	.weak	_ZN3glm3vecILi4EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi4ET_LS1_0EEE # -- Begin function _ZN3glm3vecILi4EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi4ET_LS1_0EEE
@@ -6597,8 +6930,8 @@ _ZN3glm3vecILi4EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi4ET_LS1_0EEE: # @_ZN3glm3v
 	addi	sp, sp, 112
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end96:
-	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi4ET_LS1_0EEE, .Lfunc_end96-_ZN3glm3vecILi4EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi4ET_LS1_0EEE
+.Lfunc_end100:
+	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi4ET_LS1_0EEE, .Lfunc_end100-_ZN3glm3vecILi4EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi4ET_LS1_0EEE
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm6detail16compute_vec4_addIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_,"axG",@progbits,_ZN3glm6detail16compute_vec4_addIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_,comdat
@@ -6646,8 +6979,8 @@ _ZN3glm6detail16compute_vec4_addIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end97:
-	.size	_ZN3glm6detail16compute_vec4_addIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_, .Lfunc_end97-_ZN3glm6detail16compute_vec4_addIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_
+.Lfunc_end101:
+	.size	_ZN3glm6detail16compute_vec4_addIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_, .Lfunc_end101-_ZN3glm6detail16compute_vec4_addIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Edddd,"axG",@progbits,_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Edddd,comdat
@@ -6682,8 +7015,8 @@ _ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Edddd: # @_ZN3glm3vecILi4EdLNS_9qualifierE0
 	ld	ra, 56(sp)
 	addi	sp, sp, 64
 	ret
-.Lfunc_end98:
-	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Edddd, .Lfunc_end98-_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Edddd
+.Lfunc_end102:
+	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Edddd, .Lfunc_end102-_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Edddd
                                         # -- End function
 	.section	.text._ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_T_,"axG",@progbits,_ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_T_,comdat
 	.weak	_ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_T_ # -- Begin function _ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_T_
@@ -6737,8 +7070,8 @@ _ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_T_: # @_ZN3glm3vecILi4EdLNS_9qualif
 	addi	sp, sp, 112
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end99:
-	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_T_, .Lfunc_end99-_ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_T_
+.Lfunc_end103:
+	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_T_, .Lfunc_end103-_ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_T_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm6detail16compute_vec4_mulIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_,"axG",@progbits,_ZN3glm6detail16compute_vec4_mulIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_,comdat
@@ -6786,8 +7119,8 @@ _ZN3glm6detail16compute_vec4_mulIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end100:
-	.size	_ZN3glm6detail16compute_vec4_mulIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_, .Lfunc_end100-_ZN3glm6detail16compute_vec4_mulIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_
+.Lfunc_end104:
+	.size	_ZN3glm6detail16compute_vec4_mulIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_, .Lfunc_end104-_ZN3glm6detail16compute_vec4_mulIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Ed,"axG",@progbits,_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Ed,comdat
@@ -6816,118 +7149,194 @@ _ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Ed: # @_ZN3glm3vecILi4EdLNS_9qualifierE0EEC
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end101:
-	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Ed, .Lfunc_end101-_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Ed
+.Lfunc_end105:
+	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Ed, .Lfunc_end105-_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Ed
                                         # -- End function
 	.section	.text._ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi,"axG",@progbits,_ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi,comdat
 	.weak	_ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi # -- Begin function _ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi
 	.p2align	2
 	.type	_ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi,@function
 _ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi: # @_ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi
+	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	addi	s0, sp, 48
-	sd	a0, -32(s0)
-	sw	a1, -36(s0)
-	ld	a0, -32(s0)
-	lwu	a1, -36(s0)
-	beqz	a1, .LBB102_5
-	j	.LBB102_1
-.LBB102_1:                              # %entry
-	slli	a2, a1, 32
-	srli	a2, a2, 32
-	addi	a3, zero, 1
-	beq	a2, a3, .LBB102_6
-	j	.LBB102_2
-.LBB102_2:                              # %entry
-	slli	a2, a1, 32
-	srli	a2, a2, 32
-	addi	a3, zero, 2
-	beq	a2, a3, .LBB102_7
-	j	.LBB102_3
-.LBB102_3:                              # %entry
-	slli	a1, a1, 32
+	addi	sp, sp, -64
+	.cfi_def_cfa_offset 64
+	sd	ra, 56(sp)
+	sd	s0, 48(sp)
+	sd	s1, 40(sp)
+	sd	s2, 32(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	.cfi_offset s2, -32
+	addi	s0, sp, 64
+	.cfi_def_cfa s0, 0
+	sd	a0, -48(s0)
+	sw	a1, -52(s0)
+	ld	s2, -48(s0)
+	lw	a0, -52(s0)
+	bltz	a0, .LBB106_3
+	j	.LBB106_1
+.LBB106_1:                              # %land.lhs.true
+	lw	s1, -52(s0)
+	call	_ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv
+	bge	s1, a0, .LBB106_3
+	j	.LBB106_2
+.LBB106_2:                              # %cond.true
+	j	.LBB106_4
+.LBB106_3:                              # %cond.false
+	lui	a0, %hi(.L.str.26)
+	addi	a0, a0, %lo(.L.str.26)
+	lui	a1, %hi(.L__PRETTY_FUNCTION__._ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi)
+	addi	a2, a1, %lo(.L__PRETTY_FUNCTION__._ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi)
+	lui	a1, %hi(.L.str.6)
+	addi	a3, a1, %lo(.L.str.6)
+	addi	a1, zero, 497
+	call	__assert_func
+.LBB106_4:                              # %cond.end
+	lwu	a0, -52(s0)
+	beqz	a0, .LBB106_9
+	j	.LBB106_5
+.LBB106_5:                              # %cond.end
+	slli	a1, a0, 32
 	srli	a1, a1, 32
-	addi	a2, zero, 3
-	beq	a1, a2, .LBB102_8
-	j	.LBB102_4
-.LBB102_4:                              # %sw.default
-	j	.LBB102_5
-.LBB102_5:                              # %sw.bb
-	sd	a0, -24(s0)
-	j	.LBB102_9
-.LBB102_6:                              # %sw.bb2
-	addi	a0, a0, 8
-	sd	a0, -24(s0)
-	j	.LBB102_9
-.LBB102_7:                              # %sw.bb3
-	addi	a0, a0, 16
-	sd	a0, -24(s0)
-	j	.LBB102_9
-.LBB102_8:                              # %sw.bb4
-	addi	a0, a0, 24
-	sd	a0, -24(s0)
-	j	.LBB102_9
-.LBB102_9:                              # %return
-	ld	a0, -24(s0)
-	ld	s0, 32(sp)
-	ld	ra, 40(sp)
-	addi	sp, sp, 48
+	addi	a2, zero, 1
+	beq	a1, a2, .LBB106_10
+	j	.LBB106_6
+.LBB106_6:                              # %cond.end
+	slli	a1, a0, 32
+	srli	a1, a1, 32
+	addi	a2, zero, 2
+	beq	a1, a2, .LBB106_11
+	j	.LBB106_7
+.LBB106_7:                              # %cond.end
+	slli	a0, a0, 32
+	srli	a0, a0, 32
+	addi	a1, zero, 3
+	beq	a0, a1, .LBB106_12
+	j	.LBB106_8
+.LBB106_8:                              # %sw.default
+	j	.LBB106_9
+.LBB106_9:                              # %sw.bb
+	sd	s2, -40(s0)
+	j	.LBB106_13
+.LBB106_10:                             # %sw.bb3
+	addi	a0, s2, 8
+	sd	a0, -40(s0)
+	j	.LBB106_13
+.LBB106_11:                             # %sw.bb4
+	addi	a0, s2, 16
+	sd	a0, -40(s0)
+	j	.LBB106_13
+.LBB106_12:                             # %sw.bb5
+	addi	a0, s2, 24
+	sd	a0, -40(s0)
+	j	.LBB106_13
+.LBB106_13:                             # %return
+	ld	a0, -40(s0)
+	ld	s2, 32(sp)
+	ld	s1, 40(sp)
+	ld	s0, 48(sp)
+	.cfi_def_cfa sp, 64
+	ld	ra, 56(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	.cfi_restore s2
+	addi	sp, sp, 64
+	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end102:
-	.size	_ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi, .Lfunc_end102-_ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi
+.Lfunc_end106:
+	.size	_ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi, .Lfunc_end106-_ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi
+	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi,"axG",@progbits,_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi,comdat
 	.weak	_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi # -- Begin function _ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi
 	.p2align	2
 	.type	_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi,@function
 _ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi: # @_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi
+	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	addi	s0, sp, 48
-	sd	a0, -32(s0)
-	sw	a1, -36(s0)
-	ld	a0, -32(s0)
-	lwu	a1, -36(s0)
-	beqz	a1, .LBB103_4
-	j	.LBB103_1
-.LBB103_1:                              # %entry
-	slli	a2, a1, 32
-	srli	a2, a2, 32
-	addi	a3, zero, 1
-	beq	a2, a3, .LBB103_5
-	j	.LBB103_2
-.LBB103_2:                              # %entry
-	slli	a1, a1, 32
+	addi	sp, sp, -64
+	.cfi_def_cfa_offset 64
+	sd	ra, 56(sp)
+	sd	s0, 48(sp)
+	sd	s1, 40(sp)
+	sd	s2, 32(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	.cfi_offset s2, -32
+	addi	s0, sp, 64
+	.cfi_def_cfa s0, 0
+	sd	a0, -48(s0)
+	sw	a1, -52(s0)
+	ld	s2, -48(s0)
+	lw	a0, -52(s0)
+	bltz	a0, .LBB107_3
+	j	.LBB107_1
+.LBB107_1:                              # %land.lhs.true
+	lw	s1, -52(s0)
+	call	_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv
+	bge	s1, a0, .LBB107_3
+	j	.LBB107_2
+.LBB107_2:                              # %cond.true
+	j	.LBB107_4
+.LBB107_3:                              # %cond.false
+	lui	a0, %hi(.L.str.5)
+	addi	a0, a0, %lo(.L.str.5)
+	lui	a1, %hi(.L__PRETTY_FUNCTION__._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi)
+	addi	a2, a1, %lo(.L__PRETTY_FUNCTION__._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi)
+	lui	a1, %hi(.L.str.6)
+	addi	a3, a1, %lo(.L.str.6)
+	addi	a1, zero, 186
+	call	__assert_func
+.LBB107_4:                              # %cond.end
+	lwu	a0, -52(s0)
+	beqz	a0, .LBB107_8
+	j	.LBB107_5
+.LBB107_5:                              # %cond.end
+	slli	a1, a0, 32
 	srli	a1, a1, 32
-	addi	a2, zero, 2
-	beq	a1, a2, .LBB103_6
-	j	.LBB103_3
-.LBB103_3:                              # %sw.default
-	j	.LBB103_4
-.LBB103_4:                              # %sw.bb
-	sd	a0, -24(s0)
-	j	.LBB103_7
-.LBB103_5:                              # %sw.bb2
-	addi	a0, a0, 8
-	sd	a0, -24(s0)
-	j	.LBB103_7
-.LBB103_6:                              # %sw.bb3
-	addi	a0, a0, 16
-	sd	a0, -24(s0)
-	j	.LBB103_7
-.LBB103_7:                              # %return
-	ld	a0, -24(s0)
-	ld	s0, 32(sp)
-	ld	ra, 40(sp)
-	addi	sp, sp, 48
+	addi	a2, zero, 1
+	beq	a1, a2, .LBB107_9
+	j	.LBB107_6
+.LBB107_6:                              # %cond.end
+	slli	a0, a0, 32
+	srli	a0, a0, 32
+	addi	a1, zero, 2
+	beq	a0, a1, .LBB107_10
+	j	.LBB107_7
+.LBB107_7:                              # %sw.default
+	j	.LBB107_8
+.LBB107_8:                              # %sw.bb
+	sd	s2, -40(s0)
+	j	.LBB107_11
+.LBB107_9:                              # %sw.bb3
+	addi	a0, s2, 8
+	sd	a0, -40(s0)
+	j	.LBB107_11
+.LBB107_10:                             # %sw.bb4
+	addi	a0, s2, 16
+	sd	a0, -40(s0)
+	j	.LBB107_11
+.LBB107_11:                             # %return
+	ld	a0, -40(s0)
+	ld	s2, 32(sp)
+	ld	s1, 40(sp)
+	ld	s0, 48(sp)
+	.cfi_def_cfa sp, 64
+	ld	ra, 56(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	.cfi_restore s2
+	addi	sp, sp, 64
+	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end103:
-	.size	_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi, .Lfunc_end103-_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi
+.Lfunc_end107:
+	.size	_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi, .Lfunc_end107-_ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi
+	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm6detail17compute_normalizeILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE,"axG",@progbits,_ZN3glm6detail17compute_normalizeILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE,comdat
 	.weak	_ZN3glm6detail17compute_normalizeILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE # -- Begin function _ZN3glm6detail17compute_normalizeILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE
@@ -6972,8 +7381,8 @@ _ZN3glm6detail17compute_normalizeILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end104:
-	.size	_ZN3glm6detail17compute_normalizeILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE, .Lfunc_end104-_ZN3glm6detail17compute_normalizeILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE
+.Lfunc_end108:
+	.size	_ZN3glm6detail17compute_normalizeILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE, .Lfunc_end108-_ZN3glm6detail17compute_normalizeILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S3_,"axG",@progbits,_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S3_,comdat
@@ -7015,13 +7424,13 @@ _ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S3_: # @_ZN3glmmlIdLNS_9
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end105:
-	.size	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S3_, .Lfunc_end105-_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S3_
+.Lfunc_end109:
+	.size	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S3_, .Lfunc_end109-_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S3_
 	.cfi_endproc
                                         # -- End function
 	.section	.sdata,"aw",@progbits
 	.p2align	3               # -- Begin function _ZN3glm11inversesqrtIdEET_S1_
-.LCPI106_0:
+.LCPI110_0:
 	.quad	4607182418800017408     # double 1
 	.section	.text._ZN3glm11inversesqrtIdEET_S1_,"axG",@progbits,_ZN3glm11inversesqrtIdEET_S1_,comdat
 	.weak	_ZN3glm11inversesqrtIdEET_S1_
@@ -7035,10 +7444,11 @@ _ZN3glm11inversesqrtIdEET_S1_:          # @_ZN3glm11inversesqrtIdEET_S1_
 	addi	s0, sp, 32
 	fmv.d.x	ft0, a0
 	sd	a0, -24(s0)
-	fld	ft0, -24(s0)
-	fsqrt.d	ft0, ft0
-	lui	a0, %hi(.LCPI106_0)
-	addi	a0, a0, %lo(.LCPI106_0)
+	ld	a0, -24(s0)
+	call	sqrt
+	fmv.d.x	ft0, a0
+	lui	a0, %hi(.LCPI110_0)
+	addi	a0, a0, %lo(.LCPI110_0)
 	fld	ft1, 0(a0)
 	fdiv.d	ft0, ft1, ft0
 	fmv.x.d	a0, ft0
@@ -7046,8 +7456,8 @@ _ZN3glm11inversesqrtIdEET_S1_:          # @_ZN3glm11inversesqrtIdEET_S1_
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end106:
-	.size	_ZN3glm11inversesqrtIdEET_S1_, .Lfunc_end106-_ZN3glm11inversesqrtIdEET_S1_
+.Lfunc_end110:
+	.size	_ZN3glm11inversesqrtIdEET_S1_, .Lfunc_end110-_ZN3glm11inversesqrtIdEET_S1_
                                         # -- End function
 	.section	.text._ZN3glm3dotILi3EdLNS_9qualifierE0EEET0_RKNS_3vecIXT_ES2_XT1_EEES6_,"axG",@progbits,_ZN3glm3dotILi3EdLNS_9qualifierE0EEET0_RKNS_3vecIXT_ES2_XT1_EEES6_,comdat
 	.weak	_ZN3glm3dotILi3EdLNS_9qualifierE0EEET0_RKNS_3vecIXT_ES2_XT1_EEES6_ # -- Begin function _ZN3glm3dotILi3EdLNS_9qualifierE0EEET0_RKNS_3vecIXT_ES2_XT1_EEES6_
@@ -7077,8 +7487,8 @@ _ZN3glm3dotILi3EdLNS_9qualifierE0EEET0_RKNS_3vecIXT_ES2_XT1_EEES6_: # @_ZN3glm3d
 	addi	sp, sp, 32
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end107:
-	.size	_ZN3glm3dotILi3EdLNS_9qualifierE0EEET0_RKNS_3vecIXT_ES2_XT1_EEES6_, .Lfunc_end107-_ZN3glm3dotILi3EdLNS_9qualifierE0EEET0_RKNS_3vecIXT_ES2_XT1_EEES6_
+.Lfunc_end111:
+	.size	_ZN3glm3dotILi3EdLNS_9qualifierE0EEET0_RKNS_3vecIXT_ES2_XT1_EEES6_, .Lfunc_end111-_ZN3glm3dotILi3EdLNS_9qualifierE0EEET0_RKNS_3vecIXT_ES2_XT1_EEES6_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_,"axG",@progbits,_ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_,comdat
@@ -7116,8 +7526,8 @@ _ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_
 	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end108:
-	.size	_ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_, .Lfunc_end108-_ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_
+.Lfunc_end112:
+	.size	_ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_, .Lfunc_end112-_ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_,"axG",@progbits,_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_,comdat
@@ -7161,8 +7571,8 @@ _ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_: # @_ZN3glmmlIdLNS_9
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end109:
-	.size	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_, .Lfunc_end109-_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_
+.Lfunc_end113:
+	.size	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_, .Lfunc_end113-_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_,"axG",@progbits,_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_,comdat
@@ -7216,8 +7626,8 @@ _ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_: # @_ZN3glmmlIdLNS_9
 	addi	sp, sp, 80
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end110:
-	.size	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_, .Lfunc_end110-_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_
+.Lfunc_end114:
+	.size	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_, .Lfunc_end114-_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_RKNS0_ILi4ET_LS1_0EEE,"axG",@progbits,_ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_RKNS0_ILi4ET_LS1_0EEE,comdat
@@ -7272,8 +7682,8 @@ _ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_RKNS0_ILi4ET_LS1_0EEE: # @_ZN3glm3v
 	addi	sp, sp, 112
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end111:
-	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_RKNS0_ILi4ET_LS1_0EEE, .Lfunc_end111-_ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_RKNS0_ILi4ET_LS1_0EEE
+.Lfunc_end115:
+	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_RKNS0_ILi4ET_LS1_0EEE, .Lfunc_end115-_ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_RKNS0_ILi4ET_LS1_0EEE
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt11__remove_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_,"axG",@progbits,_ZSt11__remove_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_,comdat
@@ -7314,36 +7724,36 @@ _ZSt11__remove_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt
 	addi	a0, s0, -48
 	addi	a1, s0, -56
 	call	_ZN9__gnu_cxxeqIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17__normal_iteratorIT_T0_EESD_
-	beqz	a0, .LBB112_2
-	j	.LBB112_1
-.LBB112_1:                              # %if.then
+	beqz	a0, .LBB116_2
+	j	.LBB116_1
+.LBB116_1:                              # %if.then
 	ld	a0, -48(s0)
 	sd	a0, -40(s0)
-	j	.LBB112_9
-.LBB112_2:                              # %if.end
+	j	.LBB116_9
+.LBB116_2:                              # %if.end
 	ld	a0, -48(s0)
 	sd	a0, -104(s0)
 	addi	a0, s0, -48
 	call	_ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEppEv
-	j	.LBB112_3
-.LBB112_3:                              # %for.cond
+	j	.LBB116_3
+.LBB116_3:                              # %for.cond
                                         # =>This Inner Loop Header: Depth=1
 	addi	a0, s0, -48
 	addi	a1, s0, -56
 	call	_ZN9__gnu_cxxneIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17__normal_iteratorIT_T0_EESD_
-	beqz	a0, .LBB112_8
-	j	.LBB112_4
-.LBB112_4:                              # %for.body
-                                        #   in Loop: Header=BB112_3 Depth=1
+	beqz	a0, .LBB116_8
+	j	.LBB116_4
+.LBB116_4:                              # %for.body
+                                        #   in Loop: Header=BB116_3 Depth=1
 	ld	a0, -48(s0)
 	sd	a0, -112(s0)
 	ld	a1, -112(s0)
 	addi	a0, s0, -64
 	call	_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEclINS_17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEEbT_
-	bnez	a0, .LBB112_6
-	j	.LBB112_5
-.LBB112_5:                              # %if.then21
-                                        #   in Loop: Header=BB112_3 Depth=1
+	bnez	a0, .LBB116_6
+	j	.LBB116_5
+.LBB116_5:                              # %if.then21
+                                        #   in Loop: Header=BB116_3 Depth=1
 	addi	a0, s0, -48
 	call	_ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEdeEv
 	call	_ZSt4moveIRcEONSt16remove_referenceIT_E4typeEOS2_
@@ -7354,20 +7764,20 @@ _ZSt11__remove_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt
 	sb	s1, 0(a0)
 	mv	a0, s2
 	call	_ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEppEv
-	j	.LBB112_6
-.LBB112_6:                              # %if.end26
-                                        #   in Loop: Header=BB112_3 Depth=1
-	j	.LBB112_7
-.LBB112_7:                              # %for.inc
-                                        #   in Loop: Header=BB112_3 Depth=1
+	j	.LBB116_6
+.LBB116_6:                              # %if.end26
+                                        #   in Loop: Header=BB116_3 Depth=1
+	j	.LBB116_7
+.LBB116_7:                              # %for.inc
+                                        #   in Loop: Header=BB116_3 Depth=1
 	addi	a0, s0, -48
 	call	_ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEppEv
-	j	.LBB112_3
-.LBB112_8:                              # %for.end
+	j	.LBB116_3
+.LBB116_8:                              # %for.end
 	ld	a0, -104(s0)
 	sd	a0, -40(s0)
-	j	.LBB112_9
-.LBB112_9:                              # %return
+	j	.LBB116_9
+.LBB116_9:                              # %return
 	ld	a0, -40(s0)
 	ld	s2, 80(sp)
 	ld	s1, 88(sp)
@@ -7381,8 +7791,8 @@ _ZSt11__remove_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt
 	addi	sp, sp, 112
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end112:
-	.size	_ZSt11__remove_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_, .Lfunc_end112-_ZSt11__remove_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_
+.Lfunc_end116:
+	.size	_ZSt11__remove_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_, .Lfunc_end116-_ZSt11__remove_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN9__gnu_cxx5__ops17__iter_equals_valIKcEENS0_16_Iter_equals_valIT_EERS4_,"axG",@progbits,_ZN9__gnu_cxx5__ops17__iter_equals_valIKcEENS0_16_Iter_equals_valIT_EERS4_,comdat
@@ -7413,8 +7823,8 @@ _ZN9__gnu_cxx5__ops17__iter_equals_valIKcEENS0_16_Iter_equals_valIT_EERS4_: # @_
 	addi	sp, sp, 32
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end113:
-	.size	_ZN9__gnu_cxx5__ops17__iter_equals_valIKcEENS0_16_Iter_equals_valIT_EERS4_, .Lfunc_end113-_ZN9__gnu_cxx5__ops17__iter_equals_valIKcEENS0_16_Iter_equals_valIT_EERS4_
+.Lfunc_end117:
+	.size	_ZN9__gnu_cxx5__ops17__iter_equals_valIKcEENS0_16_Iter_equals_valIT_EERS4_, .Lfunc_end117-_ZN9__gnu_cxx5__ops17__iter_equals_valIKcEENS0_16_Iter_equals_valIT_EERS4_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_,"axG",@progbits,_ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_,comdat
@@ -7432,23 +7842,23 @@ _ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11c
 	.cfi_offset s0, -16
 	addi	s0, sp, 96
 	.cfi_def_cfa s0, 0
-	sd	a0, -32(s0)
-	sd	a1, -40(s0)
-	sd	a2, -48(s0)
-	ld	a0, -32(s0)
-	sd	a0, -56(s0)
+	sd	a0, -40(s0)
+	sd	a1, -48(s0)
+	sd	a2, -56(s0)
 	ld	a0, -40(s0)
 	sd	a0, -64(s0)
 	ld	a0, -48(s0)
 	sd	a0, -72(s0)
-	addi	a0, s0, -32
-	call	_ZSt19__iterator_categoryIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEENSt15iterator_traitsIT_E17iterator_categoryERKSB_
 	ld	a0, -56(s0)
-	ld	a1, -64(s0)
-	ld	a2, -72(s0)
-	call	_ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_St26random_access_iterator_tag
+	sd	a0, -80(s0)
+	addi	a0, s0, -40
 	sd	a0, -24(s0)
-	ld	a0, -24(s0)
+	ld	a0, -64(s0)
+	ld	a1, -72(s0)
+	ld	a2, -80(s0)
+	call	_ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_St26random_access_iterator_tag
+	sd	a0, -32(s0)
+	ld	a0, -32(s0)
 	ld	s0, 80(sp)
 	.cfi_def_cfa sp, 96
 	ld	ra, 88(sp)
@@ -7457,8 +7867,8 @@ _ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11c
 	addi	sp, sp, 96
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end114:
-	.size	_ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_, .Lfunc_end114-_ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_
+.Lfunc_end118:
+	.size	_ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_, .Lfunc_end118-_ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN9__gnu_cxxeqIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17__normal_iteratorIT_T0_EESD_,"axG",@progbits,_ZN9__gnu_cxxeqIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17__normal_iteratorIT_T0_EESD_,comdat
@@ -7487,8 +7897,8 @@ _ZN9__gnu_cxxeqIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end115:
-	.size	_ZN9__gnu_cxxeqIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17__normal_iteratorIT_T0_EESD_, .Lfunc_end115-_ZN9__gnu_cxxeqIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17__normal_iteratorIT_T0_EESD_
+.Lfunc_end119:
+	.size	_ZN9__gnu_cxxeqIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17__normal_iteratorIT_T0_EESD_, .Lfunc_end119-_ZN9__gnu_cxxeqIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17__normal_iteratorIT_T0_EESD_
                                         # -- End function
 	.section	.text._ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEppEv,"axG",@progbits,_ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEppEv,comdat
 	.weak	_ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEppEv # -- Begin function _ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEppEv
@@ -7509,8 +7919,8 @@ _ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcE
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end116:
-	.size	_ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEppEv, .Lfunc_end116-_ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEppEv
+.Lfunc_end120:
+	.size	_ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEppEv, .Lfunc_end120-_ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEppEv
                                         # -- End function
 	.section	.text._ZN9__gnu_cxxneIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17__normal_iteratorIT_T0_EESD_,"axG",@progbits,_ZN9__gnu_cxxneIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17__normal_iteratorIT_T0_EESD_,comdat
 	.weak	_ZN9__gnu_cxxneIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17__normal_iteratorIT_T0_EESD_ # -- Begin function _ZN9__gnu_cxxneIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17__normal_iteratorIT_T0_EESD_
@@ -7538,8 +7948,8 @@ _ZN9__gnu_cxxneIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end117:
-	.size	_ZN9__gnu_cxxneIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17__normal_iteratorIT_T0_EESD_, .Lfunc_end117-_ZN9__gnu_cxxneIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17__normal_iteratorIT_T0_EESD_
+.Lfunc_end121:
+	.size	_ZN9__gnu_cxxneIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17__normal_iteratorIT_T0_EESD_, .Lfunc_end121-_ZN9__gnu_cxxneIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17__normal_iteratorIT_T0_EESD_
                                         # -- End function
 	.section	.text._ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEclINS_17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEEbT_,"axG",@progbits,_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEclINS_17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEEbT_,comdat
 	.weak	_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEclINS_17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEEbT_ # -- Begin function _ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEclINS_17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEEbT_
@@ -7567,8 +7977,8 @@ _ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEclINS_17__normal_iteratorIPcNSt7__cxx11
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end118:
-	.size	_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEclINS_17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEEbT_, .Lfunc_end118-_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEclINS_17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEEbT_
+.Lfunc_end122:
+	.size	_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEclINS_17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEEbT_, .Lfunc_end122-_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEclINS_17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEEbT_
                                         # -- End function
 	.section	.text._ZSt4moveIRcEONSt16remove_referenceIT_E4typeEOS2_,"axG",@progbits,_ZSt4moveIRcEONSt16remove_referenceIT_E4typeEOS2_,comdat
 	.weak	_ZSt4moveIRcEONSt16remove_referenceIT_E4typeEOS2_ # -- Begin function _ZSt4moveIRcEONSt16remove_referenceIT_E4typeEOS2_
@@ -7586,8 +7996,8 @@ _ZSt4moveIRcEONSt16remove_referenceIT_E4typeEOS2_: # @_ZSt4moveIRcEONSt16remove_
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end119:
-	.size	_ZSt4moveIRcEONSt16remove_referenceIT_E4typeEOS2_, .Lfunc_end119-_ZSt4moveIRcEONSt16remove_referenceIT_E4typeEOS2_
+.Lfunc_end123:
+	.size	_ZSt4moveIRcEONSt16remove_referenceIT_E4typeEOS2_, .Lfunc_end123-_ZSt4moveIRcEONSt16remove_referenceIT_E4typeEOS2_
                                         # -- End function
 	.section	.text._ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEdeEv,"axG",@progbits,_ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEdeEv,comdat
 	.weak	_ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEdeEv # -- Begin function _ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEdeEv
@@ -7606,8 +8016,8 @@ _ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIc
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end120:
-	.size	_ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEdeEv, .Lfunc_end120-_ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEdeEv
+.Lfunc_end124:
+	.size	_ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEdeEv, .Lfunc_end124-_ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEdeEv
                                         # -- End function
 	.section	.text._ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_St26random_access_iterator_tag,"axG",@progbits,_ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_St26random_access_iterator_tag,comdat
 	.weak	_ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_St26random_access_iterator_tag # -- Begin function _ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_St26random_access_iterator_tag
@@ -7632,28 +8042,28 @@ _ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11c
 	call	_ZN9__gnu_cxxmiIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS_17__normal_iteratorIT_T0_E15difference_typeERKSB_SE_
 	srai	a0, a0, 2
 	sd	a0, -64(s0)
-	j	.LBB121_1
-.LBB121_1:                              # %for.cond
+	j	.LBB125_1
+.LBB125_1:                              # %for.cond
                                         # =>This Inner Loop Header: Depth=1
 	ld	a0, -64(s0)
 	addi	a1, zero, 1
-	blt	a0, a1, .LBB121_12
-	j	.LBB121_2
-.LBB121_2:                              # %for.body
-                                        #   in Loop: Header=BB121_1 Depth=1
+	blt	a0, a1, .LBB125_12
+	j	.LBB125_2
+.LBB125_2:                              # %for.body
+                                        #   in Loop: Header=BB125_1 Depth=1
 	ld	a0, -32(s0)
 	sd	a0, -72(s0)
 	ld	a1, -72(s0)
 	addi	a0, s0, -48
 	call	_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEclINS_17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEEbT_
-	beqz	a0, .LBB121_4
-	j	.LBB121_3
-.LBB121_3:                              # %if.then
+	beqz	a0, .LBB125_4
+	j	.LBB125_3
+.LBB125_3:                              # %if.then
 	ld	a0, -32(s0)
 	sd	a0, -24(s0)
-	j	.LBB121_27
-.LBB121_4:                              # %if.end
-                                        #   in Loop: Header=BB121_1 Depth=1
+	j	.LBB125_27
+.LBB125_4:                              # %if.end
+                                        #   in Loop: Header=BB125_1 Depth=1
 	addi	a0, s0, -32
 	call	_ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEppEv
 	ld	a0, -32(s0)
@@ -7661,14 +8071,14 @@ _ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11c
 	ld	a1, -80(s0)
 	addi	a0, s0, -48
 	call	_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEclINS_17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEEbT_
-	beqz	a0, .LBB121_6
-	j	.LBB121_5
-.LBB121_5:                              # %if.then12
+	beqz	a0, .LBB125_6
+	j	.LBB125_5
+.LBB125_5:                              # %if.then12
 	ld	a0, -32(s0)
 	sd	a0, -24(s0)
-	j	.LBB121_27
-.LBB121_6:                              # %if.end13
-                                        #   in Loop: Header=BB121_1 Depth=1
+	j	.LBB125_27
+.LBB125_6:                              # %if.end13
+                                        #   in Loop: Header=BB125_1 Depth=1
 	addi	a0, s0, -32
 	call	_ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEppEv
 	ld	a0, -32(s0)
@@ -7676,14 +8086,14 @@ _ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11c
 	ld	a1, -88(s0)
 	addi	a0, s0, -48
 	call	_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEclINS_17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEEbT_
-	beqz	a0, .LBB121_8
-	j	.LBB121_7
-.LBB121_7:                              # %if.then19
+	beqz	a0, .LBB125_8
+	j	.LBB125_7
+.LBB125_7:                              # %if.then19
 	ld	a0, -32(s0)
 	sd	a0, -24(s0)
-	j	.LBB121_27
-.LBB121_8:                              # %if.end20
-                                        #   in Loop: Header=BB121_1 Depth=1
+	j	.LBB125_27
+.LBB125_8:                              # %if.end20
+                                        #   in Loop: Header=BB125_1 Depth=1
 	addi	a0, s0, -32
 	call	_ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEppEv
 	ld	a0, -32(s0)
@@ -7691,96 +8101,96 @@ _ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11c
 	ld	a1, -96(s0)
 	addi	a0, s0, -48
 	call	_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEclINS_17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEEbT_
-	beqz	a0, .LBB121_10
-	j	.LBB121_9
-.LBB121_9:                              # %if.then26
+	beqz	a0, .LBB125_10
+	j	.LBB125_9
+.LBB125_9:                              # %if.then26
 	ld	a0, -32(s0)
 	sd	a0, -24(s0)
-	j	.LBB121_27
-.LBB121_10:                             # %if.end27
-                                        #   in Loop: Header=BB121_1 Depth=1
+	j	.LBB125_27
+.LBB125_10:                             # %if.end27
+                                        #   in Loop: Header=BB125_1 Depth=1
 	addi	a0, s0, -32
 	call	_ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEppEv
-	j	.LBB121_11
-.LBB121_11:                             # %for.inc
-                                        #   in Loop: Header=BB121_1 Depth=1
+	j	.LBB125_11
+.LBB125_11:                             # %for.inc
+                                        #   in Loop: Header=BB125_1 Depth=1
 	ld	a0, -64(s0)
 	addi	a0, a0, -1
 	sd	a0, -64(s0)
-	j	.LBB121_1
-.LBB121_12:                             # %for.end
+	j	.LBB125_1
+.LBB125_12:                             # %for.end
 	addi	a0, s0, -40
 	addi	a1, s0, -32
 	call	_ZN9__gnu_cxxmiIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS_17__normal_iteratorIT_T0_E15difference_typeERKSB_SE_
-	beqz	a0, .LBB121_25
-	j	.LBB121_13
-.LBB121_13:                             # %for.end
+	beqz	a0, .LBB125_25
+	j	.LBB125_13
+.LBB125_13:                             # %for.end
 	addi	a1, zero, 1
-	beq	a0, a1, .LBB121_22
-	j	.LBB121_14
-.LBB121_14:                             # %for.end
+	beq	a0, a1, .LBB125_22
+	j	.LBB125_14
+.LBB125_14:                             # %for.end
 	addi	a1, zero, 2
-	beq	a0, a1, .LBB121_19
-	j	.LBB121_15
-.LBB121_15:                             # %for.end
+	beq	a0, a1, .LBB125_19
+	j	.LBB125_15
+.LBB125_15:                             # %for.end
 	addi	a1, zero, 3
-	bne	a0, a1, .LBB121_26
-	j	.LBB121_16
-.LBB121_16:                             # %sw.bb
+	bne	a0, a1, .LBB125_26
+	j	.LBB125_16
+.LBB125_16:                             # %sw.bb
 	ld	a0, -32(s0)
 	sd	a0, -104(s0)
 	ld	a1, -104(s0)
 	addi	a0, s0, -48
 	call	_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEclINS_17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEEbT_
-	beqz	a0, .LBB121_18
-	j	.LBB121_17
-.LBB121_17:                             # %if.then34
+	beqz	a0, .LBB125_18
+	j	.LBB125_17
+.LBB125_17:                             # %if.then34
 	ld	a0, -32(s0)
 	sd	a0, -24(s0)
-	j	.LBB121_27
-.LBB121_18:                             # %if.end35
+	j	.LBB125_27
+.LBB125_18:                             # %if.end35
 	addi	a0, s0, -32
 	call	_ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEppEv
-	j	.LBB121_19
-.LBB121_19:                             # %sw.bb37
+	j	.LBB125_19
+.LBB125_19:                             # %sw.bb37
 	ld	a0, -32(s0)
 	sd	a0, -112(s0)
 	ld	a1, -112(s0)
 	addi	a0, s0, -48
 	call	_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEclINS_17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEEbT_
-	beqz	a0, .LBB121_21
-	j	.LBB121_20
-.LBB121_20:                             # %if.then42
+	beqz	a0, .LBB125_21
+	j	.LBB125_20
+.LBB125_20:                             # %if.then42
 	ld	a0, -32(s0)
 	sd	a0, -24(s0)
-	j	.LBB121_27
-.LBB121_21:                             # %if.end43
+	j	.LBB125_27
+.LBB125_21:                             # %if.end43
 	addi	a0, s0, -32
 	call	_ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEppEv
-	j	.LBB121_22
-.LBB121_22:                             # %sw.bb45
+	j	.LBB125_22
+.LBB125_22:                             # %sw.bb45
 	ld	a0, -32(s0)
 	sd	a0, -120(s0)
 	ld	a1, -120(s0)
 	addi	a0, s0, -48
 	call	_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEclINS_17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEEEbT_
-	beqz	a0, .LBB121_24
-	j	.LBB121_23
-.LBB121_23:                             # %if.then50
+	beqz	a0, .LBB125_24
+	j	.LBB125_23
+.LBB125_23:                             # %if.then50
 	ld	a0, -32(s0)
 	sd	a0, -24(s0)
-	j	.LBB121_27
-.LBB121_24:                             # %if.end51
+	j	.LBB125_27
+.LBB125_24:                             # %if.end51
 	addi	a0, s0, -32
 	call	_ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEppEv
-	j	.LBB121_25
-.LBB121_25:                             # %sw.bb53
-	j	.LBB121_26
-.LBB121_26:                             # %sw.default
+	j	.LBB125_25
+.LBB125_25:                             # %sw.bb53
+	j	.LBB125_26
+.LBB125_26:                             # %sw.default
 	ld	a0, -40(s0)
 	sd	a0, -24(s0)
-	j	.LBB121_27
-.LBB121_27:                             # %return
+	j	.LBB125_27
+.LBB125_27:                             # %return
 	ld	a0, -24(s0)
 	ld	s0, 112(sp)
 	.cfi_def_cfa sp, 128
@@ -7790,27 +8200,9 @@ _ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11c
 	addi	sp, sp, 128
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end121:
-	.size	_ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_St26random_access_iterator_tag, .Lfunc_end121-_ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_St26random_access_iterator_tag
+.Lfunc_end125:
+	.size	_ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_St26random_access_iterator_tag, .Lfunc_end125-_ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops16_Iter_equals_valIKcEEET_SE_SE_T0_St26random_access_iterator_tag
 	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZSt19__iterator_categoryIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEENSt15iterator_traitsIT_E17iterator_categoryERKSB_,"axG",@progbits,_ZSt19__iterator_categoryIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEENSt15iterator_traitsIT_E17iterator_categoryERKSB_,comdat
-	.weak	_ZSt19__iterator_categoryIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEENSt15iterator_traitsIT_E17iterator_categoryERKSB_ # -- Begin function _ZSt19__iterator_categoryIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEENSt15iterator_traitsIT_E17iterator_categoryERKSB_
-	.p2align	2
-	.type	_ZSt19__iterator_categoryIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEENSt15iterator_traitsIT_E17iterator_categoryERKSB_,@function
-_ZSt19__iterator_categoryIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEENSt15iterator_traitsIT_E17iterator_categoryERKSB_: # @_ZSt19__iterator_categoryIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEENSt15iterator_traitsIT_E17iterator_categoryERKSB_
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
-	ret
-.Lfunc_end122:
-	.size	_ZSt19__iterator_categoryIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEENSt15iterator_traitsIT_E17iterator_categoryERKSB_, .Lfunc_end122-_ZSt19__iterator_categoryIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEENSt15iterator_traitsIT_E17iterator_categoryERKSB_
                                         # -- End function
 	.section	.text._ZN9__gnu_cxxmiIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS_17__normal_iteratorIT_T0_E15difference_typeERKSB_SE_,"axG",@progbits,_ZN9__gnu_cxxmiIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS_17__normal_iteratorIT_T0_E15difference_typeERKSB_SE_,comdat
 	.weak	_ZN9__gnu_cxxmiIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS_17__normal_iteratorIT_T0_E15difference_typeERKSB_SE_ # -- Begin function _ZN9__gnu_cxxmiIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS_17__normal_iteratorIT_T0_E15difference_typeERKSB_SE_
@@ -7837,8 +8229,8 @@ _ZN9__gnu_cxxmiIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS_17__n
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end123:
-	.size	_ZN9__gnu_cxxmiIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS_17__normal_iteratorIT_T0_E15difference_typeERKSB_SE_, .Lfunc_end123-_ZN9__gnu_cxxmiIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS_17__normal_iteratorIT_T0_E15difference_typeERKSB_SE_
+.Lfunc_end126:
+	.size	_ZN9__gnu_cxxmiIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS_17__normal_iteratorIT_T0_E15difference_typeERKSB_SE_, .Lfunc_end126-_ZN9__gnu_cxxmiIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS_17__normal_iteratorIT_T0_E15difference_typeERKSB_SE_
                                         # -- End function
 	.section	.text._ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE4baseEv,"axG",@progbits,_ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE4baseEv,comdat
 	.weak	_ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE4baseEv # -- Begin function _ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE4baseEv
@@ -7856,8 +8248,8 @@ _ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIc
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end124:
-	.size	_ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE4baseEv, .Lfunc_end124-_ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE4baseEv
+.Lfunc_end127:
+	.size	_ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE4baseEv, .Lfunc_end127-_ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE4baseEv
                                         # -- End function
 	.section	.text._ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEC2ERS2_,"axG",@progbits,_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEC2ERS2_,comdat
 	.weak	_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEC2ERS2_ # -- Begin function _ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEC2ERS2_
@@ -7878,8 +8270,8 @@ _ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEC2ERS2_: # @_ZN9__gnu_cxx5__ops16_Iter_
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end125:
-	.size	_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEC2ERS2_, .Lfunc_end125-_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEC2ERS2_
+.Lfunc_end128:
+	.size	_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEC2ERS2_, .Lfunc_end128-_ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEC2ERS2_
                                         # -- End function
 	.type	.L.str,@object          # @.str
 	.section	.rodata.str1.1,"aMS",@progbits,1
@@ -7909,13 +8301,28 @@ _ZN9__gnu_cxx5__ops16_Iter_equals_valIKcEC2ERS2_: # @_ZN9__gnu_cxx5__ops16_Iter_
 
 	.type	.L.str.5,@object        # @.str.5
 .L.str.5:
-	.asciz	"array index "
-	.size	.L.str.5, 13
+	.asciz	"/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/../detail/type_vec3.inl"
+	.size	.L.str.5, 87
+
+	.type	.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi,@object # @__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
+.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi:
+	.asciz	"T &glm::vec<3, double, glm::packed_highp>::operator[](typename vec<3, T, Q>::length_type) [L = 3, T = double, Q = glm::packed_highp]"
+	.size	.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi, 133
 
 	.type	.L.str.6,@object        # @.str.6
 .L.str.6:
+	.asciz	"i >= 0 && i < this->length()"
+	.size	.L.str.6, 29
+
+	.type	.L.str.7,@object        # @.str.7
+.L.str.7:
+	.asciz	"array index "
+	.size	.L.str.7, 13
+
+	.type	.L.str.8,@object        # @.str.8
+.L.str.8:
 	.asciz	" is out of range"
-	.size	.L.str.6, 17
+	.size	.L.str.8, 17
 
 	.type	_ZTSN8nlohmann6detail12out_of_rangeE,@object # @_ZTSN8nlohmann6detail12out_of_rangeE
 	.section	.rodata._ZTSN8nlohmann6detail12out_of_rangeE,"aG",@progbits,_ZTSN8nlohmann6detail12out_of_rangeE,comdat
@@ -7951,11 +8358,11 @@ _ZTIN8nlohmann6detail12out_of_rangeE:
 	.quad	_ZTIN8nlohmann6detail9exceptionE
 	.size	_ZTIN8nlohmann6detail12out_of_rangeE, 24
 
-	.type	.L.str.7,@object        # @.str.7
+	.type	.L.str.9,@object        # @.str.9
 	.section	.rodata.str1.1,"aMS",@progbits,1
-.L.str.7:
+.L.str.9:
 	.asciz	"cannot use at() with "
-	.size	.L.str.7, 22
+	.size	.L.str.9, 22
 
 	.type	_ZTSN8nlohmann6detail10type_errorE,@object # @_ZTSN8nlohmann6detail10type_errorE
 	.section	.rodata._ZTSN8nlohmann6detail10type_errorE,"aG",@progbits,_ZTSN8nlohmann6detail10type_errorE,comdat
@@ -7974,33 +8381,31 @@ _ZTIN8nlohmann6detail10type_errorE:
 	.quad	_ZTIN8nlohmann6detail9exceptionE
 	.size	_ZTIN8nlohmann6detail10type_errorE, 24
 
-	.type	.L.str.8,@object        # @.str.8
-	.section	.rodata.str1.1,"aMS",@progbits,1
-.L.str.8:
-	.asciz	"vector::_M_range_check: __n (which is %zu) >= this->size() (which is %zu)"
-	.size	.L.str.8, 74
-
-	.type	.L.str.9,@object        # @.str.9
-.L.str.9:
-	.asciz	"out_of_range"
-	.size	.L.str.9, 13
-
 	.type	.L.str.10,@object       # @.str.10
+	.section	.rodata.str1.1,"aMS",@progbits,1
 .L.str.10:
-	.asciz	"[json.exception."
-	.size	.L.str.10, 17
+	.asciz	"vector::_M_range_check: __n (which is %zu) >= this->size() (which is %zu)"
+	.size	.L.str.10, 74
 
 	.type	.L.str.11,@object       # @.str.11
 .L.str.11:
-	.asciz	"."
-	.size	.L.str.11, 2
+	.asciz	"out_of_range"
+	.size	.L.str.11, 13
 
-	.type	_ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits,@object # @_ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits
-	.section	.rodata._ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits,"aG",@progbits,_ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits,comdat
-	.weak	_ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits
-_ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits:
+	.type	.L.str.12,@object       # @.str.12
+.L.str.12:
+	.asciz	"[json.exception."
+	.size	.L.str.12, 17
+
+	.type	.L.str.13,@object       # @.str.13
+.L.str.13:
+	.asciz	"."
+	.size	.L.str.13, 2
+
+	.type	.L__const._ZNSt8__detail18__to_chars_10_implIjEEvPcjT_.__digits,@object # @__const._ZNSt8__detail18__to_chars_10_implIjEEvPcjT_.__digits
+.L__const._ZNSt8__detail18__to_chars_10_implIjEEvPcjT_.__digits:
 	.asciz	"00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899"
-	.size	_ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits, 201
+	.size	.L__const._ZNSt8__detail18__to_chars_10_implIjEEvPcjT_.__digits, 201
 
 	.type	_ZTVN8nlohmann6detail12out_of_rangeE,@object # @_ZTVN8nlohmann6detail12out_of_rangeE
 	.section	.rodata._ZTVN8nlohmann6detail12out_of_rangeE,"aG",@progbits,_ZTVN8nlohmann6detail12out_of_rangeE,comdat
@@ -8026,18 +8431,16 @@ _ZTVN8nlohmann6detail9exceptionE:
 	.quad	_ZNK8nlohmann6detail9exception4whatEv
 	.size	_ZTVN8nlohmann6detail9exceptionE, 40
 
-	.type	_ZZNSt8__detail18__to_chars_10_implImEEvPcjT_E8__digits,@object # @_ZZNSt8__detail18__to_chars_10_implImEEvPcjT_E8__digits
-	.section	.rodata._ZZNSt8__detail18__to_chars_10_implImEEvPcjT_E8__digits,"aG",@progbits,_ZZNSt8__detail18__to_chars_10_implImEEvPcjT_E8__digits,comdat
-	.weak	_ZZNSt8__detail18__to_chars_10_implImEEvPcjT_E8__digits
-_ZZNSt8__detail18__to_chars_10_implImEEvPcjT_E8__digits:
-	.asciz	"00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899"
-	.size	_ZZNSt8__detail18__to_chars_10_implImEEvPcjT_E8__digits, 201
-
-	.type	.L.str.12,@object       # @.str.12
+	.type	.L__const._ZNSt8__detail18__to_chars_10_implImEEvPcjT_.__digits,@object # @__const._ZNSt8__detail18__to_chars_10_implImEEvPcjT_.__digits
 	.section	.rodata.str1.1,"aMS",@progbits,1
-.L.str.12:
+.L__const._ZNSt8__detail18__to_chars_10_implImEEvPcjT_.__digits:
+	.asciz	"00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899"
+	.size	.L__const._ZNSt8__detail18__to_chars_10_implImEEvPcjT_.__digits, 201
+
+	.type	.L.str.14,@object       # @.str.14
+.L.str.14:
 	.asciz	"type_error"
-	.size	.L.str.12, 11
+	.size	.L.str.14, 11
 
 	.type	_ZTVN8nlohmann6detail10type_errorE,@object # @_ZTVN8nlohmann6detail10type_errorE
 	.section	.rodata._ZTVN8nlohmann6detail10type_errorE,"aG",@progbits,_ZTVN8nlohmann6detail10type_errorE,comdat
@@ -8051,46 +8454,46 @@ _ZTVN8nlohmann6detail10type_errorE:
 	.quad	_ZNK8nlohmann6detail9exception4whatEv
 	.size	_ZTVN8nlohmann6detail10type_errorE, 40
 
-	.type	.L.str.13,@object       # @.str.13
-	.section	.rodata.str1.1,"aMS",@progbits,1
-.L.str.13:
-	.asciz	"null"
-	.size	.L.str.13, 5
-
-	.type	.L.str.14,@object       # @.str.14
-.L.str.14:
-	.asciz	"object"
-	.size	.L.str.14, 7
-
 	.type	.L.str.15,@object       # @.str.15
+	.section	.rodata.str1.1,"aMS",@progbits,1
 .L.str.15:
-	.asciz	"array"
-	.size	.L.str.15, 6
+	.asciz	"null"
+	.size	.L.str.15, 5
 
 	.type	.L.str.16,@object       # @.str.16
 .L.str.16:
-	.asciz	"string"
+	.asciz	"object"
 	.size	.L.str.16, 7
 
 	.type	.L.str.17,@object       # @.str.17
 .L.str.17:
-	.asciz	"boolean"
-	.size	.L.str.17, 8
+	.asciz	"array"
+	.size	.L.str.17, 6
 
 	.type	.L.str.18,@object       # @.str.18
 .L.str.18:
-	.asciz	"discarded"
-	.size	.L.str.18, 10
+	.asciz	"string"
+	.size	.L.str.18, 7
 
 	.type	.L.str.19,@object       # @.str.19
 .L.str.19:
-	.asciz	"number"
-	.size	.L.str.19, 7
+	.asciz	"boolean"
+	.size	.L.str.19, 8
 
 	.type	.L.str.20,@object       # @.str.20
 .L.str.20:
-	.asciz	"basic_string::_M_construct null not valid"
-	.size	.L.str.20, 42
+	.asciz	"discarded"
+	.size	.L.str.20, 10
+
+	.type	.L.str.21,@object       # @.str.21
+.L.str.21:
+	.asciz	"number"
+	.size	.L.str.21, 7
+
+	.type	.L.str.22,@object       # @.str.22
+.L.str.22:
+	.asciz	"basic_string: construction from null is not valid"
+	.size	.L.str.22, 50
 
 	.type	_ZN8nlohmann6detail12static_constINS0_12from_json_fnEE5valueE,@object # @_ZN8nlohmann6detail12static_constINS0_12from_json_fnEE5valueE
 	.section	.rodata._ZN8nlohmann6detail12static_constINS0_12from_json_fnEE5valueE,"aG",@progbits,_ZN8nlohmann6detail12static_constINS0_12from_json_fnEE5valueE,comdat
@@ -8099,11 +8502,51 @@ _ZN8nlohmann6detail12static_constINS0_12from_json_fnEE5valueE:
 	.zero	1
 	.size	_ZN8nlohmann6detail12static_constINS0_12from_json_fnEE5valueE, 1
 
-	.type	.L.str.21,@object       # @.str.21
+	.type	.L.str.23,@object       # @.str.23
 	.section	.rodata.str1.1,"aMS",@progbits,1
-.L.str.21:
+.L.str.23:
 	.asciz	"type must be number, but is "
-	.size	.L.str.21, 29
+	.size	.L.str.23, 29
+
+	.type	.L.str.24,@object       # @.str.24
+.L.str.24:
+	.asciz	"/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/../detail/type_mat4x4.inl"
+	.size	.L.str.24, 89
+
+	.type	.L__PRETTY_FUNCTION__._ZN3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi,@object # @__PRETTY_FUNCTION__._ZN3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi
+.L__PRETTY_FUNCTION__._ZN3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi:
+	.asciz	"typename mat<4, 4, T, Q>::col_type &glm::mat<4, 4, double, glm::packed_highp>::operator[](typename mat<4, 4, T, Q>::length_type) [C = 4, R = 4, T = double, Q = glm::packed_highp]"
+	.size	.L__PRETTY_FUNCTION__._ZN3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi, 179
+
+	.type	.L.str.25,@object       # @.str.25
+.L.str.25:
+	.asciz	"i < this->length()"
+	.size	.L.str.25, 19
+
+	.type	.L.str.26,@object       # @.str.26
+.L.str.26:
+	.asciz	"/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/gtx/../detail/type_vec4.inl"
+	.size	.L.str.26, 87
+
+	.type	.L__PRETTY_FUNCTION__._ZN3glm3vecILi4EdLNS_9qualifierE0EEixEi,@object # @__PRETTY_FUNCTION__._ZN3glm3vecILi4EdLNS_9qualifierE0EEixEi
+.L__PRETTY_FUNCTION__._ZN3glm3vecILi4EdLNS_9qualifierE0EEixEi:
+	.asciz	"T &glm::vec<4, double, glm::packed_highp>::operator[](typename vec<4, T, Q>::length_type) [L = 4, T = double, Q = glm::packed_highp]"
+	.size	.L__PRETTY_FUNCTION__._ZN3glm3vecILi4EdLNS_9qualifierE0EEixEi, 133
+
+	.type	.L__PRETTY_FUNCTION__._ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi,@object # @__PRETTY_FUNCTION__._ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi
+.L__PRETTY_FUNCTION__._ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi:
+	.asciz	"const typename mat<4, 4, T, Q>::col_type &glm::mat<4, 4, double, glm::packed_highp>::operator[](typename mat<4, 4, T, Q>::length_type) const [C = 4, R = 4, T = double, Q = glm::packed_highp]"
+	.size	.L__PRETTY_FUNCTION__._ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi, 191
+
+	.type	.L__PRETTY_FUNCTION__._ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi,@object # @__PRETTY_FUNCTION__._ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi
+.L__PRETTY_FUNCTION__._ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi:
+	.asciz	"const T &glm::vec<4, double, glm::packed_highp>::operator[](typename vec<4, T, Q>::length_type) const [L = 4, T = double, Q = glm::packed_highp]"
+	.size	.L__PRETTY_FUNCTION__._ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi, 145
+
+	.type	.L__PRETTY_FUNCTION__._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi,@object # @__PRETTY_FUNCTION__._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi
+.L__PRETTY_FUNCTION__._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi:
+	.asciz	"const T &glm::vec<3, double, glm::packed_highp>::operator[](typename vec<3, T, Q>::length_type) const [L = 3, T = double, Q = glm::packed_highp]"
+	.size	.L__PRETTY_FUNCTION__._ZNK3glm3vecILi3EdLNS_9qualifierE0EEixEi, 145
 
 	.data
 	.p2align	3

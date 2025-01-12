@@ -47,7 +47,7 @@ Scene::Scene(const nlohmann::json& j)
             std::vector<std::vector<size_t>> triangles_v, triangles_vt, triangles_vn;
             if (s.find("file") != s.end())
             {
-                auto obj_path = path / s.at("file").get<std::string>();
+                auto obj_path = path + "/" + s.at("file").get<std::string>();
                 parseOBJ(obj_path, v, n, triangles_v, triangles_vt, triangles_vn);
             }
             else
@@ -235,18 +235,13 @@ std::shared_ptr<Surface::Base> Scene::selectLight(double u, double& select_proba
     return emissives[emissive_idx];
 }
 
-void Scene::parseOBJ(const std::filesystem::path &path,
+void Scene::parseOBJ(const std::string &path,
                      std::vector<glm::dvec3> &vertices,
                      std::vector<glm::dvec3> &normals,
                      std::vector<std::vector<size_t>> &triangles_v,
                      std::vector<std::vector<size_t>> &triangles_vt,
                      std::vector<std::vector<size_t>> &triangles_vn) const
 {
-    if (!std::filesystem::exists(path))
-    {
-        std::printf("\n%s not found.\n", path.string().c_str());
-        return;
-    }
 
     std::ifstream file(path);
 
@@ -354,4 +349,4 @@ void Scene::generateVertexNormals(std::vector<glm::dvec3> &normals,
     }
 }
 
-std::filesystem::path Scene::path = std::filesystem::current_path() / "scenes";
+std::string Scene::path = "/home/sakakibara/monte-carlo-ray-tracer_approx/scenes";

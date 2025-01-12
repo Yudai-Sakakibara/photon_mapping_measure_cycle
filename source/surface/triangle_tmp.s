@@ -456,32 +456,28 @@ _ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_E
 	.cfi_def_cfa s0, 0
 	sd	a0, -32(s0)
 	ld	s1, -32(s0)
-.Ltmp19:
 	mv	a0, s1
 	call	_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE6_M_ptrEv
-.Ltmp20:
-	j	.LBB8_1
-.LBB8_1:                                # %invoke.cont
 	sd	a0, -40(s0)
 	ld	a0, -40(s0)
 	ld	a0, 0(a0)
-	beqz	a0, .LBB8_4
-	j	.LBB8_2
-.LBB8_2:                                # %if.then
+	beqz	a0, .LBB8_3
+	j	.LBB8_1
+.LBB8_1:                                # %if.then
 	mv	a0, s1
 	call	_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE11get_deleterEv
 	mv	s1, a0
 	ld	a0, -40(s0)
 	call	_ZSt4moveIRPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4typeEOS7_
 	ld	a1, 0(a0)
-.Ltmp21:
+.Ltmp19:
 	mv	a0, s1
 	call	_ZNKSt14default_deleteIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEclEPS3_
-.Ltmp22:
+.Ltmp20:
+	j	.LBB8_2
+.LBB8_2:                                # %invoke.cont
 	j	.LBB8_3
-.LBB8_3:                                # %invoke.cont4
-	j	.LBB8_4
-.LBB8_4:                                # %if.end
+.LBB8_3:                                # %if.end
 	ld	a0, -40(s0)
 	sd	zero, 0(a0)
 	ld	s1, 24(sp)
@@ -494,8 +490,8 @@ _ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_E
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.LBB8_5:                                # %terminate.lpad
-.Ltmp23:
+.LBB8_4:                                # %terminate.lpad
+.Ltmp21:
 	call	__clang_call_terminate
 .Lfunc_end8:
 	.size	_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EED2Ev, .Lfunc_end8-_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EED2Ev
@@ -512,8 +508,8 @@ GCC_except_table8:
 	.uleb128 .Lcst_end2-.Lcst_begin2
 .Lcst_begin2:
 	.word	.Ltmp19-.Lfunc_begin2   # >> Call Site 1 <<
-	.word	.Ltmp22-.Ltmp19         #   Call between .Ltmp19 and .Ltmp22
-	.word	.Ltmp23-.Lfunc_begin2   #     jumps to .Ltmp23
+	.word	.Ltmp20-.Ltmp19         #   Call between .Ltmp19 and .Ltmp20
+	.word	.Ltmp21-.Lfunc_begin2   #     jumps to .Ltmp21
 	.byte	1                       #   On action: 1
 .Lcst_end2:
 	.byte	1                       # >> Action Record 1 <<
@@ -563,11 +559,11 @@ _ZN7Surface8TriangleC2ERKN3glm3vecILi3EdLNS1_9qualifierE0EEES6_S6_S6_S6_S6_St10s
 	mv	a0, s1
 	mv	a1, a7
 	call	_ZNSt10shared_ptrI8MaterialEC2ERKS1_
-.Ltmp24:
+.Ltmp22:
 	mv	a0, s4
 	mv	a1, s1
 	call	_ZN7Surface4BaseC2ESt10shared_ptrI8MaterialE
-.Ltmp25:
+.Ltmp23:
 	j	.LBB9_1
 .LBB9_1:                                # %invoke.cont
 	addi	a0, s0, -120
@@ -599,81 +595,81 @@ _ZN7Surface8TriangleC2ERKN3glm3vecILi3EdLNS1_9qualifierE0EEES6_S6_S6_S6_S6_St10s
 	sd	a0, 128(s4)
 	addi	s2, s4, 152
 	ld	a1, -88(s0)
-.Ltmp27:
+.Ltmp25:
 	addi	a0, s0, -160
 	call	_ZN3glm9normalizeILi3EdLNS_9qualifierE0EEENS_3vecIXT_ET0_XT1_EEERKS4_
-.Ltmp28:
+.Ltmp26:
 	j	.LBB9_2
 .LBB9_2:                                # %invoke.cont6
 	ld	a1, -96(s0)
-.Ltmp29:
+.Ltmp27:
 	addi	a0, s0, -184
 	call	_ZN3glm9normalizeILi3EdLNS_9qualifierE0EEENS_3vecIXT_ET0_XT1_EEERKS4_
-.Ltmp30:
+.Ltmp28:
 	j	.LBB9_3
 .LBB9_3:                                # %invoke.cont8
 	ld	a1, -104(s0)
-.Ltmp31:
+.Ltmp29:
 	addi	a0, s0, -208
 	call	_ZN3glm9normalizeILi3EdLNS_9qualifierE0EEENS_3vecIXT_ET0_XT1_EEERKS4_
-.Ltmp32:
+.Ltmp30:
 	j	.LBB9_4
 .LBB9_4:                                # %invoke.cont10
-.Ltmp33:
+.Ltmp31:
 	addi	a1, s0, -160
 	addi	a2, s0, -184
 	addi	a3, s0, -208
 	mv	a0, s2
-	call	_ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt9_MakeUniqIT_E15__single_objectEDpOT0_
-.Ltmp34:
+	call	_ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_
+.Ltmp32:
 	j	.LBB9_5
 .LBB9_5:                                # %invoke.cont11
 	addi	a0, s4, 160
 	ld	a1, -72(s0)
 	ld	a2, -64(s0)
-.Ltmp36:
+.Ltmp34:
 	call	_ZN3glmmiIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_
-.Ltmp37:
+.Ltmp35:
 	j	.LBB9_6
 .LBB9_6:                                # %invoke.cont13
 	addi	a0, s4, 184
 	ld	a1, -80(s0)
 	ld	a2, -64(s0)
-.Ltmp38:
+.Ltmp36:
 	call	_ZN3glmmiIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_
-.Ltmp39:
+.Ltmp37:
 	j	.LBB9_7
 .LBB9_7:                                # %invoke.cont14
 	addi	s3, s4, 208
 	addi	a1, s4, 160
 	addi	a2, s4, 184
-.Ltmp40:
+.Ltmp38:
 	addi	a0, s0, -232
 	call	_ZN3glm5crossIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_
-.Ltmp41:
+.Ltmp39:
 	j	.LBB9_8
 .LBB9_8:                                # %invoke.cont18
-.Ltmp42:
+.Ltmp40:
 	addi	a1, s0, -232
 	mv	a0, s3
 	call	_ZN3glm9normalizeILi3EdLNS_9qualifierE0EEENS_3vecIXT_ET0_XT1_EEERKS4_
-.Ltmp43:
+.Ltmp41:
 	j	.LBB9_9
 .LBB9_9:                                # %invoke.cont19
 	ld	a0, 0(s4)
 	ld	a1, 56(a0)
-.Ltmp44:
+.Ltmp42:
 	mv	a0, s4
 	jalr	a1
-.Ltmp45:
+.Ltmp43:
 	j	.LBB9_10
 .LBB9_10:                               # %invoke.cont20
 	ld	a0, 0(s4)
 	ld	a1, 64(a0)
-.Ltmp46:
+.Ltmp44:
 	mv	a0, s4
 	jalr	a1
-.Ltmp47:
+.Ltmp45:
 	j	.LBB9_11
 .LBB9_11:                               # %invoke.cont23
 	ld	s4, 192(sp)
@@ -693,19 +689,19 @@ _ZN7Surface8TriangleC2ERKN3glm3vecILi3EdLNS1_9qualifierE0EEES6_S6_S6_S6_S6_St10s
 	.cfi_def_cfa_offset 0
 	ret
 .LBB9_12:                               # %lpad
-.Ltmp26:
+.Ltmp24:
 	sd	a0, -128(s0)
 	sw	a1, -132(s0)
 	addi	a0, s0, -120
 	call	_ZNSt10shared_ptrI8MaterialED2Ev
 	j	.LBB9_16
 .LBB9_13:                               # %lpad5
-.Ltmp35:
+.Ltmp33:
 	sd	a0, -128(s0)
 	sw	a1, -132(s0)
 	j	.LBB9_15
 .LBB9_14:                               # %lpad12
-.Ltmp48:
+.Ltmp46:
 	sd	a0, -128(s0)
 	sw	a1, -132(s0)
 	mv	a0, s2
@@ -730,30 +726,30 @@ GCC_except_table9:
 	.byte	3                       # Call site Encoding = udata4
 	.uleb128 .Lcst_end3-.Lcst_begin3
 .Lcst_begin3:
-	.word	.Ltmp24-.Lfunc_begin3   # >> Call Site 1 <<
-	.word	.Ltmp25-.Ltmp24         #   Call between .Ltmp24 and .Ltmp25
-	.word	.Ltmp26-.Lfunc_begin3   #     jumps to .Ltmp26
+	.word	.Ltmp22-.Lfunc_begin3   # >> Call Site 1 <<
+	.word	.Ltmp23-.Ltmp22         #   Call between .Ltmp22 and .Ltmp23
+	.word	.Ltmp24-.Lfunc_begin3   #     jumps to .Ltmp24
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp27-.Lfunc_begin3   # >> Call Site 2 <<
-	.word	.Ltmp34-.Ltmp27         #   Call between .Ltmp27 and .Ltmp34
-	.word	.Ltmp35-.Lfunc_begin3   #     jumps to .Ltmp35
+	.word	.Ltmp25-.Lfunc_begin3   # >> Call Site 2 <<
+	.word	.Ltmp32-.Ltmp25         #   Call between .Ltmp25 and .Ltmp32
+	.word	.Ltmp33-.Lfunc_begin3   #     jumps to .Ltmp33
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp36-.Lfunc_begin3   # >> Call Site 3 <<
-	.word	.Ltmp47-.Ltmp36         #   Call between .Ltmp36 and .Ltmp47
-	.word	.Ltmp48-.Lfunc_begin3   #     jumps to .Ltmp48
+	.word	.Ltmp34-.Lfunc_begin3   # >> Call Site 3 <<
+	.word	.Ltmp45-.Ltmp34         #   Call between .Ltmp34 and .Ltmp45
+	.word	.Ltmp46-.Lfunc_begin3   #     jumps to .Ltmp46
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp47-.Lfunc_begin3   # >> Call Site 4 <<
-	.word	.Lfunc_end9-.Ltmp47     #   Call between .Ltmp47 and .Lfunc_end9
+	.word	.Ltmp45-.Lfunc_begin3   # >> Call Site 4 <<
+	.word	.Lfunc_end9-.Ltmp45     #   Call between .Ltmp45 and .Lfunc_end9
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
 .Lcst_end3:
 	.p2align	2
                                         # -- End function
-	.section	.text._ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt9_MakeUniqIT_E15__single_objectEDpOT0_,"axG",@progbits,_ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt9_MakeUniqIT_E15__single_objectEDpOT0_,comdat
-	.weak	_ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt9_MakeUniqIT_E15__single_objectEDpOT0_ # -- Begin function _ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt9_MakeUniqIT_E15__single_objectEDpOT0_
+	.section	.text._ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_,"axG",@progbits,_ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_,comdat
+	.weak	_ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_ # -- Begin function _ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_
 	.p2align	2
-	.type	_ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt9_MakeUniqIT_E15__single_objectEDpOT0_,@function
-_ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt9_MakeUniqIT_E15__single_objectEDpOT0_: # @_ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt9_MakeUniqIT_E15__single_objectEDpOT0_
+	.type	_ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_,@function
+_ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_: # @_ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_
 .Lfunc_begin4:
 	.cfi_startproc
 	.cfi_personality 155, DW.ref.__gxx_personality_v0
@@ -792,12 +788,12 @@ _ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEE
 	ld	a0, -80(s0)
 	call	_ZSt7forwardIN3glm3vecILi3EdLNS0_9qualifierE0EEEEOT_RNSt16remove_referenceIS4_E4typeE
 	mv	a3, a0
-.Ltmp49:
+.Ltmp47:
 	mv	a0, s3
 	mv	a1, s4
 	mv	a2, s1
 	call	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEC2ERKNS_3vecILi3EdLS1_0EEES6_S6_
-.Ltmp50:
+.Ltmp48:
 	j	.LBB10_1
 .LBB10_1:                               # %invoke.cont
 	mv	a0, s2
@@ -820,7 +816,7 @@ _ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEE
 	.cfi_def_cfa_offset 0
 	ret
 .LBB10_2:                               # %lpad
-.Ltmp51:
+.Ltmp49:
 	sd	a0, -88(s0)
 	sw	a1, -92(s0)
 	mv	a0, s3
@@ -830,7 +826,7 @@ _ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEE
 	ld	a0, -88(s0)
 	call	_Unwind_Resume
 .Lfunc_end10:
-	.size	_ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt9_MakeUniqIT_E15__single_objectEDpOT0_, .Lfunc_end10-_ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt9_MakeUniqIT_E15__single_objectEDpOT0_
+	.size	_ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_, .Lfunc_end10-_ZSt11make_uniqueIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJNS0_3vecILi3EdLS2_0EEES5_S5_EENSt8__detail9_MakeUniqIT_E15__single_objectEDpOT0_
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
@@ -842,15 +838,15 @@ GCC_except_table10:
 	.uleb128 .Lcst_end4-.Lcst_begin4
 .Lcst_begin4:
 	.word	.Lfunc_begin4-.Lfunc_begin4 # >> Call Site 1 <<
-	.word	.Ltmp49-.Lfunc_begin4   #   Call between .Lfunc_begin4 and .Ltmp49
+	.word	.Ltmp47-.Lfunc_begin4   #   Call between .Lfunc_begin4 and .Ltmp47
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp49-.Lfunc_begin4   # >> Call Site 2 <<
-	.word	.Ltmp50-.Ltmp49         #   Call between .Ltmp49 and .Ltmp50
-	.word	.Ltmp51-.Lfunc_begin4   #     jumps to .Ltmp51
+	.word	.Ltmp47-.Lfunc_begin4   # >> Call Site 2 <<
+	.word	.Ltmp48-.Ltmp47         #   Call between .Ltmp47 and .Ltmp48
+	.word	.Ltmp49-.Lfunc_begin4   #     jumps to .Ltmp49
 	.byte	0                       #   On action: cleanup
-	.word	.Ltmp50-.Lfunc_begin4   # >> Call Site 3 <<
-	.word	.Lfunc_end10-.Ltmp50    #   Call between .Ltmp50 and .Lfunc_end10
+	.word	.Ltmp48-.Lfunc_begin4   # >> Call Site 3 <<
+	.word	.Lfunc_end10-.Ltmp48    #   Call between .Ltmp48 and .Lfunc_end10
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
 .Lcst_end4:
@@ -1741,7 +1737,9 @@ _ZNKSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_
 	j	.LBB23_1
 .LBB23_1:                               # %do.body
 	j	.LBB23_2
-.LBB23_2:                               # %do.end
+.LBB23_2:                               # %do.cond
+	j	.LBB23_3
+.LBB23_3:                               # %do.end
 	call	_ZNKSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE3getEv
 	ld	s0, 16(sp)
 	ld	ra, 24(sp)
@@ -1755,24 +1753,58 @@ _ZNKSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_
 	.p2align	2
 	.type	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi,@function
 _ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi: # @_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi
+	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	sw	a1, -28(s0)
-	ld	a0, -24(s0)
-	lw	a1, -28(s0)
-	addi	a2, zero, 24
-	mul	a1, a1, a2
-	add	a0, a0, a1
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
+	addi	sp, sp, -48
+	.cfi_def_cfa_offset 48
+	sd	ra, 40(sp)
+	sd	s0, 32(sp)
+	sd	s1, 24(sp)
+	sd	s2, 16(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	.cfi_offset s2, -32
+	addi	s0, sp, 48
+	.cfi_def_cfa s0, 0
+	sd	a0, -40(s0)
+	sw	a1, -44(s0)
+	ld	s2, -40(s0)
+	lw	s1, -44(s0)
+	call	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv
+	bge	s1, a0, .LBB24_2
+	j	.LBB24_1
+.LBB24_1:                               # %cond.true
+	j	.LBB24_3
+.LBB24_2:                               # %cond.false
+	lui	a0, %hi(.L.str)
+	addi	a0, a0, %lo(.L.str)
+	lui	a1, %hi(.L__PRETTY_FUNCTION__._ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi)
+	addi	a2, a1, %lo(.L__PRETTY_FUNCTION__._ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi)
+	lui	a1, %hi(.L.str.1)
+	addi	a3, a1, %lo(.L.str.1)
+	addi	a1, zero, 243
+	call	__assert_func
+.LBB24_3:                               # %cond.end
+	lw	a0, -44(s0)
+	addi	a1, zero, 24
+	mul	a0, a0, a1
+	add	a0, s2, a0
+	ld	s2, 16(sp)
+	ld	s1, 24(sp)
+	ld	s0, 32(sp)
+	.cfi_def_cfa sp, 48
+	ld	ra, 40(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	.cfi_restore s2
+	addi	sp, sp, 48
+	.cfi_def_cfa_offset 0
 	ret
 .Lfunc_end24:
 	.size	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi, .Lfunc_end24-_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi
+	.cfi_endproc
                                         # -- End function
 	.section	.sdata,"aw",@progbits
 	.p2align	3               # -- Begin function _ZNK7Surface8TriangleclEdd
@@ -1811,9 +1843,9 @@ _ZNK7Surface8TriangleclEdd:             # @_ZNK7Surface8TriangleclEdd
 	sd	a2, -80(s0)
 	sd	a3, -88(s0)
 	ld	s1, -72(s0)
-	fld	ft0, -80(s0)
-	fsqrt.d	ft0, ft0
-	fsd	ft0, -96(s0)
+	ld	a0, -80(s0)
+	call	sqrt
+	sd	a0, -96(s0)
 	fld	ft0, -96(s0)
 	lui	a0, %hi(.LCPI25_0)
 	addi	a0, a0, %lo(.LCPI25_0)
@@ -2129,24 +2161,58 @@ _ZNK7Surface8Triangle18interpolatedNormalERKN3glm3vecILi2EdLNS1_9qualifierE0EEE:
 	.p2align	2
 	.type	_ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi,@function
 _ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi: # @_ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi
+	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	sw	a1, -28(s0)
-	ld	a0, -24(s0)
-	lw	a1, -28(s0)
-	addi	a2, zero, 24
-	mul	a1, a1, a2
-	add	a0, a0, a1
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
+	addi	sp, sp, -48
+	.cfi_def_cfa_offset 48
+	sd	ra, 40(sp)
+	sd	s0, 32(sp)
+	sd	s1, 24(sp)
+	sd	s2, 16(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	.cfi_offset s2, -32
+	addi	s0, sp, 48
+	.cfi_def_cfa s0, 0
+	sd	a0, -40(s0)
+	sw	a1, -44(s0)
+	ld	s2, -40(s0)
+	lw	s1, -44(s0)
+	call	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv
+	bge	s1, a0, .LBB31_2
+	j	.LBB31_1
+.LBB31_1:                               # %cond.true
+	j	.LBB31_3
+.LBB31_2:                               # %cond.false
+	lui	a0, %hi(.L.str)
+	addi	a0, a0, %lo(.L.str)
+	lui	a1, %hi(.L__PRETTY_FUNCTION__._ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi)
+	addi	a2, a1, %lo(.L__PRETTY_FUNCTION__._ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi)
+	lui	a1, %hi(.L.str.1)
+	addi	a3, a1, %lo(.L.str.1)
+	addi	a1, zero, 250
+	call	__assert_func
+.LBB31_3:                               # %cond.end
+	lw	a0, -44(s0)
+	addi	a1, zero, 24
+	mul	a0, a0, a1
+	add	a0, s2, a0
+	ld	s2, 16(sp)
+	ld	s1, 24(sp)
+	ld	s0, 32(sp)
+	.cfi_def_cfa sp, 48
+	ld	ra, 40(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	.cfi_restore s2
+	addi	sp, sp, 48
+	.cfi_def_cfa_offset 0
 	ret
 .Lfunc_end31:
 	.size	_ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi, .Lfunc_end31-_ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi
+	.cfi_endproc
                                         # -- End function
 	.text
 	.globl	_ZN7Surface8Triangle18computeBoundingBoxEv # -- Begin function _ZN7Surface8Triangle18computeBoundingBoxEv
@@ -2534,9 +2600,9 @@ _ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE0EEC2ERKS2_: # @_ZNSt14__shared
 	j	.LBB41_1
 .LBB41_1:                               # %if.then
 	ld	a0, 0(a0)
-.Ltmp52:
+.Ltmp50:
 	call	_ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE0EE15_M_add_ref_copyEv
-.Ltmp53:
+.Ltmp51:
 	j	.LBB41_2
 .LBB41_2:                               # %invoke.cont
 	j	.LBB41_3
@@ -2550,7 +2616,7 @@ _ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE0EEC2ERKS2_: # @_ZNSt14__shared
 	.cfi_def_cfa_offset 0
 	ret
 .LBB41_4:                               # %terminate.lpad
-.Ltmp54:
+.Ltmp52:
 	call	__clang_call_terminate
 .Lfunc_end41:
 	.size	_ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE0EEC2ERKS2_, .Lfunc_end41-_ZNSt14__shared_countILN9__gnu_cxx12_Lock_policyE0EEC2ERKS2_
@@ -2566,9 +2632,9 @@ GCC_except_table41:
 	.byte	3                       # Call site Encoding = udata4
 	.uleb128 .Lcst_end5-.Lcst_begin5
 .Lcst_begin5:
-	.word	.Ltmp52-.Lfunc_begin5   # >> Call Site 1 <<
-	.word	.Ltmp53-.Ltmp52         #   Call between .Ltmp52 and .Ltmp53
-	.word	.Ltmp54-.Lfunc_begin5   #     jumps to .Ltmp54
+	.word	.Ltmp50-.Lfunc_begin5   # >> Call Site 1 <<
+	.word	.Ltmp51-.Ltmp50         #   Call between .Ltmp50 and .Ltmp51
+	.word	.Ltmp52-.Lfunc_begin5   #     jumps to .Ltmp52
 	.byte	1                       #   On action: 1
 .Lcst_end5:
 	.byte	1                       # >> Action Record 1 <<
@@ -2836,9 +2902,9 @@ _ZNSt5tupleIJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEEC2
 	.cfi_def_cfa s0, 0
 	sd	a0, -24(s0)
 	ld	a0, -24(s0)
-.Ltmp55:
+.Ltmp53:
 	call	_ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEEC2Ev
-.Ltmp56:
+.Ltmp54:
 	j	.LBB52_1
 .LBB52_1:                               # %invoke.cont
 	ld	s0, 16(sp)
@@ -2850,7 +2916,7 @@ _ZNSt5tupleIJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEEC2
 	.cfi_def_cfa_offset 0
 	ret
 .LBB52_2:                               # %terminate.lpad
-.Ltmp57:
+.Ltmp55:
 	call	__clang_call_terminate
 .Lfunc_end52:
 	.size	_ZNSt5tupleIJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEEC2ILb1ELb1EEEv, .Lfunc_end52-_ZNSt5tupleIJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEEC2ILb1ELb1EEEv
@@ -2866,9 +2932,9 @@ GCC_except_table52:
 	.byte	3                       # Call site Encoding = udata4
 	.uleb128 .Lcst_end6-.Lcst_begin6
 .Lcst_begin6:
-	.word	.Ltmp55-.Lfunc_begin6   # >> Call Site 1 <<
-	.word	.Ltmp56-.Ltmp55         #   Call between .Ltmp55 and .Ltmp56
-	.word	.Ltmp57-.Lfunc_begin6   #     jumps to .Ltmp57
+	.word	.Ltmp53-.Lfunc_begin6   # >> Call Site 1 <<
+	.word	.Ltmp54-.Ltmp53         #   Call between .Ltmp53 and .Ltmp54
+	.word	.Ltmp55-.Lfunc_begin6   #     jumps to .Ltmp55
 	.byte	1                       #   On action: 1
 .Lcst_end6:
 	.byte	1                       # >> Action Record 1 <<
@@ -3364,6 +3430,24 @@ _ZNSt10shared_ptrIN7Surface4BaseEED2Ev: # @_ZNSt10shared_ptrIN7Surface4BaseEED2E
 .Lfunc_end71:
 	.size	_ZNSt10shared_ptrIN7Surface4BaseEED2Ev, .Lfunc_end71-_ZNSt10shared_ptrIN7Surface4BaseEED2Ev
                                         # -- End function
+	.section	.text._ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv,"axG",@progbits,_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv,comdat
+	.weak	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv # -- Begin function _ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv
+	.p2align	2
+	.type	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv,@function
+_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv: # @_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv
+# %bb.0:                                # %entry
+	addi	sp, sp, -16
+	sd	ra, 8(sp)
+	sd	s0, 0(sp)
+	addi	s0, sp, 16
+	addi	a0, zero, 3
+	ld	s0, 0(sp)
+	ld	ra, 8(sp)
+	addi	sp, sp, 16
+	ret
+.Lfunc_end72:
+	.size	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv, .Lfunc_end72-_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EE6lengthEv
+                                        # -- End function
 	.section	.text._ZNSt14numeric_limitsIdE3maxEv,"axG",@progbits,_ZNSt14numeric_limitsIdE3maxEv,comdat
 	.weak	_ZNSt14numeric_limitsIdE3maxEv # -- Begin function _ZNSt14numeric_limitsIdE3maxEv
 	.p2align	2
@@ -3381,8 +3465,8 @@ _ZNSt14numeric_limitsIdE3maxEv:         # @_ZNSt14numeric_limitsIdE3maxEv
 	ld	ra, 8(sp)
 	addi	sp, sp, 16
 	ret
-.Lfunc_end72:
-	.size	_ZNSt14numeric_limitsIdE3maxEv, .Lfunc_end72-_ZNSt14numeric_limitsIdE3maxEv
+.Lfunc_end73:
+	.size	_ZNSt14numeric_limitsIdE3maxEv, .Lfunc_end73-_ZNSt14numeric_limitsIdE3maxEv
                                         # -- End function
 	.section	.text._ZN3glm3vecILi3EdLNS_9qualifierE0EEC2Ed,"axG",@progbits,_ZN3glm3vecILi3EdLNS_9qualifierE0EEC2Ed,comdat
 	.weak	_ZN3glm3vecILi3EdLNS_9qualifierE0EEC2Ed # -- Begin function _ZN3glm3vecILi3EdLNS_9qualifierE0EEC2Ed
@@ -3408,8 +3492,8 @@ _ZN3glm3vecILi3EdLNS_9qualifierE0EEC2Ed: # @_ZN3glm3vecILi3EdLNS_9qualifierE0EEC
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end73:
-	.size	_ZN3glm3vecILi3EdLNS_9qualifierE0EEC2Ed, .Lfunc_end73-_ZN3glm3vecILi3EdLNS_9qualifierE0EEC2Ed
+.Lfunc_end74:
+	.size	_ZN3glm3vecILi3EdLNS_9qualifierE0EEC2Ed, .Lfunc_end74-_ZN3glm3vecILi3EdLNS_9qualifierE0EEC2Ed
                                         # -- End function
 	.section	.text._ZNSt14numeric_limitsIdE6lowestEv,"axG",@progbits,_ZNSt14numeric_limitsIdE6lowestEv,comdat
 	.weak	_ZNSt14numeric_limitsIdE6lowestEv # -- Begin function _ZNSt14numeric_limitsIdE6lowestEv
@@ -3428,8 +3512,8 @@ _ZNSt14numeric_limitsIdE6lowestEv:      # @_ZNSt14numeric_limitsIdE6lowestEv
 	ld	ra, 8(sp)
 	addi	sp, sp, 16
 	ret
-.Lfunc_end74:
-	.size	_ZNSt14numeric_limitsIdE6lowestEv, .Lfunc_end74-_ZNSt14numeric_limitsIdE6lowestEv
+.Lfunc_end75:
+	.size	_ZNSt14numeric_limitsIdE6lowestEv, .Lfunc_end75-_ZNSt14numeric_limitsIdE6lowestEv
                                         # -- End function
 	.section	.text._ZNKSt16initializer_listIN3glm3vecILi3EdLNS0_9qualifierE0EEEE4sizeEv,"axG",@progbits,_ZNKSt16initializer_listIN3glm3vecILi3EdLNS0_9qualifierE0EEEE4sizeEv,comdat
 	.weak	_ZNKSt16initializer_listIN3glm3vecILi3EdLNS0_9qualifierE0EEEE4sizeEv # -- Begin function _ZNKSt16initializer_listIN3glm3vecILi3EdLNS0_9qualifierE0EEEE4sizeEv
@@ -3448,8 +3532,8 @@ _ZNKSt16initializer_listIN3glm3vecILi3EdLNS0_9qualifierE0EEEE4sizeEv: # @_ZNKSt1
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end75:
-	.size	_ZNKSt16initializer_listIN3glm3vecILi3EdLNS0_9qualifierE0EEEE4sizeEv, .Lfunc_end75-_ZNKSt16initializer_listIN3glm3vecILi3EdLNS0_9qualifierE0EEEE4sizeEv
+.Lfunc_end76:
+	.size	_ZNKSt16initializer_listIN3glm3vecILi3EdLNS0_9qualifierE0EEEE4sizeEv, .Lfunc_end76-_ZNKSt16initializer_listIN3glm3vecILi3EdLNS0_9qualifierE0EEEE4sizeEv
                                         # -- End function
 	.section	.text._ZN3glm6detail13compute_crossIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEES7_,"axG",@progbits,_ZN3glm6detail13compute_crossIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEES7_,comdat
 	.weak	_ZN3glm6detail13compute_crossIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEES7_ # -- Begin function _ZN3glm6detail13compute_crossIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEES7_
@@ -3498,8 +3582,8 @@ _ZN3glm6detail13compute_crossIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0E
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end76:
-	.size	_ZN3glm6detail13compute_crossIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEES7_, .Lfunc_end76-_ZN3glm6detail13compute_crossIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEES7_
+.Lfunc_end77:
+	.size	_ZN3glm6detail13compute_crossIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEES7_, .Lfunc_end77-_ZN3glm6detail13compute_crossIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEES7_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm6detail17compute_normalizeILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE,"axG",@progbits,_ZN3glm6detail17compute_normalizeILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE,comdat
@@ -3545,8 +3629,8 @@ _ZN3glm6detail17compute_normalizeILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end77:
-	.size	_ZN3glm6detail17compute_normalizeILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE, .Lfunc_end77-_ZN3glm6detail17compute_normalizeILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE
+.Lfunc_end78:
+	.size	_ZN3glm6detail17compute_normalizeILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE, .Lfunc_end78-_ZN3glm6detail17compute_normalizeILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S3_,"axG",@progbits,_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S3_,comdat
@@ -3588,13 +3672,13 @@ _ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S3_: # @_ZN3glmmlIdLNS_9
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end78:
-	.size	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S3_, .Lfunc_end78-_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S3_
+.Lfunc_end79:
+	.size	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S3_, .Lfunc_end79-_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S3_
 	.cfi_endproc
                                         # -- End function
 	.section	.sdata,"aw",@progbits
 	.p2align	3               # -- Begin function _ZN3glm11inversesqrtIdEET_S1_
-.LCPI79_0:
+.LCPI80_0:
 	.quad	4607182418800017408     # double 1
 	.section	.text._ZN3glm11inversesqrtIdEET_S1_,"axG",@progbits,_ZN3glm11inversesqrtIdEET_S1_,comdat
 	.weak	_ZN3glm11inversesqrtIdEET_S1_
@@ -3608,10 +3692,11 @@ _ZN3glm11inversesqrtIdEET_S1_:          # @_ZN3glm11inversesqrtIdEET_S1_
 	addi	s0, sp, 32
 	fmv.d.x	ft0, a0
 	sd	a0, -24(s0)
-	fld	ft0, -24(s0)
-	fsqrt.d	ft0, ft0
-	lui	a0, %hi(.LCPI79_0)
-	addi	a0, a0, %lo(.LCPI79_0)
+	ld	a0, -24(s0)
+	call	sqrt
+	fmv.d.x	ft0, a0
+	lui	a0, %hi(.LCPI80_0)
+	addi	a0, a0, %lo(.LCPI80_0)
 	fld	ft1, 0(a0)
 	fdiv.d	ft0, ft1, ft0
 	fmv.x.d	a0, ft0
@@ -3619,8 +3704,8 @@ _ZN3glm11inversesqrtIdEET_S1_:          # @_ZN3glm11inversesqrtIdEET_S1_
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end79:
-	.size	_ZN3glm11inversesqrtIdEET_S1_, .Lfunc_end79-_ZN3glm11inversesqrtIdEET_S1_
+.Lfunc_end80:
+	.size	_ZN3glm11inversesqrtIdEET_S1_, .Lfunc_end80-_ZN3glm11inversesqrtIdEET_S1_
                                         # -- End function
 	.section	.text._ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE6_M_ptrEv,"axG",@progbits,_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE6_M_ptrEv,comdat
 	.weak	_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE6_M_ptrEv # -- Begin function _ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE6_M_ptrEv
@@ -3639,72 +3724,28 @@ _ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_delete
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end80:
-	.size	_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE6_M_ptrEv, .Lfunc_end80-_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE6_M_ptrEv
+.Lfunc_end81:
+	.size	_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE6_M_ptrEv, .Lfunc_end81-_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE6_M_ptrEv
                                         # -- End function
 	.section	.text._ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE11get_deleterEv,"axG",@progbits,_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE11get_deleterEv,comdat
 	.weak	_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE11get_deleterEv # -- Begin function _ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE11get_deleterEv
 	.p2align	2
 	.type	_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE11get_deleterEv,@function
 _ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE11get_deleterEv: # @_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE11get_deleterEv
-.Lfunc_begin7:
-	.cfi_startproc
-	.cfi_personality 155, DW.ref.__gxx_personality_v0
-	.cfi_lsda 27, .Lexception7
 # %bb.0:                                # %entry
 	addi	sp, sp, -32
-	.cfi_def_cfa_offset 32
 	sd	ra, 24(sp)
 	sd	s0, 16(sp)
-	.cfi_offset ra, -8
-	.cfi_offset s0, -16
 	addi	s0, sp, 32
-	.cfi_def_cfa s0, 0
 	sd	a0, -24(s0)
 	ld	a0, -24(s0)
-.Ltmp58:
 	call	_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE10_M_deleterEv
-.Ltmp59:
-	j	.LBB81_1
-.LBB81_1:                               # %invoke.cont
 	ld	s0, 16(sp)
-	.cfi_def_cfa sp, 32
 	ld	ra, 24(sp)
-	.cfi_restore ra
-	.cfi_restore s0
 	addi	sp, sp, 32
-	.cfi_def_cfa_offset 0
 	ret
-.LBB81_2:                               # %terminate.lpad
-.Ltmp60:
-	call	__clang_call_terminate
-.Lfunc_end81:
-	.size	_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE11get_deleterEv, .Lfunc_end81-_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE11get_deleterEv
-	.cfi_endproc
-	.section	.gcc_except_table,"a",@progbits
-	.p2align	2
-GCC_except_table81:
-.Lexception7:
-	.byte	255                     # @LPStart Encoding = omit
-	.byte	155                     # @TType Encoding = indirect pcrel sdata4
-	.uleb128 .Lttbase3-.Lttbaseref3
-.Lttbaseref3:
-	.byte	3                       # Call site Encoding = udata4
-	.uleb128 .Lcst_end7-.Lcst_begin7
-.Lcst_begin7:
-	.word	.Ltmp58-.Lfunc_begin7   # >> Call Site 1 <<
-	.word	.Ltmp59-.Ltmp58         #   Call between .Ltmp58 and .Ltmp59
-	.word	.Ltmp60-.Lfunc_begin7   #     jumps to .Ltmp60
-	.byte	1                       #   On action: 1
-.Lcst_end7:
-	.byte	1                       # >> Action Record 1 <<
-                                        #   Catch TypeInfo 1
-	.byte	0                       #   No further actions
-	.p2align	2
-                                        # >> Catch TypeInfos <<
-	.word	0                       # TypeInfo 1
-.Lttbase3:
-	.p2align	2
+.Lfunc_end82:
+	.size	_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE11get_deleterEv, .Lfunc_end82-_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE11get_deleterEv
                                         # -- End function
 	.section	.text._ZNKSt14default_deleteIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEclEPS3_,"axG",@progbits,_ZNKSt14default_deleteIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEclEPS3_,comdat
 	.weak	_ZNKSt14default_deleteIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEclEPS3_ # -- Begin function _ZNKSt14default_deleteIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEclEPS3_
@@ -3719,18 +3760,18 @@ _ZNKSt14default_deleteIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEclEPS3_: # @_ZNKS
 	sd	a0, -24(s0)
 	sd	a1, -32(s0)
 	ld	a0, -32(s0)
-	beqz	a0, .LBB82_2
-	j	.LBB82_1
-.LBB82_1:                               # %delete.notnull
+	beqz	a0, .LBB83_2
+	j	.LBB83_1
+.LBB83_1:                               # %delete.notnull
 	call	_ZdlPv
-	j	.LBB82_2
-.LBB82_2:                               # %delete.end
+	j	.LBB83_2
+.LBB83_2:                               # %delete.end
 	ld	s0, 16(sp)
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end82:
-	.size	_ZNKSt14default_deleteIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEclEPS3_, .Lfunc_end82-_ZNKSt14default_deleteIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEclEPS3_
+.Lfunc_end83:
+	.size	_ZNKSt14default_deleteIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEclEPS3_, .Lfunc_end83-_ZNKSt14default_deleteIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEclEPS3_
                                         # -- End function
 	.section	.text._ZSt4moveIRPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4typeEOS7_,"axG",@progbits,_ZSt4moveIRPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4typeEOS7_,comdat
 	.weak	_ZSt4moveIRPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4typeEOS7_ # -- Begin function _ZSt4moveIRPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4typeEOS7_
@@ -3748,8 +3789,8 @@ _ZSt4moveIRPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4t
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end83:
-	.size	_ZSt4moveIRPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4typeEOS7_, .Lfunc_end83-_ZSt4moveIRPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4typeEOS7_
+.Lfunc_end84:
+	.size	_ZSt4moveIRPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4typeEOS7_, .Lfunc_end84-_ZSt4moveIRPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4typeEOS7_
                                         # -- End function
 	.section	.text._ZSt3getILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERSB_,"axG",@progbits,_ZSt3getILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERSB_,comdat
 	.weak	_ZSt3getILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERSB_ # -- Begin function _ZSt3getILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERSB_
@@ -3768,8 +3809,8 @@ _ZSt3getILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEER
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end84:
-	.size	_ZSt3getILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERSB_, .Lfunc_end84-_ZSt3getILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERSB_
+.Lfunc_end85:
+	.size	_ZSt3getILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERSB_, .Lfunc_end85-_ZSt3getILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERSB_
                                         # -- End function
 	.section	.text._ZSt12__get_helperILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJSt14default_deleteIS3_EEERT0_RSt11_Tuple_implIXT_EJS7_DpT1_EE,"axG",@progbits,_ZSt12__get_helperILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJSt14default_deleteIS3_EEERT0_RSt11_Tuple_implIXT_EJS7_DpT1_EE,comdat
 	.weak	_ZSt12__get_helperILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJSt14default_deleteIS3_EEERT0_RSt11_Tuple_implIXT_EJS7_DpT1_EE # -- Begin function _ZSt12__get_helperILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJSt14default_deleteIS3_EEERT0_RSt11_Tuple_implIXT_EJS7_DpT1_EE
@@ -3788,8 +3829,8 @@ _ZSt12__get_helperILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJSt14default_dele
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end85:
-	.size	_ZSt12__get_helperILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJSt14default_deleteIS3_EEERT0_RSt11_Tuple_implIXT_EJS7_DpT1_EE, .Lfunc_end85-_ZSt12__get_helperILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJSt14default_deleteIS3_EEERT0_RSt11_Tuple_implIXT_EJS7_DpT1_EE
+.Lfunc_end86:
+	.size	_ZSt12__get_helperILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJSt14default_deleteIS3_EEERT0_RSt11_Tuple_implIXT_EJS7_DpT1_EE, .Lfunc_end86-_ZSt12__get_helperILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJSt14default_deleteIS3_EEERT0_RSt11_Tuple_implIXT_EJS7_DpT1_EE
                                         # -- End function
 	.section	.text._ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEE7_M_headERS7_,"axG",@progbits,_ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEE7_M_headERS7_,comdat
 	.weak	_ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEE7_M_headERS7_ # -- Begin function _ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEE7_M_headERS7_
@@ -3808,8 +3849,8 @@ _ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_dele
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end86:
-	.size	_ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEE7_M_headERS7_, .Lfunc_end86-_ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEE7_M_headERS7_
+.Lfunc_end87:
+	.size	_ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEE7_M_headERS7_, .Lfunc_end87-_ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEE7_M_headERS7_
                                         # -- End function
 	.section	.text._ZNSt10_Head_baseILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEELb0EE7_M_headERS5_,"axG",@progbits,_ZNSt10_Head_baseILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEELb0EE7_M_headERS5_,comdat
 	.weak	_ZNSt10_Head_baseILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEELb0EE7_M_headERS5_ # -- Begin function _ZNSt10_Head_baseILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEELb0EE7_M_headERS5_
@@ -3827,8 +3868,8 @@ _ZNSt10_Head_baseILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEELb0EE7_M_headERS5_
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end87:
-	.size	_ZNSt10_Head_baseILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEELb0EE7_M_headERS5_, .Lfunc_end87-_ZNSt10_Head_baseILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEELb0EE7_M_headERS5_
+.Lfunc_end88:
+	.size	_ZNSt10_Head_baseILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEELb0EE7_M_headERS5_, .Lfunc_end88-_ZNSt10_Head_baseILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEELb0EE7_M_headERS5_
                                         # -- End function
 	.section	.text._ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE10_M_deleterEv,"axG",@progbits,_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE10_M_deleterEv,comdat
 	.weak	_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE10_M_deleterEv # -- Begin function _ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE10_M_deleterEv
@@ -3847,8 +3888,8 @@ _ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_delete
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end88:
-	.size	_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE10_M_deleterEv, .Lfunc_end88-_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE10_M_deleterEv
+.Lfunc_end89:
+	.size	_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE10_M_deleterEv, .Lfunc_end89-_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE10_M_deleterEv
                                         # -- End function
 	.section	.text._ZSt3getILm1EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERSB_,"axG",@progbits,_ZSt3getILm1EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERSB_,comdat
 	.weak	_ZSt3getILm1EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERSB_ # -- Begin function _ZSt3getILm1EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERSB_
@@ -3867,8 +3908,8 @@ _ZSt3getILm1EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEER
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end89:
-	.size	_ZSt3getILm1EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERSB_, .Lfunc_end89-_ZSt3getILm1EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERSB_
+.Lfunc_end90:
+	.size	_ZSt3getILm1EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERSB_, .Lfunc_end90-_ZSt3getILm1EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERSB_
                                         # -- End function
 	.section	.text._ZSt12__get_helperILm1ESt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEEJEERT0_RSt11_Tuple_implIXT_EJS6_DpT1_EE,"axG",@progbits,_ZSt12__get_helperILm1ESt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEEJEERT0_RSt11_Tuple_implIXT_EJS6_DpT1_EE,comdat
 	.weak	_ZSt12__get_helperILm1ESt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEEJEERT0_RSt11_Tuple_implIXT_EJS6_DpT1_EE # -- Begin function _ZSt12__get_helperILm1ESt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEEJEERT0_RSt11_Tuple_implIXT_EJS6_DpT1_EE
@@ -3887,8 +3928,8 @@ _ZSt12__get_helperILm1ESt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EE
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end90:
-	.size	_ZSt12__get_helperILm1ESt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEEJEERT0_RSt11_Tuple_implIXT_EJS6_DpT1_EE, .Lfunc_end90-_ZSt12__get_helperILm1ESt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEEJEERT0_RSt11_Tuple_implIXT_EJS6_DpT1_EE
+.Lfunc_end91:
+	.size	_ZSt12__get_helperILm1ESt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEEJEERT0_RSt11_Tuple_implIXT_EJS6_DpT1_EE, .Lfunc_end91-_ZSt12__get_helperILm1ESt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEEJEERT0_RSt11_Tuple_implIXT_EJS6_DpT1_EE
                                         # -- End function
 	.section	.text._ZNSt11_Tuple_implILm1EJSt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEEEE7_M_headERS6_,"axG",@progbits,_ZNSt11_Tuple_implILm1EJSt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEEEE7_M_headERS6_,comdat
 	.weak	_ZNSt11_Tuple_implILm1EJSt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEEEE7_M_headERS6_ # -- Begin function _ZNSt11_Tuple_implILm1EJSt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEEEE7_M_headERS6_
@@ -3907,8 +3948,8 @@ _ZNSt11_Tuple_implILm1EJSt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0E
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end91:
-	.size	_ZNSt11_Tuple_implILm1EJSt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEEEE7_M_headERS6_, .Lfunc_end91-_ZNSt11_Tuple_implILm1EJSt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEEEE7_M_headERS6_
+.Lfunc_end92:
+	.size	_ZNSt11_Tuple_implILm1EJSt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEEEE7_M_headERS6_, .Lfunc_end92-_ZNSt11_Tuple_implILm1EJSt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEEEE7_M_headERS6_
                                         # -- End function
 	.section	.text._ZNSt10_Head_baseILm1ESt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEELb1EE7_M_headERS6_,"axG",@progbits,_ZNSt10_Head_baseILm1ESt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEELb1EE7_M_headERS6_,comdat
 	.weak	_ZNSt10_Head_baseILm1ESt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEELb1EE7_M_headERS6_ # -- Begin function _ZNSt10_Head_baseILm1ESt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEELb1EE7_M_headERS6_
@@ -3926,8 +3967,8 @@ _ZNSt10_Head_baseILm1ESt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEE
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end92:
-	.size	_ZNSt10_Head_baseILm1ESt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEELb1EE7_M_headERS6_, .Lfunc_end92-_ZNSt10_Head_baseILm1ESt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEELb1EE7_M_headERS6_
+.Lfunc_end93:
+	.size	_ZNSt10_Head_baseILm1ESt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEELb1EE7_M_headERS6_, .Lfunc_end93-_ZNSt10_Head_baseILm1ESt14default_deleteIN3glm3matILi3ELi3EdLNS1_9qualifierE0EEEELb1EE7_M_headERS6_
                                         # -- End function
 	.section	.text._ZSt7forwardIN3glm3vecILi3EdLNS0_9qualifierE0EEEEOT_RNSt16remove_referenceIS4_E4typeE,"axG",@progbits,_ZSt7forwardIN3glm3vecILi3EdLNS0_9qualifierE0EEEEOT_RNSt16remove_referenceIS4_E4typeE,comdat
 	.weak	_ZSt7forwardIN3glm3vecILi3EdLNS0_9qualifierE0EEEEOT_RNSt16remove_referenceIS4_E4typeE # -- Begin function _ZSt7forwardIN3glm3vecILi3EdLNS0_9qualifierE0EEEEOT_RNSt16remove_referenceIS4_E4typeE
@@ -3945,8 +3986,8 @@ _ZSt7forwardIN3glm3vecILi3EdLNS0_9qualifierE0EEEEOT_RNSt16remove_referenceIS4_E4
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end93:
-	.size	_ZSt7forwardIN3glm3vecILi3EdLNS0_9qualifierE0EEEEOT_RNSt16remove_referenceIS4_E4typeE, .Lfunc_end93-_ZSt7forwardIN3glm3vecILi3EdLNS0_9qualifierE0EEEEOT_RNSt16remove_referenceIS4_E4typeE
+.Lfunc_end94:
+	.size	_ZSt7forwardIN3glm3vecILi3EdLNS0_9qualifierE0EEEEOT_RNSt16remove_referenceIS4_E4typeE, .Lfunc_end94-_ZSt7forwardIN3glm3vecILi3EdLNS0_9qualifierE0EEEEOT_RNSt16remove_referenceIS4_E4typeE
                                         # -- End function
 	.section	.text._ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEC2ERKNS_3vecILi3EdLS1_0EEES6_S6_,"axG",@progbits,_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEC2ERKNS_3vecILi3EdLS1_0EEES6_S6_,comdat
 	.weak	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEC2ERKNS_3vecILi3EdLS1_0EEES6_S6_ # -- Begin function _ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEC2ERKNS_3vecILi3EdLS1_0EEES6_S6_
@@ -3988,18 +4029,18 @@ _ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEC2ERKNS_3vecILi3EdLS1_0EEES6_S6_: # @_ZN3
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end94:
-	.size	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEC2ERKNS_3vecILi3EdLS1_0EEES6_S6_, .Lfunc_end94-_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEC2ERKNS_3vecILi3EdLS1_0EEES6_S6_
+.Lfunc_end95:
+	.size	_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEC2ERKNS_3vecILi3EdLS1_0EEES6_S6_, .Lfunc_end95-_ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEC2ERKNS_3vecILi3EdLS1_0EEES6_S6_
                                         # -- End function
 	.section	.text._ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEC2IS5_vEEPS3_,"axG",@progbits,_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEC2IS5_vEEPS3_,comdat
 	.weak	_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEC2IS5_vEEPS3_ # -- Begin function _ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEC2IS5_vEEPS3_
 	.p2align	2
 	.type	_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEC2IS5_vEEPS3_,@function
 _ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEC2IS5_vEEPS3_: # @_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEC2IS5_vEEPS3_
-.Lfunc_begin8:
+.Lfunc_begin7:
 	.cfi_startproc
 	.cfi_personality 155, DW.ref.__gxx_personality_v0
-	.cfi_lsda 27, .Lexception8
+	.cfi_lsda 27, .Lexception7
 # %bb.0:                                # %entry
 	addi	sp, sp, -32
 	.cfi_def_cfa_offset 32
@@ -4013,11 +4054,11 @@ _ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_E
 	sd	a1, -32(s0)
 	ld	a0, -24(s0)
 	ld	a1, -32(s0)
-.Ltmp61:
+.Ltmp56:
 	call	_ZNSt15__uniq_ptr_dataIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_ELb1ELb1EECI2St15__uniq_ptr_implIS3_S5_EEPS3_
-.Ltmp62:
-	j	.LBB95_1
-.LBB95_1:                               # %invoke.cont
+.Ltmp57:
+	j	.LBB96_1
+.LBB96_1:                               # %invoke.cont
 	ld	s0, 16(sp)
 	.cfi_def_cfa sp, 32
 	ld	ra, 24(sp)
@@ -4026,35 +4067,35 @@ _ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_E
 	addi	sp, sp, 32
 	.cfi_def_cfa_offset 0
 	ret
-.LBB95_2:                               # %terminate.lpad
-.Ltmp63:
+.LBB96_2:                               # %terminate.lpad
+.Ltmp58:
 	call	__clang_call_terminate
-.Lfunc_end95:
-	.size	_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEC2IS5_vEEPS3_, .Lfunc_end95-_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEC2IS5_vEEPS3_
+.Lfunc_end96:
+	.size	_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEC2IS5_vEEPS3_, .Lfunc_end96-_ZNSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEC2IS5_vEEPS3_
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table95:
-.Lexception8:
+GCC_except_table96:
+.Lexception7:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	155                     # @TType Encoding = indirect pcrel sdata4
-	.uleb128 .Lttbase4-.Lttbaseref4
-.Lttbaseref4:
+	.uleb128 .Lttbase3-.Lttbaseref3
+.Lttbaseref3:
 	.byte	3                       # Call site Encoding = udata4
-	.uleb128 .Lcst_end8-.Lcst_begin8
-.Lcst_begin8:
-	.word	.Ltmp61-.Lfunc_begin8   # >> Call Site 1 <<
-	.word	.Ltmp62-.Ltmp61         #   Call between .Ltmp61 and .Ltmp62
-	.word	.Ltmp63-.Lfunc_begin8   #     jumps to .Ltmp63
+	.uleb128 .Lcst_end7-.Lcst_begin7
+.Lcst_begin7:
+	.word	.Ltmp56-.Lfunc_begin7   # >> Call Site 1 <<
+	.word	.Ltmp57-.Ltmp56         #   Call between .Ltmp56 and .Ltmp57
+	.word	.Ltmp58-.Lfunc_begin7   #     jumps to .Ltmp58
 	.byte	1                       #   On action: 1
-.Lcst_end8:
+.Lcst_end7:
 	.byte	1                       # >> Action Record 1 <<
                                         #   Catch TypeInfo 1
 	.byte	0                       #   No further actions
 	.p2align	2
                                         # >> Catch TypeInfos <<
 	.word	0                       # TypeInfo 1
-.Lttbase4:
+.Lttbase3:
 	.p2align	2
                                         # -- End function
 	.section	.text._ZNSt15__uniq_ptr_dataIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_ELb1ELb1EECI2St15__uniq_ptr_implIS3_S5_EEPS3_,"axG",@progbits,_ZNSt15__uniq_ptr_dataIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_ELb1ELb1EECI2St15__uniq_ptr_implIS3_S5_EEPS3_,comdat
@@ -4085,8 +4126,8 @@ _ZNSt15__uniq_ptr_dataIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_delete
 	addi	sp, sp, 32
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end96:
-	.size	_ZNSt15__uniq_ptr_dataIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_ELb1ELb1EECI2St15__uniq_ptr_implIS3_S5_EEPS3_, .Lfunc_end96-_ZNSt15__uniq_ptr_dataIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_ELb1ELb1EECI2St15__uniq_ptr_implIS3_S5_EEPS3_
+.Lfunc_end97:
+	.size	_ZNSt15__uniq_ptr_dataIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_ELb1ELb1EECI2St15__uniq_ptr_implIS3_S5_EEPS3_, .Lfunc_end97-_ZNSt15__uniq_ptr_dataIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_ELb1ELb1EECI2St15__uniq_ptr_implIS3_S5_EEPS3_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEC2EPS3_,"axG",@progbits,_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEC2EPS3_,comdat
@@ -4116,8 +4157,8 @@ _ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_delete
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end97:
-	.size	_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEC2EPS3_, .Lfunc_end97-_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEC2EPS3_
+.Lfunc_end98:
+	.size	_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEC2EPS3_, .Lfunc_end98-_ZNSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEC2EPS3_
                                         # -- End function
 	.section	.text._ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_,"axG",@progbits,_ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_,comdat
 	.weak	_ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_ # -- Begin function _ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_
@@ -4154,8 +4195,8 @@ _ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_
 	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end98:
-	.size	_ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_, .Lfunc_end98-_ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_
+.Lfunc_end99:
+	.size	_ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_, .Lfunc_end99-_ZN3glm6detail11compute_dotINS_3vecILi3EdLNS_9qualifierE0EEEdLb0EE4callERKS4_S7_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_,"axG",@progbits,_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_,comdat
@@ -4199,8 +4240,8 @@ _ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_: # @_ZN3glmmlIdLNS_9
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end99:
-	.size	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_, .Lfunc_end99-_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_
+.Lfunc_end100:
+	.size	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_, .Lfunc_end100-_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNKSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE3getEv,"axG",@progbits,_ZNKSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE3getEv,comdat
@@ -4208,64 +4249,20 @@ _ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi3ET_XT0_EEERKS4_S6_: # @_ZN3glmmlIdLNS_9
 	.p2align	2
 	.type	_ZNKSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE3getEv,@function
 _ZNKSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE3getEv: # @_ZNKSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE3getEv
-.Lfunc_begin9:
-	.cfi_startproc
-	.cfi_personality 155, DW.ref.__gxx_personality_v0
-	.cfi_lsda 27, .Lexception9
 # %bb.0:                                # %entry
 	addi	sp, sp, -32
-	.cfi_def_cfa_offset 32
 	sd	ra, 24(sp)
 	sd	s0, 16(sp)
-	.cfi_offset ra, -8
-	.cfi_offset s0, -16
 	addi	s0, sp, 32
-	.cfi_def_cfa s0, 0
 	sd	a0, -24(s0)
 	ld	a0, -24(s0)
-.Ltmp64:
 	call	_ZNKSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE6_M_ptrEv
-.Ltmp65:
-	j	.LBB100_1
-.LBB100_1:                              # %invoke.cont
 	ld	s0, 16(sp)
-	.cfi_def_cfa sp, 32
 	ld	ra, 24(sp)
-	.cfi_restore ra
-	.cfi_restore s0
 	addi	sp, sp, 32
-	.cfi_def_cfa_offset 0
 	ret
-.LBB100_2:                              # %terminate.lpad
-.Ltmp66:
-	call	__clang_call_terminate
-.Lfunc_end100:
-	.size	_ZNKSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE3getEv, .Lfunc_end100-_ZNKSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE3getEv
-	.cfi_endproc
-	.section	.gcc_except_table,"a",@progbits
-	.p2align	2
-GCC_except_table100:
-.Lexception9:
-	.byte	255                     # @LPStart Encoding = omit
-	.byte	155                     # @TType Encoding = indirect pcrel sdata4
-	.uleb128 .Lttbase5-.Lttbaseref5
-.Lttbaseref5:
-	.byte	3                       # Call site Encoding = udata4
-	.uleb128 .Lcst_end9-.Lcst_begin9
-.Lcst_begin9:
-	.word	.Ltmp64-.Lfunc_begin9   # >> Call Site 1 <<
-	.word	.Ltmp65-.Ltmp64         #   Call between .Ltmp64 and .Ltmp65
-	.word	.Ltmp66-.Lfunc_begin9   #     jumps to .Ltmp66
-	.byte	1                       #   On action: 1
-.Lcst_end9:
-	.byte	1                       # >> Action Record 1 <<
-                                        #   Catch TypeInfo 1
-	.byte	0                       #   No further actions
-	.p2align	2
-                                        # >> Catch TypeInfos <<
-	.word	0                       # TypeInfo 1
-.Lttbase5:
-	.p2align	2
+.Lfunc_end101:
+	.size	_ZNKSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE3getEv, .Lfunc_end101-_ZNKSt10unique_ptrIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE3getEv
                                         # -- End function
 	.section	.text._ZNKSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE6_M_ptrEv,"axG",@progbits,_ZNKSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE6_M_ptrEv,comdat
 	.weak	_ZNKSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE6_M_ptrEv # -- Begin function _ZNKSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE6_M_ptrEv
@@ -4285,8 +4282,8 @@ _ZNKSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_delet
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end101:
-	.size	_ZNKSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE6_M_ptrEv, .Lfunc_end101-_ZNKSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE6_M_ptrEv
+.Lfunc_end102:
+	.size	_ZNKSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE6_M_ptrEv, .Lfunc_end102-_ZNKSt15__uniq_ptr_implIN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EE6_M_ptrEv
                                         # -- End function
 	.section	.text._ZSt3getILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERKNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERKSB_,"axG",@progbits,_ZSt3getILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERKNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERKSB_,comdat
 	.weak	_ZSt3getILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERKNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERKSB_ # -- Begin function _ZSt3getILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERKNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERKSB_
@@ -4305,8 +4302,8 @@ _ZSt3getILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEER
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end102:
-	.size	_ZSt3getILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERKNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERKSB_, .Lfunc_end102-_ZSt3getILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERKNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERKSB_
+.Lfunc_end103:
+	.size	_ZSt3getILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERKNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERKSB_, .Lfunc_end103-_ZSt3getILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEERKNSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeERKSB_
                                         # -- End function
 	.section	.text._ZSt12__get_helperILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJSt14default_deleteIS3_EEERKT0_RKSt11_Tuple_implIXT_EJS7_DpT1_EE,"axG",@progbits,_ZSt12__get_helperILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJSt14default_deleteIS3_EEERKT0_RKSt11_Tuple_implIXT_EJS7_DpT1_EE,comdat
 	.weak	_ZSt12__get_helperILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJSt14default_deleteIS3_EEERKT0_RKSt11_Tuple_implIXT_EJS7_DpT1_EE # -- Begin function _ZSt12__get_helperILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJSt14default_deleteIS3_EEERKT0_RKSt11_Tuple_implIXT_EJS7_DpT1_EE
@@ -4325,8 +4322,8 @@ _ZSt12__get_helperILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJSt14default_dele
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end103:
-	.size	_ZSt12__get_helperILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJSt14default_deleteIS3_EEERKT0_RKSt11_Tuple_implIXT_EJS7_DpT1_EE, .Lfunc_end103-_ZSt12__get_helperILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJSt14default_deleteIS3_EEERKT0_RKSt11_Tuple_implIXT_EJS7_DpT1_EE
+.Lfunc_end104:
+	.size	_ZSt12__get_helperILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJSt14default_deleteIS3_EEERKT0_RKSt11_Tuple_implIXT_EJS7_DpT1_EE, .Lfunc_end104-_ZSt12__get_helperILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEEJSt14default_deleteIS3_EEERKT0_RKSt11_Tuple_implIXT_EJS7_DpT1_EE
                                         # -- End function
 	.section	.text._ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEE7_M_headERKS7_,"axG",@progbits,_ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEE7_M_headERKS7_,comdat
 	.weak	_ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEE7_M_headERKS7_ # -- Begin function _ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEE7_M_headERKS7_
@@ -4345,8 +4342,8 @@ _ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_dele
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end104:
-	.size	_ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEE7_M_headERKS7_, .Lfunc_end104-_ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEE7_M_headERKS7_
+.Lfunc_end105:
+	.size	_ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEE7_M_headERKS7_, .Lfunc_end105-_ZNSt11_Tuple_implILm0EJPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEESt14default_deleteIS3_EEE7_M_headERKS7_
                                         # -- End function
 	.section	.text._ZNSt10_Head_baseILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEELb0EE7_M_headERKS5_,"axG",@progbits,_ZNSt10_Head_baseILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEELb0EE7_M_headERKS5_,comdat
 	.weak	_ZNSt10_Head_baseILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEELb0EE7_M_headERKS5_ # -- Begin function _ZNSt10_Head_baseILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEELb0EE7_M_headERKS5_
@@ -4364,8 +4361,8 @@ _ZNSt10_Head_baseILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEELb0EE7_M_headERKS5
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end105:
-	.size	_ZNSt10_Head_baseILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEELb0EE7_M_headERKS5_, .Lfunc_end105-_ZNSt10_Head_baseILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEELb0EE7_M_headERKS5_
+.Lfunc_end106:
+	.size	_ZNSt10_Head_baseILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEELb0EE7_M_headERKS5_, .Lfunc_end106-_ZNSt10_Head_baseILm0EPN3glm3matILi3ELi3EdLNS0_9qualifierE0EEELb0EE7_M_headERKS5_
                                         # -- End function
 	.section	.text._ZSt4moveIRN3glm3vecILi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4typeEOS6_,"axG",@progbits,_ZSt4moveIRN3glm3vecILi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4typeEOS6_,comdat
 	.weak	_ZSt4moveIRN3glm3vecILi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4typeEOS6_ # -- Begin function _ZSt4moveIRN3glm3vecILi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4typeEOS6_
@@ -4383,68 +4380,106 @@ _ZSt4moveIRN3glm3vecILi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4typeEO
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end106:
-	.size	_ZSt4moveIRN3glm3vecILi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4typeEOS6_, .Lfunc_end106-_ZSt4moveIRN3glm3vecILi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4typeEOS6_
+.Lfunc_end107:
+	.size	_ZSt4moveIRN3glm3vecILi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4typeEOS6_, .Lfunc_end107-_ZSt4moveIRN3glm3vecILi3EdLNS0_9qualifierE0EEEEONSt16remove_referenceIT_E4typeEOS6_
                                         # -- End function
 	.section	.text._ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi,"axG",@progbits,_ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi,comdat
 	.weak	_ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi # -- Begin function _ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi
 	.p2align	2
 	.type	_ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi,@function
 _ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi: # @_ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi
+	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	addi	s0, sp, 48
-	sd	a0, -32(s0)
-	sw	a1, -36(s0)
-	ld	a0, -32(s0)
-	lwu	a1, -36(s0)
-	beqz	a1, .LBB107_5
-	j	.LBB107_1
-.LBB107_1:                              # %entry
-	slli	a2, a1, 32
-	srli	a2, a2, 32
-	addi	a3, zero, 1
-	beq	a2, a3, .LBB107_6
-	j	.LBB107_2
-.LBB107_2:                              # %entry
-	slli	a2, a1, 32
-	srli	a2, a2, 32
-	addi	a3, zero, 2
-	beq	a2, a3, .LBB107_7
-	j	.LBB107_3
-.LBB107_3:                              # %entry
-	slli	a1, a1, 32
+	addi	sp, sp, -64
+	.cfi_def_cfa_offset 64
+	sd	ra, 56(sp)
+	sd	s0, 48(sp)
+	sd	s1, 40(sp)
+	sd	s2, 32(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	.cfi_offset s2, -32
+	addi	s0, sp, 64
+	.cfi_def_cfa s0, 0
+	sd	a0, -48(s0)
+	sw	a1, -52(s0)
+	ld	s2, -48(s0)
+	lw	a0, -52(s0)
+	bltz	a0, .LBB108_3
+	j	.LBB108_1
+.LBB108_1:                              # %land.lhs.true
+	lw	s1, -52(s0)
+	call	_ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv
+	bge	s1, a0, .LBB108_3
+	j	.LBB108_2
+.LBB108_2:                              # %cond.true
+	j	.LBB108_4
+.LBB108_3:                              # %cond.false
+	lui	a0, %hi(.L.str.2)
+	addi	a0, a0, %lo(.L.str.2)
+	lui	a1, %hi(.L__PRETTY_FUNCTION__._ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi)
+	addi	a2, a1, %lo(.L__PRETTY_FUNCTION__._ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi)
+	lui	a1, %hi(.L.str.3)
+	addi	a3, a1, %lo(.L.str.3)
+	addi	a1, zero, 497
+	call	__assert_func
+.LBB108_4:                              # %cond.end
+	lwu	a0, -52(s0)
+	beqz	a0, .LBB108_9
+	j	.LBB108_5
+.LBB108_5:                              # %cond.end
+	slli	a1, a0, 32
 	srli	a1, a1, 32
-	addi	a2, zero, 3
-	beq	a1, a2, .LBB107_8
-	j	.LBB107_4
-.LBB107_4:                              # %sw.default
-	j	.LBB107_5
-.LBB107_5:                              # %sw.bb
-	sd	a0, -24(s0)
-	j	.LBB107_9
-.LBB107_6:                              # %sw.bb2
-	addi	a0, a0, 8
-	sd	a0, -24(s0)
-	j	.LBB107_9
-.LBB107_7:                              # %sw.bb3
-	addi	a0, a0, 16
-	sd	a0, -24(s0)
-	j	.LBB107_9
-.LBB107_8:                              # %sw.bb4
-	addi	a0, a0, 24
-	sd	a0, -24(s0)
-	j	.LBB107_9
-.LBB107_9:                              # %return
-	ld	a0, -24(s0)
-	ld	s0, 32(sp)
-	ld	ra, 40(sp)
-	addi	sp, sp, 48
+	addi	a2, zero, 1
+	beq	a1, a2, .LBB108_10
+	j	.LBB108_6
+.LBB108_6:                              # %cond.end
+	slli	a1, a0, 32
+	srli	a1, a1, 32
+	addi	a2, zero, 2
+	beq	a1, a2, .LBB108_11
+	j	.LBB108_7
+.LBB108_7:                              # %cond.end
+	slli	a0, a0, 32
+	srli	a0, a0, 32
+	addi	a1, zero, 3
+	beq	a0, a1, .LBB108_12
+	j	.LBB108_8
+.LBB108_8:                              # %sw.default
+	j	.LBB108_9
+.LBB108_9:                              # %sw.bb
+	sd	s2, -40(s0)
+	j	.LBB108_13
+.LBB108_10:                             # %sw.bb3
+	addi	a0, s2, 8
+	sd	a0, -40(s0)
+	j	.LBB108_13
+.LBB108_11:                             # %sw.bb4
+	addi	a0, s2, 16
+	sd	a0, -40(s0)
+	j	.LBB108_13
+.LBB108_12:                             # %sw.bb5
+	addi	a0, s2, 24
+	sd	a0, -40(s0)
+	j	.LBB108_13
+.LBB108_13:                             # %return
+	ld	a0, -40(s0)
+	ld	s2, 32(sp)
+	ld	s1, 40(sp)
+	ld	s0, 48(sp)
+	.cfi_def_cfa sp, 64
+	ld	ra, 56(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	.cfi_restore s2
+	addi	sp, sp, 64
+	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end107:
-	.size	_ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi, .Lfunc_end107-_ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi
+.Lfunc_end108:
+	.size	_ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi, .Lfunc_end108-_ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi
+	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Ed,"axG",@progbits,_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Ed,comdat
 	.weak	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Ed # -- Begin function _ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Ed
@@ -4472,8 +4507,8 @@ _ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Ed: # @_ZN3glm3vecILi4EdLNS_9qualifierE0EEC
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end108:
-	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Ed, .Lfunc_end108-_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Ed
+.Lfunc_end109:
+	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Ed, .Lfunc_end109-_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Ed
                                         # -- End function
 	.section	.text._ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_,"axG",@progbits,_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_,comdat
 	.weak	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_ # -- Begin function _ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_
@@ -4526,8 +4561,8 @@ _ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_: # @_ZN3glmmlIdLNS_9
 	addi	sp, sp, 80
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end109:
-	.size	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_, .Lfunc_end109-_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_
+.Lfunc_end110:
+	.size	_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_, .Lfunc_end110-_ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi,"axG",@progbits,_ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi,comdat
@@ -4535,23 +4570,57 @@ _ZN3glmmlIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_: # @_ZN3glmmlIdLNS_9
 	.p2align	2
 	.type	_ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi,@function
 _ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi: # @_ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi
+	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	sw	a1, -28(s0)
-	ld	a0, -24(s0)
-	lw	a1, -28(s0)
-	slli	a1, a1, 5
-	add	a0, a0, a1
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
+	addi	sp, sp, -48
+	.cfi_def_cfa_offset 48
+	sd	ra, 40(sp)
+	sd	s0, 32(sp)
+	sd	s1, 24(sp)
+	sd	s2, 16(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	.cfi_offset s2, -32
+	addi	s0, sp, 48
+	.cfi_def_cfa s0, 0
+	sd	a0, -40(s0)
+	sw	a1, -44(s0)
+	ld	s2, -40(s0)
+	lw	s1, -44(s0)
+	call	_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv
+	bge	s1, a0, .LBB111_2
+	j	.LBB111_1
+.LBB111_1:                              # %cond.true
+	j	.LBB111_3
+.LBB111_2:                              # %cond.false
+	lui	a0, %hi(.L.str.4)
+	addi	a0, a0, %lo(.L.str.4)
+	lui	a1, %hi(.L__PRETTY_FUNCTION__._ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi)
+	addi	a2, a1, %lo(.L__PRETTY_FUNCTION__._ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi)
+	lui	a1, %hi(.L.str.1)
+	addi	a3, a1, %lo(.L.str.1)
+	addi	a1, zero, 298
+	call	__assert_func
+.LBB111_3:                              # %cond.end
+	lw	a0, -44(s0)
+	slli	a0, a0, 5
+	add	a0, s2, a0
+	ld	s2, 16(sp)
+	ld	s1, 24(sp)
+	ld	s0, 32(sp)
+	.cfi_def_cfa sp, 48
+	ld	ra, 40(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	.cfi_restore s2
+	addi	sp, sp, 48
+	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end110:
-	.size	_ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi, .Lfunc_end110-_ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi
+.Lfunc_end111:
+	.size	_ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi, .Lfunc_end111-_ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi
+	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_,"axG",@progbits,_ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_,comdat
 	.weak	_ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_ # -- Begin function _ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_
@@ -4604,9 +4673,27 @@ _ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_: # @_ZN3glmplIdLNS_9
 	addi	sp, sp, 80
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end111:
-	.size	_ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_, .Lfunc_end111-_ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_
+.Lfunc_end112:
+	.size	_ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_, .Lfunc_end112-_ZN3glmplIdLNS_9qualifierE0EEENS_3vecILi4ET_XT0_EEERKS4_S6_
 	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv,"axG",@progbits,_ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv,comdat
+	.weak	_ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv # -- Begin function _ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv
+	.p2align	2
+	.type	_ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv,@function
+_ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv: # @_ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv
+# %bb.0:                                # %entry
+	addi	sp, sp, -16
+	sd	ra, 8(sp)
+	sd	s0, 0(sp)
+	addi	s0, sp, 16
+	addi	a0, zero, 4
+	ld	s0, 0(sp)
+	ld	ra, 8(sp)
+	addi	sp, sp, 16
+	ret
+.Lfunc_end113:
+	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv, .Lfunc_end113-_ZN3glm3vecILi4EdLNS_9qualifierE0EE6lengthEv
                                         # -- End function
 	.section	.text._ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_RKNS0_ILi4ET_LS1_0EEE,"axG",@progbits,_ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_RKNS0_ILi4ET_LS1_0EEE,comdat
 	.weak	_ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_RKNS0_ILi4ET_LS1_0EEE # -- Begin function _ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_RKNS0_ILi4ET_LS1_0EEE
@@ -4660,8 +4747,8 @@ _ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_RKNS0_ILi4ET_LS1_0EEE: # @_ZN3glm3v
 	addi	sp, sp, 112
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end112:
-	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_RKNS0_ILi4ET_LS1_0EEE, .Lfunc_end112-_ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_RKNS0_ILi4ET_LS1_0EEE
+.Lfunc_end114:
+	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_RKNS0_ILi4ET_LS1_0EEE, .Lfunc_end114-_ZN3glm3vecILi4EdLNS_9qualifierE0EEmLIdEERS2_RKNS0_ILi4ET_LS1_0EEE
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm6detail16compute_vec4_mulIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_,"axG",@progbits,_ZN3glm6detail16compute_vec4_mulIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_,comdat
@@ -4709,8 +4796,8 @@ _ZN3glm6detail16compute_vec4_mulIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end113:
-	.size	_ZN3glm6detail16compute_vec4_mulIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_, .Lfunc_end113-_ZN3glm6detail16compute_vec4_mulIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_
+.Lfunc_end115:
+	.size	_ZN3glm6detail16compute_vec4_mulIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_, .Lfunc_end115-_ZN3glm6detail16compute_vec4_mulIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Edddd,"axG",@progbits,_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Edddd,comdat
@@ -4745,8 +4832,26 @@ _ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Edddd: # @_ZN3glm3vecILi4EdLNS_9qualifierE0
 	ld	ra, 56(sp)
 	addi	sp, sp, 64
 	ret
-.Lfunc_end114:
-	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Edddd, .Lfunc_end114-_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Edddd
+.Lfunc_end116:
+	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Edddd, .Lfunc_end116-_ZN3glm3vecILi4EdLNS_9qualifierE0EEC2Edddd
+                                        # -- End function
+	.section	.text._ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv,"axG",@progbits,_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv,comdat
+	.weak	_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv # -- Begin function _ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv
+	.p2align	2
+	.type	_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv,@function
+_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv: # @_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv
+# %bb.0:                                # %entry
+	addi	sp, sp, -16
+	sd	ra, 8(sp)
+	sd	s0, 0(sp)
+	addi	s0, sp, 16
+	addi	a0, zero, 4
+	ld	s0, 0(sp)
+	ld	ra, 8(sp)
+	addi	sp, sp, 16
+	ret
+.Lfunc_end117:
+	.size	_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv, .Lfunc_end117-_ZN3glm3matILi4ELi4EdLNS_9qualifierE0EE6lengthEv
                                         # -- End function
 	.section	.text._ZN3glm3vecILi4EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi4ET_LS1_0EEE,"axG",@progbits,_ZN3glm3vecILi4EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi4ET_LS1_0EEE,comdat
 	.weak	_ZN3glm3vecILi4EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi4ET_LS1_0EEE # -- Begin function _ZN3glm3vecILi4EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi4ET_LS1_0EEE
@@ -4800,8 +4905,8 @@ _ZN3glm3vecILi4EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi4ET_LS1_0EEE: # @_ZN3glm3v
 	addi	sp, sp, 112
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end115:
-	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi4ET_LS1_0EEE, .Lfunc_end115-_ZN3glm3vecILi4EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi4ET_LS1_0EEE
+.Lfunc_end118:
+	.size	_ZN3glm3vecILi4EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi4ET_LS1_0EEE, .Lfunc_end118-_ZN3glm3vecILi4EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi4ET_LS1_0EEE
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm6detail16compute_vec4_addIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_,"axG",@progbits,_ZN3glm6detail16compute_vec4_addIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_,comdat
@@ -4849,8 +4954,8 @@ _ZN3glm6detail16compute_vec4_addIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end116:
-	.size	_ZN3glm6detail16compute_vec4_addIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_, .Lfunc_end116-_ZN3glm6detail16compute_vec4_addIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_
+.Lfunc_end119:
+	.size	_ZN3glm6detail16compute_vec4_addIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_, .Lfunc_end119-_ZN3glm6detail16compute_vec4_addIdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi4EdLS2_0EEES7_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm6detail14compute_lengthILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE,"axG",@progbits,_ZN3glm6detail14compute_lengthILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE,comdat
@@ -4872,9 +4977,7 @@ _ZN3glm6detail14compute_lengthILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdL
 	ld	a0, -24(s0)
 	mv	a1, a0
 	call	_ZN3glm3dotILi3EdLNS_9qualifierE0EEET0_RKNS_3vecIXT_ES2_XT1_EEES6_
-	fmv.d.x	ft0, a0
-	fsqrt.d	ft0, ft0
-	fmv.x.d	a0, ft0
+	call	sqrt
 	ld	s0, 16(sp)
 	.cfi_def_cfa sp, 32
 	ld	ra, 24(sp)
@@ -4883,8 +4986,8 @@ _ZN3glm6detail14compute_lengthILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdL
 	addi	sp, sp, 32
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end117:
-	.size	_ZN3glm6detail14compute_lengthILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE, .Lfunc_end117-_ZN3glm6detail14compute_lengthILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE
+.Lfunc_end120:
+	.size	_ZN3glm6detail14compute_lengthILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE, .Lfunc_end120-_ZN3glm6detail14compute_lengthILi3EdLNS_9qualifierE0ELb0EE4callERKNS_3vecILi3EdLS2_0EEE
 	.cfi_endproc
                                         # -- End function
 	.type	_ZTVN7Surface8TriangleE,@object # @_ZTVN7Surface8TriangleE
@@ -4954,6 +5057,52 @@ _ZTVN7Surface4BaseE:
 	.quad	__cxa_pure_virtual
 	.quad	__cxa_pure_virtual
 	.size	_ZTVN7Surface4BaseE, 88
+
+	.type	.L.str,@object          # @.str
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.L.str:
+	.asciz	"/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/./ext/../detail/type_mat3x3.inl"
+	.size	.L.str, 91
+
+	.type	.L__PRETTY_FUNCTION__._ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi,@object # @__PRETTY_FUNCTION__._ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi
+.L__PRETTY_FUNCTION__._ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi:
+	.asciz	"const typename mat<3, 3, T, Q>::col_type &glm::mat<3, 3, double, glm::packed_highp>::operator[](typename mat<3, 3, T, Q>::length_type) const [C = 3, R = 3, T = double, Q = glm::packed_highp]"
+	.size	.L__PRETTY_FUNCTION__._ZNK3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi, 191
+
+	.type	.L.str.1,@object        # @.str.1
+.L.str.1:
+	.asciz	"i < this->length()"
+	.size	.L.str.1, 19
+
+	.type	.L.str.2,@object        # @.str.2
+.L.str.2:
+	.asciz	"/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/./ext/../detail/type_vec4.inl"
+	.size	.L.str.2, 89
+
+	.type	.L__PRETTY_FUNCTION__._ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi,@object # @__PRETTY_FUNCTION__._ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi
+.L__PRETTY_FUNCTION__._ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi:
+	.asciz	"const T &glm::vec<4, double, glm::packed_highp>::operator[](typename vec<4, T, Q>::length_type) const [L = 4, T = double, Q = glm::packed_highp]"
+	.size	.L__PRETTY_FUNCTION__._ZNK3glm3vecILi4EdLNS_9qualifierE0EEixEi, 145
+
+	.type	.L.str.3,@object        # @.str.3
+.L.str.3:
+	.asciz	"i >= 0 && i < this->length()"
+	.size	.L.str.3, 29
+
+	.type	.L.str.4,@object        # @.str.4
+.L.str.4:
+	.asciz	"/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/./ext/../detail/type_mat4x4.inl"
+	.size	.L.str.4, 91
+
+	.type	.L__PRETTY_FUNCTION__._ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi,@object # @__PRETTY_FUNCTION__._ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi
+.L__PRETTY_FUNCTION__._ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi:
+	.asciz	"const typename mat<4, 4, T, Q>::col_type &glm::mat<4, 4, double, glm::packed_highp>::operator[](typename mat<4, 4, T, Q>::length_type) const [C = 4, R = 4, T = double, Q = glm::packed_highp]"
+	.size	.L__PRETTY_FUNCTION__._ZNK3glm3matILi4ELi4EdLNS_9qualifierE0EEixEi, 191
+
+	.type	.L__PRETTY_FUNCTION__._ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi,@object # @__PRETTY_FUNCTION__._ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi
+.L__PRETTY_FUNCTION__._ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi:
+	.asciz	"typename mat<3, 3, T, Q>::col_type &glm::mat<3, 3, double, glm::packed_highp>::operator[](typename mat<3, 3, T, Q>::length_type) [C = 3, R = 3, T = double, Q = glm::packed_highp]"
+	.size	.L__PRETTY_FUNCTION__._ZN3glm3matILi3ELi3EdLNS_9qualifierE0EEixEi, 179
 
 	.hidden	DW.ref.__gxx_personality_v0
 	.weak	DW.ref.__gxx_personality_v0

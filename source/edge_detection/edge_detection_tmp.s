@@ -5,26 +5,34 @@
 __cxx_global_var_init:                  # @__cxx_global_var_init
 	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sd	ra, 8(sp)
-	sd	s0, 0(sp)
+	addi	sp, sp, -32
+	.cfi_def_cfa_offset 32
+	sd	ra, 24(sp)
+	sd	s0, 16(sp)
+	sd	s1, 8(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
-	addi	s0, sp, 16
+	.cfi_offset s1, -24
+	addi	s0, sp, 32
 	.cfi_def_cfa s0, 0
 	lui	a0, %hi(no_edge)
-	addi	a0, a0, %lo(no_edge)
+	addi	s1, a0, %lo(no_edge)
+	mv	a0, s1
 	call	_ZNSt6vectorIbSaIbEEC2Ev
-	lui	a0, %hi(__dtor_no_edge)
-	addi	a0, a0, %lo(__dtor_no_edge)
-	call	atexit
-	ld	s0, 0(sp)
-	.cfi_def_cfa sp, 16
-	ld	ra, 8(sp)
+	lui	a0, %hi(_ZNSt6vectorIbSaIbEED2Ev)
+	addi	a0, a0, %lo(_ZNSt6vectorIbSaIbEED2Ev)
+	lui	a1, %hi(__dso_handle)
+	addi	a2, a1, %lo(__dso_handle)
+	mv	a1, s1
+	call	__cxa_atexit
+	ld	s1, 8(sp)
+	ld	s0, 16(sp)
+	.cfi_def_cfa sp, 32
+	ld	ra, 24(sp)
 	.cfi_restore ra
 	.cfi_restore s0
-	addi	sp, sp, 16
+	.cfi_restore s1
+	addi	sp, sp, 32
 	.cfi_def_cfa_offset 0
 	ret
 .Lfunc_end0:
@@ -72,63 +80,43 @@ _ZNSt6vectorIbSaIbEED2Ev:               # @_ZNSt6vectorIbSaIbEED2Ev
 	.size	_ZNSt6vectorIbSaIbEED2Ev, .Lfunc_end2-_ZNSt6vectorIbSaIbEED2Ev
                                         # -- End function
 	.text
-	.p2align	2               # -- Begin function __dtor_no_edge
-	.type	__dtor_no_edge,@function
-__dtor_no_edge:                         # @__dtor_no_edge
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sd	ra, 8(sp)
-	sd	s0, 0(sp)
-	.cfi_offset ra, -8
-	.cfi_offset s0, -16
-	addi	s0, sp, 16
-	.cfi_def_cfa s0, 0
-	lui	a0, %hi(no_edge)
-	addi	a0, a0, %lo(no_edge)
-	call	_ZNSt6vectorIbSaIbEED2Ev
-	ld	s0, 0(sp)
-	.cfi_def_cfa sp, 16
-	ld	ra, 8(sp)
-	.cfi_restore ra
-	.cfi_restore s0
-	addi	sp, sp, 16
-	.cfi_def_cfa_offset 0
-	ret
-.Lfunc_end3:
-	.size	__dtor_no_edge, .Lfunc_end3-__dtor_no_edge
-	.cfi_endproc
-                                        # -- End function
 	.p2align	2               # -- Begin function __cxx_global_var_init.1
 	.type	__cxx_global_var_init.1,@function
 __cxx_global_var_init.1:                # @__cxx_global_var_init.1
 	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sd	ra, 8(sp)
-	sd	s0, 0(sp)
+	addi	sp, sp, -32
+	.cfi_def_cfa_offset 32
+	sd	ra, 24(sp)
+	sd	s0, 16(sp)
+	sd	s1, 8(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
-	addi	s0, sp, 16
+	.cfi_offset s1, -24
+	addi	s0, sp, 32
 	.cfi_def_cfa s0, 0
 	lui	a0, %hi(fig)
-	addi	a0, a0, %lo(fig)
+	addi	s1, a0, %lo(fig)
+	mv	a0, s1
 	call	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev
-	lui	a0, %hi(__dtor_fig)
-	addi	a0, a0, %lo(__dtor_fig)
-	call	atexit
-	ld	s0, 0(sp)
-	.cfi_def_cfa sp, 16
-	ld	ra, 8(sp)
+	lui	a0, %hi(_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev)
+	addi	a0, a0, %lo(_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev)
+	lui	a1, %hi(__dso_handle)
+	addi	a2, a1, %lo(__dso_handle)
+	mv	a1, s1
+	call	__cxa_atexit
+	ld	s1, 8(sp)
+	ld	s0, 16(sp)
+	.cfi_def_cfa sp, 32
+	ld	ra, 24(sp)
 	.cfi_restore ra
 	.cfi_restore s0
-	addi	sp, sp, 16
+	.cfi_restore s1
+	addi	sp, sp, 32
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end4:
-	.size	__cxx_global_var_init.1, .Lfunc_end4-__cxx_global_var_init.1
+.Lfunc_end3:
+	.size	__cxx_global_var_init.1, .Lfunc_end3-__cxx_global_var_init.1
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev,"axG",@progbits,_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev,comdat
@@ -148,8 +136,8 @@ _ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev: # @_ZNSt6vectorIN3
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end5:
-	.size	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev, .Lfunc_end5-_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev
+.Lfunc_end4:
+	.size	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev, .Lfunc_end4-_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev
                                         # -- End function
 	.section	.text._ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev,"axG",@progbits,_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev,comdat
 	.weak	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev # -- Begin function _ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev
@@ -161,66 +149,70 @@ _ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev: # @_ZNSt6vectorIN3
 	.cfi_personality 155, DW.ref.__gxx_personality_v0
 	.cfi_lsda 27, .Lexception0
 # %bb.0:                                # %entry
-	addi	sp, sp, -64
-	.cfi_def_cfa_offset 64
-	sd	ra, 56(sp)
-	sd	s0, 48(sp)
-	sd	s1, 40(sp)
-	sd	s2, 32(sp)
-	sd	s3, 24(sp)
+	addi	sp, sp, -96
+	.cfi_def_cfa_offset 96
+	sd	ra, 88(sp)
+	sd	s0, 80(sp)
+	sd	s1, 72(sp)
+	sd	s2, 64(sp)
+	sd	s3, 56(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
 	.cfi_offset s1, -24
 	.cfi_offset s2, -32
 	.cfi_offset s3, -40
-	addi	s0, sp, 64
+	addi	s0, sp, 96
 	.cfi_def_cfa s0, 0
-	sd	a0, -48(s0)
-	ld	s1, -48(s0)
+	sd	a0, -72(s0)
+	ld	s1, -72(s0)
 	ld	s2, 0(s1)
 	ld	s3, 8(s1)
 	mv	a0, s1
 	call	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE19_M_get_Tp_allocatorEv
-	mv	a2, a0
+	sd	s2, -48(s0)
+	sd	s3, -56(s0)
+	sd	a0, -64(s0)
+	ld	a0, -48(s0)
+	ld	a1, -56(s0)
 .Ltmp0:
-	mv	a0, s2
-	mv	a1, s3
-	call	_ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEES3_EvT_S5_RSaIT0_E
+	call	_ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEEEvT_S5_
 .Ltmp1:
-	j	.LBB6_1
-.LBB6_1:                                # %invoke.cont
+	j	.LBB5_1
+.LBB5_1:                                # %_ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEES3_EvT_S5_RSaIT0_E.exit
+	j	.LBB5_2
+.LBB5_2:                                # %invoke.cont
 	mv	a0, s1
 	call	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev
-	ld	s3, 24(sp)
-	ld	s2, 32(sp)
-	ld	s1, 40(sp)
-	ld	s0, 48(sp)
-	.cfi_def_cfa sp, 64
-	ld	ra, 56(sp)
+	ld	s3, 56(sp)
+	ld	s2, 64(sp)
+	ld	s1, 72(sp)
+	ld	s0, 80(sp)
+	.cfi_def_cfa sp, 96
+	ld	ra, 88(sp)
 	.cfi_restore ra
 	.cfi_restore s0
 	.cfi_restore s1
 	.cfi_restore s2
 	.cfi_restore s3
-	addi	sp, sp, 64
+	addi	sp, sp, 96
 	.cfi_def_cfa_offset 0
 	ret
-.LBB6_2:                                # %lpad
+.LBB5_3:                                # %lpad
 .Ltmp2:
-	sd	a0, -56(s0)
-	sw	a1, -60(s0)
+	sd	a0, -80(s0)
+	sw	a1, -84(s0)
 	mv	a0, s1
 	call	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev
-	j	.LBB6_3
-.LBB6_3:                                # %terminate.handler
-	ld	a0, -56(s0)
+	j	.LBB5_4
+.LBB5_4:                                # %terminate.handler
+	ld	a0, -80(s0)
 	call	__clang_call_terminate
-.Lfunc_end6:
-	.size	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev, .Lfunc_end6-_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev
+.Lfunc_end5:
+	.size	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev, .Lfunc_end5-_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table6:
+GCC_except_table5:
 .Lexception0:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	155                     # @TType Encoding = indirect pcrel sdata4
@@ -244,91 +236,43 @@ GCC_except_table6:
 	.p2align	2
                                         # -- End function
 	.text
-	.p2align	2               # -- Begin function __dtor_fig
-	.type	__dtor_fig,@function
-__dtor_fig:                             # @__dtor_fig
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sd	ra, 8(sp)
-	sd	s0, 0(sp)
-	.cfi_offset ra, -8
-	.cfi_offset s0, -16
-	addi	s0, sp, 16
-	.cfi_def_cfa s0, 0
-	lui	a0, %hi(fig)
-	addi	a0, a0, %lo(fig)
-	call	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev
-	ld	s0, 0(sp)
-	.cfi_def_cfa sp, 16
-	ld	ra, 8(sp)
-	.cfi_restore ra
-	.cfi_restore s0
-	addi	sp, sp, 16
-	.cfi_def_cfa_offset 0
-	ret
-.Lfunc_end7:
-	.size	__dtor_fig, .Lfunc_end7-__dtor_fig
-	.cfi_endproc
-                                        # -- End function
 	.p2align	2               # -- Begin function __cxx_global_var_init.2
 	.type	__cxx_global_var_init.2,@function
 __cxx_global_var_init.2:                # @__cxx_global_var_init.2
 	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sd	ra, 8(sp)
-	sd	s0, 0(sp)
+	addi	sp, sp, -32
+	.cfi_def_cfa_offset 32
+	sd	ra, 24(sp)
+	sd	s0, 16(sp)
+	sd	s1, 8(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
-	addi	s0, sp, 16
+	.cfi_offset s1, -24
+	addi	s0, sp, 32
 	.cfi_def_cfa s0, 0
 	lui	a0, %hi(average_window)
-	addi	a0, a0, %lo(average_window)
+	addi	s1, a0, %lo(average_window)
+	mv	a0, s1
 	call	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev
-	lui	a0, %hi(__dtor_average_window)
-	addi	a0, a0, %lo(__dtor_average_window)
-	call	atexit
-	ld	s0, 0(sp)
-	.cfi_def_cfa sp, 16
-	ld	ra, 8(sp)
+	lui	a0, %hi(_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev)
+	addi	a0, a0, %lo(_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev)
+	lui	a1, %hi(__dso_handle)
+	addi	a2, a1, %lo(__dso_handle)
+	mv	a1, s1
+	call	__cxa_atexit
+	ld	s1, 8(sp)
+	ld	s0, 16(sp)
+	.cfi_def_cfa sp, 32
+	ld	ra, 24(sp)
 	.cfi_restore ra
 	.cfi_restore s0
-	addi	sp, sp, 16
+	.cfi_restore s1
+	addi	sp, sp, 32
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end8:
-	.size	__cxx_global_var_init.2, .Lfunc_end8-__cxx_global_var_init.2
-	.cfi_endproc
-                                        # -- End function
-	.p2align	2               # -- Begin function __dtor_average_window
-	.type	__dtor_average_window,@function
-__dtor_average_window:                  # @__dtor_average_window
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -16
-	.cfi_def_cfa_offset 16
-	sd	ra, 8(sp)
-	sd	s0, 0(sp)
-	.cfi_offset ra, -8
-	.cfi_offset s0, -16
-	addi	s0, sp, 16
-	.cfi_def_cfa s0, 0
-	lui	a0, %hi(average_window)
-	addi	a0, a0, %lo(average_window)
-	call	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev
-	ld	s0, 0(sp)
-	.cfi_def_cfa sp, 16
-	ld	ra, 8(sp)
-	.cfi_restore ra
-	.cfi_restore s0
-	addi	sp, sp, 16
-	.cfi_def_cfa_offset 0
-	ret
-.Lfunc_end9:
-	.size	__dtor_average_window, .Lfunc_end9-__dtor_average_window
+.Lfunc_end6:
+	.size	__cxx_global_var_init.2, .Lfunc_end6-__cxx_global_var_init.2
 	.cfi_endproc
                                         # -- End function
 	.globl	_Z7clampedN3glm3vecILi3EdLNS_9qualifierE0EEE # -- Begin function _Z7clampedN3glm3vecILi3EdLNS_9qualifierE0EEE
@@ -415,8 +359,8 @@ _Z7clampedN3glm3vecILi3EdLNS_9qualifierE0EEE: # @_Z7clampedN3glm3vecILi3EdLNS_9q
 	addi	sp, sp, 96
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end10:
-	.size	_Z7clampedN3glm3vecILi3EdLNS_9qualifierE0EEE, .Lfunc_end10-_Z7clampedN3glm3vecILi3EdLNS_9qualifierE0EEE
+.Lfunc_end7:
+	.size	_Z7clampedN3glm3vecILi3EdLNS_9qualifierE0EEE, .Lfunc_end7-_Z7clampedN3glm3vecILi3EdLNS_9qualifierE0EEE
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt3minIdERKT_S2_S2_,"axG",@progbits,_ZSt3minIdERKT_S2_S2_,comdat
@@ -437,84 +381,122 @@ _ZSt3minIdERKT_S2_S2_:                  # @_ZSt3minIdERKT_S2_S2_
 	fld	ft1, 0(a0)
 	flt.d	a0, ft0, ft1
 	xori	a0, a0, 1
-	bnez	a0, .LBB11_2
-	j	.LBB11_1
-.LBB11_1:                               # %if.then
+	bnez	a0, .LBB8_2
+	j	.LBB8_1
+.LBB8_1:                                # %if.then
 	ld	a0, -40(s0)
 	sd	a0, -24(s0)
-	j	.LBB11_3
-.LBB11_2:                               # %if.end
+	j	.LBB8_3
+.LBB8_2:                                # %if.end
 	ld	a0, -32(s0)
 	sd	a0, -24(s0)
-	j	.LBB11_3
-.LBB11_3:                               # %return
+	j	.LBB8_3
+.LBB8_3:                                # %return
 	ld	a0, -24(s0)
 	ld	s0, 32(sp)
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end11:
-	.size	_ZSt3minIdERKT_S2_S2_, .Lfunc_end11-_ZSt3minIdERKT_S2_S2_
+.Lfunc_end8:
+	.size	_ZSt3minIdERKT_S2_S2_, .Lfunc_end8-_ZSt3minIdERKT_S2_S2_
                                         # -- End function
 	.section	.text._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi,"axG",@progbits,_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi,comdat
 	.weak	_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi # -- Begin function _ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
 	.p2align	2
 	.type	_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi,@function
 _ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi: # @_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
+	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	addi	s0, sp, 48
-	sd	a0, -32(s0)
-	sw	a1, -36(s0)
-	ld	a0, -32(s0)
-	lwu	a1, -36(s0)
-	beqz	a1, .LBB12_4
-	j	.LBB12_1
-.LBB12_1:                               # %entry
-	slli	a2, a1, 32
-	srli	a2, a2, 32
-	addi	a3, zero, 1
-	beq	a2, a3, .LBB12_5
-	j	.LBB12_2
-.LBB12_2:                               # %entry
-	slli	a1, a1, 32
+	addi	sp, sp, -64
+	.cfi_def_cfa_offset 64
+	sd	ra, 56(sp)
+	sd	s0, 48(sp)
+	sd	s1, 40(sp)
+	sd	s2, 32(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
+	.cfi_offset s1, -24
+	.cfi_offset s2, -32
+	addi	s0, sp, 64
+	.cfi_def_cfa s0, 0
+	sd	a0, -48(s0)
+	sw	a1, -52(s0)
+	ld	s2, -48(s0)
+	lw	a0, -52(s0)
+	bltz	a0, .LBB9_3
+	j	.LBB9_1
+.LBB9_1:                                # %land.lhs.true
+	lw	s1, -52(s0)
+	call	_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv
+	bge	s1, a0, .LBB9_3
+	j	.LBB9_2
+.LBB9_2:                                # %cond.true
+	j	.LBB9_4
+.LBB9_3:                                # %cond.false
+	lui	a0, %hi(.L.str)
+	addi	a0, a0, %lo(.L.str)
+	lui	a1, %hi(.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi)
+	addi	a2, a1, %lo(.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi)
+	lui	a1, %hi(.L.str.3)
+	addi	a3, a1, %lo(.L.str.3)
+	addi	a1, zero, 170
+	call	__assert_func
+.LBB9_4:                                # %cond.end
+	lwu	a0, -52(s0)
+	beqz	a0, .LBB9_8
+	j	.LBB9_5
+.LBB9_5:                                # %cond.end
+	slli	a1, a0, 32
 	srli	a1, a1, 32
-	addi	a2, zero, 2
-	beq	a1, a2, .LBB12_6
-	j	.LBB12_3
-.LBB12_3:                               # %sw.default
-	j	.LBB12_4
-.LBB12_4:                               # %sw.bb
-	sd	a0, -24(s0)
-	j	.LBB12_7
-.LBB12_5:                               # %sw.bb2
-	addi	a0, a0, 8
-	sd	a0, -24(s0)
-	j	.LBB12_7
-.LBB12_6:                               # %sw.bb3
-	addi	a0, a0, 16
-	sd	a0, -24(s0)
-	j	.LBB12_7
-.LBB12_7:                               # %return
-	ld	a0, -24(s0)
-	ld	s0, 32(sp)
-	ld	ra, 40(sp)
-	addi	sp, sp, 48
+	addi	a2, zero, 1
+	beq	a1, a2, .LBB9_9
+	j	.LBB9_6
+.LBB9_6:                                # %cond.end
+	slli	a0, a0, 32
+	srli	a0, a0, 32
+	addi	a1, zero, 2
+	beq	a0, a1, .LBB9_10
+	j	.LBB9_7
+.LBB9_7:                                # %sw.default
+	j	.LBB9_8
+.LBB9_8:                                # %sw.bb
+	sd	s2, -40(s0)
+	j	.LBB9_11
+.LBB9_9:                                # %sw.bb3
+	addi	a0, s2, 8
+	sd	a0, -40(s0)
+	j	.LBB9_11
+.LBB9_10:                               # %sw.bb4
+	addi	a0, s2, 16
+	sd	a0, -40(s0)
+	j	.LBB9_11
+.LBB9_11:                               # %return
+	ld	a0, -40(s0)
+	ld	s2, 32(sp)
+	ld	s1, 40(sp)
+	ld	s0, 48(sp)
+	.cfi_def_cfa sp, 64
+	ld	ra, 56(sp)
+	.cfi_restore ra
+	.cfi_restore s0
+	.cfi_restore s1
+	.cfi_restore s2
+	addi	sp, sp, 64
+	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end12:
-	.size	_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi, .Lfunc_end12-_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
+.Lfunc_end9:
+	.size	_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi, .Lfunc_end9-_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
+	.cfi_endproc
                                         # -- End function
 	.section	.sdata,"aw",@progbits
 	.p2align	3               # -- Begin function _Z14edge_detectiond
-.LCPI13_0:
+.LCPI10_0:
 	.quad	4621256167635550208     # double 9
-.LCPI13_1:
+.LCPI10_1:
 	.quad	4599057925072241033     # double 0.29899999999999999
-.LCPI13_2:
+.LCPI10_2:
 	.quad	4603462445507809378     # double 0.58699999999999997
-.LCPI13_3:
+.LCPI10_3:
 	.quad	4592878986383488713     # double 0.114
 	.text
 	.globl	_Z14edge_detectiond
@@ -526,306 +508,312 @@ _Z14edge_detectiond:                    # @_Z14edge_detectiond
 	.cfi_personality 155, DW.ref.__gxx_personality_v0
 	.cfi_lsda 27, .Lexception1
 # %bb.0:                                # %entry
-	addi	sp, sp, -416
-	.cfi_def_cfa_offset 416
-	sd	ra, 408(sp)
-	sd	s0, 400(sp)
-	sd	s1, 392(sp)
-	sd	s2, 384(sp)
+	addi	sp, sp, -480
+	.cfi_def_cfa_offset 480
+	sd	ra, 472(sp)
+	sd	s0, 464(sp)
+	sd	s1, 456(sp)
+	sd	s2, 448(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
 	.cfi_offset s1, -24
 	.cfi_offset s2, -32
-	addi	s0, sp, 416
+	addi	s0, sp, 480
 	.cfi_def_cfa s0, 0
 	fmv.d.x	ft0, a0
-	sd	a0, -40(s0)
+	sd	a0, -104(s0)
 	lui	a0, %hi(width)
 	ld	a0, %lo(width)(a0)
 	lui	a1, %hi(height)
 	ld	a1, %lo(height)(a1)
-	mul	s1, a0, a1
-	addi	s2, s0, -72
-	mv	a0, s2
-	call	_ZNSaIdEC2Ev
+	mul	a1, a0, a1
+	addi	a2, s0, -136
+	sd	a2, -96(s0)
+	ld	a0, -96(s0)
+	sd	a0, -88(s0)
 .Ltmp3:
-	addi	a0, s0, -64
-	mv	a1, s1
-	mv	a2, s2
+	addi	a0, s0, -128
 	call	_ZNSt6vectorIdSaIdEEC2EmRKS0_
 .Ltmp4:
-	j	.LBB13_1
-.LBB13_1:                               # %invoke.cont
-	addi	a0, s0, -72
-	call	_ZNSaIdED2Ev
+	j	.LBB10_1
+.LBB10_1:                               # %invoke.cont
+	addi	a0, s0, -136
+	sd	a0, -80(s0)
+	ld	a0, -80(s0)
+	call	_ZNSt15__new_allocatorIdED2Ev
 	lui	a0, %hi(width)
 	ld	a0, %lo(width)(a0)
 	lui	a1, %hi(height)
 	ld	a1, %lo(height)(a1)
-	mul	s1, a0, a1
-	addi	s2, s0, -120
-	mv	a0, s2
-	call	_ZNSaIdEC2Ev
+	mul	a1, a0, a1
+	addi	a2, s0, -184
+	sd	a2, -72(s0)
+	ld	a0, -72(s0)
+	sd	a0, -64(s0)
 .Ltmp6:
-	addi	a0, s0, -112
-	mv	a1, s1
-	mv	a2, s2
+	addi	a0, s0, -176
 	call	_ZNSt6vectorIdSaIdEEC2EmRKS0_
 .Ltmp7:
-	j	.LBB13_2
-.LBB13_2:                               # %invoke.cont4
-	addi	a0, s0, -120
-	call	_ZNSaIdED2Ev
-	sd	zero, -128(s0)
-	j	.LBB13_3
-.LBB13_3:                               # %for.cond
+	j	.LBB10_2
+.LBB10_2:                               # %invoke.cont4
+	addi	a0, s0, -184
+	sd	a0, -56(s0)
+	ld	a0, -56(s0)
+	call	_ZNSt15__new_allocatorIdED2Ev
+	sd	zero, -192(s0)
+	j	.LBB10_3
+.LBB10_3:                               # %for.cond
                                         # =>This Loop Header: Depth=1
-                                        #     Child Loop BB13_5 Depth 2
-	ld	a0, -128(s0)
+                                        #     Child Loop BB10_5 Depth 2
+	ld	a0, -192(s0)
 	lui	a1, %hi(width)
 	ld	a1, %lo(width)(a1)
-	bgeu	a0, a1, .LBB13_21
-	j	.LBB13_4
-.LBB13_4:                               # %for.body
-                                        #   in Loop: Header=BB13_3 Depth=1
-	sd	zero, -136(s0)
-	j	.LBB13_5
-.LBB13_5:                               # %for.cond5
-                                        #   Parent Loop BB13_3 Depth=1
+	bgeu	a0, a1, .LBB10_21
+	j	.LBB10_4
+.LBB10_4:                               # %for.body
+                                        #   in Loop: Header=BB10_3 Depth=1
+	sd	zero, -200(s0)
+	j	.LBB10_5
+.LBB10_5:                               # %for.cond5
+                                        #   Parent Loop BB10_3 Depth=1
                                         # =>  This Inner Loop Header: Depth=2
-	ld	a0, -136(s0)
+	ld	a0, -200(s0)
 	lui	a1, %hi(height)
 	ld	a1, %lo(height)(a1)
-	bgeu	a0, a1, .LBB13_19
-	j	.LBB13_6
-.LBB13_6:                               # %for.body7
-                                        #   in Loop: Header=BB13_5 Depth=2
-	ld	a0, -136(s0)
+	bgeu	a0, a1, .LBB10_19
+	j	.LBB10_6
+.LBB10_6:                               # %for.body7
+                                        #   in Loop: Header=BB10_5 Depth=2
+	ld	a0, -200(s0)
 	lui	a1, %hi(width)
 	ld	a1, %lo(width)(a1)
 	mul	a0, a0, a1
-	ld	a1, -128(s0)
+	ld	a1, -192(s0)
 	add	a1, a0, a1
 	lui	a0, %hi(fig)
 	addi	a0, a0, %lo(fig)
 	call	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEixEm
 	ld	a1, 16(a0)
-	sd	a1, -168(s0)
+	sd	a1, -232(s0)
 	ld	a1, 8(a0)
-	sd	a1, -176(s0)
+	sd	a1, -240(s0)
 	ld	a0, 0(a0)
-	sd	a0, -184(s0)
+	sd	a0, -248(s0)
 .Ltmp19:
-	addi	a0, s0, -160
-	addi	a1, s0, -184
+	addi	a0, s0, -224
+	addi	a1, s0, -248
 	call	_Z7clampedN3glm3vecILi3EdLNS_9qualifierE0EEE
 .Ltmp20:
-	j	.LBB13_7
-.LBB13_7:                               # %invoke.cont10
-                                        #   in Loop: Header=BB13_5 Depth=2
+	j	.LBB10_7
+.LBB10_7:                               # %invoke.cont10
+                                        #   in Loop: Header=BB10_5 Depth=2
 .Ltmp21:
-	addi	a0, s0, -160
+	addi	a0, s0, -224
 	mv	a1, zero
 	call	_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
 .Ltmp22:
-	j	.LBB13_8
-.LBB13_8:                               # %invoke.cont11
-                                        #   in Loop: Header=BB13_5 Depth=2
+	j	.LBB10_8
+.LBB10_8:                               # %invoke.cont11
+                                        #   in Loop: Header=BB10_5 Depth=2
 	fld	ft0, 0(a0)
-	lui	a0, %hi(.LCPI13_1)
-	addi	a0, a0, %lo(.LCPI13_1)
+	lui	a0, %hi(.LCPI10_1)
+	addi	a0, a0, %lo(.LCPI10_1)
 	fld	ft1, 0(a0)
 	fmul.d	ft0, ft0, ft1
-	fsd	ft0, -376(s0)
+	fsd	ft0, -440(s0)
 .Ltmp23:
-	addi	a0, s0, -160
+	addi	a0, s0, -224
 	addi	a1, zero, 1
 	call	_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
 .Ltmp24:
-	j	.LBB13_9
-.LBB13_9:                               # %invoke.cont14
-                                        #   in Loop: Header=BB13_5 Depth=2
+	j	.LBB10_9
+.LBB10_9:                               # %invoke.cont14
+                                        #   in Loop: Header=BB10_5 Depth=2
 	fld	ft0, 0(a0)
-	lui	a0, %hi(.LCPI13_2)
-	addi	a0, a0, %lo(.LCPI13_2)
+	lui	a0, %hi(.LCPI10_2)
+	addi	a0, a0, %lo(.LCPI10_2)
 	fld	ft1, 0(a0)
 	fmul.d	ft0, ft0, ft1
-	fld	ft1, -376(s0)
+	fld	ft1, -440(s0)
 	fadd.d	ft0, ft1, ft0
-	fsd	ft0, -384(s0)
+	fsd	ft0, -448(s0)
 .Ltmp25:
-	addi	a0, s0, -160
+	addi	a0, s0, -224
 	addi	a1, zero, 2
 	call	_ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
 .Ltmp26:
-	j	.LBB13_10
-.LBB13_10:                              # %invoke.cont18
-                                        #   in Loop: Header=BB13_5 Depth=2
+	j	.LBB10_10
+.LBB10_10:                              # %invoke.cont18
+                                        #   in Loop: Header=BB10_5 Depth=2
 	fld	ft0, 0(a0)
-	lui	a0, %hi(.LCPI13_3)
-	addi	a0, a0, %lo(.LCPI13_3)
+	lui	a0, %hi(.LCPI10_3)
+	addi	a0, a0, %lo(.LCPI10_3)
 	fld	ft1, 0(a0)
 	fmul.d	ft0, ft0, ft1
-	fld	ft1, -384(s0)
+	fld	ft1, -448(s0)
 	fadd.d	ft0, ft1, ft0
-	fsd	ft0, -400(s0)
-	ld	a0, -136(s0)
+	fsd	ft0, -464(s0)
+	ld	a0, -200(s0)
 	lui	a1, %hi(width)
 	ld	a1, %lo(width)(a1)
 	mul	a0, a0, a1
-	ld	a1, -128(s0)
+	ld	a1, -192(s0)
 	add	a1, a0, a1
-	addi	a0, s0, -64
+	addi	a0, s0, -128
 	call	_ZNSt6vectorIdSaIdEEixEm
-	fld	ft0, -400(s0)
+	fld	ft0, -464(s0)
 	fsd	ft0, 0(a0)
-	j	.LBB13_11
-.LBB13_11:                              # %for.inc
-                                        #   in Loop: Header=BB13_5 Depth=2
-	ld	a0, -136(s0)
+	j	.LBB10_11
+.LBB10_11:                              # %for.inc
+                                        #   in Loop: Header=BB10_5 Depth=2
+	ld	a0, -200(s0)
 	addi	a0, a0, 1
-	sd	a0, -136(s0)
-	j	.LBB13_5
-.LBB13_12:                              # %lpad
+	sd	a0, -200(s0)
+	j	.LBB10_5
+.LBB10_12:                              # %lpad
 .Ltmp5:
-	sd	a0, -80(s0)
-	sw	a1, -84(s0)
-	addi	a0, s0, -72
-	call	_ZNSaIdED2Ev
-	j	.LBB13_66
-.LBB13_13:                              # %lpad3
+	sd	a0, -144(s0)
+	sw	a1, -148(s0)
+	addi	a0, s0, -136
+	sd	a0, -48(s0)
+	ld	a0, -48(s0)
+	call	_ZNSt15__new_allocatorIdED2Ev
+	j	.LBB10_66
+.LBB10_13:                              # %lpad3
 .Ltmp8:
-	sd	a0, -80(s0)
-	sw	a1, -84(s0)
-	addi	a0, s0, -120
-	call	_ZNSaIdED2Ev
-	j	.LBB13_65
-.LBB13_14:                              # %lpad9.loopexit
+	sd	a0, -144(s0)
+	sw	a1, -148(s0)
+	addi	a0, s0, -184
+	sd	a0, -40(s0)
+	ld	a0, -40(s0)
+	call	_ZNSt15__new_allocatorIdED2Ev
+	j	.LBB10_65
+.LBB10_14:                              # %lpad9.loopexit
 .Ltmp15:
-	j	.LBB13_18
-.LBB13_15:                              # %lpad9.loopexit.split-lp.loopexit
+	j	.LBB10_18
+.LBB10_15:                              # %lpad9.loopexit.split-lp.loopexit
 .Ltmp18:
-	j	.LBB13_17
-.LBB13_16:                              # %lpad9.loopexit.split-lp.loopexit.split-lp
+	j	.LBB10_17
+.LBB10_16:                              # %lpad9.loopexit.split-lp.loopexit.split-lp
 .Ltmp27:
-	j	.LBB13_17
-.LBB13_17:                              # %lpad9.loopexit.split-lp
-	j	.LBB13_18
-.LBB13_18:                              # %lpad9
-	sd	a0, -80(s0)
-	sw	a1, -84(s0)
-	addi	a0, s0, -112
+	j	.LBB10_17
+.LBB10_17:                              # %lpad9.loopexit.split-lp
+	j	.LBB10_18
+.LBB10_18:                              # %lpad9
+	sd	a0, -144(s0)
+	sw	a1, -148(s0)
+	addi	a0, s0, -176
 	call	_ZNSt6vectorIdSaIdEED2Ev
-	j	.LBB13_65
-.LBB13_19:                              # %for.end
-                                        #   in Loop: Header=BB13_3 Depth=1
-	j	.LBB13_20
-.LBB13_20:                              # %for.inc25
-                                        #   in Loop: Header=BB13_3 Depth=1
-	ld	a0, -128(s0)
-	addi	a0, a0, 1
-	sd	a0, -128(s0)
-	j	.LBB13_3
-.LBB13_21:                              # %for.end27
-	sd	zero, -192(s0)
-	j	.LBB13_22
-.LBB13_22:                              # %for.cond29
-                                        # =>This Loop Header: Depth=1
-                                        #     Child Loop BB13_24 Depth 2
-                                        #       Child Loop BB13_32 Depth 3
+	j	.LBB10_65
+.LBB10_19:                              # %for.end
+                                        #   in Loop: Header=BB10_3 Depth=1
+	j	.LBB10_20
+.LBB10_20:                              # %for.inc25
+                                        #   in Loop: Header=BB10_3 Depth=1
 	ld	a0, -192(s0)
+	addi	a0, a0, 1
+	sd	a0, -192(s0)
+	j	.LBB10_3
+.LBB10_21:                              # %for.end27
+	sd	zero, -256(s0)
+	j	.LBB10_22
+.LBB10_22:                              # %for.cond29
+                                        # =>This Loop Header: Depth=1
+                                        #     Child Loop BB10_24 Depth 2
+                                        #       Child Loop BB10_32 Depth 3
+	ld	a0, -256(s0)
 	lui	a1, %hi(width)
 	ld	a1, %lo(width)(a1)
-	bgeu	a0, a1, .LBB13_41
-	j	.LBB13_23
-.LBB13_23:                              # %for.body31
-                                        #   in Loop: Header=BB13_22 Depth=1
-	sd	zero, -200(s0)
-	j	.LBB13_24
-.LBB13_24:                              # %for.cond33
-                                        #   Parent Loop BB13_22 Depth=1
+	bgeu	a0, a1, .LBB10_41
+	j	.LBB10_23
+.LBB10_23:                              # %for.body31
+                                        #   in Loop: Header=BB10_22 Depth=1
+	sd	zero, -264(s0)
+	j	.LBB10_24
+.LBB10_24:                              # %for.cond33
+                                        #   Parent Loop BB10_22 Depth=1
                                         # =>  This Loop Header: Depth=2
-                                        #       Child Loop BB13_32 Depth 3
-	ld	a0, -200(s0)
+                                        #       Child Loop BB10_32 Depth 3
+	ld	a0, -264(s0)
 	lui	a1, %hi(height)
 	ld	a1, %lo(height)(a1)
-	bgeu	a0, a1, .LBB13_39
-	j	.LBB13_25
-.LBB13_25:                              # %for.body35
-                                        #   in Loop: Header=BB13_24 Depth=2
-	ld	a1, -192(s0)
+	bgeu	a0, a1, .LBB10_39
+	j	.LBB10_25
+.LBB10_25:                              # %for.body35
+                                        #   in Loop: Header=BB10_24 Depth=2
+	ld	a1, -256(s0)
 	addi	a0, zero, 1
-	beqz	a1, .LBB13_29
-	j	.LBB13_26
-.LBB13_26:                              # %lor.lhs.false
-                                        #   in Loop: Header=BB13_24 Depth=2
-	ld	a1, -192(s0)
+	beqz	a1, .LBB10_29
+	j	.LBB10_26
+.LBB10_26:                              # %lor.lhs.false
+                                        #   in Loop: Header=BB10_24 Depth=2
+	ld	a1, -256(s0)
 	lui	a0, %hi(width)
 	ld	a0, %lo(width)(a0)
 	addi	a2, a0, -1
 	addi	a0, zero, 1
-	beq	a1, a2, .LBB13_29
-	j	.LBB13_27
-.LBB13_27:                              # %lor.lhs.false38
-                                        #   in Loop: Header=BB13_24 Depth=2
-	ld	a1, -200(s0)
+	beq	a1, a2, .LBB10_29
+	j	.LBB10_27
+.LBB10_27:                              # %lor.lhs.false38
+                                        #   in Loop: Header=BB10_24 Depth=2
+	ld	a1, -264(s0)
 	addi	a0, zero, 1
-	beqz	a1, .LBB13_29
-	j	.LBB13_28
-.LBB13_28:                              # %lor.rhs
-                                        #   in Loop: Header=BB13_24 Depth=2
-	ld	a0, -200(s0)
+	beqz	a1, .LBB10_29
+	j	.LBB10_28
+.LBB10_28:                              # %lor.rhs
+                                        #   in Loop: Header=BB10_24 Depth=2
+	ld	a0, -264(s0)
 	lui	a1, %hi(height)
 	ld	a1, %lo(height)(a1)
 	addi	a1, a1, -1
 	xor	a0, a0, a1
 	seqz	a0, a0
-	j	.LBB13_29
-.LBB13_29:                              # %lor.end
-                                        #   in Loop: Header=BB13_24 Depth=2
+	j	.LBB10_29
+.LBB10_29:                              # %lor.end
+                                        #   in Loop: Header=BB10_24 Depth=2
 	andi	a0, a0, 1
-	sb	a0, -201(s0)
-	lbu	a0, -201(s0)
+	sb	a0, -265(s0)
+	lbu	a0, -265(s0)
 	andi	a0, a0, 1
-	beqz	a0, .LBB13_31
-	j	.LBB13_30
-.LBB13_30:                              # %if.then
-                                        #   in Loop: Header=BB13_24 Depth=2
-	ld	a0, -200(s0)
+	beqz	a0, .LBB10_31
+	j	.LBB10_30
+.LBB10_30:                              # %if.then
+                                        #   in Loop: Header=BB10_24 Depth=2
+	ld	a0, -264(s0)
 	lui	s1, %hi(width)
 	ld	a1, %lo(width)(s1)
 	mul	a0, a0, a1
-	ld	a1, -192(s0)
+	ld	a1, -256(s0)
 	add	a1, a0, a1
-	addi	a0, s0, -64
+	addi	a0, s0, -128
 	call	_ZNSt6vectorIdSaIdEEixEm
 	fld	ft0, 0(a0)
-	fsd	ft0, -408(s0)
-	ld	a0, -200(s0)
+	fsd	ft0, -472(s0)
+	ld	a0, -264(s0)
 	ld	a1, %lo(width)(s1)
 	mul	a0, a0, a1
-	ld	a1, -192(s0)
+	ld	a1, -256(s0)
 	add	a1, a0, a1
-	addi	a0, s0, -112
+	addi	a0, s0, -176
 	call	_ZNSt6vectorIdSaIdEEixEm
-	fld	ft0, -408(s0)
+	fld	ft0, -472(s0)
 	fsd	ft0, 0(a0)
-	j	.LBB13_37
-.LBB13_31:                              # %if.else
-                                        #   in Loop: Header=BB13_24 Depth=2
-	sw	zero, -284(s0)
-	j	.LBB13_32
-.LBB13_32:                              # %for.cond48
-                                        #   Parent Loop BB13_22 Depth=1
-                                        #     Parent Loop BB13_24 Depth=2
+	j	.LBB10_37
+.LBB10_31:                              # %if.else
+                                        #   in Loop: Header=BB10_24 Depth=2
+	sw	zero, -348(s0)
+	j	.LBB10_32
+.LBB10_32:                              # %for.cond48
+                                        #   Parent Loop BB10_22 Depth=1
+                                        #     Parent Loop BB10_24 Depth=2
                                         # =>    This Inner Loop Header: Depth=3
-	lw	a0, -284(s0)
+	lw	a0, -348(s0)
 	addi	a1, zero, 8
-	blt	a1, a0, .LBB13_35
-	j	.LBB13_33
-.LBB13_33:                              # %for.body50
-                                        #   in Loop: Header=BB13_32 Depth=3
-	lw	a0, -284(s0)
+	blt	a1, a0, .LBB10_35
+	j	.LBB10_33
+.LBB10_33:                              # %for.body50
+                                        #   in Loop: Header=BB10_32 Depth=3
+	lw	a0, -348(s0)
 	lui	a1, 21845
 	addiw	a1, a1, 1365
 	slli	a1, a1, 12
@@ -841,181 +829,181 @@ _Z14edge_detectiond:                    # @_Z14edge_detectiond
 	mul	a2, a2, a3
 	not	a2, a2
 	add	a0, a2, a0
-	sw	a0, -288(s0)
-	lw	a0, -284(s0)
+	sw	a0, -352(s0)
+	lw	a0, -348(s0)
 	mulh	a0, a0, a1
 	srli	a1, a0, 63
 	add	a0, a0, a1
 	addi	a0, a0, -1
-	sw	a0, -292(s0)
-	ld	a0, -200(s0)
-	lw	a1, -292(s0)
+	sw	a0, -356(s0)
+	ld	a0, -264(s0)
+	lw	a1, -356(s0)
 	add	a0, a0, a1
 	lui	a1, %hi(width)
 	ld	a1, %lo(width)(a1)
 	mul	a0, a0, a1
-	ld	a1, -192(s0)
-	lw	a2, -288(s0)
+	ld	a1, -256(s0)
+	lw	a2, -352(s0)
 	add	a1, a1, a2
 	add	a1, a0, a1
-	addi	a0, s0, -64
+	addi	a0, s0, -128
 	call	_ZNSt6vectorIdSaIdEEixEm
 	fld	ft0, 0(a0)
-	lw	a0, -284(s0)
+	lw	a0, -348(s0)
 	slli	a0, a0, 3
-	addi	a1, s0, -280
+	addi	a1, s0, -344
 	add	a0, a1, a0
 	fsd	ft0, 0(a0)
-	j	.LBB13_34
-.LBB13_34:                              # %for.inc59
-                                        #   in Loop: Header=BB13_32 Depth=3
-	lw	a0, -284(s0)
+	j	.LBB10_34
+.LBB10_34:                              # %for.inc59
+                                        #   in Loop: Header=BB10_32 Depth=3
+	lw	a0, -348(s0)
 	addi	a0, a0, 1
-	sw	a0, -284(s0)
-	j	.LBB13_32
-.LBB13_35:                              # %for.end61
-                                        #   in Loop: Header=BB13_24 Depth=2
-	addi	a0, s0, -280
+	sw	a0, -348(s0)
+	j	.LBB10_32
+.LBB10_35:                              # %for.end61
+                                        #   in Loop: Header=BB10_24 Depth=2
+	addi	a0, s0, -344
 	addi	a1, a0, 72
 .Ltmp16:
 	call	_ZSt4sortIPdEvT_S1_
 .Ltmp17:
-	j	.LBB13_36
-.LBB13_36:                              # %invoke.cont63
-                                        #   in Loop: Header=BB13_24 Depth=2
-	fld	ft0, -248(s0)
-	fsd	ft0, -392(s0)
-	ld	a0, -200(s0)
+	j	.LBB10_36
+.LBB10_36:                              # %invoke.cont63
+                                        #   in Loop: Header=BB10_24 Depth=2
+	fld	ft0, -312(s0)
+	fsd	ft0, -456(s0)
+	ld	a0, -264(s0)
 	lui	a1, %hi(width)
 	ld	a1, %lo(width)(a1)
 	mul	a0, a0, a1
-	ld	a1, -192(s0)
+	ld	a1, -256(s0)
 	add	a1, a0, a1
-	addi	a0, s0, -112
+	addi	a0, s0, -176
 	call	_ZNSt6vectorIdSaIdEEixEm
-	fld	ft0, -392(s0)
+	fld	ft0, -456(s0)
 	fsd	ft0, 0(a0)
-	j	.LBB13_37
-.LBB13_37:                              # %if.end
-                                        #   in Loop: Header=BB13_24 Depth=2
-	j	.LBB13_38
-.LBB13_38:                              # %for.inc68
-                                        #   in Loop: Header=BB13_24 Depth=2
-	ld	a0, -200(s0)
+	j	.LBB10_37
+.LBB10_37:                              # %if.end
+                                        #   in Loop: Header=BB10_24 Depth=2
+	j	.LBB10_38
+.LBB10_38:                              # %for.inc68
+                                        #   in Loop: Header=BB10_24 Depth=2
+	ld	a0, -264(s0)
 	addi	a0, a0, 1
-	sd	a0, -200(s0)
-	j	.LBB13_24
-.LBB13_39:                              # %for.end70
-                                        #   in Loop: Header=BB13_22 Depth=1
-	j	.LBB13_40
-.LBB13_40:                              # %for.inc71
-                                        #   in Loop: Header=BB13_22 Depth=1
-	ld	a0, -192(s0)
+	sd	a0, -264(s0)
+	j	.LBB10_24
+.LBB10_39:                              # %for.end70
+                                        #   in Loop: Header=BB10_22 Depth=1
+	j	.LBB10_40
+.LBB10_40:                              # %for.inc71
+                                        #   in Loop: Header=BB10_22 Depth=1
+	ld	a0, -256(s0)
 	addi	a0, a0, 1
-	sd	a0, -192(s0)
-	j	.LBB13_22
-.LBB13_41:                              # %for.end73
-	sd	zero, -304(s0)
-	j	.LBB13_42
-.LBB13_42:                              # %for.cond75
+	sd	a0, -256(s0)
+	j	.LBB10_22
+.LBB10_41:                              # %for.end73
+	sd	zero, -368(s0)
+	j	.LBB10_42
+.LBB10_42:                              # %for.cond75
                                         # =>This Loop Header: Depth=1
-                                        #     Child Loop BB13_44 Depth 2
-                                        #       Child Loop BB13_52 Depth 3
-	ld	a0, -304(s0)
+                                        #     Child Loop BB10_44 Depth 2
+                                        #       Child Loop BB10_52 Depth 3
+	ld	a0, -368(s0)
 	lui	a1, %hi(width)
 	ld	a1, %lo(width)(a1)
-	bgeu	a0, a1, .LBB13_64
-	j	.LBB13_43
-.LBB13_43:                              # %for.body77
-                                        #   in Loop: Header=BB13_42 Depth=1
-	sd	zero, -312(s0)
-	j	.LBB13_44
-.LBB13_44:                              # %for.cond79
-                                        #   Parent Loop BB13_42 Depth=1
+	bgeu	a0, a1, .LBB10_64
+	j	.LBB10_43
+.LBB10_43:                              # %for.body77
+                                        #   in Loop: Header=BB10_42 Depth=1
+	sd	zero, -376(s0)
+	j	.LBB10_44
+.LBB10_44:                              # %for.cond79
+                                        #   Parent Loop BB10_42 Depth=1
                                         # =>  This Loop Header: Depth=2
-                                        #       Child Loop BB13_52 Depth 3
-	ld	a0, -312(s0)
+                                        #       Child Loop BB10_52 Depth 3
+	ld	a0, -376(s0)
 	lui	a1, %hi(height)
 	ld	a1, %lo(height)(a1)
-	bgeu	a0, a1, .LBB13_62
-	j	.LBB13_45
-.LBB13_45:                              # %for.body81
-                                        #   in Loop: Header=BB13_44 Depth=2
-	ld	a0, -304(s0)
-	beqz	a0, .LBB13_49
-	j	.LBB13_46
-.LBB13_46:                              # %lor.lhs.false83
-                                        #   in Loop: Header=BB13_44 Depth=2
-	ld	a0, -304(s0)
+	bgeu	a0, a1, .LBB10_62
+	j	.LBB10_45
+.LBB10_45:                              # %for.body81
+                                        #   in Loop: Header=BB10_44 Depth=2
+	ld	a0, -368(s0)
+	beqz	a0, .LBB10_49
+	j	.LBB10_46
+.LBB10_46:                              # %lor.lhs.false83
+                                        #   in Loop: Header=BB10_44 Depth=2
+	ld	a0, -368(s0)
 	lui	a1, %hi(width)
 	ld	a1, %lo(width)(a1)
 	addi	a1, a1, -1
-	beq	a0, a1, .LBB13_49
-	j	.LBB13_47
-.LBB13_47:                              # %lor.lhs.false86
-                                        #   in Loop: Header=BB13_44 Depth=2
-	ld	a0, -312(s0)
-	beqz	a0, .LBB13_49
-	j	.LBB13_48
-.LBB13_48:                              # %lor.lhs.false88
-                                        #   in Loop: Header=BB13_44 Depth=2
-	ld	a0, -312(s0)
+	beq	a0, a1, .LBB10_49
+	j	.LBB10_47
+.LBB10_47:                              # %lor.lhs.false86
+                                        #   in Loop: Header=BB10_44 Depth=2
+	ld	a0, -376(s0)
+	beqz	a0, .LBB10_49
+	j	.LBB10_48
+.LBB10_48:                              # %lor.lhs.false88
+                                        #   in Loop: Header=BB10_44 Depth=2
+	ld	a0, -376(s0)
 	lui	a1, %hi(height)
 	ld	a1, %lo(height)(a1)
 	addi	a1, a1, -1
-	bne	a0, a1, .LBB13_51
-	j	.LBB13_49
-.LBB13_49:                              # %if.then91
-                                        #   in Loop: Header=BB13_44 Depth=2
-	ld	a0, -312(s0)
+	bne	a0, a1, .LBB10_51
+	j	.LBB10_49
+.LBB10_49:                              # %if.then91
+                                        #   in Loop: Header=BB10_44 Depth=2
+	ld	a0, -376(s0)
 	lui	a1, %hi(width)
 	ld	a1, %lo(width)(a1)
 	mul	a0, a0, a1
-	ld	a1, -304(s0)
+	ld	a1, -368(s0)
 	add	a1, a0, a1
 .Ltmp13:
 	lui	a0, %hi(no_edge)
 	addi	a0, a0, %lo(no_edge)
 	call	_ZNSt6vectorIbSaIbEEixEm
 .Ltmp14:
-	j	.LBB13_50
-.LBB13_50:                              # %invoke.cont95
-                                        #   in Loop: Header=BB13_44 Depth=2
-	sd	a0, -328(s0)
-	sd	a1, -320(s0)
-	addi	a0, s0, -328
+	j	.LBB10_50
+.LBB10_50:                              # %invoke.cont95
+                                        #   in Loop: Header=BB10_44 Depth=2
+	sd	a0, -392(s0)
+	sd	a1, -384(s0)
+	addi	a0, s0, -392
 	mv	a1, zero
 	call	_ZNSt14_Bit_referenceaSEb
-	j	.LBB13_60
-.LBB13_51:                              # %if.else98
-                                        #   in Loop: Header=BB13_44 Depth=2
-	ld	a0, -312(s0)
+	j	.LBB10_60
+.LBB10_51:                              # %if.else98
+                                        #   in Loop: Header=BB10_44 Depth=2
+	ld	a0, -376(s0)
 	lui	a1, %hi(width)
 	ld	a1, %lo(width)(a1)
 	mul	a0, a0, a1
-	ld	a1, -304(s0)
+	ld	a1, -368(s0)
 	add	a1, a0, a1
-	addi	a0, s0, -112
+	addi	a0, s0, -176
 	call	_ZNSt6vectorIdSaIdEEixEm
 	fld	ft0, 0(a0)
-	lui	a0, %hi(.LCPI13_0)
-	addi	a0, a0, %lo(.LCPI13_0)
+	lui	a0, %hi(.LCPI10_0)
+	addi	a0, a0, %lo(.LCPI10_0)
 	fld	ft1, 0(a0)
 	fmul.d	ft0, ft0, ft1
-	fsd	ft0, -336(s0)
-	sw	zero, -340(s0)
-	j	.LBB13_52
-.LBB13_52:                              # %for.cond106
-                                        #   Parent Loop BB13_42 Depth=1
-                                        #     Parent Loop BB13_44 Depth=2
+	fsd	ft0, -400(s0)
+	sw	zero, -404(s0)
+	j	.LBB10_52
+.LBB10_52:                              # %for.cond106
+                                        #   Parent Loop BB10_42 Depth=1
+                                        #     Parent Loop BB10_44 Depth=2
                                         # =>    This Inner Loop Header: Depth=3
-	lw	a0, -340(s0)
+	lw	a0, -404(s0)
 	addi	a1, zero, 8
-	blt	a1, a0, .LBB13_55
-	j	.LBB13_53
-.LBB13_53:                              # %for.body108
-                                        #   in Loop: Header=BB13_52 Depth=3
-	lw	a0, -340(s0)
+	blt	a1, a0, .LBB10_55
+	j	.LBB10_53
+.LBB10_53:                              # %for.body108
+                                        #   in Loop: Header=BB10_52 Depth=3
+	lw	a0, -404(s0)
 	lui	a1, 21845
 	addiw	a1, a1, 1365
 	slli	a1, a1, 12
@@ -1031,130 +1019,130 @@ _Z14edge_detectiond:                    # @_Z14edge_detectiond
 	mul	a2, a2, a3
 	not	a2, a2
 	add	a0, a2, a0
-	sw	a0, -344(s0)
-	lw	a0, -340(s0)
+	sw	a0, -408(s0)
+	lw	a0, -404(s0)
 	mulh	a0, a0, a1
 	srli	a1, a0, 63
 	add	a0, a0, a1
 	addi	a0, a0, -1
-	sw	a0, -348(s0)
-	ld	a0, -312(s0)
-	lw	a1, -348(s0)
+	sw	a0, -412(s0)
+	ld	a0, -376(s0)
+	lw	a1, -412(s0)
 	add	a0, a0, a1
 	lui	a1, %hi(width)
 	ld	a1, %lo(width)(a1)
 	mul	a0, a0, a1
-	ld	a1, -304(s0)
-	lw	a2, -344(s0)
+	ld	a1, -368(s0)
+	lw	a2, -408(s0)
 	add	a1, a1, a2
 	add	a1, a0, a1
-	addi	a0, s0, -112
+	addi	a0, s0, -176
 	call	_ZNSt6vectorIdSaIdEEixEm
 	fld	ft0, 0(a0)
-	fld	ft1, -336(s0)
+	fld	ft1, -400(s0)
 	fsub.d	ft0, ft1, ft0
-	fsd	ft0, -336(s0)
-	j	.LBB13_54
-.LBB13_54:                              # %for.inc123
-                                        #   in Loop: Header=BB13_52 Depth=3
-	lw	a0, -340(s0)
+	fsd	ft0, -400(s0)
+	j	.LBB10_54
+.LBB10_54:                              # %for.inc123
+                                        #   in Loop: Header=BB10_52 Depth=3
+	lw	a0, -404(s0)
 	addi	a0, a0, 1
-	sw	a0, -340(s0)
-	j	.LBB13_52
-.LBB13_55:                              # %for.end125
-                                        #   in Loop: Header=BB13_44 Depth=2
-	ld	a0, -336(s0)
+	sw	a0, -404(s0)
+	j	.LBB10_52
+.LBB10_55:                              # %for.end125
+                                        #   in Loop: Header=BB10_44 Depth=2
+	ld	a0, -400(s0)
 .Ltmp9:
 	call	_ZSt3absd
 .Ltmp10:
 	fmv.d.x	ft0, a0
-	j	.LBB13_56
-.LBB13_56:                              # %invoke.cont126
-                                        #   in Loop: Header=BB13_44 Depth=2
-	fld	ft1, -40(s0)
+	j	.LBB10_56
+.LBB10_56:                              # %invoke.cont126
+                                        #   in Loop: Header=BB10_44 Depth=2
+	fld	ft1, -104(s0)
 	fle.d	a0, ft1, ft0
 	xori	a0, a0, 1
-	bnez	a0, .LBB13_59
-	j	.LBB13_57
-.LBB13_57:                              # %if.then129
-                                        #   in Loop: Header=BB13_44 Depth=2
-	ld	a0, -312(s0)
+	bnez	a0, .LBB10_59
+	j	.LBB10_57
+.LBB10_57:                              # %if.then129
+                                        #   in Loop: Header=BB10_44 Depth=2
+	ld	a0, -376(s0)
 	lui	a1, %hi(width)
 	ld	a1, %lo(width)(a1)
 	mul	a0, a0, a1
-	ld	a1, -304(s0)
+	ld	a1, -368(s0)
 	add	a1, a0, a1
 .Ltmp11:
 	lui	a0, %hi(no_edge)
 	addi	a0, a0, %lo(no_edge)
 	call	_ZNSt6vectorIbSaIbEEixEm
 .Ltmp12:
-	j	.LBB13_58
-.LBB13_58:                              # %invoke.cont133
-                                        #   in Loop: Header=BB13_44 Depth=2
-	sd	a0, -368(s0)
-	sd	a1, -360(s0)
-	addi	a0, s0, -368
+	j	.LBB10_58
+.LBB10_58:                              # %invoke.cont133
+                                        #   in Loop: Header=BB10_44 Depth=2
+	sd	a0, -432(s0)
+	sd	a1, -424(s0)
+	addi	a0, s0, -432
 	mv	a1, zero
 	call	_ZNSt14_Bit_referenceaSEb
-	j	.LBB13_59
-.LBB13_59:                              # %if.end136
-                                        #   in Loop: Header=BB13_44 Depth=2
-	j	.LBB13_60
-.LBB13_60:                              # %if.end137
-                                        #   in Loop: Header=BB13_44 Depth=2
-	j	.LBB13_61
-.LBB13_61:                              # %for.inc138
-                                        #   in Loop: Header=BB13_44 Depth=2
-	ld	a0, -312(s0)
+	j	.LBB10_59
+.LBB10_59:                              # %if.end136
+                                        #   in Loop: Header=BB10_44 Depth=2
+	j	.LBB10_60
+.LBB10_60:                              # %if.end137
+                                        #   in Loop: Header=BB10_44 Depth=2
+	j	.LBB10_61
+.LBB10_61:                              # %for.inc138
+                                        #   in Loop: Header=BB10_44 Depth=2
+	ld	a0, -376(s0)
 	addi	a0, a0, 1
-	sd	a0, -312(s0)
-	j	.LBB13_44
-.LBB13_62:                              # %for.end140
-                                        #   in Loop: Header=BB13_42 Depth=1
-	j	.LBB13_63
-.LBB13_63:                              # %for.inc141
-                                        #   in Loop: Header=BB13_42 Depth=1
-	ld	a0, -304(s0)
+	sd	a0, -376(s0)
+	j	.LBB10_44
+.LBB10_62:                              # %for.end140
+                                        #   in Loop: Header=BB10_42 Depth=1
+	j	.LBB10_63
+.LBB10_63:                              # %for.inc141
+                                        #   in Loop: Header=BB10_42 Depth=1
+	ld	a0, -368(s0)
 	addi	a0, a0, 1
-	sd	a0, -304(s0)
-	j	.LBB13_42
-.LBB13_64:                              # %for.end143
-	addi	s2, s0, -64
+	sd	a0, -368(s0)
+	j	.LBB10_42
+.LBB10_64:                              # %for.end143
+	addi	s2, s0, -128
 	mv	a0, s2
 	call	_ZNSt6vectorIdSaIdEE5clearEv
-	addi	s1, s0, -112
+	addi	s1, s0, -176
 	mv	a0, s1
 	call	_ZNSt6vectorIdSaIdEE5clearEv
 	mv	a0, s1
 	call	_ZNSt6vectorIdSaIdEED2Ev
 	mv	a0, s2
 	call	_ZNSt6vectorIdSaIdEED2Ev
-	ld	s2, 384(sp)
-	ld	s1, 392(sp)
-	ld	s0, 400(sp)
-	.cfi_def_cfa sp, 416
-	ld	ra, 408(sp)
+	ld	s2, 448(sp)
+	ld	s1, 456(sp)
+	ld	s0, 464(sp)
+	.cfi_def_cfa sp, 480
+	ld	ra, 472(sp)
 	.cfi_restore ra
 	.cfi_restore s0
 	.cfi_restore s1
 	.cfi_restore s2
-	addi	sp, sp, 416
+	addi	sp, sp, 480
 	.cfi_def_cfa_offset 0
 	ret
-.LBB13_65:                              # %ehcleanup
-	addi	a0, s0, -64
+.LBB10_65:                              # %ehcleanup
+	addi	a0, s0, -128
 	call	_ZNSt6vectorIdSaIdEED2Ev
-	j	.LBB13_66
-.LBB13_66:                              # %eh.resume
-	ld	a0, -80(s0)
+	j	.LBB10_66
+.LBB10_66:                              # %eh.resume
+	ld	a0, -144(s0)
 	call	_Unwind_Resume
-.Lfunc_end13:
-	.size	_Z14edge_detectiond, .Lfunc_end13-_Z14edge_detectiond
+.Lfunc_end10:
+	.size	_Z14edge_detectiond, .Lfunc_end10-_Z14edge_detectiond
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table13:
+GCC_except_table10:
 .Lexception1:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	255                     # @TType Encoding = omit
@@ -1182,31 +1170,11 @@ GCC_except_table13:
 	.word	.Ltmp15-.Lfunc_begin1   #     jumps to .Ltmp15
 	.byte	0                       #   On action: cleanup
 	.word	.Ltmp12-.Lfunc_begin1   # >> Call Site 6 <<
-	.word	.Lfunc_end13-.Ltmp12    #   Call between .Ltmp12 and .Lfunc_end13
+	.word	.Lfunc_end10-.Ltmp12    #   Call between .Ltmp12 and .Lfunc_end10
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
 .Lcst_end1:
 	.p2align	2
-                                        # -- End function
-	.section	.text._ZNSaIdEC2Ev,"axG",@progbits,_ZNSaIdEC2Ev,comdat
-	.weak	_ZNSaIdEC2Ev            # -- Begin function _ZNSaIdEC2Ev
-	.p2align	2
-	.type	_ZNSaIdEC2Ev,@function
-_ZNSaIdEC2Ev:                           # @_ZNSaIdEC2Ev
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	ld	a0, -24(s0)
-	call	_ZN9__gnu_cxx13new_allocatorIdEC2Ev
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
-	ret
-.Lfunc_end14:
-	.size	_ZNSaIdEC2Ev, .Lfunc_end14-_ZNSaIdEC2Ev
                                         # -- End function
 	.section	.text._ZNSt6vectorIdSaIdEEC2EmRKS0_,"axG",@progbits,_ZNSt6vectorIdSaIdEEC2EmRKS0_,comdat
 	.weak	_ZNSt6vectorIdSaIdEEC2EmRKS0_ # -- Begin function _ZNSt6vectorIdSaIdEEC2EmRKS0_
@@ -1244,8 +1212,8 @@ _ZNSt6vectorIdSaIdEEC2EmRKS0_:          # @_ZNSt6vectorIdSaIdEEC2EmRKS0_
 	mv	a0, s1
 	call	_ZNSt6vectorIdSaIdEE21_M_default_initializeEm
 .Ltmp29:
-	j	.LBB15_1
-.LBB15_1:                               # %invoke.cont
+	j	.LBB11_1
+.LBB11_1:                               # %invoke.cont
 	ld	s1, 40(sp)
 	ld	s0, 48(sp)
 	.cfi_def_cfa sp, 64
@@ -1256,22 +1224,22 @@ _ZNSt6vectorIdSaIdEEC2EmRKS0_:          # @_ZNSt6vectorIdSaIdEEC2EmRKS0_
 	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.LBB15_2:                               # %lpad
+.LBB11_2:                               # %lpad
 .Ltmp30:
 	sd	a0, -56(s0)
 	sw	a1, -60(s0)
 	mv	a0, s1
 	call	_ZNSt12_Vector_baseIdSaIdEED2Ev
-	j	.LBB15_3
-.LBB15_3:                               # %eh.resume
+	j	.LBB11_3
+.LBB11_3:                               # %eh.resume
 	ld	a0, -56(s0)
 	call	_Unwind_Resume
-.Lfunc_end15:
-	.size	_ZNSt6vectorIdSaIdEEC2EmRKS0_, .Lfunc_end15-_ZNSt6vectorIdSaIdEEC2EmRKS0_
+.Lfunc_end11:
+	.size	_ZNSt6vectorIdSaIdEEC2EmRKS0_, .Lfunc_end11-_ZNSt6vectorIdSaIdEEC2EmRKS0_
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table15:
+GCC_except_table11:
 .Lexception2:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	255                     # @TType Encoding = omit
@@ -1287,31 +1255,11 @@ GCC_except_table15:
 	.word	.Ltmp30-.Lfunc_begin2   #     jumps to .Ltmp30
 	.byte	0                       #   On action: cleanup
 	.word	.Ltmp29-.Lfunc_begin2   # >> Call Site 3 <<
-	.word	.Lfunc_end15-.Ltmp29    #   Call between .Ltmp29 and .Lfunc_end15
+	.word	.Lfunc_end11-.Ltmp29    #   Call between .Ltmp29 and .Lfunc_end11
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
 .Lcst_end2:
 	.p2align	2
-                                        # -- End function
-	.section	.text._ZNSaIdED2Ev,"axG",@progbits,_ZNSaIdED2Ev,comdat
-	.weak	_ZNSaIdED2Ev            # -- Begin function _ZNSaIdED2Ev
-	.p2align	2
-	.type	_ZNSaIdED2Ev,@function
-_ZNSaIdED2Ev:                           # @_ZNSaIdED2Ev
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	ld	a0, -24(s0)
-	call	_ZN9__gnu_cxx13new_allocatorIdED2Ev
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
-	ret
-.Lfunc_end16:
-	.size	_ZNSaIdED2Ev, .Lfunc_end16-_ZNSaIdED2Ev
                                         # -- End function
 	.section	.text._ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEixEm,"axG",@progbits,_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEixEm,comdat
 	.weak	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEixEm # -- Begin function _ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEixEm
@@ -1335,8 +1283,8 @@ _ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEixEm: # @_ZNSt6vectorIN3
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end17:
-	.size	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEixEm, .Lfunc_end17-_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEixEm
+.Lfunc_end12:
+	.size	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEixEm, .Lfunc_end12-_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEixEm
                                         # -- End function
 	.section	.text._ZNSt6vectorIdSaIdEEixEm,"axG",@progbits,_ZNSt6vectorIdSaIdEEixEm,comdat
 	.weak	_ZNSt6vectorIdSaIdEEixEm # -- Begin function _ZNSt6vectorIdSaIdEEixEm
@@ -1359,8 +1307,8 @@ _ZNSt6vectorIdSaIdEEixEm:               # @_ZNSt6vectorIdSaIdEEixEm
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end18:
-	.size	_ZNSt6vectorIdSaIdEEixEm, .Lfunc_end18-_ZNSt6vectorIdSaIdEEixEm
+.Lfunc_end13:
+	.size	_ZNSt6vectorIdSaIdEEixEm, .Lfunc_end13-_ZNSt6vectorIdSaIdEEixEm
                                         # -- End function
 	.section	.text._ZSt4sortIPdEvT_S1_,"axG",@progbits,_ZSt4sortIPdEvT_S1_,comdat
 	.weak	_ZSt4sortIPdEvT_S1_     # -- Begin function _ZSt4sortIPdEvT_S1_
@@ -1401,8 +1349,8 @@ _ZSt4sortIPdEvT_S1_:                    # @_ZSt4sortIPdEvT_S1_
 	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end19:
-	.size	_ZSt4sortIPdEvT_S1_, .Lfunc_end19-_ZSt4sortIPdEvT_S1_
+.Lfunc_end14:
+	.size	_ZSt4sortIPdEvT_S1_, .Lfunc_end14-_ZSt4sortIPdEvT_S1_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt6vectorIbSaIbEEixEm,"axG",@progbits,_ZNSt6vectorIbSaIbEEixEm,comdat
@@ -1441,8 +1389,8 @@ _ZNSt6vectorIbSaIbEEixEm:               # @_ZNSt6vectorIbSaIbEEixEm
 	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end20:
-	.size	_ZNSt6vectorIbSaIbEEixEm, .Lfunc_end20-_ZNSt6vectorIbSaIbEEixEm
+.Lfunc_end15:
+	.size	_ZNSt6vectorIbSaIbEEixEm, .Lfunc_end15-_ZNSt6vectorIbSaIbEEixEm
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt14_Bit_referenceaSEb,"axG",@progbits,_ZNSt14_Bit_referenceaSEb,comdat
@@ -1460,30 +1408,30 @@ _ZNSt14_Bit_referenceaSEb:              # @_ZNSt14_Bit_referenceaSEb
 	ld	a0, -24(s0)
 	lbu	a1, -25(s0)
 	andi	a1, a1, 1
-	beqz	a1, .LBB21_2
-	j	.LBB21_1
-.LBB21_1:                               # %if.then
+	beqz	a1, .LBB16_2
+	j	.LBB16_1
+.LBB16_1:                               # %if.then
 	ld	a1, 8(a0)
 	ld	a2, 0(a0)
 	ld	a3, 0(a2)
 	or	a1, a3, a1
 	sd	a1, 0(a2)
-	j	.LBB21_3
-.LBB21_2:                               # %if.else
+	j	.LBB16_3
+.LBB16_2:                               # %if.else
 	ld	a1, 8(a0)
 	not	a1, a1
 	ld	a2, 0(a0)
 	ld	a3, 0(a2)
 	and	a1, a3, a1
 	sd	a1, 0(a2)
-	j	.LBB21_3
-.LBB21_3:                               # %if.end
+	j	.LBB16_3
+.LBB16_3:                               # %if.end
 	ld	s0, 16(sp)
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end21:
-	.size	_ZNSt14_Bit_referenceaSEb, .Lfunc_end21-_ZNSt14_Bit_referenceaSEb
+.Lfunc_end16:
+	.size	_ZNSt14_Bit_referenceaSEb, .Lfunc_end16-_ZNSt14_Bit_referenceaSEb
                                         # -- End function
 	.section	.text._ZSt3absd,"axG",@progbits,_ZSt3absd,comdat
 	.weak	_ZSt3absd               # -- Begin function _ZSt3absd
@@ -1506,8 +1454,8 @@ _ZSt3absd:                              # @_ZSt3absd
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end22:
-	.size	_ZSt3absd, .Lfunc_end22-_ZSt3absd
+.Lfunc_end17:
+	.size	_ZSt3absd, .Lfunc_end17-_ZSt3absd
                                         # -- End function
 	.section	.text._ZNSt6vectorIdSaIdEE5clearEv,"axG",@progbits,_ZNSt6vectorIdSaIdEE5clearEv,comdat
 	.weak	_ZNSt6vectorIdSaIdEE5clearEv # -- Begin function _ZNSt6vectorIdSaIdEE5clearEv
@@ -1527,8 +1475,8 @@ _ZNSt6vectorIdSaIdEE5clearEv:           # @_ZNSt6vectorIdSaIdEE5clearEv
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end23:
-	.size	_ZNSt6vectorIdSaIdEE5clearEv, .Lfunc_end23-_ZNSt6vectorIdSaIdEE5clearEv
+.Lfunc_end18:
+	.size	_ZNSt6vectorIdSaIdEE5clearEv, .Lfunc_end18-_ZNSt6vectorIdSaIdEE5clearEv
                                         # -- End function
 	.section	.text._ZNSt6vectorIdSaIdEED2Ev,"axG",@progbits,_ZNSt6vectorIdSaIdEED2Ev,comdat
 	.weak	_ZNSt6vectorIdSaIdEED2Ev # -- Begin function _ZNSt6vectorIdSaIdEED2Ev
@@ -1540,66 +1488,70 @@ _ZNSt6vectorIdSaIdEED2Ev:               # @_ZNSt6vectorIdSaIdEED2Ev
 	.cfi_personality 155, DW.ref.__gxx_personality_v0
 	.cfi_lsda 27, .Lexception3
 # %bb.0:                                # %entry
-	addi	sp, sp, -64
-	.cfi_def_cfa_offset 64
-	sd	ra, 56(sp)
-	sd	s0, 48(sp)
-	sd	s1, 40(sp)
-	sd	s2, 32(sp)
-	sd	s3, 24(sp)
+	addi	sp, sp, -96
+	.cfi_def_cfa_offset 96
+	sd	ra, 88(sp)
+	sd	s0, 80(sp)
+	sd	s1, 72(sp)
+	sd	s2, 64(sp)
+	sd	s3, 56(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
 	.cfi_offset s1, -24
 	.cfi_offset s2, -32
 	.cfi_offset s3, -40
-	addi	s0, sp, 64
+	addi	s0, sp, 96
 	.cfi_def_cfa s0, 0
-	sd	a0, -48(s0)
-	ld	s1, -48(s0)
+	sd	a0, -72(s0)
+	ld	s1, -72(s0)
 	ld	s2, 0(s1)
 	ld	s3, 8(s1)
 	mv	a0, s1
 	call	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
-	mv	a2, a0
+	sd	s2, -48(s0)
+	sd	s3, -56(s0)
+	sd	a0, -64(s0)
+	ld	a0, -48(s0)
+	ld	a1, -56(s0)
 .Ltmp31:
-	mv	a0, s2
-	mv	a1, s3
-	call	_ZSt8_DestroyIPddEvT_S1_RSaIT0_E
+	call	_ZSt8_DestroyIPdEvT_S1_
 .Ltmp32:
-	j	.LBB24_1
-.LBB24_1:                               # %invoke.cont
+	j	.LBB19_1
+.LBB19_1:                               # %_ZSt8_DestroyIPddEvT_S1_RSaIT0_E.exit
+	j	.LBB19_2
+.LBB19_2:                               # %invoke.cont
 	mv	a0, s1
 	call	_ZNSt12_Vector_baseIdSaIdEED2Ev
-	ld	s3, 24(sp)
-	ld	s2, 32(sp)
-	ld	s1, 40(sp)
-	ld	s0, 48(sp)
-	.cfi_def_cfa sp, 64
-	ld	ra, 56(sp)
+	ld	s3, 56(sp)
+	ld	s2, 64(sp)
+	ld	s1, 72(sp)
+	ld	s0, 80(sp)
+	.cfi_def_cfa sp, 96
+	ld	ra, 88(sp)
 	.cfi_restore ra
 	.cfi_restore s0
 	.cfi_restore s1
 	.cfi_restore s2
 	.cfi_restore s3
-	addi	sp, sp, 64
+	addi	sp, sp, 96
 	.cfi_def_cfa_offset 0
 	ret
-.LBB24_2:                               # %lpad
+.LBB19_3:                               # %lpad
 .Ltmp33:
-	sd	a0, -56(s0)
-	sw	a1, -60(s0)
+	sd	a0, -80(s0)
+	sw	a1, -84(s0)
 	mv	a0, s1
 	call	_ZNSt12_Vector_baseIdSaIdEED2Ev
-	j	.LBB24_3
-.LBB24_3:                               # %terminate.handler
-	ld	a0, -56(s0)
+	j	.LBB19_4
+.LBB19_4:                               # %terminate.handler
+	ld	a0, -80(s0)
 	call	__clang_call_terminate
-.Lfunc_end24:
-	.size	_ZNSt6vectorIdSaIdEED2Ev, .Lfunc_end24-_ZNSt6vectorIdSaIdEED2Ev
+.Lfunc_end19:
+	.size	_ZNSt6vectorIdSaIdEED2Ev, .Lfunc_end19-_ZNSt6vectorIdSaIdEED2Ev
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table24:
+GCC_except_table19:
 .Lexception3:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	155                     # @TType Encoding = indirect pcrel sdata4
@@ -1642,72 +1594,72 @@ _Z19calc_average_windowv:               # @_Z19calc_average_windowv
 	addi	s0, sp, 112
 	.cfi_def_cfa s0, 0
 	sd	zero, -40(s0)
-	j	.LBB25_1
-.LBB25_1:                               # %for.cond
+	j	.LBB20_1
+.LBB20_1:                               # %for.cond
                                         # =>This Loop Header: Depth=1
-                                        #     Child Loop BB25_3 Depth 2
-                                        #       Child Loop BB25_10 Depth 3
+                                        #     Child Loop BB20_3 Depth 2
+                                        #       Child Loop BB20_10 Depth 3
 	ld	a0, -40(s0)
 	lui	a1, %hi(width)
 	ld	a1, %lo(width)(a1)
-	bgeu	a0, a1, .LBB25_20
-	j	.LBB25_2
-.LBB25_2:                               # %for.body
-                                        #   in Loop: Header=BB25_1 Depth=1
+	bgeu	a0, a1, .LBB20_20
+	j	.LBB20_2
+.LBB20_2:                               # %for.body
+                                        #   in Loop: Header=BB20_1 Depth=1
 	sd	zero, -48(s0)
-	j	.LBB25_3
-.LBB25_3:                               # %for.cond1
-                                        #   Parent Loop BB25_1 Depth=1
+	j	.LBB20_3
+.LBB20_3:                               # %for.cond1
+                                        #   Parent Loop BB20_1 Depth=1
                                         # =>  This Loop Header: Depth=2
-                                        #       Child Loop BB25_10 Depth 3
+                                        #       Child Loop BB20_10 Depth 3
 	ld	a0, -48(s0)
 	lui	a1, %hi(height)
 	ld	a1, %lo(height)(a1)
-	bgeu	a0, a1, .LBB25_18
-	j	.LBB25_4
-.LBB25_4:                               # %for.body3
-                                        #   in Loop: Header=BB25_3 Depth=2
+	bgeu	a0, a1, .LBB20_18
+	j	.LBB20_4
+.LBB20_4:                               # %for.body3
+                                        #   in Loop: Header=BB20_3 Depth=2
 	ld	a0, -40(s0)
-	beqz	a0, .LBB25_8
-	j	.LBB25_5
-.LBB25_5:                               # %lor.lhs.false
-                                        #   in Loop: Header=BB25_3 Depth=2
+	beqz	a0, .LBB20_8
+	j	.LBB20_5
+.LBB20_5:                               # %lor.lhs.false
+                                        #   in Loop: Header=BB20_3 Depth=2
 	ld	a0, -40(s0)
 	lui	a1, %hi(width)
 	ld	a1, %lo(width)(a1)
 	addi	a1, a1, -1
-	beq	a0, a1, .LBB25_8
-	j	.LBB25_6
-.LBB25_6:                               # %lor.lhs.false6
-                                        #   in Loop: Header=BB25_3 Depth=2
+	beq	a0, a1, .LBB20_8
+	j	.LBB20_6
+.LBB20_6:                               # %lor.lhs.false6
+                                        #   in Loop: Header=BB20_3 Depth=2
 	ld	a0, -48(s0)
-	beqz	a0, .LBB25_8
-	j	.LBB25_7
-.LBB25_7:                               # %lor.lhs.false8
-                                        #   in Loop: Header=BB25_3 Depth=2
+	beqz	a0, .LBB20_8
+	j	.LBB20_7
+.LBB20_7:                               # %lor.lhs.false8
+                                        #   in Loop: Header=BB20_3 Depth=2
 	ld	a0, -48(s0)
 	lui	a1, %hi(height)
 	ld	a1, %lo(height)(a1)
 	addi	a1, a1, -1
-	bne	a0, a1, .LBB25_9
-	j	.LBB25_8
-.LBB25_8:                               # %if.then
-                                        #   in Loop: Header=BB25_3 Depth=2
-	j	.LBB25_17
-.LBB25_9:                               # %if.else
-                                        #   in Loop: Header=BB25_3 Depth=2
+	bne	a0, a1, .LBB20_9
+	j	.LBB20_8
+.LBB20_8:                               # %if.then
+                                        #   in Loop: Header=BB20_3 Depth=2
+	j	.LBB20_17
+.LBB20_9:                               # %if.else
+                                        #   in Loop: Header=BB20_3 Depth=2
 	sw	zero, -52(s0)
-	j	.LBB25_10
-.LBB25_10:                              # %for.cond11
-                                        #   Parent Loop BB25_1 Depth=1
-                                        #     Parent Loop BB25_3 Depth=2
+	j	.LBB20_10
+.LBB20_10:                              # %for.cond11
+                                        #   Parent Loop BB20_1 Depth=1
+                                        #     Parent Loop BB20_3 Depth=2
                                         # =>    This Inner Loop Header: Depth=3
 	lw	a0, -52(s0)
 	addi	a1, zero, 8
-	blt	a1, a0, .LBB25_15
-	j	.LBB25_11
-.LBB25_11:                              # %for.body13
-                                        #   in Loop: Header=BB25_10 Depth=3
+	blt	a1, a0, .LBB20_15
+	j	.LBB20_11
+.LBB20_11:                              # %for.body13
+                                        #   in Loop: Header=BB20_10 Depth=3
 	lw	a0, -52(s0)
 	lui	a1, 21845
 	addiw	a1, a1, 1365
@@ -1733,10 +1685,10 @@ _Z19calc_average_windowv:               # @_Z19calc_average_windowv
 	sw	a0, -60(s0)
 	lw	a0, -52(s0)
 	addi	a1, zero, 4
-	beq	a0, a1, .LBB25_13
-	j	.LBB25_12
-.LBB25_12:                              # %if.then17
-                                        #   in Loop: Header=BB25_10 Depth=3
+	beq	a0, a1, .LBB20_13
+	j	.LBB20_12
+.LBB20_12:                              # %if.then17
+                                        #   in Loop: Header=BB20_10 Depth=3
 	ld	a0, -48(s0)
 	lw	a1, -60(s0)
 	add	a0, a0, a1
@@ -1770,18 +1722,18 @@ _Z19calc_average_windowv:               # @_Z19calc_average_windowv
 	call	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEixEm
 	mv	a1, s1
 	call	_ZN3glm3vecILi3EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi3ET_LS1_0EEE
-	j	.LBB25_13
-.LBB25_13:                              # %if.end
-                                        #   in Loop: Header=BB25_10 Depth=3
-	j	.LBB25_14
-.LBB25_14:                              # %for.inc
-                                        #   in Loop: Header=BB25_10 Depth=3
+	j	.LBB20_13
+.LBB20_13:                              # %if.end
+                                        #   in Loop: Header=BB20_10 Depth=3
+	j	.LBB20_14
+.LBB20_14:                              # %for.inc
+                                        #   in Loop: Header=BB20_10 Depth=3
 	lw	a0, -52(s0)
 	addi	a0, a0, 1
 	sw	a0, -52(s0)
-	j	.LBB25_10
-.LBB25_15:                              # %for.end
-                                        #   in Loop: Header=BB25_3 Depth=2
+	j	.LBB20_10
+.LBB20_15:                              # %for.end
+                                        #   in Loop: Header=BB20_3 Depth=2
 	ld	a0, -48(s0)
 	lui	a1, %hi(width)
 	ld	a1, %lo(width)(a1)
@@ -1794,26 +1746,26 @@ _Z19calc_average_windowv:               # @_Z19calc_average_windowv
 	addi	a1, zero, 513
 	slli	a1, a1, 53
 	call	_ZN3glm3vecILi3EdLNS_9qualifierE0EEdVIdEERS2_T_
-	j	.LBB25_16
-.LBB25_16:                              # %if.end29
-                                        #   in Loop: Header=BB25_3 Depth=2
-	j	.LBB25_17
-.LBB25_17:                              # %for.inc30
-                                        #   in Loop: Header=BB25_3 Depth=2
+	j	.LBB20_16
+.LBB20_16:                              # %if.end29
+                                        #   in Loop: Header=BB20_3 Depth=2
+	j	.LBB20_17
+.LBB20_17:                              # %for.inc30
+                                        #   in Loop: Header=BB20_3 Depth=2
 	ld	a0, -48(s0)
 	addi	a0, a0, 1
 	sd	a0, -48(s0)
-	j	.LBB25_3
-.LBB25_18:                              # %for.end32
-                                        #   in Loop: Header=BB25_1 Depth=1
-	j	.LBB25_19
-.LBB25_19:                              # %for.inc33
-                                        #   in Loop: Header=BB25_1 Depth=1
+	j	.LBB20_3
+.LBB20_18:                              # %for.end32
+                                        #   in Loop: Header=BB20_1 Depth=1
+	j	.LBB20_19
+.LBB20_19:                              # %for.inc33
+                                        #   in Loop: Header=BB20_1 Depth=1
 	ld	a0, -40(s0)
 	addi	a0, a0, 1
 	sd	a0, -40(s0)
-	j	.LBB25_1
-.LBB25_20:                              # %for.end35
+	j	.LBB20_1
+.LBB20_20:                              # %for.end35
 	lui	a0, %hi(fig)
 	addi	a0, a0, %lo(fig)
 	call	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE5clearEv
@@ -1829,8 +1781,8 @@ _Z19calc_average_windowv:               # @_Z19calc_average_windowv
 	addi	sp, sp, 112
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end25:
-	.size	_Z19calc_average_windowv, .Lfunc_end25-_Z19calc_average_windowv
+.Lfunc_end20:
+	.size	_Z19calc_average_windowv, .Lfunc_end20-_Z19calc_average_windowv
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN3glm3vecILi3EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi3ET_LS1_0EEE,"axG",@progbits,_ZN3glm3vecILi3EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi3ET_LS1_0EEE,comdat
@@ -1865,8 +1817,8 @@ _ZN3glm3vecILi3EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi3ET_LS1_0EEE: # @_ZN3glm3v
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end26:
-	.size	_ZN3glm3vecILi3EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi3ET_LS1_0EEE, .Lfunc_end26-_ZN3glm3vecILi3EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi3ET_LS1_0EEE
+.Lfunc_end21:
+	.size	_ZN3glm3vecILi3EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi3ET_LS1_0EEE, .Lfunc_end21-_ZN3glm3vecILi3EdLNS_9qualifierE0EEpLIdEERS2_RKNS0_ILi3ET_LS1_0EEE
                                         # -- End function
 	.section	.text._ZN3glm3vecILi3EdLNS_9qualifierE0EEdVIdEERS2_T_,"axG",@progbits,_ZN3glm3vecILi3EdLNS_9qualifierE0EEdVIdEERS2_T_,comdat
 	.weak	_ZN3glm3vecILi3EdLNS_9qualifierE0EEdVIdEERS2_T_ # -- Begin function _ZN3glm3vecILi3EdLNS_9qualifierE0EEdVIdEERS2_T_
@@ -1898,8 +1850,8 @@ _ZN3glm3vecILi3EdLNS_9qualifierE0EEdVIdEERS2_T_: # @_ZN3glm3vecILi3EdLNS_9qualif
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end27:
-	.size	_ZN3glm3vecILi3EdLNS_9qualifierE0EEdVIdEERS2_T_, .Lfunc_end27-_ZN3glm3vecILi3EdLNS_9qualifierE0EEdVIdEERS2_T_
+.Lfunc_end22:
+	.size	_ZN3glm3vecILi3EdLNS_9qualifierE0EEdVIdEERS2_T_, .Lfunc_end22-_ZN3glm3vecILi3EdLNS_9qualifierE0EEdVIdEERS2_T_
                                         # -- End function
 	.section	.text._ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE5clearEv,"axG",@progbits,_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE5clearEv,comdat
 	.weak	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE5clearEv # -- Begin function _ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE5clearEv
@@ -1919,12 +1871,12 @@ _ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE5clearEv: # @_ZNSt6vecto
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end28:
-	.size	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE5clearEv, .Lfunc_end28-_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE5clearEv
+.Lfunc_end23:
+	.size	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE5clearEv, .Lfunc_end23-_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE5clearEv
                                         # -- End function
 	.section	.sdata,"aw",@progbits
 	.p2align	3               # -- Begin function _Z6rand01v
-.LCPI29_0:
+.LCPI24_0:
 	.quad	4746794007244308480     # double 2147483647
 	.text
 	.globl	_Z6rand01v
@@ -1943,8 +1895,8 @@ _Z6rand01v:                             # @_Z6rand01v
 	.cfi_def_cfa s0, 0
 	call	rand
 	fcvt.d.l	ft0, a0
-	lui	a0, %hi(.LCPI29_0)
-	addi	a0, a0, %lo(.LCPI29_0)
+	lui	a0, %hi(.LCPI24_0)
+	addi	a0, a0, %lo(.LCPI24_0)
 	fld	ft1, 0(a0)
 	fdiv.d	ft0, ft0, ft1
 	fmv.x.d	a0, ft0
@@ -1956,8 +1908,8 @@ _Z6rand01v:                             # @_Z6rand01v
 	addi	sp, sp, 16
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end29:
-	.size	_Z6rand01v, .Lfunc_end29-_Z6rand01v
+.Lfunc_end24:
+	.size	_Z6rand01v, .Lfunc_end24-_Z6rand01v
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt13_Bvector_baseISaIbEEC2Ev,"axG",@progbits,_ZNSt13_Bvector_baseISaIbEEC2Ev,comdat
@@ -1977,8 +1929,8 @@ _ZNSt13_Bvector_baseISaIbEEC2Ev:        # @_ZNSt13_Bvector_baseISaIbEEC2Ev
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end30:
-	.size	_ZNSt13_Bvector_baseISaIbEEC2Ev, .Lfunc_end30-_ZNSt13_Bvector_baseISaIbEEC2Ev
+.Lfunc_end25:
+	.size	_ZNSt13_Bvector_baseISaIbEEC2Ev, .Lfunc_end25-_ZNSt13_Bvector_baseISaIbEEC2Ev
                                         # -- End function
 	.section	.text._ZNSt13_Bvector_baseISaIbEE13_Bvector_implC2Ev,"axG",@progbits,_ZNSt13_Bvector_baseISaIbEE13_Bvector_implC2Ev,comdat
 	.weak	_ZNSt13_Bvector_baseISaIbEE13_Bvector_implC2Ev # -- Begin function _ZNSt13_Bvector_baseISaIbEE13_Bvector_implC2Ev
@@ -1986,62 +1938,22 @@ _ZNSt13_Bvector_baseISaIbEEC2Ev:        # @_ZNSt13_Bvector_baseISaIbEEC2Ev
 	.type	_ZNSt13_Bvector_baseISaIbEE13_Bvector_implC2Ev,@function
 _ZNSt13_Bvector_baseISaIbEE13_Bvector_implC2Ev: # @_ZNSt13_Bvector_baseISaIbEE13_Bvector_implC2Ev
 # %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	sd	s1, 8(sp)
-	addi	s0, sp, 32
+	addi	sp, sp, -48
+	sd	ra, 40(sp)
+	sd	s0, 32(sp)
+	addi	s0, sp, 48
+	sd	a0, -40(s0)
+	ld	a0, -40(s0)
 	sd	a0, -32(s0)
-	ld	s1, -32(s0)
-	mv	a0, s1
-	call	_ZNSaImEC2Ev
-	mv	a0, s1
+	ld	a1, -32(s0)
+	sd	a1, -24(s0)
 	call	_ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_dataC2Ev
-	ld	s1, 8(sp)
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
+	ld	s0, 32(sp)
+	ld	ra, 40(sp)
+	addi	sp, sp, 48
 	ret
-.Lfunc_end31:
-	.size	_ZNSt13_Bvector_baseISaIbEE13_Bvector_implC2Ev, .Lfunc_end31-_ZNSt13_Bvector_baseISaIbEE13_Bvector_implC2Ev
-                                        # -- End function
-	.section	.text._ZNSaImEC2Ev,"axG",@progbits,_ZNSaImEC2Ev,comdat
-	.weak	_ZNSaImEC2Ev            # -- Begin function _ZNSaImEC2Ev
-	.p2align	2
-	.type	_ZNSaImEC2Ev,@function
-_ZNSaImEC2Ev:                           # @_ZNSaImEC2Ev
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	ld	a0, -24(s0)
-	call	_ZN9__gnu_cxx13new_allocatorImEC2Ev
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
-	ret
-.Lfunc_end32:
-	.size	_ZNSaImEC2Ev, .Lfunc_end32-_ZNSaImEC2Ev
-                                        # -- End function
-	.section	.text._ZN9__gnu_cxx13new_allocatorImEC2Ev,"axG",@progbits,_ZN9__gnu_cxx13new_allocatorImEC2Ev,comdat
-	.weak	_ZN9__gnu_cxx13new_allocatorImEC2Ev # -- Begin function _ZN9__gnu_cxx13new_allocatorImEC2Ev
-	.p2align	2
-	.type	_ZN9__gnu_cxx13new_allocatorImEC2Ev,@function
-_ZN9__gnu_cxx13new_allocatorImEC2Ev:    # @_ZN9__gnu_cxx13new_allocatorImEC2Ev
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
-	ret
-.Lfunc_end33:
-	.size	_ZN9__gnu_cxx13new_allocatorImEC2Ev, .Lfunc_end33-_ZN9__gnu_cxx13new_allocatorImEC2Ev
+.Lfunc_end26:
+	.size	_ZNSt13_Bvector_baseISaIbEE13_Bvector_implC2Ev, .Lfunc_end26-_ZNSt13_Bvector_baseISaIbEE13_Bvector_implC2Ev
                                         # -- End function
 	.section	.text._ZNSt13_Bit_iteratorC2Ev,"axG",@progbits,_ZNSt13_Bit_iteratorC2Ev,comdat
 	.weak	_ZNSt13_Bit_iteratorC2Ev # -- Begin function _ZNSt13_Bit_iteratorC2Ev
@@ -2071,8 +1983,8 @@ _ZNSt13_Bit_iteratorC2Ev:               # @_ZNSt13_Bit_iteratorC2Ev
 	addi	sp, sp, 32
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end34:
-	.size	_ZNSt13_Bit_iteratorC2Ev, .Lfunc_end34-_ZNSt13_Bit_iteratorC2Ev
+.Lfunc_end27:
+	.size	_ZNSt13_Bit_iteratorC2Ev, .Lfunc_end27-_ZNSt13_Bit_iteratorC2Ev
 	.cfi_endproc
                                         # -- End function
 	.section	.text.__clang_call_terminate,"axG",@progbits,__clang_call_terminate,comdat
@@ -2086,8 +1998,8 @@ __clang_call_terminate:                 # @__clang_call_terminate
 	sd	ra, 8(sp)
 	call	__cxa_begin_catch
 	call	_ZSt9terminatev
-.Lfunc_end35:
-	.size	__clang_call_terminate, .Lfunc_end35-__clang_call_terminate
+.Lfunc_end28:
+	.size	__clang_call_terminate, .Lfunc_end28-__clang_call_terminate
                                         # -- End function
 	.section	.text._ZNSt18_Bit_iterator_baseC2EPmj,"axG",@progbits,_ZNSt18_Bit_iterator_baseC2EPmj,comdat
 	.weak	_ZNSt18_Bit_iterator_baseC2EPmj # -- Begin function _ZNSt18_Bit_iterator_baseC2EPmj
@@ -2111,8 +2023,8 @@ _ZNSt18_Bit_iterator_baseC2EPmj:        # @_ZNSt18_Bit_iterator_baseC2EPmj
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end36:
-	.size	_ZNSt18_Bit_iterator_baseC2EPmj, .Lfunc_end36-_ZNSt18_Bit_iterator_baseC2EPmj
+.Lfunc_end29:
+	.size	_ZNSt18_Bit_iterator_baseC2EPmj, .Lfunc_end29-_ZNSt18_Bit_iterator_baseC2EPmj
                                         # -- End function
 	.section	.text._ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev,"axG",@progbits,_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev,comdat
 	.weak	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev # -- Begin function _ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev
@@ -2131,8 +2043,8 @@ _ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev: # @_ZNSt12_
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end37:
-	.size	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev, .Lfunc_end37-_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev
+.Lfunc_end30:
+	.size	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev, .Lfunc_end30-_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev
                                         # -- End function
 	.section	.text._ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implC2Ev,"axG",@progbits,_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implC2Ev,comdat
 	.weak	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implC2Ev # -- Begin function _ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implC2Ev
@@ -2140,44 +2052,22 @@ _ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EEC2Ev: # @_ZNSt12_
 	.type	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implC2Ev,@function
 _ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implC2Ev: # @_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implC2Ev
 # %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	sd	s1, 8(sp)
-	addi	s0, sp, 32
+	addi	sp, sp, -48
+	sd	ra, 40(sp)
+	sd	s0, 32(sp)
+	addi	s0, sp, 48
+	sd	a0, -40(s0)
+	ld	a0, -40(s0)
 	sd	a0, -32(s0)
-	ld	s1, -32(s0)
-	mv	a0, s1
-	call	_ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEEC2Ev
-	mv	a0, s1
+	ld	a1, -32(s0)
+	sd	a1, -24(s0)
 	call	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE17_Vector_impl_dataC2Ev
-	ld	s1, 8(sp)
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
+	ld	s0, 32(sp)
+	ld	ra, 40(sp)
+	addi	sp, sp, 48
 	ret
-.Lfunc_end38:
-	.size	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implC2Ev, .Lfunc_end38-_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implC2Ev
-                                        # -- End function
-	.section	.text._ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEEC2Ev,"axG",@progbits,_ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEEC2Ev,comdat
-	.weak	_ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEEC2Ev # -- Begin function _ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEEC2Ev
-	.p2align	2
-	.type	_ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEEC2Ev,@function
-_ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEEC2Ev: # @_ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEEC2Ev
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	ld	a0, -24(s0)
-	call	_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEEC2Ev
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
-	ret
-.Lfunc_end39:
-	.size	_ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEEC2Ev, .Lfunc_end39-_ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEEC2Ev
+.Lfunc_end31:
+	.size	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implC2Ev, .Lfunc_end31-_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implC2Ev
                                         # -- End function
 	.section	.text._ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE17_Vector_impl_dataC2Ev,"axG",@progbits,_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE17_Vector_impl_dataC2Ev,comdat
 	.weak	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE17_Vector_impl_dataC2Ev # -- Begin function _ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE17_Vector_impl_dataC2Ev
@@ -2198,26 +2088,26 @@ _ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE17_Vector_impl_da
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end40:
-	.size	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE17_Vector_impl_dataC2Ev, .Lfunc_end40-_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE17_Vector_impl_dataC2Ev
+.Lfunc_end32:
+	.size	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE17_Vector_impl_dataC2Ev, .Lfunc_end32-_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE17_Vector_impl_dataC2Ev
                                         # -- End function
-	.section	.text._ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEEC2Ev,"axG",@progbits,_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEEC2Ev,comdat
-	.weak	_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEEC2Ev # -- Begin function _ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEEC2Ev
+	.section	.text._ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv,"axG",@progbits,_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv,comdat
+	.weak	_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv # -- Begin function _ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv
 	.p2align	2
-	.type	_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEEC2Ev,@function
-_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEEC2Ev: # @_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEEC2Ev
+	.type	_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv,@function
+_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv: # @_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv
 # %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
+	addi	sp, sp, -16
+	sd	ra, 8(sp)
+	sd	s0, 0(sp)
+	addi	s0, sp, 16
+	addi	a0, zero, 3
+	ld	s0, 0(sp)
+	ld	ra, 8(sp)
+	addi	sp, sp, 16
 	ret
-.Lfunc_end41:
-	.size	_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEEC2Ev, .Lfunc_end41-_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEEC2Ev
+.Lfunc_end33:
+	.size	_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv, .Lfunc_end33-_ZN3glm3vecILi3EdLNS_9qualifierE0EE6lengthEv
                                         # -- End function
 	.section	.text._ZNSt13_Bvector_baseISaIbEED2Ev,"axG",@progbits,_ZNSt13_Bvector_baseISaIbEED2Ev,comdat
 	.weak	_ZNSt13_Bvector_baseISaIbEED2Ev # -- Begin function _ZNSt13_Bvector_baseISaIbEED2Ev
@@ -2245,8 +2135,8 @@ _ZNSt13_Bvector_baseISaIbEED2Ev:        # @_ZNSt13_Bvector_baseISaIbEED2Ev
 	mv	a0, s1
 	call	_ZNSt13_Bvector_baseISaIbEE13_M_deallocateEv
 .Ltmp35:
-	j	.LBB42_1
-.LBB42_1:                               # %invoke.cont
+	j	.LBB34_1
+.LBB34_1:                               # %invoke.cont
 	mv	a0, s1
 	call	_ZNSt13_Bvector_baseISaIbEE13_Bvector_implD2Ev
 	ld	s1, 24(sp)
@@ -2259,22 +2149,22 @@ _ZNSt13_Bvector_baseISaIbEED2Ev:        # @_ZNSt13_Bvector_baseISaIbEED2Ev
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.LBB42_2:                               # %lpad
+.LBB34_2:                               # %lpad
 .Ltmp36:
 	sd	a0, -40(s0)
 	sw	a1, -44(s0)
 	mv	a0, s1
 	call	_ZNSt13_Bvector_baseISaIbEE13_Bvector_implD2Ev
-	j	.LBB42_3
-.LBB42_3:                               # %terminate.handler
+	j	.LBB34_3
+.LBB34_3:                               # %terminate.handler
 	ld	a0, -40(s0)
 	call	__clang_call_terminate
-.Lfunc_end42:
-	.size	_ZNSt13_Bvector_baseISaIbEED2Ev, .Lfunc_end42-_ZNSt13_Bvector_baseISaIbEED2Ev
+.Lfunc_end34:
+	.size	_ZNSt13_Bvector_baseISaIbEED2Ev, .Lfunc_end34-_ZNSt13_Bvector_baseISaIbEED2Ev
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table42:
+GCC_except_table34:
 .Lexception4:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	155                     # @TType Encoding = indirect pcrel sdata4
@@ -2304,50 +2194,55 @@ GCC_except_table42:
 _ZNSt13_Bvector_baseISaIbEE13_M_deallocateEv: # @_ZNSt13_Bvector_baseISaIbEE13_M_deallocateEv
 	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -48
-	.cfi_def_cfa_offset 48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	sd	s1, 24(sp)
+	addi	sp, sp, -64
+	.cfi_def_cfa_offset 64
+	sd	ra, 56(sp)
+	sd	s0, 48(sp)
+	sd	s1, 40(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
 	.cfi_offset s1, -24
-	addi	s0, sp, 48
+	addi	s0, sp, 64
 	.cfi_def_cfa s0, 0
-	sd	a0, -32(s0)
-	ld	s1, -32(s0)
+	sd	a0, -56(s0)
+	ld	s1, -56(s0)
 	ld	a0, 0(s1)
-	beqz	a0, .LBB43_2
-	j	.LBB43_1
-.LBB43_1:                               # %if.then
+	beqz	a0, .LBB35_2
+	j	.LBB35_1
+.LBB35_1:                               # %if.then
 	mv	a0, s1
 	call	_ZNKSt13_Bvector_baseISaIbEE13_Bvector_impl11_M_end_addrEv
 	ld	a1, 0(s1)
 	sub	a0, a0, a1
 	srai	a0, a0, 3
-	sd	a0, -40(s0)
+	sd	a0, -64(s0)
 	ld	a0, 32(s1)
-	ld	a2, -40(s0)
-	slli	a1, a2, 3
-	sub	a1, a0, a1
-	mv	a0, s1
-	call	_ZNSt16allocator_traitsISaImEE10deallocateERS0_Pmm
+	ld	a1, -64(s0)
+	slli	a2, a1, 3
+	sub	a0, a0, a2
+	sd	s1, -32(s0)
+	sd	a0, -40(s0)
+	sd	a1, -48(s0)
+	ld	a0, -32(s0)
+	ld	a1, -40(s0)
+	ld	a2, -48(s0)
+	call	_ZNSt15__new_allocatorImE10deallocateEPmm
 	mv	a0, s1
 	call	_ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_data8_M_resetEv
-	j	.LBB43_2
-.LBB43_2:                               # %if.end
-	ld	s1, 24(sp)
-	ld	s0, 32(sp)
-	.cfi_def_cfa sp, 48
-	ld	ra, 40(sp)
+	j	.LBB35_2
+.LBB35_2:                               # %if.end
+	ld	s1, 40(sp)
+	ld	s0, 48(sp)
+	.cfi_def_cfa sp, 64
+	ld	ra, 56(sp)
 	.cfi_restore ra
 	.cfi_restore s0
 	.cfi_restore s1
-	addi	sp, sp, 48
+	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end43:
-	.size	_ZNSt13_Bvector_baseISaIbEE13_M_deallocateEv, .Lfunc_end43-_ZNSt13_Bvector_baseISaIbEE13_M_deallocateEv
+.Lfunc_end35:
+	.size	_ZNSt13_Bvector_baseISaIbEE13_M_deallocateEv, .Lfunc_end35-_ZNSt13_Bvector_baseISaIbEE13_M_deallocateEv
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt13_Bvector_baseISaIbEE13_Bvector_implD2Ev,"axG",@progbits,_ZNSt13_Bvector_baseISaIbEE13_Bvector_implD2Ev,comdat
@@ -2360,15 +2255,17 @@ _ZNSt13_Bvector_baseISaIbEE13_Bvector_implD2Ev: # @_ZNSt13_Bvector_baseISaIbEE13
 	sd	ra, 24(sp)
 	sd	s0, 16(sp)
 	addi	s0, sp, 32
+	sd	a0, -32(s0)
+	ld	a0, -32(s0)
 	sd	a0, -24(s0)
 	ld	a0, -24(s0)
-	call	_ZNSaImED2Ev
+	call	_ZNSt15__new_allocatorImED2Ev
 	ld	s0, 16(sp)
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end44:
-	.size	_ZNSt13_Bvector_baseISaIbEE13_Bvector_implD2Ev, .Lfunc_end44-_ZNSt13_Bvector_baseISaIbEE13_Bvector_implD2Ev
+.Lfunc_end36:
+	.size	_ZNSt13_Bvector_baseISaIbEE13_Bvector_implD2Ev, .Lfunc_end36-_ZNSt13_Bvector_baseISaIbEE13_Bvector_implD2Ev
                                         # -- End function
 	.section	.text._ZNKSt13_Bvector_baseISaIbEE13_Bvector_impl11_M_end_addrEv,"axG",@progbits,_ZNKSt13_Bvector_baseISaIbEE13_Bvector_impl11_M_end_addrEv,comdat
 	.weak	_ZNKSt13_Bvector_baseISaIbEE13_Bvector_impl11_M_end_addrEv # -- Begin function _ZNKSt13_Bvector_baseISaIbEE13_Bvector_impl11_M_end_addrEv
@@ -2383,60 +2280,26 @@ _ZNKSt13_Bvector_baseISaIbEE13_Bvector_impl11_M_end_addrEv: # @_ZNKSt13_Bvector_
 	sd	a0, -32(s0)
 	ld	a0, -32(s0)
 	ld	a1, 32(a0)
-	beqz	a1, .LBB45_2
-	j	.LBB45_1
-.LBB45_1:                               # %if.then
+	beqz	a1, .LBB37_2
+	j	.LBB37_1
+.LBB37_1:                               # %if.then
 	ld	a0, 32(a0)
 	addi	a0, a0, -8
 	call	_ZSt11__addressofImEPT_RS0_
 	addi	a0, a0, 8
 	sd	a0, -24(s0)
-	j	.LBB45_3
-.LBB45_2:                               # %if.end
+	j	.LBB37_3
+.LBB37_2:                               # %if.end
 	sd	zero, -24(s0)
-	j	.LBB45_3
-.LBB45_3:                               # %return
+	j	.LBB37_3
+.LBB37_3:                               # %return
 	ld	a0, -24(s0)
 	ld	s0, 16(sp)
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end45:
-	.size	_ZNKSt13_Bvector_baseISaIbEE13_Bvector_impl11_M_end_addrEv, .Lfunc_end45-_ZNKSt13_Bvector_baseISaIbEE13_Bvector_impl11_M_end_addrEv
-                                        # -- End function
-	.section	.text._ZNSt16allocator_traitsISaImEE10deallocateERS0_Pmm,"axG",@progbits,_ZNSt16allocator_traitsISaImEE10deallocateERS0_Pmm,comdat
-	.weak	_ZNSt16allocator_traitsISaImEE10deallocateERS0_Pmm # -- Begin function _ZNSt16allocator_traitsISaImEE10deallocateERS0_Pmm
-	.p2align	2
-	.type	_ZNSt16allocator_traitsISaImEE10deallocateERS0_Pmm,@function
-_ZNSt16allocator_traitsISaImEE10deallocateERS0_Pmm: # @_ZNSt16allocator_traitsISaImEE10deallocateERS0_Pmm
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -48
-	.cfi_def_cfa_offset 48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	.cfi_offset ra, -8
-	.cfi_offset s0, -16
-	addi	s0, sp, 48
-	.cfi_def_cfa s0, 0
-	sd	a0, -24(s0)
-	sd	a1, -32(s0)
-	sd	a2, -40(s0)
-	ld	a0, -24(s0)
-	ld	a1, -32(s0)
-	ld	a2, -40(s0)
-	call	_ZN9__gnu_cxx13new_allocatorImE10deallocateEPmm
-	ld	s0, 32(sp)
-	.cfi_def_cfa sp, 48
-	ld	ra, 40(sp)
-	.cfi_restore ra
-	.cfi_restore s0
-	addi	sp, sp, 48
-	.cfi_def_cfa_offset 0
-	ret
-.Lfunc_end46:
-	.size	_ZNSt16allocator_traitsISaImEE10deallocateERS0_Pmm, .Lfunc_end46-_ZNSt16allocator_traitsISaImEE10deallocateERS0_Pmm
-	.cfi_endproc
+.Lfunc_end37:
+	.size	_ZNKSt13_Bvector_baseISaIbEE13_Bvector_impl11_M_end_addrEv, .Lfunc_end37-_ZNKSt13_Bvector_baseISaIbEE13_Bvector_impl11_M_end_addrEv
                                         # -- End function
 	.section	.text._ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_data8_M_resetEv,"axG",@progbits,_ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_data8_M_resetEv,comdat
 	.weak	_ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_data8_M_resetEv # -- Begin function _ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_data8_M_resetEv
@@ -2468,8 +2331,8 @@ _ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_data8_M_resetEv: # @_ZNSt13_Bvector_b
 	ld	ra, 72(sp)
 	addi	sp, sp, 80
 	ret
-.Lfunc_end47:
-	.size	_ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_data8_M_resetEv, .Lfunc_end47-_ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_data8_M_resetEv
+.Lfunc_end38:
+	.size	_ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_data8_M_resetEv, .Lfunc_end38-_ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_data8_M_resetEv
                                         # -- End function
 	.section	.text._ZSt11__addressofImEPT_RS0_,"axG",@progbits,_ZSt11__addressofImEPT_RS0_,comdat
 	.weak	_ZSt11__addressofImEPT_RS0_ # -- Begin function _ZSt11__addressofImEPT_RS0_
@@ -2487,14 +2350,14 @@ _ZSt11__addressofImEPT_RS0_:            # @_ZSt11__addressofImEPT_RS0_
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end48:
-	.size	_ZSt11__addressofImEPT_RS0_, .Lfunc_end48-_ZSt11__addressofImEPT_RS0_
+.Lfunc_end39:
+	.size	_ZSt11__addressofImEPT_RS0_, .Lfunc_end39-_ZSt11__addressofImEPT_RS0_
                                         # -- End function
-	.section	.text._ZN9__gnu_cxx13new_allocatorImE10deallocateEPmm,"axG",@progbits,_ZN9__gnu_cxx13new_allocatorImE10deallocateEPmm,comdat
-	.weak	_ZN9__gnu_cxx13new_allocatorImE10deallocateEPmm # -- Begin function _ZN9__gnu_cxx13new_allocatorImE10deallocateEPmm
+	.section	.text._ZNSt15__new_allocatorImE10deallocateEPmm,"axG",@progbits,_ZNSt15__new_allocatorImE10deallocateEPmm,comdat
+	.weak	_ZNSt15__new_allocatorImE10deallocateEPmm # -- Begin function _ZNSt15__new_allocatorImE10deallocateEPmm
 	.p2align	2
-	.type	_ZN9__gnu_cxx13new_allocatorImE10deallocateEPmm,@function
-_ZN9__gnu_cxx13new_allocatorImE10deallocateEPmm: # @_ZN9__gnu_cxx13new_allocatorImE10deallocateEPmm
+	.type	_ZNSt15__new_allocatorImE10deallocateEPmm,@function
+_ZNSt15__new_allocatorImE10deallocateEPmm: # @_ZNSt15__new_allocatorImE10deallocateEPmm
 # %bb.0:                                # %entry
 	addi	sp, sp, -48
 	sd	ra, 40(sp)
@@ -2509,8 +2372,8 @@ _ZN9__gnu_cxx13new_allocatorImE10deallocateEPmm: # @_ZN9__gnu_cxx13new_allocator
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end49:
-	.size	_ZN9__gnu_cxx13new_allocatorImE10deallocateEPmm, .Lfunc_end49-_ZN9__gnu_cxx13new_allocatorImE10deallocateEPmm
+.Lfunc_end40:
+	.size	_ZNSt15__new_allocatorImE10deallocateEPmm, .Lfunc_end40-_ZNSt15__new_allocatorImE10deallocateEPmm
                                         # -- End function
 	.section	.text._ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_dataC2Ev,"axG",@progbits,_ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_dataC2Ev,comdat
 	.weak	_ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_dataC2Ev # -- Begin function _ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_dataC2Ev
@@ -2538,14 +2401,14 @@ _ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_dataC2Ev: # @_ZNSt13_Bvector_baseISaI
 	mv	a0, s1
 	call	_ZNSt13_Bit_iteratorC2Ev
 .Ltmp38:
-	j	.LBB50_1
-.LBB50_1:                               # %invoke.cont
+	j	.LBB41_1
+.LBB41_1:                               # %invoke.cont
 	addi	a0, s1, 16
 .Ltmp39:
 	call	_ZNSt13_Bit_iteratorC2Ev
 .Ltmp40:
-	j	.LBB50_2
-.LBB50_2:                               # %invoke.cont2
+	j	.LBB41_2
+.LBB41_2:                               # %invoke.cont2
 	sd	zero, 32(s1)
 	ld	s1, 8(sp)
 	ld	s0, 16(sp)
@@ -2557,15 +2420,15 @@ _ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_dataC2Ev: # @_ZNSt13_Bvector_baseISaI
 	addi	sp, sp, 32
 	.cfi_def_cfa_offset 0
 	ret
-.LBB50_3:                               # %terminate.lpad
+.LBB41_3:                               # %terminate.lpad
 .Ltmp41:
 	call	__clang_call_terminate
-.Lfunc_end50:
-	.size	_ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_dataC2Ev, .Lfunc_end50-_ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_dataC2Ev
+.Lfunc_end41:
+	.size	_ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_dataC2Ev, .Lfunc_end41-_ZNSt13_Bvector_baseISaIbEE18_Bvector_impl_dataC2Ev
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table50:
+GCC_except_table41:
 .Lexception5:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	155                     # @TType Encoding = indirect pcrel sdata4
@@ -2588,31 +2451,11 @@ GCC_except_table50:
 .Lttbase3:
 	.p2align	2
                                         # -- End function
-	.section	.text._ZNSaImED2Ev,"axG",@progbits,_ZNSaImED2Ev,comdat
-	.weak	_ZNSaImED2Ev            # -- Begin function _ZNSaImED2Ev
+	.section	.text._ZNSt15__new_allocatorImED2Ev,"axG",@progbits,_ZNSt15__new_allocatorImED2Ev,comdat
+	.weak	_ZNSt15__new_allocatorImED2Ev # -- Begin function _ZNSt15__new_allocatorImED2Ev
 	.p2align	2
-	.type	_ZNSaImED2Ev,@function
-_ZNSaImED2Ev:                           # @_ZNSaImED2Ev
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	ld	a0, -24(s0)
-	call	_ZN9__gnu_cxx13new_allocatorImED2Ev
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
-	ret
-.Lfunc_end51:
-	.size	_ZNSaImED2Ev, .Lfunc_end51-_ZNSaImED2Ev
-                                        # -- End function
-	.section	.text._ZN9__gnu_cxx13new_allocatorImED2Ev,"axG",@progbits,_ZN9__gnu_cxx13new_allocatorImED2Ev,comdat
-	.weak	_ZN9__gnu_cxx13new_allocatorImED2Ev # -- Begin function _ZN9__gnu_cxx13new_allocatorImED2Ev
-	.p2align	2
-	.type	_ZN9__gnu_cxx13new_allocatorImED2Ev,@function
-_ZN9__gnu_cxx13new_allocatorImED2Ev:    # @_ZN9__gnu_cxx13new_allocatorImED2Ev
+	.type	_ZNSt15__new_allocatorImED2Ev,@function
+_ZNSt15__new_allocatorImED2Ev:          # @_ZNSt15__new_allocatorImED2Ev
 # %bb.0:                                # %entry
 	addi	sp, sp, -32
 	sd	ra, 24(sp)
@@ -2623,41 +2466,8 @@ _ZN9__gnu_cxx13new_allocatorImED2Ev:    # @_ZN9__gnu_cxx13new_allocatorImED2Ev
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end52:
-	.size	_ZN9__gnu_cxx13new_allocatorImED2Ev, .Lfunc_end52-_ZN9__gnu_cxx13new_allocatorImED2Ev
-                                        # -- End function
-	.section	.text._ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEES3_EvT_S5_RSaIT0_E,"axG",@progbits,_ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEES3_EvT_S5_RSaIT0_E,comdat
-	.weak	_ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEES3_EvT_S5_RSaIT0_E # -- Begin function _ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEES3_EvT_S5_RSaIT0_E
-	.p2align	2
-	.type	_ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEES3_EvT_S5_RSaIT0_E,@function
-_ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEES3_EvT_S5_RSaIT0_E: # @_ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEES3_EvT_S5_RSaIT0_E
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -48
-	.cfi_def_cfa_offset 48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	.cfi_offset ra, -8
-	.cfi_offset s0, -16
-	addi	s0, sp, 48
-	.cfi_def_cfa s0, 0
-	sd	a0, -24(s0)
-	sd	a1, -32(s0)
-	sd	a2, -40(s0)
-	ld	a0, -24(s0)
-	ld	a1, -32(s0)
-	call	_ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEEEvT_S5_
-	ld	s0, 32(sp)
-	.cfi_def_cfa sp, 48
-	ld	ra, 40(sp)
-	.cfi_restore ra
-	.cfi_restore s0
-	addi	sp, sp, 48
-	.cfi_def_cfa_offset 0
-	ret
-.Lfunc_end53:
-	.size	_ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEES3_EvT_S5_RSaIT0_E, .Lfunc_end53-_ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEES3_EvT_S5_RSaIT0_E
-	.cfi_endproc
+.Lfunc_end42:
+	.size	_ZNSt15__new_allocatorImED2Ev, .Lfunc_end42-_ZNSt15__new_allocatorImED2Ev
                                         # -- End function
 	.section	.text._ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE19_M_get_Tp_allocatorEv,"axG",@progbits,_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE19_M_get_Tp_allocatorEv,comdat
 	.weak	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE19_M_get_Tp_allocatorEv # -- Begin function _ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE19_M_get_Tp_allocatorEv
@@ -2675,8 +2485,8 @@ _ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE19_M_get_Tp_alloc
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end54:
-	.size	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE19_M_get_Tp_allocatorEv, .Lfunc_end54-_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE19_M_get_Tp_allocatorEv
+.Lfunc_end43:
+	.size	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE19_M_get_Tp_allocatorEv, .Lfunc_end43-_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE19_M_get_Tp_allocatorEv
                                         # -- End function
 	.section	.text._ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev,"axG",@progbits,_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev,comdat
 	.weak	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev # -- Begin function _ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev
@@ -2717,8 +2527,8 @@ _ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev: # @_ZNSt12_
 	mv	a0, s1
 	call	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE13_M_deallocateEPS3_m
 .Ltmp43:
-	j	.LBB55_1
-.LBB55_1:                               # %invoke.cont
+	j	.LBB44_1
+.LBB44_1:                               # %invoke.cont
 	mv	a0, s1
 	call	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implD2Ev
 	ld	s1, 24(sp)
@@ -2731,22 +2541,22 @@ _ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev: # @_ZNSt12_
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.LBB55_2:                               # %lpad
+.LBB44_2:                               # %lpad
 .Ltmp44:
 	sd	a0, -40(s0)
 	sw	a1, -44(s0)
 	mv	a0, s1
 	call	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implD2Ev
-	j	.LBB55_3
-.LBB55_3:                               # %terminate.handler
+	j	.LBB44_3
+.LBB44_3:                               # %terminate.handler
 	ld	a0, -40(s0)
 	call	__clang_call_terminate
-.Lfunc_end55:
-	.size	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev, .Lfunc_end55-_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev
+.Lfunc_end44:
+	.size	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev, .Lfunc_end44-_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EED2Ev
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table55:
+GCC_except_table44:
 .Lexception6:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	155                     # @TType Encoding = indirect pcrel sdata4
@@ -2797,8 +2607,8 @@ _ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEEEvT_S5_: # @_ZSt8_DestroyIPN3g
 	addi	sp, sp, 32
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end56:
-	.size	_ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEEEvT_S5_, .Lfunc_end56-_ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEEEvT_S5_
+.Lfunc_end45:
+	.size	_ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEEEvT_S5_, .Lfunc_end45-_ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEEEvT_S5_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt12_Destroy_auxILb1EE9__destroyIPN3glm3vecILi3EdLNS2_9qualifierE0EEEEEvT_S7_,"axG",@progbits,_ZNSt12_Destroy_auxILb1EE9__destroyIPN3glm3vecILi3EdLNS2_9qualifierE0EEEEEvT_S7_,comdat
@@ -2817,8 +2627,8 @@ _ZNSt12_Destroy_auxILb1EE9__destroyIPN3glm3vecILi3EdLNS2_9qualifierE0EEEEEvT_S7_
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end57:
-	.size	_ZNSt12_Destroy_auxILb1EE9__destroyIPN3glm3vecILi3EdLNS2_9qualifierE0EEEEEvT_S7_, .Lfunc_end57-_ZNSt12_Destroy_auxILb1EE9__destroyIPN3glm3vecILi3EdLNS2_9qualifierE0EEEEEvT_S7_
+.Lfunc_end46:
+	.size	_ZNSt12_Destroy_auxILb1EE9__destroyIPN3glm3vecILi3EdLNS2_9qualifierE0EEEEEvT_S7_, .Lfunc_end46-_ZNSt12_Destroy_auxILb1EE9__destroyIPN3glm3vecILi3EdLNS2_9qualifierE0EEEEEvT_S7_
                                         # -- End function
 	.section	.text._ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE13_M_deallocateEPS3_m,"axG",@progbits,_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE13_M_deallocateEPS3_m,comdat
 	.weak	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE13_M_deallocateEPS3_m # -- Begin function _ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE13_M_deallocateEPS3_m
@@ -2827,37 +2637,43 @@ _ZNSt12_Destroy_auxILb1EE9__destroyIPN3glm3vecILi3EdLNS2_9qualifierE0EEEEEvT_S7_
 _ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE13_M_deallocateEPS3_m: # @_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE13_M_deallocateEPS3_m
 	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -48
-	.cfi_def_cfa_offset 48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
+	addi	sp, sp, -64
+	.cfi_def_cfa_offset 64
+	sd	ra, 56(sp)
+	sd	s0, 48(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
-	addi	s0, sp, 48
+	addi	s0, sp, 64
 	.cfi_def_cfa s0, 0
+	sd	a0, -48(s0)
+	sd	a1, -56(s0)
+	sd	a2, -64(s0)
+	ld	a0, -48(s0)
+	ld	a1, -56(s0)
+	beqz	a1, .LBB47_2
+	j	.LBB47_1
+.LBB47_1:                               # %if.then
+	ld	a1, -56(s0)
+	ld	a2, -64(s0)
 	sd	a0, -24(s0)
 	sd	a1, -32(s0)
 	sd	a2, -40(s0)
 	ld	a0, -24(s0)
 	ld	a1, -32(s0)
-	beqz	a1, .LBB58_2
-	j	.LBB58_1
-.LBB58_1:                               # %if.then
-	ld	a1, -32(s0)
 	ld	a2, -40(s0)
-	call	_ZNSt16allocator_traitsISaIN3glm3vecILi3EdLNS0_9qualifierE0EEEEE10deallocateERS4_PS3_m
-	j	.LBB58_2
-.LBB58_2:                               # %if.end
-	ld	s0, 32(sp)
-	.cfi_def_cfa sp, 48
-	ld	ra, 40(sp)
+	call	_ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEE10deallocateEPS3_m
+	j	.LBB47_2
+.LBB47_2:                               # %if.end
+	ld	s0, 48(sp)
+	.cfi_def_cfa sp, 64
+	ld	ra, 56(sp)
 	.cfi_restore ra
 	.cfi_restore s0
-	addi	sp, sp, 48
+	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end58:
-	.size	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE13_M_deallocateEPS3_m, .Lfunc_end58-_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE13_M_deallocateEPS3_m
+.Lfunc_end47:
+	.size	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE13_M_deallocateEPS3_m, .Lfunc_end47-_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE13_M_deallocateEPS3_m
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implD2Ev,"axG",@progbits,_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implD2Ev,comdat
@@ -2870,55 +2686,23 @@ _ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implD2E
 	sd	ra, 24(sp)
 	sd	s0, 16(sp)
 	addi	s0, sp, 32
+	sd	a0, -32(s0)
+	ld	a0, -32(s0)
 	sd	a0, -24(s0)
 	ld	a0, -24(s0)
-	call	_ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEED2Ev
+	call	_ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEED2Ev
 	ld	s0, 16(sp)
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end59:
-	.size	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implD2Ev, .Lfunc_end59-_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implD2Ev
+.Lfunc_end48:
+	.size	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implD2Ev, .Lfunc_end48-_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE12_Vector_implD2Ev
                                         # -- End function
-	.section	.text._ZNSt16allocator_traitsISaIN3glm3vecILi3EdLNS0_9qualifierE0EEEEE10deallocateERS4_PS3_m,"axG",@progbits,_ZNSt16allocator_traitsISaIN3glm3vecILi3EdLNS0_9qualifierE0EEEEE10deallocateERS4_PS3_m,comdat
-	.weak	_ZNSt16allocator_traitsISaIN3glm3vecILi3EdLNS0_9qualifierE0EEEEE10deallocateERS4_PS3_m # -- Begin function _ZNSt16allocator_traitsISaIN3glm3vecILi3EdLNS0_9qualifierE0EEEEE10deallocateERS4_PS3_m
+	.section	.text._ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEE10deallocateEPS3_m,"axG",@progbits,_ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEE10deallocateEPS3_m,comdat
+	.weak	_ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEE10deallocateEPS3_m # -- Begin function _ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEE10deallocateEPS3_m
 	.p2align	2
-	.type	_ZNSt16allocator_traitsISaIN3glm3vecILi3EdLNS0_9qualifierE0EEEEE10deallocateERS4_PS3_m,@function
-_ZNSt16allocator_traitsISaIN3glm3vecILi3EdLNS0_9qualifierE0EEEEE10deallocateERS4_PS3_m: # @_ZNSt16allocator_traitsISaIN3glm3vecILi3EdLNS0_9qualifierE0EEEEE10deallocateERS4_PS3_m
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -48
-	.cfi_def_cfa_offset 48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	.cfi_offset ra, -8
-	.cfi_offset s0, -16
-	addi	s0, sp, 48
-	.cfi_def_cfa s0, 0
-	sd	a0, -24(s0)
-	sd	a1, -32(s0)
-	sd	a2, -40(s0)
-	ld	a0, -24(s0)
-	ld	a1, -32(s0)
-	ld	a2, -40(s0)
-	call	_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEE10deallocateEPS4_m
-	ld	s0, 32(sp)
-	.cfi_def_cfa sp, 48
-	ld	ra, 40(sp)
-	.cfi_restore ra
-	.cfi_restore s0
-	addi	sp, sp, 48
-	.cfi_def_cfa_offset 0
-	ret
-.Lfunc_end60:
-	.size	_ZNSt16allocator_traitsISaIN3glm3vecILi3EdLNS0_9qualifierE0EEEEE10deallocateERS4_PS3_m, .Lfunc_end60-_ZNSt16allocator_traitsISaIN3glm3vecILi3EdLNS0_9qualifierE0EEEEE10deallocateERS4_PS3_m
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEE10deallocateEPS4_m,"axG",@progbits,_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEE10deallocateEPS4_m,comdat
-	.weak	_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEE10deallocateEPS4_m # -- Begin function _ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEE10deallocateEPS4_m
-	.p2align	2
-	.type	_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEE10deallocateEPS4_m,@function
-_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEE10deallocateEPS4_m: # @_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEE10deallocateEPS4_m
+	.type	_ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEE10deallocateEPS3_m,@function
+_ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEE10deallocateEPS3_m: # @_ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEE10deallocateEPS3_m
 # %bb.0:                                # %entry
 	addi	sp, sp, -48
 	sd	ra, 40(sp)
@@ -2933,34 +2717,14 @@ _ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEE10deallocateEPS
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end61:
-	.size	_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEE10deallocateEPS4_m, .Lfunc_end61-_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEE10deallocateEPS4_m
+.Lfunc_end49:
+	.size	_ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEE10deallocateEPS3_m, .Lfunc_end49-_ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEE10deallocateEPS3_m
                                         # -- End function
-	.section	.text._ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEED2Ev,"axG",@progbits,_ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEED2Ev,comdat
-	.weak	_ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEED2Ev # -- Begin function _ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEED2Ev
+	.section	.text._ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEED2Ev,"axG",@progbits,_ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEED2Ev,comdat
+	.weak	_ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEED2Ev # -- Begin function _ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEED2Ev
 	.p2align	2
-	.type	_ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEED2Ev,@function
-_ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEED2Ev: # @_ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEED2Ev
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	ld	a0, -24(s0)
-	call	_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEED2Ev
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
-	ret
-.Lfunc_end62:
-	.size	_ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEED2Ev, .Lfunc_end62-_ZNSaIN3glm3vecILi3EdLNS_9qualifierE0EEEED2Ev
-                                        # -- End function
-	.section	.text._ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEED2Ev,"axG",@progbits,_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEED2Ev,comdat
-	.weak	_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEED2Ev # -- Begin function _ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEED2Ev
-	.p2align	2
-	.type	_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEED2Ev,@function
-_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEED2Ev: # @_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEED2Ev
+	.type	_ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEED2Ev,@function
+_ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEED2Ev: # @_ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEED2Ev
 # %bb.0:                                # %entry
 	addi	sp, sp, -32
 	sd	ra, 24(sp)
@@ -2971,14 +2735,14 @@ _ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEED2Ev: # @_ZN9__
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end63:
-	.size	_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEED2Ev, .Lfunc_end63-_ZN9__gnu_cxx13new_allocatorIN3glm3vecILi3EdLNS1_9qualifierE0EEEED2Ev
+.Lfunc_end50:
+	.size	_ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEED2Ev, .Lfunc_end50-_ZNSt15__new_allocatorIN3glm3vecILi3EdLNS0_9qualifierE0EEEED2Ev
                                         # -- End function
-	.section	.text._ZN9__gnu_cxx13new_allocatorIdEC2Ev,"axG",@progbits,_ZN9__gnu_cxx13new_allocatorIdEC2Ev,comdat
-	.weak	_ZN9__gnu_cxx13new_allocatorIdEC2Ev # -- Begin function _ZN9__gnu_cxx13new_allocatorIdEC2Ev
+	.section	.text._ZNSt15__new_allocatorIdED2Ev,"axG",@progbits,_ZNSt15__new_allocatorIdED2Ev,comdat
+	.weak	_ZNSt15__new_allocatorIdED2Ev # -- Begin function _ZNSt15__new_allocatorIdED2Ev
 	.p2align	2
-	.type	_ZN9__gnu_cxx13new_allocatorIdEC2Ev,@function
-_ZN9__gnu_cxx13new_allocatorIdEC2Ev:    # @_ZN9__gnu_cxx13new_allocatorIdEC2Ev
+	.type	_ZNSt15__new_allocatorIdED2Ev,@function
+_ZNSt15__new_allocatorIdED2Ev:          # @_ZNSt15__new_allocatorIdED2Ev
 # %bb.0:                                # %entry
 	addi	sp, sp, -32
 	sd	ra, 24(sp)
@@ -2989,26 +2753,8 @@ _ZN9__gnu_cxx13new_allocatorIdEC2Ev:    # @_ZN9__gnu_cxx13new_allocatorIdEC2Ev
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end64:
-	.size	_ZN9__gnu_cxx13new_allocatorIdEC2Ev, .Lfunc_end64-_ZN9__gnu_cxx13new_allocatorIdEC2Ev
-                                        # -- End function
-	.section	.text._ZN9__gnu_cxx13new_allocatorIdED2Ev,"axG",@progbits,_ZN9__gnu_cxx13new_allocatorIdED2Ev,comdat
-	.weak	_ZN9__gnu_cxx13new_allocatorIdED2Ev # -- Begin function _ZN9__gnu_cxx13new_allocatorIdED2Ev
-	.p2align	2
-	.type	_ZN9__gnu_cxx13new_allocatorIdED2Ev,@function
-_ZN9__gnu_cxx13new_allocatorIdED2Ev:    # @_ZN9__gnu_cxx13new_allocatorIdED2Ev
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
-	ret
-.Lfunc_end65:
-	.size	_ZN9__gnu_cxx13new_allocatorIdED2Ev, .Lfunc_end65-_ZN9__gnu_cxx13new_allocatorIdED2Ev
+.Lfunc_end51:
+	.size	_ZNSt15__new_allocatorIdED2Ev, .Lfunc_end51-_ZNSt15__new_allocatorIdED2Ev
                                         # -- End function
 	.section	.text._ZNSt6vectorIdSaIdEE17_S_check_init_lenEmRKS0_,"axG",@progbits,_ZNSt6vectorIdSaIdEE17_S_check_init_lenEmRKS0_,comdat
 	.weak	_ZNSt6vectorIdSaIdEE17_S_check_init_lenEmRKS0_ # -- Begin function _ZNSt6vectorIdSaIdEE17_S_check_init_lenEmRKS0_
@@ -3017,56 +2763,61 @@ _ZN9__gnu_cxx13new_allocatorIdED2Ev:    # @_ZN9__gnu_cxx13new_allocatorIdED2Ev
 _ZNSt6vectorIdSaIdEE17_S_check_init_lenEmRKS0_: # @_ZNSt6vectorIdSaIdEE17_S_check_init_lenEmRKS0_
 	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -64
-	.cfi_def_cfa_offset 64
-	sd	ra, 56(sp)
-	sd	s0, 48(sp)
-	sd	s1, 40(sp)
-	sd	s2, 32(sp)
-	sd	s3, 24(sp)
+	addi	sp, sp, -112
+	.cfi_def_cfa_offset 112
+	sd	ra, 104(sp)
+	sd	s0, 96(sp)
+	sd	s1, 88(sp)
+	sd	s2, 80(sp)
+	sd	s3, 72(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
 	.cfi_offset s1, -24
 	.cfi_offset s2, -32
 	.cfi_offset s3, -40
-	addi	s0, sp, 64
+	addi	s0, sp, 112
 	.cfi_def_cfa s0, 0
-	sd	a0, -48(s0)
-	sd	a1, -56(s0)
-	ld	s3, -48(s0)
-	ld	a1, -56(s0)
-	addi	s2, s0, -64
-	mv	a0, s2
-	call	_ZNSaIdEC2ERKS_
+	sd	a0, -88(s0)
+	sd	a1, -96(s0)
+	ld	s3, -88(s0)
+	ld	a0, -96(s0)
+	addi	s2, s0, -104
+	sd	s2, -72(s0)
+	sd	a0, -80(s0)
+	ld	a0, -72(s0)
+	ld	a1, -80(s0)
+	sd	a0, -56(s0)
+	sd	a1, -64(s0)
 	mv	a0, s2
 	call	_ZNSt6vectorIdSaIdEE11_S_max_sizeERKS0_
 	mv	s1, a0
-	mv	a0, s2
-	call	_ZNSaIdED2Ev
-	bgeu	s1, s3, .LBB66_2
-	j	.LBB66_1
-.LBB66_1:                               # %if.then
-	lui	a0, %hi(.L.str)
-	addi	a0, a0, %lo(.L.str)
-	call	_ZSt20__throw_length_errorPKc
-.LBB66_2:                               # %if.end
+	sd	s2, -48(s0)
 	ld	a0, -48(s0)
-	ld	s3, 24(sp)
-	ld	s2, 32(sp)
-	ld	s1, 40(sp)
-	ld	s0, 48(sp)
-	.cfi_def_cfa sp, 64
-	ld	ra, 56(sp)
+	call	_ZNSt15__new_allocatorIdED2Ev
+	bgeu	s1, s3, .LBB52_2
+	j	.LBB52_1
+.LBB52_1:                               # %if.then
+	lui	a0, %hi(.L.str.4)
+	addi	a0, a0, %lo(.L.str.4)
+	call	_ZSt20__throw_length_errorPKc
+.LBB52_2:                               # %if.end
+	ld	a0, -88(s0)
+	ld	s3, 72(sp)
+	ld	s2, 80(sp)
+	ld	s1, 88(sp)
+	ld	s0, 96(sp)
+	.cfi_def_cfa sp, 112
+	ld	ra, 104(sp)
 	.cfi_restore ra
 	.cfi_restore s0
 	.cfi_restore s1
 	.cfi_restore s2
 	.cfi_restore s3
-	addi	sp, sp, 64
+	addi	sp, sp, 112
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end66:
-	.size	_ZNSt6vectorIdSaIdEE17_S_check_init_lenEmRKS0_, .Lfunc_end66-_ZNSt6vectorIdSaIdEE17_S_check_init_lenEmRKS0_
+.Lfunc_end52:
+	.size	_ZNSt6vectorIdSaIdEE17_S_check_init_lenEmRKS0_, .Lfunc_end52-_ZNSt6vectorIdSaIdEE17_S_check_init_lenEmRKS0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt12_Vector_baseIdSaIdEEC2EmRKS0_,"axG",@progbits,_ZNSt12_Vector_baseIdSaIdEEC2EmRKS0_,comdat
@@ -3101,8 +2852,8 @@ _ZNSt12_Vector_baseIdSaIdEEC2EmRKS0_:   # @_ZNSt12_Vector_baseIdSaIdEEC2EmRKS0_
 	mv	a0, s1
 	call	_ZNSt12_Vector_baseIdSaIdEE17_M_create_storageEm
 .Ltmp46:
-	j	.LBB67_1
-.LBB67_1:                               # %invoke.cont
+	j	.LBB53_1
+.LBB53_1:                               # %invoke.cont
 	ld	s1, 40(sp)
 	ld	s0, 48(sp)
 	.cfi_def_cfa sp, 64
@@ -3113,22 +2864,22 @@ _ZNSt12_Vector_baseIdSaIdEEC2EmRKS0_:   # @_ZNSt12_Vector_baseIdSaIdEEC2EmRKS0_
 	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.LBB67_2:                               # %lpad
+.LBB53_2:                               # %lpad
 .Ltmp47:
 	sd	a0, -56(s0)
 	sw	a1, -60(s0)
 	mv	a0, s1
 	call	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev
-	j	.LBB67_3
-.LBB67_3:                               # %eh.resume
+	j	.LBB53_3
+.LBB53_3:                               # %eh.resume
 	ld	a0, -56(s0)
 	call	_Unwind_Resume
-.Lfunc_end67:
-	.size	_ZNSt12_Vector_baseIdSaIdEEC2EmRKS0_, .Lfunc_end67-_ZNSt12_Vector_baseIdSaIdEEC2EmRKS0_
+.Lfunc_end53:
+	.size	_ZNSt12_Vector_baseIdSaIdEEC2EmRKS0_, .Lfunc_end53-_ZNSt12_Vector_baseIdSaIdEEC2EmRKS0_
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table67:
+GCC_except_table53:
 .Lexception7:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	255                     # @TType Encoding = omit
@@ -3140,7 +2891,7 @@ GCC_except_table67:
 	.word	.Ltmp47-.Lfunc_begin7   #     jumps to .Ltmp47
 	.byte	0                       #   On action: cleanup
 	.word	.Ltmp46-.Lfunc_begin7   # >> Call Site 2 <<
-	.word	.Lfunc_end67-.Ltmp46    #   Call between .Ltmp46 and .Lfunc_end67
+	.word	.Lfunc_end53-.Ltmp46    #   Call between .Ltmp46 and .Lfunc_end53
 	.word	0                       #     has no landing pad
 	.byte	0                       #   On action: cleanup
 .Lcst_end7:
@@ -3193,8 +2944,8 @@ _ZNSt6vectorIdSaIdEE21_M_default_initializeEm: # @_ZNSt6vectorIdSaIdEE21_M_defau
 	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end68:
-	.size	_ZNSt6vectorIdSaIdEE21_M_default_initializeEm, .Lfunc_end68-_ZNSt6vectorIdSaIdEE21_M_default_initializeEm
+.Lfunc_end54:
+	.size	_ZNSt6vectorIdSaIdEE21_M_default_initializeEm, .Lfunc_end54-_ZNSt6vectorIdSaIdEE21_M_default_initializeEm
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt12_Vector_baseIdSaIdEED2Ev,"axG",@progbits,_ZNSt12_Vector_baseIdSaIdEED2Ev,comdat
@@ -3227,8 +2978,8 @@ _ZNSt12_Vector_baseIdSaIdEED2Ev:        # @_ZNSt12_Vector_baseIdSaIdEED2Ev
 	mv	a0, s1
 	call	_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm
 .Ltmp49:
-	j	.LBB69_1
-.LBB69_1:                               # %invoke.cont
+	j	.LBB55_1
+.LBB55_1:                               # %invoke.cont
 	mv	a0, s1
 	call	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev
 	ld	s1, 24(sp)
@@ -3241,22 +2992,22 @@ _ZNSt12_Vector_baseIdSaIdEED2Ev:        # @_ZNSt12_Vector_baseIdSaIdEED2Ev
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.LBB69_2:                               # %lpad
+.LBB55_2:                               # %lpad
 .Ltmp50:
 	sd	a0, -40(s0)
 	sw	a1, -44(s0)
 	mv	a0, s1
 	call	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev
-	j	.LBB69_3
-.LBB69_3:                               # %terminate.handler
+	j	.LBB55_3
+.LBB55_3:                               # %terminate.handler
 	ld	a0, -40(s0)
 	call	__clang_call_terminate
-.Lfunc_end69:
-	.size	_ZNSt12_Vector_baseIdSaIdEED2Ev, .Lfunc_end69-_ZNSt12_Vector_baseIdSaIdEED2Ev
+.Lfunc_end55:
+	.size	_ZNSt12_Vector_baseIdSaIdEED2Ev, .Lfunc_end55-_ZNSt12_Vector_baseIdSaIdEED2Ev
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table69:
+GCC_except_table55:
 .Lexception8:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	155                     # @TType Encoding = indirect pcrel sdata4
@@ -3289,47 +3040,51 @@ _ZNSt6vectorIdSaIdEE11_S_max_sizeERKS0_: # @_ZNSt6vectorIdSaIdEE11_S_max_sizeERK
 	.cfi_personality 155, DW.ref.__gxx_personality_v0
 	.cfi_lsda 27, .Lexception9
 # %bb.0:                                # %entry
-	addi	sp, sp, -48
-	.cfi_def_cfa_offset 48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
+	addi	sp, sp, -64
+	.cfi_def_cfa_offset 64
+	sd	ra, 56(sp)
+	sd	s0, 48(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
-	addi	s0, sp, 48
+	addi	s0, sp, 64
 	.cfi_def_cfa s0, 0
-	sd	a0, -24(s0)
+	sd	a0, -48(s0)
 	addi	a0, zero, 1
 	slli	a0, a0, 60
 	addi	a0, a0, -1
-	sd	a0, -32(s0)
-	ld	a0, -24(s0)
-	call	_ZNSt16allocator_traitsISaIdEE8max_sizeERKS0_
-	sd	a0, -40(s0)
+	sd	a0, -56(s0)
+	ld	a1, -48(s0)
+	sd	a1, -40(s0)
+	ld	a1, -40(s0)
+	sd	a1, -32(s0)
+	ld	a1, -32(s0)
+	sd	a1, -24(s0)
+	sd	a0, -64(s0)
 .Ltmp51:
-	addi	a0, s0, -32
-	addi	a1, s0, -40
+	addi	a0, s0, -56
+	addi	a1, s0, -64
 	call	_ZSt3minImERKT_S2_S2_
 .Ltmp52:
-	j	.LBB70_1
-.LBB70_1:                               # %invoke.cont
+	j	.LBB56_1
+.LBB56_1:                               # %invoke.cont
 	ld	a0, 0(a0)
-	ld	s0, 32(sp)
-	.cfi_def_cfa sp, 48
-	ld	ra, 40(sp)
+	ld	s0, 48(sp)
+	.cfi_def_cfa sp, 64
+	ld	ra, 56(sp)
 	.cfi_restore ra
 	.cfi_restore s0
-	addi	sp, sp, 48
+	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.LBB70_2:                               # %terminate.lpad
+.LBB56_2:                               # %terminate.lpad
 .Ltmp53:
 	call	__clang_call_terminate
-.Lfunc_end70:
-	.size	_ZNSt6vectorIdSaIdEE11_S_max_sizeERKS0_, .Lfunc_end70-_ZNSt6vectorIdSaIdEE11_S_max_sizeERKS0_
+.Lfunc_end56:
+	.size	_ZNSt6vectorIdSaIdEE11_S_max_sizeERKS0_, .Lfunc_end56-_ZNSt6vectorIdSaIdEE11_S_max_sizeERKS0_
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table70:
+GCC_except_table56:
 .Lexception9:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	155                     # @TType Encoding = indirect pcrel sdata4
@@ -3352,48 +3107,6 @@ GCC_except_table70:
 .Lttbase6:
 	.p2align	2
                                         # -- End function
-	.section	.text._ZNSaIdEC2ERKS_,"axG",@progbits,_ZNSaIdEC2ERKS_,comdat
-	.weak	_ZNSaIdEC2ERKS_         # -- Begin function _ZNSaIdEC2ERKS_
-	.p2align	2
-	.type	_ZNSaIdEC2ERKS_,@function
-_ZNSaIdEC2ERKS_:                        # @_ZNSaIdEC2ERKS_
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	sd	a1, -32(s0)
-	ld	a0, -24(s0)
-	ld	a1, -32(s0)
-	call	_ZN9__gnu_cxx13new_allocatorIdEC2ERKS1_
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
-	ret
-.Lfunc_end71:
-	.size	_ZNSaIdEC2ERKS_, .Lfunc_end71-_ZNSaIdEC2ERKS_
-                                        # -- End function
-	.section	.text._ZNSt16allocator_traitsISaIdEE8max_sizeERKS0_,"axG",@progbits,_ZNSt16allocator_traitsISaIdEE8max_sizeERKS0_,comdat
-	.weak	_ZNSt16allocator_traitsISaIdEE8max_sizeERKS0_ # -- Begin function _ZNSt16allocator_traitsISaIdEE8max_sizeERKS0_
-	.p2align	2
-	.type	_ZNSt16allocator_traitsISaIdEE8max_sizeERKS0_,@function
-_ZNSt16allocator_traitsISaIdEE8max_sizeERKS0_: # @_ZNSt16allocator_traitsISaIdEE8max_sizeERKS0_
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	ld	a0, -24(s0)
-	call	_ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
-	ret
-.Lfunc_end72:
-	.size	_ZNSt16allocator_traitsISaIdEE8max_sizeERKS0_, .Lfunc_end72-_ZNSt16allocator_traitsISaIdEE8max_sizeERKS0_
-                                        # -- End function
 	.section	.text._ZSt3minImERKT_S2_S2_,"axG",@progbits,_ZSt3minImERKT_S2_S2_,comdat
 	.weak	_ZSt3minImERKT_S2_S2_   # -- Begin function _ZSt3minImERKT_S2_S2_
 	.p2align	2
@@ -3410,84 +3123,24 @@ _ZSt3minImERKT_S2_S2_:                  # @_ZSt3minImERKT_S2_S2_
 	ld	a0, 0(a0)
 	ld	a1, -32(s0)
 	ld	a1, 0(a1)
-	bgeu	a0, a1, .LBB73_2
-	j	.LBB73_1
-.LBB73_1:                               # %if.then
+	bgeu	a0, a1, .LBB57_2
+	j	.LBB57_1
+.LBB57_1:                               # %if.then
 	ld	a0, -40(s0)
 	sd	a0, -24(s0)
-	j	.LBB73_3
-.LBB73_2:                               # %if.end
+	j	.LBB57_3
+.LBB57_2:                               # %if.end
 	ld	a0, -32(s0)
 	sd	a0, -24(s0)
-	j	.LBB73_3
-.LBB73_3:                               # %return
+	j	.LBB57_3
+.LBB57_3:                               # %return
 	ld	a0, -24(s0)
 	ld	s0, 32(sp)
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end73:
-	.size	_ZSt3minImERKT_S2_S2_, .Lfunc_end73-_ZSt3minImERKT_S2_S2_
-                                        # -- End function
-	.section	.text._ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv,"axG",@progbits,_ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv,comdat
-	.weak	_ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv # -- Begin function _ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv
-	.p2align	2
-	.type	_ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv,@function
-_ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv: # @_ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	ld	a0, -24(s0)
-	call	_ZNK9__gnu_cxx13new_allocatorIdE11_M_max_sizeEv
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
-	ret
-.Lfunc_end74:
-	.size	_ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv, .Lfunc_end74-_ZNK9__gnu_cxx13new_allocatorIdE8max_sizeEv
-                                        # -- End function
-	.section	.text._ZNK9__gnu_cxx13new_allocatorIdE11_M_max_sizeEv,"axG",@progbits,_ZNK9__gnu_cxx13new_allocatorIdE11_M_max_sizeEv,comdat
-	.weak	_ZNK9__gnu_cxx13new_allocatorIdE11_M_max_sizeEv # -- Begin function _ZNK9__gnu_cxx13new_allocatorIdE11_M_max_sizeEv
-	.p2align	2
-	.type	_ZNK9__gnu_cxx13new_allocatorIdE11_M_max_sizeEv,@function
-_ZNK9__gnu_cxx13new_allocatorIdE11_M_max_sizeEv: # @_ZNK9__gnu_cxx13new_allocatorIdE11_M_max_sizeEv
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	addi	a0, zero, 1
-	slli	a0, a0, 60
-	addi	a0, a0, -1
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
-	ret
-.Lfunc_end75:
-	.size	_ZNK9__gnu_cxx13new_allocatorIdE11_M_max_sizeEv, .Lfunc_end75-_ZNK9__gnu_cxx13new_allocatorIdE11_M_max_sizeEv
-                                        # -- End function
-	.section	.text._ZN9__gnu_cxx13new_allocatorIdEC2ERKS1_,"axG",@progbits,_ZN9__gnu_cxx13new_allocatorIdEC2ERKS1_,comdat
-	.weak	_ZN9__gnu_cxx13new_allocatorIdEC2ERKS1_ # -- Begin function _ZN9__gnu_cxx13new_allocatorIdEC2ERKS1_
-	.p2align	2
-	.type	_ZN9__gnu_cxx13new_allocatorIdEC2ERKS1_,@function
-_ZN9__gnu_cxx13new_allocatorIdEC2ERKS1_: # @_ZN9__gnu_cxx13new_allocatorIdEC2ERKS1_
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	sd	a1, -32(s0)
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
-	ret
-.Lfunc_end76:
-	.size	_ZN9__gnu_cxx13new_allocatorIdEC2ERKS1_, .Lfunc_end76-_ZN9__gnu_cxx13new_allocatorIdEC2ERKS1_
+.Lfunc_end57:
+	.size	_ZSt3minImERKT_S2_S2_, .Lfunc_end57-_ZSt3minImERKT_S2_S2_
                                         # -- End function
 	.section	.text._ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2ERKS0_,"axG",@progbits,_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2ERKS0_,comdat
 	.weak	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2ERKS0_ # -- Begin function _ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2ERKS0_
@@ -3495,26 +3148,27 @@ _ZN9__gnu_cxx13new_allocatorIdEC2ERKS1_: # @_ZN9__gnu_cxx13new_allocatorIdEC2ERK
 	.type	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2ERKS0_,@function
 _ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2ERKS0_: # @_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2ERKS0_
 # %bb.0:                                # %entry
-	addi	sp, sp, -48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	sd	s1, 24(sp)
-	addi	s0, sp, 48
-	sd	a0, -32(s0)
-	sd	a1, -40(s0)
-	ld	s1, -32(s0)
+	addi	sp, sp, -64
+	sd	ra, 56(sp)
+	sd	s0, 48(sp)
+	addi	s0, sp, 64
+	sd	a0, -56(s0)
+	sd	a1, -64(s0)
+	ld	a0, -56(s0)
+	ld	a1, -64(s0)
+	sd	a0, -40(s0)
+	sd	a1, -48(s0)
 	ld	a1, -40(s0)
-	mv	a0, s1
-	call	_ZNSaIdEC2ERKS_
-	mv	a0, s1
+	ld	a2, -48(s0)
+	sd	a1, -24(s0)
+	sd	a2, -32(s0)
 	call	_ZNSt12_Vector_baseIdSaIdEE17_Vector_impl_dataC2Ev
-	ld	s1, 24(sp)
-	ld	s0, 32(sp)
-	ld	ra, 40(sp)
-	addi	sp, sp, 48
+	ld	s0, 48(sp)
+	ld	ra, 56(sp)
+	addi	sp, sp, 64
 	ret
-.Lfunc_end77:
-	.size	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2ERKS0_, .Lfunc_end77-_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2ERKS0_
+.Lfunc_end58:
+	.size	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2ERKS0_, .Lfunc_end58-_ZNSt12_Vector_baseIdSaIdEE12_Vector_implC2ERKS0_
                                         # -- End function
 	.section	.text._ZNSt12_Vector_baseIdSaIdEE17_M_create_storageEm,"axG",@progbits,_ZNSt12_Vector_baseIdSaIdEE17_M_create_storageEm,comdat
 	.weak	_ZNSt12_Vector_baseIdSaIdEE17_M_create_storageEm # -- Begin function _ZNSt12_Vector_baseIdSaIdEE17_M_create_storageEm
@@ -3557,8 +3211,8 @@ _ZNSt12_Vector_baseIdSaIdEE17_M_create_storageEm: # @_ZNSt12_Vector_baseIdSaIdEE
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end78:
-	.size	_ZNSt12_Vector_baseIdSaIdEE17_M_create_storageEm, .Lfunc_end78-_ZNSt12_Vector_baseIdSaIdEE17_M_create_storageEm
+.Lfunc_end59:
+	.size	_ZNSt12_Vector_baseIdSaIdEE17_M_create_storageEm, .Lfunc_end59-_ZNSt12_Vector_baseIdSaIdEE17_M_create_storageEm
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev,"axG",@progbits,_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev,comdat
@@ -3571,15 +3225,17 @@ _ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev: # @_ZNSt12_Vector_baseIdSaIdEE12_
 	sd	ra, 24(sp)
 	sd	s0, 16(sp)
 	addi	s0, sp, 32
+	sd	a0, -32(s0)
+	ld	a0, -32(s0)
 	sd	a0, -24(s0)
 	ld	a0, -24(s0)
-	call	_ZNSaIdED2Ev
+	call	_ZNSt15__new_allocatorIdED2Ev
 	ld	s0, 16(sp)
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end79:
-	.size	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev, .Lfunc_end79-_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev
+.Lfunc_end60:
+	.size	_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev, .Lfunc_end60-_ZNSt12_Vector_baseIdSaIdEE12_Vector_implD2Ev
                                         # -- End function
 	.section	.text._ZNSt12_Vector_baseIdSaIdEE17_Vector_impl_dataC2Ev,"axG",@progbits,_ZNSt12_Vector_baseIdSaIdEE17_Vector_impl_dataC2Ev,comdat
 	.weak	_ZNSt12_Vector_baseIdSaIdEE17_Vector_impl_dataC2Ev # -- Begin function _ZNSt12_Vector_baseIdSaIdEE17_Vector_impl_dataC2Ev
@@ -3600,8 +3256,8 @@ _ZNSt12_Vector_baseIdSaIdEE17_Vector_impl_dataC2Ev: # @_ZNSt12_Vector_baseIdSaId
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end80:
-	.size	_ZNSt12_Vector_baseIdSaIdEE17_Vector_impl_dataC2Ev, .Lfunc_end80-_ZNSt12_Vector_baseIdSaIdEE17_Vector_impl_dataC2Ev
+.Lfunc_end61:
+	.size	_ZNSt12_Vector_baseIdSaIdEE17_Vector_impl_dataC2Ev, .Lfunc_end61-_ZNSt12_Vector_baseIdSaIdEE17_Vector_impl_dataC2Ev
                                         # -- End function
 	.section	.text._ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm,"axG",@progbits,_ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm,comdat
 	.weak	_ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm # -- Begin function _ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm
@@ -3610,123 +3266,92 @@ _ZNSt12_Vector_baseIdSaIdEE17_Vector_impl_dataC2Ev: # @_ZNSt12_Vector_baseIdSaId
 _ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm: # @_ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm
 	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -32
-	.cfi_def_cfa_offset 32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
+	addi	sp, sp, -48
+	.cfi_def_cfa_offset 48
+	sd	ra, 40(sp)
+	sd	s0, 32(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
-	addi	s0, sp, 32
+	addi	s0, sp, 48
 	.cfi_def_cfa s0, 0
-	sd	a0, -24(s0)
-	sd	a1, -32(s0)
-	ld	a0, -24(s0)
-	ld	a1, -32(s0)
-	beqz	a1, .LBB81_2
-	j	.LBB81_1
-.LBB81_1:                               # %cond.true
-	ld	a1, -32(s0)
-	call	_ZNSt16allocator_traitsISaIdEE8allocateERS0_m
-	j	.LBB81_3
-.LBB81_2:                               # %cond.false
-	mv	a0, zero
-	j	.LBB81_3
-.LBB81_3:                               # %cond.end
-	ld	s0, 16(sp)
-	.cfi_def_cfa sp, 32
-	ld	ra, 24(sp)
-	.cfi_restore ra
-	.cfi_restore s0
-	addi	sp, sp, 32
-	.cfi_def_cfa_offset 0
-	ret
-.Lfunc_end81:
-	.size	_ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm, .Lfunc_end81-_ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZNSt16allocator_traitsISaIdEE8allocateERS0_m,"axG",@progbits,_ZNSt16allocator_traitsISaIdEE8allocateERS0_m,comdat
-	.weak	_ZNSt16allocator_traitsISaIdEE8allocateERS0_m # -- Begin function _ZNSt16allocator_traitsISaIdEE8allocateERS0_m
-	.p2align	2
-	.type	_ZNSt16allocator_traitsISaIdEE8allocateERS0_m,@function
-_ZNSt16allocator_traitsISaIdEE8allocateERS0_m: # @_ZNSt16allocator_traitsISaIdEE8allocateERS0_m
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	.cfi_def_cfa_offset 32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	.cfi_offset ra, -8
-	.cfi_offset s0, -16
-	addi	s0, sp, 32
-	.cfi_def_cfa s0, 0
+	sd	a0, -40(s0)
+	sd	a1, -48(s0)
+	ld	a0, -40(s0)
+	ld	a1, -48(s0)
+	beqz	a1, .LBB62_2
+	j	.LBB62_1
+.LBB62_1:                               # %cond.true
+	ld	a1, -48(s0)
 	sd	a0, -24(s0)
 	sd	a1, -32(s0)
 	ld	a0, -24(s0)
 	ld	a1, -32(s0)
 	mv	a2, zero
-	call	_ZN9__gnu_cxx13new_allocatorIdE8allocateEmPKv
-	ld	s0, 16(sp)
-	.cfi_def_cfa sp, 32
-	ld	ra, 24(sp)
+	call	_ZNSt15__new_allocatorIdE8allocateEmPKv
+	j	.LBB62_3
+.LBB62_2:                               # %cond.false
+	mv	a0, zero
+	j	.LBB62_3
+.LBB62_3:                               # %cond.end
+	ld	s0, 32(sp)
+	.cfi_def_cfa sp, 48
+	ld	ra, 40(sp)
 	.cfi_restore ra
 	.cfi_restore s0
-	addi	sp, sp, 32
+	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end82:
-	.size	_ZNSt16allocator_traitsISaIdEE8allocateERS0_m, .Lfunc_end82-_ZNSt16allocator_traitsISaIdEE8allocateERS0_m
+.Lfunc_end62:
+	.size	_ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm, .Lfunc_end62-_ZNSt12_Vector_baseIdSaIdEE11_M_allocateEm
 	.cfi_endproc
                                         # -- End function
-	.section	.text._ZN9__gnu_cxx13new_allocatorIdE8allocateEmPKv,"axG",@progbits,_ZN9__gnu_cxx13new_allocatorIdE8allocateEmPKv,comdat
-	.weak	_ZN9__gnu_cxx13new_allocatorIdE8allocateEmPKv # -- Begin function _ZN9__gnu_cxx13new_allocatorIdE8allocateEmPKv
+	.section	.text._ZNSt15__new_allocatorIdE8allocateEmPKv,"axG",@progbits,_ZNSt15__new_allocatorIdE8allocateEmPKv,comdat
+	.weak	_ZNSt15__new_allocatorIdE8allocateEmPKv # -- Begin function _ZNSt15__new_allocatorIdE8allocateEmPKv
 	.p2align	2
-	.type	_ZN9__gnu_cxx13new_allocatorIdE8allocateEmPKv,@function
-_ZN9__gnu_cxx13new_allocatorIdE8allocateEmPKv: # @_ZN9__gnu_cxx13new_allocatorIdE8allocateEmPKv
+	.type	_ZNSt15__new_allocatorIdE8allocateEmPKv,@function
+_ZNSt15__new_allocatorIdE8allocateEmPKv: # @_ZNSt15__new_allocatorIdE8allocateEmPKv
 	.cfi_startproc
 # %bb.0:                                # %entry
 	addi	sp, sp, -48
 	.cfi_def_cfa_offset 48
 	sd	ra, 40(sp)
 	sd	s0, 32(sp)
-	sd	s1, 24(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
-	.cfi_offset s1, -24
 	addi	s0, sp, 48
 	.cfi_def_cfa s0, 0
 	sd	a0, -32(s0)
 	sd	a1, -40(s0)
 	sd	a2, -48(s0)
 	ld	a0, -32(s0)
-	ld	s1, -40(s0)
-	call	_ZNK9__gnu_cxx13new_allocatorIdE11_M_max_sizeEv
-	bgeu	a0, s1, .LBB83_4
-	j	.LBB83_1
-.LBB83_1:                               # %if.then
+	ld	a1, -40(s0)
+	sd	a0, -24(s0)
+	srli	a0, a1, 60
+	beqz	a0, .LBB63_4
+	j	.LBB63_1
+.LBB63_1:                               # %if.then
 	ld	a0, -40(s0)
 	srli	a0, a0, 61
-	beqz	a0, .LBB83_3
-	j	.LBB83_2
-.LBB83_2:                               # %if.then3
+	beqz	a0, .LBB63_3
+	j	.LBB63_2
+.LBB63_2:                               # %if.then3
 	call	_ZSt28__throw_bad_array_new_lengthv
-.LBB83_3:                               # %if.end
+.LBB63_3:                               # %if.end
 	call	_ZSt17__throw_bad_allocv
-.LBB83_4:                               # %if.end4
+.LBB63_4:                               # %if.end4
 	ld	a0, -40(s0)
 	slli	a0, a0, 3
 	call	_Znwm
-	ld	s1, 24(sp)
 	ld	s0, 32(sp)
 	.cfi_def_cfa sp, 48
 	ld	ra, 40(sp)
 	.cfi_restore ra
 	.cfi_restore s0
-	.cfi_restore s1
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end83:
-	.size	_ZN9__gnu_cxx13new_allocatorIdE8allocateEmPKv, .Lfunc_end83-_ZN9__gnu_cxx13new_allocatorIdE8allocateEmPKv
+.Lfunc_end63:
+	.size	_ZNSt15__new_allocatorIdE8allocateEmPKv, .Lfunc_end63-_ZNSt15__new_allocatorIdE8allocateEmPKv
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt27__uninitialized_default_n_aIPdmdET_S1_T0_RSaIT1_E,"axG",@progbits,_ZSt27__uninitialized_default_n_aIPdmdET_S1_T0_RSaIT1_E,comdat
@@ -3758,8 +3383,8 @@ _ZSt27__uninitialized_default_n_aIPdmdET_S1_T0_RSaIT1_E: # @_ZSt27__uninitialize
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end84:
-	.size	_ZSt27__uninitialized_default_n_aIPdmdET_S1_T0_RSaIT1_E, .Lfunc_end84-_ZSt27__uninitialized_default_n_aIPdmdET_S1_T0_RSaIT1_E
+.Lfunc_end64:
+	.size	_ZSt27__uninitialized_default_n_aIPdmdET_S1_T0_RSaIT1_E, .Lfunc_end64-_ZSt27__uninitialized_default_n_aIPdmdET_S1_T0_RSaIT1_E
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv,"axG",@progbits,_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv,comdat
@@ -3778,8 +3403,8 @@ _ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv: # @_ZNSt12_Vector_baseIdSaId
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end85:
-	.size	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv, .Lfunc_end85-_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
+.Lfunc_end65:
+	.size	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv, .Lfunc_end65-_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
                                         # -- End function
 	.section	.text._ZSt25__uninitialized_default_nIPdmET_S1_T0_,"axG",@progbits,_ZSt25__uninitialized_default_nIPdmET_S1_T0_,comdat
 	.weak	_ZSt25__uninitialized_default_nIPdmET_S1_T0_ # -- Begin function _ZSt25__uninitialized_default_nIPdmET_S1_T0_
@@ -3811,8 +3436,8 @@ _ZSt25__uninitialized_default_nIPdmET_S1_T0_: # @_ZSt25__uninitialized_default_n
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end86:
-	.size	_ZSt25__uninitialized_default_nIPdmET_S1_T0_, .Lfunc_end86-_ZSt25__uninitialized_default_nIPdmET_S1_T0_
+.Lfunc_end66:
+	.size	_ZSt25__uninitialized_default_nIPdmET_S1_T0_, .Lfunc_end66-_ZSt25__uninitialized_default_nIPdmET_S1_T0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt27__uninitialized_default_n_1ILb1EE18__uninit_default_nIPdmEET_S3_T0_,"axG",@progbits,_ZNSt27__uninitialized_default_n_1ILb1EE18__uninit_default_nIPdmEET_S3_T0_,comdat
@@ -3833,9 +3458,9 @@ _ZNSt27__uninitialized_default_n_1ILb1EE18__uninit_default_nIPdmEET_S3_T0_: # @_
 	sd	a0, -24(s0)
 	sd	a1, -32(s0)
 	ld	a0, -32(s0)
-	beqz	a0, .LBB87_2
-	j	.LBB87_1
-.LBB87_1:                               # %if.then
+	beqz	a0, .LBB67_2
+	j	.LBB67_1
+.LBB67_1:                               # %if.then
 	ld	a0, -24(s0)
 	call	_ZSt11__addressofIdEPT_RS0_
 	sd	a0, -40(s0)
@@ -3850,8 +3475,8 @@ _ZNSt27__uninitialized_default_n_1ILb1EE18__uninit_default_nIPdmEET_S3_T0_: # @_
 	ld	a2, -40(s0)
 	call	_ZSt6fill_nIPdmdET_S1_T0_RKT1_
 	sd	a0, -24(s0)
-	j	.LBB87_2
-.LBB87_2:                               # %if.end
+	j	.LBB67_2
+.LBB67_2:                               # %if.end
 	ld	a0, -24(s0)
 	ld	s0, 32(sp)
 	.cfi_def_cfa sp, 48
@@ -3861,8 +3486,8 @@ _ZNSt27__uninitialized_default_n_1ILb1EE18__uninit_default_nIPdmEET_S3_T0_: # @_
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end87:
-	.size	_ZNSt27__uninitialized_default_n_1ILb1EE18__uninit_default_nIPdmEET_S3_T0_, .Lfunc_end87-_ZNSt27__uninitialized_default_n_1ILb1EE18__uninit_default_nIPdmEET_S3_T0_
+.Lfunc_end67:
+	.size	_ZNSt27__uninitialized_default_n_1ILb1EE18__uninit_default_nIPdmEET_S3_T0_, .Lfunc_end67-_ZNSt27__uninitialized_default_n_1ILb1EE18__uninit_default_nIPdmEET_S3_T0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt11__addressofIdEPT_RS0_,"axG",@progbits,_ZSt11__addressofIdEPT_RS0_,comdat
@@ -3881,8 +3506,8 @@ _ZSt11__addressofIdEPT_RS0_:            # @_ZSt11__addressofIdEPT_RS0_
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end88:
-	.size	_ZSt11__addressofIdEPT_RS0_, .Lfunc_end88-_ZSt11__addressofIdEPT_RS0_
+.Lfunc_end68:
+	.size	_ZSt11__addressofIdEPT_RS0_, .Lfunc_end68-_ZSt11__addressofIdEPT_RS0_
                                         # -- End function
 	.section	.text._ZSt10_ConstructIdJEEvPT_DpOT0_,"axG",@progbits,_ZSt10_ConstructIdJEEvPT_DpOT0_,comdat
 	.weak	_ZSt10_ConstructIdJEEvPT_DpOT0_ # -- Begin function _ZSt10_ConstructIdJEEvPT_DpOT0_
@@ -3901,8 +3526,8 @@ _ZSt10_ConstructIdJEEvPT_DpOT0_:        # @_ZSt10_ConstructIdJEEvPT_DpOT0_
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end89:
-	.size	_ZSt10_ConstructIdJEEvPT_DpOT0_, .Lfunc_end89-_ZSt10_ConstructIdJEEvPT_DpOT0_
+.Lfunc_end69:
+	.size	_ZSt10_ConstructIdJEEvPT_DpOT0_, .Lfunc_end69-_ZSt10_ConstructIdJEEvPT_DpOT0_
                                         # -- End function
 	.section	.text._ZSt6fill_nIPdmdET_S1_T0_RKT1_,"axG",@progbits,_ZSt6fill_nIPdmdET_S1_T0_RKT1_,comdat
 	.weak	_ZSt6fill_nIPdmdET_S1_T0_RKT1_ # -- Begin function _ZSt6fill_nIPdmdET_S1_T0_RKT1_
@@ -3916,31 +3541,23 @@ _ZSt6fill_nIPdmdET_S1_T0_RKT1_:         # @_ZSt6fill_nIPdmdET_S1_T0_RKT1_
 	sd	ra, 72(sp)
 	sd	s0, 64(sp)
 	sd	s1, 56(sp)
-	sd	s2, 48(sp)
-	sd	s3, 40(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
 	.cfi_offset s1, -24
-	.cfi_offset s2, -32
-	.cfi_offset s3, -40
 	addi	s0, sp, 80
 	.cfi_def_cfa s0, 0
-	sd	a0, -48(s0)
-	sd	a1, -56(s0)
-	sd	a2, -64(s0)
-	ld	s2, -48(s0)
-	ld	a0, -56(s0)
+	sd	a0, -40(s0)
+	sd	a1, -48(s0)
+	sd	a2, -56(s0)
+	ld	s1, -40(s0)
+	ld	a0, -48(s0)
 	call	_ZSt17__size_to_integerm
-	mv	s1, a0
-	ld	s3, -64(s0)
-	addi	a0, s0, -48
-	call	_ZSt19__iterator_categoryIPdENSt15iterator_traitsIT_E17iterator_categoryERKS2_
-	mv	a0, s2
-	mv	a1, s1
-	mv	a2, s3
+	mv	a1, a0
+	ld	a2, -56(s0)
+	addi	a0, s0, -40
+	sd	a0, -32(s0)
+	mv	a0, s1
 	call	_ZSt10__fill_n_aIPdmdET_S1_T0_RKT1_St26random_access_iterator_tag
-	ld	s3, 40(sp)
-	ld	s2, 48(sp)
 	ld	s1, 56(sp)
 	ld	s0, 64(sp)
 	.cfi_def_cfa sp, 80
@@ -3948,13 +3565,11 @@ _ZSt6fill_nIPdmdET_S1_T0_RKT1_:         # @_ZSt6fill_nIPdmdET_S1_T0_RKT1_
 	.cfi_restore ra
 	.cfi_restore s0
 	.cfi_restore s1
-	.cfi_restore s2
-	.cfi_restore s3
 	addi	sp, sp, 80
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end90:
-	.size	_ZSt6fill_nIPdmdET_S1_T0_RKT1_, .Lfunc_end90-_ZSt6fill_nIPdmdET_S1_T0_RKT1_
+.Lfunc_end70:
+	.size	_ZSt6fill_nIPdmdET_S1_T0_RKT1_, .Lfunc_end70-_ZSt6fill_nIPdmdET_S1_T0_RKT1_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt10__fill_n_aIPdmdET_S1_T0_RKT1_St26random_access_iterator_tag,"axG",@progbits,_ZSt10__fill_n_aIPdmdET_S1_T0_RKT1_St26random_access_iterator_tag,comdat
@@ -3976,13 +3591,13 @@ _ZSt10__fill_n_aIPdmdET_S1_T0_RKT1_St26random_access_iterator_tag: # @_ZSt10__fi
 	sd	a1, -48(s0)
 	sd	a2, -56(s0)
 	ld	a0, -48(s0)
-	bnez	a0, .LBB91_2
-	j	.LBB91_1
-.LBB91_1:                               # %if.then
+	bnez	a0, .LBB71_2
+	j	.LBB71_1
+.LBB71_1:                               # %if.then
 	ld	a0, -40(s0)
 	sd	a0, -24(s0)
-	j	.LBB91_3
-.LBB91_2:                               # %if.end
+	j	.LBB71_3
+.LBB71_2:                               # %if.end
 	ld	a0, -40(s0)
 	ld	a1, -48(s0)
 	slli	a1, a1, 3
@@ -3994,8 +3609,8 @@ _ZSt10__fill_n_aIPdmdET_S1_T0_RKT1_St26random_access_iterator_tag: # @_ZSt10__fi
 	slli	a1, a1, 3
 	add	a0, a0, a1
 	sd	a0, -24(s0)
-	j	.LBB91_3
-.LBB91_3:                               # %return
+	j	.LBB71_3
+.LBB71_3:                               # %return
 	ld	a0, -24(s0)
 	ld	s0, 48(sp)
 	.cfi_def_cfa sp, 64
@@ -4005,8 +3620,8 @@ _ZSt10__fill_n_aIPdmdET_S1_T0_RKT1_St26random_access_iterator_tag: # @_ZSt10__fi
 	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end91:
-	.size	_ZSt10__fill_n_aIPdmdET_S1_T0_RKT1_St26random_access_iterator_tag, .Lfunc_end91-_ZSt10__fill_n_aIPdmdET_S1_T0_RKT1_St26random_access_iterator_tag
+.Lfunc_end71:
+	.size	_ZSt10__fill_n_aIPdmdET_S1_T0_RKT1_St26random_access_iterator_tag, .Lfunc_end71-_ZSt10__fill_n_aIPdmdET_S1_T0_RKT1_St26random_access_iterator_tag
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt17__size_to_integerm,"axG",@progbits,_ZSt17__size_to_integerm,comdat
@@ -4025,26 +3640,8 @@ _ZSt17__size_to_integerm:               # @_ZSt17__size_to_integerm
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end92:
-	.size	_ZSt17__size_to_integerm, .Lfunc_end92-_ZSt17__size_to_integerm
-                                        # -- End function
-	.section	.text._ZSt19__iterator_categoryIPdENSt15iterator_traitsIT_E17iterator_categoryERKS2_,"axG",@progbits,_ZSt19__iterator_categoryIPdENSt15iterator_traitsIT_E17iterator_categoryERKS2_,comdat
-	.weak	_ZSt19__iterator_categoryIPdENSt15iterator_traitsIT_E17iterator_categoryERKS2_ # -- Begin function _ZSt19__iterator_categoryIPdENSt15iterator_traitsIT_E17iterator_categoryERKS2_
-	.p2align	2
-	.type	_ZSt19__iterator_categoryIPdENSt15iterator_traitsIT_E17iterator_categoryERKS2_,@function
-_ZSt19__iterator_categoryIPdENSt15iterator_traitsIT_E17iterator_categoryERKS2_: # @_ZSt19__iterator_categoryIPdENSt15iterator_traitsIT_E17iterator_categoryERKS2_
-# %bb.0:                                # %entry
-	addi	sp, sp, -32
-	sd	ra, 24(sp)
-	sd	s0, 16(sp)
-	addi	s0, sp, 32
-	sd	a0, -24(s0)
-	ld	s0, 16(sp)
-	ld	ra, 24(sp)
-	addi	sp, sp, 32
-	ret
-.Lfunc_end93:
-	.size	_ZSt19__iterator_categoryIPdENSt15iterator_traitsIT_E17iterator_categoryERKS2_, .Lfunc_end93-_ZSt19__iterator_categoryIPdENSt15iterator_traitsIT_E17iterator_categoryERKS2_
+.Lfunc_end72:
+	.size	_ZSt17__size_to_integerm, .Lfunc_end72-_ZSt17__size_to_integerm
                                         # -- End function
 	.section	.text._ZSt8__fill_aIPddEvT_S1_RKT0_,"axG",@progbits,_ZSt8__fill_aIPddEvT_S1_RKT0_,comdat
 	.weak	_ZSt8__fill_aIPddEvT_S1_RKT0_ # -- Begin function _ZSt8__fill_aIPddEvT_S1_RKT0_
@@ -4076,8 +3673,8 @@ _ZSt8__fill_aIPddEvT_S1_RKT0_:          # @_ZSt8__fill_aIPddEvT_S1_RKT0_
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end94:
-	.size	_ZSt8__fill_aIPddEvT_S1_RKT0_, .Lfunc_end94-_ZSt8__fill_aIPddEvT_S1_RKT0_
+.Lfunc_end73:
+	.size	_ZSt8__fill_aIPddEvT_S1_RKT0_, .Lfunc_end73-_ZSt8__fill_aIPddEvT_S1_RKT0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt9__fill_a1IPddEN9__gnu_cxx11__enable_ifIXsr11__is_scalarIT0_EE7__valueEvE6__typeET_S6_RKS3_,"axG",@progbits,_ZSt9__fill_a1IPddEN9__gnu_cxx11__enable_ifIXsr11__is_scalarIT0_EE7__valueEvE6__typeET_S6_RKS3_,comdat
@@ -4096,32 +3693,32 @@ _ZSt9__fill_a1IPddEN9__gnu_cxx11__enable_ifIXsr11__is_scalarIT0_EE7__valueEvE6__
 	ld	a0, -40(s0)
 	fld	ft0, 0(a0)
 	fsd	ft0, -48(s0)
-	j	.LBB95_1
-.LBB95_1:                               # %for.cond
+	j	.LBB74_1
+.LBB74_1:                               # %for.cond
                                         # =>This Inner Loop Header: Depth=1
 	ld	a0, -24(s0)
 	ld	a1, -32(s0)
-	beq	a0, a1, .LBB95_4
-	j	.LBB95_2
-.LBB95_2:                               # %for.body
-                                        #   in Loop: Header=BB95_1 Depth=1
+	beq	a0, a1, .LBB74_4
+	j	.LBB74_2
+.LBB74_2:                               # %for.body
+                                        #   in Loop: Header=BB74_1 Depth=1
 	fld	ft0, -48(s0)
 	ld	a0, -24(s0)
 	fsd	ft0, 0(a0)
-	j	.LBB95_3
-.LBB95_3:                               # %for.inc
-                                        #   in Loop: Header=BB95_1 Depth=1
+	j	.LBB74_3
+.LBB74_3:                               # %for.inc
+                                        #   in Loop: Header=BB74_1 Depth=1
 	ld	a0, -24(s0)
 	addi	a0, a0, 8
 	sd	a0, -24(s0)
-	j	.LBB95_1
-.LBB95_4:                               # %for.end
+	j	.LBB74_1
+.LBB74_4:                               # %for.end
 	ld	s0, 32(sp)
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end95:
-	.size	_ZSt9__fill_a1IPddEN9__gnu_cxx11__enable_ifIXsr11__is_scalarIT0_EE7__valueEvE6__typeET_S6_RKS3_, .Lfunc_end95-_ZSt9__fill_a1IPddEN9__gnu_cxx11__enable_ifIXsr11__is_scalarIT0_EE7__valueEvE6__typeET_S6_RKS3_
+.Lfunc_end74:
+	.size	_ZSt9__fill_a1IPddEN9__gnu_cxx11__enable_ifIXsr11__is_scalarIT0_EE7__valueEvE6__typeET_S6_RKS3_, .Lfunc_end74-_ZSt9__fill_a1IPddEN9__gnu_cxx11__enable_ifIXsr11__is_scalarIT0_EE7__valueEvE6__typeET_S6_RKS3_
                                         # -- End function
 	.section	.text._ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm,"axG",@progbits,_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm,comdat
 	.weak	_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm # -- Begin function _ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm
@@ -4130,78 +3727,50 @@ _ZSt9__fill_a1IPddEN9__gnu_cxx11__enable_ifIXsr11__is_scalarIT0_EE7__valueEvE6__
 _ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm: # @_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm
 	.cfi_startproc
 # %bb.0:                                # %entry
-	addi	sp, sp, -48
-	.cfi_def_cfa_offset 48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
+	addi	sp, sp, -64
+	.cfi_def_cfa_offset 64
+	sd	ra, 56(sp)
+	sd	s0, 48(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
-	addi	s0, sp, 48
+	addi	s0, sp, 64
 	.cfi_def_cfa s0, 0
-	sd	a0, -24(s0)
-	sd	a1, -32(s0)
-	sd	a2, -40(s0)
-	ld	a0, -24(s0)
-	ld	a1, -32(s0)
-	beqz	a1, .LBB96_2
-	j	.LBB96_1
-.LBB96_1:                               # %if.then
-	ld	a1, -32(s0)
-	ld	a2, -40(s0)
-	call	_ZNSt16allocator_traitsISaIdEE10deallocateERS0_Pdm
-	j	.LBB96_2
-.LBB96_2:                               # %if.end
-	ld	s0, 32(sp)
-	.cfi_def_cfa sp, 48
-	ld	ra, 40(sp)
-	.cfi_restore ra
-	.cfi_restore s0
-	addi	sp, sp, 48
-	.cfi_def_cfa_offset 0
-	ret
-.Lfunc_end96:
-	.size	_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm, .Lfunc_end96-_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm
-	.cfi_endproc
-                                        # -- End function
-	.section	.text._ZNSt16allocator_traitsISaIdEE10deallocateERS0_Pdm,"axG",@progbits,_ZNSt16allocator_traitsISaIdEE10deallocateERS0_Pdm,comdat
-	.weak	_ZNSt16allocator_traitsISaIdEE10deallocateERS0_Pdm # -- Begin function _ZNSt16allocator_traitsISaIdEE10deallocateERS0_Pdm
-	.p2align	2
-	.type	_ZNSt16allocator_traitsISaIdEE10deallocateERS0_Pdm,@function
-_ZNSt16allocator_traitsISaIdEE10deallocateERS0_Pdm: # @_ZNSt16allocator_traitsISaIdEE10deallocateERS0_Pdm
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -48
-	.cfi_def_cfa_offset 48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	.cfi_offset ra, -8
-	.cfi_offset s0, -16
-	addi	s0, sp, 48
-	.cfi_def_cfa s0, 0
+	sd	a0, -48(s0)
+	sd	a1, -56(s0)
+	sd	a2, -64(s0)
+	ld	a0, -48(s0)
+	ld	a1, -56(s0)
+	beqz	a1, .LBB75_2
+	j	.LBB75_1
+.LBB75_1:                               # %if.then
+	ld	a1, -56(s0)
+	ld	a2, -64(s0)
 	sd	a0, -24(s0)
 	sd	a1, -32(s0)
 	sd	a2, -40(s0)
 	ld	a0, -24(s0)
 	ld	a1, -32(s0)
 	ld	a2, -40(s0)
-	call	_ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm
-	ld	s0, 32(sp)
-	.cfi_def_cfa sp, 48
-	ld	ra, 40(sp)
+	call	_ZNSt15__new_allocatorIdE10deallocateEPdm
+	j	.LBB75_2
+.LBB75_2:                               # %if.end
+	ld	s0, 48(sp)
+	.cfi_def_cfa sp, 64
+	ld	ra, 56(sp)
 	.cfi_restore ra
 	.cfi_restore s0
-	addi	sp, sp, 48
+	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end97:
-	.size	_ZNSt16allocator_traitsISaIdEE10deallocateERS0_Pdm, .Lfunc_end97-_ZNSt16allocator_traitsISaIdEE10deallocateERS0_Pdm
+.Lfunc_end75:
+	.size	_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm, .Lfunc_end75-_ZNSt12_Vector_baseIdSaIdEE13_M_deallocateEPdm
 	.cfi_endproc
                                         # -- End function
-	.section	.text._ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm,"axG",@progbits,_ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm,comdat
-	.weak	_ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm # -- Begin function _ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm
+	.section	.text._ZNSt15__new_allocatorIdE10deallocateEPdm,"axG",@progbits,_ZNSt15__new_allocatorIdE10deallocateEPdm,comdat
+	.weak	_ZNSt15__new_allocatorIdE10deallocateEPdm # -- Begin function _ZNSt15__new_allocatorIdE10deallocateEPdm
 	.p2align	2
-	.type	_ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm,@function
-_ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm: # @_ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm
+	.type	_ZNSt15__new_allocatorIdE10deallocateEPdm,@function
+_ZNSt15__new_allocatorIdE10deallocateEPdm: # @_ZNSt15__new_allocatorIdE10deallocateEPdm
 # %bb.0:                                # %entry
 	addi	sp, sp, -48
 	sd	ra, 40(sp)
@@ -4216,41 +3785,8 @@ _ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm: # @_ZN9__gnu_cxx13new_allocator
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end98:
-	.size	_ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm, .Lfunc_end98-_ZN9__gnu_cxx13new_allocatorIdE10deallocateEPdm
-                                        # -- End function
-	.section	.text._ZSt8_DestroyIPddEvT_S1_RSaIT0_E,"axG",@progbits,_ZSt8_DestroyIPddEvT_S1_RSaIT0_E,comdat
-	.weak	_ZSt8_DestroyIPddEvT_S1_RSaIT0_E # -- Begin function _ZSt8_DestroyIPddEvT_S1_RSaIT0_E
-	.p2align	2
-	.type	_ZSt8_DestroyIPddEvT_S1_RSaIT0_E,@function
-_ZSt8_DestroyIPddEvT_S1_RSaIT0_E:       # @_ZSt8_DestroyIPddEvT_S1_RSaIT0_E
-	.cfi_startproc
-# %bb.0:                                # %entry
-	addi	sp, sp, -48
-	.cfi_def_cfa_offset 48
-	sd	ra, 40(sp)
-	sd	s0, 32(sp)
-	.cfi_offset ra, -8
-	.cfi_offset s0, -16
-	addi	s0, sp, 48
-	.cfi_def_cfa s0, 0
-	sd	a0, -24(s0)
-	sd	a1, -32(s0)
-	sd	a2, -40(s0)
-	ld	a0, -24(s0)
-	ld	a1, -32(s0)
-	call	_ZSt8_DestroyIPdEvT_S1_
-	ld	s0, 32(sp)
-	.cfi_def_cfa sp, 48
-	ld	ra, 40(sp)
-	.cfi_restore ra
-	.cfi_restore s0
-	addi	sp, sp, 48
-	.cfi_def_cfa_offset 0
-	ret
-.Lfunc_end99:
-	.size	_ZSt8_DestroyIPddEvT_S1_RSaIT0_E, .Lfunc_end99-_ZSt8_DestroyIPddEvT_S1_RSaIT0_E
-	.cfi_endproc
+.Lfunc_end76:
+	.size	_ZNSt15__new_allocatorIdE10deallocateEPdm, .Lfunc_end76-_ZNSt15__new_allocatorIdE10deallocateEPdm
                                         # -- End function
 	.section	.text._ZSt8_DestroyIPdEvT_S1_,"axG",@progbits,_ZSt8_DestroyIPdEvT_S1_,comdat
 	.weak	_ZSt8_DestroyIPdEvT_S1_ # -- Begin function _ZSt8_DestroyIPdEvT_S1_
@@ -4280,8 +3816,8 @@ _ZSt8_DestroyIPdEvT_S1_:                # @_ZSt8_DestroyIPdEvT_S1_
 	addi	sp, sp, 32
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end100:
-	.size	_ZSt8_DestroyIPdEvT_S1_, .Lfunc_end100-_ZSt8_DestroyIPdEvT_S1_
+.Lfunc_end77:
+	.size	_ZSt8_DestroyIPdEvT_S1_, .Lfunc_end77-_ZSt8_DestroyIPdEvT_S1_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt12_Destroy_auxILb1EE9__destroyIPdEEvT_S3_,"axG",@progbits,_ZNSt12_Destroy_auxILb1EE9__destroyIPdEEvT_S3_,comdat
@@ -4300,8 +3836,8 @@ _ZNSt12_Destroy_auxILb1EE9__destroyIPdEEvT_S3_: # @_ZNSt12_Destroy_auxILb1EE9__d
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end101:
-	.size	_ZNSt12_Destroy_auxILb1EE9__destroyIPdEEvT_S3_, .Lfunc_end101-_ZNSt12_Destroy_auxILb1EE9__destroyIPdEEvT_S3_
+.Lfunc_end78:
+	.size	_ZNSt12_Destroy_auxILb1EE9__destroyIPdEEvT_S3_, .Lfunc_end78-_ZNSt12_Destroy_auxILb1EE9__destroyIPdEEvT_S3_
                                         # -- End function
 	.section	.text._ZSt6__sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_,"axG",@progbits,_ZSt6__sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_,comdat
 	.weak	_ZSt6__sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_ # -- Begin function _ZSt6__sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_
@@ -4326,14 +3862,14 @@ _ZSt6__sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_: # @_ZSt6__sortIPdN9
 	sd	a1, -56(s0)
 	ld	a0, -48(s0)
 	ld	a1, -56(s0)
-	beq	a0, a1, .LBB102_2
-	j	.LBB102_1
-.LBB102_1:                              # %if.then
+	beq	a0, a1, .LBB79_2
+	j	.LBB79_1
+.LBB79_1:                               # %if.then
 	ld	s1, -48(s0)
 	ld	s2, -56(s0)
 	sub	a0, s2, s1
 	srai	a0, a0, 3
-	call	_ZSt4__lgl
+	call	_ZSt4__lgIlET_S0_
 	slli	a2, a0, 1
 	mv	a0, s1
 	mv	a1, s2
@@ -4341,8 +3877,8 @@ _ZSt6__sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_: # @_ZSt6__sortIPdN9
 	ld	a0, -48(s0)
 	ld	a1, -56(s0)
 	call	_ZSt22__final_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_
-	j	.LBB102_2
-.LBB102_2:                              # %if.end
+	j	.LBB79_2
+.LBB79_2:                               # %if.end
 	ld	s2, 48(sp)
 	ld	s1, 56(sp)
 	ld	s0, 64(sp)
@@ -4355,8 +3891,8 @@ _ZSt6__sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_: # @_ZSt6__sortIPdN9
 	addi	sp, sp, 80
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end102:
-	.size	_ZSt6__sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_, .Lfunc_end102-_ZSt6__sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_
+.Lfunc_end79:
+	.size	_ZSt6__sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_, .Lfunc_end79-_ZSt6__sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN9__gnu_cxx5__ops16__iter_less_iterEv,"axG",@progbits,_ZN9__gnu_cxx5__ops16__iter_less_iterEv,comdat
@@ -4373,8 +3909,8 @@ _ZN9__gnu_cxx5__ops16__iter_less_iterEv: # @_ZN9__gnu_cxx5__ops16__iter_less_ite
 	ld	ra, 8(sp)
 	addi	sp, sp, 16
 	ret
-.Lfunc_end103:
-	.size	_ZN9__gnu_cxx5__ops16__iter_less_iterEv, .Lfunc_end103-_ZN9__gnu_cxx5__ops16__iter_less_iterEv
+.Lfunc_end80:
+	.size	_ZN9__gnu_cxx5__ops16__iter_less_iterEv, .Lfunc_end80-_ZN9__gnu_cxx5__ops16__iter_less_iterEv
                                         # -- End function
 	.section	.text._ZSt16__introsort_loopIPdlN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_T1_,"axG",@progbits,_ZSt16__introsort_loopIPdlN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_T1_,comdat
 	.weak	_ZSt16__introsort_loopIPdlN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_T1_ # -- Begin function _ZSt16__introsort_loopIPdlN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_T1_
@@ -4394,29 +3930,29 @@ _ZSt16__introsort_loopIPdlN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_T1_: # @_
 	sd	a0, -32(s0)
 	sd	a1, -40(s0)
 	sd	a2, -48(s0)
-	j	.LBB104_1
-.LBB104_1:                              # %while.cond
+	j	.LBB81_1
+.LBB81_1:                               # %while.cond
                                         # =>This Inner Loop Header: Depth=1
 	ld	a0, -40(s0)
 	ld	a1, -32(s0)
 	sub	a0, a0, a1
 	srai	a0, a0, 3
 	addi	a1, zero, 17
-	blt	a0, a1, .LBB104_5
-	j	.LBB104_2
-.LBB104_2:                              # %while.body
-                                        #   in Loop: Header=BB104_1 Depth=1
+	blt	a0, a1, .LBB81_5
+	j	.LBB81_2
+.LBB81_2:                               # %while.body
+                                        #   in Loop: Header=BB81_1 Depth=1
 	ld	a0, -48(s0)
-	bnez	a0, .LBB104_4
-	j	.LBB104_3
-.LBB104_3:                              # %if.then
+	bnez	a0, .LBB81_4
+	j	.LBB81_3
+.LBB81_3:                               # %if.then
 	ld	a0, -32(s0)
 	ld	a1, -40(s0)
 	mv	a2, a1
 	call	_ZSt14__partial_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_T0_
-	j	.LBB104_6
-.LBB104_4:                              # %if.end
-                                        #   in Loop: Header=BB104_1 Depth=1
+	j	.LBB81_6
+.LBB81_4:                               # %if.end
+                                        #   in Loop: Header=BB81_1 Depth=1
 	ld	a0, -48(s0)
 	addi	a0, a0, -1
 	sd	a0, -48(s0)
@@ -4430,10 +3966,10 @@ _ZSt16__introsort_loopIPdlN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_T1_: # @_
 	call	_ZSt16__introsort_loopIPdlN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_T1_
 	ld	a0, -64(s0)
 	sd	a0, -40(s0)
-	j	.LBB104_1
-.LBB104_5:                              # %while.end.loopexit
-	j	.LBB104_6
-.LBB104_6:                              # %while.end
+	j	.LBB81_1
+.LBB81_5:                               # %while.end.loopexit
+	j	.LBB81_6
+.LBB81_6:                               # %while.end
 	ld	s0, 64(sp)
 	.cfi_def_cfa sp, 80
 	ld	ra, 72(sp)
@@ -4442,15 +3978,15 @@ _ZSt16__introsort_loopIPdlN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_T1_: # @_
 	addi	sp, sp, 80
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end104:
-	.size	_ZSt16__introsort_loopIPdlN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_T1_, .Lfunc_end104-_ZSt16__introsort_loopIPdlN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_T1_
+.Lfunc_end81:
+	.size	_ZSt16__introsort_loopIPdlN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_T1_, .Lfunc_end81-_ZSt16__introsort_loopIPdlN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_T1_
 	.cfi_endproc
                                         # -- End function
-	.section	.text._ZSt4__lgl,"axG",@progbits,_ZSt4__lgl,comdat
-	.weak	_ZSt4__lgl              # -- Begin function _ZSt4__lgl
+	.section	.text._ZSt4__lgIlET_S0_,"axG",@progbits,_ZSt4__lgIlET_S0_,comdat
+	.weak	_ZSt4__lgIlET_S0_       # -- Begin function _ZSt4__lgIlET_S0_
 	.p2align	2
-	.type	_ZSt4__lgl,@function
-_ZSt4__lgl:                             # @_ZSt4__lgl
+	.type	_ZSt4__lgIlET_S0_,@function
+_ZSt4__lgIlET_S0_:                      # @_ZSt4__lgIlET_S0_
 # %bb.0:                                # %entry
 	addi	sp, sp, -32
 	sd	ra, 24(sp)
@@ -4458,69 +3994,14 @@ _ZSt4__lgl:                             # @_ZSt4__lgl
 	addi	s0, sp, 32
 	sd	a0, -24(s0)
 	ld	a0, -24(s0)
-	srli	a1, a0, 1
-	or	a0, a0, a1
-	srli	a1, a0, 2
-	or	a0, a0, a1
-	srli	a1, a0, 4
-	or	a0, a0, a1
-	srli	a1, a0, 8
-	or	a0, a0, a1
-	srli	a1, a0, 16
-	or	a0, a0, a1
-	srli	a1, a0, 32
-	or	a0, a0, a1
-	not	a0, a0
-	srli	a1, a0, 1
-	lui	a2, 21845
-	addiw	a2, a2, 1365
-	slli	a2, a2, 12
-	addi	a2, a2, 1365
-	slli	a2, a2, 12
-	addi	a2, a2, 1365
-	slli	a2, a2, 12
-	addi	a2, a2, 1365
-	and	a1, a1, a2
-	sub	a0, a0, a1
-	lui	a1, 13107
-	addiw	a1, a1, 819
-	slli	a1, a1, 12
-	addi	a1, a1, 819
-	slli	a1, a1, 12
-	addi	a1, a1, 819
-	slli	a1, a1, 12
-	addi	a1, a1, 819
-	and	a2, a0, a1
-	srli	a0, a0, 2
-	and	a0, a0, a1
-	add	a0, a2, a0
-	srli	a1, a0, 4
-	add	a0, a0, a1
-	lui	a1, 3855
-	addiw	a1, a1, 241
-	slli	a1, a1, 12
-	addi	a1, a1, -241
-	slli	a1, a1, 12
-	addi	a1, a1, 241
-	slli	a1, a1, 12
-	addi	a1, a1, -241
-	and	a0, a0, a1
-	lui	a1, 4112
-	addiw	a1, a1, 257
-	slli	a1, a1, 16
-	addi	a1, a1, 257
-	slli	a1, a1, 16
-	addi	a1, a1, 257
-	mul	a0, a0, a1
-	srli	a0, a0, 56
-	addi	a1, zero, 63
-	sub	a0, a1, a0
+	call	_ZSt11__bit_widthImEiT_
+	addiw	a0, a0, -1
 	ld	s0, 16(sp)
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end105:
-	.size	_ZSt4__lgl, .Lfunc_end105-_ZSt4__lgl
+.Lfunc_end82:
+	.size	_ZSt4__lgIlET_S0_, .Lfunc_end82-_ZSt4__lgIlET_S0_
                                         # -- End function
 	.section	.text._ZSt22__final_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_,"axG",@progbits,_ZSt22__final_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_,comdat
 	.weak	_ZSt22__final_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_ # -- Begin function _ZSt22__final_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_
@@ -4544,9 +4025,9 @@ _ZSt22__final_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_: # 
 	sub	a0, a0, a1
 	srai	a0, a0, 3
 	addi	a1, zero, 17
-	blt	a0, a1, .LBB106_2
-	j	.LBB106_1
-.LBB106_1:                              # %if.then
+	blt	a0, a1, .LBB83_2
+	j	.LBB83_1
+.LBB83_1:                               # %if.then
 	ld	a0, -32(s0)
 	addi	a1, a0, 128
 	call	_ZSt16__insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_
@@ -4554,13 +4035,13 @@ _ZSt22__final_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_: # 
 	addi	a0, a0, 128
 	ld	a1, -40(s0)
 	call	_ZSt26__unguarded_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_
-	j	.LBB106_3
-.LBB106_2:                              # %if.else
+	j	.LBB83_3
+.LBB83_2:                               # %if.else
 	ld	a0, -32(s0)
 	ld	a1, -40(s0)
 	call	_ZSt16__insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_
-	j	.LBB106_3
-.LBB106_3:                              # %if.end
+	j	.LBB83_3
+.LBB83_3:                               # %if.end
 	ld	s0, 48(sp)
 	.cfi_def_cfa sp, 64
 	ld	ra, 56(sp)
@@ -4569,8 +4050,8 @@ _ZSt22__final_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_: # 
 	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end106:
-	.size	_ZSt22__final_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_, .Lfunc_end106-_ZSt22__final_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_
+.Lfunc_end83:
+	.size	_ZSt22__final_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_, .Lfunc_end83-_ZSt22__final_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt14__partial_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_T0_,"axG",@progbits,_ZSt14__partial_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_T0_,comdat
@@ -4607,8 +4088,8 @@ _ZSt14__partial_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_T0_: # @_ZSt
 	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end107:
-	.size	_ZSt14__partial_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_T0_, .Lfunc_end107-_ZSt14__partial_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_T0_
+.Lfunc_end84:
+	.size	_ZSt14__partial_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_T0_, .Lfunc_end84-_ZSt14__partial_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_T0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt27__unguarded_partition_pivotIPdN9__gnu_cxx5__ops15_Iter_less_iterEET_S4_S4_T0_,"axG",@progbits,_ZSt27__unguarded_partition_pivotIPdN9__gnu_cxx5__ops15_Iter_less_iterEET_S4_S4_T0_,comdat
@@ -4656,8 +4137,8 @@ _ZSt27__unguarded_partition_pivotIPdN9__gnu_cxx5__ops15_Iter_less_iterEET_S4_S4_
 	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end108:
-	.size	_ZSt27__unguarded_partition_pivotIPdN9__gnu_cxx5__ops15_Iter_less_iterEET_S4_S4_T0_, .Lfunc_end108-_ZSt27__unguarded_partition_pivotIPdN9__gnu_cxx5__ops15_Iter_less_iterEET_S4_S4_T0_
+.Lfunc_end85:
+	.size	_ZSt27__unguarded_partition_pivotIPdN9__gnu_cxx5__ops15_Iter_less_iterEET_S4_S4_T0_, .Lfunc_end85-_ZSt27__unguarded_partition_pivotIPdN9__gnu_cxx5__ops15_Iter_less_iterEET_S4_S4_T0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt13__heap_selectIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_T0_,"axG",@progbits,_ZSt13__heap_selectIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_T0_,comdat
@@ -4684,39 +4165,39 @@ _ZSt13__heap_selectIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_T0_: # @_ZSt1
 	call	_ZSt11__make_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_
 	ld	a0, -40(s0)
 	sd	a0, -56(s0)
-	j	.LBB109_1
-.LBB109_1:                              # %for.cond
+	j	.LBB86_1
+.LBB86_1:                               # %for.cond
                                         # =>This Inner Loop Header: Depth=1
 	ld	a0, -56(s0)
 	ld	a1, -48(s0)
-	bgeu	a0, a1, .LBB109_6
-	j	.LBB109_2
-.LBB109_2:                              # %for.body
-                                        #   in Loop: Header=BB109_1 Depth=1
+	bgeu	a0, a1, .LBB86_6
+	j	.LBB86_2
+.LBB86_2:                               # %for.body
+                                        #   in Loop: Header=BB86_1 Depth=1
 	ld	a1, -56(s0)
 	ld	a2, -32(s0)
 	addi	a0, s0, -24
 	call	_ZNK9__gnu_cxx5__ops15_Iter_less_iterclIPdS3_EEbT_T0_
-	beqz	a0, .LBB109_4
-	j	.LBB109_3
-.LBB109_3:                              # %if.then
-                                        #   in Loop: Header=BB109_1 Depth=1
+	beqz	a0, .LBB86_4
+	j	.LBB86_3
+.LBB86_3:                               # %if.then
+                                        #   in Loop: Header=BB86_1 Depth=1
 	ld	a0, -32(s0)
 	ld	a1, -40(s0)
 	ld	a2, -56(s0)
 	addi	a3, s0, -24
 	call	_ZSt10__pop_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_RT0_
-	j	.LBB109_4
-.LBB109_4:                              # %if.end
-                                        #   in Loop: Header=BB109_1 Depth=1
-	j	.LBB109_5
-.LBB109_5:                              # %for.inc
-                                        #   in Loop: Header=BB109_1 Depth=1
+	j	.LBB86_4
+.LBB86_4:                               # %if.end
+                                        #   in Loop: Header=BB86_1 Depth=1
+	j	.LBB86_5
+.LBB86_5:                               # %for.inc
+                                        #   in Loop: Header=BB86_1 Depth=1
 	ld	a0, -56(s0)
 	addi	a0, a0, 8
 	sd	a0, -56(s0)
-	j	.LBB109_1
-.LBB109_6:                              # %for.end
+	j	.LBB86_1
+.LBB86_6:                               # %for.end
 	ld	s0, 48(sp)
 	.cfi_def_cfa sp, 64
 	ld	ra, 56(sp)
@@ -4725,8 +4206,8 @@ _ZSt13__heap_selectIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_T0_: # @_ZSt1
 	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end109:
-	.size	_ZSt13__heap_selectIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_T0_, .Lfunc_end109-_ZSt13__heap_selectIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_T0_
+.Lfunc_end86:
+	.size	_ZSt13__heap_selectIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_T0_, .Lfunc_end86-_ZSt13__heap_selectIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_T0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt11__sort_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_,"axG",@progbits,_ZSt11__sort_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_,comdat
@@ -4747,18 +4228,18 @@ _ZSt11__sort_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_: # @_ZSt11__s
 	sd	a0, -24(s0)
 	sd	a1, -32(s0)
 	sd	a2, -40(s0)
-	j	.LBB110_1
-.LBB110_1:                              # %while.cond
+	j	.LBB87_1
+.LBB87_1:                               # %while.cond
                                         # =>This Inner Loop Header: Depth=1
 	ld	a0, -32(s0)
 	ld	a1, -24(s0)
 	sub	a0, a0, a1
 	srai	a0, a0, 3
 	addi	a1, zero, 2
-	blt	a0, a1, .LBB110_3
-	j	.LBB110_2
-.LBB110_2:                              # %while.body
-                                        #   in Loop: Header=BB110_1 Depth=1
+	blt	a0, a1, .LBB87_3
+	j	.LBB87_2
+.LBB87_2:                               # %while.body
+                                        #   in Loop: Header=BB87_1 Depth=1
 	ld	a0, -32(s0)
 	addi	a0, a0, -8
 	sd	a0, -32(s0)
@@ -4767,8 +4248,8 @@ _ZSt11__sort_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_: # @_ZSt11__s
 	ld	a3, -40(s0)
 	mv	a2, a1
 	call	_ZSt10__pop_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_RT0_
-	j	.LBB110_1
-.LBB110_3:                              # %while.end
+	j	.LBB87_1
+.LBB87_3:                               # %while.end
 	ld	s0, 32(sp)
 	.cfi_def_cfa sp, 48
 	ld	ra, 40(sp)
@@ -4777,8 +4258,8 @@ _ZSt11__sort_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_: # @_ZSt11__s
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end110:
-	.size	_ZSt11__sort_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_, .Lfunc_end110-_ZSt11__sort_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_
+.Lfunc_end87:
+	.size	_ZSt11__sort_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_, .Lfunc_end87-_ZSt11__sort_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt11__make_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_,"axG",@progbits,_ZSt11__make_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_,comdat
@@ -4810,11 +4291,11 @@ _ZSt11__make_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_: # @_ZSt11__m
 	sub	a0, a0, a1
 	srai	a0, a0, 3
 	addi	a1, zero, 1
-	blt	a1, a0, .LBB111_2
-	j	.LBB111_1
-.LBB111_1:                              # %if.then
-	j	.LBB111_6
-.LBB111_2:                              # %if.end
+	blt	a1, a0, .LBB88_2
+	j	.LBB88_1
+.LBB88_1:                               # %if.then
+	j	.LBB88_6
+.LBB88_2:                               # %if.end
 	ld	a0, -56(s0)
 	ld	a1, -48(s0)
 	sub	a0, a0, a1
@@ -4826,8 +4307,8 @@ _ZSt11__make_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_: # @_ZSt11__m
 	add	a0, a0, a1
 	srai	a0, a0, 1
 	sd	a0, -80(s0)
-	j	.LBB111_3
-.LBB111_3:                              # %while.body
+	j	.LBB88_3
+.LBB88_3:                               # %while.body
                                         # =>This Inner Loop Header: Depth=1
 	ld	a0, -48(s0)
 	ld	a1, -80(s0)
@@ -4847,17 +4328,17 @@ _ZSt11__make_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_: # @_ZSt11__m
 	mv	a2, s3
 	call	_ZSt13__adjust_heapIPdldN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_
 	ld	a0, -80(s0)
-	bnez	a0, .LBB111_5
-	j	.LBB111_4
-.LBB111_4:                              # %if.then7
-	j	.LBB111_6
-.LBB111_5:                              # %if.end8
-                                        #   in Loop: Header=BB111_3 Depth=1
+	bnez	a0, .LBB88_5
+	j	.LBB88_4
+.LBB88_4:                               # %if.then7
+	j	.LBB88_6
+.LBB88_5:                               # %if.end8
+                                        #   in Loop: Header=BB88_3 Depth=1
 	ld	a0, -80(s0)
 	addi	a0, a0, -1
 	sd	a0, -80(s0)
-	j	.LBB111_3
-.LBB111_6:                              # %return
+	j	.LBB88_3
+.LBB88_6:                               # %return
 	ld	s3, 56(sp)
 	ld	s2, 64(sp)
 	ld	s1, 72(sp)
@@ -4872,8 +4353,8 @@ _ZSt11__make_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_: # @_ZSt11__m
 	addi	sp, sp, 96
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end111:
-	.size	_ZSt11__make_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_, .Lfunc_end111-_ZSt11__make_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_
+.Lfunc_end88:
+	.size	_ZSt11__make_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_, .Lfunc_end88-_ZSt11__make_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_RT0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNK9__gnu_cxx5__ops15_Iter_less_iterclIPdS3_EEbT_T0_,"axG",@progbits,_ZNK9__gnu_cxx5__ops15_Iter_less_iterclIPdS3_EEbT_T0_,comdat
@@ -4898,8 +4379,8 @@ _ZNK9__gnu_cxx5__ops15_Iter_less_iterclIPdS3_EEbT_T0_: # @_ZNK9__gnu_cxx5__ops15
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end112:
-	.size	_ZNK9__gnu_cxx5__ops15_Iter_less_iterclIPdS3_EEbT_T0_, .Lfunc_end112-_ZNK9__gnu_cxx5__ops15_Iter_less_iterclIPdS3_EEbT_T0_
+.Lfunc_end89:
+	.size	_ZNK9__gnu_cxx5__ops15_Iter_less_iterclIPdS3_EEbT_T0_, .Lfunc_end89-_ZNK9__gnu_cxx5__ops15_Iter_less_iterclIPdS3_EEbT_T0_
                                         # -- End function
 	.section	.text._ZSt10__pop_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_RT0_,"axG",@progbits,_ZSt10__pop_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_RT0_,comdat
 	.weak	_ZSt10__pop_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_RT0_ # -- Begin function _ZSt10__pop_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_RT0_
@@ -4956,8 +4437,8 @@ _ZSt10__pop_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_RT0_: # @_ZSt10_
 	addi	sp, sp, 80
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end113:
-	.size	_ZSt10__pop_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_RT0_, .Lfunc_end113-_ZSt10__pop_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_RT0_
+.Lfunc_end90:
+	.size	_ZSt10__pop_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_RT0_, .Lfunc_end90-_ZSt10__pop_heapIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_RT0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt4moveIRdEONSt16remove_referenceIT_E4typeEOS2_,"axG",@progbits,_ZSt4moveIRdEONSt16remove_referenceIT_E4typeEOS2_,comdat
@@ -4976,8 +4457,8 @@ _ZSt4moveIRdEONSt16remove_referenceIT_E4typeEOS2_: # @_ZSt4moveIRdEONSt16remove_
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end114:
-	.size	_ZSt4moveIRdEONSt16remove_referenceIT_E4typeEOS2_, .Lfunc_end114-_ZSt4moveIRdEONSt16remove_referenceIT_E4typeEOS2_
+.Lfunc_end91:
+	.size	_ZSt4moveIRdEONSt16remove_referenceIT_E4typeEOS2_, .Lfunc_end91-_ZSt4moveIRdEONSt16remove_referenceIT_E4typeEOS2_
                                         # -- End function
 	.section	.text._ZSt13__adjust_heapIPdldN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_,"axG",@progbits,_ZSt13__adjust_heapIPdldN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_,comdat
 	.weak	_ZSt13__adjust_heapIPdldN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_ # -- Begin function _ZSt13__adjust_heapIPdldN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_
@@ -5011,8 +4492,8 @@ _ZSt13__adjust_heapIPdldN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_: # @
 	sd	a0, -96(s0)
 	ld	a0, -72(s0)
 	sd	a0, -104(s0)
-	j	.LBB115_1
-.LBB115_1:                              # %while.cond
+	j	.LBB92_1
+.LBB92_1:                               # %while.cond
                                         # =>This Inner Loop Header: Depth=1
 	ld	a0, -104(s0)
 	ld	a1, -80(s0)
@@ -5020,10 +4501,10 @@ _ZSt13__adjust_heapIPdldN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_: # @
 	srli	a2, a1, 63
 	add	a1, a1, a2
 	srai	a1, a1, 1
-	bge	a0, a1, .LBB115_5
-	j	.LBB115_2
-.LBB115_2:                              # %while.body
-                                        #   in Loop: Header=BB115_1 Depth=1
+	bge	a0, a1, .LBB92_5
+	j	.LBB92_2
+.LBB92_2:                               # %while.body
+                                        #   in Loop: Header=BB92_1 Depth=1
 	ld	a0, -104(s0)
 	slli	a0, a0, 1
 	addi	a0, a0, 2
@@ -5035,16 +4516,16 @@ _ZSt13__adjust_heapIPdldN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_: # @
 	addi	a2, a1, -8
 	addi	a0, s0, -56
 	call	_ZNK9__gnu_cxx5__ops15_Iter_less_iterclIPdS3_EEbT_T0_
-	beqz	a0, .LBB115_4
-	j	.LBB115_3
-.LBB115_3:                              # %if.then
-                                        #   in Loop: Header=BB115_1 Depth=1
+	beqz	a0, .LBB92_4
+	j	.LBB92_3
+.LBB92_3:                               # %if.then
+                                        #   in Loop: Header=BB92_1 Depth=1
 	ld	a0, -104(s0)
 	addi	a0, a0, -1
 	sd	a0, -104(s0)
-	j	.LBB115_4
-.LBB115_4:                              # %if.end
-                                        #   in Loop: Header=BB115_1 Depth=1
+	j	.LBB92_4
+.LBB92_4:                               # %if.end
+                                        #   in Loop: Header=BB92_1 Depth=1
 	ld	a0, -64(s0)
 	ld	a1, -104(s0)
 	slli	a1, a1, 3
@@ -5058,22 +4539,22 @@ _ZSt13__adjust_heapIPdldN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_: # @
 	fsd	ft0, 0(a0)
 	ld	a0, -104(s0)
 	sd	a0, -72(s0)
-	j	.LBB115_1
-.LBB115_5:                              # %while.end
+	j	.LBB92_1
+.LBB92_5:                               # %while.end
 	lbu	a0, -80(s0)
 	andi	a0, a0, 1
-	bnez	a0, .LBB115_8
-	j	.LBB115_6
-.LBB115_6:                              # %land.lhs.true
+	bnez	a0, .LBB92_8
+	j	.LBB92_6
+.LBB92_6:                               # %land.lhs.true
 	ld	a0, -104(s0)
 	ld	a1, -80(s0)
 	addi	a1, a1, -2
 	srli	a2, a1, 63
 	add	a1, a1, a2
 	srai	a1, a1, 1
-	bne	a0, a1, .LBB115_8
-	j	.LBB115_7
-.LBB115_7:                              # %if.then10
+	bne	a0, a1, .LBB92_8
+	j	.LBB92_7
+.LBB92_7:                               # %if.then10
 	ld	a0, -104(s0)
 	slli	a0, a0, 1
 	addi	a0, a0, 2
@@ -5093,8 +4574,8 @@ _ZSt13__adjust_heapIPdldN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_: # @
 	ld	a0, -104(s0)
 	addi	a0, a0, -1
 	sd	a0, -72(s0)
-	j	.LBB115_8
-.LBB115_8:                              # %if.end18
+	j	.LBB92_8
+.LBB92_8:                               # %if.end18
 	addi	a0, s0, -56
 	call	_ZSt4moveIRN9__gnu_cxx5__ops15_Iter_less_iterEEONSt16remove_referenceIT_E4typeEOS5_
 	addi	s2, s0, -112
@@ -5127,8 +4608,8 @@ _ZSt13__adjust_heapIPdldN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_: # @
 	addi	sp, sp, 128
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end115:
-	.size	_ZSt13__adjust_heapIPdldN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_, .Lfunc_end115-_ZSt13__adjust_heapIPdldN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_
+.Lfunc_end92:
+	.size	_ZSt13__adjust_heapIPdldN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_, .Lfunc_end92-_ZSt13__adjust_heapIPdldN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt4moveIRN9__gnu_cxx5__ops15_Iter_less_iterEEONSt16remove_referenceIT_E4typeEOS5_,"axG",@progbits,_ZSt4moveIRN9__gnu_cxx5__ops15_Iter_less_iterEEONSt16remove_referenceIT_E4typeEOS5_,comdat
@@ -5147,8 +4628,8 @@ _ZSt4moveIRN9__gnu_cxx5__ops15_Iter_less_iterEEONSt16remove_referenceIT_E4typeEO
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end116:
-	.size	_ZSt4moveIRN9__gnu_cxx5__ops15_Iter_less_iterEEONSt16remove_referenceIT_E4typeEOS5_, .Lfunc_end116-_ZSt4moveIRN9__gnu_cxx5__ops15_Iter_less_iterEEONSt16remove_referenceIT_E4typeEOS5_
+.Lfunc_end93:
+	.size	_ZSt4moveIRN9__gnu_cxx5__ops15_Iter_less_iterEEONSt16remove_referenceIT_E4typeEOS5_, .Lfunc_end93-_ZSt4moveIRN9__gnu_cxx5__ops15_Iter_less_iterEEONSt16remove_referenceIT_E4typeEOS5_
                                         # -- End function
 	.section	.text._ZN9__gnu_cxx5__ops14_Iter_less_valC2ENS0_15_Iter_less_iterE,"axG",@progbits,_ZN9__gnu_cxx5__ops14_Iter_less_valC2ENS0_15_Iter_less_iterE,comdat
 	.weak	_ZN9__gnu_cxx5__ops14_Iter_less_valC2ENS0_15_Iter_less_iterE # -- Begin function _ZN9__gnu_cxx5__ops14_Iter_less_valC2ENS0_15_Iter_less_iterE
@@ -5165,8 +4646,8 @@ _ZN9__gnu_cxx5__ops14_Iter_less_valC2ENS0_15_Iter_less_iterE: # @_ZN9__gnu_cxx5_
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end117:
-	.size	_ZN9__gnu_cxx5__ops14_Iter_less_valC2ENS0_15_Iter_less_iterE, .Lfunc_end117-_ZN9__gnu_cxx5__ops14_Iter_less_valC2ENS0_15_Iter_less_iterE
+.Lfunc_end94:
+	.size	_ZN9__gnu_cxx5__ops14_Iter_less_valC2ENS0_15_Iter_less_iterE, .Lfunc_end94-_ZN9__gnu_cxx5__ops14_Iter_less_valC2ENS0_15_Iter_less_iterE
                                         # -- End function
 	.section	.text._ZSt11__push_heapIPdldN9__gnu_cxx5__ops14_Iter_less_valEEvT_T0_S5_T1_RT2_,"axG",@progbits,_ZSt11__push_heapIPdldN9__gnu_cxx5__ops14_Iter_less_valEEvT_T0_S5_T1_RT2_,comdat
 	.weak	_ZSt11__push_heapIPdldN9__gnu_cxx5__ops14_Iter_less_valEEvT_T0_S5_T1_RT2_ # -- Begin function _ZSt11__push_heapIPdldN9__gnu_cxx5__ops14_Iter_less_valEEvT_T0_S5_T1_RT2_
@@ -5195,16 +4676,16 @@ _ZSt11__push_heapIPdldN9__gnu_cxx5__ops14_Iter_less_valEEvT_T0_S5_T1_RT2_: # @_Z
 	add	a0, a0, a1
 	srai	a0, a0, 1
 	sd	a0, -64(s0)
-	j	.LBB118_1
-.LBB118_1:                              # %while.cond
+	j	.LBB95_1
+.LBB95_1:                               # %while.cond
                                         # =>This Inner Loop Header: Depth=1
 	ld	a1, -32(s0)
 	ld	a2, -40(s0)
 	mv	a0, zero
-	bge	a2, a1, .LBB118_3
-	j	.LBB118_2
-.LBB118_2:                              # %land.rhs
-                                        #   in Loop: Header=BB118_1 Depth=1
+	bge	a2, a1, .LBB95_3
+	j	.LBB95_2
+.LBB95_2:                               # %land.rhs
+                                        #   in Loop: Header=BB95_1 Depth=1
 	ld	a0, -56(s0)
 	ld	a1, -24(s0)
 	ld	a2, -64(s0)
@@ -5212,14 +4693,14 @@ _ZSt11__push_heapIPdldN9__gnu_cxx5__ops14_Iter_less_valEEvT_T0_S5_T1_RT2_: # @_Z
 	add	a1, a1, a2
 	addi	a2, s0, -48
 	call	_ZNK9__gnu_cxx5__ops14_Iter_less_valclIPddEEbT_RT0_
-	j	.LBB118_3
-.LBB118_3:                              # %land.end
-                                        #   in Loop: Header=BB118_1 Depth=1
+	j	.LBB95_3
+.LBB95_3:                               # %land.end
+                                        #   in Loop: Header=BB95_1 Depth=1
 	andi	a0, a0, 1
-	beqz	a0, .LBB118_5
-	j	.LBB118_4
-.LBB118_4:                              # %while.body
-                                        #   in Loop: Header=BB118_1 Depth=1
+	beqz	a0, .LBB95_5
+	j	.LBB95_4
+.LBB95_4:                               # %while.body
+                                        #   in Loop: Header=BB95_1 Depth=1
 	ld	a0, -24(s0)
 	ld	a1, -64(s0)
 	slli	a1, a1, 3
@@ -5239,8 +4720,8 @@ _ZSt11__push_heapIPdldN9__gnu_cxx5__ops14_Iter_less_valEEvT_T0_S5_T1_RT2_: # @_Z
 	add	a0, a0, a1
 	srai	a0, a0, 1
 	sd	a0, -64(s0)
-	j	.LBB118_1
-.LBB118_5:                              # %while.end
+	j	.LBB95_1
+.LBB95_5:                               # %while.end
 	addi	a0, s0, -48
 	call	_ZSt4moveIRdEONSt16remove_referenceIT_E4typeEOS2_
 	fld	ft0, 0(a0)
@@ -5257,8 +4738,8 @@ _ZSt11__push_heapIPdldN9__gnu_cxx5__ops14_Iter_less_valEEvT_T0_S5_T1_RT2_: # @_Z
 	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end118:
-	.size	_ZSt11__push_heapIPdldN9__gnu_cxx5__ops14_Iter_less_valEEvT_T0_S5_T1_RT2_, .Lfunc_end118-_ZSt11__push_heapIPdldN9__gnu_cxx5__ops14_Iter_less_valEEvT_T0_S5_T1_RT2_
+.Lfunc_end95:
+	.size	_ZSt11__push_heapIPdldN9__gnu_cxx5__ops14_Iter_less_valEEvT_T0_S5_T1_RT2_, .Lfunc_end95-_ZSt11__push_heapIPdldN9__gnu_cxx5__ops14_Iter_less_valEEvT_T0_S5_T1_RT2_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNK9__gnu_cxx5__ops14_Iter_less_valclIPddEEbT_RT0_,"axG",@progbits,_ZNK9__gnu_cxx5__ops14_Iter_less_valclIPddEEbT_RT0_,comdat
@@ -5283,8 +4764,8 @@ _ZNK9__gnu_cxx5__ops14_Iter_less_valclIPddEEbT_RT0_: # @_ZNK9__gnu_cxx5__ops14_I
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end119:
-	.size	_ZNK9__gnu_cxx5__ops14_Iter_less_valclIPddEEbT_RT0_, .Lfunc_end119-_ZNK9__gnu_cxx5__ops14_Iter_less_valclIPddEEbT_RT0_
+.Lfunc_end96:
+	.size	_ZNK9__gnu_cxx5__ops14_Iter_less_valclIPddEEbT_RT0_, .Lfunc_end96-_ZNK9__gnu_cxx5__ops14_Iter_less_valclIPddEEbT_RT0_
                                         # -- End function
 	.section	.text._ZSt22__move_median_to_firstIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_S4_T0_,"axG",@progbits,_ZSt22__move_median_to_firstIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_S4_T0_,comdat
 	.weak	_ZSt22__move_median_to_firstIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_S4_T0_ # -- Begin function _ZSt22__move_median_to_firstIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_S4_T0_
@@ -5309,75 +4790,75 @@ _ZSt22__move_median_to_firstIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_S4_T
 	ld	a2, -48(s0)
 	addi	a0, s0, -24
 	call	_ZNK9__gnu_cxx5__ops15_Iter_less_iterclIPdS3_EEbT_T0_
-	beqz	a0, .LBB120_8
-	j	.LBB120_1
-.LBB120_1:                              # %if.then
+	beqz	a0, .LBB97_8
+	j	.LBB97_1
+.LBB97_1:                               # %if.then
 	ld	a1, -48(s0)
 	ld	a2, -56(s0)
 	addi	a0, s0, -24
 	call	_ZNK9__gnu_cxx5__ops15_Iter_less_iterclIPdS3_EEbT_T0_
-	beqz	a0, .LBB120_3
-	j	.LBB120_2
-.LBB120_2:                              # %if.then2
+	beqz	a0, .LBB97_3
+	j	.LBB97_2
+.LBB97_2:                               # %if.then2
 	ld	a0, -32(s0)
 	ld	a1, -48(s0)
 	call	_ZSt9iter_swapIPdS0_EvT_T0_
-	j	.LBB120_7
-.LBB120_3:                              # %if.else
+	j	.LBB97_7
+.LBB97_3:                               # %if.else
 	ld	a1, -40(s0)
 	ld	a2, -56(s0)
 	addi	a0, s0, -24
 	call	_ZNK9__gnu_cxx5__ops15_Iter_less_iterclIPdS3_EEbT_T0_
-	beqz	a0, .LBB120_5
-	j	.LBB120_4
-.LBB120_4:                              # %if.then4
+	beqz	a0, .LBB97_5
+	j	.LBB97_4
+.LBB97_4:                               # %if.then4
 	ld	a0, -32(s0)
 	ld	a1, -56(s0)
 	call	_ZSt9iter_swapIPdS0_EvT_T0_
-	j	.LBB120_6
-.LBB120_5:                              # %if.else5
+	j	.LBB97_6
+.LBB97_5:                               # %if.else5
 	ld	a0, -32(s0)
 	ld	a1, -40(s0)
 	call	_ZSt9iter_swapIPdS0_EvT_T0_
-	j	.LBB120_6
-.LBB120_6:                              # %if.end
-	j	.LBB120_7
-.LBB120_7:                              # %if.end6
-	j	.LBB120_15
-.LBB120_8:                              # %if.else7
+	j	.LBB97_6
+.LBB97_6:                               # %if.end
+	j	.LBB97_7
+.LBB97_7:                               # %if.end6
+	j	.LBB97_15
+.LBB97_8:                               # %if.else7
 	ld	a1, -40(s0)
 	ld	a2, -56(s0)
 	addi	a0, s0, -24
 	call	_ZNK9__gnu_cxx5__ops15_Iter_less_iterclIPdS3_EEbT_T0_
-	beqz	a0, .LBB120_10
-	j	.LBB120_9
-.LBB120_9:                              # %if.then9
+	beqz	a0, .LBB97_10
+	j	.LBB97_9
+.LBB97_9:                               # %if.then9
 	ld	a0, -32(s0)
 	ld	a1, -40(s0)
 	call	_ZSt9iter_swapIPdS0_EvT_T0_
-	j	.LBB120_14
-.LBB120_10:                             # %if.else10
+	j	.LBB97_14
+.LBB97_10:                              # %if.else10
 	ld	a1, -48(s0)
 	ld	a2, -56(s0)
 	addi	a0, s0, -24
 	call	_ZNK9__gnu_cxx5__ops15_Iter_less_iterclIPdS3_EEbT_T0_
-	beqz	a0, .LBB120_12
-	j	.LBB120_11
-.LBB120_11:                             # %if.then12
+	beqz	a0, .LBB97_12
+	j	.LBB97_11
+.LBB97_11:                              # %if.then12
 	ld	a0, -32(s0)
 	ld	a1, -56(s0)
 	call	_ZSt9iter_swapIPdS0_EvT_T0_
-	j	.LBB120_13
-.LBB120_12:                             # %if.else13
+	j	.LBB97_13
+.LBB97_12:                              # %if.else13
 	ld	a0, -32(s0)
 	ld	a1, -48(s0)
 	call	_ZSt9iter_swapIPdS0_EvT_T0_
-	j	.LBB120_13
-.LBB120_13:                             # %if.end14
-	j	.LBB120_14
-.LBB120_14:                             # %if.end15
-	j	.LBB120_15
-.LBB120_15:                             # %if.end16
+	j	.LBB97_13
+.LBB97_13:                              # %if.end14
+	j	.LBB97_14
+.LBB97_14:                              # %if.end15
+	j	.LBB97_15
+.LBB97_15:                              # %if.end16
 	ld	s0, 48(sp)
 	.cfi_def_cfa sp, 64
 	ld	ra, 56(sp)
@@ -5386,8 +4867,8 @@ _ZSt22__move_median_to_firstIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_S4_T
 	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end120:
-	.size	_ZSt22__move_median_to_firstIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_S4_T0_, .Lfunc_end120-_ZSt22__move_median_to_firstIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_S4_T0_
+.Lfunc_end97:
+	.size	_ZSt22__move_median_to_firstIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_S4_T0_, .Lfunc_end97-_ZSt22__move_median_to_firstIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_S4_S4_T0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt21__unguarded_partitionIPdN9__gnu_cxx5__ops15_Iter_less_iterEET_S4_S4_S4_T0_,"axG",@progbits,_ZSt21__unguarded_partitionIPdN9__gnu_cxx5__ops15_Iter_less_iterEET_S4_S4_S4_T0_,comdat
@@ -5403,71 +4884,71 @@ _ZSt21__unguarded_partitionIPdN9__gnu_cxx5__ops15_Iter_less_iterEET_S4_S4_S4_T0_
 	sd	a0, -32(s0)
 	sd	a1, -40(s0)
 	sd	a2, -48(s0)
-	j	.LBB121_1
-.LBB121_1:                              # %while.body
+	j	.LBB98_1
+.LBB98_1:                               # %while.body
                                         # =>This Loop Header: Depth=1
-                                        #     Child Loop BB121_2 Depth 2
-                                        #     Child Loop BB121_5 Depth 2
-	j	.LBB121_2
-.LBB121_2:                              # %while.cond1
-                                        #   Parent Loop BB121_1 Depth=1
+                                        #     Child Loop BB98_2 Depth 2
+                                        #     Child Loop BB98_5 Depth 2
+	j	.LBB98_2
+.LBB98_2:                               # %while.cond1
+                                        #   Parent Loop BB98_1 Depth=1
                                         # =>  This Inner Loop Header: Depth=2
 	ld	a1, -32(s0)
 	ld	a2, -48(s0)
 	addi	a0, s0, -24
 	call	_ZNK9__gnu_cxx5__ops15_Iter_less_iterclIPdS3_EEbT_T0_
-	beqz	a0, .LBB121_4
-	j	.LBB121_3
-.LBB121_3:                              # %while.body2
-                                        #   in Loop: Header=BB121_2 Depth=2
+	beqz	a0, .LBB98_4
+	j	.LBB98_3
+.LBB98_3:                               # %while.body2
+                                        #   in Loop: Header=BB98_2 Depth=2
 	ld	a0, -32(s0)
 	addi	a0, a0, 8
 	sd	a0, -32(s0)
-	j	.LBB121_2
-.LBB121_4:                              # %while.end
-                                        #   in Loop: Header=BB121_1 Depth=1
+	j	.LBB98_2
+.LBB98_4:                               # %while.end
+                                        #   in Loop: Header=BB98_1 Depth=1
 	ld	a0, -40(s0)
 	addi	a0, a0, -8
 	sd	a0, -40(s0)
-	j	.LBB121_5
-.LBB121_5:                              # %while.cond4
-                                        #   Parent Loop BB121_1 Depth=1
+	j	.LBB98_5
+.LBB98_5:                               # %while.cond4
+                                        #   Parent Loop BB98_1 Depth=1
                                         # =>  This Inner Loop Header: Depth=2
 	ld	a1, -48(s0)
 	ld	a2, -40(s0)
 	addi	a0, s0, -24
 	call	_ZNK9__gnu_cxx5__ops15_Iter_less_iterclIPdS3_EEbT_T0_
-	beqz	a0, .LBB121_7
-	j	.LBB121_6
-.LBB121_6:                              # %while.body6
-                                        #   in Loop: Header=BB121_5 Depth=2
+	beqz	a0, .LBB98_7
+	j	.LBB98_6
+.LBB98_6:                               # %while.body6
+                                        #   in Loop: Header=BB98_5 Depth=2
 	ld	a0, -40(s0)
 	addi	a0, a0, -8
 	sd	a0, -40(s0)
-	j	.LBB121_5
-.LBB121_7:                              # %while.end8
-                                        #   in Loop: Header=BB121_1 Depth=1
+	j	.LBB98_5
+.LBB98_7:                               # %while.end8
+                                        #   in Loop: Header=BB98_1 Depth=1
 	ld	a0, -32(s0)
 	ld	a1, -40(s0)
-	bltu	a0, a1, .LBB121_9
-	j	.LBB121_8
-.LBB121_8:                              # %if.then
+	bltu	a0, a1, .LBB98_9
+	j	.LBB98_8
+.LBB98_8:                               # %if.then
 	ld	a0, -32(s0)
 	ld	s0, 32(sp)
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.LBB121_9:                              # %if.end
-                                        #   in Loop: Header=BB121_1 Depth=1
+.LBB98_9:                               # %if.end
+                                        #   in Loop: Header=BB98_1 Depth=1
 	ld	a0, -32(s0)
 	ld	a1, -40(s0)
 	call	_ZSt9iter_swapIPdS0_EvT_T0_
 	ld	a0, -32(s0)
 	addi	a0, a0, 8
 	sd	a0, -32(s0)
-	j	.LBB121_1
-.Lfunc_end121:
-	.size	_ZSt21__unguarded_partitionIPdN9__gnu_cxx5__ops15_Iter_less_iterEET_S4_S4_S4_T0_, .Lfunc_end121-_ZSt21__unguarded_partitionIPdN9__gnu_cxx5__ops15_Iter_less_iterEET_S4_S4_S4_T0_
+	j	.LBB98_1
+.Lfunc_end98:
+	.size	_ZSt21__unguarded_partitionIPdN9__gnu_cxx5__ops15_Iter_less_iterEET_S4_S4_S4_T0_, .Lfunc_end98-_ZSt21__unguarded_partitionIPdN9__gnu_cxx5__ops15_Iter_less_iterEET_S4_S4_S4_T0_
                                         # -- End function
 	.section	.text._ZSt9iter_swapIPdS0_EvT_T0_,"axG",@progbits,_ZSt9iter_swapIPdS0_EvT_T0_,comdat
 	.weak	_ZSt9iter_swapIPdS0_EvT_T0_ # -- Begin function _ZSt9iter_swapIPdS0_EvT_T0_
@@ -5488,8 +4969,8 @@ _ZSt9iter_swapIPdS0_EvT_T0_:            # @_ZSt9iter_swapIPdS0_EvT_T0_
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end122:
-	.size	_ZSt9iter_swapIPdS0_EvT_T0_, .Lfunc_end122-_ZSt9iter_swapIPdS0_EvT_T0_
+.Lfunc_end99:
+	.size	_ZSt9iter_swapIPdS0_EvT_T0_, .Lfunc_end99-_ZSt9iter_swapIPdS0_EvT_T0_
                                         # -- End function
 	.section	.text._ZSt4swapIdENSt9enable_ifIXsr6__and_ISt6__not_ISt15__is_tuple_likeIT_EESt21is_move_constructibleIS3_ESt18is_move_assignableIS3_EEE5valueEvE4typeERS3_SC_,"axG",@progbits,_ZSt4swapIdENSt9enable_ifIXsr6__and_ISt6__not_ISt15__is_tuple_likeIT_EESt21is_move_constructibleIS3_ESt18is_move_assignableIS3_EEE5valueEvE4typeERS3_SC_,comdat
 	.weak	_ZSt4swapIdENSt9enable_ifIXsr6__and_ISt6__not_ISt15__is_tuple_likeIT_EESt21is_move_constructibleIS3_ESt18is_move_assignableIS3_EEE5valueEvE4typeERS3_SC_ # -- Begin function _ZSt4swapIdENSt9enable_ifIXsr6__and_ISt6__not_ISt15__is_tuple_likeIT_EESt21is_move_constructibleIS3_ESt18is_move_assignableIS3_EEE5valueEvE4typeERS3_SC_
@@ -5521,8 +5002,127 @@ _ZSt4swapIdENSt9enable_ifIXsr6__and_ISt6__not_ISt15__is_tuple_likeIT_EESt21is_mo
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end123:
-	.size	_ZSt4swapIdENSt9enable_ifIXsr6__and_ISt6__not_ISt15__is_tuple_likeIT_EESt21is_move_constructibleIS3_ESt18is_move_assignableIS3_EEE5valueEvE4typeERS3_SC_, .Lfunc_end123-_ZSt4swapIdENSt9enable_ifIXsr6__and_ISt6__not_ISt15__is_tuple_likeIT_EESt21is_move_constructibleIS3_ESt18is_move_assignableIS3_EEE5valueEvE4typeERS3_SC_
+.Lfunc_end100:
+	.size	_ZSt4swapIdENSt9enable_ifIXsr6__and_ISt6__not_ISt15__is_tuple_likeIT_EESt21is_move_constructibleIS3_ESt18is_move_assignableIS3_EEE5valueEvE4typeERS3_SC_, .Lfunc_end100-_ZSt4swapIdENSt9enable_ifIXsr6__and_ISt6__not_ISt15__is_tuple_likeIT_EESt21is_move_constructibleIS3_ESt18is_move_assignableIS3_EEE5valueEvE4typeERS3_SC_
+                                        # -- End function
+	.section	.text._ZSt11__bit_widthImEiT_,"axG",@progbits,_ZSt11__bit_widthImEiT_,comdat
+	.weak	_ZSt11__bit_widthImEiT_ # -- Begin function _ZSt11__bit_widthImEiT_
+	.p2align	2
+	.type	_ZSt11__bit_widthImEiT_,@function
+_ZSt11__bit_widthImEiT_:                # @_ZSt11__bit_widthImEiT_
+# %bb.0:                                # %entry
+	addi	sp, sp, -48
+	sd	ra, 40(sp)
+	sd	s0, 32(sp)
+	sd	s1, 24(sp)
+	addi	s0, sp, 48
+	sd	a0, -32(s0)
+	addi	s1, zero, 64
+	sw	s1, -36(s0)
+	ld	a0, -32(s0)
+	call	_ZSt13__countl_zeroImEiT_
+	subw	a0, s1, a0
+	ld	s1, 24(sp)
+	ld	s0, 32(sp)
+	ld	ra, 40(sp)
+	addi	sp, sp, 48
+	ret
+.Lfunc_end101:
+	.size	_ZSt11__bit_widthImEiT_, .Lfunc_end101-_ZSt11__bit_widthImEiT_
+                                        # -- End function
+	.section	.text._ZSt13__countl_zeroImEiT_,"axG",@progbits,_ZSt13__countl_zeroImEiT_,comdat
+	.weak	_ZSt13__countl_zeroImEiT_ # -- Begin function _ZSt13__countl_zeroImEiT_
+	.p2align	2
+	.type	_ZSt13__countl_zeroImEiT_,@function
+_ZSt13__countl_zeroImEiT_:              # @_ZSt13__countl_zeroImEiT_
+# %bb.0:                                # %entry
+	addi	sp, sp, -64
+	sd	ra, 56(sp)
+	sd	s0, 48(sp)
+	addi	s0, sp, 64
+	sd	a0, -32(s0)
+	addi	a0, zero, 64
+	sw	a0, -36(s0)
+	ld	a0, -32(s0)
+	bnez	a0, .LBB102_2
+	j	.LBB102_1
+.LBB102_1:                              # %if.then
+	addi	a0, zero, 64
+	sw	a0, -20(s0)
+	j	.LBB102_3
+.LBB102_2:                              # %if.end
+	addi	a0, zero, 64
+	sw	a0, -40(s0)
+	sw	a0, -44(s0)
+	addi	a0, zero, 32
+	sw	a0, -48(s0)
+	sw	zero, -52(s0)
+	ld	a0, -32(s0)
+	srli	a1, a0, 1
+	or	a0, a0, a1
+	srli	a1, a0, 2
+	or	a0, a0, a1
+	srli	a1, a0, 4
+	or	a0, a0, a1
+	srli	a1, a0, 8
+	or	a0, a0, a1
+	srli	a1, a0, 16
+	or	a0, a0, a1
+	srli	a1, a0, 32
+	or	a0, a0, a1
+	not	a0, a0
+	srli	a1, a0, 1
+	lui	a2, 21845
+	addiw	a2, a2, 1365
+	slli	a2, a2, 12
+	addi	a2, a2, 1365
+	slli	a2, a2, 12
+	addi	a2, a2, 1365
+	slli	a2, a2, 12
+	addi	a2, a2, 1365
+	and	a1, a1, a2
+	sub	a0, a0, a1
+	lui	a1, 13107
+	addiw	a1, a1, 819
+	slli	a1, a1, 12
+	addi	a1, a1, 819
+	slli	a1, a1, 12
+	addi	a1, a1, 819
+	slli	a1, a1, 12
+	addi	a1, a1, 819
+	and	a2, a0, a1
+	srli	a0, a0, 2
+	and	a0, a0, a1
+	add	a0, a2, a0
+	srli	a1, a0, 4
+	add	a0, a0, a1
+	lui	a1, 3855
+	addiw	a1, a1, 241
+	slli	a1, a1, 12
+	addi	a1, a1, -241
+	slli	a1, a1, 12
+	addi	a1, a1, 241
+	slli	a1, a1, 12
+	addi	a1, a1, -241
+	and	a0, a0, a1
+	lui	a1, 4112
+	addiw	a1, a1, 257
+	slli	a1, a1, 16
+	addi	a1, a1, 257
+	slli	a1, a1, 16
+	addi	a1, a1, 257
+	mul	a0, a0, a1
+	srli	a0, a0, 56
+	sw	a0, -20(s0)
+	j	.LBB102_3
+.LBB102_3:                              # %return
+	lw	a0, -20(s0)
+	ld	s0, 48(sp)
+	ld	ra, 56(sp)
+	addi	sp, sp, 64
+	ret
+.Lfunc_end102:
+	.size	_ZSt13__countl_zeroImEiT_, .Lfunc_end102-_ZSt13__countl_zeroImEiT_
                                         # -- End function
 	.section	.text._ZSt16__insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_,"axG",@progbits,_ZSt16__insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_,comdat
 	.weak	_ZSt16__insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_ # -- Begin function _ZSt16__insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_
@@ -5545,31 +5145,31 @@ _ZSt16__insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_: # @_ZSt1
 	sd	a1, -48(s0)
 	ld	a0, -40(s0)
 	ld	a1, -48(s0)
-	bne	a0, a1, .LBB124_2
-	j	.LBB124_1
-.LBB124_1:                              # %if.then
-	j	.LBB124_10
-.LBB124_2:                              # %if.end
+	bne	a0, a1, .LBB103_2
+	j	.LBB103_1
+.LBB103_1:                              # %if.then
+	j	.LBB103_10
+.LBB103_2:                              # %if.end
 	ld	a0, -40(s0)
 	addi	a0, a0, 8
 	sd	a0, -56(s0)
-	j	.LBB124_3
-.LBB124_3:                              # %for.cond
+	j	.LBB103_3
+.LBB103_3:                              # %for.cond
                                         # =>This Inner Loop Header: Depth=1
 	ld	a0, -56(s0)
 	ld	a1, -48(s0)
-	beq	a0, a1, .LBB124_9
-	j	.LBB124_4
-.LBB124_4:                              # %for.body
-                                        #   in Loop: Header=BB124_3 Depth=1
+	beq	a0, a1, .LBB103_9
+	j	.LBB103_4
+.LBB103_4:                              # %for.body
+                                        #   in Loop: Header=BB103_3 Depth=1
 	ld	a1, -56(s0)
 	ld	a2, -40(s0)
 	addi	a0, s0, -32
 	call	_ZNK9__gnu_cxx5__ops15_Iter_less_iterclIPdS3_EEbT_T0_
-	beqz	a0, .LBB124_6
-	j	.LBB124_5
-.LBB124_5:                              # %if.then2
-                                        #   in Loop: Header=BB124_3 Depth=1
+	beqz	a0, .LBB103_6
+	j	.LBB103_5
+.LBB103_5:                              # %if.then2
+                                        #   in Loop: Header=BB103_3 Depth=1
 	ld	a0, -56(s0)
 	call	_ZSt4moveIRdEONSt16remove_referenceIT_E4typeEOS2_
 	fld	ft0, 0(a0)
@@ -5583,26 +5183,26 @@ _ZSt16__insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_: # @_ZSt1
 	fld	ft0, 0(a0)
 	ld	a0, -40(s0)
 	fsd	ft0, 0(a0)
-	j	.LBB124_7
-.LBB124_6:                              # %if.else
-                                        #   in Loop: Header=BB124_3 Depth=1
+	j	.LBB103_7
+.LBB103_6:                              # %if.else
+                                        #   in Loop: Header=BB103_3 Depth=1
 	ld	s1, -56(s0)
 	call	_ZN9__gnu_cxx5__ops15__val_comp_iterENS0_15_Iter_less_iterE
 	mv	a0, s1
 	call	_ZSt25__unguarded_linear_insertIPdN9__gnu_cxx5__ops14_Val_less_iterEEvT_T0_
-	j	.LBB124_7
-.LBB124_7:                              # %if.end8
-                                        #   in Loop: Header=BB124_3 Depth=1
-	j	.LBB124_8
-.LBB124_8:                              # %for.inc
-                                        #   in Loop: Header=BB124_3 Depth=1
+	j	.LBB103_7
+.LBB103_7:                              # %if.end8
+                                        #   in Loop: Header=BB103_3 Depth=1
+	j	.LBB103_8
+.LBB103_8:                              # %for.inc
+                                        #   in Loop: Header=BB103_3 Depth=1
 	ld	a0, -56(s0)
 	addi	a0, a0, 8
 	sd	a0, -56(s0)
-	j	.LBB124_3
-.LBB124_9:                              # %for.end.loopexit
-	j	.LBB124_10
-.LBB124_10:                             # %for.end
+	j	.LBB103_3
+.LBB103_9:                              # %for.end.loopexit
+	j	.LBB103_10
+.LBB103_10:                             # %for.end
 	ld	s1, 72(sp)
 	ld	s0, 80(sp)
 	.cfi_def_cfa sp, 96
@@ -5613,8 +5213,8 @@ _ZSt16__insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_: # @_ZSt1
 	addi	sp, sp, 96
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end124:
-	.size	_ZSt16__insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_, .Lfunc_end124-_ZSt16__insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_
+.Lfunc_end103:
+	.size	_ZSt16__insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_, .Lfunc_end103-_ZSt16__insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt26__unguarded_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_,"axG",@progbits,_ZSt26__unguarded_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_,comdat
@@ -5638,27 +5238,27 @@ _ZSt26__unguarded_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_
 	sd	a1, -48(s0)
 	ld	a0, -40(s0)
 	sd	a0, -56(s0)
-	j	.LBB125_1
-.LBB125_1:                              # %for.cond
+	j	.LBB104_1
+.LBB104_1:                              # %for.cond
                                         # =>This Inner Loop Header: Depth=1
 	ld	a0, -56(s0)
 	ld	a1, -48(s0)
-	beq	a0, a1, .LBB125_4
-	j	.LBB125_2
-.LBB125_2:                              # %for.body
-                                        #   in Loop: Header=BB125_1 Depth=1
+	beq	a0, a1, .LBB104_4
+	j	.LBB104_2
+.LBB104_2:                              # %for.body
+                                        #   in Loop: Header=BB104_1 Depth=1
 	ld	s1, -56(s0)
 	call	_ZN9__gnu_cxx5__ops15__val_comp_iterENS0_15_Iter_less_iterE
 	mv	a0, s1
 	call	_ZSt25__unguarded_linear_insertIPdN9__gnu_cxx5__ops14_Val_less_iterEEvT_T0_
-	j	.LBB125_3
-.LBB125_3:                              # %for.inc
-                                        #   in Loop: Header=BB125_1 Depth=1
+	j	.LBB104_3
+.LBB104_3:                              # %for.inc
+                                        #   in Loop: Header=BB104_1 Depth=1
 	ld	a0, -56(s0)
 	addi	a0, a0, 8
 	sd	a0, -56(s0)
-	j	.LBB125_1
-.LBB125_4:                              # %for.end
+	j	.LBB104_1
+.LBB104_4:                              # %for.end
 	ld	s1, 56(sp)
 	ld	s0, 64(sp)
 	.cfi_def_cfa sp, 80
@@ -5669,8 +5269,8 @@ _ZSt26__unguarded_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_
 	addi	sp, sp, 80
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end125:
-	.size	_ZSt26__unguarded_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_, .Lfunc_end125-_ZSt26__unguarded_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_
+.Lfunc_end104:
+	.size	_ZSt26__unguarded_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_, .Lfunc_end104-_ZSt26__unguarded_insertion_sortIPdN9__gnu_cxx5__ops15_Iter_less_iterEEvT_S4_T0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt13move_backwardIPdS0_ET0_T_S2_S1_,"axG",@progbits,_ZSt13move_backwardIPdS0_ET0_T_S2_S1_,comdat
@@ -5712,8 +5312,8 @@ _ZSt13move_backwardIPdS0_ET0_T_S2_S1_:  # @_ZSt13move_backwardIPdS0_ET0_T_S2_S1_
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end126:
-	.size	_ZSt13move_backwardIPdS0_ET0_T_S2_S1_, .Lfunc_end126-_ZSt13move_backwardIPdS0_ET0_T_S2_S1_
+.Lfunc_end105:
+	.size	_ZSt13move_backwardIPdS0_ET0_T_S2_S1_, .Lfunc_end105-_ZSt13move_backwardIPdS0_ET0_T_S2_S1_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt25__unguarded_linear_insertIPdN9__gnu_cxx5__ops14_Val_less_iterEEvT_T0_,"axG",@progbits,_ZSt25__unguarded_linear_insertIPdN9__gnu_cxx5__ops14_Val_less_iterEEvT_T0_,comdat
@@ -5741,17 +5341,17 @@ _ZSt25__unguarded_linear_insertIPdN9__gnu_cxx5__ops14_Val_less_iterEEvT_T0_: # @
 	ld	a0, -48(s0)
 	addi	a0, a0, -8
 	sd	a0, -48(s0)
-	j	.LBB127_1
-.LBB127_1:                              # %while.cond
+	j	.LBB106_1
+.LBB106_1:                              # %while.cond
                                         # =>This Inner Loop Header: Depth=1
 	ld	a2, -48(s0)
 	addi	a0, s0, -24
 	addi	a1, s0, -40
 	call	_ZNK9__gnu_cxx5__ops14_Val_less_iterclIdPdEEbRT_T0_
-	beqz	a0, .LBB127_3
-	j	.LBB127_2
-.LBB127_2:                              # %while.body
-                                        #   in Loop: Header=BB127_1 Depth=1
+	beqz	a0, .LBB106_3
+	j	.LBB106_2
+.LBB106_2:                              # %while.body
+                                        #   in Loop: Header=BB106_1 Depth=1
 	ld	a0, -48(s0)
 	call	_ZSt4moveIRdEONSt16remove_referenceIT_E4typeEOS2_
 	fld	ft0, 0(a0)
@@ -5762,8 +5362,8 @@ _ZSt25__unguarded_linear_insertIPdN9__gnu_cxx5__ops14_Val_less_iterEEvT_T0_: # @
 	ld	a0, -48(s0)
 	addi	a0, a0, -8
 	sd	a0, -48(s0)
-	j	.LBB127_1
-.LBB127_3:                              # %while.end
+	j	.LBB106_1
+.LBB106_3:                              # %while.end
 	addi	a0, s0, -40
 	call	_ZSt4moveIRdEONSt16remove_referenceIT_E4typeEOS2_
 	fld	ft0, 0(a0)
@@ -5777,8 +5377,8 @@ _ZSt25__unguarded_linear_insertIPdN9__gnu_cxx5__ops14_Val_less_iterEEvT_T0_: # @
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end127:
-	.size	_ZSt25__unguarded_linear_insertIPdN9__gnu_cxx5__ops14_Val_less_iterEEvT_T0_, .Lfunc_end127-_ZSt25__unguarded_linear_insertIPdN9__gnu_cxx5__ops14_Val_less_iterEEvT_T0_
+.Lfunc_end106:
+	.size	_ZSt25__unguarded_linear_insertIPdN9__gnu_cxx5__ops14_Val_less_iterEEvT_T0_, .Lfunc_end106-_ZSt25__unguarded_linear_insertIPdN9__gnu_cxx5__ops14_Val_less_iterEEvT_T0_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZN9__gnu_cxx5__ops15__val_comp_iterENS0_15_Iter_less_iterE,"axG",@progbits,_ZN9__gnu_cxx5__ops15__val_comp_iterENS0_15_Iter_less_iterE,comdat
@@ -5795,8 +5395,8 @@ _ZN9__gnu_cxx5__ops15__val_comp_iterENS0_15_Iter_less_iterE: # @_ZN9__gnu_cxx5__
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end128:
-	.size	_ZN9__gnu_cxx5__ops15__val_comp_iterENS0_15_Iter_less_iterE, .Lfunc_end128-_ZN9__gnu_cxx5__ops15__val_comp_iterENS0_15_Iter_less_iterE
+.Lfunc_end107:
+	.size	_ZN9__gnu_cxx5__ops15__val_comp_iterENS0_15_Iter_less_iterE, .Lfunc_end107-_ZN9__gnu_cxx5__ops15__val_comp_iterENS0_15_Iter_less_iterE
                                         # -- End function
 	.section	.text._ZSt22__copy_move_backward_aILb1EPdS0_ET1_T0_S2_S1_,"axG",@progbits,_ZSt22__copy_move_backward_aILb1EPdS0_ET1_T0_S2_S1_,comdat
 	.weak	_ZSt22__copy_move_backward_aILb1EPdS0_ET1_T0_S2_S1_ # -- Begin function _ZSt22__copy_move_backward_aILb1EPdS0_ET1_T0_S2_S1_
@@ -5847,8 +5447,8 @@ _ZSt22__copy_move_backward_aILb1EPdS0_ET1_T0_S2_S1_: # @_ZSt22__copy_move_backwa
 	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end129:
-	.size	_ZSt22__copy_move_backward_aILb1EPdS0_ET1_T0_S2_S1_, .Lfunc_end129-_ZSt22__copy_move_backward_aILb1EPdS0_ET1_T0_S2_S1_
+.Lfunc_end108:
+	.size	_ZSt22__copy_move_backward_aILb1EPdS0_ET1_T0_S2_S1_, .Lfunc_end108-_ZSt22__copy_move_backward_aILb1EPdS0_ET1_T0_S2_S1_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt12__miter_baseIPdET_S1_,"axG",@progbits,_ZSt12__miter_baseIPdET_S1_,comdat
@@ -5867,8 +5467,8 @@ _ZSt12__miter_baseIPdET_S1_:            # @_ZSt12__miter_baseIPdET_S1_
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end130:
-	.size	_ZSt12__miter_baseIPdET_S1_, .Lfunc_end130-_ZSt12__miter_baseIPdET_S1_
+.Lfunc_end109:
+	.size	_ZSt12__miter_baseIPdET_S1_, .Lfunc_end109-_ZSt12__miter_baseIPdET_S1_
                                         # -- End function
 	.section	.text._ZSt12__niter_wrapIPdET_RKS1_S1_,"axG",@progbits,_ZSt12__niter_wrapIPdET_RKS1_S1_,comdat
 	.weak	_ZSt12__niter_wrapIPdET_RKS1_S1_ # -- Begin function _ZSt12__niter_wrapIPdET_RKS1_S1_
@@ -5887,8 +5487,8 @@ _ZSt12__niter_wrapIPdET_RKS1_S1_:       # @_ZSt12__niter_wrapIPdET_RKS1_S1_
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end131:
-	.size	_ZSt12__niter_wrapIPdET_RKS1_S1_, .Lfunc_end131-_ZSt12__niter_wrapIPdET_RKS1_S1_
+.Lfunc_end110:
+	.size	_ZSt12__niter_wrapIPdET_RKS1_S1_, .Lfunc_end110-_ZSt12__niter_wrapIPdET_RKS1_S1_
                                         # -- End function
 	.section	.text._ZSt23__copy_move_backward_a1ILb1EPdS0_ET1_T0_S2_S1_,"axG",@progbits,_ZSt23__copy_move_backward_a1ILb1EPdS0_ET1_T0_S2_S1_,comdat
 	.weak	_ZSt23__copy_move_backward_a1ILb1EPdS0_ET1_T0_S2_S1_ # -- Begin function _ZSt23__copy_move_backward_a1ILb1EPdS0_ET1_T0_S2_S1_
@@ -5920,8 +5520,8 @@ _ZSt23__copy_move_backward_a1ILb1EPdS0_ET1_T0_S2_S1_: # @_ZSt23__copy_move_backw
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end132:
-	.size	_ZSt23__copy_move_backward_a1ILb1EPdS0_ET1_T0_S2_S1_, .Lfunc_end132-_ZSt23__copy_move_backward_a1ILb1EPdS0_ET1_T0_S2_S1_
+.Lfunc_end111:
+	.size	_ZSt23__copy_move_backward_a1ILb1EPdS0_ET1_T0_S2_S1_, .Lfunc_end111-_ZSt23__copy_move_backward_a1ILb1EPdS0_ET1_T0_S2_S1_
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZSt12__niter_baseIPdET_S1_,"axG",@progbits,_ZSt12__niter_baseIPdET_S1_,comdat
@@ -5940,8 +5540,8 @@ _ZSt12__niter_baseIPdET_S1_:            # @_ZSt12__niter_baseIPdET_S1_
 	ld	ra, 24(sp)
 	addi	sp, sp, 32
 	ret
-.Lfunc_end133:
-	.size	_ZSt12__niter_baseIPdET_S1_, .Lfunc_end133-_ZSt12__niter_baseIPdET_S1_
+.Lfunc_end112:
+	.size	_ZSt12__niter_baseIPdET_S1_, .Lfunc_end112-_ZSt12__niter_baseIPdET_S1_
                                         # -- End function
 	.section	.text._ZSt23__copy_move_backward_a2ILb1EPdS0_ET1_T0_S2_S1_,"axG",@progbits,_ZSt23__copy_move_backward_a2ILb1EPdS0_ET1_T0_S2_S1_,comdat
 	.weak	_ZSt23__copy_move_backward_a2ILb1EPdS0_ET1_T0_S2_S1_ # -- Begin function _ZSt23__copy_move_backward_a2ILb1EPdS0_ET1_T0_S2_S1_
@@ -5964,7 +5564,7 @@ _ZSt23__copy_move_backward_a2ILb1EPdS0_ET1_T0_S2_S1_: # @_ZSt23__copy_move_backw
 	ld	a0, -24(s0)
 	ld	a1, -32(s0)
 	ld	a2, -40(s0)
-	call	_ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIdEEPT_PKS3_S6_S4_
+	call	_ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIddEEPT0_PT_S6_S4_
 	ld	s0, 32(sp)
 	.cfi_def_cfa sp, 48
 	ld	ra, 40(sp)
@@ -5973,20 +5573,25 @@ _ZSt23__copy_move_backward_a2ILb1EPdS0_ET1_T0_S2_S1_: # @_ZSt23__copy_move_backw
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end134:
-	.size	_ZSt23__copy_move_backward_a2ILb1EPdS0_ET1_T0_S2_S1_, .Lfunc_end134-_ZSt23__copy_move_backward_a2ILb1EPdS0_ET1_T0_S2_S1_
+.Lfunc_end113:
+	.size	_ZSt23__copy_move_backward_a2ILb1EPdS0_ET1_T0_S2_S1_, .Lfunc_end113-_ZSt23__copy_move_backward_a2ILb1EPdS0_ET1_T0_S2_S1_
 	.cfi_endproc
                                         # -- End function
-	.section	.text._ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIdEEPT_PKS3_S6_S4_,"axG",@progbits,_ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIdEEPT_PKS3_S6_S4_,comdat
-	.weak	_ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIdEEPT_PKS3_S6_S4_ # -- Begin function _ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIdEEPT_PKS3_S6_S4_
+	.section	.text._ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIddEEPT0_PT_S6_S4_,"axG",@progbits,_ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIddEEPT0_PT_S6_S4_,comdat
+	.weak	_ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIddEEPT0_PT_S6_S4_ # -- Begin function _ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIddEEPT0_PT_S6_S4_
 	.p2align	2
-	.type	_ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIdEEPT_PKS3_S6_S4_,@function
-_ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIdEEPT_PKS3_S6_S4_: # @_ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIdEEPT_PKS3_S6_S4_
+	.type	_ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIddEEPT0_PT_S6_S4_,@function
+_ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIddEEPT0_PT_S6_S4_: # @_ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIddEEPT0_PT_S6_S4_
+	.cfi_startproc
 # %bb.0:                                # %entry
 	addi	sp, sp, -48
+	.cfi_def_cfa_offset 48
 	sd	ra, 40(sp)
 	sd	s0, 32(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
 	addi	s0, sp, 48
+	.cfi_def_cfa s0, 0
 	sd	a0, -24(s0)
 	sd	a1, -32(s0)
 	sd	a2, -40(s0)
@@ -5996,27 +5601,70 @@ _ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move
 	srai	a0, a0, 3
 	sd	a0, -48(s0)
 	ld	a0, -48(s0)
-	beqz	a0, .LBB135_2
-	j	.LBB135_1
-.LBB135_1:                              # %if.then
+	addi	a1, zero, 2
+	blt	a0, a1, .LBB114_2
+	j	.LBB114_1
+.LBB114_1:                              # %if.then
 	ld	a0, -40(s0)
 	ld	a1, -48(s0)
 	slli	a2, a1, 3
 	sub	a0, a0, a2
 	ld	a1, -24(s0)
 	call	memmove
-	j	.LBB135_2
-.LBB135_2:                              # %if.end
+	j	.LBB114_5
+.LBB114_2:                              # %if.else
+	ld	a0, -48(s0)
+	addi	a1, zero, 1
+	bne	a0, a1, .LBB114_4
+	j	.LBB114_3
+.LBB114_3:                              # %if.then2
+	ld	a0, -40(s0)
+	addi	a0, a0, -8
+	ld	a1, -24(s0)
+	call	_ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE12__assign_oneIddEEvPT_PT0_
+	j	.LBB114_4
+.LBB114_4:                              # %if.end
+	j	.LBB114_5
+.LBB114_5:                              # %if.end4
 	ld	a0, -40(s0)
 	ld	a1, -48(s0)
 	slli	a1, a1, 3
 	sub	a0, a0, a1
 	ld	s0, 32(sp)
+	.cfi_def_cfa sp, 48
 	ld	ra, 40(sp)
+	.cfi_restore ra
+	.cfi_restore s0
 	addi	sp, sp, 48
+	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end135:
-	.size	_ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIdEEPT_PKS3_S6_S4_, .Lfunc_end135-_ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIdEEPT_PKS3_S6_S4_
+.Lfunc_end114:
+	.size	_ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIddEEPT0_PT_S6_S4_, .Lfunc_end114-_ZNSt20__copy_move_backwardILb1ELb1ESt26random_access_iterator_tagE13__copy_move_bIddEEPT0_PT_S6_S4_
+	.cfi_endproc
+                                        # -- End function
+	.section	.text._ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE12__assign_oneIddEEvPT_PT0_,"axG",@progbits,_ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE12__assign_oneIddEEvPT_PT0_,comdat
+	.weak	_ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE12__assign_oneIddEEvPT_PT0_ # -- Begin function _ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE12__assign_oneIddEEvPT_PT0_
+	.p2align	2
+	.type	_ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE12__assign_oneIddEEvPT_PT0_,@function
+_ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE12__assign_oneIddEEvPT_PT0_: # @_ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE12__assign_oneIddEEvPT_PT0_
+# %bb.0:                                # %entry
+	addi	sp, sp, -32
+	sd	ra, 24(sp)
+	sd	s0, 16(sp)
+	addi	s0, sp, 32
+	sd	a0, -24(s0)
+	sd	a1, -32(s0)
+	ld	a0, -32(s0)
+	call	_ZSt4moveIRdEONSt16remove_referenceIT_E4typeEOS2_
+	fld	ft0, 0(a0)
+	ld	a0, -24(s0)
+	fsd	ft0, 0(a0)
+	ld	s0, 16(sp)
+	ld	ra, 24(sp)
+	addi	sp, sp, 32
+	ret
+.Lfunc_end115:
+	.size	_ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE12__assign_oneIddEEvPT_PT0_, .Lfunc_end115-_ZNSt11__copy_moveILb1ELb0ESt26random_access_iterator_tagE12__assign_oneIddEEvPT_PT0_
                                         # -- End function
 	.section	.text._ZNK9__gnu_cxx5__ops14_Val_less_iterclIdPdEEbRT_T0_,"axG",@progbits,_ZNK9__gnu_cxx5__ops14_Val_less_iterclIdPdEEbRT_T0_,comdat
 	.weak	_ZNK9__gnu_cxx5__ops14_Val_less_iterclIdPdEEbRT_T0_ # -- Begin function _ZNK9__gnu_cxx5__ops14_Val_less_iterclIdPdEEbRT_T0_
@@ -6040,8 +5688,8 @@ _ZNK9__gnu_cxx5__ops14_Val_less_iterclIdPdEEbRT_T0_: # @_ZNK9__gnu_cxx5__ops14_V
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end136:
-	.size	_ZNK9__gnu_cxx5__ops14_Val_less_iterclIdPdEEbRT_T0_, .Lfunc_end136-_ZNK9__gnu_cxx5__ops14_Val_less_iterclIdPdEEbRT_T0_
+.Lfunc_end116:
+	.size	_ZNK9__gnu_cxx5__ops14_Val_less_iterclIdPdEEbRT_T0_, .Lfunc_end116-_ZNK9__gnu_cxx5__ops14_Val_less_iterclIdPdEEbRT_T0_
                                         # -- End function
 	.section	.text._ZNSt6vectorIbSaIbEE5beginEv,"axG",@progbits,_ZNSt6vectorIbSaIbEE5beginEv,comdat
 	.weak	_ZNSt6vectorIbSaIbEE5beginEv # -- Begin function _ZNSt6vectorIbSaIbEE5beginEv
@@ -6069,8 +5717,8 @@ _ZNSt6vectorIbSaIbEE5beginEv:           # @_ZNSt6vectorIbSaIbEE5beginEv
 	mv	a2, zero
 	call	_ZNSt13_Bit_iteratorC2EPmj
 .Ltmp55:
-	j	.LBB137_1
-.LBB137_1:                              # %invoke.cont
+	j	.LBB117_1
+.LBB117_1:                              # %invoke.cont
 	ld	a0, -32(s0)
 	ld	a1, -24(s0)
 	ld	s0, 32(sp)
@@ -6081,15 +5729,15 @@ _ZNSt6vectorIbSaIbEE5beginEv:           # @_ZNSt6vectorIbSaIbEE5beginEv
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.LBB137_2:                              # %terminate.lpad
+.LBB117_2:                              # %terminate.lpad
 .Ltmp56:
 	call	__clang_call_terminate
-.Lfunc_end137:
-	.size	_ZNSt6vectorIbSaIbEE5beginEv, .Lfunc_end137-_ZNSt6vectorIbSaIbEE5beginEv
+.Lfunc_end117:
+	.size	_ZNSt6vectorIbSaIbEE5beginEv, .Lfunc_end117-_ZNSt6vectorIbSaIbEE5beginEv
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table137:
+GCC_except_table117:
 .Lexception10:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	155                     # @TType Encoding = indirect pcrel sdata4
@@ -6148,8 +5796,8 @@ _ZNKSt13_Bit_iteratorixEl:              # @_ZNKSt13_Bit_iteratorixEl
 	addi	sp, sp, 64
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end138:
-	.size	_ZNKSt13_Bit_iteratorixEl, .Lfunc_end138-_ZNKSt13_Bit_iteratorixEl
+.Lfunc_end118:
+	.size	_ZNKSt13_Bit_iteratorixEl, .Lfunc_end118-_ZNKSt13_Bit_iteratorixEl
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt13_Bit_iteratorC2EPmj,"axG",@progbits,_ZNSt13_Bit_iteratorC2EPmj,comdat
@@ -6173,8 +5821,8 @@ _ZNSt13_Bit_iteratorC2EPmj:             # @_ZNSt13_Bit_iteratorC2EPmj
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end139:
-	.size	_ZNSt13_Bit_iteratorC2EPmj, .Lfunc_end139-_ZNSt13_Bit_iteratorC2EPmj
+.Lfunc_end119:
+	.size	_ZNSt13_Bit_iteratorC2EPmj, .Lfunc_end119-_ZNSt13_Bit_iteratorC2EPmj
                                         # -- End function
 	.section	.text._ZStplRKSt13_Bit_iteratorl,"axG",@progbits,_ZStplRKSt13_Bit_iteratorl,comdat
 	.weak	_ZStplRKSt13_Bit_iteratorl # -- Begin function _ZStplRKSt13_Bit_iteratorl
@@ -6211,8 +5859,8 @@ _ZStplRKSt13_Bit_iteratorl:             # @_ZStplRKSt13_Bit_iteratorl
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end140:
-	.size	_ZStplRKSt13_Bit_iteratorl, .Lfunc_end140-_ZStplRKSt13_Bit_iteratorl
+.Lfunc_end120:
+	.size	_ZStplRKSt13_Bit_iteratorl, .Lfunc_end120-_ZStplRKSt13_Bit_iteratorl
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNKSt13_Bit_iteratordeEv,"axG",@progbits,_ZNKSt13_Bit_iteratordeEv,comdat
@@ -6230,16 +5878,17 @@ _ZNKSt13_Bit_iteratordeEv:              # @_ZNKSt13_Bit_iteratordeEv
 	.cfi_offset s0, -16
 	addi	s0, sp, 48
 	.cfi_def_cfa s0, 0
-	sd	a0, -40(s0)
-	ld	a0, -40(s0)
+	sd	a0, -48(s0)
+	ld	a0, -48(s0)
+	sd	a0, -24(s0)
 	ld	a1, 0(a0)
 	lwu	a0, 8(a0)
 	addi	a2, zero, 1
 	sll	a2, a2, a0
-	addi	a0, s0, -32
+	addi	a0, s0, -40
 	call	_ZNSt14_Bit_referenceC2EPmm
-	ld	a0, -32(s0)
-	ld	a1, -24(s0)
+	ld	a0, -40(s0)
+	ld	a1, -32(s0)
 	ld	s0, 32(sp)
 	.cfi_def_cfa sp, 48
 	ld	ra, 40(sp)
@@ -6248,8 +5897,8 @@ _ZNKSt13_Bit_iteratordeEv:              # @_ZNKSt13_Bit_iteratordeEv
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end141:
-	.size	_ZNKSt13_Bit_iteratordeEv, .Lfunc_end141-_ZNKSt13_Bit_iteratordeEv
+.Lfunc_end121:
+	.size	_ZNKSt13_Bit_iteratordeEv, .Lfunc_end121-_ZNKSt13_Bit_iteratordeEv
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt13_Bit_iteratorpLEl,"axG",@progbits,_ZNSt13_Bit_iteratorpLEl,comdat
@@ -6286,8 +5935,8 @@ _ZNSt13_Bit_iteratorpLEl:               # @_ZNSt13_Bit_iteratorpLEl
 	addi	sp, sp, 48
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end142:
-	.size	_ZNSt13_Bit_iteratorpLEl, .Lfunc_end142-_ZNSt13_Bit_iteratorpLEl
+.Lfunc_end122:
+	.size	_ZNSt13_Bit_iteratorpLEl, .Lfunc_end122-_ZNSt13_Bit_iteratorpLEl
 	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt18_Bit_iterator_base7_M_incrEl,"axG",@progbits,_ZNSt18_Bit_iterator_base7_M_incrEl,comdat
@@ -6295,19 +5944,25 @@ _ZNSt13_Bit_iteratorpLEl:               # @_ZNSt13_Bit_iteratorpLEl
 	.p2align	2
 	.type	_ZNSt18_Bit_iterator_base7_M_incrEl,@function
 _ZNSt18_Bit_iterator_base7_M_incrEl:    # @_ZNSt18_Bit_iterator_base7_M_incrEl
+	.cfi_startproc
 # %bb.0:                                # %entry
 	addi	sp, sp, -48
+	.cfi_def_cfa_offset 48
 	sd	ra, 40(sp)
 	sd	s0, 32(sp)
+	.cfi_offset ra, -8
+	.cfi_offset s0, -16
 	addi	s0, sp, 48
+	.cfi_def_cfa s0, 0
+	sd	a0, -32(s0)
+	sd	a1, -40(s0)
+	ld	a0, -32(s0)
 	sd	a0, -24(s0)
-	sd	a1, -32(s0)
-	ld	a0, -24(s0)
-	ld	a1, -32(s0)
+	ld	a1, -40(s0)
 	lwu	a2, 8(a0)
 	add	a1, a1, a2
-	sd	a1, -40(s0)
-	ld	a1, -40(s0)
+	sd	a1, -48(s0)
+	ld	a1, -48(s0)
 	srai	a2, a1, 63
 	srli	a2, a2, 58
 	add	a1, a1, a2
@@ -6316,34 +5971,39 @@ _ZNSt18_Bit_iterator_base7_M_incrEl:    # @_ZNSt18_Bit_iterator_base7_M_incrEl
 	slli	a1, a1, 3
 	add	a1, a2, a1
 	sd	a1, 0(a0)
-	ld	a1, -40(s0)
+	ld	a1, -48(s0)
 	srai	a2, a1, 63
 	srli	a2, a2, 58
 	add	a2, a1, a2
 	andi	a2, a2, -64
 	sub	a1, a1, a2
-	sd	a1, -40(s0)
-	ld	a1, -40(s0)
+	sd	a1, -48(s0)
+	ld	a1, -48(s0)
 	addi	a2, zero, -1
-	blt	a2, a1, .LBB143_2
-	j	.LBB143_1
-.LBB143_1:                              # %if.then
-	ld	a1, -40(s0)
+	blt	a2, a1, .LBB123_2
+	j	.LBB123_1
+.LBB123_1:                              # %if.then
+	ld	a1, -48(s0)
 	addi	a1, a1, 64
-	sd	a1, -40(s0)
+	sd	a1, -48(s0)
 	ld	a1, 0(a0)
 	addi	a1, a1, -8
 	sd	a1, 0(a0)
-	j	.LBB143_2
-.LBB143_2:                              # %if.end
-	ld	a1, -40(s0)
+	j	.LBB123_2
+.LBB123_2:                              # %if.end
+	ld	a1, -48(s0)
 	sw	a1, 8(a0)
 	ld	s0, 32(sp)
+	.cfi_def_cfa sp, 48
 	ld	ra, 40(sp)
+	.cfi_restore ra
+	.cfi_restore s0
 	addi	sp, sp, 48
+	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end143:
-	.size	_ZNSt18_Bit_iterator_base7_M_incrEl, .Lfunc_end143-_ZNSt18_Bit_iterator_base7_M_incrEl
+.Lfunc_end123:
+	.size	_ZNSt18_Bit_iterator_base7_M_incrEl, .Lfunc_end123-_ZNSt18_Bit_iterator_base7_M_incrEl
+	.cfi_endproc
                                         # -- End function
 	.section	.text._ZNSt14_Bit_referenceC2EPmm,"axG",@progbits,_ZNSt14_Bit_referenceC2EPmm,comdat
 	.weak	_ZNSt14_Bit_referenceC2EPmm # -- Begin function _ZNSt14_Bit_referenceC2EPmm
@@ -6367,8 +6027,8 @@ _ZNSt14_Bit_referenceC2EPmm:            # @_ZNSt14_Bit_referenceC2EPmm
 	ld	ra, 40(sp)
 	addi	sp, sp, 48
 	ret
-.Lfunc_end144:
-	.size	_ZNSt14_Bit_referenceC2EPmm, .Lfunc_end144-_ZNSt14_Bit_referenceC2EPmm
+.Lfunc_end124:
+	.size	_ZNSt14_Bit_referenceC2EPmm, .Lfunc_end124-_ZNSt14_Bit_referenceC2EPmm
                                         # -- End function
 	.section	.text._ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd,"axG",@progbits,_ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd,comdat
 	.weak	_ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd # -- Begin function _ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd
@@ -6380,71 +6040,75 @@ _ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd: # @_ZNSt6vectorIdSaIdEE15_M_erase_at_e
 	.cfi_personality 155, DW.ref.__gxx_personality_v0
 	.cfi_lsda 27, .Lexception11
 # %bb.0:                                # %entry
-	addi	sp, sp, -64
-	.cfi_def_cfa_offset 64
-	sd	ra, 56(sp)
-	sd	s0, 48(sp)
-	sd	s1, 40(sp)
-	sd	s2, 32(sp)
-	sd	s3, 24(sp)
+	addi	sp, sp, -96
+	.cfi_def_cfa_offset 96
+	sd	ra, 88(sp)
+	sd	s0, 80(sp)
+	sd	s1, 72(sp)
+	sd	s2, 64(sp)
+	sd	s3, 56(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
 	.cfi_offset s1, -24
 	.cfi_offset s2, -32
 	.cfi_offset s3, -40
-	addi	s0, sp, 64
+	addi	s0, sp, 96
 	.cfi_def_cfa s0, 0
-	sd	a0, -48(s0)
-	sd	a1, -56(s0)
-	ld	s1, -48(s0)
+	sd	a0, -72(s0)
+	sd	a1, -80(s0)
+	ld	s1, -72(s0)
 	ld	a0, 8(s1)
-	ld	a1, -56(s0)
+	ld	a1, -80(s0)
 	sub	a0, a0, a1
 	srai	a0, a0, 3
-	sd	a0, -64(s0)
-	ld	a0, -64(s0)
-	beqz	a0, .LBB145_3
-	j	.LBB145_1
-.LBB145_1:                              # %if.then
-	ld	s2, -56(s0)
+	sd	a0, -88(s0)
+	ld	a0, -88(s0)
+	beqz	a0, .LBB125_4
+	j	.LBB125_1
+.LBB125_1:                              # %if.then
+	ld	s2, -80(s0)
 	ld	s3, 8(s1)
 	mv	a0, s1
 	call	_ZNSt12_Vector_baseIdSaIdEE19_M_get_Tp_allocatorEv
-	mv	a2, a0
+	sd	s2, -48(s0)
+	sd	s3, -56(s0)
+	sd	a0, -64(s0)
+	ld	a0, -48(s0)
+	ld	a1, -56(s0)
 .Ltmp57:
-	mv	a0, s2
-	mv	a1, s3
-	call	_ZSt8_DestroyIPddEvT_S1_RSaIT0_E
+	call	_ZSt8_DestroyIPdEvT_S1_
 .Ltmp58:
-	j	.LBB145_2
-.LBB145_2:                              # %invoke.cont
-	ld	a0, -56(s0)
+	j	.LBB125_2
+.LBB125_2:                              # %_ZSt8_DestroyIPddEvT_S1_RSaIT0_E.exit
+	j	.LBB125_3
+.LBB125_3:                              # %invoke.cont
+	ld	a0, -80(s0)
 	sd	a0, 8(s1)
-	j	.LBB145_3
-.LBB145_3:                              # %if.end
-	ld	s3, 24(sp)
-	ld	s2, 32(sp)
-	ld	s1, 40(sp)
-	ld	s0, 48(sp)
-	.cfi_def_cfa sp, 64
-	ld	ra, 56(sp)
+	j	.LBB125_4
+.LBB125_4:                              # %if.end
+	ld	s3, 56(sp)
+	ld	s2, 64(sp)
+	ld	s1, 72(sp)
+	ld	s0, 80(sp)
+	.cfi_def_cfa sp, 96
+	ld	ra, 88(sp)
 	.cfi_restore ra
 	.cfi_restore s0
 	.cfi_restore s1
 	.cfi_restore s2
 	.cfi_restore s3
-	addi	sp, sp, 64
+	addi	sp, sp, 96
 	.cfi_def_cfa_offset 0
 	ret
-.LBB145_4:                              # %terminate.lpad
+.LBB125_5:                              # %terminate.lpad
 .Ltmp59:
 	call	__clang_call_terminate
-.Lfunc_end145:
-	.size	_ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd, .Lfunc_end145-_ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd
+.Lfunc_end125:
+	.size	_ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd, .Lfunc_end125-_ZNSt6vectorIdSaIdEE15_M_erase_at_endEPd
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table145:
+GCC_except_table125:
 .Lexception11:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	155                     # @TType Encoding = indirect pcrel sdata4
@@ -6477,25 +6141,25 @@ _ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE15_M_erase_at_endEPS3_: 
 	.cfi_personality 155, DW.ref.__gxx_personality_v0
 	.cfi_lsda 27, .Lexception12
 # %bb.0:                                # %entry
-	addi	sp, sp, -64
-	.cfi_def_cfa_offset 64
-	sd	ra, 56(sp)
-	sd	s0, 48(sp)
-	sd	s1, 40(sp)
-	sd	s2, 32(sp)
-	sd	s3, 24(sp)
+	addi	sp, sp, -96
+	.cfi_def_cfa_offset 96
+	sd	ra, 88(sp)
+	sd	s0, 80(sp)
+	sd	s1, 72(sp)
+	sd	s2, 64(sp)
+	sd	s3, 56(sp)
 	.cfi_offset ra, -8
 	.cfi_offset s0, -16
 	.cfi_offset s1, -24
 	.cfi_offset s2, -32
 	.cfi_offset s3, -40
-	addi	s0, sp, 64
+	addi	s0, sp, 96
 	.cfi_def_cfa s0, 0
-	sd	a0, -48(s0)
-	sd	a1, -56(s0)
-	ld	s1, -48(s0)
+	sd	a0, -72(s0)
+	sd	a1, -80(s0)
+	ld	s1, -72(s0)
 	ld	a0, 8(s1)
-	ld	a1, -56(s0)
+	ld	a1, -80(s0)
 	sub	a0, a0, a1
 	srai	a0, a0, 3
 	lui	a1, 1026731
@@ -6507,50 +6171,54 @@ _ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE15_M_erase_at_endEPS3_: 
 	slli	a1, a1, 12
 	addi	a1, a1, -1365
 	mul	a0, a0, a1
-	sd	a0, -64(s0)
-	ld	a0, -64(s0)
-	beqz	a0, .LBB146_3
-	j	.LBB146_1
-.LBB146_1:                              # %if.then
-	ld	s2, -56(s0)
+	sd	a0, -88(s0)
+	ld	a0, -88(s0)
+	beqz	a0, .LBB126_4
+	j	.LBB126_1
+.LBB126_1:                              # %if.then
+	ld	s2, -80(s0)
 	ld	s3, 8(s1)
 	mv	a0, s1
 	call	_ZNSt12_Vector_baseIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE19_M_get_Tp_allocatorEv
-	mv	a2, a0
+	sd	s2, -48(s0)
+	sd	s3, -56(s0)
+	sd	a0, -64(s0)
+	ld	a0, -48(s0)
+	ld	a1, -56(s0)
 .Ltmp60:
-	mv	a0, s2
-	mv	a1, s3
-	call	_ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEES3_EvT_S5_RSaIT0_E
+	call	_ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEEEvT_S5_
 .Ltmp61:
-	j	.LBB146_2
-.LBB146_2:                              # %invoke.cont
-	ld	a0, -56(s0)
+	j	.LBB126_2
+.LBB126_2:                              # %_ZSt8_DestroyIPN3glm3vecILi3EdLNS0_9qualifierE0EEES3_EvT_S5_RSaIT0_E.exit
+	j	.LBB126_3
+.LBB126_3:                              # %invoke.cont
+	ld	a0, -80(s0)
 	sd	a0, 8(s1)
-	j	.LBB146_3
-.LBB146_3:                              # %if.end
-	ld	s3, 24(sp)
-	ld	s2, 32(sp)
-	ld	s1, 40(sp)
-	ld	s0, 48(sp)
-	.cfi_def_cfa sp, 64
-	ld	ra, 56(sp)
+	j	.LBB126_4
+.LBB126_4:                              # %if.end
+	ld	s3, 56(sp)
+	ld	s2, 64(sp)
+	ld	s1, 72(sp)
+	ld	s0, 80(sp)
+	.cfi_def_cfa sp, 96
+	ld	ra, 88(sp)
 	.cfi_restore ra
 	.cfi_restore s0
 	.cfi_restore s1
 	.cfi_restore s2
 	.cfi_restore s3
-	addi	sp, sp, 64
+	addi	sp, sp, 96
 	.cfi_def_cfa_offset 0
 	ret
-.LBB146_4:                              # %terminate.lpad
+.LBB126_5:                              # %terminate.lpad
 .Ltmp62:
 	call	__clang_call_terminate
-.Lfunc_end146:
-	.size	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE15_M_erase_at_endEPS3_, .Lfunc_end146-_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE15_M_erase_at_endEPS3_
+.Lfunc_end126:
+	.size	_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE15_M_erase_at_endEPS3_, .Lfunc_end126-_ZNSt6vectorIN3glm3vecILi3EdLNS0_9qualifierE0EEESaIS3_EE15_M_erase_at_endEPS3_
 	.cfi_endproc
 	.section	.gcc_except_table,"a",@progbits
 	.p2align	2
-GCC_except_table146:
+GCC_except_table126:
 .Lexception12:
 	.byte	255                     # @LPStart Encoding = omit
 	.byte	155                     # @TType Encoding = indirect pcrel sdata4
@@ -6598,8 +6266,8 @@ _GLOBAL__sub_I_edge_detection.cpp:      # @_GLOBAL__sub_I_edge_detection.cpp
 	addi	sp, sp, 16
 	.cfi_def_cfa_offset 0
 	ret
-.Lfunc_end147:
-	.size	_GLOBAL__sub_I_edge_detection.cpp, .Lfunc_end147-_GLOBAL__sub_I_edge_detection.cpp
+.Lfunc_end127:
+	.size	_GLOBAL__sub_I_edge_detection.cpp, .Lfunc_end127-_GLOBAL__sub_I_edge_detection.cpp
 	.cfi_endproc
                                         # -- End function
 	.type	no_edge,@object         # @no_edge
@@ -6610,6 +6278,7 @@ no_edge:
 	.zero	40
 	.size	no_edge, 40
 
+	.hidden	__dso_handle
 	.type	fig,@object             # @fig
 	.globl	fig
 	.p2align	3
@@ -6642,8 +6311,23 @@ height:
 	.type	.L.str,@object          # @.str
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .L.str:
+	.asciz	"/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm/glm/./ext/../detail/type_vec3.inl"
+	.size	.L.str, 89
+
+	.type	.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi,@object # @__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi
+.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi:
+	.asciz	"T &glm::vec<3, double, glm::packed_highp>::operator[](typename vec<3, T, Q>::length_type) [L = 3, T = double, Q = glm::packed_highp]"
+	.size	.L__PRETTY_FUNCTION__._ZN3glm3vecILi3EdLNS_9qualifierE0EEixEi, 133
+
+	.type	.L.str.3,@object        # @.str.3
+.L.str.3:
+	.asciz	"i >= 0 && i < this->length()"
+	.size	.L.str.3, 29
+
+	.type	.L.str.4,@object        # @.str.4
+.L.str.4:
 	.asciz	"cannot create std::vector larger than max_size()"
-	.size	.L.str, 49
+	.size	.L.str.4, 49
 
 	.section	.init_array,"aw",@init_array
 	.p2align	3

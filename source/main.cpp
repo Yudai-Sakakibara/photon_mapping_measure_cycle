@@ -1,4 +1,3 @@
-#include <filesystem>
 #include <cstdio>
 #include <fstream>
 
@@ -9,17 +8,9 @@
 
 int main(int argc, char* argv[])
 {
-    if (argc > 1)
-    {
-        std::string command_path;
-        for (int i = 1; i < argc; i++)
-        {
-            command_path += argv[i];
-        }
-        Scene::path = std::filesystem::current_path() / command_path;
-    }
+    Scene::path = "/home/sakakibara/monte-carlo-ray-tracer_approx/scenes";
     std::printf("Scene directory:\n");
-    std::printf("%s\n", Scene::path.string().c_str());
+    std::printf("%s\n", Scene::path.c_str());
 
     std::vector<Option> options;
     try
@@ -56,19 +47,7 @@ int main(int argc, char* argv[])
         return -1;
     }
 
-    /** asm volatile ("li a7, 0x10001\n\t" 
-        "ecall" 
-        :
-        :
-        : "a7"); **/
-
     camera->capture();
-
-    /** asm volatile ("li a7, 0x10001\n\t" 
-        "ecall" 
-        :
-        :
-        : "a7"); **/
 
     return 0;
 }

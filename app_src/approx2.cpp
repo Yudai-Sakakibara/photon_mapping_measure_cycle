@@ -1,18 +1,15 @@
-#include <stdio.h>
-#include <filesystem>
+#include <cstdio>
 
 int main(int argc, char* argv[])
 {
         int app = 0;
         int dummy = 1;
-        std::filesystem::path p = std::filesystem::current_path();
-        std::printf("%s\n", p.c_str());
 
-        asm volatile ("li a7, 0x10001\n\t" 
+        /** asm volatile ("li a7, 0x10001\n\t" 
         "ecall" 
         :
         :
-        : "a7"); 
+        : "a7"); **/
 
         for (int i = 0; i < 100; ++i) {
                 //#pragma approx branch
@@ -28,11 +25,11 @@ int main(int argc, char* argv[])
         printf("%d times approx.\n", app);
         printf("dummy = %d.\n", dummy);
 
-        asm volatile ("li a7, 0x10001\n\t" 
+        /** asm volatile ("li a7, 0x10001\n\t" 
         "ecall" 
         :
         :
-        : "a7"); 
+        : "a7"); **/
 
         return 0;
 }
