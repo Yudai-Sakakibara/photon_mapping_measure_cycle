@@ -183,11 +183,11 @@ void Camera::sampleImage()
         }
     }
 
-    asm volatile ("li a7, 0x10001\n\t" 
+    /** asm volatile ("li a7, 0x10001\n\t" 
         "ecall" 
         :
         :
-        : "a7");
+        : "a7"); **/
 
     // step4
     for (size_t y = 0; y < image.height; y++)
@@ -200,11 +200,11 @@ void Camera::sampleImage()
 
     std::printf("Regular routine: %d  Approx routine: %d\n", cnt_regular, cnt_approx);
 
-    asm volatile ("li a7, 0x10001\n\t" 
+    /** asm volatile ("li a7, 0x10001\n\t" 
         "ecall" 
         :
         :
-        : "a7");
+        : "a7"); **/
 
     // step5
     for (int y = 0; y < image.height; y++)

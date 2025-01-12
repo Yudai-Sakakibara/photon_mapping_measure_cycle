@@ -16,8 +16,8 @@
 #include "../../surface/surface.hpp"
 #include "../../ray/interaction.hpp"
 
-#include "../../octree/octree.cpp"
-#include "../../octree/linear-octree.cpp"
+#include "../../octree/octree.hpp"
+#include "../../octree/linear-octree.hpp"
 
 PhotonMapper::PhotonMapper(const nlohmann::json& j) : Integrator(j)
 {

@@ -4,7 +4,7 @@
 // #include <chrono>
 #include <cstdio>
 
-#include "../octree/octree.cpp"
+#include "../octree/octree.hpp"
 // #include "../common/format.hpp"
 #include "../surface/surface.hpp"
 #include "../common/util.hpp"
@@ -39,18 +39,19 @@ BVH::BVH(const BoundingBox &BB,
     else // OCTREE
     {
         std::printf("\nBuilding BVH from octree.\n\n");
+        std::printf("\nroot id: %lf %lf\n\n", root->BB.dimensions()[1], root->BB.dimensions()[2]);
 
-        double half_max = glm::compMax(root->BB.dimensions()) / 2.0;
-        BoundingBox cube_BB(root->BB.centroid() - half_max, root->BB.centroid() + half_max);
+        double half_max = glm::compMax(root->BB.dimensions()) / 2.0; std::printf("A");
+        BoundingBox cube_BB(root->BB.centroid() - half_max, root->BB.centroid() + half_max); std::printf("B");
 
-        Octree<SurfaceCentroid> hierarchy(cube_BB, leaf_surfaces);
+        Octree<SurfaceCentroid> hierarchy(cube_BB, leaf_surfaces); std::printf("C");
 
         for (const auto &s : surfaces)
         {
             hierarchy.insert(SurfaceCentroid(s));
-        }
+        } std::printf("D");
 
-        recursiveBuildFromOctree(hierarchy, root);
+        recursiveBuildFromOctree(hierarchy, root); std::printf("E");
     }
 
     size_t num_nodes = 1;

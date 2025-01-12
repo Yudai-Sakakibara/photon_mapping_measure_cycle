@@ -16,6 +16,8 @@ command2.append("monte-carlo-ray-tracer_riscv")
 #command2.append("-mabi=lp64d")
 command2.append("-lstdc++")
 command2.append("-lm")
+command2.append("-O3")
+command2.append("-static")
 print(command2)
 res2 = subprocess.run(command2, stdout=subprocess.PIPE, stderr=open("err55.txt",'w'))
 command3 = ["/home/sakakibara/opt3/bin/riscv64-unknown-elf-objdump", "-S", "monte-carlo-ray-tracer_riscv"]

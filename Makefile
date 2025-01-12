@@ -585,54 +585,6 @@ source/material/material.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/monte-carlo-ray-tracer.dir/build.make CMakeFiles/monte-carlo-ray-tracer.dir/source/material/material.cpp.s
 .PHONY : source/material/material.cpp.s
 
-source/octree/linear-octree.o: source/octree/linear-octree.cpp.o
-.PHONY : source/octree/linear-octree.o
-
-# target to build an object file
-source/octree/linear-octree.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/monte-carlo-ray-tracer.dir/build.make CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.o
-.PHONY : source/octree/linear-octree.cpp.o
-
-source/octree/linear-octree.i: source/octree/linear-octree.cpp.i
-.PHONY : source/octree/linear-octree.i
-
-# target to preprocess a source file
-source/octree/linear-octree.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/monte-carlo-ray-tracer.dir/build.make CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.i
-.PHONY : source/octree/linear-octree.cpp.i
-
-source/octree/linear-octree.s: source/octree/linear-octree.cpp.s
-.PHONY : source/octree/linear-octree.s
-
-# target to generate assembly for a file
-source/octree/linear-octree.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/monte-carlo-ray-tracer.dir/build.make CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/linear-octree.cpp.s
-.PHONY : source/octree/linear-octree.cpp.s
-
-source/octree/octree.o: source/octree/octree.cpp.o
-.PHONY : source/octree/octree.o
-
-# target to build an object file
-source/octree/octree.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/monte-carlo-ray-tracer.dir/build.make CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.o
-.PHONY : source/octree/octree.cpp.o
-
-source/octree/octree.i: source/octree/octree.cpp.i
-.PHONY : source/octree/octree.i
-
-# target to preprocess a source file
-source/octree/octree.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/monte-carlo-ray-tracer.dir/build.make CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.i
-.PHONY : source/octree/octree.cpp.i
-
-source/octree/octree.s: source/octree/octree.cpp.s
-.PHONY : source/octree/octree.s
-
-# target to generate assembly for a file
-source/octree/octree.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/monte-carlo-ray-tracer.dir/build.make CMakeFiles/monte-carlo-ray-tracer.dir/source/octree/octree.cpp.s
-.PHONY : source/octree/octree.cpp.s
-
 source/ray/interaction.o: source/ray/interaction.cpp.o
 .PHONY : source/ray/interaction.o
 
@@ -843,12 +795,6 @@ help:
 	@echo "... source/material/material.o"
 	@echo "... source/material/material.i"
 	@echo "... source/material/material.s"
-	@echo "... source/octree/linear-octree.o"
-	@echo "... source/octree/linear-octree.i"
-	@echo "... source/octree/linear-octree.s"
-	@echo "... source/octree/octree.o"
-	@echo "... source/octree/octree.i"
-	@echo "... source/octree/octree.s"
 	@echo "... source/ray/interaction.o"
 	@echo "... source/ray/interaction.i"
 	@echo "... source/ray/interaction.s"

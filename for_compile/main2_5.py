@@ -20,7 +20,7 @@ def compile_first_half(s):
     command4 = ["/home/sakakibara/opt3/bin/llc", file_location + filename_nocpp + "_tmp.bc", "-march=riscv64", "-mattr=+m,+a,+f,+d"]
     command5 = ["rm", file_location + filename_nocpp + ".bc"]
     command6 = ["rm", file_location + filename_nocpp + "_tmp.bc"]
-    command7 = ["/home/sakakibara/opt3/bin/riscv64-unknown-elf-gcc", "-c", file_location + filename_nocpp + "_tmp.s", "-o", file_location + filename_nocpp + ".o", "-lstdc++", "-lm"]
+    command7 = ["/home/sakakibara/opt3/bin/riscv64-unknown-elf-gcc", "-c", file_location + filename_nocpp + "_tmp.s", "-o", file_location + filename_nocpp + ".o", "-lstdc++", "-lm", "-O3", "-static"]
 
     subprocess.run(commandx, stdout=subprocess.PIPE, stderr=open("err_2_2_x.txt",'w'))
     subprocess.run(commandy, stdout=subprocess.PIPE, stderr=open("err_2_2_y.txt",'w'))
@@ -39,6 +39,6 @@ s = res.stdout.decode()
 source_list = s.split('\n')
 for source_name in source_list:
     if source_name != '':
-        x = input()
+        #x = input()
         compile_first_half(source_name)
-        print('input next: ')
+        #print('input next:', end=' ')

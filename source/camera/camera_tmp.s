@@ -5306,10 +5306,6 @@ _ZN6Camera11sampleImageEv:              # @_ZN6Camera11sampleImageEv
 	sd	a0, -56(s0)
 	j	.LBB65_9
 .LBB65_16:                              # %for.end26
-	#APP
-	li a7, 0x10001
-	ecall
-	#NO_APP
 	sd	zero, -72(s0)
 	j	.LBB65_17
 .LBB65_17:                              # %for.cond28
@@ -5361,10 +5357,6 @@ _ZN6Camera11sampleImageEv:              # @_ZN6Camera11sampleImageEv
 	lui	a0, %hi(.L.str.18)
 	addi	a0, a0, %lo(.L.str.18)
 	call	printf
-	#APP
-	li a7, 0x10001
-	ecall
-	#NO_APP
 	sw	zero, -84(s0)
 	j	.LBB65_25
 .LBB65_25:                              # %for.cond46
