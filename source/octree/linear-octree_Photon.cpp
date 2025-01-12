@@ -7,8 +7,7 @@
 #include "../common/constexpr-math.hpp"
 #include "../common/util.hpp"
 
-template <class Data>
-LinearOctree<Data>::LinearOctree(Octree<Data> &octree_root)
+LinearOctree_Photon::LinearOctree_Photon(Octree_Photon &octree_root)
 {
     size_t octree_size = 0, data_size = 0;
     octreeSize(octree_root, octree_size, data_size);
@@ -21,8 +20,7 @@ LinearOctree<Data>::LinearOctree(Octree<Data> &octree_root)
     compact(&octree_root, df_idx, data_idx, contained_data, true);
 }
 
-template <class Data>
-void LinearOctree<Data>::knnSearch(const glm::dvec3& p, size_t k, PriorityQueue<SearchResult<Data>>& result) const
+void LinearOctree_Photon::knnSearch(const glm::dvec3& p, size_t k, PriorityQueue<SearchResult_Photon>& result) const
 {
     result.clear();
 
@@ -116,10 +114,9 @@ void LinearOctree<Data>::knnSearch(const glm::dvec3& p, size_t k, PriorityQueue<
     }
 }
 
-template <class Data>
-std::vector<SearchResult<Data>> LinearOctree<Data>::radiusSearch(const glm::dvec3& p, double radius) const
+std::vector<SearchResult_Photon> LinearOctree_Photon::radiusSearch(const glm::dvec3& p, double radius) const
 {
-    std::vector<SearchResult<Data>> result;
+    std::vector<SearchResult_Photon> result;
 
     if (linear_tree.empty()) return result;
 
@@ -181,8 +178,7 @@ std::vector<SearchResult<Data>> LinearOctree<Data>::radiusSearch(const glm::dvec
     return result;
 }
 
-template <class Data>
-void LinearOctree<Data>::octreeSize(const Octree<Data> &octree_root, size_t &size, size_t &data_size) const
+void LinearOctree_Photon::octreeSize(const Octree_Photon &octree_root, size_t &size, size_t &data_size) const
 {
     if (octree_root.leaf() && octree_root.data_vec.empty()) return;
 
@@ -198,8 +194,7 @@ void LinearOctree<Data>::octreeSize(const Octree<Data> &octree_root, size_t &siz
     }
 }
 
-template <class Data>
-BoundingBox LinearOctree<Data>::compact(Octree<Data>* node, uint32_t& df_idx, uint64_t& data_idx, uint64_t& contained_data, bool last)
+BoundingBox LinearOctree_Photon::compact(Octree_Photon* node, uint32_t& df_idx, uint64_t& data_idx, uint64_t& contained_data, bool last)
 {
     uint32_t idx = df_idx++;
 

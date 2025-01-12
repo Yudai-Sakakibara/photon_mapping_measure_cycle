@@ -1,42 +1,20 @@
 #pragma once
 
+#include <vector>
+#include <memory>
+#include <queue>
+
+#include <glm/vec3.hpp>
 #include <nlohmann/json.hpp>
 
 #include "../ray/intersection.hpp"
-#include "../octree/octree.hpp"
+#include "../common/bounding-box.hpp"
+#include "../common/constexpr-math.hpp"
 
 namespace Surface { class Base; }
 
 class BVH
 {
-    struct SurfaceCentroid
-    {
-        SurfaceCentroid(std::shared_ptr<Surface::Base> surface);
-
-        glm::dvec3 pos() const
-        {
-            return centroid;
-        }
-
-        glm::dvec3 centroid;
-        std::shared_ptr<Surface::Base> surface;
-    };
-
-    struct BuildNode
-    {
-        BuildNode() { }
-
-        bool leaf()
-        {
-            return children.empty();
-        }
-
-        BoundingBox BB;
-        std::vector<std::shared_ptr<BuildNode>> children;
-        std::vector<std::shared_ptr<Surface::Base>> surfaces;
-        uint32_t df_idx; // depth-first index in tree
-    };
-
     /********************************************************************************
      Linear array node for N-ary trees. Currently 57B padded to 64B.
 
@@ -94,8 +72,35 @@ public:
 
     int bins_per_axis = 16;
 
+    struct SurfaceCentroid
+    {
+        SurfaceCentroid(std::shared_ptr<Surface::Base> surface);
+
+        glm::dvec3 pos() const
+        {
+            return centroid;
+        }
+
+        glm::dvec3 centroid;
+        std::shared_ptr<Surface::Base> surface;
+    };
+
+    struct BuildNode
+    {
+        BuildNode() { }
+
+        bool leaf()
+        {
+            return children.empty();
+        }
+
+        BoundingBox BB;
+        std::vector<std::shared_ptr<BuildNode>> children;
+        std::vector<std::shared_ptr<Surface::Base>> surfaces;
+        uint32_t df_idx; // depth-first index in tree
+    };
+
 private:
-    void recursiveBuildFromOctree(const Octree<SurfaceCentroid> &octree_node, std::shared_ptr<BuildNode> bvh_node);
     void recursiveBuildBinarySAH(std::shared_ptr<BuildNode> bvh_node);
     void recursiveBuildQuaternarySAH(std::shared_ptr<BuildNode> bvh_node);
     void compact(std::shared_ptr<BuildNode> bvh_node, uint32_t next_sibling, uint32_t &surface_idx);

@@ -1,10 +1,10 @@
-#include "bvh.hpp"
+#include "bvh2.hpp"
 
 #include <queue>
 // #include <chrono>
 #include <cstdio>
 
-#include "../octree/octree.cpp"
+#include "../octree/octree_SurfaceCentroid.hpp"
 // #include "../common/format.hpp"
 #include "../surface/surface.hpp"
 #include "../common/util.hpp"
@@ -43,7 +43,7 @@ BVH::BVH(const BoundingBox &BB,
         double half_max = glm::compMax(root->BB.dimensions()) / 2.0;
         BoundingBox cube_BB(root->BB.centroid() - half_max, root->BB.centroid() + half_max);
 
-        Octree<SurfaceCentroid> hierarchy(cube_BB, leaf_surfaces);
+        Octree_SurfaceCentroid hierarchy(cube_BB, leaf_surfaces);
 
         for (const auto &s : surfaces)
         {
@@ -122,7 +122,7 @@ Intersection BVH::intersect(const Ray& ray) const
     return intersect;
 }
 
-void BVH::recursiveBuildFromOctree(const Octree<SurfaceCentroid> &octree_node, std::shared_ptr<BuildNode> bvh_node)
+void BVH::recursiveBuildFromOctree(const Octree_SurfaceCentroid &octree_node, std::shared_ptr<BuildNode> bvh_node)
 {
     bvh_node->df_idx = df_idx++;
 
