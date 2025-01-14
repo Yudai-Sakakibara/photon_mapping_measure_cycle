@@ -24,7 +24,8 @@ def compile_first_half(s):
     command7.append("-march=rv64g")
     command7.append("-O3")
     command7.append("-g")
-    command7.append("-std=c++2a")
+    command7.append("-std=c++17")
+    command7.append("-static")
 
     subprocess.run(commandx, stdout=subprocess.PIPE, stderr=open("err_2_2_x.txt",'w'))
     subprocess.run(commandy, stdout=subprocess.PIPE, stderr=open("err_2_2_y.txt",'w'))

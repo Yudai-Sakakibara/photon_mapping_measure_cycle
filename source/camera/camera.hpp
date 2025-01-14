@@ -39,6 +39,7 @@ public:
     size_t spp1, spp2; // modified
     double edge_threshold, approx_prob; // added
     int cnt_regular, cnt_approx, cnt_all; // added
+    std::string exec_mode; // added
 
     glm::dvec3 eye;
     glm::dvec3 forward, left, up;

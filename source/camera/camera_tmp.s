@@ -4103,8 +4103,7 @@ _ZN6Camera11samplePixelEmmi:            # @_ZN6Camera11samplePixelEmmi
 .LBB41_10:                              # %if.end74
                                         #   in Loop: Header=BB41_7 Depth=1
 	lw	a0, -100(s0)
-	xori	a0, a0, 2
-	seqz	s1, a0
+	sgtz	s1, a0
 	ld	a0, -96(s0)
 	ld	a1, 176(s6)
 	mul	a0, a0, a1
@@ -4125,9 +4124,14 @@ _ZN6Camera11samplePixelEmmi:            # @_ZN6Camera11samplePixelEmmi
 	j	.LBB41_11
 .LBB41_11:                              # %if.then87
                                         #   in Loop: Header=BB41_7 Depth=1
-	.word 0b00000000000111000011000000001011
+	call	rand
+	fcvt.d.l	ft0, a0
+	fld	ft1, 24(s6)
+	fle.d	a0, ft1, ft0
+	xori	a0, a0, 1
+	bnez	a0, .LBB41_13
 	j	.LBB41_12
-.LBB41_12:                              # %if.then88
+.LBB41_12:                              # %if.then91
                                         #   in Loop: Header=BB41_7 Depth=1
 	lw	a0, 32(s6)
 	addi	a0, a0, 1
@@ -4156,7 +4160,7 @@ _ZN6Camera11samplePixelEmmi:            # @_ZN6Camera11samplePixelEmmi
 	addi	a0, a0, 1
 	sw	a0, 40(s6)
 	j	.LBB41_14
-.LBB41_13:                              # %if.else93
+.LBB41_13:                              # %if.else96
                                         #   in Loop: Header=BB41_7 Depth=1
 	lw	a0, 36(s6)
 	addi	a0, a0, 1
@@ -4178,10 +4182,10 @@ _ZN6Camera11samplePixelEmmi:            # @_ZN6Camera11samplePixelEmmi
 	addi	a0, a0, 1
 	sw	a0, 40(s6)
 	j	.LBB41_14
-.LBB41_14:                              # %if.end103
+.LBB41_14:                              # %if.end106
                                         #   in Loop: Header=BB41_7 Depth=1
 	j	.LBB41_16
-.LBB41_15:                              # %if.else104
+.LBB41_15:                              # %if.else107
                                         #   in Loop: Header=BB41_7 Depth=1
 	addi	s2, s6, 280
 	addi	a0, s6, 440
@@ -4210,7 +4214,7 @@ _ZN6Camera11samplePixelEmmi:            # @_ZN6Camera11samplePixelEmmi
 	addi	a0, a0, 1
 	sw	a0, 40(s6)
 	j	.LBB41_16
-.LBB41_16:                              # %if.end116
+.LBB41_16:                              # %if.end119
                                         #   in Loop: Header=BB41_7 Depth=1
 	lw	a0, 40(s6)
 	lui	a1, 1042678
@@ -4233,14 +4237,14 @@ _ZN6Camera11samplePixelEmmi:            # @_ZN6Camera11samplePixelEmmi
 	srli	a0, a0, 32
 	bnez	a0, .LBB41_18
 	j	.LBB41_17
-.LBB41_17:                              # %if.then119
+.LBB41_17:                              # %if.then122
                                         #   in Loop: Header=BB41_7 Depth=1
 	lw	a1, 40(s6)
 	lui	a0, %hi(.L.str.17)
 	addi	a0, a0, %lo(.L.str.17)
 	call	printf
 	j	.LBB41_18
-.LBB41_18:                              # %if.end122
+.LBB41_18:                              # %if.end125
                                         #   in Loop: Header=BB41_7 Depth=1
 	j	.LBB41_19
 .LBB41_19:                              # %for.inc

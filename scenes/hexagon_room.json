@@ -3,9 +3,9 @@
   "ior": 1.75,
 
   "photon_map": {
-    "emissions": 1e6,
+    "emissions": 2e3,
     "caustic_factor": 10.0,
-    "k_nearest_photons": 50,
+    "k_nearest_photons": 10,
     "max_photons_per_octree_leaf": 200,
     "direct_visualization": false
   },
@@ -21,11 +21,12 @@
         "height": 96,
         "exposure_compensation": -0.25
       },
-      "spp1": 4,
-      "spp2": 0,
+      "spp1": 16,
+      "spp2": 16,
+      "edge_threshold": 16,
       "approx_prob": 0.5,
-      "edge_threshold": 128,
-      "savename": "c1b_128x96_4"
+      "exec_mode": "test",
+      "savename": "c1b"
     },
     {
       "focal_length": 24,

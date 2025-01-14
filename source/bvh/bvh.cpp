@@ -38,7 +38,7 @@ BVH::BVH(const BoundingBox &BB,
     {
         std::printf("\nBuilding BVH from octree.\n\n");
 
-        double half_max = glm::compMax(root->BB.dimensions()) / 2.0; std::printf("A");
+        double half_max = glm::compMax(root->BB.dimensions()) / 2.0;
         BoundingBox cube_BB(root->BB.centroid() - half_max, root->BB.centroid() + half_max);
 
         Octree<SurfaceCentroid> hierarchy(cube_BB, leaf_surfaces);
@@ -46,9 +46,9 @@ BVH::BVH(const BoundingBox &BB,
         for (const auto &s : surfaces)
         {
             hierarchy.insert(SurfaceCentroid(s));
-        } std::printf("F");
+        }
 
-        recursiveBuildFromOctree(hierarchy, root); std::printf("G");
+        recursiveBuildFromOctree(hierarchy, root);
     }
 
     size_t num_nodes = 1;

@@ -8,12 +8,6 @@
 
 int main(int argc, char* argv[])
 {
-    /** asm volatile ("li a7, 0x10001\n\t" 
-        "ecall" 
-        :
-        :
-        : "a7"); **/
-
     Scene::path = "/home/sakakibara/monte-carlo-ray-tracer_approx/scenes";
     std::printf("Scene directory:\n");
     std::printf("%s\n", Scene::path.c_str());
@@ -21,36 +15,30 @@ int main(int argc, char* argv[])
     std::vector<Option> options;
     try
     {
-        options = availible(Scene::path); std::printf("X");
+        options = availible(Scene::path);
     }
     catch (const std::exception& ex)
     {
-        std::printf("%s\n", ex.what()); std::printf("Y");
+        std::printf("%s\n", ex.what());
         return -1;
     }
 
     if (options.empty())
     {
-        std::printf("No scenes found.\n"); std::printf("Z");
+        std::printf("No scenes found.\n");
         return -1;
-    } std::printf("H");
+    }
 
-    Option scene_option = getOption(options); std::printf("I");
+    Option scene_option = getOption(options);
 
-    std::ifstream scene_file(scene_option.path); std::printf("J");
-    nlohmann::json j; std::printf("K");
-    scene_file >> j; std::printf("L");
-    scene_file.close(); std::printf("M");
+    std::ifstream scene_file(scene_option.path);
+    nlohmann::json j;
+    scene_file >> j;
+    scene_file.close();
 
-    std::unique_ptr<Camera> camera = std::make_unique<Camera>(j, scene_option); std::printf("N");
+    std::unique_ptr<Camera> camera = std::make_unique<Camera>(j, scene_option);
 
     camera->capture();
-
-    /** asm volatile ("li a7, 0x10001\n\t" 
-        "ecall" 
-        :
-        :
-        : "a7"); **/
 
     return 0;
 }
