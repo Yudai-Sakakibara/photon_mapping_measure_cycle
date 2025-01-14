@@ -1,6 +1,5 @@
 #pragma once
 
-#include <chrono>
 #include <deque>
 
 #include <glm/vec3.hpp>
@@ -37,8 +36,9 @@ public:
 
     void lookAt(const glm::dvec3& p);
 
-    size_t spp1; // modified
-    size_t spp2; // modified
+    size_t spp1, spp2; // modified
+    double edge_threshold, approx_prob; // added
+    int cnt_regular, cnt_approx, cnt_all; // added
 
     glm::dvec3 eye;
     glm::dvec3 forward, left, up;
@@ -51,31 +51,15 @@ public:
     std::string savename;
 
 private:
-    struct Bucket
-    {
-        Bucket() : min(0), max(0) { }
-        Bucket(const glm::ivec2& min, const glm::ivec2& max) : min(min), max(max) { }
-
-        glm::ivec2 min;
-        glm::ivec2 max;
-    };
 
     void samplePixel(size_t x, size_t y, int i);
+    void init_counter();
     void init_for_approx();
-
-    void printInfoThread(WorkQueue<Bucket>& buckets);
-
-    const size_t bucket_size = 2000; // include all pixels
 
     std::shared_ptr<Integrator> integrator;
 
     size_t num_sampled_pixels = 0;
     size_t last_num_sampled_pixels = 0;
-    std::chrono::time_point<std::chrono::steady_clock> last_update = std::chrono::steady_clock::now();
     const size_t num_times = 32;
     std::deque<double> times;
 };
-
-extern int spp1, spp2; // n_samples of before & after edge detection
-extern double edge_threshold, approx_prob;
-extern int cnt_regular, cnt_approx, cnt_all;

@@ -4,7 +4,6 @@
 #include <glm/gtx/transform.hpp>
 
 #include "util.hpp"
-#include "format.hpp"
 
 void glm::from_json(const nlohmann::json &j, dvec3 &v)
 {
@@ -45,5 +44,4 @@ void Log(const std::string& message)
     std::ofstream log("log.txt", std::ios::app);
     std::string temp = message;
     temp.erase(std::remove(temp.begin(), temp.end(), '\n'), temp.end());
-    log << "[" << Format::date(std::chrono::system_clock::now()) << "] " << temp << std::endl;
 }

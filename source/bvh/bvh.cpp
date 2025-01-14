@@ -1,11 +1,9 @@
 #include "bvh.hpp"
 
 #include <queue>
-// #include <chrono>
 #include <cstdio>
 
 #include "../octree/octree.hpp"
-// #include "../common/format.hpp"
 #include "../surface/surface.hpp"
 #include "../common/util.hpp"
 #include "../common/priority-queue.hpp"
@@ -39,19 +37,18 @@ BVH::BVH(const BoundingBox &BB,
     else // OCTREE
     {
         std::printf("\nBuilding BVH from octree.\n\n");
-        std::printf("\nroot id: %lf %lf\n\n", root->BB.dimensions()[1], root->BB.dimensions()[2]);
 
         double half_max = glm::compMax(root->BB.dimensions()) / 2.0; std::printf("A");
-        BoundingBox cube_BB(root->BB.centroid() - half_max, root->BB.centroid() + half_max); std::printf("B");
+        BoundingBox cube_BB(root->BB.centroid() - half_max, root->BB.centroid() + half_max);
 
-        Octree<SurfaceCentroid> hierarchy(cube_BB, leaf_surfaces); std::printf("C");
+        Octree<SurfaceCentroid> hierarchy(cube_BB, leaf_surfaces);
 
         for (const auto &s : surfaces)
         {
             hierarchy.insert(SurfaceCentroid(s));
-        } std::printf("D");
+        } std::printf("F");
 
-        recursiveBuildFromOctree(hierarchy, root); std::printf("E");
+        recursiveBuildFromOctree(hierarchy, root); std::printf("G");
     }
 
     size_t num_nodes = 1;
@@ -74,7 +71,7 @@ BVH::BVH(const BoundingBox &BB,
 
 Intersection BVH::intersect(const Ray& ray) const
 {
-    thread_local PriorityQueue<LinearNode::NodeIntersection> to_visit; to_visit.clear();
+    PriorityQueue<LinearNode::NodeIntersection> to_visit; to_visit.clear();
 
     double t;
     Intersection intersect;

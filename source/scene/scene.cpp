@@ -5,7 +5,6 @@
 
 #include "../common/util.hpp"
 #include "../common/constants.hpp"
-#include "../common/format.hpp"
 #include "../material/material.hpp"
 #include "../surface/surface.hpp"
 #include "../bvh/bvh.hpp"

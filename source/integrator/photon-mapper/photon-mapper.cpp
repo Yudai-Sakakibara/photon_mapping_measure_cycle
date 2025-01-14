@@ -11,7 +11,6 @@
 #include "../../common/work-queue.hpp"
 #include "../../common/priority-queue.hpp"
 #include "../../common/constants.hpp"
-#include "../../common/format.hpp"
 #include "../../material/material.hpp"
 #include "../../surface/surface.hpp"
 #include "../../ray/interaction.hpp"
@@ -98,19 +97,16 @@ PhotonMapper::PhotonMapper(const nlohmann::json& j) : Integrator(j)
 
             pos += normal * C::EPSILON;
 
-            emitPhoton(Ray(pos, dir, scene.ior), work.photon_flux, 0);
+            emitPhoton(Ray(pos, dir, scene.ior), work.photon_flux);
         }
     }
 
-    auto begin = std::chrono::high_resolution_clock::now();
     if constexpr(print)
     {
         std::printf("\n----------------------------| PHOTON MAPPING PASS |---------------------\n\nTotal number of photon emissions from light sources: %ld\n\n", photon_emissions);
     }
 
     bool done_constructing_octrees = false;
-    auto end = std::chrono::high_resolution_clock::now();
-    std::string duration = Format::timeDuration(std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count());
 
     size_t num_global_photons = 0;
     size_t num_caustic_photons = 0;
@@ -160,7 +156,7 @@ PhotonMapper::PhotonMapper(const nlohmann::json& j) : Integrator(j)
     }
 }
 
-void PhotonMapper::emitPhoton(Ray ray, glm::dvec3 flux, size_t thread)
+void PhotonMapper::emitPhoton(Ray ray, glm::dvec3 flux)
 {
     RefractionHistory refraction_history(ray);
     glm::dvec3 bsdf_absIdotN;
@@ -184,11 +180,11 @@ void PhotonMapper::emitPhoton(Ray ray, glm::dvec3 flux, size_t thread)
         {
             if (ray.dirac_delta)
             {
-                caustic_vecs[thread].emplace_back(flux, interaction.position, -ray.direction);
+                caustic_vecs[0].emplace_back(flux, interaction.position, -ray.direction);
             }
             else if(non_caustic_reject > Sampler::get<Dim::PM_REJECT>()[0])
             {
-                global_vecs[thread].emplace_back(flux / non_caustic_reject, interaction.position, -ray.direction);
+                global_vecs[0].emplace_back(flux / non_caustic_reject, interaction.position, -ray.direction);
             }
         }
 
@@ -280,7 +276,7 @@ glm::dvec3 PhotonMapper::sampleRay(Ray ray)
 
 glm::dvec3 PhotonMapper::estimateGlobalRadiance(const Interaction& interaction)
 {
-    thread_local PriorityQueue<SearchResult<Photon>> photons;
+    PriorityQueue<SearchResult<Photon>> photons;
     global_map.knnSearch(interaction.position, k_nearest_photons, photons);
     if (photons.empty())
     {
@@ -305,7 +301,7 @@ Cone filtering method used for sharper caustics. Simplified for k = 1
 *********************************************************************/
 glm::dvec3 PhotonMapper::estimateCausticRadiance(const Interaction& interaction)
 {
-    thread_local PriorityQueue<SearchResult<Photon>> photons;
+    PriorityQueue<SearchResult<Photon>> photons;
     caustic_map.knnSearch(interaction.position, k_nearest_photons, photons);
     if (photons.empty())
     {

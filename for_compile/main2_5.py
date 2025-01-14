@@ -12,15 +12,30 @@ def compile_first_half(s):
                 "-I", "/home/sakakibara/opt3/riscv64-unknown-elf/include/", 
                 "-I", "/home/sakakibara/opt3/riscv64-unknown-elf/include/c++/14.2.0/", 
                 "-I", "/home/sakakibara/opt3/riscv64-unknown-elf/include/c++/14.2.0/riscv64-unknown-elf/", 
+                "-I", "/home/sakakibara/opt3/riscv64-unknown-elf/include/c++/14.2.0/riscv64-unknown-elf/bits/", 
+                "-l", "/home/sakakibara/opt3/riscv64-unknown-elf/include/c++/14.2.0/riscv64-unknown-elf/bits/stdc++.h", 
                 "-I", "/home/sakakibara/monte-carlo-ray-tracer_approx/lib/glm", 
                 "-I", "/home/sakakibara/monte-carlo-ray-tracer_approx/lib/nlohmann", 
-                "-static", "-c", "-emit-llvm", "-std=c++17", "-std=gnu++17", s]
+                "-static", "-c", "-emit-llvm", "-std=c++17", "--target=riscv64-unknown-elf", s]
     command2 = ["mv", filename_nocpp + ".bc", file_location]
     command3 = ["/home/sakakibara/opt3/bin/opt", "-load", "/home/sakakibara/opt3/lib/LLVMApprox.so", "-approx", file_location + filename_nocpp + ".bc"]
     command4 = ["/home/sakakibara/opt3/bin/llc", file_location + filename_nocpp + "_tmp.bc", "-march=riscv64", "-mattr=+m,+a,+f,+d"]
     command5 = ["rm", file_location + filename_nocpp + ".bc"]
     command6 = ["rm", file_location + filename_nocpp + "_tmp.bc"]
-    command7 = ["/home/sakakibara/opt3/bin/riscv64-unknown-elf-gcc", "-c", file_location + filename_nocpp + "_tmp.s", "-o", file_location + filename_nocpp + ".o", "-lstdc++", "-lm", "-O3", "-static"]
+    command7 = ["/home/sakakibara/opt3/bin/riscv64-unknown-elf-g++", "-c", file_location + filename_nocpp + "_tmp.s", "-o", file_location + filename_nocpp + ".o"]
+    command7.append("-lstdc++")
+    command7.append("-lm")
+    command7.append("-O3")
+    command7.append("-static")
+    command7.append("-std=c++17")
+    command7.append("-DLIBCXXABI_ENABLE_THREADS=OFF")
+    command7.append("-fno-use-cxa-atexit")
+    command7.append("-fno-math-errno")
+    command7.append("-fno-threadsafe-statics")
+    command7.append("-lgcc")
+    command7.append("-g")
+    command7.append("-DNDEBUG")
+    command7.append("-lc")
 
     subprocess.run(commandx, stdout=subprocess.PIPE, stderr=open("err_2_2_x.txt",'w'))
     subprocess.run(commandy, stdout=subprocess.PIPE, stderr=open("err_2_2_y.txt",'w'))

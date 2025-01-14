@@ -1,7 +1,6 @@
 #include "integrator.hpp"
 
 #include <cstdio>
-// #include <thread>
 
 #include <glm/gtx/norm.hpp>
 
@@ -17,11 +16,7 @@
 
 Integrator::Integrator(const nlohmann::json &j) : scene(j)
 {
-    int threads = getOptional(j, "num_render_threads", -1);
-
-    /** size_t max_threads = std::thread::hardware_concurrency();
-    num_threads = (threads < 1 || threads > max_threads) ? max_threads : threads;
-    std::printf("\nThreads used for rendering: %ld\n", num_threads); **/
+    ;
 }
 
 /**************************************************************************

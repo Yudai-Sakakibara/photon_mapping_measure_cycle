@@ -13,13 +13,9 @@
 #include "../sampling/sampler.hpp"
 #include "../common/util.hpp"
 #include "../common/constexpr-math.hpp"
-#include "../common/format.hpp"
 #include "../common/constants.hpp"
 
 #include "../edge_detection/edge_detection.hpp" // added
-
-int spp1, spp2; // n_samples of before & after edge detection
-double edge_threshold, approx_prob;
 
 Camera::Camera(const nlohmann::json &j, const Option &option)
 {
@@ -45,8 +41,8 @@ Camera::Camera(const nlohmann::json &j, const Option &option)
     sensor_width = c.at("sensor_width").get<double>() / 1000.0;
     spp1 = c.at("spp1"); // modified
     spp2 = c.at("spp2"); // modified
-    edge_threshold = c.at("edge_threshold"); // added
-    edge_threshold /= 255.0;
+    edge_threshold = c.at("edge_threshold");
+    edge_threshold /= 255.0; // added
     approx_prob = c.at("approx_prob"); // added
     savename = c.at("savename");
     aperture_radius = (focal_length / getOptional(c, "f_stop", -1.0)) / 2.0;
@@ -71,8 +67,7 @@ Camera::Camera(const nlohmann::json &j, const Option &option)
     thin_lens = aperture_radius > 0.0 && focus_distance > 0.0;
 }
 
-int cnt_regular, cnt_approx, cnt_all;
-void reset_cnt(){
+void Camera::init_counter(){
     cnt_regular = 0;
     cnt_approx = 0;
     cnt_all = 0;
@@ -120,7 +115,7 @@ void Camera::samplePixel(size_t x, size_t y, int mode)
 
         bool can_approx = (mode == 2) & no_edge[y * image.width + x];
         if(can_approx){
-            //#pragma approx branch
+            #pragma approx branch
             if(1){
                 cnt_regular++;
                 film.deposit(px, integrator->sampleRay(ray));
@@ -158,7 +153,7 @@ void Camera::init_for_approx(){
 void Camera::sampleImage()
 {
     //step.0
-    reset_cnt();
+    init_counter();
 
     // step.1
     for (size_t y = 0; y < image.height; y++)
@@ -183,11 +178,11 @@ void Camera::sampleImage()
         }
     }
 
-    /** asm volatile ("li a7, 0x10001\n\t" 
+    asm volatile ("li a7, 0x10001\n\t" 
         "ecall" 
         :
         :
-        : "a7"); **/
+        : "a7");
 
     // step4
     for (size_t y = 0; y < image.height; y++)
@@ -200,11 +195,11 @@ void Camera::sampleImage()
 
     std::printf("Regular routine: %d  Approx routine: %d\n", cnt_regular, cnt_approx);
 
-    /** asm volatile ("li a7, 0x10001\n\t" 
+    asm volatile ("li a7, 0x10001\n\t" 
         "ecall" 
         :
         :
-        : "a7"); **/
+        : "a7");
 
     // step5
     for (int y = 0; y < image.height; y++)

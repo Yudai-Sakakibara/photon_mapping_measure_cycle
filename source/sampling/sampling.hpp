@@ -46,12 +46,12 @@ namespace Sampling
 
 namespace Random
 {
-    // thread_local to create one differently seeded engine per thread
-    inline thread_local std::mt19937_64 engine(std::random_device{}());
+    // thr_ead_local to create one differently seeded engine per thr_ead
+    inline std::mt19937_64 engine(std::random_device{}());
 
     inline double unit()
     {
-        static thread_local std::uniform_real_distribution<double> unit_distribution(0.0, 1.0);
+        static std::uniform_real_distribution<double> unit_distribution(0.0, 1.0);
         return unit_distribution(engine);
     }
 }

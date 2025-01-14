@@ -76,7 +76,7 @@ void LinearOctree<Data>::knnSearch(const glm::dvec3& p, size_t k, PriorityQueue<
         uint32_t octant;
     };
 
-    thread_local PriorityQueue<DNode> to_visit; to_visit.clear();
+    PriorityQueue<DNode> to_visit; to_visit.clear();
 
     DNode current{ linear_tree[ROOT_IDX].BB.distance2(p), ROOT_IDX };
 
@@ -158,7 +158,7 @@ std::vector<SearchResult<Data>> LinearOctree<Data>::radiusSearch(const glm::dvec
 
     if (linear_tree.empty()) return result;
 
-    thread_local std::vector<uint32_t> to_visit; to_visit.clear();
+    std::vector<uint32_t> to_visit; to_visit.clear();
 
     const double radius2 = pow2(radius);
     uint32_t node_idx = ROOT_IDX;

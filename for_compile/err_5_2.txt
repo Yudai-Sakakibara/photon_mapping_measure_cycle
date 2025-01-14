@@ -477,4 +477,3 @@ error: failed to compute relocation: R_RISCV_SET8, Invalid data was encountered 
 error: failed to compute relocation: R_RISCV_32_PCREL, Invalid data was encountered while parsing the file
 error: failed to compute relocation: R_RISCV_32_PCREL, Invalid data was encountered while parsing the file
 error: failed to compute relocation: R_RISCV_32_PCREL, Invalid data was encountered while parsing the file
-/home/sakakibara/opt3/bin/llvm-objdump: warning: '../source/camera/camera.o': failed to parse debug information for ../source/camera/camera.o

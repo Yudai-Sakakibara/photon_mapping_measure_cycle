@@ -22,7 +22,6 @@ public:
     glm::dvec3 sampleEmissive(const Interaction& interaction, const LightSample& ls) const;
     bool absorb(const Ray& ray, glm::dvec3& throughput) const;
 
-    size_t num_threads;
     Scene scene;
 
     const uint8_t min_ray_depth = 3;

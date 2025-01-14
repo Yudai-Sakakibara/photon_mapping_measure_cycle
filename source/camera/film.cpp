@@ -64,7 +64,7 @@ void Film::deposit(const glm::dvec2& p, const glm::dvec3& v)
     ivec2 max = glm::min(ivec2(p - 0.5 + radius), ivec2(width - 1, height - 1));
 
     // Lazy but general and about as fast as can be
-    thread_local std::vector<double> weights_x; weights_x.clear();
+    std::vector<double> weights_x; weights_x.clear();
     for (int64_t x = min.x; x <= max.x; x++)
         weights_x.push_back(filter(x + 0.5 - p.x));
 

@@ -14,7 +14,7 @@ class PhotonMapper : public Integrator
 public:
     PhotonMapper(const nlohmann::json& j);
 
-    void emitPhoton(Ray ray, glm::dvec3 flux, size_t thread);
+    void emitPhoton(Ray ray, glm::dvec3 flux);
 
     virtual glm::dvec3 sampleRay(Ray ray);
     
@@ -25,8 +25,8 @@ private:
     LinearOctree<Photon> caustic_map;
     LinearOctree<Photon> global_map; // all photons except caustic photons
 
-    // Temporary photon maps which are filled by each thread in the first pass. The Octree can't handle
-    // concurrent inserts, so this has to be done if multi-threading is to be used in the first pass.
+    // Temporary photon maps which are filled by each thr_ead in the first pass. The Octree can't handle
+    // concurrent inserts, so this has to be done if multi-thr_eading is to be used in the first pass.
     std::vector<std::vector<Photon>> caustic_vecs;
     std::vector<std::vector<Photon>> global_vecs;
 

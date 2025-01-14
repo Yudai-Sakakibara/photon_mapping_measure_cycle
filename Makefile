@@ -297,30 +297,6 @@ source/common/coordinate-system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/monte-carlo-ray-tracer.dir/build.make CMakeFiles/monte-carlo-ray-tracer.dir/source/common/coordinate-system.cpp.s
 .PHONY : source/common/coordinate-system.cpp.s
 
-source/common/format.o: source/common/format.cpp.o
-.PHONY : source/common/format.o
-
-# target to build an object file
-source/common/format.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/monte-carlo-ray-tracer.dir/build.make CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.o
-.PHONY : source/common/format.cpp.o
-
-source/common/format.i: source/common/format.cpp.i
-.PHONY : source/common/format.i
-
-# target to preprocess a source file
-source/common/format.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/monte-carlo-ray-tracer.dir/build.make CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.i
-.PHONY : source/common/format.cpp.i
-
-source/common/format.s: source/common/format.cpp.s
-.PHONY : source/common/format.s
-
-# target to generate assembly for a file
-source/common/format.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/monte-carlo-ray-tracer.dir/build.make CMakeFiles/monte-carlo-ray-tracer.dir/source/common/format.cpp.s
-.PHONY : source/common/format.cpp.s
-
 source/common/histogram.o: source/common/histogram.cpp.o
 .PHONY : source/common/histogram.o
 
@@ -759,9 +735,6 @@ help:
 	@echo "... source/common/coordinate-system.o"
 	@echo "... source/common/coordinate-system.i"
 	@echo "... source/common/coordinate-system.s"
-	@echo "... source/common/format.o"
-	@echo "... source/common/format.i"
-	@echo "... source/common/format.s"
 	@echo "... source/common/histogram.o"
 	@echo "... source/common/histogram.i"
 	@echo "... source/common/histogram.s"
