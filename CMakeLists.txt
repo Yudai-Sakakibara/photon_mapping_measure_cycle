@@ -4,9 +4,9 @@ project(monte-carlo-ray-tracer)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-#set(CMAKE_CXX_COMPILER /home/sakakibara/opt3/bin/riscv64-unknown-elf-g++) # added
+set(CMAKE_CXX_COMPILER /home/sakakibara/opt3/bin/riscv64-unknown-elf-g++) # added
 set(CMAKE_CXX_FLAGS "-static") # added
-#set(CMAKE_CXX_FLAGS "-march=rv64g") # added
+set(CMAKE_CXX_FLAGS "-march=rv64g") # added
 
 #set(THREADS_PREFER_PTHREAD_FLAG ON) # modified
 #find_package(Threads REQUIRED) # modified

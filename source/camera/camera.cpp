@@ -117,7 +117,7 @@ void Camera::samplePixel(size_t x, size_t y, int mode)
         bool can_approx = (mode > 0) & no_edge[y * image.width + x];
         if(can_approx){
             //#pragma approx branch
-            if(rand() >= approx_prob){
+            if(rand01() >= approx_prob){
                 cnt_regular++;
                 film.deposit(px, integrator->sampleRay(ray));
                 cnt_all++;
@@ -133,11 +133,8 @@ void Camera::samplePixel(size_t x, size_t y, int mode)
             film.deposit(px, integrator->sampleRay(ray));
             cnt_all++;
         }
-        if(mode == 2){
-            int cnt_mode2 = cnt_all - width * height * i_start;
-            if(cnt_mode2 % 8 == 0){
-                std::printf("RISCV Sim: %d of %d pixels finished\n", cnt_mode2, width * height);
-            }
+        if(cnt_all % 32 == 0){
+            std::printf("RISCV Sim: %d samples finished\n", cnt_all);
         }
     }
 }

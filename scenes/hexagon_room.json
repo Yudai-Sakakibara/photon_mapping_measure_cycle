@@ -3,7 +3,7 @@
   "ior": 1.75,
 
   "photon_map": {
-    "emissions": 2e3,
+    "emissions": 2e4,
     "caustic_factor": 10.0,
     "k_nearest_photons": 10,
     "max_photons_per_octree_leaf": 200,
@@ -25,8 +25,8 @@
       "spp2": 16,
       "edge_threshold": 16,
       "approx_prob": 0.5,
-      "exec_mode": "test",
-      "savename": "c1b"
+      "exec_mode": "measure_cycle",
+      "savename": "/home/sakakibara/monte-carlo-ray-tracer_approx/c1b"
     },
     {
       "focal_length": 24,
