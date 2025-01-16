@@ -27,15 +27,6 @@
       "approx_prob": 0.5,
       "exec_mode": "measure_cycle",
       "savename": "/home/sakakibara/monte-carlo-ray-tracer_approx/c1b"
-    },
-    {
-      "focal_length": 24,
-      "sensor_width": 35,
-      "eye": [ -1, 0, 0 ],
-      "look_at": [ 13, -2.14, 0 ],
-      "image" : { "width": 960, "height": 720 },
-      "sqrtspp": 1,
-      "savename": "c2"
     }
   ],
 

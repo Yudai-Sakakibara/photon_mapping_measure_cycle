@@ -8,16 +8,20 @@
       "sensor_width": 35,
       "eye": [ 0, 1, -6.83879 ],
       "look_at": [ 0, 1, 0 ],
-      "image":  { "width": 1000, "height": 1000, "exposure_compensation": -1.0, "gain_compensation": -0.5, "tonemapper": "Hable" },
-      "sqrtspp": 4,
-      "savename": "water_caustics"
+      "image":  { "width": 128, "height": 128, "exposure_compensation": -1.0, "gain_compensation": -0.5, "tonemapper": "Hable" },
+      "spp1": 16,
+      "spp2": 16,
+      "edge_threshold": 16,
+      "approx_prob": 0.5,
+      "exec_mode": "output_image",
+      "savename": "/home/sakakibara/monte-carlo-ray-tracer_approx/wc_ref0"
     }
   ],
 
   "photon_map": {
-    "emissions": 1e6,
+    "emissions": 3e4,
     "caustic_factor": 10.0,
-    "k_nearest_photons": 50,
+    "k_nearest_photons": 10,
     "max_photons_per_octree_leaf": 200,
     "direct_visualization": false
   },

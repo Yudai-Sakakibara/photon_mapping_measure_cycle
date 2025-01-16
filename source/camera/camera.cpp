@@ -116,7 +116,7 @@ void Camera::samplePixel(size_t x, size_t y, int mode)
 
         bool can_approx = (mode > 0) & no_edge[y * image.width + x];
         if(can_approx){
-            //#pragma approx branch
+            #pragma approx branch
             if(rand01() >= approx_prob){
                 cnt_regular++;
                 film.deposit(px, integrator->sampleRay(ray));
@@ -180,11 +180,11 @@ void Camera::sampleImage()
     }
 
     if(exec_mode == "measure_cycle"){
-        asm volatile ("li a7, 0x10001\n\t" 
+        /** asm volatile ("li a7, 0x10001\n\t" 
             "ecall" 
             :
             :
-            : "a7");
+            : "a7"); **/
     }
 
     // step4
@@ -198,11 +198,11 @@ void Camera::sampleImage()
 
     if(exec_mode == "measure_cycle"){
         std::printf("Regular routine: %d  Approx routine: %d\n", cnt_regular, cnt_approx);
-        asm volatile ("li a7, 0x10001\n\t" 
+        /** asm volatile ("li a7, 0x10001\n\t" 
             "ecall" 
             :
             :
-            : "a7");
+            : "a7"); **/
     }
 
     // step5
@@ -231,19 +231,19 @@ void Camera::capture()
     std::printf("Samples per pixel: %lu + %lu\n\n", spp1, spp2);
     sampleImage();
     if(exec_mode == "output_image"){
-        asm volatile ("li a7, 0x10001\n\t" 
+        /** asm volatile ("li a7, 0x10001\n\t" 
             "ecall" 
             :
             :
-            : "a7");
+            : "a7"); **/
     }
     saveImage();
     if(exec_mode == "output_image"){
-        asm volatile ("li a7, 0x10001\n\t" 
+        /** asm volatile ("li a7, 0x10001\n\t" 
             "ecall" 
             :
             :
-            : "a7");
+            : "a7"); **/
     }
     std::printf("Regular routine: %d  Approx routine: %d\n\n", cnt_regular, cnt_approx);
 }

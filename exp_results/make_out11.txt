@@ -1,7 +1,0 @@
-/home/sakakibara/monte-carlo-ray-tracer_approx/source/main.cpp:10:10: fatal error: ../kdtree/random_recoder.hpp: No such file or directory
-   10 | #include "../kdtree/random_recoder.hpp" // added
-      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[2]: *** [CMakeFiles/monte-carlo-ray-tracer.dir/build.make:286: CMakeFiles/monte-carlo-ray-tracer.dir/source/main.cpp.o] Error 1
-make[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/monte-carlo-ray-tracer.dir/all] Error 2
-make: *** [Makefile:91: all] Error 2
