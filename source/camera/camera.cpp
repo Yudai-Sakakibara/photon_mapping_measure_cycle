@@ -74,25 +74,51 @@ void Camera::init_counter(){
     cnt_all = 0;
 }
 
-void Camera::samplePixel(size_t x, size_t y, int mode)
+void Camera::samplePixel_first(size_t x, size_t y)
 {
     double pixel_size = sensor_width / image.width;
     glm::dvec2 half_dim = glm::dvec2(image.width, image.height) * 0.5;
 
     Sampler::initiate(static_cast<uint32_t>(y * image.width + x));
 
-    int i_start, i_goal;
-    if(mode == 0){
-        i_start = 0; i_goal = spp1;
-    }
-    else if(mode == 1){
-        i_start = spp1; i_goal = spp1 + spp2 - 1;
-    }
-    else{
-        i_start = spp1 + spp2 - 1; i_goal = spp1 + spp2;
-    }
+    for(int i = 0; i < spp1; i++)
+    {
+        Sampler::setIndex(i);
 
-    for(int i = i_start; i < i_goal; i++)
+        auto u = Sampler::get<Dim::PIXEL, 2>();
+        glm::dvec2 px(x + u[0], y + u[1]);
+        glm::dvec2 local = pixel_size * (half_dim - px);
+        glm::dvec3 direction = glm::normalize(forward * focal_length + left * local.x + up * local.y);
+
+        // Pinhole camera ray
+        Ray ray(eye, direction, integrator->scene.ior);
+
+        if (thin_lens)
+        {
+            // Thin lens camera ray for depth of field
+            auto u = Sampler::get<Dim::LENS, 2>();
+            glm::dvec2 aperture_sample = Sampling::uniformDisk(u[0], u[1]) * aperture_radius;
+            glm::dvec3 focus_point = ray(focus_distance / glm::dot(ray.direction, forward));
+            glm::dvec3 start = eye + left * aperture_sample.x + up * aperture_sample.y;
+            ray = Ray(start, glm::normalize(focus_point - start), integrator->scene.ior);
+        }
+        cnt_regular++;
+        film.deposit(px, integrator->sampleRay(ray));
+        cnt_all++;
+        if(cnt_all % 32 == 0){
+            std::printf("RISCV Sim: %d samples finished\n", cnt_all);
+        }
+    }
+}
+
+void Camera::samplePixel_second(size_t x, size_t y, int i1, int i2)
+{
+    double pixel_size = sensor_width / image.width;
+    glm::dvec2 half_dim = glm::dvec2(image.width, image.height) * 0.5;
+
+    Sampler::initiate(static_cast<uint32_t>(y * image.width + x));
+
+    for(int i = i1; i < i2; i++)
     {
         Sampler::setIndex(i);
 
@@ -114,10 +140,8 @@ void Camera::samplePixel(size_t x, size_t y, int mode)
             ray = Ray(start, glm::normalize(focus_point - start), integrator->scene.ior);
         }
 
-        bool can_approx = (mode > 0) & no_edge[y * image.width + x];
-        if(can_approx){
-            #pragma approx branch
-            if(rand01() >= approx_prob){
+        if(no_edge[y * image.width + x]){
+            if(i > 1111){
                 cnt_regular++;
                 film.deposit(px, integrator->sampleRay(ray));
                 cnt_all++;
@@ -161,7 +185,7 @@ void Camera::sampleImage()
     {
         for (size_t x = 0; x < image.width; x++)
         {
-            samplePixel(x, y, 0);
+            samplePixel_first(x, y);
         }
     }
 
@@ -170,42 +194,40 @@ void Camera::sampleImage()
     edge_detection(edge_threshold);
     calc_average_window();
 
-    // step3
-    for (size_t y = 0; y < image.height; y++)
-    {
-        for (size_t x = 0; x < image.width; x++)
-        {
-            samplePixel(x, y, 1);
-        }
-    }
-
+    // step3a. measure_cycle
     if(exec_mode == "measure_cycle"){
-        /** asm volatile ("li a7, 0x10001\n\t" 
+        asm volatile ("li a7, 0x10001\n\t" 
             "ecall" 
             :
             :
-            : "a7"); **/
-    }
-
-    // step4
-    for (size_t y = 0; y < image.height; y++)
-    {
-        for (size_t x = 0; x < image.width; x++)
+            : "a7");
+        for (size_t y = 0; y < image.height; y++)
         {
-            samplePixel(x, y, 2);
+            for (size_t x = 0; x < image.width; x++)
+            {
+                samplePixel_second(x, y, spp1, spp1 + 1);
+            }
         }
-    }
-
-    if(exec_mode == "measure_cycle"){
-        std::printf("Regular routine: %d  Approx routine: %d\n", cnt_regular, cnt_approx);
-        /** asm volatile ("li a7, 0x10001\n\t" 
+        std::printf("Regular routine: %d  Approx routine: %d\n\n", cnt_regular, cnt_approx);
+        asm volatile ("li a7, 0x10001\n\t" 
             "ecall" 
             :
             :
-            : "a7"); **/
+            : "a7");
     }
 
-    // step5
+    // step3b. output_image
+    if(exec_mode == "output_image"){
+        for (size_t y = 0; y < image.height; y++)
+        {
+            for (size_t x = 0; x < image.width; x++)
+            {
+                samplePixel_second(x, y, spp1, spp1 + spp2);
+            }
+        }
+    }
+
+    // step4b
     for (int y = 0; y < image.height; y++)
     {
         for (int x = 0; x < image.width; x++)
@@ -231,19 +253,20 @@ void Camera::capture()
     std::printf("Samples per pixel: %lu + %lu\n\n", spp1, spp2);
     sampleImage();
     if(exec_mode == "output_image"){
-        /** asm volatile ("li a7, 0x10001\n\t" 
+        asm volatile ("li a7, 0x10001\n\t" 
             "ecall" 
             :
             :
-            : "a7"); **/
+            : "a7");
     }
     saveImage();
+    std::printf("Regular routine: %d  Approx routine: %d\n\n", cnt_regular, cnt_approx);
     if(exec_mode == "output_image"){
-        /** asm volatile ("li a7, 0x10001\n\t" 
+        asm volatile ("li a7, 0x10001\n\t" 
             "ecall" 
             :
             :
-            : "a7"); **/
+            : "a7");
     }
     std::printf("Regular routine: %d  Approx routine: %d\n\n", cnt_regular, cnt_approx);
 }

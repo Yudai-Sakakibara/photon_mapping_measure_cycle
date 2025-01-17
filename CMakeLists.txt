@@ -4,9 +4,10 @@ project(monte-carlo-ray-tracer)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-#set(CMAKE_CXX_COMPILER /home/sakakibara/opt3/bin/riscv64-unknown-elf-g++) # added
+set(CMAKE_CXX_COMPILER /home/sakakibara/opt3/bin/riscv64-unknown-elf-g++) # added
 set(CMAKE_CXX_FLAGS "-static") # added
 #set(CMAKE_CXX_FLAGS "-march=rv64g") # added
+message("message output")
 
 #set(THREADS_PREFER_PTHREAD_FLAG ON) # modified
 #find_package(Threads REQUIRED) # modified
@@ -20,11 +21,13 @@ include(CheckCXXCompilerFlag)
 CHECK_CXX_COMPILER_FLAG(-O3 COMPILER_SUPPORTS_O3)
 if(COMPILER_SUPPORTS_O3)
   set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+  message("-O3 is available")
 endif()
 
 CHECK_CXX_COMPILER_FLAG(-g COMPILER_SUPPORTS_G)
 if(COMPILER_SUPPORTS_G)
   set(CMAKE_CXX_FLAGS_DEBUG "-g")
+  message("-g is available")
 endif()
 
 include_directories(${PROJECT_SOURCE_DIR}/lib/glm/)

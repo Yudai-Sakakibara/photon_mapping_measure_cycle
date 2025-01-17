@@ -53,7 +53,8 @@ public:
 
 private:
 
-    void samplePixel(size_t x, size_t y, int i);
+    void samplePixel_first(size_t x, size_t y);
+    void samplePixel_second(size_t x, size_t y, int i1, int i2);
     void init_counter();
     void init_for_approx();
 
