@@ -13,9 +13,9 @@
 
 std::vector<std::string> json_list;
 void make_json_list(){
-    json_list.push_back("/home/sakakibara/monte-carlo-ray-tracer_approx/scenes/hexagon_room.json");
-    json_list.push_back("/home/sakakibara/monte-carlo-ray-tracer_approx/scenes/water_caustics.json");
-    json_list.push_back("/home/sakakibara/monte-carlo-ray-tracer_approx/scenes/diamond.json");
+    json_list.push_back("/home/sakakibara/photon_mapping_measure_cycle/scenes/hexagon_room.json");
+    json_list.push_back("/home/sakakibara/photon_mapping_measure_cycle/scenes/water_caustics.json");
+    json_list.push_back("/home/sakakibara/photon_mapping_measure_cycle/scenes/diamond.json");
 }
 
 std::vector<Option> availible(std::string path)
