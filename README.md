@@ -1,8 +1,7 @@
 元々のソフトの使い方は[こちら](https://github.com/linusmossberg/monte-carlo-ray-tracer/blob/master/README.md)を参照。
 以下、今回のソフトにおける変更点を述べる。
 
-- RISCVコンパイラは[sim-env](https://github.com/shioyadan/sim-env/tree/master)を使って構築する。[sim-env-mtl-approx](http://geopelia.mtl.t.u-tokyo.ac.jp/degawa/sim-env/tree/mtl-approx)はC拡張を使っているが、[Approximate Onikiri](http://geopelia.mtl.t.u-tokyo.ac.jp/degawa/approximate_onikiri/tree/dev_dynamic_adjusting)はそれに対応していない。
-- コンパイラはelfの方を使用する。それに伴い、コードには以下の修正を施してある。
+- RISCVコンパイラは外部の物を使う。[sim-env](https://github.com/shioyadan/sim-env/tree/master)は古いため、```.uleb128```命令に対応できない。なお、コンパイラに関する注意点は以下の通り。
     - このコンパイラはthread, filesystemに対応していないので、それらの関連コードは消去・修正してある。
     - コンパイル時にデータ型は確定していなければならないため、templateはヘッダファイルでしか使えない。そのため、それらが存在した```linear-octree.cpp```と```octree.cpp```の中身は、それぞれ```linear-octree.hpp```と```octree.hpp```に統合してある。
 - jsonファイルの```cameras```内のパラメータの概要は以下の通り。
@@ -11,7 +10,7 @@
 
 # サイクル数検証方法について
 サイクル数を検証する手順は以下の通り。
-1. ソースコード内の```/home/sakakibara```を、このプロジェクトフォルダがインストールされているフォルダに書き換える。
+1. ```source```フォルダ内の```main.cpp```、```common/option.cpp```、```scene/scene.cpp```内の```/home/sakakibara```を、このプロジェクトフォルダがインストールされているフォルダに書き換える。
 
 2. [このリンク](http://geopelia.mtl.t.u-tokyo.ac.jp/sakakibara/approximate_onikiri)に従い、Approximate Onikiriをビルドする。
 
