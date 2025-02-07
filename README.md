@@ -54,3 +54,5 @@ python3 main2.py
 このコードの3,4行目は、```source/camera/camera.cpp```の141行目のダミー条件```i > 1111```を表している。よって、4行目を```.word <the number of instructions(16 bits)>0011000000001011```に書き換える。ここでは、304=0b100110000なので、```.word 0b00000001001100000011000000001011```とする。
 
 7. 生成されたphoton_mapping_measure_cycleをApproximate Onikiriで実行する。その際、Approximate Routineに行く確率を調整する際は、```approximate_onikiri/tool/AutoRunTools/cfg_approx.xml```の```/Session/Simulator/Configurations/DefaultConfiguration/Parameter/RandomBranchDirDecider/@ApproxLevel```を変える。
+
+- [Redmine](https://redmine.mtl.t.u-tokyo.ac.jp/issues/4983)も参照すること。
