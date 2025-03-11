@@ -1358,7 +1358,7 @@ _ZN6Camera18samplePixel_secondEmmii:
 	and	a5,a5,a2
 	beq	a5,zero,.L86
 	li	a5,1111
-	.word 0b00000001001100000011000000001011
+	ble	s11,a5,.L87
 	lw	a5,32(s10)
 	ld	a1,472(s10)
 	addi	a2,sp,32
