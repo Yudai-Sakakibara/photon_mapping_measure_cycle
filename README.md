@@ -55,4 +55,4 @@ python3 main2.py
 
 7. ```for_compile```ディレクトリ内に生成されたphoton_mapping_measure_cycleをApproximate Onikiriで実行する。その際、Approximate Routineに行く確率を調整する際は、```approximate_onikiri/tool/AutoRunTools/cfg_approx.xml```の```/Session/Simulator/Configurations/DefaultConfiguration/Parameter/RandomBranchDirDecider/@ApproxLevel```を変える。
 
-- [Redmine](https://redmine.mtl.t.u-tokyo.ac.jp/issues/4983)も参照すること。
+- [Redmine #4983](https://redmine.mtl.t.u-tokyo.ac.jp/issues/4983)も参照すること。
